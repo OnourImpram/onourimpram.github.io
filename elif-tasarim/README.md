@@ -1,5 +1,7 @@
 # Elif Tasarım
 
-Original interactive design preview. No live payments or form delivery. All catalog visuals and prices are concepts.
+V4 interactive atelier preview. Public draft only. No live payments, customer authentication or form delivery. All catalog visuals and prices are concepts.
 
-React-compatible component sources, compiled with the MIT Preact preview runtime. Not a verified Next.js production build.
+The original React-compatible sources are compiled with the MIT Preact preview runtime. This is not a verified Next.js production build.
+
+V3 comparison, configurable design desk, quote prefill, catalog and cart preserved. V4 adds an original editorial homepage, keyboard-operable material and process tabs, craftsmanship detail exploration, manual hero scenes and a dimension-aware entry to the design desk.
