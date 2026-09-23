@@ -1,0 +1,38 @@
+name: Elif published preview verification
+on:
+  push:
+    branches: [elif-tasarim-preview-20260923]
+    paths: ['.github/workflows/elif-live-verify.yml']
+permissions:
+  contents: read
+jobs:
+  verify-live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify published response and exact release bytes
+        run: |
+          mkdir -p elif-build/evidence
+          curl --fail --silent --show-error --retry 3 --retry-delay 5 --dump-header elif-build/evidence/live-headers.txt https://onourimpram.github.io/elif-tasarim/ -o /tmp/elif-live.html
+          echo '2416f8376970a4d0295fbb2af8e745b0c73bb54ed2a046ce22c9323ef85f18da  /tmp/elif-live.html' | sha256sum --check
+          sha256sum /tmp/elif-live.html > elif-build/evidence/live-sha256.txt
+      - name: Install browser
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Run acceptance checks against the public URL
+        env:
+          PREVIEW_URL: https://onourimpram.github.io/elif-tasarim/
+        run: python elif-build/qa.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-live-verification
+          path: elif-build/evidence
+          retention-days: 14
