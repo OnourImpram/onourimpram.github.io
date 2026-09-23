@@ -12,6 +12,7 @@ for(const file of ['src/App.tsx','src/pages/Catalog.tsx']) {
  const old="p.material).includes"; if(!spec.sources[file].includes(old)) throw Error('Search boundary changed');
  spec.sources[file]=spec.sources[file].replace(old,"p.material+' '+p.id+' '+p.category).includes");
 }
+spec.sources['src/pages/Home.tsx']=spec.sources['src/pages/Home.tsx'].replace('<br/>katan','<br/>{" "}katan');
 const modules={};
 for(const [file,source] of Object.entries(spec.sources)){
  const result=ts.transpileModule(source,{fileName:file,reportDiagnostics:true,compilerOptions:{target:ts.ScriptTarget.ES2020,module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.React,jsxFactory:'createElement',jsxFragmentFactory:'Fragment',esModuleInterop:true}});

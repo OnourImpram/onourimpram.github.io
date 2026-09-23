@@ -36,6 +36,7 @@ jobs:
           python -m http.server 8080 --bind 127.0.0.1 > /tmp/elif-http.log 2>&1 &
           sleep 2
           python elif-build/qa.py
+          python elif-build/headline-test.py
       - name: Run pinned design-system-extraction contrast tool
         run: |
           mkdir -p elif-build/evidence
