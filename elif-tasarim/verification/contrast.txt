@@ -1,9 +1,9 @@
-#352C21 on #F6F3EC: 12.36:1  [AAA]
+#352E25 on #F5F1E9: 11.88:1  [AAA]
 
   normal text (min 4.5)       pass
   large text (min 3.0)        pass
   border and icon (min 3.0)   pass
-#F6F3EC on #4A3D2E: 9.48:1  [AAA]
+#FFF8ED on #654A32: 7.72:1  [AAA]
 
   normal text (min 4.5)       pass
   large text (min 3.0)        pass

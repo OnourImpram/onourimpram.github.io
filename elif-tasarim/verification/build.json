@@ -1,0 +1,15 @@
+{
+  "status": "built",
+  "release": "v4-atelier-editorial",
+  "bytes": 525343,
+  "modules": [
+    "src/App",
+    "src/lib/routes",
+    "src/lib/desk",
+    "src/pages/Home",
+    "src/pages/Catalog",
+    "src/pages/Quote",
+    "src/pages/DesignDesk"
+  ],
+  "sha256": "d41471bfb19ba705d1fcb909039bdc422f1ecc23b519f93b9f2fd57c6de6207b"
+}
