@@ -1,0 +1,28 @@
+name: Elif V4 public reference measurements
+on:
+  push:
+    branches: [elif-tasarim-preview-20260923]
+    paths: ['elif-lab/v4-measure.py', '.github/workflows/elif-reference-v4.yml']
+permissions:
+  contents: read
+jobs:
+  reference-sample:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+          python elif-lab/v4-measure.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v4-reference-measurements
+          path: elif-lab/evidence-v4
+          retention-days: 7
