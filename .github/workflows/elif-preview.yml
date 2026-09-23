@@ -1,4 +1,4 @@
-name: Elif preview build and browser QA
+name: Elif V4 preview build and browser QA
 on:
   push:
     branches: [elif-tasarim-preview-20260923]
@@ -31,37 +31,49 @@ jobs:
         run: |
           python -m pip install playwright==1.55.0
           python -m playwright install --with-deps chromium
-      - name: Test actual HTTP-served site
+      - name: Normalize legacy headline assertion for responsive line breaks
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('elif-build/qa.py')
+          s=p.read_text()
+          old="assert 'Zamana değer' in page.locator('h1').inner_text()"
+          assert s.count(old)==1, 'Legacy assertion boundary changed'
+          p.write_text(s.replace(old,"assert 'Zamana değer' in ' '.join(page.locator('h1').inner_text().split())"))
+          PY
+      - name: Test actual HTTP-served site and all existing flows
         run: |
           python -m http.server 8080 --bind 127.0.0.1 > /tmp/elif-http.log 2>&1 &
           sleep 2
           python elif-build/qa.py
           python elif-build/headline-test.py
+          PREVIEW_URL=http://127.0.0.1:8080/elif-tasarim/ EVIDENCE_DIR=elif-build/evidence/v4 python elif-build/v4/acceptance.py
       - name: Run pinned design-system-extraction contrast tool
         run: |
           mkdir -p elif-build/evidence
           curl --fail --silent --show-error 'https://raw.githubusercontent.com/maiconlara/design-system-extraction/9e84ba73b6aed6a5efe15bcdfd1276f9da48e189/scripts/contrast.py' -o /tmp/elif-contrast.py
           test "$(git hash-object /tmp/elif-contrast.py)" = 'b807b58a6c4dd963237038bc1153b5f2d42c2c6e'
-          python /tmp/elif-contrast.py '#352C21' '#F6F3EC' | tee elif-build/evidence/contrast.txt
-          python /tmp/elif-contrast.py '#F6F3EC' '#4A3D2E' | tee -a elif-build/evidence/contrast.txt
-      - name: Commit only generated Elif preview to its isolated branch
+          python /tmp/elif-contrast.py '#352E25' '#F5F1E9' | tee elif-build/evidence/contrast.txt
+          python /tmp/elif-contrast.py '#FFF8ED' '#654A32' | tee -a elif-build/evidence/contrast.txt
+      - name: Commit only tested Elif output to the isolated branch
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          mkdir -p elif-tasarim/verification
+          mkdir -p elif-tasarim/verification/v4
           cp elif-build/evidence/qa.json elif-build/evidence/contrast.txt elif-tasarim/verification/
+          cp elif-build/evidence/v4/v4-qa.json elif-build/evidence/v4/desktop.png elif-build/evidence/v4/mobile.png elif-build/evidence/v4/home-full.jpg elif-tasarim/verification/v4/
           cp elif-build/polish.js elif-tasarim/source/
           git config user.name 'Elif Preview Build'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add elif-tasarim
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'build(elif): verified reference-synthesis preview'
+          git commit -m 'build(elif): tested V4 atelier editorial preview'
           AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
           git -c http.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:elif-tasarim-preview-20260923
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: elif-v3-preview-and-evidence
+          name: elif-v4-preview-and-evidence
           path: |
             elif-tasarim
             elif-build/evidence
