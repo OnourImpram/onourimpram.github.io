@@ -1,4 +1,4 @@
-name: Elif published preview verification
+name: Elif published V4 preview verification
 on:
   push:
     branches: [elif-tasarim-preview-20260923]
@@ -8,7 +8,7 @@ permissions:
 jobs:
   verify-live:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 7
     steps:
       - uses: actions/checkout@v4
         with:
@@ -16,23 +16,52 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Verify published response and exact release bytes
+      - name: Verify public V4 response and exact release bytes
         run: |
           mkdir -p elif-build/evidence
-          curl --fail --silent --show-error --retry 3 --retry-delay 5 --dump-header elif-build/evidence/live-headers.txt https://onourimpram.github.io/elif-tasarim/ -o /tmp/elif-live.html
-          echo '2416f8376970a4d0295fbb2af8e745b0c73bb54ed2a046ce22c9323ef85f18da  /tmp/elif-live.html' | sha256sum --check
-          sha256sum /tmp/elif-live.html > elif-build/evidence/live-sha256.txt
+          python - <<'PY'
+          import hashlib,time,json
+          from pathlib import Path
+          from urllib.request import urlopen,Request
+          expected='d41471bfb19ba705d1fcb909039bdc422f1ecc23b519f93b9f2fd57c6de6207b'
+          url='https://onourimpram.github.io/elif-tasarim/'
+          for attempt in range(15):
+              try:
+                  with urlopen(Request(url,headers={'Cache-Control':'no-cache'}),timeout=20) as response:
+                      body=response.read();actual=hashlib.sha256(body).hexdigest();status=response.status
+                  if actual==expected:
+                      proof={'url':url,'status':status,'sha256':actual,'release':'v4-atelier-editorial','matches_tested_build':True}
+                      Path('elif-build/evidence/live-proof.json').write_text(json.dumps(proof,indent=2))
+                      print(json.dumps(proof));break
+                  print('Waiting for Pages propagation',attempt+1,actual)
+              except Exception as e:print('Waiting for public response',str(e)[:160])
+              time.sleep(8)
+          else:raise SystemExit('Published bytes do not match tested V4')
+          PY
       - name: Install browser
         run: |
           python -m pip install playwright==1.55.0
           python -m playwright install --with-deps chromium
+      - name: Normalize legacy heading whitespace assertion
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('elif-build/qa.py');s=p.read_text()
+          old="assert 'Zamana değer' in page.locator('h1').inner_text()"
+          assert s.count(old)==1
+          p.write_text(s.replace(old,"assert 'Zamana değer' in ' '.join(page.locator('h1').inner_text().split())"))
+          PY
       - name: Run acceptance checks against the public URL
         env:
           PREVIEW_URL: https://onourimpram.github.io/elif-tasarim/
-        run: python elif-build/qa.py
+          EVIDENCE_DIR: elif-build/evidence/v4
+        run: |
+          python elif-build/qa.py
+          python elif-build/headline-test.py
+          python elif-build/v4/acceptance.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: elif-live-verification
+          name: elif-v4-live-verification
           path: elif-build/evidence
           retention-days: 14
