@@ -1,0 +1,262 @@
+TAP version 13
+# Subtest: Türkçe ölçü 120,5 cm
+ok 1 - Türkçe ölçü 120,5 cm
+  ---
+  duration_ms: 1.92405
+  type: 'test'
+  ...
+# Subtest: İngilizce ondalık ölçü
+ok 2 - İngilizce ondalık ölçü
+  ---
+  duration_ms: 0.241141
+  type: 'test'
+  ...
+# Subtest: mm ölçeği
+ok 3 - mm ölçeği
+  ---
+  duration_ms: 0.184384
+  type: 'test'
+  ...
+# Subtest: Belirsiz ayraç reddedilir
+ok 4 - Belirsiz ayraç reddedilir
+  ---
+  duration_ms: 0.181499
+  type: 'test'
+  ...
+# Subtest: Sıfır ölçü reddedilir
+ok 5 - Sıfır ölçü reddedilir
+  ---
+  duration_ms: 0.200374
+  type: 'test'
+  ...
+# Subtest: Negatif ölçü reddedilir
+ok 6 - Negatif ölçü reddedilir
+  ---
+  duration_ms: 0.125053
+  type: 'test'
+  ...
+# Subtest: Kesirli milimetre yuvarlanmaz
+ok 7 - Kesirli milimetre yuvarlanmaz
+  ---
+  duration_ms: 0.200043
+  type: 'test'
+  ...
+# Subtest: Sınır aşımı
+ok 8 - Sınır aşımı
+  ---
+  duration_ms: 0.173264
+  type: 'test'
+  ...
+# Subtest: Ondalık para dönüşümü
+ok 9 - Ondalık para dönüşümü
+  ---
+  duration_ms: 0.400488
+  type: 'test'
+  ...
+# Subtest: Kuruş dönüşümü
+ok 10 - Kuruş dönüşümü
+  ---
+  duration_ms: 0.449018
+  type: 'test'
+  ...
+# Subtest: Yanlış fiyat sessiz yuvarlanmaz
+ok 11 - Yanlış fiyat sessiz yuvarlanmaz
+  ---
+  duration_ms: 0.308636
+  type: 'test'
+  ...
+# Subtest: Negatif fiyat ret
+ok 12 - Negatif fiyat ret
+  ---
+  duration_ms: 0.13389
+  type: 'test'
+  ...
+# Subtest: Türkçe arama
+ok 13 - Türkçe arama
+  ---
+  duration_ms: 0.28424
+  type: 'test'
+  ...
+# Subtest: Adet en fazla 100
+ok 14 - Adet en fazla 100
+  ---
+  duration_ms: 0.118201
+  type: 'test'
+  ...
+# Subtest: Kesirli adet ret
+ok 15 - Kesirli adet ret
+  ---
+  duration_ms: 0.142195
+  type: 'test'
+  ...
+# Subtest: Doğru adet
+ok 16 - Doğru adet
+  ---
+  duration_ms: 0.084578
+  type: 'test'
+  ...
+# Subtest: Görsel olmayan dosya ret
+ok 17 - Görsel olmayan dosya ret
+  ---
+  duration_ms: 0.114484
+  type: 'test'
+  ...
+# Subtest: Büyük dosya ret
+ok 18 - Büyük dosya ret
+  ---
+  duration_ms: 0.082855
+  type: 'test'
+  ...
+# Subtest: Geçerli dosya kabul
+ok 19 - Geçerli dosya kabul
+  ---
+  duration_ms: 0.082244
+  type: 'test'
+  ...
+# Subtest: Sepet anahtarları varyantı ayırır
+ok 20 - Sepet anahtarları varyantı ayırır
+  ---
+  duration_ms: 0.129673
+  type: 'test'
+  ...
+# Subtest: Toplam yalnız güvenli pozitif adet
+ok 21 - Toplam yalnız güvenli pozitif adet
+  ---
+  duration_ms: 0.131345
+  type: 'test'
+  ...
+# Subtest: Sepet kuruş toplamı
+ok 22 - Sepet kuruş toplamı
+  ---
+  duration_ms: 0.080299
+  type: 'test'
+  ...
+# Subtest: Özel ölçü boş olabilir
+ok 23 - Özel ölçü boş olabilir
+  ---
+  duration_ms: 0.209871
+  type: 'test'
+  ...
+# Subtest: Bilinen ölçü eksik olamaz
+ok 24 - Bilinen ölçü eksik olamaz
+  ---
+  duration_ms: 0.16582
+  type: 'test'
+  ...
+# Subtest: İletişim demo dahi geçerli olmalı
+ok 25 - İletişim demo dahi geçerli olmalı
+  ---
+  duration_ms: 0.137246
+  type: 'test'
+  ...
+# Subtest: Taslak kişisel veriyi tutmaz
+ok 26 - Taslak kişisel veriyi tutmaz
+  ---
+  duration_ms: 0.146844
+  type: 'test'
+  ...
+# Subtest: Bozulmuş taslak nesnesi DOM verisi olamaz
+ok 27 - Bozulmuş taslak nesnesi DOM verisi olamaz
+  ---
+  duration_ms: 0.106038
+  type: 'test'
+  ...
+# Subtest: Geçerli taslak alanları korunur
+ok 28 - Geçerli taslak alanları korunur
+  ---
+  duration_ms: 0.105236
+  type: 'test'
+  ...
+# Subtest: Depolama engelliyse yazma güvenle başarısız
+ok 29 - Depolama engelliyse yazma güvenle başarısız
+  ---
+  duration_ms: 0.170548
+  type: 'test'
+  ...
+# Subtest: Depolama engelliyse yedek değer
+ok 30 - Depolama engelliyse yedek değer
+  ---
+  duration_ms: 0.133028
+  type: 'test'
+  ...
+# Subtest: Süreli yerel kaydın yazma/okuma döngüsü
+ok 31 - Süreli yerel kaydın yazma/okuma döngüsü
+  ---
+  duration_ms: 0.204672
+  type: 'test'
+  ...
+# Subtest: Bozuk kayıt JSON arayüzü yıkmaz
+ok 32 - Bozuk kayıt JSON arayüzü yıkmaz
+  ---
+  duration_ms: 0.216274
+  type: 'test'
+  ...
+# Subtest: Bilinmeyen ölçü birimi reddedilir
+ok 33 - Bilinmeyen ölçü birimi reddedilir
+  ---
+  duration_ms: 0.08565
+  type: 'test'
+  ...
+# Subtest: Geçersiz süreli depolama kaydı kullanılmaz
+ok 34 - Geçersiz süreli depolama kaydı kullanılmaz
+  ---
+  duration_ms: 0.156712
+  type: 'test'
+  ...
+# Subtest: V5 price display preserves kuruş
+ok 35 - V5 price display preserves kuruş
+  ---
+  duration_ms: 427.547779
+  type: 'test'
+  ...
+# Subtest: V5 whitespace search normalizes
+ok 36 - V5 whitespace search normalizes
+  ---
+  duration_ms: 0.196747
+  type: 'test'
+  ...
+# Subtest: V5 blank contact is rejected
+ok 37 - V5 blank contact is rejected
+  ---
+  duration_ms: 0.197669
+  type: 'test'
+  ...
+# Subtest: V5 punctuation is not a telephone
+ok 38 - V5 punctuation is not a telephone
+  ---
+  duration_ms: 0.178904
+  type: 'test'
+  ...
+# Subtest: V5 cm to mm preserves size
+ok 39 - V5 cm to mm preserves size
+  ---
+  duration_ms: 0.310629
+  type: 'test'
+  ...
+# Subtest: V5 decimal unit conversion is exact
+ok 40 - V5 decimal unit conversion is exact
+  ---
+  duration_ms: 0.140623
+  type: 'test'
+  ...
+# Subtest: V5 invalid unit conversion fails without reinterpretation
+ok 41 - V5 invalid unit conversion fails without reinterpretation
+  ---
+  duration_ms: 0.110707
+  type: 'test'
+  ...
+# Subtest: V5 empty dimensions stay empty when units change
+ok 42 - V5 empty dimensions stay empty when units change
+  ---
+  duration_ms: 0.13416
+  type: 'test'
+  ...
+1..42
+# tests 42
+# suites 0
+# pass 42
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 547.642779

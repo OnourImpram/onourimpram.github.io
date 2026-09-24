@@ -1,0 +1,52 @@
+{
+  "tests": [
+    {
+      "name": "Approved slogan and new editorial surface",
+      "pass": true
+    },
+    {
+      "name": "Hero scene buttons change image without autoplay",
+      "pass": true
+    },
+    {
+      "name": "Craft details respond to pointer and keyboard",
+      "pass": true
+    },
+    {
+      "name": "Material tabs and arrow navigation are synchronized",
+      "pass": true
+    },
+    {
+      "name": "Dimension and material carry into existing design desk route",
+      "pass": true
+    },
+    {
+      "name": "Process chapters reveal their own content",
+      "pass": true
+    },
+    {
+      "name": "Homepage at six widths without overflow or broken images",
+      "pass": true
+    },
+    {
+      "name": "Mobile first action visible and menu traps focus",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion disables hero animation",
+      "pass": true
+    },
+    {
+      "name": "Desktop and mobile captures saved",
+      "pass": true
+    },
+    {
+      "name": "No runtime errors",
+      "pass": true
+    }
+  ],
+  "passed": 11,
+  "failed": 0,
+  "errors": [],
+  "mode": "HTTP"
+}
