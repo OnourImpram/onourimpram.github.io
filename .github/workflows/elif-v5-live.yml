@@ -1,0 +1,58 @@
+name: Elif V5 public release verification
+on:
+  push:
+    branches: [elif-tasarim-v5-20260924]
+    paths: ['.github/workflows/elif-v5-live.yml']
+permissions:
+  contents: read
+jobs:
+  verify-live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Materialize only checksummed acceptance tests
+        run: |
+          node <<'JS'
+          const fs=require('fs'),path=require('path'),z=require('zlib'),c=require('crypto');
+          let s=['00','01','02','03','04'].map(n=>fs.readFileSync('elif-v5/payload/'+n+'.b64','utf8')).join('');
+          s=s.replace('OLqbRSkaRXSp7CGx','OLqbRSkaRX02ZXSp7CGx').replace('HwixBnx8G','HwixBn8G');
+          if(c.createHash('sha256').update(s).digest('hex')!=='5f69e29d0d54a17aa6792d469abbdd6c2b23f3d7a18705c2a954f0af7bc9c5cd')throw Error('Test payload hash mismatch');
+          const data=JSON.parse(z.gunzipSync(Buffer.from(s,'base64')));
+          for(const n of ['tests/v4/acceptance.py','tests/v5/final_qa.py']){const f='elif-v5/'+n;fs.mkdirSync(path.dirname(f),{recursive:true});fs.writeFileSync(f,data.tests[n]);}
+          JS
+      - name: Verify exact published bytes
+        run: |
+          mkdir -p elif-v5-live
+          for attempt in $(seq 1 12); do
+            if curl --fail --silent --show-error --dump-header elif-v5-live/headers.txt https://onourimpram.github.io/elif-tasarim/ -o elif-v5-live/published.html; then
+              if echo '24989a4c23450f9f92ba00fd284571bff1a5dce03f3d45b58877ad2cf6083966  elif-v5-live/published.html' | sha256sum --check; then break; fi
+            fi
+            sleep 10
+          done
+          echo '24989a4c23450f9f92ba00fd284571bff1a5dce03f3d45b58877ad2cf6083966  elif-v5-live/published.html' | sha256sum --check
+          sha256sum elif-v5-live/published.html > elif-v5-live/sha256.txt
+      - name: Install isolated browser
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Test the actual public site
+        env:
+          PREVIEW_URL: https://onourimpram.github.io/elif-tasarim/
+        run: |
+          EVIDENCE_DIR=elif-v5-live/v5 python elif-v5/tests/v5/final_qa.py
+          EVIDENCE_DIR=elif-v5-live/v4-regression python elif-v5/tests/v4/acceptance.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v5-public-verification
+          path: elif-v5-live
+          retention-days: 14
