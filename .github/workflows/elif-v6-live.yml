@@ -1,0 +1,72 @@
+name: Elif V6 public release verification
+on:
+  push:
+    branches: [elif-tasarim-v6-20260924]
+    paths: ['.github/workflows/elif-v6-live.yml']
+permissions:
+  contents: read
+jobs:
+  verify-live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Restore exact build and test sources
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          npm install --prefix /tmp/elif-ts --ignore-scripts --no-audit --no-fund typescript@5.8.3
+          NODE_PATH=/tmp/elif-ts/node_modules node elif-v6/build.cjs
+          test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+      - name: Verify the published HTML, code, CSS and every image
+        run: |
+          python - <<'PY'
+          import pathlib,hashlib,subprocess,time,json,concurrent.futures
+          base='https://onourimpram.github.io/elif-tasarim/'
+          root=pathlib.Path('elif-tasarim');out=pathlib.Path('elif-v6/evidence/live');out.mkdir(parents=True,exist_ok=True)
+          names=['index.html','app.js','styles.css']+sorted(str(p.relative_to(root)) for p in (root/'assets').iterdir() if p.is_file())
+          def check(name):
+              source=root/name
+              expected=hashlib.sha256(source.read_bytes()).hexdigest()
+              for attempt in range(6):
+                  r=subprocess.run(['curl','--fail','--location','--silent','--show-error','--max-time','45',base+name],capture_output=True)
+                  actual=hashlib.sha256(r.stdout).hexdigest()
+                  if r.returncode==0 and actual==expected:
+                      return {'path':name,'bytes':len(r.stdout),'sha256':actual,'match':True}
+                  if attempt<5:time.sleep(12)
+              raise RuntimeError('Published file mismatch '+name+' '+actual)
+          records=[check('index.html')]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:records+=list(pool.map(check,names[1:]))
+          report={'base':base,'release':'v6-atelier-portfolio','publication_commit':'69417f27e6a7d04a237adb2e095ef8f72d21a92a','verified_files':len(records),'all_match':True,'files':records}
+          (out/'published-integrity.json').write_text(json.dumps(report,indent=2))
+          print('Verified public bytes for',len(records),'files')
+          PY
+      - name: Install isolated Chromium tooling
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Run actual public user journeys and responsive matrix
+        env:
+          PREVIEW_URL: https://onourimpram.github.io/elif-tasarim/
+          EVIDENCE_DIR: elif-v6/evidence/live
+        run: python elif-v6/tests/v6/browser.py
+      - name: Probe Pinterest only after explicit widget activation
+        env:
+          PREVIEW_URL: https://onourimpram.github.io/elif-tasarim/
+          EVIDENCE_DIR: elif-v6/evidence/live
+        run: python elif-v6/tests/v6/pin-widget.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v6-public-verification
+          path: |
+            elif-v6/evidence/live
+            elif-v6/tests/v6
+            elif-tasarim/release-v6.json
+          retention-days: 14
