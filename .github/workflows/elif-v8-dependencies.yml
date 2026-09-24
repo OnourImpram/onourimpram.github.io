@@ -1,0 +1,28 @@
+name: Elif V8 Three runtime
+on:
+  push:
+    branches: [elif-v8-three-studio-20260924]
+    paths: ['.github/workflows/elif-v8-dependencies.yml']
+permissions:
+  contents: read
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch pinned official Three.js package without install scripts
+        run: |
+          mkdir vendor
+          npm pack three@0.185.1 --ignore-scripts --pack-destination vendor
+          cd vendor
+          tar -xzf three-0.185.1.tgz
+          node -e "const p=require('./package/package.json');if(p.name!=='three'||p.version!=='0.185.1')process.exit(1);console.log(p.name,p.version)"
+          sha256sum three-0.185.1.tgz > sha256.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elif-v8-three-runtime
+          path: vendor
+          retention-days: 7
