@@ -1,0 +1,69 @@
+name: Elif V6 package build
+on:
+  push:
+    branches: [elif-tasarim-v6-20260924]
+    paths: ['.github/workflows/elif-v6-package.yml']
+permissions:
+  contents: write
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Download the authorized publication package
+        env:
+          ASSET_URL: 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-cb10-81f4-854c-c229cae900b3/raw?se=2026-09-24T12%3A11%3A53Z&sp=r&sv=2026-02-06&sr=b&scid=1c8f72d9-69b5-528a-898e-5465c1b61287&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-24T08%3A38%3A18Z&ske=2026-09-25T08%3A38%3A18Z&sks=b&skv=2026-02-06&sig=fDbs5YohN5pY42fhVNe2n%2BsRZvdNf%2BOUUVTV4FDiqyE%3D'
+        run: |
+          echo "::add-mask::$ASSET_URL"
+          curl --fail --location --silent --show-error --max-time 60 "$ASSET_URL" --output /tmp/elif-images.zip
+          echo '5568387948089e607dd47ef4621dfa7711fdf295ec8e45b77294c32d84cd22ea  /tmp/elif-images.zip' | sha256sum --check
+          python - <<'PY'
+          import zipfile,pathlib
+          z=zipfile.ZipFile('/tmp/elif-images.zip')
+          assert len(z.infolist())<150 and sum(i.file_size for i in z.infolist())<30000000
+          for i in z.infolist():
+            p=pathlib.PurePosixPath(i.filename)
+            assert not p.is_absolute() and '..' not in p.parts and p.parts[0]=='assets'
+            assert not ((i.external_attr>>16)&0o170000)==0o120000
+          z.extractall('elif-tasarim')
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reconstruct checksummed V6 sources
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          npm install --prefix /tmp/elif-ts --ignore-scripts --no-audit --no-fund typescript@5.8.3
+          NODE_PATH=/tmp/elif-ts/node_modules node elif-v6/build.cjs
+      - name: Install browser and run preview tests
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+          python -m http.server 8080 --bind 127.0.0.1 >/tmp/elif-http.log 2>&1 &
+          sleep 2
+          PREVIEW_URL=http://127.0.0.1:8080/elif-tasarim/ python elif-v6/tests/v6/browser.py
+      - name: Preserve tested output on the V6 branch only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          git config user.name 'Elif Preview Build'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add elif-tasarim
+          git diff --cached --quiet && exit 0
+          git commit -m 'build(elif): verified V6 portfolio and high resolution assets'
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:elif-tasarim-v6-20260924
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v6-package-evidence
+          path: |
+            elif-tasarim
+            elif-v6/evidence
+          retention-days: 14
