@@ -1,0 +1,88 @@
+name: Elif V8 real Three stage
+on:
+  push:
+    branches: [elif-v8-three-studio-20260924]
+    paths: ['.github/workflows/elif-v8-stage.yml']
+permissions:
+  contents: write
+jobs:
+  studio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Retrieve checksum verified V8 source package
+        env:
+          PACKAGE_URL: 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-40a8-820a-8f74-dbf1b631bb1a/raw?se=2026-09-24T17%3A26%3A15Z&sp=r&sv=2026-02-06&sr=b&scid=44085125-72ba-5e69-8aa4-e24add076f4b&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-24T16%3A10%3A05Z&ske=2026-09-25T16%3A10%3A05Z&sks=b&skv=2026-02-06&sig=t/iCDe8C29pXCSIstsoSjibbnpgXwZM2ngMKhj2GMQ0%3D'
+        run: |
+          echo "::add-mask::$PACKAGE_URL"
+          curl --fail --location --silent --show-error --max-time 90 "$PACKAGE_URL" -o /tmp/v8.zip
+          echo 'dfad47bff42edde7ed55c4f9d17b9202fda6abf70edbdd10fb5fa325c877b95b  /tmp/v8.zip' | sha256sum --check
+          python - <<'PY'
+          import zipfile,pathlib
+          z=zipfile.ZipFile('/tmp/v8.zip')
+          assert len(z.infolist())<500 and sum(i.file_size for i in z.infolist())<80000000
+          for i in z.infolist():
+            p=pathlib.PurePosixPath(i.filename)
+            assert not p.is_absolute() and '..' not in p.parts
+            assert p.parts[0] in ['src','public','tools','tests','docs','package.json']
+            assert not ((i.external_attr>>16)&0o170000)==0o120000
+          z.extractall('elif-v8-work')
+          PY
+      - name: Build approved sources and run parameter regressions
+        run: |
+          npm install --prefix /tmp/elif-ts --ignore-scripts --no-audit --no-fund typescript@5.8.3
+          cd elif-v8-work
+          mkdir -p evidence/v8
+          export NODE_PATH=/tmp/elif-ts/node_modules
+          node tools/compile-domain.cjs
+          node --test tests/domain.test.cjs tests/v7/unit.cjs tests/v8/unit.cjs | tee evidence/v8/unit.txt
+          node tools/build-v8.cjs | tee evidence/v8/build.txt
+      - name: Install isolated graphics and browser tools
+        run: |
+          python -m pip install playwright==1.55.0 pillow
+          python -m playwright install --with-deps chromium
+      - name: Exercise real HTTP WebGL and render matching high resolution images
+        run: |
+          mkdir /tmp/elif-v8-http
+          ln -s "$PWD/elif-v8-work/dist" /tmp/elif-v8-http/elif-tasarim
+          python -m http.server 8080 --bind 127.0.0.1 --directory /tmp/elif-v8-http >/tmp/elif-http.log 2>&1 &
+          sleep 1
+          cd elif-v8-work
+          WRITE_POSTERS=1 python tests/v8/browser.py
+          cp public/assets/devir-poster.webp public/assets/office.webp
+          NODE_PATH=/tmp/elif-ts/node_modules node tools/build-v8.cjs
+      - name: Commit verified preview to V8 branch only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          rm -rf elif-tasarim
+          cp -a elif-v8-work/dist elif-tasarim
+          mkdir -p elif-tasarim/source-v8
+          cp -a elif-v8-work/src elif-v8-work/tools elif-v8-work/tests elif-v8-work/docs elif-tasarim/source-v8/
+          cp elif-v8-work/package.json elif-tasarim/source-v8/
+          git add elif-tasarim
+          git config user.name 'Elif Preview Build'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'build(elif): verified V8 live Three.js desk and high-resolution concept renders'
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:elif-v8-three-studio-20260924
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v8-three-stage
+          path: |
+            elif-v8-work/dist
+            elif-v8-work/evidence
+            elif-v8-work/src
+            elif-v8-work/tools
+            elif-v8-work/public
+            elif-v8-work/tests/v8
+            elif-v8-work/docs
+          retention-days: 7
