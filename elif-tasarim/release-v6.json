@@ -1,0 +1,19 @@
+{
+  "release": "v6-atelier-portfolio",
+  "source_sha256": "dc0bfacf13d4d1c94a381c8d3b275454711ce17c78e0cd1e56b88183c0e41911",
+  "baseline_sha256": "24989a4c23450f9f92ba00fd284571bff1a5dce03f3d45b58877ad2cf6083966",
+  "files": {
+    "index.html": {
+      "sha256": "2e11aa80d014789e45badbe17babfb5bd012d252cd4cb341173300fc1d24e6f4",
+      "bytes": 5203
+    },
+    "app.js": {
+      "sha256": "8baf2b2f06113aaf64c4157cb4822f798368b4c9247704bc359d03a146a4246c",
+      "bytes": 594784
+    },
+    "styles.css": {
+      "sha256": "87cbcedaed6efa62b2eeb4f763186b331d93c596ae14940fdab0c4b48b7c124c",
+      "bytes": 169915
+    }
+  }
+}
