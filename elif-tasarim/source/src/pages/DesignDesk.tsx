@@ -20,17 +20,28 @@ export function TableDrawing({desk,id='desk',compact=false}:{desk:Desk;id?:strin
  </g>}
  </svg>
 }
-export class DesignDesk extends Component<PageProps & {query?:string},{desk:Desk}>{
- constructor(props:PageProps&{query?:string}){super(props);this.state={desk:deskFromParams(new URLSearchParams(props.query||''))}}
+export class DesignDesk extends Component<PageProps & {query?:string},{desk:Desk;sharing:boolean}>{
+ constructor(props:PageProps&{query?:string}){super(props);this.state={desk:deskFromParams(new URLSearchParams(props.query||'')),sharing:false}}
  change=(key:keyof Desk,value:any)=>this.setState(s=>({desk:{...s.desk,[key]:value}}));
+ commitNumber=(key:'width'|'depth'|'height',raw:string)=>{
+  const ranges={width:[100,240],depth:[50,100],height:[60,125]};const [min,max]=ranges[key];const n=Number(raw.trim());
+  if(!/^\d+$/.test(raw.trim())||!Number.isSafeInteger(n)||n<min||n>max){this.props.notify(`Ölçü ${min} ile ${max} cm arasında tam sayı olmalı.`);return false;}
+  this.change(key,n);return true;
+ };
+ shareURL=()=>{
+  const base=typeof location!=='undefined'&&/^https?:$/.test(location.protocol)?location.href.split('#')[0]:'https://onourimpram.github.io/elif-tasarim/';
+  return base+'#/tasarim-masasi?'+deskQuery(this.state.desk);
+ };
  render(){const d=this.state.desk,a=this.props;return <>
  <section className="desk-intro wrap"><Eyebrow>ELİF / DİJİTAL TASARIM MASASI</Eyebrow><div><h1>Önce bir fikir.<br/><em>Sonra sizin parçanız.</em></h1><p>Ölçüyü değiştirin. Dokuyu seçin. Mekânınıza nasıl bir parça yakışacağını birlikte düşünmeye başlayalım.</p></div></section>
  <section className="desk-layout wrap" aria-label="Tasarım masası"><div className="desk-paper"><div className="desk-paper-top"><span>ÇALIŞMA NO. 01 / MASA</span><div role="group" aria-label="Çizim görünümü"><button aria-pressed={d.view==='perspective'} onClick={()=>this.change('view','perspective')}>Perspektif</button><button aria-pressed={d.view==='top'} onClick={()=>this.change('view','top')}>Üstten</button></div></div><TableDrawing desk={d}/><div className="desk-paper-bottom"><span>ET / TASARIM ÇALIŞMASI</span><span>Şematik çizim. Teknik üretim projesi değildir.</span></div><div className="desk-live" aria-live="polite">{deskMaterials[d.material].name} <i/> {d.width} × {d.depth} × {d.height} cm <i/> {deskBases[d.base]}</div></div>
  <div className="desk-controls"><Eyebrow>01 / ÖLÇÜYLE BAŞLAYALIM</Eyebrow><h2>Size ne kadar<br/><em>yer açalım?</em></h2>
- {([['width','En',100,240],['depth','Derinlik',50,100],['height','Yükseklik',60,125]] as const).map(([key,label,min,max])=><label className="desk-slider" key={key}><span>{label}<output>{d[key]} <small>cm</small></output></span><input aria-label={'Masa '+label.toLocaleLowerCase('tr')} type="range" min={min} max={max} step="5" value={d[key]} onInput={e=>this.change(key,Number(e.currentTarget.value))}/><span className="slider-bounds"><small>{min} cm</small><small>{max} cm</small></span></label>)}
+ {([['width','En',100,240],['depth','Derinlik',50,100],['height','Yükseklik',60,125]] as const).map(([key,label,min,max])=><div className="desk-slider" key={key}><span>{label}<span className="v5-desk-number"><input key={key+':'+d[key]} type="number" inputMode="numeric" min={min} max={max} step={1} defaultValue={d[key]} aria-label={'Masa '+({width:'eni',depth:'derinliği',height:'yüksekliği'}[key])+', santimetre'} onBlur={e=>{if(!this.commitNumber(key,e.currentTarget.value))e.currentTarget.value=String(d[key]);}} onKeyDown={e=>{if(e.key==='Enter'){e.preventDefault();e.currentTarget.blur();}}}/><small>cm</small></span></span><input aria-label={'Masa '+label.toLocaleLowerCase('tr')} type="range" min={min} max={max} step="1" value={d[key]} onInput={e=>this.change(key,Number(e.currentTarget.value))}/><span className="slider-bounds"><small>{min} cm</small><small>{max} cm</small></span></div>)}
  <div className="desk-choice"><span className="field-label">02 / MALZEME FİKRİ</span><div className="desk-swatches">{Object.entries(deskMaterials).map(([id,m])=><button key={id} aria-pressed={d.material===id} aria-label={m.name+' malzeme fikri'} onClick={()=>this.change('material',id)}><span style={{backgroundImage:`url(${image(m.image)})`}}/>{m.name}</button>)}</div></div>
  <label className="desk-choice"><span className="field-label">03 / TAŞIYICI YAKLAŞIMI</span><select aria-label="Taşıyıcı yaklaşımı" value={d.base} onChange={e=>this.change('base',e.currentTarget.value)}>{Object.entries(deskBases).map(([k,v])=><option key={k} value={k}>{v}</option>)}</select></label>
  <ButtonLink to={'/teklif-al?urun=rota-calisma-masasi&'+deskQuery(d)} navigate={a.navigate}>Bu fikirle devam et</ButtonLink><button className="text-link desk-download" onClick={()=>downloadText('elif-tasarim-fikrim.txt',deskSummary(d))}>Tasarım özetini indir <Icon name="download"/></button>
+ <button className="text-link desk-download" type="button" aria-expanded={this.state.sharing} onClick={()=>this.setState({sharing:!this.state.sharing})}>Tasarım bağlantısını göster <Icon name="diagonal"/></button>
+ {this.state.sharing&&<div className="v5-share-box"><label>Paylaşılabilir tasarım bağlantısı<input type="text" readOnly value={this.shareURL()} aria-label="Paylaşılabilir tasarım bağlantısı" onFocus={e=>e.currentTarget.select()}/></label><button type="button" onClick={async()=>{try{await navigator.clipboard.writeText(this.shareURL());a.notify('Tasarım bağlantısı kopyalandı.');}catch{a.notify('Bağlantı alanını seçip kopyalayabilirsiniz.');}}}>Bağlantıyı kopyala <Icon size={16}/></button><p>Yalnız ölçü ve malzeme fikrini paylaşır. Kişisel bilgi veya sipariş içermez.</p></div>}
  </div></section><div className="wrap desk-disclaimer"><Icon name="info"/><p>Bu çalışma bir görsel fikir aracıdır. Seçenekler üretilebilirlik veya fiyat onayı değildir. Özellikle yükseklik mekanizması, tabla ağırlığı ve montaj uyumu atölye tarafından doğrulanmalıdır. Malzemeler temsili numunelerdir. Bilgi gönderilmez.</p></div>
  </>}
 }
