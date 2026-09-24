@@ -1,0 +1,42 @@
+name: Elif V6 selected image transfer
+on:
+  push:
+    branches: [elif-tasarim-v6-20260924]
+    paths: ['.github/workflows/elif-v6-assets.yml']
+permissions:
+  contents: write
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Read authorized selected assets with fresh expiry
+        shell: python
+        env:
+          ASSET_URL: 'https://sdmntprcentralus.oaiusercontent.com/files/00000000-3c3c-81f5-96dc-fe854f993335/raw?se=2026-09-24T11%3A22%3A51Z&sp=r&sv=2026-02-06&sr=b&scid=54360be8-e57b-594b-8215-8fb34ef02fad&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-24T11%3A04%3A20Z&ske=2026-09-25T11%3A04%3A20Z&sks=b&skv=2026-02-06&sig=hJ3K93DrCSWe3tc1X%2BgzDo/KRXcke4twrb3qINKCzC8%3D'
+        run: |
+          import os,urllib.request,urllib.error,hashlib,zipfile,io,pathlib
+          try:
+            with urllib.request.urlopen(os.environ['ASSET_URL'],timeout=45) as r: data=r.read(20000000)
+          except urllib.error.HTTPError as e:
+            print('TRANSFER FAILURE',e.code,e.read(3000).decode('utf-8','replace'));raise SystemExit(1)
+          assert hashlib.sha256(data).hexdigest()=='5568387948089e607dd47ef4621dfa7711fdf295ec8e45b77294c32d84cd22ea'
+          z=zipfile.ZipFile(io.BytesIO(data));assert len(z.infolist())<150
+          for i in z.infolist():
+            p=pathlib.PurePosixPath(i.filename)
+            assert p.parts[0]=='assets' and not p.is_absolute() and '..' not in p.parts
+          z.extractall('elif-tasarim')
+          print('Verified',len(data),'bytes',len(z.infolist()),'images')
+      - name: Retain selected public image assets on isolated branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name 'Elif Preview Build'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add elif-tasarim/assets
+          git commit -m 'assets(elif): preserve selected high-resolution workshop and concept images'
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:elif-tasarim-v6-20260924
