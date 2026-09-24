@@ -1,0 +1,47 @@
+name: Elif V6 Pinterest reference check
+on:
+  push:
+    branches: [elif-tasarim-v6-20260924]
+    paths: ['.github/workflows/elif-v6-pins.yml']
+permissions:
+  contents: read
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Read supplied public links only
+        shell: python
+        run: |
+          import urllib.request, urllib.error, json, re, concurrent.futures
+          from html import unescape
+          from html.parser import HTMLParser
+          ids=['3T8k8Pwyv','2lc0S9lQO','41JsOJFNf','46g1kWzDY','5Wc0LnUYw','1CZAqZl4m','601hk2fV2','80Ac59zMm','484Ae4eNQ','5mqOqX5LH','5i4CyJrkM','1pLUfH5pe']
+          class Meta(HTMLParser):
+            def __init__(self): super().__init__(); self.values={}
+            def handle_starttag(self,tag,attrs):
+              a=dict(attrs)
+              if tag=='meta' and a.get('property','').startswith('og:'): self.values[a['property']]=a.get('content','')
+          def read(i):
+            result={'id':i,'source':'https://pin.it/'+i,'status':'UNKNOWN'}
+            try:
+              req=urllib.request.Request(result['source'],headers={'User-Agent':'Mozilla/5.0 (compatible; ElifReferenceReview/1.0)'})
+              with urllib.request.urlopen(req,timeout=18) as r:
+                result.update(http_status=r.status,resolved_url=r.url)
+                text=r.read(1500000).decode('utf-8','replace')
+              parser=Meta();parser.feed(text)
+              result['meta']={k:v[:1500] for k,v in parser.values.items()}
+              url=parser.values.get('og:url',result['resolved_url'])
+              m=re.search(r'pinterest\.[^/]+/pin/(\d+)',url)
+              if m: result.update(status='OBSERVED',pin_id=m.group(1),canonical='https://www.pinterest.com/pin/'+m.group(1)+'/')
+              else: result.update(status='UNRESOLVED',note='No canonical public Pin ID. Preserve original external link.')
+            except Exception as e: result.update(status='BLOCKED',reason=str(e)[:200])
+            return result
+          with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool: rows=list(pool.map(read,ids))
+          open('pinterest-v6.json','w').write(json.dumps(rows,ensure_ascii=False,indent=2))
+          print(json.dumps([{'id':x['id'],'status':x['status'],'canonical':x.get('canonical')} for x in rows]))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elif-v6-pinterest-references
+          path: pinterest-v6.json
+          retention-days: 7
