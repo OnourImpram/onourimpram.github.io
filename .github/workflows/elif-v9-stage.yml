@@ -1,0 +1,89 @@
+name: Elif V9 staged atelier review
+on:
+  push:
+    branches: [elif-v9-bilateral-studio-20260924]
+    paths: ['.github/workflows/elif-v9-stage.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Restore baseline and exact prepared sources
+        env:
+          PACKAGE_URL: 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-19d4-81f4-90d5-f285e7b79467/raw?se=2026-09-24T20%3A20%3A07Z&sp=r&sv=2026-02-06&sr=b&scid=fec49f3f-8778-5cbc-b5fc-f136821f4a61&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-24T19%3A23%3A38Z&ske=2026-09-25T19%3A23%3A38Z&sks=b&skv=2026-02-06&sig=uxYUPb0PiBJwbJiQc7fRS9JztsrMqQgHLMjfFYAVfis%3D'
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$PACKAGE_URL"
+          cp -a elif-tasarim/source-v8 elif-v9-work
+          curl --fail --location --silent --show-error --max-time 60 "$PACKAGE_URL" -o /tmp/elif-v9.zip
+          echo '390648de91bc9b69e35914d372d3afbd7a5f3301b381cb093215f96988710e0c  /tmp/elif-v9.zip' | sha256sum -c
+          python - <<'PY'
+          import zipfile,pathlib
+          with zipfile.ZipFile('/tmp/elif-v9.zip') as z:
+              assert len(z.infolist())<500 and sum(i.file_size for i in z.infolist())<5000000
+              for i in z.infolist():
+                  p=pathlib.PurePosixPath(i.filename)
+                  assert not p.is_absolute() and '..' not in p.parts and not p.name.endswith(('.woff','.woff2','.ttf','.otf'))
+                  assert p.parts[0] in {'src','public','tools','tests','docs','README.md','package.json','package-lock.json'}
+                  assert not ((i.external_attr>>16)&0o170000)==0o120000
+              z.extractall('elif-v9-work')
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build and unit checks
+        working-directory: elif-v9-work
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/v9
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm test 2>&1 | tee evidence/v9/units.txt
+          npm run typecheck:core 2>&1 | tee evidence/v9/types.txt
+          npm run build 2>&1 | tee evidence/v9/build.txt
+      - name: Install isolated Chromium
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Actual WebGL and HTTP acceptance
+        working-directory: elif-v9-work
+        env:
+          BASE_URL: http://127.0.0.1:8080/elif-tasarim/
+          WRITE_POSTERS: '1'
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/elif-v9-http
+          ln -s "$PWD/dist" /tmp/elif-v9-http/elif-tasarim
+          python -m http.server 8080 --bind 127.0.0.1 --directory /tmp/elif-v9-http >/tmp/elif-v9-http.log 2>&1 &
+          sleep 2
+          python tests/v9/browser.py 2>&1 | tee evidence/v9/browser.txt
+      - name: Preserve prepared source on isolated branch for review
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test -f elif-v9-work/public/three/atelier-room.mjs
+          test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          mkdir -p elif-tasarim/source-v9
+          rsync -a --exclude=node_modules --exclude=dist --exclude=evidence --exclude=preview --exclude=__pycache__ --exclude=.compiled elif-v9-work/ elif-tasarim/source-v9/
+          git config user.name 'Elif Build'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add elif-tasarim/source-v9
+          git diff --cached --quiet && exit 0
+          git commit -m 'stage(elif): preserve V9 source and rendered studio poster for review'
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:elif-v9-bilateral-studio-20260924
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v9-staging-evidence
+          path: |
+            elif-v9-work/evidence/v9
+            elif-v9-work/dist
+            elif-v9-work/public/assets/devir-studio-v9.webp
+          retention-days: 14
