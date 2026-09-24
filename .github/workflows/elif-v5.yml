@@ -1,0 +1,61 @@
+name: Elif V5 final preview and acceptance
+on:
+  push:
+    branches: [elif-tasarim-v5-20260924]
+    paths: ['elif-v5/**', '.github/workflows/elif-v5.yml']
+permissions:
+  contents: write
+concurrency:
+  group: elif-v5-final
+  cancel-in-progress: false
+jobs:
+  verify-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild from verified V4 and checksummed V5 payload
+        run: |
+          npm install --prefix /tmp/elif-ts --ignore-scripts --no-audit --no-fund typescript@5.8.3
+          NODE_PATH=/tmp/elif-ts/node_modules node elif-v5/hydrate.cjs
+          test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          node --test elif-v5/tests/domain.test.cjs | tee elif-tasarim/verification/v5/domain.txt
+      - name: Install isolated browser tools
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Test actual HTTP site and existing V4 flows
+        env:
+          PREVIEW_URL: http://127.0.0.1:8080/elif-tasarim/
+        run: |
+          python -m http.server 8080 --bind 127.0.0.1 > /tmp/elif-http.log 2>&1 &
+          sleep 2
+          EVIDENCE_DIR=elif-tasarim/verification/v5 python elif-v5/tests/v5/final_qa.py
+          EVIDENCE_DIR=elif-tasarim/verification/v5/v4-regression python elif-v5/tests/v4/acceptance.py
+      - name: Commit only tested preview to isolated branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name 'Elif Preview Build'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add elif-tasarim
+          git commit -m 'build(elif): verified V5 final preview'
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:elif-tasarim-v5-20260924
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v5-preview-and-evidence
+          path: |
+            elif-tasarim
+            elif-v5/tests
+            elif-v5/hydrate.cjs
+          retention-days: 14
