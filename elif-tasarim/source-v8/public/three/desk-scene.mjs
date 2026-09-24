@@ -32,7 +32,7 @@ function shapeRect(w,d,r=.025,cx=0,cz=0){const s=new THREE.Shape(),x=cx-w/2,z=cz
 
 export function createDeskScene(host,initial={},hooks={}){
  if(!host||!host.isConnected)throw Error('3D stage is unavailable');
- let dead=false,visible=true,anim=null,frameCount=0,last=0,needs=true,autoRotate=false,theme='day',dimensionVisible=false;
+ let dead=false,visible=true,anim=null,frameCount=0,last=0,needs=true,autoRotate=false,theme='day',dimensionVisible=false,automaticFrame=true;
  let target=normalized(initial),current={height:target.height,angle:target.angle,drawer:target.drawers?1:0,door:target.door?1:0};
  const scene=new THREE.Scene();scene.background=new THREE.Color('#eee7dc');scene.fog=new THREE.Fog('#eee7dc',10,25);
  const camera=new THREE.PerspectiveCamera(35,1,.05,35);camera.position.set(2.45,1.85,3.1);
@@ -43,7 +43,7 @@ export function createDeskScene(host,initial={},hooks={}){
  const canvas=renderer.domElement;canvas.setAttribute('aria-label','Devir 01. Yükseklik ayarlı, çekmeceli ve döner yan tablalı üç boyutlu konsept masa');canvas.setAttribute('role','img');canvas.tabIndex=0;canvas.dataset.engine='Three.js '+THREE.REVISION;host.appendChild(canvas);
  const controls=new OrbitControls(camera,canvas);controls.target.set(.10,.64,.22);controls.enableDamping=true;controls.dampingFactor=.09;controls.enablePan=false;controls.enableZoom=false;controls.minDistance=2;controls.maxDistance=7;controls.minPolarAngle=.15;controls.maxPolarAngle=Math.PI/2-.07;controls.rotateSpeed=.6;controls.touches.ONE=THREE.TOUCH.ROTATE;controls.touches.TWO=THREE.TOUCH.DOLLY_PAN;
  // Wheel remains ordinary page scrolling, including on mobile.
- canvas.style.touchAction='pan-y';controls.addEventListener('change',invalidate);
+ canvas.style.touchAction='pan-y';controls.addEventListener('change',invalidate);controls.addEventListener('start',()=>{automaticFrame=false});
  const pmrem=new THREE.PMREMGenerator(renderer),envScene=new RoomEnvironment(),env=pmrem.fromScene(envScene,.04);scene.environment=env.texture;scene.environmentIntensity=.55;envScene.dispose();pmrem.dispose();
  const ambient=new THREE.HemisphereLight(0xfff5e5,0x8a8071,1.5);scene.add(ambient);
  const sun=new THREE.DirectionalLight(0xffe8c3,3.7);sun.position.set(-3.8,5.8,3.6);sun.castShadow=true;sun.shadow.mapSize.set(host.clientWidth<650?1024:2048,host.clientWidth<650?1024:2048);sun.shadow.camera.left=-3.4;sun.shadow.camera.right=3.4;sun.shadow.camera.top=3.4;sun.shadow.camera.bottom=-3.4;sun.shadow.camera.near=.5;sun.shadow.camera.far=16;sun.shadow.normalBias=.018;sun.shadow.bias=-.0001;sun.shadow.radius=3;sun.target.position.set(0,.3,0);scene.add(sun,sun.target);
@@ -131,8 +131,23 @@ export function createDeskScene(host,initial={},hooks={}){
  const labelNames=['En','Derinlik','Yükseklik'];const labels=labelNames.map(name=>{const el=document.createElement('span');el.className='v8-dimension';el.setAttribute('aria-hidden','true');host.appendChild(el);return el});
  function line(a,b){const geo=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(...a),new THREE.Vector3(...b)]);const l=new THREE.Line(geo,dmat);dgroup.add(l)}
  function updateDimensions(){while(dgroup.children.length){const ch=dgroup.children.pop();ch.geometry?.dispose()}const H=current.height/100;line([-W/2,H+.14,-D/2-.06],[W/2,H+.14,-D/2-.06]);for(const x of [-W/2,W/2])line([x,H+.10,-D/2-.06],[x,H+.18,-D/2-.06]);line([W/2+.13,H+.07,-D/2],[W/2+.13,H+.07,D/2]);line([-W/2-.15,.01,0],[-W/2-.15,H,0]);labels[0].textContent=target.width+' cm';labels[1].textContent=target.depth+' cm';labels[2].textContent=Math.round(current.height)+' cm';}
+ function frameModel(){
+  if(!model||!automaticFrame)return;
+  model.updateMatrixWorld(true);
+  const box3=new THREE.Box3().setFromObject(model);box3.max.y=Math.max(box3.max.y,1.28);
+  const center=box3.getCenter(new THREE.Vector3()),dir=camera.position.clone().sub(controls.target).normalize();
+  const right=new THREE.Vector3().crossVectors(camera.up,dir);if(right.lengthSq()<.000001)right.set(1,0,0);right.normalize();
+  const up=new THREE.Vector3().crossVectors(dir,right).normalize(),tv=Math.tan(THREE.MathUtils.degToRad(camera.fov)/2),th=tv*camera.aspect;
+  let distance=2.0;
+  for(const x of [box3.min.x,box3.max.x])for(const y of [box3.min.y,box3.max.y])for(const z of [box3.min.z,box3.max.z]){
+   const v=new THREE.Vector3(x,y,z).sub(center),front=v.dot(dir);
+   distance=Math.max(distance,front+Math.abs(v.dot(right))/th,front+Math.abs(v.dot(up))/tv);
+  }
+  controls.target.copy(center);camera.position.copy(center).addScaledVector(dir,distance*1.10);controls.update();
+ }
+ function screenBounds(){model.updateMatrixWorld(true);camera.updateMatrixWorld(true);const b=new THREE.Box3().setFromObject(model),out={minX:Infinity,maxX:-Infinity,minY:Infinity,maxY:-Infinity};for(const x of [b.min.x,b.max.x])for(const y of [b.min.y,b.max.y])for(const z of [b.min.z,b.max.z]){const p=new THREE.Vector3(x,y,z).project(camera);out.minX=Math.min(out.minX,p.x);out.maxX=Math.max(out.maxX,p.x);out.minY=Math.min(out.minY,p.y);out.maxY=Math.max(out.maxY,p.y);}return out;}
  function projectLabels(){const H=current.height/100,positions=[[0,H+.20,-D/2-.06],[W/2+.18,H+.11,0],[-W/2-.18,H/2,0]];dgroup.visible=dimensionVisible;labels.forEach((el,i)=>{const v=new THREE.Vector3(...positions[i]).project(camera);el.style.display=dimensionVisible&&v.z<1?'block':'none';el.style.left=(v.x*.5+.5)*100+'%';el.style.top=(-v.y*.5+.5)*100+'%';})}
- function apply(){if(!upper)return;const h=current.height/100;upper.position.y=h;for(const post of posts){const len=Math.max(.05,h-.59);post.scale.y=len;post.position.y=.55+len/2;}wing.rotation.y=current.angle*Math.PI/180;mainDrawers.forEach((g,i)=>g.position.z=D/2-.012+current.drawer*(i===1?.30:.15));cabinetDrawer.position.z=Math.max(.51,D-.14)/2+current.drawer*.23;door.rotation.y=-current.door*Math.PI*.54;updateDimensions();}
+ function apply(){if(!upper)return;const h=current.height/100;upper.position.y=h;for(const post of posts){const len=Math.max(.05,h-.59);post.scale.y=len;post.position.y=.55+len/2;}wing.rotation.y=current.angle*Math.PI/180;mainDrawers.forEach((g,i)=>g.position.z=D/2-.012+current.drawer*(i===1?.30:.15));cabinetDrawer.position.z=Math.max(.51,D-.14)/2+current.drawer*.23;door.rotation.y=-current.door*Math.PI*.54;updateDimensions();frameModel();}
  function render(){if(dead||!visible||document.hidden)return;controls.update();projectLabels();renderer.render(scene,camera);frameCount++;}
  function tick(t){anim=null;if(dead||!visible||document.hidden)return;const dt=Math.min(.5,Math.max(.001,(t-last)/1000||.016));last=t;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,alpha=reduced?1:1-Math.exp(-dt*9);
   const targets={height:target.height,angle:target.angle,drawer:target.drawers?1:0,door:target.door?1:0};let moving=false;for(const key of Object.keys(targets)){const diff=targets[key]-current[key];if(Math.abs(diff)>.001){current[key]+=diff*alpha;moving=true}else current[key]=targets[key]}
@@ -140,32 +155,32 @@ export function createDeskScene(host,initial={},hooks={}){
   needs=false;render();if((moving||needs)&&!anim)anim=requestAnimationFrame(tick);
  }
  function invalidate(){needs=true;if(!dead&&visible&&!document.hidden&&!anim)anim=requestAnimationFrame(tick)}
- function resize(){if(dead)return;const w=Math.max(host.clientWidth,1),h=Math.max(host.clientHeight,1);camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h,false);invalidate()}
+ function resize(){if(dead)return;const w=Math.max(host.clientWidth,1),h=Math.max(host.clientHeight,1);camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h,false);frameModel();invalidate()}
  const ro=new ResizeObserver(resize);ro.observe(host);
  const io=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible){last=performance.now();invalidate()}else if(anim){cancelAnimationFrame(anim);anim=null}},{threshold:.01});io.observe(host);
  const onVisibility=()=>{if(document.hidden&&anim){cancelAnimationFrame(anim);anim=null}else invalidate()};document.addEventListener('visibilitychange',onVisibility);
  const onLost=e=>{e.preventDefault();if(anim)cancelAnimationFrame(anim);anim=null;hooks.status?.('lost');};canvas.addEventListener('webglcontextlost',onLost);
  const onRestored=()=>{hooks.status?.('ready');invalidate()};canvas.addEventListener('webglcontextrestored',onRestored);
- function view(name='perspective'){
+ function view(name='perspective'){automaticFrame=name!=='detail';
   controls.target.set(.08,.64,.15);
   const wide=W>2?1.10:1;
   if(name==='top'){camera.position.set(.08,4.8*wide,.151);controls.target.y=.3;}
   else if(name==='front')camera.position.set(.1,1.25,4.1*wide);
   else if(name==='detail'){camera.position.set(1.5,1.3,1.9);controls.target.set(W/2-.24,.55,.15);}
   else camera.position.set(2.45*wide,1.85*wide,3.1*wide);
-  controls.update();invalidate();
+  frameModel();controls.update();invalidate();
  }
  const onKey=e=>{if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','-','0'].includes(e.key)){e.preventDefault();if(e.key==='0')view();else if(e.key==='+'||e.key==='-')zoom(e.key==='+'?.90:1.10);else{const offset=camera.position.clone().sub(controls.target);if(e.key==='ArrowLeft'||e.key==='ArrowRight')offset.applyAxisAngle(new THREE.Vector3(0,1,0),e.key==='ArrowLeft'?.16:-.16);else offset.y=Math.min(5,Math.max(.3,offset.y+(e.key==='ArrowUp'?.15:-.15)));camera.position.copy(controls.target).add(offset);controls.update();invalidate()}}};canvas.addEventListener('keydown',onKey);
- function zoom(f){const v=camera.position.clone().sub(controls.target);const len=THREE.MathUtils.clamp(v.length()*f,2,7);v.setLength(len);camera.position.copy(controls.target).add(v);invalidate()}
+ function zoom(f){automaticFrame=false;const v=camera.position.clone().sub(controls.target);const len=THREE.MathUtils.clamp(v.length()*f,2,7);v.setLength(len);camera.position.copy(controls.target).add(v);invalidate()}
  build();resize();view();render();hooks.status?.('ready');
  const api={
   update(next){if(!anim)last=performance.now();const old=target;target=normalized(next);if(old.width!==target.width||old.depth!==target.depth)build();else if(old.material!==target.material)woodMeshes.forEach(m=>m.material=woods[target.material]);invalidate()},
   setView:view,zoom,
   dimensions(show){dimensionVisible=!!show;invalidate()},
-  rotate(on){autoRotate=!!on;invalidate()},
+  rotate(on){automaticFrame=false;autoRotate=!!on;invalidate()},
   light(mode){theme=mode;const dusk=mode==='evening';scene.background.set(dusk?'#e0d1bd':'#eee7dc');scene.fog.color.copy(scene.background);floorMat.color.set(dusk?'#d9cbb4':'#e6dfd3');sun.color.set(dusk?0xffd497:0xffe8c3);sun.intensity=dusk?3.9:3.7;ambient.intensity=dusk?1.12:1.5;renderer.toneMappingExposure=dusk?.99:1.1;invalidate()},
   snapshot(width=1920,height=1280){if(dead)throw Error('Scene disposed');const w=host.clientWidth,h=host.clientHeight,ratio=renderer.getPixelRatio();renderer.setPixelRatio(1);renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();renderer.render(scene,camera);const data=canvas.toDataURL('image/png');renderer.setPixelRatio(ratio);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();invalidate();return data},
-  inspect(){return {engine:'Three.js',revision:THREE.REVISION,frameCount,visible,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,config:{...target},geometry:{mainTopY:upper.position.y,fixedPanelY:model.getObjectByName('sol-ahsap-tasiyici').position.y,returnTopY:wing.position.y,wingAngle:wing.rotation.y,cabinetDrawerZ:cabinetDrawer.position.z,mainDrawerZ:mainDrawers[1].position.z,doorAngle:door.rotation.y},camera:camera.position.toArray(),material:target.material,theme,dimensions:dimensionVisible,contextLost:renderer.getContext().isContextLost(),gpuTextures:renderer.info.memory.textures}},
+  inspect(){return {engine:'Three.js',revision:THREE.REVISION,frameCount,visible,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,config:{...target},geometry:{mainTopY:upper.position.y,fixedPanelY:model.getObjectByName('sol-ahsap-tasiyici').position.y,returnTopY:wing.position.y,wingAngle:wing.rotation.y,cabinetDrawerZ:cabinetDrawer.position.z,mainDrawerZ:mainDrawers[1].position.z,doorAngle:door.rotation.y},camera:camera.position.toArray(),material:target.material,theme,dimensions:dimensionVisible,contextLost:renderer.getContext().isContextLost(),gpuTextures:renderer.info.memory.textures,framing:screenBounds()}},
   dispose(){if(dead)return;dead=true;if(anim)cancelAnimationFrame(anim);ro.disconnect();io.disconnect();document.removeEventListener('visibilitychange',onVisibility);canvas.removeEventListener('keydown',onKey);canvas.removeEventListener('webglcontextlost',onLost);canvas.removeEventListener('webglcontextrestored',onRestored);controls.dispose();disposeModel();scene.traverse(o=>o.geometry?.dispose());for(const mat of allMaterials){mat.map?.dispose();mat.dispose()}floorMat.dispose();shadowTex.dispose();contact.material.dispose();ring.material.dispose();dmat.dispose();env.dispose();renderer.dispose();labels.forEach(el=>el.remove());canvas.remove();host.__elif3D=null;}
  };
  host.__elif3D=api;return api;

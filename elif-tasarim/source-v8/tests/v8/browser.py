@@ -28,6 +28,7 @@ with sync_playwright() as p:
   if label=='Çalışma yüksekliği': page.wait_for_function("Math.abs(document.querySelector('.v8-canvas-host').__elif3D.inspect().geometry.mainTopY - "+str(value/100)+")<.002",timeout=30000)
   elif label=='Yan tabla açısı': page.wait_for_function("Math.abs(document.querySelector('.v8-canvas-host').__elif3D.inspect().geometry.wingAngle - "+str(value*3.141592653589793/180)+")<.005",timeout=30000)
  s=inspect();check('Real Three.js WebGL geometry renders',s['engine']=='Three.js' and s['revision']=='185' and s['triangles']>2000 and s['drawCalls']>20,s)
+ check('Default camera contains the entire desk geometry',all(abs(v)<=1.001 for v in s['framing'].values()),s['framing'])
  first=page.locator('.v8-canvas-wrap').screenshot(path=str(OUT/'scene-initial.png'))
  snap('devir-poster')
  slide('Çalışma yüksekliği',115);s=inspect();check('Main desk rises while base remains fixed',abs(s['geometry']['mainTopY']-1.15)<.004 and s['geometry']['fixedPanelY']==.305 and s['geometry']['returnTopY']==.695,s['geometry'])
