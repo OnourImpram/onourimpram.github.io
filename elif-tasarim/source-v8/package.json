@@ -1,0 +1,20 @@
+{
+  "name": "elif-tasarim-v8",
+  "version": "0.8.0",
+  "private": true,
+  "description": "Elif Tasarım V8. Real Three.js articulated concept desk and preserved V7 atelier portfolio.",
+  "scripts": {
+    "build": "node tools/build-v8.cjs",
+    "test": "node tools/compile-domain.cjs && node --test tests/domain.test.cjs tests/v7/unit.cjs tests/v8/unit.cjs tests/v8/build.test.cjs tests/v7/server.test.cjs",
+    "typecheck:core": "tsc --strict --noEmit --target ES2020 --module commonjs --lib ES2020,DOM src/lib/project.ts src/lib/upload.ts src/lib/zip.ts src/lib/selections.ts",
+    "serve": "node tools/serve-static.cjs dist 8000",
+    "test:browser": "python tests/v8/browser.py",
+    "verify:dist": "node tools/verify-v8.cjs"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

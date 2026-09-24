@@ -329,7 +329,7 @@ class App extends react_1.Component {
             (0, react_1.createElement)("a", { href: "#main-content", className: "skip-link", onClick: e => { e.preventDefault(); document.getElementById('main-content')?.focus(); } }, "\u0130\u00E7eri\u011Fe ge\u00E7"),
             (0, react_1.createElement)("div", { className: "preview-bar" },
                 (0, react_1.createElement)("span", null,
-                    "V7 / TASARIM \u00D6N\u0130ZLEMES\u0130 ",
+                    "V8 / TASARIM \u00D6N\u0130ZLEMES\u0130 ",
                     (0, react_1.createElement)("i", null),
                     " Ger\u00E7ek i\u015F ar\u015Fivi, do\u011Frudan ileti\u015Fim"),
                 (0, react_1.createElement)("button", { onClick: () => this.setState({ info: true }) },
@@ -403,12 +403,12 @@ class App extends react_1.Component {
                         "elif tasar\u0131m",
                         (0, react_1.createElement)("span", null, "AT\u00D6LYE")),
                     (0, react_1.createElement)("div", { className: "footer-bottom" },
-                        (0, react_1.createElement)("span", null, "EL\u0130F TASARIM \u00B7 V7 / 2026"),
+                        (0, react_1.createElement)("span", null, "EL\u0130F TASARIM \u00B7 V8 / 2026"),
                         (0, react_1.createElement)("div", null,
                             nav('/gizlilik', 'Gizlilik ve dış servisler'),
                             (0, react_1.createElement)("button", { onClick: () => this.setState({ info: true }) }, "Cihaz kay\u0131tlar\u0131n\u0131 y\u00F6net")),
                         (0, react_1.createElement)("span", null, "\u00D6zenle d\u00FC\u015F\u00FCn\u00FCl\u00FCr. At\u00F6lyede \u015Fekillenir.")),
-                    (0, react_1.createElement)("p", { className: "footer-disclosure" }, "At\u00F6lye ar\u015Fivi, uygulama a\u015Famas\u0131, yapay zek\u00E2 konsepti ve d\u0131\u015F referanslar ayr\u0131 etiketlidir. Bu bir tasar\u0131m \u00F6nizlemesidir. Sitede \u00F6deme veya otomatik talep kayd\u0131 yoktur. WhatsApp mesaj\u0131 harici uygulamada sizin taraf\u0131n\u0131zdan g\u00F6nderilir."))),
+                    (0, react_1.createElement)("p", { className: "footer-disclosure" }, "At\u00F6lye ar\u015Fivi, uygulama a\u015Famas\u0131, konsept model ve d\u0131\u015F referanslar ayr\u0131 etiketlidir. Bu bir tasar\u0131m \u00F6nizlemesidir. Sitede \u00F6deme veya otomatik talep kayd\u0131 yoktur. WhatsApp mesaj\u0131 harici uygulamada sizin taraf\u0131n\u0131zdan g\u00F6nderilir."))),
             s.menu && (0, react_1.createElement)(ui_1.Dialog, { title: "Elif Tasar\u0131m", onClose: () => this.setState({ menu: false }) },
                 (0, react_1.createElement)("nav", { className: "mobile-links", "aria-label": "Mobil men\u00FC" }, [...portfolio_1.mainNavigation, ['/modelini-getir', 'Kendi Modelinizi Getirin'], ['/calisma-dosyam', 'İlham Dosyanız'], ['/tasarim-masasi', 'Tasarım Masası']].map(([p, label], i) => (0, react_1.createElement)(ui_1.Link, { key: p, to: p, navigate: this.navigate },
                     (0, react_1.createElement)("span", null, String(i + 1).padStart(2, '0')),
@@ -429,13 +429,13 @@ class App extends react_1.Component {
                             (0, react_1.createElement)("small", null,
                                 (0, portfolio_1.categoryName)(x.category),
                                 " \u00B7 ",
-                                x.kind === 'concept' ? 'Yapay zekâ konsepti' : x.kind === 'reference' ? 'Pinterest referansı' : 'Atölye arşivi')),
+                                x.kind === 'concept' ? 'Konsept model' : x.kind === 'reference' ? 'Pinterest referansı' : 'Atölye arşivi')),
                         (0, react_1.createElement)(ui_1.Icon, { name: "diagonal" }))),
                     !results.length && (0, react_1.createElement)("p", { className: "empty-state" }, "Sonu\u00E7 bulunamad\u0131. Ba\u015Fka bir kelime deneyin.")),
                 (0, react_1.createElement)(ui_1.TextLink, { to: '/arama?q=' + encodeURIComponent(s.searchQuery.trim()), navigate: this.navigate }, "T\u00FCm sonu\u00E7lar\u0131 g\u00F6r")),
             s.info && (0, react_1.createElement)(ui_1.Dialog, { title: "Bilgi ve cihaz kay\u0131tlar\u0131", onClose: () => this.setState({ info: false }) },
                 (0, react_1.createElement)("div", { className: "info-dialog" },
-                    (0, react_1.createElement)(ui_1.Eyebrow, null, "V7 / \u015EEFFAF B\u0130R BA\u015ELANGI\u00C7"),
+                    (0, react_1.createElement)(ui_1.Eyebrow, null, "V8 / \u015EEFFAF B\u0130R BA\u015ELANGI\u00C7"),
                     (0, react_1.createElement)("p", null,
                         "Yusuf Usta'n\u0131n kullan\u0131c\u0131 taraf\u0131ndan payla\u015F\u0131lan i\u015F telefonu ",
                         project_1.business.display,
@@ -479,6 +479,201 @@ class App extends react_1.Component {
     }
 }
 exports.default = App;
+
+},
+"src/components/DeskExperience":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DeskExperience = void 0;
+const react_1 = require("react");
+const ui_1 = require("./ui");
+const desk_v8_1 = require("../lib/desk-v8");
+const project_1 = require("../lib/project");
+const domain_1 = require("../lib/domain");
+let runtimePromise = null;
+function loadRuntime() { const w = window; if (w.ElifDesk3D)
+    return Promise.resolve(w.ElifDesk3D); if (runtimePromise)
+    return runtimePromise; runtimePromise = new Promise((resolve, reject) => { const script = document.createElement('script'); script.type = 'module'; script.src = (w.__ELIF_BASE__ || '/elif-tasarim') + '/three/desk-scene.mjs'; script.onload = () => w.ElifDesk3D ? resolve(w.ElifDesk3D) : reject(Error('3D initialization failed')); script.onerror = () => { runtimePromise = null; script.remove(); reject(Error('3D runtime unavailable')); }; document.head.appendChild(script); }); return runtimePromise; }
+class DeskExperience extends react_1.Component {
+    constructor(p) {
+        super(p);
+        this.host = null;
+        this.root = null;
+        this.engine = null;
+        this.alive = true;
+        this.start = async () => { if (this.state.status === 'loading' || this.engine)
+            return; this.setState({ status: 'loading' }); try {
+            const runtime = await loadRuntime();
+            if (!this.alive || !this.host)
+                return;
+            this.engine = runtime.createDeskScene(this.host, this.state.config, { status: (status) => { if (this.alive)
+                    this.setState({ status }); } });
+            this.setState({ status: 'ready' });
+        }
+        catch {
+            if (this.alive)
+                this.setState({ status: 'unavailable' });
+        } };
+        this.change = (patch) => { const config = (0, desk_v8_1.normalizeStudio)({ ...this.state.config, ...patch }); this.setState({ config }, () => this.engine?.update(config)); };
+        this.setView = (view) => { this.setState({ view }); this.engine?.setView(view); };
+        this.handoff = () => { const s = this.state.config, d = project_1.projectStore.get(); project_1.projectStore.patch({ category: 'ozel-tasarim', width: String(s.width), depth: String(s.depth), height: String(s.height), unit: 'cm', unknown: false, dimensions: `${s.width} × ${s.depth} × ${s.height} cm`, material: desk_v8_1.studioMaterials[s.material].name, details: (0, desk_v8_1.studioSummary)(s), note: d.note || 'Devir 01 çekmeceli, döner yan tablalı çalışma masası konseptini alanıma göre birlikte değerlendirmek istiyorum.' }); this.props.navigate('/modelini-getir'); };
+        this.snapshot = () => { if (!this.engine)
+            return; try {
+            const url = this.engine.snapshot(1920, 1280), a = document.createElement('a');
+            a.href = url;
+            a.download = 'Elif-Devir-01-Konsept-Model.png';
+            a.click();
+            this.props.notify('Görüntü hazırlandı. Konsept modeldir, teknik imalat çizimi değildir.');
+        }
+        catch {
+            this.props.notify('Görüntü bu cihazda kaydedilemedi. Ölçü özetinizi indirebilirsiniz.');
+        } };
+        this.shareURL = () => { const w = typeof window !== 'undefined' ? window : {}; return (w.__ELIF_SITE_URL__ || 'https://onourimpram.github.io/elif-tasarim').replace(/\/$/, '') + '/tasarim-masasi/?' + (0, desk_v8_1.studioQuery)(this.state.config); };
+        this.field = (key, label, min, max, unit = 'cm') => { const v = this.state.config[key]; return (0, react_1.createElement)("div", { className: "v8-field", key: key },
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)("label", { htmlFor: 'v8-' + (this.props.compact ? 'home-' : 'full-') + key }, label),
+                (0, react_1.createElement)("span", null,
+                    (0, react_1.createElement)("input", { type: "number", inputMode: "numeric", value: v, min: min, max: max, step: "1", "aria-label": label + ', sayı girişi', onChange: e => { const raw = e.currentTarget.value; if (/^\d+$/.test(raw) && +raw >= min && +raw <= max)
+                            this.change({ [key]: +raw });
+                        else
+                            e.currentTarget.value = String(v); } }),
+                    unit)),
+            (0, react_1.createElement)("input", { id: 'v8-' + (this.props.compact ? 'home-' : 'full-') + key, type: "range", "aria-label": label, min: min, max: max, value: v, step: "1", onInput: e => this.change({ [key]: +e.currentTarget.value }) }),
+            (0, react_1.createElement)("div", { className: "v8-bounds" },
+                (0, react_1.createElement)("span", null,
+                    min,
+                    " ",
+                    unit),
+                (0, react_1.createElement)("span", null,
+                    max,
+                    " ",
+                    unit))); };
+        this.state = { config: p.query ? (0, desk_v8_1.studioFromQuery)(p.query) : { ...desk_v8_1.defaultStudio }, status: 'poster', tab: 'motion', dimensions: false, view: 'perspective', light: 'day', share: false, rotating: false };
+    }
+    componentDidMount() { if (!this.props.compact)
+        this.start(); }
+    componentWillUnmount() { this.alive = false; this.engine?.dispose(); this.engine = null; }
+    render() {
+        const { config: c, status, tab, dimensions, view, light } = this.state, p = this.props, ready = status === 'ready';
+        return (0, react_1.createElement)("div", { ref: e => this.root = e, className: 'v8-experience ' + (p.compact ? 'v8-compact' : 'v8-full'), "data-studio": p.compact ? 'home' : 'full', "data-three-status": status },
+            (0, react_1.createElement)("div", { className: "v8-story" },
+                (0, react_1.createElement)(ui_1.Eyebrow, null, p.compact ? '05 / YAŞAYAN TASARIM MASASI' : 'ELİF TASARIM / DEVİR 01'),
+                p.compact ? (0, react_1.createElement)("h2", null,
+                    "\u00C7al\u0131\u015Fma alan\u0131n\u0131z,",
+                    (0, react_1.createElement)("br", null),
+                    (0, react_1.createElement)("em", null, "sizinle de\u011Fi\u015Fsin.")) : (0, react_1.createElement)("h1", null,
+                    "Bir masa.",
+                    (0, react_1.createElement)("br", null),
+                    (0, react_1.createElement)("em", null, "Bir\u00E7ok olas\u0131l\u0131k.")),
+                (0, react_1.createElement)("p", { className: "v8-lede" }, "Birbirinden ba\u011F\u0131ms\u0131z hareket eden iki y\u00FCzey. Elinizin alt\u0131nda \u00E7ekmeceler. \u00D6l\u00E7\u00FCn\u00FCze, ritminize ve mek\u00E2n\u0131n\u0131za g\u00F6re yeniden d\u00FC\u015F\u00FCn\u00FClm\u00FC\u015F bir \u00E7al\u0131\u015Fma masas\u0131."),
+                (0, react_1.createElement)("div", { className: "v8-design-note" },
+                    (0, react_1.createElement)("span", { className: "v8-series-number" }, "01"),
+                    (0, react_1.createElement)("div", null,
+                        (0, react_1.createElement)("strong", null, "DEV\u0130R"),
+                        (0, react_1.createElement)("span", null, "Y\u00DCKSEKL\u0130K AYARLI \u00C7ALI\u015EMA MASASI")),
+                    (0, react_1.createElement)("span", { className: "v8-concept-label" }, "Konsept model")),
+                (0, react_1.createElement)("div", { className: "v8-control-tabs", role: "tablist", "aria-label": "Tasar\u0131m kontrol grubu" }, [['motion', 'Hareketi keşfet'], ['size', 'Ölçünü belirle']].map(([id, name]) => (0, react_1.createElement)("button", { type: "button", role: "tab", key: id, "aria-selected": tab === id, onClick: () => this.setState({ tab: id }) }, name))),
+                (0, react_1.createElement)("div", { className: "v8-controls", role: "tabpanel", "aria-label": tab === 'motion' ? 'Hareket kontrolleri' : 'Ölçü kontrolleri' }, tab === 'motion' ? (0, react_1.createElement)(react_1.Fragment, null,
+                    this.field('height', 'Çalışma yüksekliği', 80, 125),
+                    this.field('angle', 'Yan tabla açısı', 0, 360, '°'),
+                    (0, react_1.createElement)("div", { className: "v8-presets", "aria-label": "Masa yerle\u015Fimleri" }, [['Toplu', 0], ['L düzen', 90], ['Açık', 180]].map(([label, a]) => (0, react_1.createElement)("button", { type: "button", key: label, "aria-pressed": c.angle === a, onClick: () => this.change({ angle: a }) }, label))),
+                    (0, react_1.createElement)("div", { className: "v8-toggle-row" },
+                        (0, react_1.createElement)("button", { type: "button", "aria-pressed": c.drawers, onClick: () => this.change({ drawers: !c.drawers }) },
+                            (0, react_1.createElement)(ui_1.Icon, { name: "plus", size: 16 }),
+                            c.drawers ? 'Çekmeceleri kapat' : 'Çekmeceleri aç'),
+                        (0, react_1.createElement)("button", { type: "button", "aria-pressed": c.door, onClick: () => this.change({ door: !c.door }) },
+                            (0, react_1.createElement)(ui_1.Icon, { name: "grid", size: 16 }),
+                            c.door ? 'Dolabı kapat' : 'Dolabı aç'))) : (0, react_1.createElement)(react_1.Fragment, null,
+                    this.field('width', 'Masa eni', 120, 220),
+                    this.field('depth', 'Masa derinliği', 65, 95),
+                    (0, react_1.createElement)("p", { className: "v8-control-note" }, "Bu aral\u0131klar g\u00F6rsel ke\u015Fif i\u00E7indir. Ger\u00E7ek \u00F6l\u00E7\u00FC ve mekanizma, \u00FCretim \u00F6ncesi birlikte netle\u015Ftirilir."))),
+                (0, react_1.createElement)("div", { className: "v8-materials" },
+                    (0, react_1.createElement)("span", null, "Y\u00DCZEY F\u0130KR\u0130"),
+                    (0, react_1.createElement)("div", { role: "group", "aria-label": "Ah\u015Fap y\u00FCzey se\u00E7enekleri" }, Object.entries(desk_v8_1.studioMaterials).map(([id, m]) => (0, react_1.createElement)("button", { type: "button", key: id, "aria-pressed": c.material === id, "aria-label": m.name, onClick: () => this.change({ material: id }) },
+                        (0, react_1.createElement)("i", { className: 'v8-swatch v8-' + id, style: { backgroundColor: m.color } }),
+                        (0, react_1.createElement)("span", null, m.name))))),
+                (0, react_1.createElement)("div", { className: "v8-primary-action" },
+                    p.compact ? (0, react_1.createElement)(ui_1.Link, { className: "button", to: '/tasarim-masasi?' + (0, desk_v8_1.studioQuery)(c), navigate: p.navigate },
+                        "St\u00FCdyoda devam et ",
+                        (0, react_1.createElement)(ui_1.Icon, null)) : (0, react_1.createElement)("button", { type: "button", className: "button", onClick: this.handoff },
+                        "Bu tasar\u0131m\u0131 Yusuf Usta ile konu\u015F ",
+                        (0, react_1.createElement)(ui_1.Icon, null)),
+                    (0, react_1.createElement)("span", null, "\u00D6l\u00E7\u00FC, malzeme ve hareket alan\u0131n\u0131 birlikte de\u011Ferlendirelim."))),
+            (0, react_1.createElement)("div", { className: "v8-showroom" },
+                (0, react_1.createElement)("div", { className: "v8-viewer-top" },
+                    (0, react_1.createElement)("div", null,
+                        (0, react_1.createElement)("span", { className: "v8-live-dot" }),
+                        (0, react_1.createElement)("span", null, ready ? 'CANLI 3D STÜDYO' : 'İNTERAKTİF TASARIM STÜDYOSU')),
+                    (0, react_1.createElement)("span", null, "EL\u0130F / DEV\u0130R 01")),
+                (0, react_1.createElement)("div", { className: "v8-canvas-wrap" },
+                    (0, react_1.createElement)("div", { className: "v8-canvas-host", ref: e => this.host = e }),
+                    !ready && (0, react_1.createElement)("div", { className: "v8-poster" },
+                        (0, react_1.createElement)("img", { src: (0, ui_1.image)('devir-poster.webp'), alt: "\u00C7ekmeceli ana tabla, dolap ve d\u00F6ner yan y\u00FCzeyli Devir 01 konsept \u00E7al\u0131\u015Fma masas\u0131" }),
+                        (0, react_1.createElement)("div", { className: "v8-poster-action" }, status === 'poster' ? (0, react_1.createElement)("button", { type: "button", "aria-label": "3D deneyimi ba\u015Flat", onClick: this.start },
+                            (0, react_1.createElement)("span", { className: "v8-cube", "aria-hidden": "true" }, "\u25C7"),
+                            "3D deneyimi ba\u015Flat ",
+                            (0, react_1.createElement)(ui_1.Icon, { size: 18 })) : status === 'loading' ? (0, react_1.createElement)("p", { role: "status" }, "Malzemeler ve \u0131\u015F\u0131k haz\u0131rlan\u0131yor.") : (0, react_1.createElement)(react_1.Fragment, null,
+                            (0, react_1.createElement)("p", { role: "status" }, status === 'lost' ? '3D görüntü bağlantısı kesildi.' : 'Bu cihazda 3D görünüm açılamadı.'),
+                            (0, react_1.createElement)("small", null, "\u00D6l\u00E7\u00FC ve malzeme se\u00E7iminiz korunur. Tasar\u0131m \u00F6zetiyle devam edebilirsiniz.")))),
+                    (0, react_1.createElement)("div", { className: "v8-view-tabs", role: "group", "aria-label": "Kamera a\u00E7\u0131lar\u0131" }, [['perspective', 'Perspektif'], ['front', 'Önden'], ['top', 'Üstten']].map(([id, name]) => (0, react_1.createElement)("button", { type: "button", key: id, disabled: !ready, "aria-pressed": view === id, onClick: () => this.setView(id) }, name))),
+                    (0, react_1.createElement)("div", { className: "v8-view-tools" },
+                        (0, react_1.createElement)("button", { type: "button", disabled: !ready, "aria-label": "Yak\u0131nla\u015Ft\u0131r", onClick: () => this.engine?.zoom(.88) },
+                            (0, react_1.createElement)(ui_1.Icon, { name: "plus" })),
+                        (0, react_1.createElement)("button", { type: "button", disabled: !ready, "aria-label": "Uzakla\u015Ft\u0131r", onClick: () => this.engine?.zoom(1.12) },
+                            (0, react_1.createElement)(ui_1.Icon, { name: "minus" })),
+                        (0, react_1.createElement)("button", { type: "button", disabled: !ready, "aria-label": "G\u00F6r\u00FCn\u00FCm\u00FC s\u0131f\u0131rla", onClick: () => this.setView('perspective') }, "\u21BA"),
+                        (0, react_1.createElement)("button", { type: "button", disabled: !ready, "aria-label": "\u00D6l\u00E7\u00FC \u00E7izgilerini g\u00F6ster", "aria-pressed": dimensions, onClick: () => this.setState({ dimensions: !dimensions }, () => this.engine?.dimensions(this.state.dimensions)) },
+                            (0, react_1.createElement)(ui_1.Icon, { name: "ruler" }))),
+                    (0, react_1.createElement)("span", { className: "v8-canvas-hint" }, ready ? 'Sürükleyerek döndürün. Klavyede ok tuşlarını kullanın.' : 'Gerçek zamanlı üç boyutlu model'),
+                    (0, react_1.createElement)("span", { className: "v8-scene-label" }, "Konsept model")),
+                (0, react_1.createElement)("div", { className: "v8-viewer-bottom" },
+                    (0, react_1.createElement)("div", null,
+                        (0, react_1.createElement)("span", null, "SE\u00C7T\u0130\u011E\u0130N\u0130Z \u00D6L\u00C7\u00DC"),
+                        (0, react_1.createElement)("strong", null,
+                            c.width,
+                            " ",
+                            (0, react_1.createElement)("i", null, "\u00D7"),
+                            " ",
+                            c.depth,
+                            " ",
+                            (0, react_1.createElement)("i", null, "\u00D7"),
+                            " ",
+                            c.height,
+                            (0, react_1.createElement)("small", null, " cm"))),
+                    (0, react_1.createElement)("div", { className: "v8-light-options", role: "group", "aria-label": "St\u00FCdyo \u0131\u015F\u0131\u011F\u0131" },
+                        (0, react_1.createElement)("button", { type: "button", "aria-pressed": light === 'day', onClick: () => this.setState({ light: 'day' }, () => this.engine?.light('day')) }, "G\u00FCn \u0131\u015F\u0131\u011F\u0131"),
+                        (0, react_1.createElement)("button", { type: "button", "aria-pressed": light === 'evening', onClick: () => this.setState({ light: 'evening' }, () => this.engine?.light('evening')) }, "Ak\u015Fam")),
+                    (0, react_1.createElement)("button", { type: "button", disabled: !ready, className: "v8-export", onClick: this.snapshot },
+                        (0, react_1.createElement)(ui_1.Icon, { name: "download", size: 19 }),
+                        (0, react_1.createElement)("span", null, "G\u00F6r\u00FCn\u00FCm\u00FC kaydet"))),
+                (0, react_1.createElement)("div", { className: "v8-experience-foot" },
+                    (0, react_1.createElement)("span", null,
+                        (0, react_1.createElement)(ui_1.Icon, { name: "ruler", size: 16 }),
+                        "\u00D6l\u00E7\u00FCye g\u00F6re de\u011Fi\u015Fen geometri"),
+                    (0, react_1.createElement)("span", null,
+                        (0, react_1.createElement)(ui_1.Icon, { name: "grid", size: 16 }),
+                        "Ba\u011F\u0131ms\u0131z yan tabla"),
+                    (0, react_1.createElement)("span", null, "Three.js / WebGL")),
+                !p.compact && (0, react_1.createElement)(react_1.Fragment, null,
+                    (0, react_1.createElement)("div", { className: "v8-export-row" },
+                        (0, react_1.createElement)("button", { className: "text-link", type: "button", onClick: () => (0, domain_1.downloadText)('Elif-Devir-01-Tasarim.txt', (0, desk_v8_1.studioSummary)(c)) },
+                            "\u00D6l\u00E7\u00FC \u00F6zetini indir ",
+                            (0, react_1.createElement)(ui_1.Icon, { name: "download", size: 17 })),
+                        (0, react_1.createElement)("button", { className: "text-link", type: "button", "aria-expanded": this.state.share, onClick: () => this.setState({ share: !this.state.share }) },
+                            "Tasar\u0131m ba\u011Flant\u0131s\u0131 ",
+                            (0, react_1.createElement)(ui_1.Icon, { name: "diagonal", size: 17 })),
+                        (0, react_1.createElement)("button", { type: "button", className: "text-link", disabled: !ready, "aria-pressed": this.state.rotating, onClick: () => this.setState({ rotating: !this.state.rotating }, () => this.engine?.rotate(this.state.rotating)) },
+                            this.state.rotating ? 'Dönüşü durdur' : 'Yavaşça döndür',
+                            " ",
+                            (0, react_1.createElement)(ui_1.Icon, { name: "clock", size: 17 }))),
+                    this.state.share && (0, react_1.createElement)("label", { className: "v8-share-field" },
+                        "Yaln\u0131z model se\u00E7eneklerinizi i\u00E7eren ba\u011Flant\u0131",
+                        (0, react_1.createElement)("input", { "aria-label": "Payla\u015F\u0131labilir 3D tasar\u0131m ba\u011Flant\u0131s\u0131", readOnly: true, value: this.shareURL(), onFocus: e => e.currentTarget.select() }),
+                        (0, react_1.createElement)("small", null, "Ki\u015Fisel not veya ileti\u015Fim bilgisi i\u00E7ermez."))),
+                (0, react_1.createElement)("p", { className: "v8-engineering-note" }, "Konsept modeldir. Nihai mekanizma, y\u00FCk kapasitesi, hareket a\u00E7\u0131kl\u0131\u011F\u0131 ve \u00FCretim \u00F6l\u00E7\u00FCleri at\u00F6lye onay\u0131 gerektirir. Bu sahne teknik imalat \u00E7izimi veya g\u00FCvenlik testi de\u011Fildir.")));
+    }
+}
+exports.DeskExperience = DeskExperience;
 
 },
 "src/components/PinterestPreview":function(module,exports,require){
@@ -536,7 +731,7 @@ function VImage({ asset, alt, className = '', eager = false, sizes = '(max-width
     const max = m.variants[m.variants.length - 1], fallback = full ? max : m.variants[Math.min(1, m.variants.length - 1)];
     return (0, react_1.createElement)("img", { src: (0, ui_1.image)(fallback.file), srcSet: m.variants.map((v) => (0, ui_1.image)(v.file) + ' ' + v.width + 'w').join(', '), sizes: sizes, width: m.width, height: m.height, alt: alt, className: className, loading: eager ? 'eager' : 'lazy', decoding: eager ? 'sync' : 'async', fetchPriority: eager ? 'high' : 'auto' });
 }
-function SourceTag({ kind = 'work' }) { return (0, react_1.createElement)("span", { className: 'source-tag source-' + kind }, ({ work: 'Atölye arşivi', process: 'Uygulama aşaması', concept: 'Yapay zekâ konsepti', reference: 'Pinterest ilhamı' })[kind]); }
+function SourceTag({ kind = 'work' }) { return (0, react_1.createElement)("span", { className: 'source-tag source-' + kind }, ({ work: 'Atölye arşivi', process: 'Uygulama aşaması', concept: 'Konsept model', reference: 'Pinterest ilhamı' })[kind]); }
 function WorkCard({ work: w, actions: a, featured = false, index = 0 }) {
     return (0, react_1.createElement)("article", { className: 'work-card' + (featured ? ' featured-work' : ''), "data-work": w.id },
         (0, react_1.createElement)(ui_1.Link, { to: '/proje/' + w.id, navigate: a.navigate, className: "work-photo" },
@@ -635,7 +830,7 @@ function ButtonLink({ to, navigate, children, secondary = false }) { return (0, 
 function Eyebrow({ children }) { return (0, react_1.createElement)("div", { className: "eyebrow" }, children); }
 function Photo({ name, alt, ratio = '', className = '', caption = true, eager = false }) { return (0, react_1.createElement)("figure", { className: 'photo ' + className, style: ratio ? { aspectRatio: ratio } : undefined },
     (0, react_1.createElement)("img", { src: image(name), alt: alt, loading: eager ? 'eager' : 'lazy', decoding: "async" }),
-    caption && (0, react_1.createElement)("figcaption", null, "Temsili tasar\u0131m g\u00F6rseli")); }
+    caption && (0, react_1.createElement)("figcaption", null, "Konsept model")); }
 function SectionHead({ number, title, sub, to, navigate }) { return (0, react_1.createElement)("div", { className: "section-head" },
     (0, react_1.createElement)("div", null,
         (0, react_1.createElement)(Eyebrow, null,
@@ -778,6 +973,24 @@ function tableGeometry(d) {
     const w = d.width / 2, dep = d.depth / 2, h = d.height;
     return { top: [project(-w, -dep, h), project(w, -dep, h), project(w, dep, h), project(-w, dep, h)], project, w, dep, h };
 }
+
+},
+"src/lib/desk-v8":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.studioMaterials = exports.defaultStudio = void 0;
+exports.normalizeStudio = normalizeStudio;
+exports.studioFromQuery = studioFromQuery;
+exports.studioQuery = studioQuery;
+exports.studioSummary = studioSummary;
+exports.defaultStudio = { width: 180, depth: 80, height: 80, angle: 90, material: 'ceviz', drawers: false, door: false };
+exports.studioMaterials = { ceviz: { name: 'Ceviz tonu', color: '#765039' }, mese: { name: 'Açık meşe tonu', color: '#b89a6e' }, koyu: { name: 'Koyu ahşap', color: '#37312d' } };
+const clamp = (v, min, max, fallback) => typeof v === 'number' && Number.isFinite(v) ? Math.min(max, Math.max(min, Math.round(v))) : fallback;
+function normalizeStudio(v) { return { width: clamp(v.width, 120, 220, 180), depth: clamp(v.depth, 65, 95, 80), height: clamp(v.height, 80, 125, 80), angle: clamp(v.angle, 0, 360, 90), material: ['ceviz', 'mese', 'koyu'].includes(v.material || '') ? v.material : 'ceviz', drawers: v.drawers === true, door: v.door === true }; }
+function studioFromQuery(query) { const p = new URLSearchParams(query), num = (k, min, max, def) => { const raw = p.get(k) || ''; if (!/^\d+(?:[.,]\d+)?$/.test(raw))
+    return def; const n = Number(raw.replace(',', '.')); return n >= min && n <= max ? n : def; }; return normalizeStudio({ width: num('en', 120, 220, 180), depth: num('derinlik', 65, 95, 80), height: num('yukseklik', 80, 125, 80), angle: num('donus', 0, 360, 90), material: p.get('malzeme'), drawers: p.get('cekmece') === '1', door: p.get('kapak') === '1' }); }
+function studioQuery(s) { const v = normalizeStudio(s); return new URLSearchParams({ en: String(v.width), derinlik: String(v.depth), yukseklik: String(v.height), donus: String(v.angle), malzeme: v.material, cekmece: v.drawers ? '1' : '0', kapak: v.door ? '1' : '0' }).toString(); }
+function studioSummary(s) { const v = normalizeStudio(s); return ['ELİF TASARIM / DEVİR 01', 'Konsept model. Üretim çizimi veya onaylanmış ürün şartnamesi değildir.', `Ana tabla ölçü fikri, ${v.width} × ${v.depth} cm`, `Gösterilen çalışma yüksekliği, ${v.height} cm`, `Yan tabla açısı, ${v.angle}°`, `Yüzey fikri, ${exports.studioMaterials[v.material].name}`, 'Tablanın altında çekmeceler, sabit depolama ünitesi ve bağımsız dönen yan tabla.', 'Mekanizma, yük kapasitesi, güvenli hareket alanı ve son ölçüler Yusuf Usta ile ayrıca doğrulanır.', 'Bu özet gönderilmiş sipariş değildir.'].join('\n'); }
 
 },
 "src/lib/domain":function(module,exports,require){
@@ -937,19 +1150,19 @@ exports.imageManifest = {
                 "file": "concept-hero-480.webp",
                 "width": 480,
                 "height": 270,
-                "bytes": 35402
+                "bytes": 42382
             },
             {
                 "file": "concept-hero-800.webp",
                 "width": 800,
                 "height": 450,
-                "bytes": 84460
+                "bytes": 102820
             },
             {
                 "file": "concept-hero-full.webp",
                 "width": 1672,
                 "height": 941,
-                "bytes": 267224
+                "bytes": 319464
             }
         ],
         "source": "sıcak_işıklı_modern_i_skandinav_yemek_alanı.png",
@@ -965,19 +1178,19 @@ exports.imageManifest = {
                 "file": "concept-mutfak-480.webp",
                 "width": 480,
                 "height": 360,
-                "bytes": 34596
+                "bytes": 41180
             },
             {
                 "file": "concept-mutfak-800.webp",
                 "width": 800,
                 "height": 600,
-                "bytes": 77636
+                "bytes": 91722
             },
             {
                 "file": "concept-mutfak-full.webp",
                 "width": 1448,
                 "height": 1086,
-                "bytes": 182066
+                "bytes": 219550
             }
         ],
         "source": "güneşli_modern_mutfak_ve_yemek_köşesi.png",
@@ -993,19 +1206,19 @@ exports.imageManifest = {
                 "file": "concept-tv-480.webp",
                 "width": 480,
                 "height": 360,
-                "bytes": 37858
+                "bytes": 44786
             },
             {
                 "file": "concept-tv-800.webp",
                 "width": 800,
                 "height": 600,
-                "bytes": 85868
+                "bytes": 101632
             },
             {
                 "file": "concept-tv-full.webp",
                 "width": 1448,
                 "height": 1086,
-                "bytes": 202748
+                "bytes": 244086
             }
         ],
         "source": "sıcak_tonlarda_modern_minimalist_salon.png",
@@ -1021,19 +1234,19 @@ exports.imageManifest = {
                 "file": "concept-kahve-480.webp",
                 "width": 480,
                 "height": 360,
-                "bytes": 38296
+                "bytes": 45566
             },
             {
                 "file": "concept-kahve-800.webp",
                 "width": 800,
                 "height": 600,
-                "bytes": 81620
+                "bytes": 94430
             },
             {
                 "file": "concept-kahve-full.webp",
                 "width": 1448,
                 "height": 1086,
-                "bytes": 188928
+                "bytes": 222372
             }
         ],
         "source": "gün_işığında_lüks_kahve_köşesi.png",
@@ -1049,19 +1262,19 @@ exports.imageManifest = {
                 "file": "concept-vestiyer-480.webp",
                 "width": 480,
                 "height": 360,
-                "bytes": 38592
+                "bytes": 45534
             },
             {
                 "file": "concept-vestiyer-800.webp",
                 "width": 800,
                 "height": 600,
-                "bytes": 94606
+                "bytes": 112866
             },
             {
                 "file": "concept-vestiyer-full.webp",
                 "width": 1448,
                 "height": 1086,
-                "bytes": 253932
+                "bytes": 290080
             }
         ],
         "source": "sıcak_minimalist_modern_antre.png",
@@ -1077,19 +1290,19 @@ exports.imageManifest = {
                 "file": "concept-gardrop-480.webp",
                 "width": 480,
                 "height": 360,
-                "bytes": 36048
+                "bytes": 42626
             },
             {
                 "file": "concept-gardrop-800.webp",
                 "width": 800,
                 "height": 600,
-                "bytes": 89510
+                "bytes": 105982
             },
             {
                 "file": "concept-gardrop-full.webp",
                 "width": 1448,
                 "height": 1086,
-                "bytes": 234180
+                "bytes": 282042
             }
         ],
         "source": "lüks_sıcak_tonlu_giyinme_odası.png",
@@ -1105,19 +1318,19 @@ exports.imageManifest = {
                 "file": "concept-sehpa-480.webp",
                 "width": 480,
                 "height": 360,
-                "bytes": 50804
+                "bytes": 58926
             },
             {
                 "file": "concept-sehpa-800.webp",
                 "width": 800,
                 "height": 600,
-                "bytes": 116046
+                "bytes": 138830
             },
             {
                 "file": "concept-sehpa-full.webp",
                 "width": 1448,
                 "height": 1086,
-                "bytes": 271470
+                "bytes": 319338
             }
         ],
         "source": "sıcak_tonlarda_modern_salon_ve_ahşap_masalar.png",
@@ -1133,19 +1346,19 @@ exports.imageManifest = {
                 "file": "concept-pergola-480.webp",
                 "width": 480,
                 "height": 360,
-                "bytes": 73142
+                "bytes": 82240
             },
             {
                 "file": "concept-pergola-800.webp",
                 "width": 800,
                 "height": 600,
-                "bytes": 185250
+                "bytes": 210842
             },
             {
                 "file": "concept-pergola-full.webp",
                 "width": 1448,
                 "height": 1086,
-                "bytes": 480732
+                "bytes": 552024
             }
         ],
         "source": "altın_saatte_ahşap_bahçe_pergolası.png",
@@ -1161,19 +1374,19 @@ exports.imageManifest = {
                 "file": "concept-model-480.webp",
                 "width": 480,
                 "height": 360,
-                "bytes": 62570
+                "bytes": 72728
             },
             {
                 "file": "concept-model-800.webp",
                 "width": 800,
                 "height": 600,
-                "bytes": 140990
+                "bytes": 161022
             },
             {
                 "file": "concept-model-full.webp",
                 "width": 1448,
                 "height": 1086,
-                "bytes": 320256
+                "bytes": 383818
             }
         ],
         "source": "sıcak_işıklı_mobilya_tasarım_atölyesi.png",
@@ -1855,10 +2068,10 @@ function pageTitle(path) { const p = path.split('?')[0]; if (p === '/arama')
     return w.subtitle + ' | Elif Tasarım'; const c = portfolio_1.workCategories.find(c => '/kategoriler/' + c.id === p); if (c)
     return c.name + ' | Elif Tasarım'; const newTitles = { '/projeler': 'Bitirdiğimiz İşler', '/kategoriler': 'Kategoriler', '/ilham-modelleri': 'İlham Modelleri', '/modelini-getir': 'Kendi Modelinizi Getirin', '/hakkimizda': 'Aileden Gelen Ustalık', '/atolye': 'Atölye' }; if (newTitles[p])
     return newTitles[p] + ' | Elif Tasarım'; if (p === '/tasarim-masasi')
-    return 'Tasarım Masası | Elif Tasarım'; const product = data_1.products.find(x => '/urun/' + x.id === p); const article = data_1.journal.find(x => '/rehber/' + x.id === p); const idea = data_1.ideas.find(x => '/mekan-fikirleri/' + x.id === p); return product ? product.name + ' | Elif Tasarım' : article ? article.title + ' | Elif Tasarım' : idea ? idea.name + ' | Elif Tasarım' : { '/': 'Elif Tasarım | El Yapımı Mobilya Atölyesi', '/urunler': 'Koleksiyon | Elif Tasarım', '/teklif-al': 'Özel Ölçü Stüdyosu | Elif Tasarım', '/atolyemiz': 'Atölyemiz | Elif Tasarım', '/malzemeler': 'Malzeme Kütüphanesi | Elif Tasarım', '/sepet': 'Örnek Sepet | Elif Tasarım', '/odeme': 'Sipariş Hazırlığı | Elif Tasarım', '/iletisim': 'İletişim | Elif Tasarım', '/rehber': 'Atölye Notları | Elif Tasarım', '/ozel-uretim': 'Özel Üretim | Elif Tasarım', '/mekan-fikirleri': 'Mekân Fikirleri | Elif Tasarım', '/calisma-dosyam': 'Kaydedilenler | Elif Tasarım', '/gizlilik': 'Önizleme Gizliliği | Elif Tasarım', '/sikca-sorulan-sorular': 'Sorular | Elif Tasarım', '/atolye-demolari': 'Atölye İş Akışı Demosu | Elif Tasarım' }[p] || 'Sayfa bulunamadı | Elif Tasarım'; }
+    return 'Devir 01. Üç Boyutlu Tasarım Stüdyosu | Elif Tasarım'; const product = data_1.products.find(x => '/urun/' + x.id === p); const article = data_1.journal.find(x => '/rehber/' + x.id === p); const idea = data_1.ideas.find(x => '/mekan-fikirleri/' + x.id === p); return product ? product.name + ' | Elif Tasarım' : article ? article.title + ' | Elif Tasarım' : idea ? idea.name + ' | Elif Tasarım' : { '/': 'Elif Tasarım | El Yapımı Mobilya Atölyesi', '/urunler': 'Koleksiyon | Elif Tasarım', '/teklif-al': 'Özel Ölçü Stüdyosu | Elif Tasarım', '/atolyemiz': 'Atölyemiz | Elif Tasarım', '/malzemeler': 'Malzeme Kütüphanesi | Elif Tasarım', '/sepet': 'Örnek Sepet | Elif Tasarım', '/odeme': 'Sipariş Hazırlığı | Elif Tasarım', '/iletisim': 'İletişim | Elif Tasarım', '/rehber': 'Atölye Notları | Elif Tasarım', '/ozel-uretim': 'Özel Üretim | Elif Tasarım', '/mekan-fikirleri': 'Mekân Fikirleri | Elif Tasarım', '/calisma-dosyam': 'Kaydedilenler | Elif Tasarım', '/gizlilik': 'Önizleme Gizliliği | Elif Tasarım', '/sikca-sorulan-sorular': 'Sorular | Elif Tasarım', '/atolye-demolari': 'Atölye İş Akışı Demosu | Elif Tasarım' }[p] || 'Sayfa bulunamadı | Elif Tasarım'; }
 function pageDescription(path) { const p = path.split('?')[0], w = portfolio_1.works.find(w => '/proje/' + w.id === p), c = portfolio_1.workCategories.find(c => '/kategoriler/' + c.id === p); if (w)
     return w.subtitle + '. ' + w.description; if (c)
-    return 'Elif Tasarım. ' + c.name + '. ' + c.detail; const desc = { '/': 'Zamana değer katan mobilyalar. İstanbul’daki aile atölyesinden gerçek çalışmalar, ilham modelleri ve Yusuf Usta ile doğrudan iletişim.', '/modelini-getir': 'Pinterest bağlantısı, kendi fotoğrafınız veya fikrinizle başlayın. Ölçü ve kullanımınızı özetleyin, Yusuf Usta ile WhatsApp’ta görüşün.', '/teklif-al': 'Kayıpsız ortak proje taslağı. Yaklaşık ölçü, malzeme ve kullanım ayrıntılarını birlikte hazırlayın.', '/arama': 'Elif Tasarım çalışma arşivi, ilham modelleri ve kategorilerinde arayın.', '/iletisim': 'Yusuf Usta ile doğrudan iletişim. +90 530 879 71 69. Yeni atölye adresini ziyaret öncesinde teyit edin.', '/gizlilik': 'Elif Tasarım V7. Yerel proje taslağı, fotoğraf hazırlama, isteğe bağlı saklama, WhatsApp ve Pinterest hakkında açıklama.', '/calisma-dosyam': 'Gerçek çalışma, yapay zekâ konsepti ve Pinterest modelini ortak ilham dosyanızda toplayın.' }; return desc[p] || 'Elif Tasarım. Aileden gelen marangozluk, ölçüye özel üretim, gerçek çalışma arşivi ve doğrudan ustayla görüşme.'; }
+    return 'Elif Tasarım. ' + c.name + '. ' + c.detail; const desc = { '/': 'Zamana değer katan mobilyalar. İstanbul’daki aile atölyesinden gerçek çalışmalar, ilham modelleri ve Yusuf Usta ile doğrudan iletişim.', '/modelini-getir': 'Pinterest bağlantısı, kendi fotoğrafınız veya fikrinizle başlayın. Ölçü ve kullanımınızı özetleyin, Yusuf Usta ile WhatsApp’ta görüşün.', '/teklif-al': 'Kayıpsız ortak proje taslağı. Yaklaşık ölçü, malzeme ve kullanım ayrıntılarını birlikte hazırlayın.', '/arama': 'Elif Tasarım çalışma arşivi, ilham modelleri ve kategorilerinde arayın.', '/iletisim': 'Yusuf Usta ile doğrudan iletişim. +90 530 879 71 69. Yeni atölye adresini ziyaret öncesinde teyit edin.', '/gizlilik': 'Elif Tasarım V8. Yerel proje taslağı, fotoğraf hazırlama, isteğe bağlı saklama, WhatsApp ve Pinterest hakkında açıklama.', '/calisma-dosyam': 'Gerçek çalışma, konsept model ve Pinterest modelini ortak ilham dosyanızda toplayın.' }; return desc[p] || 'Elif Tasarım. Aileden gelen marangozluk, ölçüye özel üretim, gerçek çalışma arşivi ve doğrudan ustayla görüşme.'; }
 exports.v7Routes = [...new Set([...exports.routePaths.filter(p => !['/urunler', '/sepet', '/odeme', '/atolye-demolari', '/atolyemiz', '/mekan-fikirleri'].includes(p) && !p.startsWith('/urun/') && !p.startsWith('/mekan-fikirleri/')), '/arama'])];
 
 },
@@ -2142,7 +2355,7 @@ class BringModel extends react_1.Component {
             (0, react_1.createElement)("section", { className: "wrap model-request" },
                 (0, react_1.createElement)("aside", { className: "model-aside" },
                     (0, react_1.createElement)("div", null,
-                        (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: "concept-model", alt: "Fikirler, \u00E7izimler ve numunelerden olu\u015Fan yapay zek\u00E2 konsepti", eager: true, sizes: "(max-width: 800px) 90vw, 34vw" }),
+                        (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: "concept-model", alt: "Fikirler, \u00E7izimler ve numunelerden olu\u015Fan konsept model", eager: true, sizes: "(max-width: 800px) 90vw, 34vw" }),
                         (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: "concept" })),
                     (0, react_1.createElement)("h2", null,
                         "Her fikir,",
@@ -2318,179 +2531,42 @@ exports.BringModel = BringModel;
 "src/pages/DesignDesk":function(module,exports,require){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DesignDesk = void 0;
-exports.TableDrawing = TableDrawing;
-const react_1 = require("react");
-const ui_1 = require("../components/ui");
-const domain_1 = require("../lib/domain");
-const desk_1 = require("../lib/desk");
-const poly = (pts) => pts.map(p => p.join(',')).join(' ');
-function TableDrawing({ desk, id = 'desk', compact = false }) {
-    const { project: p, w, dep, h, top } = (0, desk_1.tableGeometry)(desk), mat = desk_1.deskMaterials[desk.material];
-    const box = (x, y, z, dx, dy, dz, key) => (0, react_1.createElement)("g", { key: key },
-        (0, react_1.createElement)("polygon", { points: poly([p(x, y, z), p(x + dx, y, z), p(x + dx, y, z + dz), p(x, y, z + dz)]), fill: desk.base === 'wood' ? '#77543c' : '#48473f' }),
-        (0, react_1.createElement)("polygon", { points: poly([p(x + dx, y, z), p(x + dx, y + dy, z), p(x + dx, y + dy, z + dz), p(x + dx, y, z + dz)]), fill: desk.base === 'wood' ? '#4a3020' : '#2e302c' }),
-        (0, react_1.createElement)("polygon", { points: poly([p(x, y, z + dz), p(x + dx, y, z + dz), p(x + dx, y + dy, z + dz), p(x, y + dy, z + dz)]), fill: desk.base === 'wood' ? '#9a7152' : '#68695d' }));
-    const topW = desk.width * 2, topD = desk.depth * 2;
-    return (0, react_1.createElement)("svg", { className: 'table-drawing ' + (compact ? 'compact' : ''), viewBox: "0 0 740 470", role: "img", "aria-label": `Temsili masa çizimi, ${desk.width} santimetre en, ${desk.depth} santimetre derinlik, ${desk.height} santimetre yükseklik`, "data-width": desk.width, "data-depth": desk.depth, "data-height": desk.height },
-        (0, react_1.createElement)("defs", null,
-            (0, react_1.createElement)("pattern", { id: id + 'grain', patternUnits: "userSpaceOnUse", width: "320", height: "320" },
-                (0, react_1.createElement)("image", { href: (0, ui_1.image)(mat.image), width: "320", height: "320", preserveAspectRatio: "xMidYMid slice" })),
-            (0, react_1.createElement)("pattern", { id: id + 'grid', width: "24", height: "24", patternUnits: "userSpaceOnUse" },
-                (0, react_1.createElement)("path", { d: "M24 0H0V24", fill: "none", stroke: "#81745f", "stroke-width": ".35", opacity: ".25" })),
-            (0, react_1.createElement)("radialGradient", { id: id + 'shadow' },
-                (0, react_1.createElement)("stop", { offset: "0", "stop-color": "#655541", "stop-opacity": ".19" }),
-                (0, react_1.createElement)("stop", { offset: "1", "stop-color": "#655541", "stop-opacity": "0" }))),
-        (0, react_1.createElement)("rect", { width: "740", height: "470", fill: `url(#${id}grid)` }),
-        desk.view === 'top' ? (0, react_1.createElement)("g", null,
-            (0, react_1.createElement)("rect", { x: 370 - topW / 2, y: 235 - topD / 2, width: topW, height: topD, rx: "8", fill: `url(#${id}grain)`, stroke: "#594533", "stroke-width": "2" }),
-            (0, react_1.createElement)("path", { d: `M${370 - topW / 2} ${255 + topD / 2}H${370 + topW / 2}`, stroke: "#76654f", "stroke-dasharray": "3 4" }),
-            (0, react_1.createElement)("text", { x: "370", y: 278 + topD / 2, "text-anchor": "middle", fill: "#554735", "font-size": "15" },
-                desk.width,
-                " cm"),
-            (0, react_1.createElement)("text", { x: 395 + topW / 2, y: "238", fill: "#554735", "font-size": "15" },
-                desk.depth,
-                " cm")) : (0, react_1.createElement)("g", null,
-            (0, react_1.createElement)("ellipse", { cx: "370", cy: "360", rx: "300", ry: "80", fill: `url(#${id}shadow)` }),
-            desk.base === 'wood' ? [[-w + 14, -dep + 8], [w - 22, -dep + 8], [-w + 14, dep - 16], [w - 22, dep - 16]].map(([x, y], i) => box(x, y, 0, 8, 8, h - 4, 'leg' + i)) : [-w + 20, w - 27].map((x, i) => (0, react_1.createElement)("g", { key: i },
-                box(x, -dep + 4, 0, 9, dep * 2 - 8, 3, 'foot' + i),
-                box(x, -4, 3, 9, 8, h - 7, 'post' + i),
-                desk.base === 'adjustable' && box(x - .6, -4.6, h * .46, 10.2, 9.2, 3, 'collar' + i),
-                box(x, -dep + 4, h - 8, 9, dep * 2 - 8, 4, 'arm' + i))),
-            (0, react_1.createElement)("polygon", { points: poly([p(-w, dep, h - 4), p(w, dep, h - 4), p(w, dep, h), p(-w, dep, h)]), fill: "#654329" }),
-            (0, react_1.createElement)("polygon", { points: poly([p(w, -dep, h - 4), p(w, dep, h - 4), p(w, dep, h), p(w, -dep, h)]), fill: "#4b3222" }),
-            (0, react_1.createElement)("polygon", { "data-testid": "desk-top", points: poly(top), fill: `url(#${id}grain)`, stroke: "#62472f", "stroke-width": "1" }),
-            (0, react_1.createElement)("polygon", { points: poly(top), fill: mat.color, opacity: ".13" }),
-            !compact && (0, react_1.createElement)("g", { fill: "#6c5b46", stroke: "#8d7a61", "stroke-width": ".7" },
-                (0, react_1.createElement)("path", { d: `M${p(-w, dep + 20, h - 12).join(' ')}L${p(w, dep + 20, h - 12).join(' ')}`, "stroke-dasharray": "3 4" }),
-                (0, react_1.createElement)("text", { x: p(0, dep + 20, h - 12)[0], y: p(0, dep + 20, h - 12)[1] + 23, "font-size": "15", "text-anchor": "middle", stroke: "none" },
-                    desk.width,
-                    " cm"),
-                (0, react_1.createElement)("path", { d: `M${p(w + 25, dep, h).join(' ')}L${p(w + 25, -dep, h).join(' ')}`, "stroke-dasharray": "3 4" }),
-                (0, react_1.createElement)("text", { x: p(w + 25, 0, h)[0] + 17, y: p(w + 25, 0, h)[1] + 5, "font-size": "15", stroke: "none" },
-                    desk.depth,
-                    " cm"),
-                (0, react_1.createElement)("path", { d: `M${p(-w - 22, -dep, 0).join(' ')}L${p(-w - 22, -dep, h).join(' ')}`, "stroke-dasharray": "3 4" }),
-                (0, react_1.createElement)("text", { x: p(-w - 22, -dep, h / 2)[0] - 10, y: p(-w - 22, -dep, h / 2)[1], "font-size": "15", "text-anchor": "end", stroke: "none" },
-                    desk.height,
-                    " cm"))));
-}
-class DesignDesk extends react_1.Component {
-    constructor(props) {
-        super(props);
-        this.change = (key, value) => this.setState(s => ({ desk: { ...s.desk, [key]: value } }));
-        this.commitNumber = (key, raw) => {
-            const ranges = { width: [100, 240], depth: [50, 100], height: [60, 125] };
-            const [min, max] = ranges[key];
-            const n = Number(raw.trim());
-            if (!/^\d+$/.test(raw.trim()) || !Number.isSafeInteger(n) || n < min || n > max) {
-                this.props.notify(`Ölçü ${min} ile ${max} cm arasında tam sayı olmalı.`);
-                return false;
-            }
-            this.change(key, n);
-            return true;
-        };
-        this.shareURL = () => {
-            const base = typeof location !== 'undefined' && /^https?:$/.test(location.protocol) ? location.href.split('#')[0] : 'https://onourimpram.github.io/elif-tasarim/';
-            return base + '#/tasarim-masasi?' + (0, desk_1.deskQuery)(this.state.desk);
-        };
-        this.state = { desk: (0, desk_1.deskFromParams)(new URLSearchParams(props.query || '')), sharing: false };
-    }
-    render() {
-        const d = this.state.desk, a = this.props;
-        return (0, react_1.createElement)(react_1.Fragment, null,
-            (0, react_1.createElement)("section", { className: "desk-intro wrap" },
-                (0, react_1.createElement)(ui_1.Eyebrow, null, "EL\u0130F / D\u0130J\u0130TAL TASARIM MASASI"),
-                (0, react_1.createElement)("div", null,
-                    (0, react_1.createElement)("h1", null,
-                        "\u00D6nce bir fikir.",
-                        (0, react_1.createElement)("br", null),
-                        (0, react_1.createElement)("em", null, "Sonra sizin par\u00E7an\u0131z.")),
-                    (0, react_1.createElement)("p", null, "\u00D6l\u00E7\u00FCy\u00FC de\u011Fi\u015Ftirin. Dokuyu se\u00E7in. Mek\u00E2n\u0131n\u0131za nas\u0131l bir par\u00E7a yak\u0131\u015Faca\u011F\u0131n\u0131 birlikte d\u00FC\u015F\u00FCnmeye ba\u015Flayal\u0131m."))),
-            (0, react_1.createElement)("section", { className: "desk-layout wrap", "aria-label": "Tasar\u0131m masas\u0131" },
-                (0, react_1.createElement)("div", { className: "desk-paper" },
-                    (0, react_1.createElement)("div", { className: "desk-paper-top" },
-                        (0, react_1.createElement)("span", null, "\u00C7ALI\u015EMA NO. 01 / MASA"),
-                        (0, react_1.createElement)("div", { role: "group", "aria-label": "\u00C7izim g\u00F6r\u00FCn\u00FCm\u00FC" },
-                            (0, react_1.createElement)("button", { "aria-pressed": d.view === 'perspective', onClick: () => this.change('view', 'perspective') }, "Perspektif"),
-                            (0, react_1.createElement)("button", { "aria-pressed": d.view === 'top', onClick: () => this.change('view', 'top') }, "\u00DCstten"))),
-                    (0, react_1.createElement)(TableDrawing, { desk: d }),
-                    (0, react_1.createElement)("div", { className: "desk-paper-bottom" },
-                        (0, react_1.createElement)("span", null, "ET / TASARIM \u00C7ALI\u015EMASI"),
-                        (0, react_1.createElement)("span", null, "\u015Eematik \u00E7izim. Teknik \u00FCretim projesi de\u011Fildir.")),
-                    (0, react_1.createElement)("div", { className: "desk-live", "aria-live": "polite" },
-                        desk_1.deskMaterials[d.material].name,
-                        " ",
-                        (0, react_1.createElement)("i", null),
-                        " ",
-                        d.width,
-                        " \u00D7 ",
-                        d.depth,
-                        " \u00D7 ",
-                        d.height,
-                        " cm ",
-                        (0, react_1.createElement)("i", null),
-                        " ",
-                        desk_1.deskBases[d.base])),
-                (0, react_1.createElement)("div", { className: "desk-controls" },
-                    (0, react_1.createElement)(ui_1.Eyebrow, null, "01 / \u00D6L\u00C7\u00DCYLE BA\u015ELAYALIM"),
-                    (0, react_1.createElement)("h2", null,
-                        "Size ne kadar",
-                        (0, react_1.createElement)("br", null),
-                        (0, react_1.createElement)("em", null, "yer a\u00E7al\u0131m?")),
-                    [['width', 'En', 100, 240], ['depth', 'Derinlik', 50, 100], ['height', 'Yükseklik', 60, 125]].map(([key, label, min, max]) => (0, react_1.createElement)("div", { className: "desk-slider", key: key },
-                        (0, react_1.createElement)("span", null,
-                            label,
-                            (0, react_1.createElement)("span", { className: "v5-desk-number" },
-                                (0, react_1.createElement)("input", { key: key + ':' + d[key], type: "number", inputMode: "numeric", min: min, max: max, step: 1, defaultValue: d[key], "aria-label": 'Masa ' + ({ width: 'eni', depth: 'derinliği', height: 'yüksekliği' }[key]) + ', santimetre', onBlur: e => { if (!this.commitNumber(key, e.currentTarget.value))
-                                        e.currentTarget.value = String(d[key]); }, onKeyDown: e => { if (e.key === 'Enter') {
-                                        e.preventDefault();
-                                        e.currentTarget.blur();
-                                    } } }),
-                                (0, react_1.createElement)("small", null, "cm"))),
-                        (0, react_1.createElement)("input", { "aria-label": 'Masa ' + label.toLocaleLowerCase('tr'), type: "range", min: min, max: max, step: "1", value: d[key], onInput: e => this.change(key, Number(e.currentTarget.value)) }),
-                        (0, react_1.createElement)("span", { className: "slider-bounds" },
-                            (0, react_1.createElement)("small", null,
-                                min,
-                                " cm"),
-                            (0, react_1.createElement)("small", null,
-                                max,
-                                " cm")))),
-                    (0, react_1.createElement)("div", { className: "desk-choice" },
-                        (0, react_1.createElement)("span", { className: "field-label" }, "02 / MALZEME F\u0130KR\u0130"),
-                        (0, react_1.createElement)("div", { className: "desk-swatches" }, Object.entries(desk_1.deskMaterials).map(([id, m]) => (0, react_1.createElement)("button", { key: id, "aria-pressed": d.material === id, "aria-label": m.name + ' malzeme fikri', onClick: () => this.change('material', id) },
-                            (0, react_1.createElement)("span", { style: { backgroundImage: `url(${(0, ui_1.image)(m.image)})` } }),
-                            m.name)))),
-                    (0, react_1.createElement)("label", { className: "desk-choice" },
-                        (0, react_1.createElement)("span", { className: "field-label" }, "03 / TA\u015EIYICI YAKLA\u015EIMI"),
-                        (0, react_1.createElement)("select", { "aria-label": "Ta\u015F\u0131y\u0131c\u0131 yakla\u015F\u0131m\u0131", value: d.base, onChange: e => this.change('base', e.currentTarget.value) }, Object.entries(desk_1.deskBases).map(([k, v]) => (0, react_1.createElement)("option", { key: k, value: k }, v)))),
-                    (0, react_1.createElement)(ui_1.ButtonLink, { to: '/teklif-al?urun=rota-calisma-masasi&' + (0, desk_1.deskQuery)(d), navigate: a.navigate }, "Bu fikirle devam et"),
-                    (0, react_1.createElement)("button", { className: "text-link desk-download", onClick: () => (0, domain_1.downloadText)('elif-tasarim-fikrim.txt', (0, desk_1.deskSummary)(d)) },
-                        "Tasar\u0131m \u00F6zetini indir ",
-                        (0, react_1.createElement)(ui_1.Icon, { name: "download" })),
-                    (0, react_1.createElement)("button", { className: "text-link desk-download", type: "button", "aria-expanded": this.state.sharing, onClick: () => this.setState({ sharing: !this.state.sharing }) },
-                        "Tasar\u0131m ba\u011Flant\u0131s\u0131n\u0131 g\u00F6ster ",
-                        (0, react_1.createElement)(ui_1.Icon, { name: "diagonal" })),
-                    this.state.sharing && (0, react_1.createElement)("div", { className: "v5-share-box" },
-                        (0, react_1.createElement)("label", null,
-                            "Payla\u015F\u0131labilir tasar\u0131m ba\u011Flant\u0131s\u0131",
-                            (0, react_1.createElement)("input", { type: "text", readOnly: true, value: this.shareURL(), "aria-label": "Payla\u015F\u0131labilir tasar\u0131m ba\u011Flant\u0131s\u0131", onFocus: e => e.currentTarget.select() })),
-                        (0, react_1.createElement)("button", { type: "button", onClick: async () => { try {
-                                await navigator.clipboard.writeText(this.shareURL());
-                                a.notify('Tasarım bağlantısı kopyalandı.');
-                            }
-                            catch {
-                                a.notify('Bağlantı alanını seçip kopyalayabilirsiniz.');
-                            } } },
-                            "Ba\u011Flant\u0131y\u0131 kopyala ",
-                            (0, react_1.createElement)(ui_1.Icon, { size: 16 })),
-                        (0, react_1.createElement)("p", null, "Yaln\u0131z \u00F6l\u00E7\u00FC ve malzeme fikrini payla\u015F\u0131r. Ki\u015Fisel bilgi veya sipari\u015F i\u00E7ermez.")))),
-            (0, react_1.createElement)("div", { className: "wrap desk-disclaimer" },
-                (0, react_1.createElement)(ui_1.Icon, { name: "info" }),
-                (0, react_1.createElement)("p", null, "Bu \u00E7al\u0131\u015Fma bir g\u00F6rsel fikir arac\u0131d\u0131r. Se\u00E7enekler \u00FCretilebilirlik veya fiyat onay\u0131 de\u011Fildir. \u00D6zellikle y\u00FCkseklik mekanizmas\u0131, tabla a\u011F\u0131rl\u0131\u011F\u0131 ve montaj uyumu at\u00F6lye taraf\u0131ndan do\u011Frulanmal\u0131d\u0131r. Malzemeler temsili numunelerdir. Bilgi g\u00F6nderilmez.")));
-    }
-}
 exports.DesignDesk = DesignDesk;
+const react_1 = require("react");
+const DeskExperience_1 = require("../components/DeskExperience");
+const ui_1 = require("../components/ui");
+function DesignDesk(props) { return (0, react_1.createElement)(react_1.Fragment, null,
+    (0, react_1.createElement)("section", { className: "wrap v8-studio-page" },
+        (0, react_1.createElement)(DeskExperience_1.DeskExperience, { ...props })),
+    (0, react_1.createElement)("section", { className: "wrap v8-details" },
+        (0, react_1.createElement)("div", { className: "v8-details-heading" },
+            (0, react_1.createElement)(ui_1.Eyebrow, null, "G\u00D6R\u00DCNMEYEN EMEK, H\u0130SSED\u0130LEN FARK."),
+            (0, react_1.createElement)("h2", null,
+                "\u0130yi bir \u00E7al\u0131\u015Fma alan\u0131,",
+                (0, react_1.createElement)("br", null),
+                (0, react_1.createElement)("em", null, "ayr\u0131nt\u0131larda ba\u015Flar.")),
+            (0, react_1.createElement)("p", null, "Tablan\u0131n alt\u0131nda bir \u00E7ekmece. Yan\u0131n\u0131zda yeni bir y\u00FCzey. Her hareket, g\u00FCnl\u00FCk kullan\u0131m\u0131n bir par\u00E7as\u0131 olarak d\u00FC\u015F\u00FCn\u00FCl\u00FCr.")),
+        (0, react_1.createElement)("div", { className: "v8-detail-grid" },
+            (0, react_1.createElement)("article", null,
+                (0, react_1.createElement)(ui_1.Photo, { name: "devir-detail.webp", alt: "Devir 01 konseptinin \u00E7ekmece ve ah\u015Fap birle\u015Fim ayr\u0131nt\u0131s\u0131" }),
+                (0, react_1.createElement)("span", null, "01 / EL\u0130N\u0130Z\u0130N ALTINDA"),
+                (0, react_1.createElement)("h3", null, "Her e\u015Fyan\u0131n bir yeri."),
+                (0, react_1.createElement)("p", null, "Ana y\u00FCzeyle birlikte hareket eden ince \u00E7ekmeceler. Yan mod\u00FClde ayr\u0131 \u00E7ekmece ve kapakl\u0131 depolama. \u0130\u00E7 d\u00FCzen, ger\u00E7ek kullan\u0131m\u0131n\u0131za g\u00F6re konu\u015Fulur.")),
+            (0, react_1.createElement)("article", null,
+                (0, react_1.createElement)(ui_1.Photo, { name: "devir-standing.webp", alt: "Devir 01 konsepti y\u00FCkseltilmi\u015F ana tabla ve al\u00E7ak yan mod\u00FClle" }),
+                (0, react_1.createElement)("span", null, "02 / FARKLI B\u0130R R\u0130T\u0130M"),
+                (0, react_1.createElement)("h3", null, "Birbirinden ba\u011F\u0131ms\u0131z y\u00FCzeyler."),
+                (0, react_1.createElement)("p", null, "\u00C7al\u0131\u015Fma tablas\u0131 y\u00FCkselirken yard\u0131mc\u0131 alan yerinde kal\u0131r. Mekanizma ve g\u00FCvenli hareket mesafeleri \u00FCretim tasar\u0131m\u0131nda ayr\u0131ca do\u011Frulan\u0131r.")),
+            (0, react_1.createElement)("article", null,
+                (0, react_1.createElement)(ui_1.Photo, { name: "devir-top.webp", alt: "Devir 01 d\u00F6ner yan mod\u00FCl\u00FCn \u00FCstten konsept g\u00F6r\u00FCn\u00FCm\u00FC" }),
+                (0, react_1.createElement)("span", null, "03 / ALANINIZA G\u00D6RE"),
+                (0, react_1.createElement)("h3", null, "Tek bi\u00E7ime ba\u011Fl\u0131 kalmay\u0131n."),
+                (0, react_1.createElement)("p", null, "Toplu, k\u00F6\u015Fe veya a\u00E7\u0131k yerle\u015Fim. Ekrandaki a\u00E7\u0131 ve \u00F6l\u00E7\u00FCler, at\u00F6lyeyle g\u00F6r\u00FC\u015Fmenize bir ba\u015Flang\u0131\u00E7 noktas\u0131 olu\u015Fturur."))),
+        (0, react_1.createElement)("div", { className: "v8-detail-end" },
+            (0, react_1.createElement)("p", null, "Be\u011Fendi\u011Finiz ba\u015Fka bir ayr\u0131nt\u0131 m\u0131 var?"),
+            (0, react_1.createElement)(ui_1.Link, { to: "/modelini-getir", navigate: props.navigate, className: "text-link" },
+                "Kendi modelinizi de getirin ",
+                (0, react_1.createElement)(ui_1.Icon, null))))); }
 
 },
 "src/pages/Editorial":function(module,exports,require){
@@ -2720,7 +2796,7 @@ const ui_1 = require("../components/ui");
 const PortfolioUI_1 = require("../components/PortfolioUI");
 const portfolio_1 = require("../lib/portfolio");
 const Portfolio_1 = require("./Portfolio");
-const DesignDesk_1 = require("./DesignDesk");
+const DeskExperience_1 = require("../components/DeskExperience");
 const desk_1 = require("../lib/desk");
 const scenes = [{ image: 'concept-hero', caption: 'Bir masanın etrafında.', label: 'Yaşam', kind: 'concept' }, { image: 'r13', caption: 'Atölyeden, evin kalbine.', label: 'Mutfak', kind: 'work' }, { image: 'r07', caption: 'Yusuf Usta’nın arşivinden.', label: 'Kahve', kind: 'work' }];
 class Home extends react_1.Component {
@@ -2757,7 +2833,7 @@ class Home extends react_1.Component {
                     (0, react_1.createElement)("span", { className: "v6-hero-caption" }, scene.caption),
                     (0, react_1.createElement)("button", { className: "hero-down", "aria-label": "Bitirdi\u011Fimiz i\u015Flere kayd\u0131r", onClick: () => document.getElementById('bitirdigimiz-isler')?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }) },
                         (0, react_1.createElement)(ui_1.Icon, { name: "down" }))),
-                (0, react_1.createElement)("span", { className: "hero-source" }, scene.kind === 'concept' ? 'TEMSİLİ TASARIM SAHNESİ / YAPAY ZEKÂ KONSEPTİ' : 'GERÇEK ÇALIŞMA FOTOĞRAFI / ATÖLYE ARŞİVİ')),
+                (0, react_1.createElement)("span", { className: "hero-source" }, scene.kind === 'concept' ? 'KONSEPT MODEL' : 'GERÇEK ÇALIŞMA FOTOĞRAFI / ATÖLYE ARŞİVİ')),
             (0, react_1.createElement)("section", { id: "bitirdigimiz-isler", className: "wrap v6-section home-works" },
                 (0, react_1.createElement)("div", { className: "v6-heading" },
                     (0, react_1.createElement)("div", null,
@@ -2844,35 +2920,8 @@ class Home extends react_1.Component {
                             i + 1),
                         (0, react_1.createElement)("h3", null, title),
                         (0, react_1.createElement)("p", null, text)))))),
-            (0, react_1.createElement)("section", { className: "wrap v6-section home-desk" },
-                (0, react_1.createElement)("div", null,
-                    (0, react_1.createElement)(ui_1.Eyebrow, null, "05 / D\u0130J\u0130TAL TASARIM MASASI"),
-                    (0, react_1.createElement)("h2", null,
-                        "Bir \u00F6l\u00E7\u00FCyle",
-                        (0, react_1.createElement)("br", null),
-                        (0, react_1.createElement)("em", null, "ba\u015Flayal\u0131m m\u0131?")),
-                    (0, react_1.createElement)("p", null, "Masan\u0131z\u0131n enini de\u011Fi\u015Ftirin. Fikrin ilk \u00E7izgisini g\u00F6r\u00FCn. Daha sonra derinlik, y\u00FCkseklik ve malzemeyi tasar\u0131m masas\u0131nda birlikte d\u00FC\u015F\u00FCn\u00FCn."),
-                    (0, react_1.createElement)("label", { className: "home-desk-control" },
-                        (0, react_1.createElement)("span", null,
-                            "MASA EN\u0130 ",
-                            (0, react_1.createElement)("output", null,
-                                s.desk.width,
-                                " cm")),
-                        (0, react_1.createElement)("input", { type: "range", min: "100", max: "240", step: "1", "aria-label": "Ana sayfa masa eni", value: s.desk.width, onInput: e => this.setState({ desk: { ...s.desk, width: Number(e.currentTarget.value) } }) })),
-                    (0, react_1.createElement)(ui_1.ButtonLink, { to: '/tasarim-masasi?' + (0, desk_1.deskQuery)(s.desk), navigate: a.navigate }, "Tasar\u0131m masas\u0131nda devam et"),
-                    (0, react_1.createElement)("small", null, "\u015Eematik fikir arac\u0131d\u0131r. Teknik \u00FCretim \u00E7izimi de\u011Fildir.")),
-                (0, react_1.createElement)("div", { className: "home-desk-drawing" },
-                    (0, react_1.createElement)("span", null, "EL\u0130F / \u00C7ALI\u015EMA NO. 01"),
-                    (0, react_1.createElement)(DesignDesk_1.TableDrawing, { desk: s.desk, id: "v6-home-desk", compact: true }),
-                    (0, react_1.createElement)("div", null,
-                        (0, react_1.createElement)("span", null,
-                            s.desk.width,
-                            " \u00D7 ",
-                            s.desk.depth,
-                            " \u00D7 ",
-                            s.desk.height,
-                            " cm"),
-                        (0, react_1.createElement)("span", null, "\u00D6L\u00C7\u00DCN\u00DCZE G\u00D6RE")))),
+            (0, react_1.createElement)("section", { className: "wrap v8-home-studio", id: "uc-boyutlu-studyo" },
+                (0, react_1.createElement)(DeskExperience_1.DeskExperience, { compact: true, navigate: a.navigate, notify: a.notify })),
             (0, react_1.createElement)("section", { className: "wrap v6-section home-faq" },
                 (0, react_1.createElement)("div", null,
                     (0, react_1.createElement)(ui_1.Eyebrow, null, "AKLINIZDA KALMASIN"),
@@ -2881,7 +2930,7 @@ class Home extends react_1.Component {
                         (0, react_1.createElement)("br", null),
                         (0, react_1.createElement)("em", null, "netle\u015Ftirelim.")),
                     (0, react_1.createElement)(ui_1.TextLink, { to: "/iletisim", navigate: a.navigate }, "\u0130leti\u015Fim")),
-                (0, react_1.createElement)(ui_1.Accordion, { items: [["Pinterest'te beğendiğim bir modeli getirebilir miyim?", 'Evet. Bağlantıyı, fotoğrafı veya çiziminizi paylaşabilirsiniz. Modelin kullanımını, ölçülerini ve malzemesini birlikte değerlendirip size uygun özgün bir yaklaşım üzerinde konuşuruz. Her model için üretilebilirlik ayrıca teyit edilir.'], ['Kesin ölçülerimi bilmiyorum. Başlayabilir miyim?', 'Elbette. İlk aşamada yaklaşık ölçü veya mekân fotoğrafı yeterli olabilir. Üretimden önce ölçüler ve yerleşim ayrıca netleştirilir.'], ['Konsept görseller sizin tamamladığınız işler mi?', 'Hayır. Bitirdiğimiz İşler bölümünde atölyenin paylaştığı fotoğraflar bulunur. Yapay zekâ konseptleri ve Pinterest bağlantıları ayrı etiketlerle ilham amacıyla gösterilir.'], ['Yeni atölye adresi nerede?', 'İstanbul’daki yeni atölye adresi netleştiğinde burada paylaşılacak. Ziyaret bilgileri adresle birlikte duyurulacak. Proje fikrinizi model paylaşım alanında hazırlayabilirsiniz.']] })),
+                (0, react_1.createElement)(ui_1.Accordion, { items: [["Pinterest'te beğendiğim bir modeli getirebilir miyim?", 'Evet. Bağlantıyı, fotoğrafı veya çiziminizi paylaşabilirsiniz. Modelin kullanımını, ölçülerini ve malzemesini birlikte değerlendirip size uygun özgün bir yaklaşım üzerinde konuşuruz. Her model için üretilebilirlik ayrıca teyit edilir.'], ['Kesin ölçülerimi bilmiyorum. Başlayabilir miyim?', 'Elbette. İlk aşamada yaklaşık ölçü veya mekân fotoğrafı yeterli olabilir. Üretimden önce ölçüler ve yerleşim ayrıca netleştirilir.'], ['Konsept görseller sizin tamamladığınız işler mi?', 'Hayır. Bitirdiğimiz İşler bölümünde atölyenin paylaştığı fotoğraflar bulunur. Konsept modeller ve Pinterest bağlantıları ayrı etiketlerle ilham amacıyla gösterilir.'], ['Yeni atölye adresi nerede?', 'İstanbul’daki yeni atölye adresi netleştiğinde burada paylaşılacak. Ziyaret bilgileri adresle birlikte duyurulacak. Proje fikrinizi model paylaşım alanında hazırlayabilirsiniz.']] })),
             (0, react_1.createElement)("section", { className: "v6-final-cta" },
                 (0, react_1.createElement)("div", { className: "wrap" },
                     (0, react_1.createElement)(ui_1.Eyebrow, null, "S\u0130Z\u0130N F\u0130KR\u0130N\u0130Z. B\u0130Z\u0130M USTALI\u011EIMIZ."),
@@ -3083,7 +3132,7 @@ function Categories(a) {
                             (0, react_1.createElement)("h2", null,
                                 "Bir ba\u015Flang\u0131\u00E7 ",
                                 (0, react_1.createElement)("em", null, "fikri."))),
-                        (0, react_1.createElement)("p", null, "Bu g\u00F6rseller yapay zek\u00E2 konseptidir. At\u00F6lyenin tamamlad\u0131\u011F\u0131 i\u015Fler de\u011Fildir. \u00DCretilebilirlik ve ayr\u0131nt\u0131lar birlikte de\u011Ferlendirilir.")),
+                        (0, react_1.createElement)("p", null, "Bu g\u00F6rseller konsept modeldir. At\u00F6lyenin tamamlad\u0131\u011F\u0131 i\u015Fler de\u011Fildir. \u00DCretilebilirlik ve ayr\u0131nt\u0131lar birlikte de\u011Ferlendirilir.")),
                     (0, react_1.createElement)("div", { className: "concept-grid" }, ideas.map(c => (0, react_1.createElement)(ConceptCard, { key: c.id, c: c, navigate: a.navigate, actions: a }))))),
             (0, react_1.createElement)(PortfolioUI_1.ModelCallout, { navigate: a.navigate }));
     }
