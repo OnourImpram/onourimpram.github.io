@@ -33,6 +33,7 @@ with sync_playwright() as p:
   page.screenshot(path=str(OUT/'home-desktop.png'));page.screenshot(path=str(OUT/'home-full.jpg'),full_page=True,type='jpeg',quality=88)
   page.goto(BASE+'tasarim-masasi/',wait_until='networkidle');page.wait_for_selector('[data-three-status="ready"]',timeout=45000);page.wait_for_timeout(1500)
   s=state();record('Actual Three.js geometry and bilateral shelf towers',s['engine']=='Three.js' and len(s['atelier']['bookcases'])==2 and s['atelier']['bookcases'][0]['x']<0<s['atelier']['bookcases'][1]['x'] and all(x['shelves']==4 and x['visible'] for x in s['atelier']['bookcases']),s)
+  record('Static room rendering stays below draw-call budget',s['drawCalls']<450,{'drawCalls':s['drawCalls'],'triangles':s['triangles'],'ceiling':450})
   record('Desk remains framed with room visible',all(abs(v)<=1.02 for v in s['framing'].values()),s['framing'])
   page.screenshot(path=str(OUT/'studio-desktop.png'));page.locator('.v8-showroom').screenshot(path=str(OUT/'showroom.png'))
   day=capture('atelier-day',True)

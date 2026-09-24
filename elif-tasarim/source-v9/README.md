@@ -1,4 +1,4 @@
-# Elif Tasarım V8. Devir 01
+# Elif Tasarım V9. Devir 01
 
 Gerçek Three.js 0.185.1 ve WebGL ile oluşturulmuş hareketli konsept masa. Fotoğrafın kamera hareketiyle kaydırılması değildir. Tabla, üç ince çekmece, ahşap örtülü destek, dolap çekmecesi, menteşeli kapak ve bağımsız yan tabla ayrı geometri gruplarıdır.
 
@@ -8,7 +8,7 @@ Node.js 22 veya üzeri gerekir. Kaynak paketin kökünde `npm install --ignore-s
 
 ## Yayın
 
-`dist` dizininin tamamı `/elif-tasarim/` yoluna yerleştirilir. Yalnız bu alt dizin değiştirilmelidir. Kök kişisel sitenin `index.html` dosyasına dokunulmaz. `release-v8.json` her yayın dosyasının boyut ve SHA256 kaydını içerir.
+`dist` dizininin tamamı `/elif-tasarim/` yoluna yerleştirilir. Yalnız bu alt dizin değiştirilmelidir. Kök kişisel sitenin `index.html` dosyasına dokunulmaz. `release-v9.json` her yayın dosyasının boyut ve SHA256 kaydını içerir.
 
 GitHub Pages sürümü noindex tasarım ve portföy önizlemesidir. Canlı ödeme, sipariş veritabanı veya otomatik mesaj teslimi içermez. Ticari yayın ayrı koşullara tabidir.
 
@@ -27,3 +27,9 @@ WebGL desteklenmiyorsa fotoğraf ve ölçü özeti kullanılır. Mevcut model ö
 ## Lisanslar
 
 Three.js lisansı `public/three/vendor/THREE_LICENSE.txt`, Preact lisansı `tools/PREACT_LICENSE.txt` içindedir. Sistem yazı tipleri kullanılır, font dosyaları dağıtılmaz. Üçüncü taraf HULALA fotoğrafları yayın paketine alınmamıştır.
+
+## V9 atölye ortamı
+
+İki kitaplıkta dörder raf, açılıp kapanabilen raf ışığı ve yaşam ayrıntıları vardır. Hareket eden masa parçaları ortamdan bağımsız kalır. Statik mobilya parçaları malzeme başına gruplanarak çizim çağrıları azaltılır. Kaynaklar ve yayın aynı build yolunu kullanır. `public/three/atelier-room.mjs` yalnız oda ve rafları, `desk-scene.mjs` masa geometrisini ve çizim yaşam döngüsünü yönetir.
+
+`npm run test:browser` yalnız çalışan bir HTTP önizlemesine karşı gerçek Chromium ve WebGL ile kullanılmalıdır. Hedefi `BASE_URL` belirler. Testler gerçek mesaj veya sipariş göndermez.

@@ -8,7 +8,7 @@
     "test": "node tools/compile-domain.cjs && node --test tests/domain.test.cjs tests/v7/unit.cjs tests/v8/unit.cjs tests/v7/server.test.cjs tests/v9/room.test.cjs",
     "typecheck:core": "tsc --strict --noEmit --target ES2020 --module commonjs --lib ES2020,DOM src/lib/project.ts src/lib/upload.ts src/lib/zip.ts src/lib/selections.ts",
     "serve": "node tools/serve-static.cjs dist 8000",
-    "test:browser": "python tests/v8/browser.py",
+    "test:browser": "python tests/v9/browser.py",
     "verify:dist": "node tools/verify-v9.cjs"
   },
   "devDependencies": {
