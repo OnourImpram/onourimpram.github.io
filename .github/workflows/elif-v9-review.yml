@@ -1,0 +1,117 @@
+name: Elif V9 release candidate review
+on:
+  push:
+    branches: [elif-v9-bilateral-studio-20260924]
+    paths: ['.github/workflows/elif-v9-review.yml']
+permissions:
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Restore prepared V9 source and verified fixes
+        env:
+          PACKAGE_URL: 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-09b0-8210-94d8-fe2c415a0a41/raw?se=2026-09-24T20%3A30%3A22Z&sp=r&sv=2026-02-06&sr=b&scid=dfc982ca-9a2b-52c8-811f-bea7078a8b1d&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-24T19%3A25%3A55Z&ske=2026-09-25T19%3A25%3A55Z&sks=b&skv=2026-02-06&sig=O7UNK3YAkPiDBDdh0TmUdmaE0oiVE8VK%2BFUO6FN52Po%3D'
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$PACKAGE_URL"
+          cp -a elif-tasarim/source-v9 elif-v9-work
+          curl --fail --location --silent --show-error --max-time 60 "$PACKAGE_URL" -o /tmp/v9-fixes.zip
+          echo '1107300751a2411d93a2d0d035875bc52c1d26e74e972de1afd6e667cbd8b15f  /tmp/v9-fixes.zip' | sha256sum -c
+          python - <<'PY'
+          import zipfile,pathlib
+          with zipfile.ZipFile('/tmp/v9-fixes.zip') as z:
+              assert len(z.infolist())<500 and sum(i.file_size for i in z.infolist())<5000000
+              for i in z.infolist():
+                  p=pathlib.PurePosixPath(i.filename)
+                  assert not p.is_absolute() and '..' not in p.parts
+                  assert p.parts[0] in {'src','public','tools','tests','docs','README.md','package.json','package-lock.json'}
+                  assert not ((i.external_attr>>16)&0o170000)==0o120000
+              z.extractall('elif-v9-work')
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test clean source
+        working-directory: elif-v9-work
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/v9
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm test 2>&1 | tee evidence/v9/units-final.txt
+          npm run typecheck:core 2>&1 | tee evidence/v9/types-final.txt
+          npm run build 2>&1 | tee evidence/v9/build-final.txt
+      - name: Install Chromium and image encoder
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Validate interactive room and regenerate honest poster
+        working-directory: elif-v9-work
+        env:
+          BASE_URL: http://127.0.0.1:8080/elif-tasarim/
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/elif-v9-http
+          ln -s "$PWD/dist" /tmp/elif-v9-http/elif-tasarim
+          python -m http.server 8080 --bind 127.0.0.1 --directory /tmp/elif-v9-http >/tmp/v9-http.log 2>&1 &
+          sleep 2
+          WRITE_POSTERS=1 python tests/v9/browser.py 2>&1 | tee evidence/v9/browser-final.txt
+          npm run build 2>&1 | tee evidence/v9/build-poster.txt
+          python tests/v8/browser.py 2>&1 | tee evidence/v9/v8-regression.txt
+      - name: All page reflow and file integrity
+        working-directory: elif-v9-work
+        run: |
+          set -euo pipefail
+          npm run verify:dist | tee evidence/v9/integrity.txt
+          python - <<'PY'
+          import json,pathlib
+          from playwright.sync_api import sync_playwright
+          out=pathlib.Path('evidence/v9');manifest=json.loads(pathlib.Path('dist/release-v9.json').read_text());records=[];errors=[]
+          with sync_playwright() as p:
+              b=p.chromium.launch(headless=True,args=['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
+              page=b.new_page();page.on('pageerror',lambda e:errors.append(str(e)))
+              for width in [390,768,1440]:
+                  page.set_viewport_size({'width':width,'height':1000})
+                  for route in manifest['routes']:
+                      response=page.goto('http://127.0.0.1:8080/elif-tasarim/'+route.lstrip('/')+('/' if route!='/' else ''),wait_until='domcontentloaded')
+                      page.wait_for_timeout(80)
+                      result=page.evaluate('({overflow:document.documentElement.scrollWidth>innerWidth+1,h1:document.querySelectorAll("#app h1").length,broken:[...document.querySelectorAll("#app img")].filter(e=>e.complete&&e.naturalWidth===0).length})')
+                      records.append({'route':route,'width':width,'status':response.status,**result})
+              b.close()
+          (out/'matrix.json').write_text(json.dumps({'records':records,'errors':errors},indent=2))
+          assert not errors and all(r['status']==200 and r['h1']==1 and not r['overflow'] and not r['broken'] for r in records)
+          print('PASS',len(records),'route viewport pairs')
+          PY
+      - name: Preserve reviewed source and output on isolated branch
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          rsync -a --exclude=node_modules --exclude=dist --exclude=evidence --exclude=preview --exclude=__pycache__ --exclude=.compiled elif-v9-work/ elif-tasarim/source-v9/
+          if [ '${{ job.status }}' = 'success' ]; then
+            cp -a elif-v9-work/dist elif-v9-reviewed
+          fi
+          git config user.name 'Elif Build'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add elif-tasarim/source-v9
+          if [ -d elif-v9-reviewed ]; then git add elif-v9-reviewed; fi
+          git diff --cached --quiet && exit 0
+          git commit -m 'review(elif): preserve tested bilateral atelier source and candidate publication'
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:elif-v9-bilateral-studio-20260924
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v9-release-candidate
+          path: |
+            elif-v9-work/evidence/v9
+            elif-v9-work/evidence/v8/browser
+            elif-v9-work/dist
+            elif-v9-work/public/assets/devir-studio-v9.webp
+          retention-days: 14
