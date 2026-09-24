@@ -1,0 +1,32 @@
+name: Elif V6 transfer integrity
+on:
+  push:
+    branches: [elif-tasarim-v6-20260924]
+    paths: ['.github/workflows/elif-v6-transfer.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Export transferred text without executing it
+        shell: python
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          import urllib.request, json, base64, pathlib, os
+          shas=['7924024b7d1d4f20ed7cdcde85142398f0a3fb0c','4dfa49c701abc13fed2b160df2ea7c3565597663','ba9cda28f2a7ed0c94e82b6034a25729a43a17eb','af7a05d734a8ba34c5b4acf03d29fb596337ce63','c6238b7234c1d5d615064278ec2193edac4076fc']
+          out=pathlib.Path('transfer');out.mkdir()
+          for i,sha in enumerate(shas):
+            req=urllib.request.Request('https://api.github.com/repos/OnourImpram/onourimpram.github.io/git/blobs/'+sha,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+            with urllib.request.urlopen(req,timeout=20) as r: data=json.load(r)
+            raw=base64.b64decode(data['content'])
+            text=base64.b64encode(raw).decode() if i==0 else raw.decode('ascii')
+            (out/(str(i)+'.txt')).write_text(text)
+            print(i, len(text))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elif-v6-transfer-roundtrip
+          path: transfer
+          retention-days: 7
