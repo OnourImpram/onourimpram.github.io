@@ -1,4 +1,4 @@
-/** Elif Tasarım V8. Original parametric concept geometry, not a CAD reconstruction.
+/** Elif Tasarım V9. Original parametric concept geometry, not a CAD reconstruction.
  * Three.js 0.185.1. Engine/addon license is retained in vendor/THREE_LICENSE.txt.
  * All units below are metres. UI dimensions are conceptual, not load ratings.
  */
@@ -13,15 +13,15 @@ const bounded=(v,a,b,f)=>Math.max(a,Math.min(b,finite(v,f)));
 function normalized(s={}){return {width:bounded(s.width,120,220,180),depth:bounded(s.depth,65,95,80),height:bounded(s.height,80,125,80),angle:bounded(s.angle,0,360,90),material:['ceviz','mese','koyu'].includes(s.material)?s.material:'ceviz',drawers:!!s.drawers,door:!!s.door};}
 function seeded(seed){return ()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296}}
 function woodTexture(kind){
- const colors={ceviz:[101,66,42],mese:[168,139,98],koyu:[46,43,38]};
+ const colors={ceviz:[82,52,32],mese:[150,117,77],koyu:[35,31,27]};
  const base=colors[kind],w=2048,h=512,canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;
  const ctx=canvas.getContext('2d'),data=ctx.createImageData(w,h),rng=seeded(7123),arr=data.data;
  for(let y=0;y<h;y++)for(let x=0;x<w;x++){
   const nx=x/w,ny=y/h,warp=12*Math.sin(nx*7+ny*3)+5*Math.sin(nx*17-ny*6);
   const knot=Math.exp(-Math.pow((nx-.70)*4,2)-Math.pow((ny-.30)*8,2));
   const f=(y+warp+28*knot*Math.sin(nx*9))*.82;
-  const grain=.048*Math.sin(f)+.019*Math.sin(f*2.17)+.009*Math.sin(f*6.3);
-  const broad=.11*Math.sin(ny*24+nx*1.5+warp*.10)+.06*Math.sin(ny*67+warp*.12);
+  const grain=.021*Math.sin(f)+.013*Math.sin(f*2.17)+.008*Math.sin(f*6.3);
+  const broad=.022*Math.sin(ny*24+nx*1.5+warp*.10)+.032*Math.sin(ny*97+warp*.10);
   const board=Math.floor(y/128),edge=y%128<1?-.05:0;
   const light=1+grain+broad+(rng()-.5)*.055+(board-1.5)*.018+edge;
   const i=(y*w+x)*4;arr[i]=base[0]*light;arr[i+1]=base[1]*light;arr[i+2]=base[2]*light;arr[i+3]=255;
@@ -33,22 +33,22 @@ function shapeRect(w,d,r=.025,cx=0,cz=0){const s=new THREE.Shape(),x=cx-w/2,z=cz
 
 export function createDeskScene(host,initial={},hooks={}){
  if(!host||!host.isConnected)throw Error('3D stage is unavailable');
- let dead=false,visible=true,anim=null,frameCount=0,last=0,needs=true,autoRotate=false,theme='day',dimensionVisible=false,automaticFrame=true,roomFraming=true;
+ let dead=false,visible=true,anim=null,frameCount=0,last=0,needs=true,autoRotate=false,theme='day',dimensionVisible=false,automaticFrame=true,roomFraming=true,orbitDirection=1;
  let atmosphere={mode:'atelier',shelves:true,lights:true,props:true};let atelier,deskStyling;
  let target=normalized(initial),current={height:target.height,angle:target.angle,drawer:target.drawers?1:0,door:target.door?1:0};
  const scene=new THREE.Scene();scene.background=new THREE.Color('#eee7dc');scene.fog=new THREE.Fog('#eee7dc',10,25);
  const camera=new THREE.PerspectiveCamera(35,1,.05,35);camera.position.set(2.45,1.85,3.1);
  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:false,powerPreference:'high-performance',preserveDrawingBuffer:true});
  renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.8));renderer.setSize(Math.max(host.clientWidth,1),Math.max(host.clientHeight,1),false);
- renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.1;
+ renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.0;
  renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
  const canvas=renderer.domElement;canvas.setAttribute('aria-label','Çift raflı Elif stüdyosu. Devir 01. Yükseklik ayarlı, çekmeceli ve döner yan tablalı üç boyutlu konsept masa');canvas.setAttribute('role','img');canvas.tabIndex=0;canvas.dataset.engine='Three.js '+THREE.REVISION;host.appendChild(canvas);
  const controls=new OrbitControls(camera,canvas);controls.target.set(.10,.64,.22);controls.enableDamping=true;controls.dampingFactor=.09;controls.enablePan=false;controls.enableZoom=false;controls.minDistance=2;controls.maxDistance=7;controls.minPolarAngle=.15;controls.maxPolarAngle=Math.PI/2-.07;controls.rotateSpeed=.6;controls.touches.ONE=THREE.TOUCH.ROTATE;controls.touches.TWO=THREE.TOUCH.DOLLY_PAN;
  // Wheel remains ordinary page scrolling, including on mobile.
  canvas.style.touchAction='pan-y';controls.addEventListener('change',invalidate);controls.addEventListener('start',()=>{automaticFrame=false});
  const pmrem=new THREE.PMREMGenerator(renderer),envScene=new RoomEnvironment(),env=pmrem.fromScene(envScene,.04);scene.environment=env.texture;scene.environmentIntensity=.55;envScene.dispose();pmrem.dispose();
- const ambient=new THREE.HemisphereLight(0xfff5e5,0x8a8071,1.5);scene.add(ambient);
- const sun=new THREE.DirectionalLight(0xffe8c3,3.7);sun.position.set(-3.8,5.8,3.6);sun.castShadow=true;sun.shadow.mapSize.set(host.clientWidth<650?1024:2048,host.clientWidth<650?1024:2048);sun.shadow.camera.left=-3.4;sun.shadow.camera.right=3.4;sun.shadow.camera.top=3.4;sun.shadow.camera.bottom=-3.4;sun.shadow.camera.near=.5;sun.shadow.camera.far=16;sun.shadow.normalBias=.018;sun.shadow.bias=-.0001;sun.shadow.radius=3;sun.target.position.set(0,.3,0);scene.add(sun,sun.target);
+ const ambient=new THREE.HemisphereLight(0xfff5e5,0x8a8071,1.10);scene.add(ambient);
+ const sun=new THREE.DirectionalLight(0xffe8c3,2.75);sun.position.set(-3.8,5.8,3.6);sun.castShadow=true;sun.shadow.mapSize.set(host.clientWidth<650?1024:2048,host.clientWidth<650?1024:2048);sun.shadow.camera.left=-3.4;sun.shadow.camera.right=3.4;sun.shadow.camera.top=3.4;sun.shadow.camera.bottom=-3.4;sun.shadow.camera.near=.5;sun.shadow.camera.far=16;sun.shadow.normalBias=.018;sun.shadow.bias=-.0001;sun.shadow.radius=3;sun.target.position.set(0,.3,0);scene.add(sun,sun.target);
  const fill=new THREE.DirectionalLight(0xe7eef4,1);fill.position.set(4,3,-2);scene.add(fill);
  const woods=Object.fromEntries(['ceviz','mese','koyu'].map(k=>{const map=woodTexture(k);return[k,new THREE.MeshPhysicalMaterial({map,bumpMap:map,bumpScale:.00065,roughness:.41,metalness:0,clearcoat:.22,clearcoatRoughness:.45,envMapIntensity:.55})]}));
  const dark=new THREE.MeshStandardMaterial({color:0x282926,roughness:.37,metalness:.52});
@@ -146,7 +146,7 @@ export function createDeskScene(host,initial={},hooks={}){
   if(!model||!automaticFrame)return;
   model.updateMatrixWorld(true);
   const box3=new THREE.Box3().setFromObject(model);box3.max.y=Math.max(box3.max.y,1.28);
-  if(atmosphere.mode==='atelier'&&roomFraming){box3.expandByPoint(new THREE.Vector3(-1.94,0,-1.32));box3.expandByPoint(new THREE.Vector3(1.94,2.43,-1.32));}
+  if(atmosphere.mode==='atelier'&&roomFraming){box3.expandByPoint(new THREE.Vector3(-1.85,0,-1.32));box3.expandByPoint(new THREE.Vector3(1.85,2.24,-1.32));}
   const center=box3.getCenter(new THREE.Vector3()),dir=camera.position.clone().sub(controls.target).normalize();
   const right=new THREE.Vector3().crossVectors(camera.up,dir);if(right.lengthSq()<.000001)right.set(1,0,0);right.normalize();
   const up=new THREE.Vector3().crossVectors(dir,right).normalize(),tv=Math.tan(THREE.MathUtils.degToRad(camera.fov)/2),th=tv*camera.aspect;
@@ -163,7 +163,7 @@ export function createDeskScene(host,initial={},hooks={}){
  function render(){if(dead||!visible||document.hidden)return;controls.update();projectLabels();renderer.render(scene,camera);frameCount++;}
  function tick(t){anim=null;if(dead||!visible||document.hidden)return;const dt=Math.min(.5,Math.max(.001,(t-last)/1000||.016));last=t;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,alpha=reduced?1:1-Math.exp(-dt*9);
   const targets={height:target.height,angle:target.angle,drawer:target.drawers?1:0,door:target.door?1:0};let moving=false;for(const key of Object.keys(targets)){const diff=targets[key]-current[key];if(Math.abs(diff)>.001){current[key]+=diff*alpha;moving=true}else current[key]=targets[key]}
-  if(moving)apply();if(autoRotate&&!reduced){const off=camera.position.clone().sub(controls.target);off.applyAxisAngle(new THREE.Vector3(0,1,0),dt*.16);camera.position.copy(controls.target).add(off);moving=true}
+  if(moving)apply();if(autoRotate&&!reduced){const off=camera.position.clone().sub(controls.target);if(atmosphere.mode==='atelier'&&Math.abs(Math.atan2(off.x,off.z))>1.02)orbitDirection=Math.atan2(off.x,off.z)>0?-1:1;off.applyAxisAngle(new THREE.Vector3(0,1,0),dt*.16*orbitDirection);camera.position.copy(controls.target).add(off);moving=true}
   needs=false;render();if((moving||needs)&&!anim)anim=requestAnimationFrame(tick);
  }
  function invalidate(){needs=true;if(!dead&&visible&&!document.hidden&&!anim)anim=requestAnimationFrame(tick)}
@@ -181,20 +181,20 @@ export function createDeskScene(host,initial={},hooks={}){
   else if(name==='detail'){camera.position.set(1.5,1.3,1.9);controls.target.set(W/2-.24,.55,.15);}
   else if(name==='left')camera.position.set(-2.45*wide,1.65,3.3*wide);
   else if(name==='right')camera.position.set(2.45*wide,1.65,3.3*wide);
-  else camera.position.set(atmosphere.mode==='atelier'?.55:2.45*wide,atmosphere.mode==='atelier'?1.75:1.85*wide,3.8*wide);
+  else camera.position.set(atmosphere.mode==='atelier'?.55:2.45*wide,atmosphere.mode==='atelier'?1.13:1.85*wide,3.8*wide);
   frameModel();controls.update();invalidate();
  }
  const onKey=e=>{if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','-','0'].includes(e.key)){e.preventDefault();if(e.key==='0')view();else if(e.key==='+'||e.key==='-')zoom(e.key==='+'?.90:1.10);else{const offset=camera.position.clone().sub(controls.target);if(e.key==='ArrowLeft'||e.key==='ArrowRight')offset.applyAxisAngle(new THREE.Vector3(0,1,0),e.key==='ArrowLeft'?.16:-.16);else offset.y=Math.min(5,Math.max(.3,offset.y+(e.key==='ArrowUp'?.15:-.15)));camera.position.copy(controls.target).add(offset);controls.update();invalidate()}}};canvas.addEventListener('keydown',onKey);
  function zoom(f){automaticFrame=false;const v=camera.position.clone().sub(controls.target);const len=THREE.MathUtils.clamp(v.length()*f,2,7);v.setLength(len);camera.position.copy(controls.target).add(v);invalidate()}
- atelier=createAtelierRoom(scene,woods,brass,invalidate);
+ atelier=createAtelierRoom(scene,woods,brass,invalidate);controls.minAzimuthAngle=-1.35;controls.maxAzimuthAngle=1.35;
  build();ring.visible=false;resize();view();render();hooks.status?.('ready');
  const api={
   update(next){if(!anim)last=performance.now();const old=target;target=normalized(next);if(old.width!==target.width||old.depth!==target.depth)build();else if(old.material!==target.material)woodMeshes.forEach(m=>m.material=woods[target.material]);atelier.setMaterial(target.material);invalidate()},
   setView:view,zoom,
-  environment(next){atmosphere={...atmosphere,...next};atelier.update(atmosphere);if(deskStyling)deskStyling.visible=atmosphere.props;ring.visible=atmosphere.mode==='product';view();invalidate();},
+  environment(next){atmosphere={...atmosphere,...next};controls.minAzimuthAngle=atmosphere.mode==='atelier'?-1.35:-Infinity;controls.maxAzimuthAngle=atmosphere.mode==='atelier'?1.35:Infinity;atelier.update(atmosphere);if(deskStyling)deskStyling.visible=atmosphere.props;ring.visible=atmosphere.mode==='product';view();invalidate();},
   dimensions(show){dimensionVisible=!!show;invalidate()},
   rotate(on){automaticFrame=false;autoRotate=!!on;invalidate()},
-  light(mode){theme=mode;atelier.light(mode);const dusk=mode==='evening';scene.background.set(dusk?'#e0d1bd':'#eee7dc');scene.fog.color.copy(scene.background);floorMat.color.set(dusk?'#d9cbb4':'#e6dfd3');sun.color.set(dusk?0xffd497:0xffe8c3);sun.intensity=dusk?3.9:3.7;ambient.intensity=dusk?1.12:1.5;renderer.toneMappingExposure=dusk?.99:1.1;invalidate()},
+  light(mode){theme=mode;atelier.light(mode);const dusk=mode==='evening';scene.background.set(dusk?'#e0d1bd':'#eee7dc');scene.fog.color.copy(scene.background);floorMat.color.set(dusk?'#d9cbb4':'#e6dfd3');sun.color.set(dusk?0xffd497:0xffe8c3);sun.intensity=dusk?1.6:2.75;ambient.intensity=dusk?.72:1.10;renderer.toneMappingExposure=dusk?.96:1.0;invalidate()},
   snapshot(width=1920,height=1280){if(dead)throw Error('Scene disposed');const w=host.clientWidth,h=host.clientHeight,ratio=renderer.getPixelRatio();renderer.setPixelRatio(1);renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();renderer.render(scene,camera);const data=canvas.toDataURL('image/png');renderer.setPixelRatio(ratio);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();invalidate();return data},
   inspect(){return {atelier:atelier.inspect(),deskStyling:!!deskStyling?.visible,engine:'Three.js',revision:THREE.REVISION,frameCount,visible,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,config:{...target},geometry:{mainTopY:upper.position.y,fixedPanelY:model.getObjectByName('sol-ahsap-tasiyici').position.y,returnTopY:wing.position.y,wingAngle:wing.rotation.y,cabinetDrawerZ:cabinetDrawer.position.z,mainDrawerZ:mainDrawers[1].position.z,doorAngle:door.rotation.y},camera:camera.position.toArray(),material:target.material,theme,dimensions:dimensionVisible,contextLost:renderer.getContext().isContextLost(),gpuTextures:renderer.info.memory.textures,framing:screenBounds()}},
   dispose(){if(dead)return;dead=true;if(anim)cancelAnimationFrame(anim);ro.disconnect();io.disconnect();document.removeEventListener('visibilitychange',onVisibility);canvas.removeEventListener('keydown',onKey);canvas.removeEventListener('webglcontextlost',onLost);canvas.removeEventListener('webglcontextrestored',onRestored);controls.dispose();atelier.dispose();disposeModel();scene.traverse(o=>o.geometry?.dispose());for(const mat of allMaterials){mat.map?.dispose();mat.dispose()}floorMat.dispose();shadowTex.dispose();contact.material.dispose();ring.material.dispose();dmat.dispose();env.dispose();renderer.dispose();labels.forEach(el=>el.remove());canvas.remove();host.__elif3D=null;}

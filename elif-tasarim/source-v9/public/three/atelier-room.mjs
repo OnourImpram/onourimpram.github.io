@@ -65,6 +65,8 @@ export function createAtelierRoom(scene,woods,brass,invalidate){
  cylinder(.025,.033,.33,[0,.27,0],chair,dark);
  for(let k=0;k<5;k++){const a=k*Math.PI*2/5,arm=box(.028,.025,.32,[Math.sin(a)*.14,.09,Math.cos(a)*.14],chair,dark);arm.rotation.y=a;const wheel=cylinder(.027,.027,.029,[Math.sin(a)*.28,.04,Math.cos(a)*.28],chair,dark);wheel.rotation.x=Math.PI/2;}
  for(const side of [-1,1]){box(.032,.14,.032,[side*.27,.54,0],chair,dark);box(.045,.031,.29,[side*.27,.61,-.015],chair,leather);}
+ for(const side of [-1,1]){const seam=box(.005,.38,.003,[side*.165,.74,-.166],chair,leather);seam.rotation.x=-.10;}
+ box(4.7,.11,.045,[0,.055,-1.369],root,stone,'skirting');
  // Plant and large ceramic vessel beside the left cabinet, outside desk movement.
  vase(-2.05,.003,-.75,2.45,props);branch(-2.05,.39,-.75,2.35,props);
  const pend=new THREE.Group();root.add(pend);for(const x of [-.68,.68])cylinder(.002,.002,.64,[x,2.54,-.5],pend,dark);box(1.65,.033,.06,[0,2.21,-.5],pend,brass,'pendant');box(1.59,.004,.04,[0,2.19,-.5],lumens,led);

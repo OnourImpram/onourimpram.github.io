@@ -8,3 +8,5 @@ Environment observation. Local Chromium cannot create WebGL2, including a minima
 Ruling. Reuse existing licensed local Three.js engine and repository assets. No third-party photographs or generated fake city projects imported from design mockups.
 Ruling. Shelf books and styling hide with shelves. Room props and shelf lighting are independently controlled. Furniture scope disclaimer remains.
 Pending. Actual CI screenshots, correction cycle, post-correction regression suite, release-only subtree update and live verification.
+
+CI stage 1. Geometry, shelves, motion, material and all studio widths passed. Actual pointer test caught the poster start button under inactive camera controls on mobile. Fix hides inactive controls and reserves launch clearance. Local geometry found a separate home photo width regression from inherited height plus new aspect-ratio. Fixed with width:100% and height:auto. Raw failures retained, not relabeled as success.
