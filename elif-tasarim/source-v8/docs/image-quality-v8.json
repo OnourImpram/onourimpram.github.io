@@ -1,0 +1,140 @@
+[
+  {
+    "asset": "concept-hero",
+    "sourcePixels": [
+      1672,
+      941
+    ],
+    "action": "Re-encoded from existing full-resolution PNG at WebP quality 91, no artificial enlargement"
+  },
+  {
+    "asset": "concept-mutfak",
+    "sourcePixels": [
+      1448,
+      1086
+    ],
+    "action": "Re-encoded from existing full-resolution PNG at WebP quality 91, no artificial enlargement"
+  },
+  {
+    "asset": "concept-tv",
+    "sourcePixels": [
+      1448,
+      1086
+    ],
+    "action": "Re-encoded from existing full-resolution PNG at WebP quality 91, no artificial enlargement"
+  },
+  {
+    "asset": "concept-kahve",
+    "sourcePixels": [
+      1448,
+      1086
+    ],
+    "action": "Re-encoded from existing full-resolution PNG at WebP quality 91, no artificial enlargement"
+  },
+  {
+    "asset": "concept-vestiyer",
+    "sourcePixels": [
+      1448,
+      1086
+    ],
+    "action": "Re-encoded from existing full-resolution PNG at WebP quality 91, no artificial enlargement"
+  },
+  {
+    "asset": "concept-gardrop",
+    "sourcePixels": [
+      1448,
+      1086
+    ],
+    "action": "Re-encoded from existing full-resolution PNG at WebP quality 91, no artificial enlargement"
+  },
+  {
+    "asset": "concept-sehpa",
+    "sourcePixels": [
+      1448,
+      1086
+    ],
+    "action": "Re-encoded from existing full-resolution PNG at WebP quality 91, no artificial enlargement"
+  },
+  {
+    "asset": "concept-pergola",
+    "sourcePixels": [
+      1448,
+      1086
+    ],
+    "action": "Re-encoded from existing full-resolution PNG at WebP quality 91, no artificial enlargement"
+  },
+  {
+    "asset": "concept-model",
+    "sourcePixels": [
+      1448,
+      1086
+    ],
+    "action": "Re-encoded from existing full-resolution PNG at WebP quality 91, no artificial enlargement"
+  },
+  {
+    "asset": "office.webp",
+    "previousPixels": [
+      430,
+      287
+    ],
+    "pixels": [
+      1672,
+      941
+    ],
+    "source": "sıcak_işıklı_modern_ceviz_çalışma_masası.png",
+    "temporaryPoster": false
+  },
+  {
+    "asset": "joinery.webp",
+    "previousPixels": [
+      2048,
+      876
+    ],
+    "pixels": [
+      1672,
+      941
+    ],
+    "source": "zarif_ceviz_masa_köşesi.png",
+    "temporaryPoster": false
+  },
+  {
+    "asset": "devir-poster.webp",
+    "previousPixels": null,
+    "pixels": [
+      1672,
+      941
+    ],
+    "source": "sıcak_işıklı_modern_ceviz_çalışma_masası.png",
+    "temporaryPoster": true
+  },
+  {
+    "asset": "devir-standing.webp",
+    "previousPixels": null,
+    "pixels": [
+      1672,
+      941
+    ],
+    "source": "zarif_ceviz_ayarlanabilir_masa.png",
+    "temporaryPoster": true
+  },
+  {
+    "asset": "devir-detail.webp",
+    "previousPixels": null,
+    "pixels": [
+      1672,
+      941
+    ],
+    "source": "zarif_ceviz_masa_köşesi.png",
+    "temporaryPoster": true
+  },
+  {
+    "asset": "devir-top.webp",
+    "previousPixels": null,
+    "pixels": [
+      1672,
+      941
+    ],
+    "source": "sıcak_işıklı_minimalist_ahşap_ofis.png",
+    "temporaryPoster": true
+  }
+]

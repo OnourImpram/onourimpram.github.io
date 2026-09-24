@@ -1,0 +1,763 @@
+{
+  "concept-hero": {
+    "kind": "concept",
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "file": "concept-hero-480.webp",
+        "width": 480,
+        "height": 270,
+        "bytes": 35402
+      },
+      {
+        "file": "concept-hero-800.webp",
+        "width": 800,
+        "height": 450,
+        "bytes": 84460
+      },
+      {
+        "file": "concept-hero-full.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 267224
+      }
+    ],
+    "source": "sıcak_işıklı_modern_i_skandinav_yemek_alanı.png",
+    "sourceSha256": "0680ba46833f7b6594dee5089ff0e89e5314a3c252a7f37ac9bdb2100af4b866",
+    "crop": null
+  },
+  "concept-mutfak": {
+    "kind": "concept",
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "file": "concept-mutfak-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 34596
+      },
+      {
+        "file": "concept-mutfak-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 77636
+      },
+      {
+        "file": "concept-mutfak-full.webp",
+        "width": 1448,
+        "height": 1086,
+        "bytes": 182066
+      }
+    ],
+    "source": "güneşli_modern_mutfak_ve_yemek_köşesi.png",
+    "sourceSha256": "8a1eeb595a7f167ea92e854911f5bd71e167c9a7712c2f87347aa221305dcd2f",
+    "crop": null
+  },
+  "concept-tv": {
+    "kind": "concept",
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "file": "concept-tv-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 37858
+      },
+      {
+        "file": "concept-tv-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 85868
+      },
+      {
+        "file": "concept-tv-full.webp",
+        "width": 1448,
+        "height": 1086,
+        "bytes": 202748
+      }
+    ],
+    "source": "sıcak_tonlarda_modern_minimalist_salon.png",
+    "sourceSha256": "271f91df515e9554ccd3ac260a9fbecc72d7276626101d476db1751e0cda194b",
+    "crop": null
+  },
+  "concept-kahve": {
+    "kind": "concept",
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "file": "concept-kahve-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 38296
+      },
+      {
+        "file": "concept-kahve-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 81620
+      },
+      {
+        "file": "concept-kahve-full.webp",
+        "width": 1448,
+        "height": 1086,
+        "bytes": 188928
+      }
+    ],
+    "source": "gün_işığında_lüks_kahve_köşesi.png",
+    "sourceSha256": "996cd88012aa63c3a4f60e5c5b11889c63ce8443a1d78763b6e1e463e6f4e736",
+    "crop": null
+  },
+  "concept-vestiyer": {
+    "kind": "concept",
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "file": "concept-vestiyer-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 38592
+      },
+      {
+        "file": "concept-vestiyer-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 94606
+      },
+      {
+        "file": "concept-vestiyer-full.webp",
+        "width": 1448,
+        "height": 1086,
+        "bytes": 253932
+      }
+    ],
+    "source": "sıcak_minimalist_modern_antre.png",
+    "sourceSha256": "3e45146ace9a5d9d405dda5b21270b1d27b6931d620af5344bb73935a0c0e5c6",
+    "crop": null
+  },
+  "concept-gardrop": {
+    "kind": "concept",
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "file": "concept-gardrop-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 36048
+      },
+      {
+        "file": "concept-gardrop-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 89510
+      },
+      {
+        "file": "concept-gardrop-full.webp",
+        "width": 1448,
+        "height": 1086,
+        "bytes": 234180
+      }
+    ],
+    "source": "lüks_sıcak_tonlu_giyinme_odası.png",
+    "sourceSha256": "b0665a9afd5085da7a12c778099632ef9870460fd7095568ae2ec5eb01070e89",
+    "crop": null
+  },
+  "concept-sehpa": {
+    "kind": "concept",
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "file": "concept-sehpa-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 50804
+      },
+      {
+        "file": "concept-sehpa-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 116046
+      },
+      {
+        "file": "concept-sehpa-full.webp",
+        "width": 1448,
+        "height": 1086,
+        "bytes": 271470
+      }
+    ],
+    "source": "sıcak_tonlarda_modern_salon_ve_ahşap_masalar.png",
+    "sourceSha256": "23e37e8da07796b6f6bbe027edf8a552387a7f3c5c99d8d524f2b0992c188d3e",
+    "crop": null
+  },
+  "concept-pergola": {
+    "kind": "concept",
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "file": "concept-pergola-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 73142
+      },
+      {
+        "file": "concept-pergola-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 185250
+      },
+      {
+        "file": "concept-pergola-full.webp",
+        "width": 1448,
+        "height": 1086,
+        "bytes": 480732
+      }
+    ],
+    "source": "altın_saatte_ahşap_bahçe_pergolası.png",
+    "sourceSha256": "a188dd13d5d44344b532ced1eda9fdbc400b0e32ea62ee669c0abb9748aa374b",
+    "crop": null
+  },
+  "concept-model": {
+    "kind": "concept",
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "file": "concept-model-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 62570
+      },
+      {
+        "file": "concept-model-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 140990
+      },
+      {
+        "file": "concept-model-full.webp",
+        "width": 1448,
+        "height": 1086,
+        "bytes": 320256
+      }
+    ],
+    "source": "sıcak_işıklı_mobilya_tasarım_atölyesi.png",
+    "sourceSha256": "4ad1390a178c3a996ebe541625c861c8e9c54b8eee87d31040808a11311fd81a",
+    "crop": null
+  },
+  "r01": {
+    "kind": "work",
+    "width": 1079,
+    "height": 1440,
+    "variants": [
+      {
+        "file": "r01-480.webp",
+        "width": 480,
+        "height": 641,
+        "bytes": 23294
+      },
+      {
+        "file": "r01-800.webp",
+        "width": 800,
+        "height": 1068,
+        "bytes": 52176
+      },
+      {
+        "file": "r01-full.webp",
+        "width": 1079,
+        "height": 1440,
+        "bytes": 83128
+      }
+    ],
+    "source": "R01.jpg",
+    "sourceSha256": "071098a29578638c875a45cff61faa336658c1757e7671803cf331f61eaa2645",
+    "crop": null
+  },
+  "r02": {
+    "kind": "work",
+    "width": 1079,
+    "height": 1440,
+    "variants": [
+      {
+        "file": "r02-480.webp",
+        "width": 480,
+        "height": 641,
+        "bytes": 40398
+      },
+      {
+        "file": "r02-800.webp",
+        "width": 800,
+        "height": 1068,
+        "bytes": 83840
+      },
+      {
+        "file": "r02-full.webp",
+        "width": 1079,
+        "height": 1440,
+        "bytes": 118050
+      }
+    ],
+    "source": "R02.jpg",
+    "sourceSha256": "48f175f475cea3b88e37a872ea0f4fe0e2aafe11459ecf134a4f9db6da11fa19",
+    "crop": null
+  },
+  "r04": {
+    "kind": "work",
+    "width": 1079,
+    "height": 1080,
+    "variants": [
+      {
+        "file": "r04-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 15610
+      },
+      {
+        "file": "r04-800.webp",
+        "width": 800,
+        "height": 801,
+        "bytes": 30262
+      },
+      {
+        "file": "r04-full.webp",
+        "width": 1079,
+        "height": 1080,
+        "bytes": 43638
+      }
+    ],
+    "source": "R04.jpg",
+    "sourceSha256": "a4a653f72a30e49b26bffb20b69c6be6ca6ca445e7ed269ae0f529cedd6936c9",
+    "crop": null
+  },
+  "r05": {
+    "kind": "work",
+    "width": 1080,
+    "height": 1428,
+    "variants": [
+      {
+        "file": "r05-480.webp",
+        "width": 480,
+        "height": 635,
+        "bytes": 30658
+      },
+      {
+        "file": "r05-800.webp",
+        "width": 800,
+        "height": 1058,
+        "bytes": 60676
+      },
+      {
+        "file": "r05-full.webp",
+        "width": 1080,
+        "height": 1428,
+        "bytes": 91992
+      }
+    ],
+    "source": "R05.jpg",
+    "sourceSha256": "9f3a93c92fcba331e704ce28126e1a21ccf6865be85143ba16d39dc8a0ce3766",
+    "crop": null
+  },
+  "r06": {
+    "kind": "work",
+    "width": 823,
+    "height": 1350,
+    "variants": [
+      {
+        "file": "r06-480.webp",
+        "width": 480,
+        "height": 787,
+        "bytes": 44334
+      },
+      {
+        "file": "r06-800.webp",
+        "width": 800,
+        "height": 1312,
+        "bytes": 79832
+      },
+      {
+        "file": "r06-full.webp",
+        "width": 823,
+        "height": 1350,
+        "bytes": 83534
+      }
+    ],
+    "source": "R06.jpg",
+    "sourceSha256": "652b6b482b7861bfdada37c65b0146fd4e4a5b3f3c5c8735d1745dab3e02947a",
+    "crop": null
+  },
+  "r07": {
+    "kind": "work",
+    "width": 1079,
+    "height": 1439,
+    "variants": [
+      {
+        "file": "r07-480.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 46082
+      },
+      {
+        "file": "r07-800.webp",
+        "width": 800,
+        "height": 1067,
+        "bytes": 107998
+      },
+      {
+        "file": "r07-full.webp",
+        "width": 1079,
+        "height": 1439,
+        "bytes": 168522
+      }
+    ],
+    "source": "R07.jpg",
+    "sourceSha256": "9b5716c5eddd566a6eb7255f33c9578129230d3ef4e5748dd6f30c4a51839dff",
+    "crop": null
+  },
+  "r08": {
+    "kind": "work",
+    "width": 861,
+    "height": 1314,
+    "variants": [
+      {
+        "file": "r08-480.webp",
+        "width": 480,
+        "height": 733,
+        "bytes": 29284
+      },
+      {
+        "file": "r08-800.webp",
+        "width": 800,
+        "height": 1221,
+        "bytes": 54018
+      },
+      {
+        "file": "r08-full.webp",
+        "width": 861,
+        "height": 1314,
+        "bytes": 59970
+      }
+    ],
+    "source": "R08.jpg",
+    "sourceSha256": "1a109c1bc5e30a0bcdc26294b5d64cdcc63d028077ff0dfbfcdeae8850ba9006",
+    "crop": null
+  },
+  "r09": {
+    "kind": "work",
+    "width": 1080,
+    "height": 1729,
+    "variants": [
+      {
+        "file": "r09-480.webp",
+        "width": 480,
+        "height": 768,
+        "bytes": 31050
+      },
+      {
+        "file": "r09-800.webp",
+        "width": 800,
+        "height": 1281,
+        "bytes": 56974
+      },
+      {
+        "file": "r09-full.webp",
+        "width": 1080,
+        "height": 1729,
+        "bytes": 79596
+      }
+    ],
+    "source": "R09.jpg",
+    "sourceSha256": "546c6545382fe5718f0d1e7903d2fd0ab8aae29b580ae24faebc6e21bea35efb",
+    "crop": null
+  },
+  "r10": {
+    "kind": "work",
+    "width": 1079,
+    "height": 1440,
+    "variants": [
+      {
+        "file": "r10-480.webp",
+        "width": 480,
+        "height": 641,
+        "bytes": 35954
+      },
+      {
+        "file": "r10-800.webp",
+        "width": 800,
+        "height": 1068,
+        "bytes": 76774
+      },
+      {
+        "file": "r10-full.webp",
+        "width": 1079,
+        "height": 1440,
+        "bytes": 122484
+      }
+    ],
+    "source": "R10.jpg",
+    "sourceSha256": "d187cdcdcd411217fef1d89cce023b71c7036a1b3162e3cc56cff3593079ec9e",
+    "crop": null
+  },
+  "r12": {
+    "kind": "process",
+    "width": 2040,
+    "height": 1530,
+    "variants": [
+      {
+        "file": "r12-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 13570
+      },
+      {
+        "file": "r12-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 28730
+      },
+      {
+        "file": "r12-full.webp",
+        "width": 2040,
+        "height": 1530,
+        "bytes": 111350
+      }
+    ],
+    "source": "R12.jpg",
+    "sourceSha256": "6e9ad2f285b609249acda6c9ba0da1d17c786d2686a2ba9efbb3a92ae33ceb75",
+    "crop": null
+  },
+  "r13": {
+    "kind": "work",
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "file": "r13-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 17440
+      },
+      {
+        "file": "r13-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 41434
+      },
+      {
+        "file": "r13-full.webp",
+        "width": 1448,
+        "height": 1086,
+        "bytes": 104746
+      }
+    ],
+    "source": "R13.jpg",
+    "sourceSha256": "884f0ee81c7732ea226919fa1be4e1e5defa3cb815a6e2fe67017de6027d6ea7",
+    "crop": null
+  },
+  "r14": {
+    "kind": "work",
+    "width": 910,
+    "height": 1440,
+    "variants": [
+      {
+        "file": "r14-480.webp",
+        "width": 480,
+        "height": 760,
+        "bytes": 40776
+      },
+      {
+        "file": "r14-800.webp",
+        "width": 800,
+        "height": 1266,
+        "bytes": 80270
+      },
+      {
+        "file": "r14-full.webp",
+        "width": 910,
+        "height": 1440,
+        "bytes": 94978
+      }
+    ],
+    "source": "R14.jpg",
+    "sourceSha256": "e0d3fc4067ec59b092e8948338f66613fa46c9a74c605b292c8ffd8a8a37453f",
+    "crop": null
+  },
+  "r15": {
+    "kind": "process",
+    "width": 1079,
+    "height": 1440,
+    "variants": [
+      {
+        "file": "r15-480.webp",
+        "width": 480,
+        "height": 641,
+        "bytes": 33082
+      },
+      {
+        "file": "r15-800.webp",
+        "width": 800,
+        "height": 1068,
+        "bytes": 64816
+      },
+      {
+        "file": "r15-full.webp",
+        "width": 1079,
+        "height": 1440,
+        "bytes": 91250
+      }
+    ],
+    "source": "R15.jpg",
+    "sourceSha256": "cb47c7fa8b81eb98d9830ae36c08e978f344d01c4c260435401582d6d6809623",
+    "crop": null
+  },
+  "r18": {
+    "kind": "work",
+    "width": 1079,
+    "height": 1440,
+    "variants": [
+      {
+        "file": "r18-480.webp",
+        "width": 480,
+        "height": 641,
+        "bytes": 35726
+      },
+      {
+        "file": "r18-800.webp",
+        "width": 800,
+        "height": 1068,
+        "bytes": 85046
+      },
+      {
+        "file": "r18-full.webp",
+        "width": 1079,
+        "height": 1440,
+        "bytes": 128106
+      }
+    ],
+    "source": "R18.jpg",
+    "sourceSha256": "9c1d8ca4bece318b9953103239d4c060f24f265cea8b2d605a80023177a5331f",
+    "crop": null
+  },
+  "r19": {
+    "kind": "work",
+    "width": 2048,
+    "height": 1536,
+    "variants": [
+      {
+        "file": "r19-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 50808
+      },
+      {
+        "file": "r19-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 128320
+      },
+      {
+        "file": "r19-full.webp",
+        "width": 2048,
+        "height": 1536,
+        "bytes": 574344
+      }
+    ],
+    "source": "R19.jpg",
+    "sourceSha256": "210dd5ee59f592bb6712fc7df49e14d30060adcd3c63b3e4b29894f5e13d7003",
+    "crop": null
+  },
+  "r22": {
+    "kind": "work",
+    "width": 1086,
+    "height": 1448,
+    "variants": [
+      {
+        "file": "r22-480.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 31244
+      },
+      {
+        "file": "r22-800.webp",
+        "width": 800,
+        "height": 1067,
+        "bytes": 73112
+      },
+      {
+        "file": "r22-full.webp",
+        "width": 1086,
+        "height": 1448,
+        "bytes": 122232
+      }
+    ],
+    "source": "R22.jpg",
+    "sourceSha256": "a731d0d6f3af63adeeef50b88c0ebe3b26e9f19aa8c75799325c3431f189cf81",
+    "crop": null
+  },
+  "r23": {
+    "kind": "work",
+    "width": 2048,
+    "height": 1536,
+    "variants": [
+      {
+        "file": "r23-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 51528
+      },
+      {
+        "file": "r23-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 118898
+      },
+      {
+        "file": "r23-full.webp",
+        "width": 2048,
+        "height": 1536,
+        "bytes": 480134
+      }
+    ],
+    "source": "R23.jpg",
+    "sourceSha256": "371aef8b146af29a57e5f18fb740d0cf5ab38f6bfcf31a948fb132e9e25a4e64",
+    "crop": null
+  },
+  "work-joinery": {
+    "kind": "process",
+    "width": 2048,
+    "height": 876,
+    "variants": [
+      {
+        "file": "work-joinery-480.webp",
+        "width": 480,
+        "height": 205,
+        "bytes": 25248
+      },
+      {
+        "file": "work-joinery-800.webp",
+        "width": 800,
+        "height": 342,
+        "bytes": 54852
+      },
+      {
+        "file": "work-joinery-full.webp",
+        "width": 2048,
+        "height": 876,
+        "bytes": 214736
+      }
+    ],
+    "source": "R23.jpg",
+    "sourceSha256": "371aef8b146af29a57e5f18fb740d0cf5ab38f6bfcf31a948fb132e9e25a4e64",
+    "crop": [
+      0,
+      0,
+      2048,
+      876
+    ]
+  }
+}
