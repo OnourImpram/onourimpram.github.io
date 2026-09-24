@@ -1,0 +1,72 @@
+name: Elif V7 release staging
+on:
+  push:
+    branches: [elif-tasarim-v7-release-20260924]
+    paths: ['.github/workflows/elif-v7-stage.yml']
+permissions:
+  contents: write
+jobs:
+  verify-stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Retrieve the authorized V7 publication archive
+        env:
+          PACKAGE_URL: 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-81d8-81f4-bde0-be4a1c23a696/raw?se=2026-09-24T15%3A48%3A29Z&sp=r&sv=2026-02-06&sr=b&scid=942f83c2-ce89-5683-ad81-2a717f9049e4&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-24T13%3A59%3A16Z&ske=2026-09-25T13%3A59%3A16Z&sks=b&skv=2026-02-06&sig=YPK82QqEoG7jIrKwau9%2BTbEqdMFtstakqRg%2BzXfrYpY%3D'
+        run: |
+          echo "::add-mask::$PACKAGE_URL"
+          curl --fail --location --silent --show-error --max-time 60 "$PACKAGE_URL" -o /tmp/elif-v7.zip
+          echo 'b07e181ac9243be00208af5abbdbace31189ec1be82edbb1dcd525ede7b698c9  /tmp/elif-v7.zip' | sha256sum --check
+          python - <<'PY'
+          import zipfile,pathlib,hashlib,json,shutil
+          z=zipfile.ZipFile('/tmp/elif-v7.zip')
+          assert len(z.infolist())==153 and sum(i.file_size for i in z.infolist())<20000000
+          for i in z.infolist():
+            p=pathlib.PurePosixPath(i.filename)
+            assert not p.is_absolute() and '..' not in p.parts and p.parts[0]=='elif-tasarim'
+            assert not ((i.external_attr>>16)&0o170000)==0o120000
+          target=pathlib.Path('/tmp/elif-v7-staged');z.extractall(target)
+          root=target/'elif-tasarim';manifest=root/'release-v7.json'
+          assert hashlib.sha256(manifest.read_bytes()).hexdigest()=='22ae7133e89a89873d6cb137d811e2fc0b2d57cf0f5b3963469d1f397db75f3b'
+          m=json.loads(manifest.read_text());assert m['release']=='v7-atelier-contact' and len(m['routes'])==43
+          assert len(m['files'])==152 and m['indexable'] is False
+          for f,v in m['files'].items():
+            p=pathlib.PurePosixPath(f);assert not p.is_absolute() and '..' not in p.parts
+            data=(root/f).read_bytes();assert len(data)==v['bytes'] and hashlib.sha256(data).hexdigest()==v['sha256'],f
+          assert set(p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file())==set(m['files'])|{'release-v7.json'}
+          assert not pathlib.Path('elif-tasarim').is_symlink()
+          shutil.rmtree('elif-tasarim');shutil.copytree(root,'elif-tasarim')
+          print('Approved V7 publication package verified. 152 files and manifest.')
+          PY
+      - name: Install isolated browser tools
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Test HTTP routes and customer flows without sending messages
+        run: |
+          python -m http.server 8080 --bind 127.0.0.1 >/tmp/elif-v7-http.log 2>&1 &
+          sleep 1
+          BASE_URL=http://127.0.0.1:8080/elif-tasarim/ python elif-v7-release/verify.py
+      - name: Commit verified V7 only to isolated release branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          git config user.name 'Elif Release Verification'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A -- elif-tasarim
+          git diff --cached --name-only | grep -v '^elif-tasarim/' > /tmp/out-of-scope || true
+          test ! -s /tmp/out-of-scope
+          git commit -m 'build(elif): verified V7 static release and correct Yusuf Usta contact'
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:elif-tasarim-v7-release-20260924
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v7-stage-evidence
+          path: elif-v7-release/evidence
+          retention-days: 14
