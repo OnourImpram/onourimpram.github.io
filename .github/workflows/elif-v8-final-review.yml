@@ -1,0 +1,85 @@
+name: Elif V8 final live review
+on:
+  push:
+    branches: [elif-v8-final-review-20260924]
+    paths: ['.github/workflows/elif-v8-final-review.yml']
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build and test exact editable V8 sources
+        working-directory: elif-tasarim/source-v8
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/final-review
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build 2>&1 | tee evidence/final-review/build.txt
+          npm test 2>&1 | tee evidence/final-review/unit.txt
+          npm run typecheck:core 2>&1 | tee evidence/final-review/core-types.txt
+      - name: Validate actual public files against deployed manifest
+        shell: python
+        run: |
+          import pathlib,json,hashlib,urllib.request,concurrent.futures
+          root=pathlib.Path('elif-tasarim')
+          manifest=json.loads((root/'release-v8.json').read_text())
+          out=root/'source-v8/evidence/final-review'
+          out.mkdir(parents=True,exist_ok=True)
+          items=manifest['files']
+          def verify(item):
+              name,expected=item
+              if name=='.nojekyll': return {'path':name,'build_only':True}
+              url='https://onourimpram.github.io/elif-tasarim/'+name
+              with urllib.request.urlopen(url,timeout=35) as response:
+                  data=response.read()
+              actual=hashlib.sha256(data).hexdigest()
+              return {'path':name,'bytes':len(data),'sha256':actual,'pass':actual==expected['sha256']}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+              results=list(pool.map(verify,items.items()))
+          (out/'public-integrity.json').write_text(json.dumps(results,indent=2))
+          assert all(x.get('pass',x.get('build_only',False)) for x in results)
+          print('Public files verified',len(results))
+      - name: Install Chromium browser tooling
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Exercise real WebGL and customer flows on public site
+        working-directory: elif-tasarim/source-v8
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+        run: |
+          set -euo pipefail
+          python tests/v8/browser.py 2>&1 | tee evidence/final-review/live-browser.txt
+      - name: Verify personal homepage and package source and release
+        if: always()
+        shell: python
+        run: |
+          import pathlib,subprocess,zipfile
+          assert subprocess.check_output(['git','hash-object','index.html'],text=True).strip()=='501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          out=pathlib.Path('v8-final-delivery');out.mkdir(exist_ok=True)
+          source=pathlib.Path('elif-tasarim/source-v8')
+          excluded={'node_modules','.git','dist','.compiled','__pycache__'}
+          with zipfile.ZipFile(out/'Elif_Tasarim_V8_Kaynak_ve_Testler.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in sorted(source.rglob('*')):
+                  if p.is_file() and not excluded.intersection(p.relative_to(source).parts) and p.suffix.lower() not in {'.woff','.woff2','.ttf','.otf'}:
+                      z.write(p,p.relative_to(source))
+          with zipfile.ZipFile(out/'Elif_Tasarim_V8_Yayin_Dosyalari.zip','w',zipfile.ZIP_DEFLATED) as z:
+              root=pathlib.Path('elif-tasarim')
+              for p in sorted(root.rglob('*')):
+                  if p.is_file() and 'source-v8' not in p.relative_to(root).parts and p.suffix.lower() not in {'.woff','.woff2','.ttf','.otf'}:
+                      z.write(p,pathlib.Path('elif-tasarim')/p.relative_to(root))
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v8-final-reviewed-delivery
+          path: v8-final-delivery
+          retention-days: 14
+          if-no-files-found: error
