@@ -1,0 +1,77 @@
+name: Elif V8 publishable Three build
+on:
+  push:
+    branches: [elif-v8-three-studio-20260924]
+    paths: ['.github/workflows/elif-v8-ready.yml']
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare final source corrections and test build
+        run: |
+          set -euo pipefail
+          cp -a elif-tasarim/source-v8 elif-v8-work
+          python elif-v8-tools/refine-final.py elif-v8-work
+          cd elif-v8-work
+          mkdir -p evidence/v8
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm test | tee evidence/v8/unit-final.txt
+      - name: Prepare real browser graphics
+        run: |
+          python -m pip install playwright==1.55.0 pillow==12.3.0
+          python -m playwright install --with-deps chromium
+      - name: Full mechanics, layout and customer-flow acceptance
+        run: |
+          set -euo pipefail
+          mkdir /tmp/elif-v8-http
+          ln -s "$PWD/elif-v8-work/dist" /tmp/elif-v8-http/elif-tasarim
+          python -m http.server 8080 --bind 127.0.0.1 --directory /tmp/elif-v8-http >/tmp/elif-http.log 2>&1 &
+          sleep 1
+          cd elif-v8-work
+          WRITE_POSTERS=1 python tests/v8/browser.py 2>&1 | tee evidence/v8/browser-final.txt
+          cp public/assets/devir-poster.webp public/assets/office-v8.webp
+          cp public/assets/devir-poster.webp public/assets/office.webp
+          npm run build
+          npm run verify:dist
+      - name: Commit only verified Elif files to staging branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          rm -rf elif-tasarim
+          cp -a elif-v8-work/dist elif-tasarim
+          mkdir -p elif-tasarim/source-v8
+          cp -a elif-v8-work/src elif-v8-work/tools elif-v8-work/tests elif-v8-work/docs elif-v8-work/public elif-tasarim/source-v8/
+          cp elif-v8-work/package.json elif-v8-work/package-lock.json elif-tasarim/source-v8/
+          cp elif-v8-work/docs/V8_README.md elif-tasarim/source-v8/README.md
+          git add elif-tasarim
+          git config user.name 'Elif Preview Build'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'build(elif): final framed Three.js V8 and concise concept model labels'
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:elif-v8-three-studio-20260924
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v8-publishable
+          path: |
+            elif-v8-work/dist
+            elif-v8-work/evidence
+            elif-v8-work/src
+            elif-v8-work/tools
+            elif-v8-work/public
+            elif-v8-work/tests
+            elif-v8-work/docs
+            elif-v8-work/package.json
+            elif-v8-work/package-lock.json
+          retention-days: 14
