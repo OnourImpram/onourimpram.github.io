@@ -1,0 +1,117 @@
+name: Elif V12 repository source verification
+on:
+  push:
+    branches: [elif-v12-cplus-360-20260925]
+    paths: ['.github/workflows/elif-v12-repository-review.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare scoped source from the repository itself
+        run: |
+          python elif-v12-tools/apply_source.py /tmp/elif-v12-source
+          python - <<'PY'
+          from pathlib import Path
+          root=Path('/tmp/elif-v12-source')
+          for name in ['tests/v12/acceptance.py','tests/v11/acceptance.py']:
+              p=root/name
+              lines=p.read_text().splitlines(keepends=True)
+              hits=0
+              for i,line in enumerate(lines):
+                  if line.lstrip().startswith('b=p.chromium.launch('):
+                      lines[i]=' b=p.chromium.launch(headless=False,chromium_sandbox=True)\n'
+                      hits+=1
+              assert hits==1
+              p.write_text(''.join(lines))
+          PY
+      - name: Compile and install isolated browser tools
+        working-directory: /tmp/elif-v12-source
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Generate corrected concept posters with browser sandbox enabled
+        working-directory: /tmp/elif-v12-source
+        run: xvfb-run -a python tests/v12/render-posters.py
+      - name: Rebuild final output and run complete unit and integrity tests
+        working-directory: /tmp/elif-v12-source
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/ci
+          npm run build | tee evidence/ci/build.txt
+          npm test | tee evidence/ci/unit.txt
+          npm run typecheck:core | tee evidence/ci/types.txt
+          npm run verify:dist | tee evidence/ci/integrity.txt
+          node tools/serve-static.cjs dist 8088 >/tmp/elif-http.log 2>&1 &
+      - name: Real HTTP customer and full-orbit regression tests
+        working-directory: /tmp/elif-v12-source
+        env:
+          BASE_URL: http://127.0.0.1:8088/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/ci/cplus xvfb-run -a python tests/v12/acceptance.py | tee evidence/ci/cplus.txt
+          EVIDENCE_DIR=evidence/ci/decisions xvfb-run -a python tests/v11/acceptance.py | tee evidence/ci/decisions.txt
+      - name: Package verified publication and its editable source
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import shutil
+          root=Path('/tmp/elif-v12-source')
+          output=Path('candidate/elif-tasarim')
+          shutil.copytree(root/'dist',output)
+          shutil.copytree(root,output/'source-v12',ignore=shutil.ignore_patterns('node_modules','dist','preview','evidence','__pycache__','.git'))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v12-repository-evidence
+          path: /tmp/elif-v12-source/evidence
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-v12-reviewed-publication
+          path: candidate
+          include-hidden-files: true
+          retention-days: 14
+  stage:
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: elif-v12-cplus-360-20260925
+      - uses: actions/download-artifact@v4
+        with:
+          name: elif-v12-reviewed-publication
+          path: verified-candidate
+      - name: Replace only the Elif preview on this isolated branch
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import os,shutil,subprocess
+          assert subprocess.check_output(['git','hash-object','index.html'],text=True).strip()=='501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          source=Path('verified-candidate/elif-tasarim')
+          assert (source/'release-v12.json').is_file()
+          target=Path('elif-tasarim')
+          target.rename(Path(os.environ['RUNNER_TEMP'])/'previous-elif-preview')
+          shutil.copytree(source,target)
+          PY
+          git add -- elif-tasarim
+          git diff --cached --name-only | python -c "import sys; names=sys.stdin.read().splitlines(); assert names and all(p.startswith('elif-tasarim/') for p in names)"
+          git config user.name 'Elif Release Verification'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'build(elif): verified C+ working-side and full orbit release'
+          git push origin HEAD:elif-v12-cplus-360-20260925
