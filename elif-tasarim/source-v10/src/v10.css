@@ -1,0 +1,6 @@
+/* V10. Reliability and decision clarity. */
+.v10-direct-question{display:inline-flex;align-items:center;justify-content:center;gap:10px;color:#654a32;text-decoration:underline;text-underline-offset:5px;min-height:44px;padding:8px 0;font-size:13px;line-height:1.5}
+.v8-control-tabs [role=tab]:focus-visible{outline:2px solid #654a32;outline-offset:-4px}.v8-controls{min-width:0}
+.v10-next-steps li{align-items:flex-start}.v10-next-steps li>div{display:grid;gap:5px;min-width:0}.v10-next-steps strong{font-size:14px;font-weight:500}.v10-next-steps small{font-size:12px;line-height:1.6;color:#675b50}
+.v8-poster-action>button{margin-top:12px}.v8-share-field{overflow-wrap:anywhere}.v8-share-field input{min-width:0}
+@media(max-width:700px){.v10-next-steps strong{font-size:14px}.v10-direct-question{min-height:48px}.v8-primary-action>span{font-size:12px;line-height:1.6}.v7-decision .button{width:100%;justify-content:space-between;white-space:normal}}

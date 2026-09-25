@@ -1,0 +1,20 @@
+{
+  "name": "elif-tasarim-v10",
+  "version": "0.10.0",
+  "private": true,
+  "description": "Elif Tasarım V10. Verified interaction fixes and clear atelier enquiries.",
+  "scripts": {
+    "build": "node tools/build-v10.cjs",
+    "test": "node tools/compile-domain.cjs && node --test --test-concurrency=1 tests/domain.test.cjs tests/v7/unit.cjs tests/v8/unit.cjs tests/v7/server.test.cjs tests/v9/state.cjs tests/v9/*.mjs tests/v10/*.cjs tests/v10/*.mjs",
+    "typecheck:core": "tsc --strict --noEmit --target ES2020 --module commonjs --lib ES2020,DOM src/lib/project.ts src/lib/upload.ts src/lib/zip.ts src/lib/selections.ts src/lib/desk-v8.ts",
+    "serve": "node tools/serve-static.cjs dist 8000",
+    "test:browser": "python tests/v10/regressions.py",
+    "verify:dist": "node tools/verify-v10.cjs"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
