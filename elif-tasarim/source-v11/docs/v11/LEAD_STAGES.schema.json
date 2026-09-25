@@ -1,0 +1,15 @@
+{
+  "title": "Elif optional private workshop outcome record",
+  "description": "A planning schema only. No collection, analytics, or backend is enabled. Never put private records in this public repository.",
+  "type": "object",
+  "required": ["internal_id", "category", "stage"],
+  "additionalProperties": false,
+  "properties": {
+    "internal_id": {"type": "string", "maxLength": 64},
+    "category": {"type": "string", "enum": ["mutfak", "kahve-kosesi", "tv-unitesi", "gardrop", "vestiyer", "sehpa", "pergola", "ozel-tasarim"]},
+    "stage": {"type": "string", "enum": ["conversation_started", "qualified", "quote_prepared", "accepted", "not_proceeding"]},
+    "response_minutes": {"type": "number", "minimum": 0},
+    "quote_work_minutes": {"type": "number", "minimum": 0},
+    "outcome_reason": {"type": "string", "enum": ["not_recorded", "timing", "scope", "capacity", "budget", "accepted"]}
+  }
+}
