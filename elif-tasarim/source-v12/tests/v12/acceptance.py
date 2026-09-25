@@ -10,7 +10,7 @@ report={'base':BASE or 'inline offline V12','checks':[],'limits':['Chromium soft
 def rec(name,data=None):
  report['checks'].append({'name':name,'pass':True,'detail':data});(O/'results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print('PASS',name,flush=True)
 with sync_playwright() as p:
- b=p.chromium.launch(channel='chrome',headless=False,chromium_sandbox=True,args=['--use-gl=angle','--use-angle=swiftshader'])
+ exe=os.environ.get('CHROMIUM_PATH','/usr/bin/chromium');b=p.chromium.launch(executable_path=exe if Path(exe).exists() else None,headless=False,args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader'])
  report['browser']=b.version;errors=[]
  def newpage(mobile=False):
   context=b.new_context(viewport={'width':390 if mobile else 1440,'height':844 if mobile else 1000},has_touch=mobile,is_mobile=mobile)
