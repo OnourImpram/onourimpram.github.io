@@ -1,5 +1,5 @@
 name: Elif V13 final stage
-# retry after eliminating a hotspot projection race
+# final rerun after aligning preserved release-label regressions
 on:
   push:
     branches: [elif-v13-final-20260925]
