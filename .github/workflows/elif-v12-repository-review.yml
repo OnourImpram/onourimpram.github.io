@@ -30,7 +30,7 @@ jobs:
               for i,line in enumerate(lines):
                   if line.lstrip().startswith(('b=p.chromium.launch(','browser=p.chromium.launch(')):
                       variable=line.strip().split('=',1)[0]
-                      lines[i]=' '+variable+"=p.chromium.launch(channel='chrome',headless=False,chromium_sandbox=True,args=['--use-gl=angle','--use-angle=gl'])\n"
+                      lines[i]=' '+variable+"=p.chromium.launch(channel='chrome',headless=False,chromium_sandbox=True,args=['--use-gl=angle','--use-angle=swiftshader'])\n"
                       hits+=1
               assert hits==1
               p.write_text(''.join(lines))
@@ -43,7 +43,7 @@ jobs:
           python -m pip install playwright==1.55.0 Pillow==11.3.0
           python -m playwright install-deps chromium
           google-chrome --version
-      - name: Record sandboxed graphics capability before rendering
+      - name: Record sandboxed software GLES capability before rendering
         working-directory: /tmp/elif-v12-source
         run: |
           mkdir -p evidence/ci
@@ -52,7 +52,7 @@ jobs:
           from pathlib import Path
           import json
           with sync_playwright() as p:
-              b=p.chromium.launch(channel='chrome',headless=False,chromium_sandbox=True,args=['--use-gl=angle','--use-angle=gl'])
+              b=p.chromium.launch(channel='chrome',headless=False,chromium_sandbox=True,args=['--use-gl=angle','--use-angle=swiftshader'])
               page=b.new_page()
               page.on('console',lambda m:print(m.type,m.text,flush=True))
               page.set_content('<canvas id="probe"></canvas>')
