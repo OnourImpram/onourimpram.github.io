@@ -1,0 +1,109 @@
+name: Elif V13 final stage
+on:
+  push:
+    branches: [elif-v13-final-20260925]
+    paths: ['.github/workflows/elif-v13-stage.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Clean build, unit contracts, strict core types and byte integrity
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build
+          npm test
+          npm run typecheck:core
+          npm run verify:dist
+      - name: Install isolated Chromium tools
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Serve only the generated V13 publication
+        working-directory: elif-tasarim/source-v12
+        run: |
+          node tools/serve-static.cjs dist 8000 > /tmp/elif-v13-server.log 2>&1 &
+          echo $! > /tmp/elif-v13-server.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:8000/elif-tasarim/release-v13.json >/dev/null; then break; fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:8000/elif-tasarim/release-v13.json >/dev/null
+      - name: V13 decision support and preserved 360 degree behavior
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/stage/v13 xvfb-run -a python tests/v13/acceptance.py
+          EVIDENCE_DIR=evidence/stage/v12 xvfb-run -a python tests/v12/acceptance.py
+          EVIDENCE_DIR=evidence/stage/v11 xvfb-run -a python tests/v11/acceptance.py
+          EVIDENCE_DIR=evidence/stage/matrix xvfb-run -a python tests/v11/matrix.py
+      - name: Confirm personal homepage is untouched before staging
+        run: test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+      - name: Replace only the Elif public release with tested V13 dist
+        shell: python
+        run: |
+          from pathlib import Path
+          import json, shutil
+          root=Path('elif-tasarim')
+          dist=root/'source-v12'/'dist'
+          old=None
+          for candidate in ['release-v13.json','release-v12.json','release-v11.json','release-v10.json']:
+              p=root/candidate
+              if p.exists():
+                  old=json.loads(p.read_text())
+                  break
+          if old:
+              for name in old.get('files',{}):
+                  p=root/name
+                  if p.is_file(): p.unlink()
+              old_manifest=root/candidate
+              if old_manifest.exists(): old_manifest.unlink()
+          for p in dist.rglob('*'):
+              if p.is_file():
+                  target=root/p.relative_to(dist)
+                  target.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copy2(p,target)
+          assert (root/'release-v13.json').exists()
+      - name: Commit the exact tested publication to the staging branch
+        run: |
+          set -euo pipefail
+          git config user.name "Onour Impram"
+          git config user.email "onuribram@outlook.com"
+          git add -A elif-tasarim
+          if ! git diff --cached --quiet; then
+            git commit -m "release(elif): stage tested V13 final atelier"
+            git push origin HEAD:elif-v13-final-20260925
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v13-stage-evidence
+          path: elif-tasarim/source-v12/evidence/stage
+          retention-days: 14
+      - name: Package final editable source, publication and portable preview
+        if: success()
+        run: |
+          mkdir -p v13-final-delivery
+          cp -a elif-tasarim/source-v12 v13-final-delivery/source-v13
+          rm -rf v13-final-delivery/source-v13/node_modules v13-final-delivery/source-v13/dist v13-final-delivery/source-v13/.compiled v13-final-delivery/source-v13/evidence
+          cp -a elif-tasarim v13-final-delivery/publication
+          rm -rf v13-final-delivery/publication/source-v12
+          cp elif-tasarim/source-v12/preview/Elif_Tasarim.html v13-final-delivery/Elif_Tasarim_V13.html
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-v13-final-delivery
+          path: v13-final-delivery
+          retention-days: 14
