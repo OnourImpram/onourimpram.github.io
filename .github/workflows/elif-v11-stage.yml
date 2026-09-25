@@ -1,0 +1,100 @@
+name: Elif V11 source build and staged verification
+on:
+  push:
+    branches: [elif-v11-unified-project-20260925]
+    paths: ['.github/workflows/elif-v11-stage.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Retrieve the authorized checksummed source archive
+        env:
+          INPUT_URL: 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-fbb8-8210-93cf-e4b00472d200/raw?se=2026-09-25T07%3A20%3A07Z&sp=r&sv=2026-02-06&sr=b&scid=8034f1f0-a361-5226-bc40-1a5fac25d69c&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-25T04%3A53%3A53Z&ske=2026-09-26T04%3A53%3A53Z&sks=b&skv=2026-02-06&sig=c4gwKJMJ8%2B9E7YwRrUQjCBzqO2whwpOsn8wSAK7pdM0%3D'
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$INPUT_URL"
+          curl --fail --location --silent --show-error --max-time 90 "$INPUT_URL" -o /tmp/elif-v11-input.zip
+          echo '9e957b2b00a32cac361ff38dca52b1b721405ec114082a1098b71c013a4e6a04  /tmp/elif-v11-input.zip' | sha256sum --check
+          python - <<'PY'
+          import zipfile,pathlib
+          z=zipfile.ZipFile('/tmp/elif-v11-input.zip')
+          assert len(z.infolist())<600 and sum(i.file_size for i in z.infolist())<80000000
+          for i in z.infolist():
+              p=pathlib.PurePosixPath(i.filename)
+              assert not p.is_absolute() and '..' not in p.parts and p.parts[0]=='source'
+              assert ((i.external_attr>>16)&0o170000)!=0o120000
+              assert p.suffix.lower() not in {'.woff','.woff2','.ttf','.otf'}
+          z.extractall('/tmp/elif-v11')
+          PY
+      - name: Build exact clean source, run unit contracts and core types
+        working-directory: /tmp/elif-v11/source
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/v11/stage
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build 2>&1 | tee evidence/v11/stage/build.txt
+          npm test 2>&1 | tee evidence/v11/stage/unit.txt
+          npm run typecheck:core 2>&1 | tee evidence/v11/stage/core-types.txt
+          npm run verify:dist 2>&1 | tee evidence/v11/stage/integrity.txt
+      - name: Serve the generated mounted preview only
+        working-directory: /tmp/elif-v11/source
+        run: |
+          node tools/serve-static.cjs dist 8000 >/tmp/elif-v11-http.log 2>&1 &
+          sleep 2
+          curl --fail --silent http://127.0.0.1:8000/elif-tasarim/ >/dev/null
+      - name: Install isolated Chromium tools
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Run real HTTP and WebGL customer decision contracts
+        working-directory: /tmp/elif-v11/source
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+        run: |
+          set -euo pipefail
+          xvfb-run -a python tests/v11/acceptance.py 2>&1 | tee evidence/v11/stage/browser.txt
+          xvfb-run -a python tests/v11/followup.py 2>&1 | tee evidence/v11/stage/followup.txt
+          xvfb-run -a python tests/v11/matrix.py 2>&1 | tee evidence/v11/stage/matrix.txt
+      - name: Commit only tested output to isolated staging branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          python - <<'PY'
+          import pathlib,shutil
+          source=pathlib.Path('/tmp/elif-v11/source')
+          target=pathlib.Path('elif-tasarim')
+          shutil.rmtree(target)
+          shutil.copytree(source/'dist',target)
+          shutil.copytree(source,target/'source-v11',ignore=shutil.ignore_patterns('node_modules','dist','preview','evidence','.compiled','.git','__pycache__'))
+          PY
+          git config user.name 'Elif Verified Release'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add elif-tasarim
+          git diff --cached --name-only | grep -v '^elif-tasarim/' && exit 1 || true
+          git commit -m 'build(elif): verified V11 coherent draft, full summary, mobile studio and Yunus Usta'
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:elif-v11-unified-project-20260925
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v11-stage-evidence
+          path: /tmp/elif-v11/source/evidence/v11
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-v11-verified-site
+          path: elif-tasarim
+          retention-days: 14
