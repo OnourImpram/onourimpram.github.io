@@ -22,24 +22,27 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           root=Path('/tmp/elif-v12-source')
-          for name in ['tests/v12/acceptance.py','tests/v11/acceptance.py']:
+          assert Path('/opt/google/chrome/chrome').is_file()
+          for name in ['tests/v12/acceptance.py','tests/v11/acceptance.py','tests/v12/render-posters.py']:
               p=root/name
               lines=p.read_text().splitlines(keepends=True)
               hits=0
               for i,line in enumerate(lines):
-                  if line.lstrip().startswith('b=p.chromium.launch('):
-                      lines[i]=' b=p.chromium.launch(headless=False,chromium_sandbox=True)\n'
+                  if line.lstrip().startswith(('b=p.chromium.launch(','browser=p.chromium.launch(')):
+                      variable=line.strip().split('=',1)[0]
+                      lines[i]=' '+variable+"=p.chromium.launch(channel='chrome',headless=False,chromium_sandbox=True)\n"
                       hits+=1
               assert hits==1
               p.write_text(''.join(lines))
           PY
-      - name: Compile and install isolated browser tools
+      - name: Compile and use preinstalled sandbox-supported Chrome
         working-directory: /tmp/elif-v12-source
         run: |
           npm ci --ignore-scripts --no-audit --no-fund
           npm run build
           python -m pip install playwright==1.55.0 Pillow==11.3.0
-          python -m playwright install --with-deps chromium
+          python -m playwright install-deps chromium
+          google-chrome --version
       - name: Generate corrected concept posters with browser sandbox enabled
         working-directory: /tmp/elif-v12-source
         run: xvfb-run -a python tests/v12/render-posters.py
