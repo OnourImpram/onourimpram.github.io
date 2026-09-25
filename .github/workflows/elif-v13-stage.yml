@@ -1,4 +1,5 @@
 name: Elif V13 final stage
+# retry after eliminating a hotspot projection race
 on:
   push:
     branches: [elif-v13-final-20260925]
