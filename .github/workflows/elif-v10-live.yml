@@ -1,0 +1,95 @@
+name: Elif V10 public release verification
+on:
+  push:
+    branches: [elif-v10-audit-fixes-20260925]
+    paths: ['.github/workflows/elif-v10-live.yml']
+permissions:
+  contents: read
+jobs:
+  verify-live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify exact public manifest and every deployable file
+        shell: python
+        run: |
+          import pathlib,json,hashlib,urllib.request,time,concurrent.futures
+          root=pathlib.Path('elif-tasarim');out=root/'source-v10/evidence/v10/live';out.mkdir(parents=True,exist_ok=True)
+          base='https://onourimpram.github.io/elif-tasarim/'
+          expected=(root/'release-v10.json').read_bytes()
+          def get(path):
+              with urllib.request.urlopen(base+path,timeout=45) as r:return r.read()
+          for attempt in range(30):
+              try:
+                  if get('release-v10.json')==expected:break
+              except Exception:pass
+              time.sleep(8)
+          else:raise AssertionError('Expected V10 is not publicly available')
+          manifest=json.loads(expected)
+          def verify(item):
+              name,info=item
+              if name=='.nojekyll':return {'path':name,'build_only':True}
+              data=get(name);digest=hashlib.sha256(data).hexdigest()
+              return {'path':name,'bytes':len(data),'sha256':digest,'pass':digest==info['sha256'] and len(data)==info['bytes']}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:results=list(pool.map(verify,manifest['files'].items()))
+          report={'release':manifest['release'],'base':base,'manifest_equal':True,'manifest_sha256':hashlib.sha256(expected).hexdigest(),'files':results}
+          (out/'public-integrity.json').write_text(json.dumps(report,indent=2))
+          assert all(x.get('pass',x.get('build_only',False)) for x in results)
+          print('Exact manifest and',sum(x.get('pass',False) for x in results),'public files verified')
+      - name: Install isolated browser tooling
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+          CHROME=$(python -c 'from playwright.sync_api import sync_playwright; p=sync_playwright().start(); print(p.chromium.executable_path); p.stop()')
+          echo "CHROME=$CHROME" >> "$GITHUB_ENV"
+      - name: Negative regression scenarios on the live V10 site
+        working-directory: elif-tasarim/source-v10
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+          RUN_TAG: live
+        run: |
+          set -euo pipefail
+          xvfb-run -a python -u tests/v10/regressions.py 2>&1 | tee evidence/v10/live/regressions.txt
+      - name: Direct public routes and rendered release screenshots
+        working-directory: elif-tasarim/source-v10
+        run: |
+          cat > /tmp/elif-live-visual.py <<'PY'
+          import os,json,pathlib
+          from playwright.sync_api import sync_playwright
+          out=pathlib.Path('evidence/v10/live');base='https://onourimpram.github.io/elif-tasarim/'
+          manifest=json.loads(pathlib.Path('../release-v10.json').read_text());rows=[];errors=[]
+          with sync_playwright() as p:
+              b=p.chromium.launch(executable_path=os.environ['CHROME'],headless=False,args=['--no-sandbox','--disable-dev-shm-usage','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
+              page=b.new_page();page.set_default_navigation_timeout(60000);page.emulate_media(reduced_motion='reduce');page.on('pageerror',lambda e:errors.append(str(e)))
+              for width in [390,1440]:
+                  page.set_viewport_size({'width':width,'height':1000})
+                  for route in manifest['routes']:
+                      response=page.goto(base+route.strip('/')+('/' if route!='/' else ''),wait_until='networkidle')
+                      data=page.evaluate("""()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,h1:document.querySelectorAll('h1').length,broken:[...document.images].filter(x=>x.complete&&!x.naturalWidth&&x.getAttribute('src')).length})""")
+                      ok=response.status==200 and data['scroll']<=width+1 and data['h1']==1 and data['broken']==0
+                      rows.append({'route':route,'viewport':width,'status':response.status,'pass':ok,**data})
+                  print('Routes',width,len(rows),sum(not x['pass'] for x in rows),flush=True)
+              page.set_viewport_size({'width':1440,'height':1080});page.goto(base,wait_until='networkidle');page.screenshot(path=str(out/'desktop-home.png'));page.screenshot(path=str(out/'home-full.jpg'),full_page=True,type='jpeg',quality=90)
+              page.set_viewport_size({'width':390,'height':844});page.goto(base,wait_until='networkidle');page.screenshot(path=str(out/'mobile-home.png'))
+              page.set_viewport_size({'width':1440,'height':1080});page.goto(base+'tasarim-masasi/',wait_until='networkidle');page.wait_for_selector('[data-three-status=ready]',timeout=45000);page.wait_for_timeout(450);page.screenshot(path=str(out/'desktop-studio.png'))
+              page.get_by_role('button',name='Akşam',exact=True).click();page.wait_for_timeout(250);page.locator('.v8-showroom').screenshot(path=str(out/'evening-studio.png'))
+              page.get_by_role('tab',name='Masa',exact=True).click();page.get_by_role('button',name='Yalnız masa',exact=True).click();page.get_by_role('button',name='Dolabı aç',exact=True).click();page.get_by_role('button',name='Çekmeceleri aç',exact=True).click();page.wait_for_timeout(350);page.locator('.v8-showroom').screenshot(path=str(out/'corrected-door.png'))
+              page.emulate_media(reduced_motion='no-preference');page.get_by_role('slider',name='Çalışma yüksekliği',exact=True).evaluate('(el)=>{el.value="113";el.dispatchEvent(new Event("input",{bubbles:true}))}');page.wait_for_function("Math.abs(document.querySelector('.v8-canvas-host').__elif3D.inspect().geometry.mainTopY-1.13)<.003",timeout=30000)
+              geometry=page.evaluate("document.querySelector('.v8-canvas-host').__elif3D.inspect().geometry");assert geometry['returnTopY']==.695
+              page.emulate_media(reduced_motion='reduce');page.get_by_role('button',name='Mekân içinde',exact=True).click();page.set_viewport_size({'width':390,'height':844});page.wait_for_timeout(300);page.screenshot(path=str(out/'mobile-studio.png'))
+              page.set_viewport_size({'width':1440,'height':1080});page.goto(base+'kategoriler/kahve-kosesi/',wait_until='networkidle');page.screenshot(path=str(out/'coffee-page.png'))
+              report={'base':base,'browser':b.version,'routes':rows,'normal_motion_geometry':geometry,'errors':errors,'scope':'Chromium software WebGL. No real message, purchase or real-device test.'};(out/'direct-routes.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));b.close()
+              assert all(x['pass']for x in rows) and not errors
+          PY
+          xvfb-run -a python -u /tmp/elif-live-visual.py
+      - name: Preserve personal homepage
+        run: test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v10-live-evidence
+          path: elif-tasarim/source-v10/evidence/v10/live
+          retention-days: 14
