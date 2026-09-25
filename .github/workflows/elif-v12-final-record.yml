@@ -1,0 +1,87 @@
+name: Elif V12 final delivery verification
+on:
+  push:
+    branches: [elif-v12-final-record-20260925]
+    paths: ['.github/workflows/elif-v12-final-record.yml']
+permissions:
+  contents: read
+jobs:
+  final-verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Rebuild and test the existing approved V12 source
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/final-v12
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build 2>&1 | tee evidence/final-v12/build.txt
+          cmp dist/release-v12.json ../release-v12.json
+          npm test 2>&1 | tee evidence/final-v12/unit.txt
+          npm run typecheck:core 2>&1 | tee evidence/final-v12/core-types.txt
+          npm run verify:dist 2>&1 | tee evidence/final-v12/integrity-local.txt
+      - name: Verify the exact live manifest and public files
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+          EVIDENCE_DIR: evidence/final-v12/public
+        run: |
+          set -euo pipefail
+          python tests/v11/public_verify.py 2>&1 | tee evidence/final-v12/public.txt
+      - name: Prepare isolated browser tooling
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install-deps chromium
+          google-chrome --version
+      - name: Verify the actual published 360 degree studio and existing customer journeys
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/final-v12/cplus xvfb-run -a python tests/v12/acceptance.py 2>&1 | tee evidence/final-v12/cplus.txt
+          EVIDENCE_DIR=evidence/final-v12/decisions xvfb-run -a python tests/v11/acceptance.py 2>&1 | tee evidence/final-v12/decisions.txt
+      - name: Confirm the personal homepage is unchanged
+        run: test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+      - name: Package editable sources, publication and portable preview
+        shell: python
+        run: |
+          import pathlib, zipfile, shutil, json, hashlib
+          root=pathlib.Path('elif-tasarim/source-v12')
+          output=pathlib.Path('v12-delivery'); output.mkdir(exist_ok=True)
+          excluded={'node_modules','.git','dist','preview','evidence','.compiled','__pycache__'}
+          fonts={'.ttf','.otf','.woff','.woff2'}
+          with zipfile.ZipFile(output/'Elif_Tasarim_V12_Kaynak_ve_Testler.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in sorted(root.rglob('*')):
+                  rel=p.relative_to(root)
+                  if p.is_file() and not excluded.intersection(rel.parts) and p.suffix.lower() not in fonts:
+                      z.write(p,rel)
+          with zipfile.ZipFile(output/'Elif_Tasarim_V12_Yayin_Dosyalari.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in sorted((root/'dist').rglob('*')):
+                  if p.is_file() and p.suffix.lower() not in fonts:
+                      z.write(p,pathlib.Path('elif-tasarim')/p.relative_to(root/'dist'))
+          shutil.copyfile(root/'preview/Elif_Tasarim.html',output/'Elif_Tasarim_V12.html')
+          with zipfile.ZipFile(output/'Elif_Tasarim_V12_Canli_Kanitlar.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in sorted((root/'evidence/final-v12').rglob('*')):
+                  if p.is_file():z.write(p,p.relative_to(root/'evidence/final-v12'))
+          manifest={p.name:{'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(output.iterdir()) if p.is_file()}
+          (output/'delivery-integrity.json').write_text(json.dumps(manifest,indent=2))
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v12-final-verification-evidence
+          path: elif-tasarim/source-v12/evidence/final-v12
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-v12-final-delivery
+          path: v12-delivery
+          retention-days: 14
