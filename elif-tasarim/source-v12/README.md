@@ -1,34 +1,59 @@
 # Elif Tasarım V12 C+
 
-Coherent project context, a more usable two-bookcase Three.js studio, complete outgoing-message review and Yunus Usta contact.
+Gerçek Three.js ile çekmece kullanım yönü düzeltilmiş ve yatayda tam tur incelenebilir Devir 01 konsept stüdyosu. Onaylı marka kimliği, çift taraflı kitaplıklar, Yunus Usta iletişimi ve V11 proje akışları korunur.
 
-## Build
+## Kaynak ve yayın
 
-Node.js 22 or later. Run `npm ci --ignore-scripts`, `npm run build`, `npm test`, `npm run typecheck:core` and `npm run verify:dist`.
+Kaynaklar `elif-tasarim/source-v12/` dizinindedir. Ürünün yayımlanan dosyaları `elif-tasarim/` altındadır. Kök kişisel sitenin dosyaları değiştirilmez.
 
-Run `npm run serve` and open the printed local HTTP address. The server reads the V12 C+ manifest and mounts the site at `/elif-tasarim/`. Use a normal HTTP server for the separate ESM files in `dist`. The portable version is `preview/Elif_Tasarim.html` and embeds its local modules and image assets.
+Nihai uygulama commit'i `14238da625f315a3f7176e0ca297c7a6631d5e5f`, sürüm `v12-cplus-360`, paket `0.12.0`.
 
-The only active build is `tools/build-v12.cjs`. Old scripts remain historical implementation references and are not the release entry point. Dependencies stay pinned to TypeScript 5.8.3 and the existing local Three.js 0.185.1 and MIT Preact runtime. Core strict type checking is not a claim of complete semantic checking of every JSX component. No font files are distributed.
+Ayrıntılar [V12 değişiklik günlüğünde](docs/V12_Surum_Notlari.md) bulunur. Önceki kapsamın 33 kabul senaryosu `docs/v11/PLAN_STATUS.md` içinde korunur. Açık işletme ve gerçek cihaz koşulları geçmiş gibi işaretlenmez.
 
-## Verification
+## Çalıştırma
 
-`npm test` includes the preserved baseline contracts and new V12 C+ state, measurement, search, source, summary, metadata and HTTP mount tests.
+Node.js 22 veya üzeri kullanılır. Kaynak dizininde aşağıdaki komutlar çalıştırılır.
 
-For actual browser tests install Python Playwright and Pillow, then its Chromium browser. Run `xvfb-run -a python tests/v11/acceptance.py`, `xvfb-run -a python tests/v11/followup.py` and `xvfb-run -a python tests/v11/matrix.py`. They use the portable file by default. Set `BASE_URL` to an HTTP site ending with `/` for network testing. `CHROMIUM_PATH` optionally selects a browser binary. `EVIDENCE_DIR` selects the output directory. No customer messages are sent.
+```sh
+npm ci --ignore-scripts
+npm run build
+npm test
+npm run typecheck:core
+npm run verify:dist
+npm run serve
+```
 
-`BASE_URL=https://onourimpram.github.io/elif-tasarim/ python tests/v11/public_verify.py` compares the actual release files with the locally built manifest and checks direct HTML routes. Run only after the approved V12 C+ deployment.
+Tek etkin derleme `tools/build-v12.cjs` dosyasıdır. Sunucu, `dist` dosyalarını `/elif-tasarim/` altında sunar. Terminalde yazılan HTTP adresi açılır. Taşınabilir tek dosya `preview/Elif_Tasarim.html` içinde üretilir. Ayrı ESM modülleri içeren normal dağıtım HTTP sunucusu gerektirir.
 
-## Publication scope
+Three.js 0.185.1, TypeScript 5.8.3 ve mevcut yerel MIT Preact çalışma zamanı kullanılır. Normal kullanımda üçüncü taraf 3D servisi veya CDN zorunlu değildir. Çekirdek strict TypeScript denetimi, bütün JSX bileşenlerinin tam semantik denetimi anlamına gelmez. Font dosyası dağıtılmaz.
 
-Publish the complete contents of `dist` under `elif-tasarim/` only. Never overwrite the personal root homepage. The noindex preview remains separate from commercial launch approval. Source and documentation are included under `source-v11` for inspection, but are not runtime dependencies or part of the public manifest's runtime file count.
+## Tarayıcı doğrulaması
 
-## Important boundaries
+Python Playwright ve Pillow gerekir. `tests/v12/acceptance.py`, sandbox destekli Google Chrome kanalı ve Xvfb kullanır. Başka ortamda tarayıcı kurulumu ayrıca doğrulanmalıdır.
 
-Yunus Usta and +90 530 879 71 69 come from the user. WhatsApp links open that recipient but do not prove message sending or receipt. This release has no automatic order record, payment, shipment or invoice service. Notes and customer pictures stay in the open tab's memory. Only explicitly saved public inspiration IDs persist, and only public studio options enter sharing links. Closing or reloading the page may clear private drafts. Files must be shared separately by the visitor.
+```sh
+xvfb-run -a python tests/v12/acceptance.py
+xvfb-run -a python tests/v11/acceptance.py
+xvfb-run -a python tests/v11/followup.py
+xvfb-run -a python tests/v11/matrix.py
+```
 
-The 3D table, height range, cabinet movement and plan-view footprint are conceptual geometry, not approved manufacturing drawings or mechanical safety specifications. The room and shelves are not automatically included in a table quote. Real workshop, in-progress, concept and external-reference imagery stay separately identified.
+Varsayılan test girdisi yerel taşınabilir önizlemedir. Gerçek HTTP testi için `BASE_URL`, sonu eğik çizgiyle biten yayın adresine ayarlanır. `EVIDENCE_DIR` sonuçların dizinini seçer. Bu testler mesaj göndermez.
 
-See `docs/v11/PLAN_STATUS.md` for all 33 planned scenarios and outstanding human or commercial gates.
+Yayından sonra `tests/v11/public_verify.py`, yeniden derlenen V12 manifesti ile gerçek public dosyaları ve doğrudan sayfaları karşılaştırır.
 
-## V12 C+ correction
-The upper drawer assembly and cabinet now face the chair on negative Z. Horizontal orbit is unbounded in both room and product mode. Foreground staging is temporarily hidden in the chair-side hemisphere without overwriting shelf preferences. Six real camera presets, mouse and keyboard full orbit, touch pinch and page wheel scrolling are tested. Footprints remain conceptual, not engineering approvals.
+## V12 C+ davranışı
+
+Ana tablanın çekmeceleri, yükseklik kumandası ve alt dolap sandalyenin bulunduğu negatif Z kullanım yönüne bakar. Hem mekân hem ürün görünümünde yatay yörünge serbesttir. Görüşü kapatan oda elemanları kullanıcı tarafındaki incelemede geçici saklanır. Raf ve aydınlatma tercihleri silinmez. Dikey kamera ve mesafe sınırları korunur.
+
+Genel, Çekmece tarafı, Arka, Soldan, Sağdan ve Üstten görünümleri bulunur. Fareyle ve klavyeyle tur, dokunma yakınlaştırması, otomatik dönüş, ölçü aktarımı ve görüntü dışa aktarımı test kapsamındadır. Gerçek fiziksel cihaz başarımı ayrı değerlendirilir.
+
+## Veri, ticari ve imalat sınırları
+
+Yunus Usta ve +90 530 879 71 69 kullanıcı tarafından verilmiştir. WhatsApp bağlantısı doğru alıcıyı açar. Bu, mesajın gönderildiğini veya teslim alındığını kanıtlamaz. Otomatik sipariş veritabanı, ödeme, fatura veya kargo servisi yoktur.
+
+Özel müşteri notları ve görseller açık sekmenin belleğinde tutulur. Yalnız açıkça kaydedilen herkese açık ilham kimlikleri kalıcı saklanır. Paylaşılabilir stüdyo bağlantıları özel not, ev fotoğrafı veya iletişim bilgisi taşımaz. Yenileme veya sekmeyi kapatma özel taslağı temizleyebilir.
+
+GitHub Pages yayını noindex portföy ve tasarım önizlemesidir. Bu etiket platformun ticari kullanım koşullarını ortadan kaldırmaz. Ticari alan adı, barındırma, işletme kapsamı ve izinler ayrıca değerlendirilir.
+
+Masa yüksekliği, yan tabla açısı ve yerleşim geometrisi fiziksel üretim çizimi, çarpışma çözümü, motor kapasitesi, taşıma dayanımı veya elektrik güvenliği onayı değildir. Kitaplık ve oda dekoru masa teklifine otomatik dahil değildir. Gerçek iş, montaj, konsept ve dış referans ayrımı korunur.
