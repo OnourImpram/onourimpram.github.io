@@ -1,0 +1,200 @@
+[
+  {
+    "id": "A01",
+    "scenario": "Gerçek proje A, B, A",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py, core.cjs"
+  },
+  {
+    "id": "A02",
+    "scenario": "Dış kaynak A, B, A ve kişisel not",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py, core.cjs"
+  },
+  {
+    "id": "A03",
+    "scenario": "Dış referanstan atölye işine geçiş",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py, source-context.ts"
+  },
+  {
+    "id": "A04",
+    "scenario": "Sistem açıklaması ve müşteri notu ayrımı",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py, core.cjs"
+  },
+  {
+    "id": "A05",
+    "scenario": "Mutfak fikrinden Devir 01 kaynağına geçiş",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py"
+  },
+  {
+    "id": "A06",
+    "scenario": "203 × 83 × 113 sahne, form, sahne",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py, core.cjs. Aralık dışı form ölçüsü ayrıca görünür uyarı taşır."
+  },
+  {
+    "id": "A07",
+    "scenario": "Sayısal ve yaklaşık ölçü geçişi",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py, core.cjs"
+  },
+  {
+    "id": "A08",
+    "scenario": "cm, mm ve ondalık form değerleri",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "core.cjs, acceptance.py. Ondalık imalat ölçüsü 3D görsel aralığına sessizce yuvarlanmaz."
+  },
+  {
+    "id": "A09",
+    "scenario": "Yeni tarayıcı bağlamında özel veri olmadan 3D paylaşımı",
+    "status": "Uygulandı, ek tarayıcı kontrolü",
+    "evidence_or_boundary": "followup.py, core.cjs"
+  },
+  {
+    "id": "B01",
+    "scenario": "Ekran, WhatsApp, TXT ve ZIP aynı tam mesaj",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py"
+  },
+  {
+    "id": "B02",
+    "scenario": "Devir, 3D, çalışma masası ve yükseklik ayarlı aramaları",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py, core.cjs"
+  },
+  {
+    "id": "B03",
+    "scenario": "Gardrop ve gardırop varyantı",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py, core.cjs"
+  },
+  {
+    "id": "B04",
+    "scenario": "Konsept ve Pinterest aramasında tam hedef kartı",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py. Dış içerik otomatik çekilmez."
+  },
+  {
+    "id": "B05",
+    "scenario": "Filtre, sorgu ve geri kaydırma konumu",
+    "status": "Uygulandı, HTTP karşılığı ayrıca kontrol edilir",
+    "evidence_or_boundary": "acceptance.py, followup.py"
+  },
+  {
+    "id": "B06",
+    "scenario": "Projeye özel sabit WhatsApp başlığı, temiz URL ve alıcı",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py"
+  },
+  {
+    "id": "B07",
+    "scenario": "Uzun Türkçe özet ve dosya adı",
+    "status": "Kısmen. Güvenli alternatif uygulandı",
+    "evidence_or_boundary": "Uzun bağlantı yerine açık kısa giriş ve tam TXT/ZIP vardır. Gerçek telefon ile WhatsApp metin/ek teslimi bekliyor."
+  },
+  {
+    "id": "B08",
+    "scenario": "Sayfaya özgü açıklama ve noindex",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "core.cjs, public_verify.py. Canlı doğrulama raporu ayrıca."
+  },
+  {
+    "id": "C01",
+    "scenario": "Mobilde masa ve yükseklik ayarını birlikte görmek",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py, 320/360/390 CSS piksel"
+  },
+  {
+    "id": "C02",
+    "scenario": "Tam ekran kontrol, çıkış adı ve odak",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py. Tam ekran artık kontrol panelini de içerir."
+  },
+  {
+    "id": "C03",
+    "scenario": "Ekran yönü ve sanal klavye",
+    "status": "Kısmen. Viewport değişimi sınandı",
+    "evidence_or_boundary": "followup.py viewport simülasyonu. Gerçek sanal klavye ve fiziksel telefon testi bekliyor."
+  },
+  {
+    "id": "C04",
+    "scenario": "Klavyeyle sekme, raf ışığı, yükseklik ve kamera",
+    "status": "Uygulandı, ek otomatik kontrol",
+    "evidence_or_boundary": "acceptance.py, followup.py. Gerçek ekran okuyucu teyidi ayrı."
+  },
+  {
+    "id": "C05",
+    "scenario": "WebGL kaybında kullanılabilir iletişim ve özet",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py kontrollü contextlost. Her fiziksel sürücü arızası simüle edilmez."
+  },
+  {
+    "id": "C06",
+    "scenario": "Üstten görsel yerleşim alanı",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "Gerçek render geometrisinin zemin sınırı. 0/90/180 açıları acceptance.py. Mekanik veya insan dolaşım payı onayı değildir."
+  },
+  {
+    "id": "C07",
+    "scenario": "Azaltılmış harekette boşta çizim",
+    "status": "Korundu, kontrollü gözlem",
+    "evidence_or_boundary": "followup.py. Kuyruktaki son kare tamamlandıktan sonra boşta pencere. Donanım performans puanı değildir."
+  },
+  {
+    "id": "D01",
+    "scenario": "Gerçek iş ile konsepti doğru anlama",
+    "status": "Sunum uygulandı, insan testi bekliyor",
+    "evidence_or_boundary": "Kaynak rozetleri ve kavramsal sınırlar korundu. Müşteri anlama başarısı ölçülmedi."
+  },
+  {
+    "id": "D02",
+    "scenario": "Üç gerçek proje dosyasının anlaşılması",
+    "status": "Kaynakla desteklenen içerik uygulandı",
+    "evidence_or_boundary": "İhtiyaç soruları, görülen çözüm ve kapsam hazır. Asıl müşteri ihtiyacı, teknik ölçü, malzeme, tarih ve izin işletme teyidi bekliyor."
+  },
+  {
+    "id": "D03",
+    "scenario": "Tek formda kısa başlangıç ve isteğe bağlı ayrıntı",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py. Eski /teklif-al adresi aynı taslağın ayrıntı girişi olarak korunur."
+  },
+  {
+    "id": "E01",
+    "scenario": "Mesajın gerçek telefondan gönderilip atölyede görülmesi",
+    "status": "İnsan teyidi bekliyor",
+    "evidence_or_boundary": "Yunus Usta ve numara kullanıcı beyanıdır. Test mesajı gönderilmedi."
+  },
+  {
+    "id": "E02",
+    "scenario": "Fotoğrafsız yazılı fikirle ilerlemek",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py"
+  },
+  {
+    "id": "E03",
+    "scenario": "Cihaz paylaşımını iptal etmek",
+    "status": "Uygulandı ve otomatik sınandı",
+    "evidence_or_boundary": "acceptance.py kontrollü AbortError. Sipariş veya teslim başarısı gösterilmez."
+  },
+  {
+    "id": "E04",
+    "scenario": "Ticari alan, barındırma ve gerçek işletme koşulları",
+    "status": "Dış bağımlılık bekliyor",
+    "evidence_or_boundary": "Mevcut Pages önizlemesi güncellenir. Yeni ticari alan/servis alınmadı. Adres, hizmet ve kullanım koşulları onaylanmadı."
+  },
+  {
+    "id": "F01",
+    "scenario": "Kişisel veri ve yanlış satış sayımı olmaması",
+    "status": "Mevcut davranış otomatik kontrol edildi",
+    "evidence_or_boundary": "Analitik/piksel yok. Ağ kontrolü acceptance.py. Yeni analitik ileride ayrı izin ve doğrulama ister."
+  },
+  {
+    "id": "F02",
+    "scenario": "Atölyenin gerçek talep, teklif ve iş takibi",
+    "status": "İşletme uygulaması bekliyor",
+    "evidence_or_boundary": "BUSINESS_HANDOFF.md ve kişisel verisiz şema yalnız uygulama taslağıdır. Gerçek veritabanı veya CRM kurulmadı."
+  }
+]
