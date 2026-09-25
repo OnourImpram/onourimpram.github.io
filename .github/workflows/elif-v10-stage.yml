@@ -1,0 +1,102 @@
+name: Elif V10 verified staging
+on:
+  push:
+    branches: [elif-v10-audit-fixes-20260925]
+    paths: ['.github/workflows/elif-v10-stage.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Retrieve authorized exact source package
+        env:
+          SOURCE_URL: 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-f170-820a-bfa9-930201cb60c3/raw?se=2026-09-25T04%3A13%3A22Z&sp=r&sv=2026-02-06&sr=b&scid=ecb0651e-c77f-51f4-b33f-5e507e65dc2d&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-24T19%3A34%3A19Z&ske=2026-09-25T19%3A34%3A19Z&sks=b&skv=2026-02-06&sig=nx2ptrMYDk91SvLo02Bunup8EiHKgQDy2j7SahWOTyI%3D'
+        run: |
+          echo "::add-mask::$SOURCE_URL"
+          curl --fail --location --silent --show-error --max-time 60 "$SOURCE_URL" --output /tmp/elif-v10.zip
+          echo 'cc8b5d52c63a14fdab6ba607da604383deb78ded40747b64288f60b91f9238bd  /tmp/elif-v10.zip' | sha256sum --check
+          python - <<'PY'
+          import zipfile,pathlib
+          z=zipfile.ZipFile('/tmp/elif-v10.zip')
+          assert len(z.infolist())<1000 and sum(i.file_size for i in z.infolist())<80000000
+          for i in z.infolist():
+              p=pathlib.PurePosixPath(i.filename)
+              assert p.parts[0]=='source' and not p.is_absolute() and '..' not in p.parts and '\\' not in i.filename
+              assert not ((i.external_attr>>16)&0o170000)==0o120000
+          z.extractall('/tmp/elif-v10-build')
+          PY
+      - name: Clean source build and complete unit contracts
+        working-directory: /tmp/elif-v10-build/source
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/v10/ci
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build 2>&1 | tee evidence/v10/ci/build.txt
+          npm test 2>&1 | tee evidence/v10/ci/unit.txt
+          npm run typecheck:core 2>&1 | tee evidence/v10/ci/types.txt
+          npm run verify:dist 2>&1 | tee evidence/v10/ci/integrity.txt
+      - name: Serve only generated preview
+        run: |
+          test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          python - <<'PY'
+          import pathlib,shutil
+          target=pathlib.Path('elif-tasarim')
+          assert not target.is_symlink()
+          if target.exists(): shutil.rmtree(target)
+          shutil.copytree('/tmp/elif-v10-build/source/dist',target)
+          PY
+          python -m http.server 8080 --bind 127.0.0.1 >/tmp/elif-v10-http.log 2>&1 &
+      - name: Install isolated browser
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+          CHROME=$(python -c 'from playwright.sync_api import sync_playwright; p=sync_playwright().start(); print(p.chromium.executable_path); p.stop()')
+          echo "CHROME=$CHROME" >> "$GITHUB_ENV"
+      - name: Real HTTP and WebGL regression contracts, no messages sent
+        working-directory: /tmp/elif-v10-build/source
+        env:
+          BASE_URL: http://127.0.0.1:8080/elif-tasarim/
+          RUN_TAG: ci
+        run: |
+          set -euo pipefail
+          xvfb-run -a python -u tests/v10/regressions.py 2>&1 | tee evidence/v10/ci/browser.txt
+      - name: Preserve verified source and output on staging branch only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import pathlib,shutil
+          root=pathlib.Path('/tmp/elif-v10-build/source'); dest=pathlib.Path('elif-tasarim/source-v10')
+          dest.mkdir()
+          for name in ['src','public','tools','tests','docs','deploy']:
+              shutil.copytree(root/name,dest/name,ignore=shutil.ignore_patterns('__pycache__','*.pyc','*.woff','*.woff2','*.ttf','*.otf'))
+          for name in ['package.json','package-lock.json','README.md','AGENTS.md']:shutil.copy2(root/name,dest/name)
+          PY
+          test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          git config user.name 'Elif Verified Build'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- elif-tasarim
+          git commit -m 'build(elif): V10 tested geometry, form, search and advertising experience fixes'
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          echo "::add-mask::$AUTH"
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:elif-v10-audit-fixes-20260925
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v10-stage-evidence
+          path: /tmp/elif-v10-build/source/evidence/v10
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-v10-verified-site
+          path: elif-tasarim
+          retention-days: 14
