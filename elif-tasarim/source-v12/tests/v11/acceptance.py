@@ -10,7 +10,7 @@ def record(name,detail=None):
  report['checks'].append({'name':name,'pass':True,'detail':detail});(OUT/'results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print('PASS '+name,flush=True)
 with sync_playwright() as p:
  exe=os.environ.get('CHROMIUM_PATH','/usr/bin/chromium')
- b=p.chromium.launch(channel='chrome',headless=False,chromium_sandbox=True,args=['--use-gl=angle','--use-angle=swiftshader'])
+ b=p.chromium.launch(executable_path=exe if Path(exe).exists() else None,headless=False,args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader'])
  report['browser']=b.version
  page=b.new_page(viewport={'width':1440,'height':1000});page.set_default_timeout(18000);page.emulate_media(reduced_motion='reduce');errors=[];network=[]
  page.on('pageerror',lambda e:errors.append(str(e)));page.on('request',lambda q:network.append(q.url) if q.url.startswith(('http:','https:')) else None)
