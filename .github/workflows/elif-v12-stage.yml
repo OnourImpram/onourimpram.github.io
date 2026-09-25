@@ -1,0 +1,90 @@
+name: Elif V12 C+ verified staging
+on:
+  push:
+    branches: [elif-v12-cplus-360-20260925]
+    paths: ['.github/workflows/elif-v12-stage.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Retrieve checksummed authorized source only
+        env:
+          SOURCE_URL: 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-8c38-8210-bf8e-c5e4338fa0ce/raw?se=2026-09-25T08%3A53%3A32Z&sp=r&sv=2026-02-06&sr=b&scid=50f6be3f-8cd7-59de-81bb-54f40e039bf9&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-25T07%3A57%3A17Z&ske=2026-09-26T07%3A57%3A17Z&sks=b&skv=2026-02-06&sig=dkiP0tS1kYMIubBo/a/UuL2K8PU3fws%2B%2BkgSKFnLdt4%3D'
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$SOURCE_URL"
+          curl --fail --location --silent --show-error --max-time 90 "$SOURCE_URL" -o /tmp/elif-v12.zip
+          echo '0a795c4c4ac3febe1fa293b197924c7a899cdb25479523400fd9afc4aa9e2dbb  /tmp/elif-v12.zip' | sha256sum -c
+          python - <<'PY'
+          import zipfile,pathlib
+          z=zipfile.ZipFile('/tmp/elif-v12.zip')
+          assert len(z.infolist())<1000 and sum(i.file_size for i in z.infolist())<100000000
+          for i in z.infolist():
+              p=pathlib.PurePosixPath(i.filename)
+              assert not p.is_absolute() and '..' not in p.parts and p.parts[0]=='source'
+              assert ((i.external_attr>>16)&0o170000)!=0o120000
+          z.extractall('/tmp/elif-v12-input')
+          PY
+      - name: Clean build, 115 unit and geometry contracts, core type check
+        working-directory: /tmp/elif-v12-input/source
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/ci
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build | tee evidence/ci/build.txt
+          npm test | tee evidence/ci/unit.txt
+          npm run typecheck:core | tee evidence/ci/types.txt
+          npm run verify:dist | tee evidence/ci/integrity.txt
+      - name: Serve tested output and install isolated browser tools
+        working-directory: /tmp/elif-v12-input/source
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+          node tools/serve-static.cjs dist 8088 >/tmp/elif-v12-http.log 2>&1 &
+      - name: Real HTTP WebGL orbit, working side, touch and decision regressions
+        working-directory: /tmp/elif-v12-input/source
+        env:
+          BASE_URL: http://127.0.0.1:8088/elif-tasarim/
+          CHROMIUM_PATH: /nonexistent/use-playwright-managed-browser
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/ci/cplus xvfb-run -a python tests/v12/acceptance.py | tee evidence/ci/cplus.txt
+          EVIDENCE_DIR=evidence/ci/decisions xvfb-run -a python tests/v11/acceptance.py | tee evidence/ci/decisions.txt
+      - name: Preserve verified output only on the staging branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          rm -rf elif-tasarim
+          mkdir -p elif-tasarim/source-v12
+          cp -a /tmp/elif-v12-input/source/dist/. elif-tasarim/
+          rsync -a --exclude=node_modules --exclude=dist --exclude=preview --exclude=evidence --exclude=.git --exclude=__pycache__ /tmp/elif-v12-input/source/ elif-tasarim/source-v12/
+          git config user.name 'Elif Release Verification'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add elif-tasarim
+          git commit -m 'build(elif): tested V12 C+ correct user side and unobstructed 360 degree orbit'
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:elif-v12-cplus-360-20260925
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v12-stage-evidence
+          path: /tmp/elif-v12-input/source/evidence/ci
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-v12-verified-site
+          path: elif-tasarim
+          retention-days: 14
