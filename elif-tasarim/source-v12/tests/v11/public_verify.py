@@ -5,12 +5,12 @@ from urllib.error import HTTPError
 from concurrent.futures import ThreadPoolExecutor
 import json,os,hashlib,re,time
 R=Path(__file__).resolve().parents[2];B=os.environ['BASE_URL'].rstrip('/')+'/';O=Path(os.environ.get('EVIDENCE_DIR',str(R/'evidence/v11/public')));O.mkdir(parents=True,exist_ok=True)
-m=json.loads((R/'dist/release-v12.json').read_text());expected=(R/'dist/release-v12.json').read_bytes()
+m=json.loads((R/'dist/release-v13.json').read_text());expected=(R/'dist/release-v13.json').read_bytes()
 def get(path):
  with urlopen(Request(B+path,headers={'User-Agent':'Elif-Release-Verification/11'}),timeout=45) as r:return r.read()
 for n in range(36):
  try:
-  if get('release-v12.json')==expected:break
+  if get('release-v13.json')==expected:break
  except Exception:pass
  time.sleep(10)
 else:raise SystemExit('Expected V11 manifest did not appear. No success claimed.')
@@ -23,7 +23,7 @@ with ThreadPoolExecutor(max_workers=4)as pool:results=list(pool.map(verify,m['fi
 pages=[];descs=[]
 for path in m['routes']:
  data=get(path.strip('/')+'/' if path!='/' else '').decode();description=re.search(r'<meta name="description" content="([^"]+)"',data).group(1);descs.append(description)
- pages.append({'path':path,'v11':'v12-cplus-360'in data,'noindex':'noindex,nofollow'in data,'legacyName':bool(re.search('Yusuf',data)),'description':description})
+ pages.append({'path':path,'v11':'v13-final-atelier'in data,'noindex':'noindex,nofollow'in data,'legacyName':bool(re.search('Yusuf',data)),'description':description})
 assert all(x['v11']and x['noindex']and not x['legacyName']for x in pages);assert len(set(descs))==len(descs)
 missing=None
 try:get('v11-this-page-does-not-exist/')
