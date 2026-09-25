@@ -1,0 +1,51 @@
+name: Elif V12 C+ public release verification
+on:
+  push:
+    branches: [elif-v12-cplus-360-20260925]
+    paths: ['.github/workflows/elif-v12-live.yml']
+permissions:
+  contents: read
+jobs:
+  verify-live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reproduce approved publication from verified source
+        working-directory: elif-tasarim/source-v12
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build
+          cmp dist/release-v12.json ../release-v12.json
+      - name: Verify exact public manifest, every public file and direct page
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+          EVIDENCE_DIR: evidence/live/public
+        run: python tests/v11/public_verify.py
+      - name: Use sandbox-supported Chrome and isolated test dependencies
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install-deps chromium
+          google-chrome --version
+      - name: Test actual public working side, full orbit, touch and project continuity
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/live/cplus xvfb-run -a python tests/v12/acceptance.py | tee evidence/live/cplus.txt
+          EVIDENCE_DIR=evidence/live/decisions xvfb-run -a python tests/v11/acceptance.py | tee evidence/live/decisions.txt
+      - name: Verify personal homepage identity is untouched
+        run: test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v12-live-evidence
+          path: elif-tasarim/source-v12/evidence/live
+          retention-days: 14
