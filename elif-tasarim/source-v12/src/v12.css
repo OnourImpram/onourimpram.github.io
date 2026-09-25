@@ -1,0 +1,13 @@
+/* C+ interaction corrections. Applied after the established V11 layout. */
+.v8-view-tabs{flex-wrap:wrap}
+.v8-view-tabs button{white-space:normal}
+.v8-scene-label{pointer-events:none}
+.v12-orbit-note{padding:0 24px;font-size:.8rem;line-height:1.65;color:#645848;margin:1rem 0}
+.v8-canvas-host canvas{cursor:grab}
+.v8-canvas-host canvas:active{cursor:grabbing}
+@media(max-width:540px){
+ .v8-full .v8-scene-label{display:none}
+ .v8-full .v8-view-tabs{max-width:calc(100% - 16px);gap:2px}
+ .v8-full .v8-view-tabs button{min-height:32px;font-size:10px;padding:4px 7px}
+ .v12-orbit-note{padding:0 12px;font-size:12px}
+}
