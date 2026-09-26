@@ -1,0 +1,135 @@
+name: Elif V13 completion
+on:
+  push:
+    branches: [elif-v13-final-20260925]
+    paths: ['.github/workflows/elif-v13-complete.yml']
+permissions:
+  contents: write
+jobs:
+  complete:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Correct the obsolete release assertion without removing any functional tests
+        shell: python
+        run: |
+          from pathlib import Path
+          root=Path('elif-tasarim/source-v12')
+          p=root/'tests/v11/acceptance.py'
+          text=p.read_text()
+          old=".startswith('V12')"
+          assert text.count(old)==1, 'Unexpected test source. Stop rather than weaken a check.'
+          p.write_text(text.replace(old,".startswith('V13')"))
+          p=root/'README.md'
+          p.write_text('''# Elif Tasarım V13 Final
+
+          Etkin paket 0.13.0, yayın kimliği v13-final-atelier.
+          Kaynak klasörü tarihsel olarak source-v12 adındadır. Etkin derleme tools/build-v13.cjs dosyasını kullanır.
+
+          ## Yerel çalışma
+          Node.js 22 ile npm ci --ignore-scripts, npm run build, npm test, npm run typecheck:core ve npm run verify:dist çalıştırın.
+          npm run serve komutu dist çıktısını /elif-tasarim/ altında sunar.
+          preview/Elif_Tasarim.html internet gerektirmeyen yerel site ve Three.js dosyasıdır. WhatsApp ve Pinterest dış hizmetlerdir.
+
+          ## Kapsam
+          V12 C+ masanın kullanım yönü ve 360 derece incelemesi korunur.
+          V13 dört detay noktası, görsel oda karşılaştırması ve Devir karar rehberi ekler.
+          Yunus Usta iletişimi ve önceki müşteri karar akışları korunur.
+          docs/V13_Nihai_Teslim.md dosyası teslim sınırlarını açıklar.
+
+          ## Sınırlar
+          Noindex portföy ve konsept önizlemesi. Ödeme, AR, CRM, CMS veya otomatik talep sunucusu devreye alınmamıştır.
+          Oda hesabı dolaşım, sandalye, tesisat ve mekanizma güvenliğini doğrulamaz.
+          Testler Chromium ve yazılımsal WebGL ortamıdır. Gerçek mesaj gönderilmez.
+          Notlar ve fotoğraflar açık sekmenin belleğinde kalır. Paylaşılabilir bağlantı yalnız açık model seçeneklerini içerir.
+          Yalnız elif-tasarim dizinini yayımlayın, kişisel kök sayfayı değiştirmeyin.
+          Font dosyası dağıtılmaz.
+          ''')
+      - name: Clean build and all unit and core type checks
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/final
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build | tee evidence/final/build.txt
+          npm test | tee evidence/final/unit.txt
+          npm run typecheck:core | tee evidence/final/core-types.txt
+          npm run verify:dist | tee evidence/final/integrity.txt
+      - name: Install browser tooling
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Start isolated local preview
+        working-directory: elif-tasarim/source-v12
+        run: |
+          node tools/serve-static.cjs dist 8000 > /tmp/elif-v13-final-server.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:8000/elif-tasarim/release-v13.json >/dev/null && break; sleep 1; done
+          curl -fsS http://127.0.0.1:8000/elif-tasarim/release-v13.json >/dev/null
+      - name: Decision journeys, new helpers, 360 degree geometry and responsive regression
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/final/decisions xvfb-run -a python tests/v11/acceptance.py | tee evidence/final/decisions.txt
+          EVIDENCE_DIR=evidence/final/new-features xvfb-run -a python tests/v13/acceptance.py | tee evidence/final/new-features.txt
+          EVIDENCE_DIR=evidence/final/cplus xvfb-run -a python tests/v12/acceptance.py | tee evidence/final/cplus.txt
+          EVIDENCE_DIR=evidence/final/responsive xvfb-run -a python tests/v11/matrix.py | tee evidence/final/responsive.txt
+      - name: Stage exactly verified publication and source, preserve personal homepage
+        shell: python
+        run: |
+          from pathlib import Path
+          import json,shutil,subprocess
+          assert subprocess.check_output(['git','hash-object','index.html'],text=True).strip()=='501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          root=Path('elif-tasarim');dist=root/'source-v12/dist'
+          old=json.loads((root/'release-v12.json').read_text())
+          for name in old['files']:
+              p=root/name
+              assert '..' not in Path(name).parts and not name.startswith('/')
+              if p.is_file():p.unlink()
+          (root/'release-v12.json').unlink()
+          for p in dist.rglob('*'):
+              if p.is_file():
+                  out=root/p.relative_to(dist);out.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,out)
+          assert (root/'release-v13.json').exists()
+      - name: Commit to staging only
+        run: |
+          set -euo pipefail
+          git config user.name "Onour Impram"
+          git config user.email "onuribram@outlook.com"
+          git add -A elif-tasarim
+          git commit -m "release(elif): stage verified V13 final decision-support studio"
+          git push origin HEAD:elif-v13-final-20260925
+          git rev-parse HEAD > elif-tasarim/source-v12/evidence/final/staging-commit.txt
+      - name: Package clean delivery without fonts or dependencies
+        shell: python
+        run: |
+          from pathlib import Path
+          import zipfile,shutil
+          root=Path('elif-tasarim');source=root/'source-v12';out=Path('v13-delivery');out.mkdir()
+          excluded={'node_modules','.compiled','preview','dist','evidence','.git'}
+          font={'.woff','.woff2','.ttf','.otf','.eot'}
+          with zipfile.ZipFile(out/'Elif_Tasarim_V13_Kaynak_ve_Testler.zip','w',zipfile.ZIP_DEFLATED)as z:
+              for p in source.rglob('*'):
+                  if p.is_file() and not excluded.intersection(p.relative_to(source).parts) and p.suffix.lower() not in font:z.write(p,p.relative_to(source))
+          with zipfile.ZipFile(out/'Elif_Tasarim_V13_Yayin_Dosyalari.zip','w',zipfile.ZIP_DEFLATED)as z:
+              for p in root.rglob('*'):
+                  if p.is_file() and 'source-v12' not in p.relative_to(root).parts and p.suffix.lower() not in font:z.write(p,Path('elif-tasarim')/p.relative_to(root))
+          shutil.copy2(source/'preview/Elif_Tasarim.html',out/'Elif_Tasarim_V13.html')
+          shutil.copy2(source/'docs/V13_Nihai_Teslim.md',out/'Elif_Tasarim_V13_Teslim_Notlari.md')
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v13-completion-evidence
+          path: elif-tasarim/source-v12/evidence/final
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-v13-completed-delivery
+          path: v13-delivery
+          retention-days: 14
