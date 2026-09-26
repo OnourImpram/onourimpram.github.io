@@ -17,7 +17,7 @@ with sync_playwright() as p:
   else:
    page.set_content((R/'preview/Elif_Tasarim.html').read_text(),wait_until='domcontentloaded',timeout=60000);page.evaluate('()=>location.hash="#/tasarim-masasi"')
   page.wait_for_selector('[data-three-status="ready"]',timeout=60000)
-  assert page.locator('.preview-bar').inner_text().startswith('V13 FINAL');rec('01. V13 release identity is visible')
+  assert page.locator('.preview-bar').inner_text().startswith('V20 FINAL');rec('01. V13 release identity is visible')
   page.get_by_role('button',name='Detay noktalarını göster',exact=True).click()
   page.wait_for_function("()=>[...document.querySelectorAll('.v13-hotspot')].filter(x=>!x.hidden&&getComputedStyle(x).display!=='none').length>=2",timeout=8000)
   visible=page.locator('.v13-hotspot:visible').count();assert visible>=2,visible;rec('02. Projected 3D detail hotspots are visible',{'visible':visible})

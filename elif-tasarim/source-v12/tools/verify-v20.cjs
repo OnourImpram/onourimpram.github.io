@@ -1,0 +1,1 @@
+const fs=require('node:fs'),crypto=require('node:crypto');const m=JSON.parse(fs.readFileSync('dist/release-v20.json'));for(const [p,v] of Object.entries(m.files)){const b=fs.readFileSync('dist/'+p);if(b.length!==v.bytes||crypto.createHash('sha256').update(b).digest('hex')!==v.sha256)throw Error('Integrity: '+p)}console.log('Verified',Object.keys(m.files).length,'V20 files');

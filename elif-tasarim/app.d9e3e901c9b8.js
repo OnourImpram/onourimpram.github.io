@@ -224,6 +224,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = require("react");
 const ui_1 = require("./components/ui");
 const Home_1 = require("./pages/Home");
+const Devir_1 = require("./pages/Devir");
 const DesignDesk_1 = require("./pages/DesignDesk");
 const Editorial_1 = require("./pages/Editorial");
 const Portfolio_1 = require("./pages/Portfolio");
@@ -350,7 +351,8 @@ class App extends react_1.Component {
         return (0, react_1.createElement)(Portfolio_1.Categories, { ...a, slug: p.split('/').pop() }); if (p === '/ilham-modelleri')
         return (0, react_1.createElement)(Portfolio_1.Inspiration, { key: this.state.path, ...a, query: qs }); if (p === '/modelini-getir' || p === '/teklif-al')
         return (0, react_1.createElement)(BringModel_1.BringModel, { key: this.state.path, ...a, query: qs, advanced: p === '/teklif-al' || new URLSearchParams(qs).get('detay') === '1' }); if (p === '/hakkimizda' || p === '/atolye')
-        return (0, react_1.createElement)(Portfolio_1.AboutAtelier, { ...a, atelier: p === '/atolye' }); if (p === '/tasarim-masasi')
+        return (0, react_1.createElement)(Portfolio_1.AboutAtelier, { ...a, atelier: p === '/atolye' }); if (p === '/devir-01')
+        return (0, react_1.createElement)(Devir_1.Devir, { ...a }); if (p === '/tasarim-masasi')
         return (0, react_1.createElement)(DesignDesk_1.DesignDesk, { key: this.state.path, ...a, query: qs }); if (p === '/iletisim')
         return (0, react_1.createElement)(V7Pages_1.ContactV7, { ...a }); if (p === '/gizlilik')
         return (0, react_1.createElement)(V7Pages_1.PrivacyV7, { ...a }); if (p === '/malzemeler')
@@ -374,7 +376,7 @@ class App extends react_1.Component {
             (0, react_1.createElement)("a", { href: "#main-content", className: "skip-link", onClick: e => { e.preventDefault(); document.getElementById('main-content')?.focus(); } }, "\u0130\u00E7eri\u011Fe ge\u00E7"),
             (0, react_1.createElement)("div", { className: "preview-bar" },
                 (0, react_1.createElement)("span", null,
-                    "V12 C+ / TASARIM \u00D6N\u0130ZLEMES\u0130 ",
+                    "V20 FINAL / TASARIM \u00D6N\u0130ZLEMES\u0130 ",
                     (0, react_1.createElement)("i", null),
                     (0, react_1.createElement)("span", { className: "v9-preview-detail" }, "Ger\u00E7ek i\u015F ar\u015Fivi, do\u011Frudan ileti\u015Fim")),
                 (0, react_1.createElement)("button", { onClick: () => this.setState({ info: true }) },
@@ -424,6 +426,7 @@ class App extends react_1.Component {
                                 (0, react_1.createElement)("em", null, "katan mobilyalar."))),
                         (0, react_1.createElement)("div", { className: "footer-column" },
                             (0, react_1.createElement)("h2", null, "Ke\u015Ffedin"),
+                            nav('/devir-01', 'Devir 01 Konsept Masası'),
                             nav('/tasarim-masasi', '3D Tasarım Stüdyosu'),
                             nav('/projeler', 'Çalışma arşivi'),
                             nav('/kategoriler', 'Kategoriler'),
@@ -452,7 +455,7 @@ class App extends react_1.Component {
                         "elif tasar\u0131m",
                         (0, react_1.createElement)("span", null, "AT\u00D6LYE")),
                     (0, react_1.createElement)("div", { className: "footer-bottom" },
-                        (0, react_1.createElement)("span", null, "EL\u0130F TASARIM \u00B7 V12 C+ / 2026"),
+                        (0, react_1.createElement)("span", null, "EL\u0130F TASARIM \u00B7 V20 FINAL / 2026"),
                         (0, react_1.createElement)("div", null,
                             nav('/gizlilik', 'Gizlilik ve dış servisler'),
                             (0, react_1.createElement)("button", { onClick: () => this.setState({ info: true }) }, "Cihaz kay\u0131tlar\u0131n\u0131 y\u00F6net")),
@@ -484,7 +487,7 @@ class App extends react_1.Component {
                 (0, react_1.createElement)(ui_1.TextLink, { to: '/arama?q=' + encodeURIComponent(s.searchQuery.trim()), navigate: this.navigate }, "T\u00FCm sonu\u00E7lar\u0131 g\u00F6r")),
             s.info && (0, react_1.createElement)(ui_1.Dialog, { title: "Bilgi ve cihaz kay\u0131tlar\u0131", onClose: () => this.setState({ info: false }) },
                 (0, react_1.createElement)("div", { className: "info-dialog" },
-                    (0, react_1.createElement)(ui_1.Eyebrow, null, "V12 C+ / \u015EEFFAF B\u0130R BA\u015ELANGI\u00C7"),
+                    (0, react_1.createElement)(ui_1.Eyebrow, null, "V20 FINAL / \u015EEFFAF B\u0130R BA\u015ELANGI\u00C7"),
                     (0, react_1.createElement)("p", null,
                         "Yunus Usta'n\u0131n kullan\u0131c\u0131 taraf\u0131ndan payla\u015F\u0131lan i\u015F telefonu ",
                         project_1.business.display,
@@ -530,20 +533,198 @@ class App extends react_1.Component {
 exports.default = App;
 
 },
+"src/components/DesignWorkbench":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DesignWorkbench = void 0;
+const react_1 = require("react");
+const design_board_1 = require("../lib/design-board");
+const desk_v8_1 = require("../lib/desk-v8");
+const domain_1 = require("../lib/domain");
+const design_sheet_1 = require("../lib/design-sheet");
+const ui_1 = require("./ui");
+class DesignWorkbench extends react_1.Component {
+    constructor() {
+        super(...arguments);
+        this.state = { items: design_board_1.designBoard.list(), busy: '', message: '', quality: 'balanced', arUrl: '', arPreview: '' };
+        this.alive = true;
+        this.screenshot = () => { try {
+            return this.props.getEngine()?.snapshot(960, 640) || null;
+        }
+        catch {
+            return null;
+        } };
+        this.save = () => { const result = design_board_1.designBoard.add(this.props.config, this.screenshot()); this.setState({ items: design_board_1.designBoard.list(), message: result.status === 'full' ? 'Üç seçenek dolu. Bir seçeneği kaldırıp yeniden ekleyin.' : result.status === 'duplicate' ? 'Bu tasarım karşılaştırmada zaten var. Görünümü yenilendi.' : 'Seçili tasarım karşılaştırmaya eklendi.' }); };
+        this.importFile = async (e) => { const file = e.currentTarget.files?.[0]; e.currentTarget.value = ''; if (!file)
+            return; if (file.size > 16384) {
+            this.setState({ message: 'Tasarım dosyası 16 KB sınırını aşıyor.' });
+            return;
+        } if (design_board_1.designBoard.list().length && !window.confirm('Dosyadaki seçenekler mevcut karşılaştırmanın yerini alsın mı?'))
+            return; try {
+            const n = design_board_1.designBoard.import(await file.text());
+            if (this.alive)
+                this.setState({ items: design_board_1.designBoard.list(), message: n + ' tasarım yüklendi. Görüntüler, stüdyoda yeniden açtığınızda hazırlanabilir.' });
+        }
+        catch (error) {
+            if (this.alive)
+                this.setState({ message: error instanceof Error ? error.message : 'Dosya okunamadı.' });
+        } };
+        this.modelExport = async (format) => { if (this.state.busy)
+            return; this.setState({ busy: format, message: 'Seçili model dosyası hazırlanıyor.' }); try {
+            const signature = (0, desk_v8_1.studioQuery)(this.props.config), preview = this.screenshot();
+            const blob = await this.props.getEngine().exportModel(format);
+            if (signature !== (0, desk_v8_1.studioQuery)(this.props.config))
+                throw Error('Configuration changed');
+            if (!this.alive)
+                return;
+            const url = URL.createObjectURL(blob);
+            if (format === 'usdz') {
+                if (this.state.arUrl)
+                    URL.revokeObjectURL(this.state.arUrl);
+                this.setState({ arUrl: url, arPreview: preview || '' });
+            }
+            else {
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Elif-Devir-01-Konsept.glb';
+                a.click();
+                setTimeout(() => URL.revokeObjectURL(url), 60000);
+            }
+            this.setState({ message: format === 'usdz' ? 'USDZ dosyası hazır. Uyumlu Apple cihazında AR önizlemesi açılabilir. Diğer cihazlarda dosya indirilebilir.' : 'GLB dosyası hazırlandı. Ölçek birimi metredir. Konsept geometri, CAD veya üretim dosyası değildir.' });
+        }
+        catch (error) {
+            if (this.alive)
+                this.setState({ message: 'Bu cihazda model dışa aktarılamadı. Tasarım JSON dosyasıyla veya yazdırılabilir özetle devam edebilirsiniz.' });
+        }
+        finally {
+            if (this.alive)
+                this.setState({ busy: '' });
+        } };
+    }
+    componentDidUpdate(previous) { if (!previous.ready && this.props.ready)
+        this.props.getEngine()?.quality(this.state.quality); if ((0, desk_v8_1.studioQuery)(previous.config) !== (0, desk_v8_1.studioQuery)(this.props.config) && this.state.arUrl) {
+        URL.revokeObjectURL(this.state.arUrl);
+        this.setState({ arUrl: '', arPreview: '' });
+    } }
+    componentWillUnmount() { this.alive = false; if (this.state.arUrl)
+        URL.revokeObjectURL(this.state.arUrl); }
+    render() {
+        const p = this.props, s = this.state, selected = (0, desk_v8_1.studioQuery)(p.config);
+        return (0, react_1.createElement)("section", { className: "v20-workbench", "aria-labelledby": "v20-board-title" },
+            (0, react_1.createElement)("div", { className: "v20-section-heading" },
+                (0, react_1.createElement)("div", null,
+                    (0, react_1.createElement)(ui_1.Eyebrow, null, "TASARIM DEFTER\u0130N\u0130Z"),
+                    (0, react_1.createElement)("h2", { id: "v20-board-title" },
+                        "Bir karar vermeden,",
+                        (0, react_1.createElement)("br", null),
+                        (0, react_1.createElement)("em", null, "yan yana d\u00FC\u015F\u00FCn\u00FCn."))),
+                (0, react_1.createElement)("button", { type: "button", className: "button", disabled: !p.ready || !!s.busy, onClick: this.save },
+                    "Bu tasar\u0131m\u0131 kar\u015F\u0131la\u015Ft\u0131r ",
+                    (0, react_1.createElement)(ui_1.Icon, { name: "plus", size: 17 }))),
+            (0, react_1.createElement)("p", { className: "v20-intro" }, "En fazla \u00FC\u00E7 d\u00FCzeni ay\u0131r\u0131n. \u00D6l\u00E7\u00FCy\u00FC, y\u00FCzeyi ve \u00E7al\u0131\u015Fma y\u00FCksekli\u011Fini kar\u015F\u0131la\u015Ft\u0131r\u0131n. Her se\u00E7enek tek dokunu\u015Fla st\u00FCdyoya d\u00F6ner."),
+            (0, react_1.createElement)("div", { className: "v20-comparison-grid" },
+                s.items.map((item, i) => (0, react_1.createElement)("article", { key: item.id, className: selected === (0, desk_v8_1.studioQuery)(item.config) ? 'selected' : '' },
+                    (0, react_1.createElement)("div", { className: "v20-compare-image" },
+                        item.preview ? (0, react_1.createElement)("img", { alt: 'Tasarım ' + (i + 1) + ' görünümü', src: item.preview }) : (0, react_1.createElement)("span", null, "G\u00F6r\u00FCn\u00FCm st\u00FCdyoda haz\u0131rlan\u0131r."),
+                        (0, react_1.createElement)("span", { className: "v20-design-index" },
+                            "0",
+                            i + 1)),
+                    (0, react_1.createElement)("h3", null, desk_v8_1.studioMaterials[item.config.material].name),
+                    (0, react_1.createElement)("dl", null,
+                        (0, react_1.createElement)("div", null,
+                            (0, react_1.createElement)("dt", null, "Tabla"),
+                            (0, react_1.createElement)("dd", null,
+                                item.config.width,
+                                " \u00D7 ",
+                                item.config.depth,
+                                " cm")),
+                        (0, react_1.createElement)("div", null,
+                            (0, react_1.createElement)("dt", null, "Y\u00FCkseklik"),
+                            (0, react_1.createElement)("dd", null,
+                                item.config.height,
+                                " cm")),
+                        (0, react_1.createElement)("div", null,
+                            (0, react_1.createElement)("dt", null, "Yan tabla"),
+                            (0, react_1.createElement)("dd", null,
+                                item.config.angle,
+                                "\u00B0")),
+                        (0, react_1.createElement)("div", null,
+                            (0, react_1.createElement)("dt", null, "I\u015F\u0131k"),
+                            (0, react_1.createElement)("dd", null, item.config.lighting === 'evening' ? 'Akşam' : 'Gün ışığı'))),
+                    (0, react_1.createElement)("div", { className: "v20-compare-actions" },
+                        (0, react_1.createElement)("button", { type: "button", onClick: () => { p.onSelect(item.config); this.setState({ message: 'Tasarım ' + (i + 1) + ' stüdyoya aktarıldı.' }); }, "aria-label": 'Tasarım ' + (i + 1) + ' stüdyoda aç' },
+                            "St\u00FCdyoda a\u00E7 ",
+                            (0, react_1.createElement)(ui_1.Icon, { size: 14 })),
+                        (0, react_1.createElement)("button", { type: "button", "aria-label": 'Tasarım ' + (i + 1) + ' kaldır', onClick: () => { design_board_1.designBoard.remove(item.id); this.setState({ items: design_board_1.designBoard.list() }); } },
+                            (0, react_1.createElement)(ui_1.Icon, { name: "close", size: 15 }))))),
+                s.items.length === 0 && (0, react_1.createElement)("div", { className: "v20-compare-empty" },
+                    (0, react_1.createElement)("span", null, "01 / 02 / 03"),
+                    (0, react_1.createElement)("p", null,
+                        "\u00D6nce masay\u0131 size g\u00F6re d\u00FCzenleyin.",
+                        (0, react_1.createElement)("br", null),
+                        "Sonra kar\u015F\u0131la\u015Ft\u0131rmaya ekleyin."))),
+            (0, react_1.createElement)("div", { className: "v20-board-file" },
+                (0, react_1.createElement)("button", { type: "button", disabled: !s.items.length, onClick: () => (0, domain_1.downloadText)('Elif-Tasarim-Seceneklerim.json', design_board_1.designBoard.serialize()) },
+                    "Se\u00E7enekleri JSON olarak sakla ",
+                    (0, react_1.createElement)(ui_1.Icon, { name: "download", size: 16 })),
+                (0, react_1.createElement)("label", null,
+                    "Kaydetti\u011Fim se\u00E7enekleri a\u00E7",
+                    (0, react_1.createElement)("input", { type: "file", accept: "application/json,.json", onChange: this.importFile }))),
+            (0, react_1.createElement)("small", { className: "v20-privacy-note" }, "Bu defter yaln\u0131z a\u00E7\u0131k sekmede tutulur. JSON dosyas\u0131 not, adres, oda \u00F6l\u00E7\u00FCs\u00FC veya m\u00FC\u015Fteri foto\u011Fraf\u0131 i\u00E7ermez. Yenilemeden \u00F6nce se\u00E7enekleri kaydedin."),
+            (0, react_1.createElement)("div", { className: "v20-delivery-tools" },
+                (0, react_1.createElement)("div", null,
+                    (0, react_1.createElement)(ui_1.Eyebrow, null, "ST\u00DCDYODAN G\u00D6R\u00DC\u015EMEYE"),
+                    (0, react_1.createElement)("h3", null, "Tasar\u0131m\u0131n\u0131z burada kalmas\u0131n."),
+                    (0, react_1.createElement)("p", null, "G\u00F6rseli ve \u00F6l\u00E7\u00FCy\u00FC bir arada yazd\u0131r\u0131n. Dijital modeli GLB veya USDZ bi\u00E7iminde inceleyin.")),
+                (0, react_1.createElement)("div", { className: "v20-export-buttons" },
+                    (0, react_1.createElement)("button", { type: "button", disabled: !p.ready || !!s.busy, onClick: () => { if (!(0, design_sheet_1.openDesignSheet)(p.config, this.screenshot()))
+                            this.setState({ message: 'Açılır pencere engellendi. Tarayıcınızdan bu siteye izin verin.' }); } },
+                        "G\u00F6rselli tasar\u0131m dosyas\u0131 ",
+                        (0, react_1.createElement)(ui_1.Icon, { name: "download", size: 16 })),
+                    (0, react_1.createElement)("button", { type: "button", disabled: !p.ready || !!s.busy, onClick: () => this.modelExport('glb') }, s.busy === 'glb' ? 'GLB hazırlanıyor' : '3D modeli indir · GLB'),
+                    (0, react_1.createElement)("button", { type: "button", disabled: !p.ready || !!s.busy, onClick: () => this.modelExport('usdz') }, s.busy === 'usdz' ? 'USDZ hazırlanıyor' : 'AR dosyasını hazırla · USDZ'),
+                    s.arUrl && (0, react_1.createElement)(react_1.Fragment, null,
+                        (0, react_1.createElement)("a", { className: "v20-ar-link", href: s.arUrl, rel: "ar", download: "Elif-Devir-01-Konsept.usdz" },
+                            (0, react_1.createElement)("img", { src: s.arPreview, alt: "" }),
+                            "USDZ modelini a\u00E7"),
+                        (0, react_1.createElement)("small", null, "AR a\u00E7\u0131lmas\u0131 cihaz ve g\u00F6r\u00FCnt\u00FCleyici deste\u011Fine ba\u011Fl\u0131d\u0131r. Yerinde \u00F6l\u00E7ek ve zemin davran\u0131\u015F\u0131 ger\u00E7ek cihazda teyit edilmelidir.")))),
+            (0, react_1.createElement)("div", { className: "v20-quality" },
+                (0, react_1.createElement)("label", { htmlFor: "v20-quality" }, "G\u00F6r\u00FCnt\u00FC profili"),
+                (0, react_1.createElement)("select", { id: "v20-quality", value: s.quality, onChange: e => { const quality = e.currentTarget.value; p.getEngine()?.quality(quality); this.setState({ quality }); }, disabled: !p.ready },
+                    (0, react_1.createElement)("option", { value: "balanced" }, "Dengeli"),
+                    (0, react_1.createElement)("option", { value: "economy" }, "D\u00FC\u015F\u00FCk grafik y\u00FCk\u00FC"),
+                    (0, react_1.createElement)("option", { value: "detail" }, "Ayr\u0131nt\u0131l\u0131")),
+                (0, react_1.createElement)("small", null, "Sahne \u00E7\u00F6z\u00FCn\u00FCrl\u00FC\u011F\u00FC ve g\u00F6lge kalitesi de\u011Fi\u015Fir. Masa \u00F6l\u00E7\u00FCleri de\u011Fi\u015Fmez.")),
+            s.message && (0, react_1.createElement)("p", { role: "status", className: "v20-workbench-status" }, s.message));
+    }
+}
+exports.DesignWorkbench = DesignWorkbench;
+
+},
 "src/components/DeskExperience":function(module,exports,require){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeskExperience = void 0;
 const react_1 = require("react");
+const NumberEditor_1 = require("./NumberEditor");
+const DesignWorkbench_1 = require("./DesignWorkbench");
+const RoomDiagram_1 = require("./RoomDiagram");
 const ui_1 = require("./ui");
 const desk_v8_1 = require("../lib/desk-v8");
 const project_1 = require("../lib/project");
 const domain_1 = require("../lib/domain");
+const room_fit_1 = require("../lib/room-fit");
 let runtimePromise = null;
+const hotspotCopy = {
+    lift: { title: 'Yükseklik kumandası', body: 'Ana çalışma yüzeyinin yükselmesini temsil eder. Gerçek motor, taşıma kapasitesi ve elektrik güvenliği üretim öncesi ayrıca doğrulanır.' },
+    drawers: { title: 'Üst çekmece grubu', body: 'Sık kullanılan küçük ekipmanlar için üç bölümlü depolama fikri. İç düzen ve ray sistemi gerçek projede kullanımınıza göre netleştirilir.' },
+    return: { title: 'Döner yan çalışma yüzeyi', body: 'Tek masa ile farklı yerleşimlere geçebilmek için tasarlanan ikincil yüzey. Dönüş çapı ve mekanik durdurucular prototip aşamasında doğrulanmalıdır.' },
+    storage: { title: 'Sabit depolama gövdesi', body: 'Dosya, aksesuar ve günlük ekipman için sabit alt depolama fikri. Kapak, çekmece ve iç bölmeler ihtiyaca göre yeniden çalışılabilir.' }
+};
 function loadRuntime() { const w = window; if (w.ElifDesk3D)
     return Promise.resolve(w.ElifDesk3D); if (w.__ELIF_LOAD_3D__)
     return w.__ELIF_LOAD_3D__(); if (runtimePromise)
-    return runtimePromise; runtimePromise = new Promise((resolve, reject) => { const script = document.createElement('script'); script.type = 'module'; script.src = (w.__ELIF_BASE__ || '/elif-tasarim') + '/three/desk-scene.mjs?v=v12-cplus-360'; script.onload = () => w.ElifDesk3D ? resolve(w.ElifDesk3D) : reject(Error('3D initialization failed')); script.onerror = () => { runtimePromise = null; script.remove(); reject(Error('3D runtime unavailable')); }; document.head.appendChild(script); }); return runtimePromise; }
+    return runtimePromise; runtimePromise = new Promise((resolve, reject) => { const script = document.createElement('script'); script.type = 'module'; script.src = (w.__ELIF_BASE__ || '/elif-tasarim') + '/three/desk-scene.mjs?v=v20-master-atelier'; script.onload = () => w.ElifDesk3D ? resolve(w.ElifDesk3D) : reject(Error('3D initialization failed')); script.onerror = () => { runtimePromise = null; script.remove(); reject(Error('3D runtime unavailable')); }; document.head.appendChild(script); }); return runtimePromise; }
 class DeskExperience extends react_1.Component {
     constructor(p) {
         super(p);
@@ -564,16 +745,19 @@ class DeskExperience extends react_1.Component {
             this.engine = runtime.createDeskScene(this.host, this.state.config, { status: (status) => { if (this.alive)
                     this.setState({ status }); }, motion: (rotating) => { if (this.alive)
                     this.setState({ rotating }); }, camera: (view) => { if (this.alive)
-                    this.setState({ view }); } });
+                    this.setState({ view }); }, hotspot: (hotspot) => { if (this.alive)
+                    this.setState({ hotspot }); } });
             this.engine.light(this.state.config.lighting);
             this.engine.dimensions(this.state.dimensions);
+            this.engine.hotspots?.(this.state.hotspots);
             this.setState({ status: 'ready' });
         }
-        catch {
+        catch (error) {
+            console.error('Elif 3D initialization', error);
             if (this.alive)
                 this.setState({ status: 'unavailable' });
         } };
-        this.change = (patch) => { const config = (0, desk_v8_1.normalizeStudio)({ ...this.state.config, ...patch }), roomChanged = config.room !== this.state.config.room; project_1.projectStore.setStudio(config); this.setState({ config, footprint: null, ...(roomChanged ? { view: 'perspective', rotating: false } : {}) }, () => this.engine?.update(config)); };
+        this.change = (patch) => { const config = (0, desk_v8_1.normalizeStudio)({ ...this.state.config, ...patch }), roomChanged = config.room !== this.state.config.room; project_1.projectStore.setStudio(config); this.setState({ config, footprint: null, fit: null, fitError: '', ...(roomChanged ? { view: 'perspective', rotating: false } : {}) }, () => this.engine?.update(config)); };
         this.setView = (view) => { this.setState({ view, rotating: false }); this.engine?.rotate(false); this.engine?.setView(view); };
         this.handoff = () => { const notice = project_1.projectStore.get().studioNotice; if (notice && !window.confirm(notice + ' Gösterilen 3D ölçülerini proje taslağınıza aktarmak istediğinize emin misiniz?'))
             return; project_1.projectStore.handoffStudio(this.state.config); this.props.navigate('/modelini-getir'); };
@@ -592,7 +776,13 @@ class DeskExperience extends react_1.Component {
             this.props.notify('Tam ekran açılamadı. Stüdyo normal görünümde kullanılabilir.');
         } };
         this.measureFootprint = () => { if (!this.engine)
-            return; this.setView('top'); const footprint = this.engine.footprint(); this.setState({ footprint }); };
+            return; this.setView('top'); const footprint = this.engine.footprint(); this.setState({ footprint, fit: null, fitError: '' }); };
+        this.toggleHotspots = () => this.setState(s => ({ hotspots: !s.hotspots, hotspot: s.hotspots ? '' : s.hotspot }), () => this.engine?.hotspots?.(this.state.hotspots));
+        this.evaluateFit = () => { if (!this.engine)
+            return; const footprint = this.engine.footprint(), roomWidth = Number(this.state.roomWidth.replace(',', '.')), roomDepth = Number(this.state.roomDepth.replace(',', '.')); const fit = (0, room_fit_1.evaluateRoomFit)(roomWidth, roomDepth, footprint); if (!fit) {
+            this.setState({ fit: null, fitError: 'Oda eni ve derinliği için pozitif bir santimetre değeri girin.' });
+            return;
+        } this.setState({ footprint, fit, fitError: '' }); this.setView('top'); };
         this.snapshot = () => { if (!this.engine)
             return; try {
             const url = this.engine.snapshot(1920, 1280), a = document.createElement('a');
@@ -620,10 +810,7 @@ class DeskExperience extends react_1.Component {
             (0, react_1.createElement)("div", null,
                 (0, react_1.createElement)("label", { htmlFor: 'v8-' + (this.props.compact ? 'home-' : 'full-') + key }, label),
                 (0, react_1.createElement)("span", null,
-                    (0, react_1.createElement)("input", { type: "number", inputMode: "numeric", value: v, min: min, max: max, step: "1", "aria-label": label + ', sayı girişi', onChange: e => { const raw = e.currentTarget.value; if (/^\d+$/.test(raw) && +raw >= min && +raw <= max)
-                            this.change({ [key]: +raw });
-                        else
-                            e.currentTarget.value = String(v); } }),
+                    (0, react_1.createElement)(NumberEditor_1.NumberEditor, { value: v, min: min, max: max, label: label + ', sayı girişi', onCommit: n => this.change({ [key]: n }) }),
                     unit)),
             (0, react_1.createElement)("input", { id: 'v8-' + (this.props.compact ? 'home-' : 'full-') + key, type: "range", "aria-label": label, min: min, max: max, value: v, step: "1", onInput: e => this.change({ [key]: +e.currentTarget.value }) }),
             (0, react_1.createElement)("div", { className: "v8-bounds" },
@@ -635,7 +822,7 @@ class DeskExperience extends react_1.Component {
                     max,
                     " ",
                     unit))); };
-        this.state = { config: p.query && new URLSearchParams(p.query).has('en') ? project_1.projectStore.openStudio(p.query, (0, desk_v8_1.studioFromQuery)(p.query)) : project_1.projectStore.getStudio(), status: 'poster', tab: 'motion', dimensions: false, view: 'perspective', share: false, rotating: false, fullscreen: false, footprint: null };
+        this.state = { config: p.query && new URLSearchParams(p.query).has('en') ? project_1.projectStore.openStudio(p.query, (0, desk_v8_1.studioFromQuery)(p.query)) : project_1.projectStore.getStudio(), status: 'poster', tab: 'motion', dimensions: false, view: 'perspective', share: false, rotating: false, fullscreen: false, footprint: null, hotspots: false, hotspot: '', roomWidth: '', roomDepth: '', fit: null, fitError: '' };
     }
     componentDidMount() { document.addEventListener('fullscreenchange', this.fullscreenChanged); if (!this.props.compact)
         this.start(); }
@@ -734,7 +921,14 @@ class DeskExperience extends react_1.Component {
                             (0, react_1.createElement)("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.5", "aria-hidden": "true" },
                                 (0, react_1.createElement)("path", { d: "M3 10a9 9 0 1 1 1 8M3 4v6h6" }))),
                         (0, react_1.createElement)("button", { type: "button", disabled: !ready, "aria-label": "\u00D6l\u00E7\u00FC \u00E7izgilerini g\u00F6ster", "aria-pressed": dimensions, onClick: () => this.setState({ dimensions: !dimensions }, () => this.engine?.dimensions(this.state.dimensions)) },
-                            (0, react_1.createElement)(ui_1.Icon, { name: "ruler" }))),
+                            (0, react_1.createElement)(ui_1.Icon, { name: "ruler" })),
+                        (0, react_1.createElement)("button", { type: "button", disabled: !ready, "aria-label": this.state.hotspots ? 'Detay noktalarını gizle' : 'Detay noktalarını göster', "aria-pressed": this.state.hotspots, onClick: this.toggleHotspots },
+                            (0, react_1.createElement)(ui_1.Icon, { name: "info" }))),
+                    this.state.hotspot && hotspotCopy[this.state.hotspot] && (0, react_1.createElement)("aside", { className: "v13-hotspot-card", role: "status" },
+                        (0, react_1.createElement)("button", { type: "button", "aria-label": "Detay bilgisini kapat", onClick: () => this.setState({ hotspot: '' }) }, "\u00D7"),
+                        (0, react_1.createElement)("span", null, "DETAY NOKTASI"),
+                        (0, react_1.createElement)("strong", null, hotspotCopy[this.state.hotspot].title),
+                        (0, react_1.createElement)("p", null, hotspotCopy[this.state.hotspot].body)),
                     (0, react_1.createElement)("span", { className: "v8-canvas-hint" }, ready ? 'Sürükleyerek 360° inceleyin. İki parmakla yakınlaştırın.' : 'Gerçek zamanlı üç boyutlu model'),
                     (0, react_1.createElement)("span", { className: "v8-scene-label" }, "Konsept model")),
                 (0, react_1.createElement)("div", { className: "v11-quick-controls", "aria-label": "G\u00F6r\u00FCnt\u00FCn\u00FCn yan\u0131nda h\u0131zl\u0131 ayarlar" },
@@ -791,6 +985,7 @@ class DeskExperience extends react_1.Component {
                         "Yaln\u0131z model se\u00E7eneklerinizi i\u00E7eren ba\u011Flant\u0131",
                         (0, react_1.createElement)("input", { "aria-label": "Payla\u015F\u0131labilir 3D tasar\u0131m ba\u011Flant\u0131s\u0131", readOnly: true, value: this.shareURL(), onFocus: e => e.currentTarget.select() }),
                         (0, react_1.createElement)("small", null, "Ki\u015Fisel not veya ileti\u015Fim bilgisi i\u00E7ermez."))),
+                !p.compact && (0, react_1.createElement)(DesignWorkbench_1.DesignWorkbench, { config: c, ready: ready, getEngine: () => this.engine, onSelect: this.change, notify: p.notify }),
                 (0, react_1.createElement)("div", { className: "v11-footprint" },
                     (0, react_1.createElement)("button", { className: "text-link", type: "button", disabled: !ready, onClick: this.measureFootprint },
                         "\u00DCstten yerle\u015Fim alan\u0131n\u0131 g\u00F6r ",
@@ -802,12 +997,101 @@ class DeskExperience extends react_1.Component {
                             this.state.footprint.depth,
                             " cm"),
                         " Ekrandaki masa ve hareketli par\u00E7alar\u0131n toplam g\u00F6rsel s\u0131n\u0131r\u0131."),
-                    (0, react_1.createElement)("small", null, "Oda, sandalye ve kitapl\u0131klar dahil de\u011Fildir. Hareket g\u00FCvenli\u011Fi veya imalat \u00F6l\u00E7\u00FCs\u00FC de\u011Fil, se\u00E7ili konumun yakla\u015F\u0131k yerle\u015Fim g\u00F6r\u00FCn\u00FCm\u00FCd\u00FCr.")),
+                    (0, react_1.createElement)("small", null, "Oda, sandalye ve kitapl\u0131klar dahil de\u011Fildir. Hareket g\u00FCvenli\u011Fi veya imalat \u00F6l\u00E7\u00FCs\u00FC de\u011Fil, se\u00E7ili konumun yakla\u015F\u0131k yerle\u015Fim g\u00F6r\u00FCn\u00FCm\u00FCd\u00FCr."),
+                    !p.compact && (0, react_1.createElement)("div", { className: "v13-fit-planner" },
+                        (0, react_1.createElement)("div", null,
+                            (0, react_1.createElement)("span", { className: "eyebrow" }, "ODANIZA G\u00D6RE D\u00DC\u015E\u00DCN\u00DCN"),
+                            (0, react_1.createElement)("h3", null, "Bu d\u00FCzen alana nas\u0131l oturuyor?"),
+                            (0, react_1.createElement)("p", null, "Odan\u0131z\u0131n kullan\u0131labilir enini ve derinli\u011Fini girin. Hesap yaln\u0131z se\u00E7ili masa geometrisinin ortalanm\u0131\u015F g\u00F6rsel s\u0131n\u0131r\u0131n\u0131 kar\u015F\u0131la\u015Ft\u0131r\u0131r.")),
+                        (0, react_1.createElement)("div", { className: "v13-fit-fields" },
+                            (0, react_1.createElement)("label", null,
+                                "Oda eni ",
+                                (0, react_1.createElement)("span", null,
+                                    (0, react_1.createElement)("input", { "aria-label": "Oda eni", inputMode: "decimal", value: this.state.roomWidth, onInput: e => this.setState({ roomWidth: e.currentTarget.value, fit: null, fitError: '' }) }),
+                                    " cm")),
+                            (0, react_1.createElement)("label", null,
+                                "Oda derinli\u011Fi ",
+                                (0, react_1.createElement)("span", null,
+                                    (0, react_1.createElement)("input", { "aria-label": "Oda derinli\u011Fi", inputMode: "decimal", value: this.state.roomDepth, onInput: e => this.setState({ roomDepth: e.currentTarget.value, fit: null, fitError: '' }) }),
+                                    " cm")),
+                            (0, react_1.createElement)("button", { type: "button", className: "button button-outline", disabled: !ready, onClick: this.evaluateFit }, "Yerle\u015Fimi kar\u015F\u0131la\u015Ft\u0131r")),
+                        this.state.fit && (0, react_1.createElement)("div", { className: 'v13-fit-result ' + (this.state.fit.fits ? 'fits' : 'does-not-fit'), role: "status" },
+                            (0, react_1.createElement)("strong", null, this.state.fit.fits ? 'Bu görsel sınır oda içine sığıyor.' : 'Bu seçili konumda masa sınırı odayı aşıyor.'),
+                            (0, react_1.createElement)("span", null, this.state.fit.fits ? 'Yanlarda yaklaşık ' + this.state.fit.widthClearance + ' cm, önde ve arkada yaklaşık ' + this.state.fit.depthClearance + ' cm pay.' : 'Oda eni için ' + (Math.ceil(Math.max(0, this.state.fit.footprintWidth - this.state.fit.roomWidth) * 10) / 10) + ' cm, derinlik için ' + (Math.ceil(Math.max(0, this.state.fit.footprintDepth - this.state.fit.roomDepth) * 10) / 10) + ' cm ek alan gerekir.')),
+                        this.state.fit && (0, react_1.createElement)(RoomDiagram_1.RoomDiagram, { fit: this.state.fit }),
+                        (0, react_1.createElement)("p", { className: "v20-fit-detail" }, "Se\u00E7enekleri kar\u015F\u0131la\u015Ft\u0131r\u0131rken oda \u00F6l\u00E7\u00FCs\u00FC bu sekmede kal\u0131r. Payla\u015F\u0131labilir tasar\u0131m ba\u011Flant\u0131s\u0131na eklenmez."),
+                        this.state.fitError && (0, react_1.createElement)("p", { className: "model-error", role: "alert" }, this.state.fitError),
+                        (0, react_1.createElement)("small", null, "Bu sonu\u00E7 sandalye dola\u015F\u0131m\u0131, kap\u0131 a\u00E7\u0131l\u0131m\u0131, s\u00FCp\u00FCrgelik, montaj tolerans\u0131 veya g\u00FCvenli mekanik hareket pay\u0131n\u0131 hesaplamaz. Yerle\u015Fim g\u00F6r\u00FC\u015Fmesine haz\u0131rl\u0131k i\u00E7indir."))),
                 (0, react_1.createElement)("p", { className: "v12-orbit-note" }, "\u00C7ekmeceler sandalye taraf\u0131na a\u00E7\u0131l\u0131r. Arka a\u00E7\u0131ya ge\u00E7erken g\u00F6r\u00FC\u015F\u00FC kapatan oda \u00F6\u011Feleri ge\u00E7ici gizlenir, raf se\u00E7iminiz de\u011Fi\u015Fmez. Klavye oklar\u0131yla d\u00F6nebilir, + ve \u2212 ile yak\u0131nla\u015Ft\u0131rabilir, 0 ile ilk g\u00F6r\u00FCn\u00FCme d\u00F6nebilirsiniz. Telefonda sayfay\u0131 sahnenin d\u0131\u015F\u0131ndan kayd\u0131r\u0131n."),
-                (0, react_1.createElement)("p", { className: "v8-engineering-note" }, "Konsept modeldir. Raflar ve aksesuarlar masa \u00F6l\u00E7\u00FCs\u00FCne veya teklifine otomatik dahil de\u011Fildir. Nihai mekanizma, y\u00FCk kapasitesi, hareket a\u00E7\u0131kl\u0131\u011F\u0131 ve \u00FCretim \u00F6l\u00E7\u00FCleri at\u00F6lye onay\u0131 gerektirir. Bu sahne teknik imalat \u00E7izimi veya g\u00FCvenlik testi de\u011Fildir.")));
+                (0, react_1.createElement)("p", { className: "v8-engineering-note" }, "Konsept modeldir. Raflar ve aksesuarlar masa \u00F6l\u00E7\u00FCs\u00FCne veya teklifine otomatik dahil de\u011Fildir. Nihai mekanizma, y\u00FCk kapasitesi, hareket a\u00E7\u0131kl\u0131\u011F\u0131 ve \u00FCretim \u00F6l\u00E7\u00FCleri at\u00F6lye onay\u0131 gerektirir. Bu sahne teknik imalat \u00E7izimi veya g\u00FCvenlik testi de\u011Fildir."),
+                !p.compact && (0, react_1.createElement)("section", { className: "v13-devir-guide", "aria-labelledby": "devir-guide-title" },
+                    (0, react_1.createElement)("span", { className: "eyebrow" }, "DEV\u0130R 01 / KARAR REHBER\u0130"),
+                    (0, react_1.createElement)("h2", { id: "devir-guide-title" },
+                        "G\u00FCzel g\u00F6r\u00FCnmesinden \u00F6nce,",
+                        (0, react_1.createElement)("br", null),
+                        (0, react_1.createElement)("em", null, "nas\u0131l kullanaca\u011F\u0131n\u0131z\u0131 d\u00FC\u015F\u00FCn\u00FCn.")),
+                    (0, react_1.createElement)("div", { className: "v13-guide-grid" },
+                        (0, react_1.createElement)("article", null,
+                            (0, react_1.createElement)("span", null, "01"),
+                            (0, react_1.createElement)("h3", null, "Oturun, y\u00FCkseltin, devam edin."),
+                            (0, react_1.createElement)("p", null, "Konseptin ana fikri, ayn\u0131 y\u00FCzeyde oturarak ve ayakta \u00E7al\u0131\u015Fma aras\u0131nda ge\u00E7i\u015F. Ger\u00E7ek motor se\u00E7imi ve ergonomik y\u00FCkseklik aral\u0131\u011F\u0131 \u00FCretim \u00F6ncesi do\u011Frulan\u0131r.")),
+                        (0, react_1.createElement)("article", null,
+                            (0, react_1.createElement)("span", null, "02"),
+                            (0, react_1.createElement)("h3", null, "Yan y\u00FCzey, farkl\u0131 d\u00FCzenler."),
+                            (0, react_1.createElement)("p", null, "D\u00F6ner tabla, tek bir masay\u0131 d\u00FCz, L veya daha a\u00E7\u0131k \u00E7al\u0131\u015Fma d\u00FCzenlerine yakla\u015Ft\u0131r\u0131r. Mekanik s\u0131n\u0131rlar ve odadaki d\u00F6n\u00FC\u015F alan\u0131 prototiple teyit edilmelidir.")),
+                        (0, react_1.createElement)("article", null,
+                            (0, react_1.createElement)("span", null, "03"),
+                            (0, react_1.createElement)("h3", null, "Depolama i\u015Fin i\u00E7inde."),
+                            (0, react_1.createElement)("p", null, "\u00DCst \u00E7ekmeceler ve sabit dolap g\u00FCnl\u00FCk ekipman\u0131 masan\u0131n \u00FCzerinde b\u0131rakmadan yak\u0131n\u0131n\u0131zda tutmak i\u00E7in d\u00FC\u015F\u00FCn\u00FClm\u00FC\u015Ft\u00FCr. \u0130\u00E7 d\u00FCzen tamamen yeniden planlanabilir."))),
+                    (0, react_1.createElement)("div", { className: "v13-guide-check" },
+                        (0, react_1.createElement)("h3", null, "Teklif g\u00F6r\u00FC\u015Fmesinde birlikte netle\u015Ftirelim."),
+                        (0, react_1.createElement)("ul", null,
+                            (0, react_1.createElement)("li", null, "Ger\u00E7ek oda \u00F6l\u00E7\u00FCs\u00FC ve dola\u015F\u0131m alan\u0131"),
+                            (0, react_1.createElement)("li", null, "Motor, kontrol \u00FCnitesi ve ta\u015F\u0131ma gereksinimi"),
+                            (0, react_1.createElement)("li", null, "Kablo y\u00F6netimi ve priz konumu"),
+                            (0, react_1.createElement)("li", null, "\u00C7ekmece, dolap ve yan tabla kullan\u0131m senaryosu"),
+                            (0, react_1.createElement)("li", null, "Ger\u00E7ek ah\u015Fap, kaplama, boya ve y\u00FCzey numunesi"))))));
     }
 }
 exports.DeskExperience = DeskExperience;
+
+},
+"src/components/NumberEditor":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NumberEditor = void 0;
+const react_1 = require("react");
+const design_board_1 = require("../lib/design-board");
+class NumberEditor extends react_1.Component {
+    constructor(p) {
+        super(p);
+        this.commit = () => { const n = (0, design_board_1.parseWholeNumber)(this.state.text, this.props.min, this.props.max); if (n === null) {
+            this.setState({ text: String(this.props.value), error: true });
+            return;
+        } this.setState({ text: String(n), error: false }); if (n !== this.props.value)
+            this.props.onCommit(n); };
+        this.state = { text: String(p.value), error: false };
+    }
+    componentDidUpdate(prev) { if (prev.value !== this.props.value)
+        this.setState({ text: String(this.props.value), error: false }); }
+    render() { const p = this.props, s = this.state; return (0, react_1.createElement)("span", { className: "v20-number-editor" },
+        (0, react_1.createElement)("input", { type: "text", role: "spinbutton", inputMode: "numeric", "aria-label": p.label, "aria-valuemin": p.min, "aria-valuemax": p.max, "aria-valuenow": p.value, "aria-invalid": s.error || undefined, value: s.text, onInput: e => this.setState({ text: e.currentTarget.value, error: false }), onBlur: this.commit, onKeyDown: e => { if (e.key === 'Enter') {
+                e.preventDefault();
+                this.commit();
+            } if (e.key === 'Escape')
+                this.setState({ text: String(p.value), error: false }); if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                const n = Math.min(p.max, Math.max(p.min, p.value + (e.key === 'ArrowUp' ? 1 : -1)));
+                this.setState({ text: String(n), error: false });
+                p.onCommit(n);
+            } } }),
+        s.error && (0, react_1.createElement)("small", { role: "status" },
+            p.min,
+            " ile ",
+            p.max,
+            " aras\u0131nda tam say\u0131 girin. \u00D6nceki de\u011Fer korundu.")); }
+}
+exports.NumberEditor = NumberEditor;
 
 },
 "src/components/PinterestPreview":function(module,exports,require){
@@ -899,6 +1183,30 @@ function ModelCallout({ navigate, compact = false }) { return (0, react_1.create
             "Modelimi payla\u015Fmak istiyorum ",
             (0, react_1.createElement)(ui_1.Icon, null)),
         (0, react_1.createElement)("small", null, "\u00D6l\u00E7\u00FC, malzeme ve \u00FCretilebilirlik Yunus Usta ile de\u011Ferlendirilir."))); }
+
+},
+"src/components/RoomDiagram":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.RoomDiagram = RoomDiagram;
+const react_1 = require("react");
+function RoomDiagram({ fit: f }) { const maxW = Math.max(f.roomWidth, f.footprintWidth), maxD = Math.max(f.roomDepth, f.footprintDepth), scale = Math.min(330 / maxW, 210 / maxD), rw = f.roomWidth * scale, rd = f.roomDepth * scale, dw = f.footprintWidth * scale, dd = f.footprintDepth * scale; return (0, react_1.createElement)("figure", { className: "v20-room-diagram" },
+    (0, react_1.createElement)("svg", { role: "img", "aria-label": "Odan\u0131n ve se\u00E7ili masa d\u00FCzeninin ortalanm\u0131\u015F d\u0131\u015F s\u0131n\u0131rlar\u0131", viewBox: "0 0 420 300" },
+        (0, react_1.createElement)("rect", { x: (420 - rw) / 2, y: (272 - rd) / 2, width: rw, height: rd, fill: "#efe7d9", stroke: "#8d7b66", strokeWidth: "1.5" }),
+        (0, react_1.createElement)("rect", { x: (420 - dw) / 2, y: (272 - dd) / 2, width: dw, height: dd, fill: f.fits ? '#987650' : '#a76e5b', fillOpacity: ".32", stroke: f.fits ? '#6a4a2d' : '#9c4431', strokeDasharray: "5 3" }),
+        (0, react_1.createElement)("text", { x: "210", y: "136", textAnchor: "middle", fill: "#493420", fontSize: "13" }, "MASA D\u00DCZEN\u0130N\u0130N DI\u015E SINIRI"),
+        (0, react_1.createElement)("text", { x: "210", y: "157", textAnchor: "middle", fill: "#493420", fontSize: "12" },
+            f.footprintWidth,
+            " \u00D7 ",
+            f.footprintDepth,
+            " cm"),
+        (0, react_1.createElement)("text", { x: "210", y: "291", textAnchor: "middle", fill: "#79644c", fontSize: "12" },
+            "ODA. ",
+            f.roomWidth,
+            " \u00D7 ",
+            f.roomDepth,
+            " cm")),
+    (0, react_1.createElement)("figcaption", null, "Ortalanm\u0131\u015F dikd\u00F6rtgen s\u0131n\u0131r kar\u015F\u0131la\u015Ft\u0131rmas\u0131. Ger\u00E7ek masa konturu veya hareketin tarad\u0131\u011F\u0131 alan de\u011Fildir.")); }
 
 },
 "src/components/ui":function(module,exports,require){
@@ -1083,6 +1391,90 @@ exports.faqs = [
     ['Üretim ve teslim tarihi nasıl belirlenir?', 'Tarih; tasarım, malzeme, atölye kapasitesi ve teslimat koşulları netleşince teklifin bir parçası olur. Bu önizleme otomatik teslim sözü vermez.'],
     ['Özel üretim ile standart sipariş arasında ne fark var?', 'Özel üretimde önce ihtiyacınız, ölçü, malzeme ve iş kapsamı netleştirilir. Onaylı teklif ve çizimden sonra üretim planlanır. Standart üründe ise seçili varyant ve satış koşulları önceden belirlenmiştir.']
 ];
+
+},
+"src/lib/design-board":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.designBoard = exports.DesignBoard = void 0;
+exports.parseWholeNumber = parseWholeNumber;
+const desk_v8_1 = require("./desk-v8");
+function parseWholeNumber(raw, min, max) { const s = raw.trim(); if (!/^\d+$/.test(s))
+    return null; const n = Number(s); return Number.isSafeInteger(n) && n >= min && n <= max ? n : null; }
+function verifiedConfig(value) {
+    if (!value || typeof value !== 'object' || Array.isArray(value))
+        throw Error('Geçerli bir masa seçeneği bekleniyor.');
+    const x = value, keys = Object.keys(desk_v8_1.defaultStudio);
+    if (Object.keys(x).length !== keys.length || Object.keys(x).some(k => !keys.includes(k)))
+        throw Error('Dosyada beklenmeyen ya da eksik alan var.');
+    const normalized = (0, desk_v8_1.normalizeStudio)(x);
+    if (keys.some(k => x[k] !== normalized[k]))
+        throw Error('Masa seçenekleri desteklenen aralığın dışında.');
+    return normalized;
+}
+class DesignBoard {
+    constructor() {
+        this.entries = [];
+        this.serial = 0;
+    }
+    list() { return this.entries.map(x => ({ ...x, config: { ...x.config } })); }
+    add(raw, preview = null) {
+        const config = (0, desk_v8_1.normalizeStudio)(raw), key = (0, desk_v8_1.studioQuery)(config), old = this.entries.find(x => (0, desk_v8_1.studioQuery)(x.config) === key);
+        const safePreview = preview && /^data:image\/png;base64,[a-zA-Z0-9+/=]+$/.test(preview) && preview.length < 4500000 ? preview : null;
+        if (old) {
+            if (safePreview)
+                old.preview = safePreview;
+            return { status: 'duplicate', id: old.id };
+        }
+        if (this.entries.length >= 3)
+            return { status: 'full', id: '' };
+        const id = 'devir-' + (++this.serial);
+        this.entries.push({ id, config, preview: safePreview });
+        return { status: 'added', id };
+    }
+    remove(id) { this.entries = this.entries.filter(x => x.id !== id); }
+    serialize() { return JSON.stringify({ kind: 'elif.design-board', version: 1, options: this.entries.map(x => ({ ...x.config })) }, null, 2); }
+    import(text) {
+        if (text.length > 16384)
+            throw Error('Dosya 16 KB sınırını aşıyor.');
+        let parsed;
+        try {
+            parsed = JSON.parse(text);
+        }
+        catch {
+            throw Error('Dosya okunabilir bir JSON kaydı değil.');
+        }
+        if (!parsed || parsed.kind !== 'elif.design-board' || parsed.version !== 1 || !Array.isArray(parsed.options) || parsed.options.length < 1 || parsed.options.length > 3)
+            throw Error('Bu dosya Elif tasarım karşılaştırması biçiminde değil.');
+        const configs = parsed.options.map(verifiedConfig);
+        this.entries = [];
+        configs.forEach((s) => this.add(s));
+        return this.entries.length;
+    }
+}
+exports.DesignBoard = DesignBoard;
+exports.designBoard = new DesignBoard();
+
+},
+"src/lib/design-sheet":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.openDesignSheet = openDesignSheet;
+const desk_v8_1 = require("./desk-v8");
+const escape = (s) => s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+function openDesignSheet(config, preview) {
+    const win = window.open('', '_blank');
+    if (!win)
+        return false;
+    const site = (window.__ELIF_SITE_URL__ || 'https://onourimpram.github.io/elif-tasarim').replace(/\/$/, '');
+    const link = site + '/tasarim-masasi/?' + (0, desk_v8_1.studioQuery)(config);
+    const safeImage = preview && /^data:image\/png;base64,[a-zA-Z0-9+/=]+$/.test(preview) ? preview : null;
+    win.document.write('<!doctype html><html lang="tr"><meta charset="utf-8"><meta name="referrer" content="no-referrer"><title>Elif Tasarım. Devir 01 tasarım dosyası</title><style>body{font:15px/1.7 Georgia,serif;color:#352b22;background:#fffaf1;max-width:900px;margin:40px auto;padding:0 25px}header{border-bottom:1px solid #a38a69;display:flex;justify-content:space-between;align-items:center}h1{font-size:42px;margin:26px 0 8px}small{font:11px/1.6 Arial,sans-serif;letter-spacing:.08em}img{width:100%;max-height:430px;object-fit:contain;background:#eee6d8}pre{font:14px/1.8 Arial,sans-serif;white-space:pre-wrap;overflow-wrap:anywhere;padding:20px;background:#f1e9dc}a{color:#745434;overflow-wrap:anywhere}button{padding:14px 22px;border:0;background:#6c5036;color:white;cursor:pointer}footer{border-top:1px solid #c3b39a;margin-top:24px;padding:15px 0;font:12px/1.6 Arial,sans-serif}@media print{body{margin:0;max-width:none;background:white}.no-print{display:none}img{max-height:300px}h1{font-size:30px}pre{font-size:11px;padding:10px}footer{font-size:10px}header{break-after:avoid}}</style><header><strong>ELİF TASARIM</strong><small>DEVİR 01 · KONSEPT DOSYASI</small></header><h1>Sizin çalışma düzeniniz.</h1><p>Seçtiğiniz masa konfigürasyonunun görüşme özeti. Bir üretim onayı veya fiyat teklifi değildir.</p>' + (safeImage ? '<img alt="Seçili üç boyutlu modelin görünümü" src="' + safeImage + '">' : '') + '<pre>' + escape((0, desk_v8_1.studioSummary)(config)) + '</pre><p><a href="' + escape(link) + '">Aynı tasarımı 3D stüdyoda açın</a></p><footer>Yunus Usta. +90 530 879 71 69.<br>Kitaplıklar, sandalye, lamba ve diğer aksesuarlar masa kapsamına dahil değildir. Son ölçü, malzeme ve mekanizma ayrıca netleştirilir. Bu sayfa herhangi bir kişiye otomatik gönderilmedi.</footer><button class="no-print" id="print">Yazdır veya PDF olarak kaydet</button><p class="no-print">Tarayıcınızın yazdırma menüsünden PDF olarak kaydedebilirsiniz.</p></html>');
+    win.document.close();
+    win.document.getElementById('print')?.addEventListener('click', () => win.print());
+    win.opener = null;
+    return true;
+}
 
 },
 "src/lib/desk":function(module,exports,require){
@@ -2149,7 +2541,7 @@ exports.pinterestReferences = [
     { id: '5i4CyJrkM', group: 'shared', title: 'Birlikte seçtiklerimiz 03', category: 'ozel-tasarim' },
     { id: '1pLUfH5pe', group: 'shared', title: 'Birlikte seçtiklerimiz 04', category: 'ozel-tasarim' },
 ];
-exports.mainNavigation = [['/projeler', 'Çalışmalar'], ['/kategoriler', 'Üretim Alanları'], ['/ilham-modelleri', 'İlham Modelleri'], ['/modelini-getir', 'Kendi Modeliniz'], ['/atolye', 'Atölye'], ['/iletisim', 'İletişim']];
+exports.mainNavigation = [['/projeler', 'Çalışmalar'], ['/kategoriler', 'Üretim Alanları'], ['/ilham-modelleri', 'İlham Modelleri'], ['/modelini-getir', 'Kendi Modeliniz'], ['/devir-01', 'Devir 01'], ['/atolye', 'Atölye'], ['/iletisim', 'İletişim']];
 function categoryName(id) { return exports.workCategories.find(c => c.id === id)?.name || 'Özel Tasarım'; }
 function modelHref(ref, category = 'ozel-tasarim', note = '', sourceId = '') {
     const work = exports.works.find(w => note.startsWith(w.subtitle)), concept = exports.concepts.find(c => note.startsWith(c.subtitle));
@@ -2298,6 +2690,19 @@ function firstInvalidMeasure(v) { if (v.unknown)
 } return null; }
 
 },
+"src/lib/room-fit":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.evaluateRoomFit = evaluateRoomFit;
+const n = (v) => Math.round(v * 10) / 10;
+function evaluateRoomFit(roomWidth, roomDepth, footprint) {
+    if (!Number.isFinite(roomWidth) || !Number.isFinite(roomDepth) || roomWidth <= 0 || roomDepth <= 0 || !footprint || !Number.isFinite(footprint.width) || !Number.isFinite(footprint.depth) || footprint.width <= 0 || footprint.depth <= 0)
+        return null;
+    const widthClearance = n((roomWidth - footprint.width) / 2), depthClearance = n((roomDepth - footprint.depth) / 2);
+    return { fits: roomWidth >= footprint.width && roomDepth >= footprint.depth, widthClearance, depthClearance, footprintWidth: n(footprint.width), footprintDepth: n(footprint.depth), roomWidth, roomDepth };
+}
+
+},
 "src/lib/routes":function(module,exports,require){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -2308,8 +2713,9 @@ exports.pageShareImage = pageShareImage;
 exports.pageSchema = pageSchema;
 const portfolio_1 = require("./portfolio");
 const data_1 = require("./data");
-exports.routePaths = ['/projeler', '/kategoriler', '/ilham-modelleri', '/modelini-getir', '/hakkimizda', '/atolye', ...portfolio_1.works.map(w => '/proje/' + w.id), ...portfolio_1.workCategories.map(c => '/kategoriler/' + c.id), '/', '/urunler', '/tasarim-masasi', '/atolyemiz', '/ozel-uretim', '/malzemeler', '/mekan-fikirleri', '/rehber', '/teklif-al', '/sikca-sorulan-sorular', '/iletisim', '/sepet', '/odeme', '/calisma-dosyam', '/gizlilik', '/atolye-demolari', ...data_1.products.map(p => '/urun/' + p.id), ...data_1.ideas.map(p => '/mekan-fikirleri/' + p.id), ...data_1.journal.map(p => '/rehber/' + p.id)];
-function pageTitle(path) { const p = path.split('?')[0]; if (p === '/arama')
+exports.routePaths = ['/devir-01', '/projeler', '/kategoriler', '/ilham-modelleri', '/modelini-getir', '/hakkimizda', '/atolye', ...portfolio_1.works.map(w => '/proje/' + w.id), ...portfolio_1.workCategories.map(c => '/kategoriler/' + c.id), '/', '/urunler', '/tasarim-masasi', '/atolyemiz', '/ozel-uretim', '/malzemeler', '/mekan-fikirleri', '/rehber', '/teklif-al', '/sikca-sorulan-sorular', '/iletisim', '/sepet', '/odeme', '/calisma-dosyam', '/gizlilik', '/atolye-demolari', ...data_1.products.map(p => '/urun/' + p.id), ...data_1.ideas.map(p => '/mekan-fikirleri/' + p.id), ...data_1.journal.map(p => '/rehber/' + p.id)];
+function pageTitle(path) { const p = path.split('?')[0]; if (p === '/devir-01')
+    return 'Devir 01. Çalışma Biçiminize Yer Açın | Elif Tasarım'; if (p === '/arama')
     return 'Arama | Elif Tasarım'; if (p === '/calisma-dosyam')
     return 'İlham Dosyanız | Elif Tasarım'; if (p === '/gizlilik')
     return 'Veri ve Dış Servisler | Elif Tasarım'; const w = portfolio_1.works.find(w => '/proje/' + w.id === p); if (w)
@@ -2325,6 +2731,7 @@ function pageDescription(path) {
         return 'Elif Tasarım. ' + c.name + '. ' + c.detail;
     const desc = { '/': 'Zamana değer katan mobilyalar. İstanbul’daki aile atölyesinden gerçek çalışmalar, ilham modelleri ve Yunus Usta ile doğrudan iletişim.', '/modelini-getir': 'Pinterest bağlantısı, kendi fotoğrafınız veya fikrinizle başlayın. Ölçü ve kullanımınızı özetleyin, Yunus Usta ile WhatsApp’ta görüşün.', '/teklif-al': 'Kayıpsız ortak proje taslağı. Yaklaşık ölçü, malzeme ve kullanım ayrıntılarını birlikte hazırlayın.', '/arama': 'Elif Tasarım çalışma arşivi, ilham modelleri ve kategorilerinde arayın.', '/iletisim': 'Yunus Usta ile doğrudan iletişim. +90 530 879 71 69. Yeni atölye adresini ziyaret öncesinde teyit edin.', '/gizlilik': 'Elif Tasarım. Yerel proje taslağı, fotoğraf hazırlama, isteğe bağlı saklama, WhatsApp ve Pinterest hakkında açıklama.', '/calisma-dosyam': 'Gerçek çalışma, konsept model ve Pinterest modelini ortak ilham dosyanızda toplayın.' };
     const specific = {
+        '/devir-01': 'Devir 01. Yükselen yüzeyi, döner yan tablası ve çekmeceli depolamasıyla özel çalışma masası konsepti. Üç başlangıç düzenini keşfedin ve 3D stüdyoda karşılaştırın.',
         '/projeler': 'Atölyeden paylaşılan mutfak, kahve köşesi, TV ünitesi ve depolama çalışmalarını kaynak türü ve kullanım alanına göre inceleyin.',
         '/kategoriler': 'Mutfak, TV ünitesi, vestiyer, gardırop, kahve köşesi, sehpa, pergola ve özel tasarım için üretim alanlarımızı keşfedin.',
         '/ilham-modelleri': 'Konsept seçkileri ve kaynağı korunan Pinterest modelleri. Beğendiğiniz ayrıntıyı ilham dosyanıza ekleyin veya kendi fikrinize başlangıç yapın.',
@@ -2342,7 +2749,8 @@ function pageDescription(path) {
     return desc[p] || specific[p] || ('Elif Tasarım. ' + pageTitle(p).split(' | ')[0] + '. Çalışmaları ve görüşme seçeneklerini keşfedin.');
 }
 exports.v7Routes = [...new Set([...exports.routePaths.filter(p => !['/urunler', '/sepet', '/odeme', '/atolye-demolari', '/atolyemiz', '/mekan-fikirleri'].includes(p) && !p.startsWith('/urun/') && !p.startsWith('/mekan-fikirleri/')), '/arama'])];
-function pageShareImage(path) { const p = path.split('?')[0]; if (p === '/tasarim-masasi')
+function pageShareImage(path) { const p = path.split('?')[0]; if (p === '/devir-01')
+    return 'devir-standing.webp'; if (p === '/tasarim-masasi')
     return 'atelier-poster-v9.webp'; const work = portfolio_1.works.find(w => '/proje/' + w.id === p); if (work)
     return work.images[0] + '-full.webp'; const cat = portfolio_1.workCategories.find(c => '/kategoriler/' + c.id === p); if (cat) {
     const representative = portfolio_1.works.find(w => w.category === cat.id && w.status === 'work');
@@ -2368,6 +2776,7 @@ const domain_1 = require("./domain");
 const target = (id) => '/ilham-modelleri?hedef=' + encodeURIComponent(id);
 exports.selectionEntries = [...portfolio_1.works.map(w => ({ id: 'work:' + w.id, title: w.subtitle, category: w.category, image: w.images[0], kind: 'work', path: '/proje/' + w.id })), ...portfolio_1.concepts.map(c => ({ id: 'concept:' + c.id, title: c.subtitle, category: c.category, image: c.image, kind: 'concept', path: target('concept:' + c.id) })), ...portfolio_1.pinterestReferences.map(p => ({ id: 'pin:' + p.id, title: pinterest_1.pinLookup[p.id]?.label || p.title, category: p.category, kind: 'reference', path: target('pin:' + p.id) }))];
 const pages = [
+    { id: 'page:devir-product', title: 'Devir 01. Konsept masayı keşfedin', category: 'ozel-tasarim', image: 'devir-standing.webp', kind: 'page', path: '/devir-01', keywords: 'çalışma masası ofis konsept yükselen masa ürün tanıtımı' },
     { id: 'page:devir', title: 'Devir 01. Yükseklik ayarlı çalışma masası', category: 'ozel-tasarim', image: 'devir-poster.webp', kind: 'page', path: '/tasarim-masasi', keywords: '3D üç boyutlu üçboyutlu three.js stüdyo çalışma masası yukseklik ayarli ofis masa çekmece' },
     { id: 'page:bespoke', title: 'Özel üretim. Nasıl ilerliyoruz?', category: 'ozel-tasarim', kind: 'page', path: '/ozel-uretim', keywords: 'süreç özel ölçü teklif montaj keşif' },
     { id: 'page:materials', title: 'Malzeme ve yüzey seçenekleri', category: 'ozel-tasarim', kind: 'page', path: '/malzemeler', keywords: 'ahşap masif lake kaplama malzeme meşe ceviz' },
@@ -2925,6 +3334,119 @@ function DesignDesk(props) { return (0, react_1.createElement)(react_1.Fragment,
                 (0, react_1.createElement)(ui_1.Icon, null))))); }
 
 },
+"src/pages/Devir":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Devir = Devir;
+const react_1 = require("react");
+const ui_1 = require("../components/ui");
+const desk_v8_1 = require("../lib/desk-v8");
+const project_1 = require("../lib/project");
+const configurations = [{ title: 'Odak', subtitle: 'Kompakt bir başlangıç.', width: 160, depth: 75, height: 80, angle: 0, material: 'mese' }, { title: 'Akış', subtitle: 'İki yüzey, tek çalışma düzeni.', width: 180, depth: 80, height: 80, angle: 90, material: 'ceviz' }, { title: 'Hareket', subtitle: 'Ayakta çalışmaya bir bakış.', width: 200, depth: 85, height: 110, angle: 180, material: 'koyu' }];
+function Devir(a) {
+    return (0, react_1.createElement)("div", { className: "v20-devir" },
+        (0, react_1.createElement)("section", { className: "v20-product-hero wrap" },
+            (0, react_1.createElement)("div", { className: "v20-product-copy" },
+                (0, react_1.createElement)(ui_1.Eyebrow, null, "EL\u0130F TASARIM / KONSEPT SER\u0130S\u0130 01"),
+                (0, react_1.createElement)("h1", null,
+                    "DEV\u0130R",
+                    (0, react_1.createElement)("span", null,
+                        "\u00C7al\u0131\u015Fma bi\u00E7iminize",
+                        (0, react_1.createElement)("br", null),
+                        (0, react_1.createElement)("em", null, "yer a\u00E7\u0131n."))),
+                (0, react_1.createElement)("p", null, "Biraz y\u00FCkselir. Y\u00F6n de\u011Fi\u015Ftirir. G\u00FCnl\u00FCk e\u015Fyalar\u0131n\u0131za yer a\u00E7ar. Devir, \u00E7al\u0131\u015Fma alan\u0131n\u0131 sabit bir kal\u0131p yerine sizinle birlikte d\u00FC\u015F\u00FCnmek i\u00E7in tasarland\u0131."),
+                (0, react_1.createElement)(ui_1.ButtonLink, { to: "/tasarim-masasi", navigate: a.navigate },
+                    "Kendi Devir\u2019inizi tasarlay\u0131n ",
+                    (0, react_1.createElement)(ui_1.Icon, { name: "diagonal", size: 17 })),
+                (0, react_1.createElement)("small", null, "Y\u00FCkseklik ayarl\u0131 masa konsepti. Hen\u00FCz onaylanm\u0131\u015F \u00FCr\u00FCn \u015Fartnamesi de\u011Fildir.")),
+            (0, react_1.createElement)("div", { className: "v20-product-visual" },
+                (0, react_1.createElement)(ui_1.Photo, { name: "devir-standing.webp", alt: "Y\u00FCkseltilmi\u015F Devir konsepti, Three.js modelinden \u00FCr\u00FCn g\u00F6r\u00FCn\u00FCm\u00FC", ratio: "4/5", eager: true }),
+                (0, react_1.createElement)("span", { className: "v20-product-stamp" },
+                    "01",
+                    (0, react_1.createElement)("br", null),
+                    (0, react_1.createElement)("small", null, "KONSEPT MODEL")),
+                (0, react_1.createElement)("span", { className: "v20-material-caption" }, "DOKU. HAREKET. \u0130\u015ELEV."))),
+        (0, react_1.createElement)("nav", { className: "v20-product-nav wrap", "aria-label": "Devir b\u00F6l\u00FCm k\u0131sayollar\u0131" },
+            (0, react_1.createElement)("a", { href: "#devir-yaklasim", onClick: e => { e.preventDefault(); document.getElementById('devir-yaklasim')?.scrollIntoView({ behavior: 'auto' }); } }, "Tasar\u0131m fikri"),
+            (0, react_1.createElement)("a", { href: "#devir-baslangic", onClick: e => { e.preventDefault(); document.getElementById('devir-baslangic')?.scrollIntoView({ behavior: 'auto' }); } }, "\u00DC\u00E7 ba\u015Flang\u0131\u00E7"),
+            (0, react_1.createElement)("a", { href: "#devir-detay", onClick: e => { e.preventDefault(); document.getElementById('devir-detay')?.scrollIntoView({ behavior: 'auto' }); } }, "Ayr\u0131nt\u0131lar"),
+            (0, react_1.createElement)(ui_1.Link, { to: "/tasarim-masasi", navigate: a.navigate },
+                "3D st\u00FCdyo ",
+                (0, react_1.createElement)(ui_1.Icon, { size: 16 }))),
+        (0, react_1.createElement)("section", { className: "wrap v20-product-story", id: "devir-yaklasim" },
+            (0, react_1.createElement)(ui_1.Eyebrow, null, "TEK MASA. B\u0130RDEN FAZLA H\u00C2L."),
+            (0, react_1.createElement)("h2", null,
+                "G\u00FCn\u00FCn\u00FCz de\u011Fi\u015Fir.",
+                (0, react_1.createElement)("br", null),
+                (0, react_1.createElement)("em", null, "\u00C7al\u0131\u015Fma alan\u0131n\u0131z da de\u011Fi\u015Febilir.")),
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)("p", null, "Ana tabla ile y\u00FCkselen \u00E7ekmeceler, yerini koruyan alt depolama ve ba\u011F\u0131ms\u0131z yan \u00E7al\u0131\u015Fma y\u00FCzeyi. Her par\u00E7a, ba\u015Fka bir kullan\u0131m ihtimalini birlikte d\u00FC\u015F\u00FCnmek i\u00E7in."),
+                (0, react_1.createElement)("p", null, "St\u00FCdyoda renk ve \u00F6l\u00E7\u00FC se\u00E7mek, \u00FCretim karar\u0131 vermek de\u011Fildir. \u0130htiyac\u0131n\u0131z\u0131 daha a\u00E7\u0131k anlatman\u0131n bir yoludur. Sonra Yunus Usta ile malzemeyi, mekanizmay\u0131 ve uygulamay\u0131 netle\u015Ftirirsiniz."))),
+        (0, react_1.createElement)("section", { className: "v20-room-editorial" },
+            (0, react_1.createElement)(ui_1.Photo, { name: "atelier-evening-v9.webp", alt: "\u0130ki kitapl\u0131kl\u0131 \u00E7al\u0131\u015Fma alan\u0131nda Devir konsepti", ratio: "16/9" }),
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)(ui_1.Eyebrow, null, "MEK\u00C2NI B\u0130RL\u0130KTE HAYAL EDEL\u0130M"),
+                (0, react_1.createElement)("h2", null,
+                    "Yaln\u0131z masa de\u011Fil.",
+                    (0, react_1.createElement)("br", null),
+                    (0, react_1.createElement)("em", null, "Size ait bir \u00E7al\u0131\u015Fma k\u00F6\u015Fesi.")),
+                (0, react_1.createElement)("p", null, "St\u00FCdyodaki kitapl\u0131klar ve \u0131\u015F\u0131k, yerle\u015Fimi d\u00FC\u015F\u00FCnmek i\u00E7indir. Masa teklifine kendili\u011Finden dahil de\u011Fildir."),
+                (0, react_1.createElement)(ui_1.TextLink, { to: "/tasarim-masasi", navigate: a.navigate, light: true }, "Mek\u00E2n\u0131 \u00FC\u00E7 boyutta inceleyin"))),
+        (0, react_1.createElement)("section", { className: "wrap v20-config-starts", id: "devir-baslangic" },
+            (0, react_1.createElement)("div", { className: "v20-section-heading" },
+                (0, react_1.createElement)("div", null,
+                    (0, react_1.createElement)(ui_1.Eyebrow, null, "NEREDEN BA\u015ELAYALIM?"),
+                    (0, react_1.createElement)("h2", null,
+                        "\u00DC\u00E7 fikir.",
+                        (0, react_1.createElement)("br", null),
+                        (0, react_1.createElement)("em", null, "Son s\u00F6z sizin."))),
+                (0, react_1.createElement)("p", null, "Haz\u0131r \u00FCr\u00FCn paketi de\u011Fil, de\u011Fi\u015Ftirilebilir g\u00F6rsel ba\u015Flang\u0131\u00E7lar. Her birini 3D st\u00FCdyoda kendi ihtiyac\u0131n\u0131za g\u00F6re d\u00FCzenleyin.")),
+            (0, react_1.createElement)("div", { className: "v20-start-grid" }, configurations.map((c, i) => (0, react_1.createElement)(ui_1.Link, { to: '/tasarim-masasi?' + (0, desk_v8_1.studioQuery)({ ...desk_v8_1.defaultStudio, ...c }), navigate: a.navigate, key: c.title },
+                (0, react_1.createElement)("span", { className: "v20-start-num" },
+                    "0",
+                    i + 1),
+                (0, react_1.createElement)("div", { className: 'v20-start-swatch ' + c.material }),
+                (0, react_1.createElement)("h3", null, c.title),
+                (0, react_1.createElement)("p", null, c.subtitle),
+                (0, react_1.createElement)("small", null,
+                    c.width,
+                    " \u00D7 ",
+                    c.depth,
+                    " cm ana tabla.",
+                    (0, react_1.createElement)("br", null),
+                    c.height,
+                    " cm \u00E7al\u0131\u015Fma y\u00FCksekli\u011Fi."),
+                (0, react_1.createElement)("span", { className: "text-link" },
+                    "Bu fikirle ba\u015Fla ",
+                    (0, react_1.createElement)(ui_1.Icon, null)))))),
+        (0, react_1.createElement)("section", { className: "wrap v20-detail-editorial", id: "devir-detay" },
+            (0, react_1.createElement)(ui_1.Photo, { name: "devir-detail.webp", alt: "Devir modelinin depolama ve birle\u015Fim ayr\u0131nt\u0131s\u0131", ratio: "1" }),
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)(ui_1.Eyebrow, null, "\u0130Y\u0130 D\u00DC\u015E\u00DCN\u00DCLM\u00DC\u015E B\u0130R G\u00DCNL\u00DCK HAYAT"),
+                (0, react_1.createElement)("h2", null,
+                    "Ayr\u0131nt\u0131lar,",
+                    (0, react_1.createElement)("br", null),
+                    (0, react_1.createElement)("em", null, "kullan\u0131rken anlam kazan\u0131r.")),
+                (0, react_1.createElement)("dl", null, [['Yükselen yüzey', 'Oturma ve ayakta çalışma konumlarını görsel olarak değerlendirin.'], ['Üç ince çekmece', 'Günlük küçük ekipmanlarınız için entegre depolama fikri.'], ['Döner yan tabla', 'L veya açık yerleşimi kendi alanınıza göre karşılaştırın.'], ['Sabit alt dolap', 'Dosya ve aksesuarlar için düzenlenebilir bir alt hacim.']].map(([title, desc]) => (0, react_1.createElement)("div", { key: title },
+                    (0, react_1.createElement)("dt", null, title),
+                    (0, react_1.createElement)("dd", null, desc)))),
+                (0, react_1.createElement)(ui_1.TextLink, { to: "/tasarim-masasi", navigate: a.navigate }, "3D detay noktalar\u0131n\u0131 ke\u015Ffedin"))),
+        (0, react_1.createElement)("section", { className: "wrap v20-product-close" },
+            (0, react_1.createElement)(ui_1.Eyebrow, null, "F\u0130K\u0130RDEN GER\u00C7EK MOB\u0130LYAYA"),
+            (0, react_1.createElement)("h2", null,
+                "\u015Eimdi sizin alan\u0131n\u0131z\u0131",
+                (0, react_1.createElement)("br", null),
+                (0, react_1.createElement)("em", null, "konu\u015Fal\u0131m.")),
+            (0, react_1.createElement)("p", null, "Yakla\u015F\u0131k \u00F6l\u00E7\u00FCn\u00FCz, ekipman\u0131n\u0131z ve g\u00FCnl\u00FCk \u00E7al\u0131\u015Fma bi\u00E7iminiz. Ba\u015Flamak i\u00E7in bu kadar\u0131 yeterli."),
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)(ui_1.ButtonLink, { to: "/tasarim-masasi", navigate: a.navigate }, "3D\u2019de tasarla ve payla\u015F"),
+                (0, react_1.createElement)("a", { className: "text-link", href: (0, project_1.whatsappUrl)('Merhaba Yunus Usta, Devir 01 çalışma masası konseptini kendi alanım için değerlendirmek istiyorum.'), rel: "noopener noreferrer", target: "_blank" },
+                    "Do\u011Frudan Yunus Usta\u2019ya sor ",
+                    (0, react_1.createElement)(ui_1.Icon, { name: "diagonal", size: 17 }))),
+            (0, react_1.createElement)("small", null, "Motor, g\u00FCvenli hareket s\u0131n\u0131rlar\u0131, ger\u00E7ek y\u00FCzey numunesi, son \u00F6l\u00E7\u00FC, kapsam ve fiyat \u00FCretim \u00F6ncesi ayr\u0131ca onaylan\u0131r. G\u00F6rseller konsepttir.")));
+}
+
+},
 "src/pages/Editorial":function(module,exports,require){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -3264,7 +3786,7 @@ class Home extends react_1.Component {
                         (0, react_1.createElement)("em", null, "Size g\u00F6re yeni bir d\u00FCzen.")),
                     (0, react_1.createElement)("p", null, "Y\u00FCksekli\u011Fi ve \u00F6l\u00E7\u00FCleri de\u011Fi\u015Ftirin. \u00C7ekmeceleri, d\u00F6ner yan y\u00FCzeyi ve \u00E7ift tarafl\u0131 kitapl\u0131klarla \u00E7al\u0131\u015Fma alan\u0131n\u0131z\u0131 ke\u015Ffedin."),
                     (0, react_1.createElement)(ui_1.ButtonLink, { to: "/tasarim-masasi", navigate: a.navigate }, "3D st\u00FCdyoyu ke\u015Ffet"),
-                    (0, react_1.createElement)(ui_1.TextLink, { to: "/ilham-modelleri", navigate: a.navigate }, "Di\u011Fer ilham modelleri"),
+                    (0, react_1.createElement)(ui_1.TextLink, { to: "/devir-01", navigate: a.navigate }, "Devir 01\u2019in tasar\u0131m hik\u00E2yesi"),
                     (0, react_1.createElement)("small", null, "G\u00F6rsel bir konsepttir. \u0130malat ve mekanizma uygunlu\u011Fu at\u00F6lye g\u00F6r\u00FC\u015Fmesinde netle\u015Fir.")),
                 (0, react_1.createElement)(ui_1.Link, { className: "v11-studio-poster", to: "/tasarim-masasi", navigate: a.navigate, "aria-label": "Devir 01. \u00C7ift rafl\u0131 3D tasar\u0131m st\u00FCdyosunu a\u00E7" },
                     (0, react_1.createElement)(ui_1.Photo, { name: "atelier-poster-v9.webp", alt: "Devir 01 modelinin iki kitapl\u0131kl\u0131 \u00E7al\u0131\u015Fma ortam\u0131, ger\u00E7ek Three.js sahnesinden konsept g\u00F6r\u00FCn\u00FCm\u00FC", ratio: "3/2" }),
@@ -3840,6 +4362,8 @@ function PrivacyV7(a) { return (0, react_1.createElement)("section", { className
     (0, react_1.createElement)("h2", null, "WhatsApp, telefon ve cihaz payla\u015F\u0131m\u0131"),
     (0, react_1.createElement)("p", null, "WhatsApp'a yaz d\u00FC\u011Fmesi, kullan\u0131c\u0131 taraf\u0131ndan i\u015Fletme ileti\u015Fimi i\u00E7in verilen +90 530 879 71 69 numaras\u0131n\u0131 a\u00E7ar. D\u00FC\u011Fmeye bast\u0131\u011F\u0131n\u0131zda proje \u00F6zeti WhatsApp'\u0131n URL parametresine aktar\u0131l\u0131r ve harici servis kendi kurallar\u0131na g\u00F6re i\u015Fler. Siteden otomatik mesaj g\u00F6nderilmez. Foto\u011Fraflar bu metin ba\u011Flant\u0131s\u0131na dahil de\u011Fildir."),
     (0, react_1.createElement)("p", null, "Cihazdan payla\u015F se\u00E7ene\u011Fi, desteklenen cihazlarda i\u015Fletim sisteminin payla\u015F\u0131m men\u00FCs\u00FCn\u00FC a\u00E7ar. Uygulama ve al\u0131c\u0131y\u0131 siz se\u00E7ersiniz. ZIP veya TXT indirme yaln\u0131z dosyay\u0131 cihaz\u0131n\u0131za haz\u0131rlar. Bu site mesaj\u0131n g\u00F6nderildi\u011Fini, teslim edildi\u011Fini veya okundu\u011Funu do\u011Frulayamaz."),
+    (0, react_1.createElement)("h2", null, "Tasar\u0131m kar\u015F\u0131la\u015Ft\u0131rmas\u0131 ve 3D dosyalar\u0131"),
+    (0, react_1.createElement)("p", null, "Kar\u015F\u0131la\u015Ft\u0131rma defterindeki en fazla \u00FC\u00E7 masa konfig\u00FCrasyonu ve bu sahnelerden al\u0131nan g\u00F6r\u00FCnt\u00FCler yaln\u0131z a\u00E7\u0131k sekmede tutulur. JSON dosyas\u0131 yaln\u0131z masa se\u00E7eneklerini i\u00E7erir. Oda \u00F6l\u00E7\u00FCleri, m\u00FC\u015Fteri notlar\u0131 ve ev foto\u011Fraflar\u0131 bu dosyaya eklenmez. GLB ve USDZ d\u0131\u015Fa aktar\u0131m\u0131 cihaz\u0131n\u0131zda yap\u0131l\u0131r. Bir sunucuya model veya ki\u015Fisel veri g\u00F6nderilmez. Yazd\u0131r\u0131labilir tasar\u0131m sayfas\u0131 da yaln\u0131z a\u00E7\u0131k model se\u00E7eneklerini i\u00E7erir. AR davran\u0131\u015F\u0131 cihaz\u0131n kendi g\u00F6r\u00FCnt\u00FCleyicisine ba\u011Fl\u0131d\u0131r."),
     (0, react_1.createElement)("h2", null, "Pinterest"),
     (0, react_1.createElement)("p", null, "Pinterest g\u00F6r\u00FCnt\u00FCleyicisi, a\u00E7\u0131klamay\u0131 g\u00F6r\u00FCp ilgili d\u00FC\u011Fmeye bast\u0131\u011F\u0131n\u0131zda y\u00FCklenir. IP adresi ve taray\u0131c\u0131 bilgileri gibi teknik bilgiler d\u0131\u015F hizmete gidebilir, Pinterest \u00E7erez kullanabilir. A\u00E7may\u0131 se\u00E7meden Pinterest iste\u011Fi yap\u0131lmaz. Kaynak ba\u011Flant\u0131s\u0131n\u0131 ayr\u0131 sekmede a\u00E7mak da harici servise ge\u00E7i\u015Ftir. G\u00F6m\u00FCl\u00FC alan\u0131 kapatmak mevcut iframe\u2019i kald\u0131r\u0131r, d\u0131\u015F serviste olu\u015Fmu\u015F kay\u0131tlar\u0131 geri almaz."),
     (0, react_1.createElement)("h2", null, "Bar\u0131nd\u0131rma ve analitik"),

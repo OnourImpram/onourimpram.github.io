@@ -52,7 +52,7 @@ export const pinterestReferences=[
  {id:'5i4CyJrkM',group:'shared',title:'Birlikte seçtiklerimiz 03',category:'ozel-tasarim'},
  {id:'1pLUfH5pe',group:'shared',title:'Birlikte seçtiklerimiz 04',category:'ozel-tasarim'},
 ] as const;
-export const mainNavigation=[['/projeler','Çalışmalar'],['/kategoriler','Üretim Alanları'],['/ilham-modelleri','İlham Modelleri'],['/modelini-getir','Kendi Modeliniz'],['/atolye','Atölye'],['/iletisim','İletişim']] as const;
+export const mainNavigation=[['/projeler','Çalışmalar'],['/kategoriler','Üretim Alanları'],['/ilham-modelleri','İlham Modelleri'],['/modelini-getir','Kendi Modeliniz'],['/devir-01','Devir 01'],['/atolye','Atölye'],['/iletisim','İletişim']] as const;
 export function categoryName(id:string){return workCategories.find(c=>c.id===id)?.name||'Özel Tasarım'}
 export function modelHref(ref:string,category='ozel-tasarim',note='',sourceId=''){
  const work=works.find(w=>note.startsWith(w.subtitle)),concept=concepts.find(c=>note.startsWith(c.subtitle));

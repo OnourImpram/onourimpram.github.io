@@ -26,7 +26,7 @@ with sync_playwright() as p:
  def update(patch):page.evaluate('(p)=>{const a=document.querySelector(".v8-canvas-host").__elif3D;a.update({...a.inspect().config,...p})}',patch);page.wait_for_timeout(150)
  def preset(name):page.get_by_role('button',name=name,exact=True).click();page.wait_for_timeout(220)
  try:
-  assert page.locator('canvas').count()==0;assert page.locator('.preview-bar').inner_text().startswith('V13');assert 'Yusuf' not in page.locator('body').inner_text();rec('01. V13, Yunus and no eager homepage WebGL')
+  assert page.locator('canvas').count()==0;assert page.locator('.preview-bar').inner_text().startswith('V20');assert 'Yusuf' not in page.locator('body').inner_text();rec('01. V13, Yunus and no eager homepage WebGL')
   nav('/tasarim-masasi');ready();s=state();assert s['engine']=='Three.js' and s['orbit']['fullHorizontal'];rec('02. Real Three.js and unbounded horizontal OrbitControls',s['orbit'])
   update({'drawers':False,'door':False,'height':80});closed=state();update({'drawers':True,'door':True});opened=state()
   for key in ['mainDrawerWorld','cabinetDrawerWorld']:
