@@ -1,0 +1,63 @@
+name: Elif V20 completion gates
+on:
+  push:
+    branches: [elif-v20-final-20260926]
+    paths: ['.github/workflows/elif-v20-completion.yml']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated browser tools
+        run: |
+          python -m pip install PyYAML==6.0.2 playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Execute source recovery, focused fix, all tests and staged publication
+        shell: python
+        run: |
+          from pathlib import Path
+          import yaml,subprocess,os
+          root=Path.cwd()
+          spec=yaml.safe_load((root/'.github/workflows/elif-v20-finalize.yml').read_text())
+          names=[
+            'Prepare hash-checked source and pinned exporter modules',
+            'Clean build, unit regressions, strict core and byte integrity',
+            'Serve generated V20',
+            'Real GLB and USDZ, comparison, visual document and room diagram',
+            'Existing customer flows, true 360 orbit and responsive matrix',
+            'Preserve personal homepage and stage only verified Elif files',
+            'Commit tested V20 to staging branch',
+            'Package exact source and publication without fonts'
+          ]
+          for name in names:
+              found=[s for s in spec['jobs']['final']['steps'] if s.get('name')==name]
+              assert len(found)==1,name
+              step=found[0]
+              print('::group::'+name,flush=True)
+              env={**os.environ,**step.get('env',{})}
+              cwd=root/step.get('working-directory','.')
+              shell=step.get('shell','bash')
+              assert shell in ['python','bash']
+              command=['python','-c',step['run']] if shell=='python' else ['bash','-eo','pipefail','-c',step['run']]
+              subprocess.run(command,cwd=cwd,env=env,check=True)
+              if name=='Prepare hash-checked source and pinned exporter modules':
+                  subprocess.run(['python','elif-v20-tools/complete.py'],cwd=root,check=True)
+              print('::endgroup::',flush=True)
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v20-completion-evidence
+          path: elif-tasarim/source-v12/evidence/v20-final
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-v20-completed-delivery
+          path: v20-delivery
+          retention-days: 14
