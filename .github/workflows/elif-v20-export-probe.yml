@@ -1,0 +1,52 @@
+name: Elif V20 export probe
+on:
+  push:
+    branches: [elif-v20-final-20260926]
+    paths: ['.github/workflows/elif-v20-export-probe.yml']
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install probe tools
+        run: |
+          python -m pip install PyYAML==6.0.2 playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Reuse only checked source preparation from the trusted staging workflow
+        shell: python
+        run: |
+          import yaml,subprocess
+          from pathlib import Path
+          spec=yaml.safe_load(Path('.github/workflows/elif-v20-stage.yml').read_text())
+          names={'Apply hash-verified local source delta within Elif only','Preserve pinned official exporter provenance'}
+          selected=[s for s in spec['jobs']['stage']['steps'] if s.get('name') in names]
+          assert len(selected)==2
+          for s in selected:
+              assert s['shell']=='python'
+              subprocess.run(['python','-c',s['run']],check=True)
+      - name: Build exact source and start preview
+        working-directory: elif-tasarim/source-v12
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build
+          node tools/serve-static.cjs dist 8000 >/tmp/v20probe.log 2>&1 &
+          for i in {1..20}; do curl -fsS http://127.0.0.1:8000/elif-tasarim/release-v20.json >/dev/null && break; sleep 1; done
+      - name: Trace real export promises and browser visibility
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+          EVIDENCE_DIR: evidence/export-probe
+        run: xvfb-run -a python elif-v20-tools/export-diagnostic.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v20-export-probe
+          path: elif-tasarim/source-v12/evidence/export-probe
+          retention-days: 7
