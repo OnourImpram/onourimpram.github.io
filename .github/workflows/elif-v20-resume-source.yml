@@ -1,0 +1,51 @@
+name: Elif V20 preparation recovery
+on:
+  push:
+    branches: [elif-v20-final-20260926]
+    paths: ['.github/workflows/elif-v20-resume-source.yml']
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install PyYAML==6.0.2
+      - name: Recover exact prepared source, no publication
+        shell: python
+        run: |
+          from pathlib import Path
+          import yaml,subprocess
+          spec=yaml.safe_load(Path('.github/workflows/elif-v20-finalize.yml').read_text())
+          step=next(s for s in spec['jobs']['final']['steps'] if s.get('name')=='Prepare hash-checked source and pinned exporter modules')
+          subprocess.run(['python','-c',step['run']],check=True)
+      - name: Build portable copy for independent inspection
+        working-directory: elif-tasarim/source-v12
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build
+      - name: Pack recoverable source and runtime without fonts
+        shell: python
+        run: |
+          import zipfile
+          from pathlib import Path
+          root=Path('elif-tasarim/source-v12')
+          with zipfile.ZipFile('Elif_V20_Recovery.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in root.rglob('*'):
+                  if not p.is_file(): continue
+                  parts=p.relative_to(root).parts
+                  if '.git' in parts or 'evidence' in parts: continue
+                  if 'node_modules' in parts and 'typescript' not in parts: continue
+                  if p.suffix.lower() in {'.woff','.woff2','.ttf','.otf','.eot'}: continue
+                  z.write(p,p.relative_to(root))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elif-v20-recovery
+          path: Elif_V20_Recovery.zip
+          retention-days: 14
