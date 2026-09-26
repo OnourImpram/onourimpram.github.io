@@ -1,0 +1,150 @@
+name: Elif V20 final stage
+on:
+  push:
+    branches: [elif-v20-final-20260926]
+    paths: ['.github/workflows/elif-v20-stage.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply hash-verified local source delta within Elif only
+        shell: python
+        run: |
+          from pathlib import Path
+          import base64,lzma,hashlib,json
+          encoded=''.join((Path('elif-v20-tools')/f'upgrade.{i}.b64').read_text().strip() for i in range(1,5))
+          raw=lzma.decompress(base64.b64decode(encoded,validate=True))
+          assert hashlib.sha256(raw).hexdigest()=='8932836f2c08c3b96e378190f3f8959c779f32a3808006230481cff9d31ec8cb'
+          root=Path('elif-tasarim/source-v12').resolve()
+          changes=json.loads(raw)
+          for item in changes:
+              relative=Path(item['path'])
+              assert not relative.is_absolute() and '..' not in relative.parts
+              p=root/relative
+              assert not p.is_symlink() and p.resolve().is_relative_to(root)
+              old=p.read_bytes() if p.exists() else b''
+              if item['old'] is None: assert not p.exists(),str(p)
+              else: assert hashlib.sha256(old).hexdigest()==item['old'],str(p)
+              text=old.decode('utf-8')
+              for start,end,replacement in reversed(item['ops']):
+                  assert 0<=start<=end<=len(text)
+                  text=text[:start]+replacement+text[end:]
+              data=text.encode('utf-8')
+              assert hashlib.sha256(data).hexdigest()==item['sha256'],str(p)
+              p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(data)
+          print('Applied verified source delta',len(changes),'files')
+      - name: Preserve pinned official exporter provenance
+        shell: python
+        run: |
+          from urllib.request import urlopen
+          from pathlib import Path
+          import hashlib,json
+          p=Path('elif-tasarim/source-v12/public/three/vendor');p.mkdir(parents=True,exist_ok=True)
+          root='https://raw.githubusercontent.com/mrdoob/three.js/r185/'
+          files={'GLTFExporter.js':('examples/jsm/exporters/GLTFExporter.js','ab3bb954be245a05c54489d8e64c580e3dadf8d1'),'USDZExporter.js':('examples/jsm/exporters/USDZExporter.js','134713323d1afecba2271ceb96aa60c60319bf65'),'fflate.module.js':('examples/jsm/libs/fflate.module.js','06383895963036ad297dc51421e6b2d1910f5df7'),'THREE_EXPORTERS_LICENSE.txt':('LICENSE','8ada2a5f982916b0ba4b7a0aa7de347587e745d7')}
+          provenance=[]
+          for name,(src,expected) in files.items():
+              data=urlopen(root+src,timeout=30).read()
+              sha=hashlib.sha1(('blob '+str(len(data))+'\0').encode()+data).hexdigest()
+              assert sha==expected,(name,sha)
+              text=data.decode().replace("from 'three'","from './three.module.min.js'").replace("from '../libs/fflate.module.js'","from './fflate.module.js'")
+              (p/name).write_text(text)
+              provenance.append({'file':name,'source':root+src,'upstream_git_blob':sha,'local_sha256':hashlib.sha256(text.encode()).hexdigest()})
+          (p/'provenance.json').write_text(json.dumps(provenance,indent=2))
+      - name: Clean reproducible build, all unit tests, strict core and release integrity
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/v20-final
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build | tee evidence/v20-final/build.txt
+          npm test | tee evidence/v20-final/unit.txt
+          npm run typecheck:core | tee evidence/v20-final/types.txt
+          npm run verify:dist | tee evidence/v20-final/integrity.txt
+      - name: Install Chromium browser tooling
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Serve generated V20 publication
+        working-directory: elif-tasarim/source-v12
+        run: |
+          node tools/serve-static.cjs dist 8000 > /tmp/elif-v20-server.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:8000/elif-tasarim/release-v20.json >/dev/null && break; sleep 1; done
+          curl -fsS http://127.0.0.1:8000/elif-tasarim/release-v20.json >/dev/null
+      - name: Real model exports, comparison and decision support
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/v20-final/features xvfb-run -a python tests/v20/acceptance.py | tee evidence/v20-final/features.txt
+      - name: Preserve customer journeys, full orbit and responsive layouts
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/v20-final/decisions xvfb-run -a python tests/v11/acceptance.py | tee evidence/v20-final/decisions.txt
+          EVIDENCE_DIR=evidence/v20-final/cplus xvfb-run -a python tests/v12/acceptance.py | tee evidence/v20-final/cplus.txt
+          EVIDENCE_DIR=evidence/v20-final/responsive xvfb-run -a python tests/v11/matrix.py | tee evidence/v20-final/responsive.txt
+      - name: Stage only verified Elif publication, preserve personal homepage
+        shell: python
+        run: |
+          from pathlib import Path
+          import json,shutil,subprocess
+          assert subprocess.check_output(['git','hash-object','index.html'],text=True).strip()=='501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          root=Path('elif-tasarim');dist=root/'source-v12/dist'
+          old=json.loads((root/'release-v12.json').read_text())
+          for name in old['files']:
+              p=root/name
+              assert not Path(name).is_absolute() and '..' not in Path(name).parts
+              if p.is_file():p.unlink()
+          (root/'release-v12.json').unlink()
+          for p in dist.rglob('*'):
+              if p.is_file():
+                  target=root/p.relative_to(dist);target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,target)
+          assert (root/'release-v20.json').exists()
+      - name: Commit verified source and generated publication to staging branch
+        run: |
+          set -euo pipefail
+          git config user.name "Onour Impram"
+          git config user.email "onuribram@outlook.com"
+          git add -A elif-tasarim
+          git commit -m "release(elif): stage verified V20 product studio and design workbench"
+          git push origin HEAD:elif-v20-final-20260926
+          git rev-parse HEAD > elif-tasarim/source-v12/evidence/v20-final/staging-commit.txt
+      - name: Package sources, publication and portable HTML without fonts
+        shell: python
+        run: |
+          from pathlib import Path
+          import zipfile,shutil
+          root=Path('elif-tasarim');source=root/'source-v12';out=Path('v20-delivery');out.mkdir()
+          excluded={'node_modules','.compiled','preview','dist','evidence','.git'}
+          font={'.woff','.woff2','.ttf','.otf','.eot'}
+          with zipfile.ZipFile(out/'Elif_Tasarim_V20_Kaynak_ve_Testler.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in source.rglob('*'):
+                  if p.is_file() and not excluded.intersection(p.relative_to(source).parts) and p.suffix.lower() not in font:z.write(p,p.relative_to(source))
+          with zipfile.ZipFile(out/'Elif_Tasarim_V20_Yayin_Dosyalari.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in root.rglob('*'):
+                  if p.is_file() and 'source-v12' not in p.relative_to(root).parts and p.suffix.lower() not in font:z.write(p,Path('elif-tasarim')/p.relative_to(root))
+          shutil.copy2(source/'preview/Elif_Tasarim.html',out/'Elif_Tasarim_V20.html')
+          shutil.copy2(source/'docs/V20_Teslim_Kapsami.md',out/'Elif_Tasarim_V20_Teslim_Kapsami.md')
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v20-stage-evidence
+          path: elif-tasarim/source-v12/evidence/v20-final
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-v20-final-delivery
+          path: v20-delivery
+          retention-days: 14
