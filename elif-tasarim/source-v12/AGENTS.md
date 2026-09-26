@@ -1,8 +1,8 @@
-# Elif Tasarım V12 C+ çalışma sınırları
+# Elif Tasarım V20 çalışma sınırları
 
 Kullanıcının onayladığı amblemi, Zamana değer katan mobilyalar başlığını, gerçek proje ile konsept ayrımını ve +90 530 879 71 69 iletişimini koru.
 
-Tek etkin build `npm run build` ile `tools/build-v12.cjs` üzerinden üretilir. Eski yayın HTML'ine kod ekleme. `dist` test edilmeden yayınlama. Three.js yerel vendored modüllerini ve lisansını koru.
+Tek etkin build `npm run build` ile `tools/build-v20.cjs` üzerinden üretilir. Eski yayın HTML'ine kod ekleme. `dist` test edilmeden yayınlama. Three.js yerel vendored modüllerini ve lisansını koru.
 
 GitHub yayını yalnız `elif-tasarim/` alt dizinini değiştirebilir. Kök index dosyasına dokunma. Uzak main tabanı değişmişse eski paketi körlemesine ezme. Force push yok.
 

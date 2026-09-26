@@ -10,7 +10,7 @@ report={'base':BASE or 'inline offline V12','checks':[],'limits':['Chromium soft
 def rec(name,data=None):
  report['checks'].append({'name':name,'pass':True,'detail':data});(O/'results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print('PASS',name,flush=True)
 with sync_playwright() as p:
- b=p.chromium.launch(channel='chrome',headless=False,chromium_sandbox=True,args=['--use-gl=angle','--use-angle=swiftshader'])
+ exe=os.environ.get('CHROMIUM_PATH','/usr/bin/chromium');b=p.chromium.launch(executable_path=exe if Path(exe).exists() else None,headless=False,args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader'])
  report['browser']=b.version;errors=[]
  def newpage(mobile=False):
   context=b.new_context(viewport={'width':390 if mobile else 1440,'height':844 if mobile else 1000},has_touch=mobile,is_mobile=mobile)
@@ -26,7 +26,7 @@ with sync_playwright() as p:
  def update(patch):page.evaluate('(p)=>{const a=document.querySelector(".v8-canvas-host").__elif3D;a.update({...a.inspect().config,...p})}',patch);page.wait_for_timeout(150)
  def preset(name):page.get_by_role('button',name=name,exact=True).click();page.wait_for_timeout(220)
  try:
-  assert page.locator('canvas').count()==0;assert page.locator('.preview-bar').inner_text().startswith('V12');assert 'Yusuf' not in page.locator('body').inner_text();rec('01. V12, Yunus and no eager homepage WebGL')
+  assert page.locator('canvas').count()==0;assert page.locator('.preview-bar').inner_text().startswith('V20');assert 'Yusuf' not in page.locator('body').inner_text();rec('01. V13, Yunus and no eager homepage WebGL')
   nav('/tasarim-masasi');ready();s=state();assert s['engine']=='Three.js' and s['orbit']['fullHorizontal'];rec('02. Real Three.js and unbounded horizontal OrbitControls',s['orbit'])
   update({'drawers':False,'door':False,'height':80});closed=state();update({'drawers':True,'door':True});opened=state()
   for key in ['mainDrawerWorld','cabinetDrawerWorld']:

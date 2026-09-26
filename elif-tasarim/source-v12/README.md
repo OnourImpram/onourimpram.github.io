@@ -1,59 +1,19 @@
-# Elif Tasarım V12 C+
+# Elif Tasarım V20
 
-Gerçek Three.js ile çekmece kullanım yönü düzeltilmiş ve yatayda tam tur incelenebilir Devir 01 konsept stüdyosu. Onaylı marka kimliği, çift taraflı kitaplıklar, Yunus Usta iletişimi ve V11 proje akışları korunur.
-
-## Kaynak ve yayın
-
-Kaynaklar `elif-tasarim/source-v12/` dizinindedir. Ürünün yayımlanan dosyaları `elif-tasarim/` altındadır. Kök kişisel sitenin dosyaları değiştirilmez.
-
-Nihai uygulama commit'i `14238da625f315a3f7176e0ca297c7a6631d5e5f`, sürüm `v12-cplus-360`, paket `0.12.0`.
-
-Ayrıntılar [V12 değişiklik günlüğünde](docs/V12_Surum_Notlari.md) bulunur. Önceki kapsamın 33 kabul senaryosu `docs/v11/PLAN_STATUS.md` içinde korunur. Açık işletme ve gerçek cihaz koşulları geçmiş gibi işaretlenmez.
+Devir 01 ürün keşfi, gerçek 360 derece stüdyo, üç tasarımı karşılaştırma, odanın dikdörtgen dış sınır karşılaştırması ve GLB/USDZ model çıktıları.
 
 ## Çalıştırma
 
-Node.js 22 veya üzeri kullanılır. Kaynak dizininde aşağıdaki komutlar çalıştırılır.
+Node.js 22. `npm ci --ignore-scripts`, `npm run build`, `npm test`, `npm run typecheck:core`, `npm run verify:dist`.
 
-```sh
-npm ci --ignore-scripts
-npm run build
-npm test
-npm run typecheck:core
-npm run verify:dist
-npm run serve
-```
+`npm run serve` yerel HTTP önizlemesini açar. `preview/Elif_Tasarim.html` taşınabilir çevrimdışı sürümdür. WhatsApp ve Pinterest harici hizmetlerdir. Model dosyaları yerel Three.js modülleriyle cihazda oluşturulur.
 
-Tek etkin derleme `tools/build-v12.cjs` dosyasıdır. Sunucu, `dist` dosyalarını `/elif-tasarim/` altında sunar. Terminalde yazılan HTTP adresi açılır. Taşınabilir tek dosya `preview/Elif_Tasarim.html` içinde üretilir. Ayrı ESM modülleri içeren normal dağıtım HTTP sunucusu gerektirir.
+`tests/v20/acceptance.py` yeni ürün ve karşılaştırma akışlarını, gerçek GLB ve USDZ dosyalarını kontrol eder. `tests/v11/acceptance.py` müşteri karar akışlarını, `tests/v12/acceptance.py` masa yönü ve 360 derece kontrollerini korur. `tests/v11/matrix.py` ekran boyutlarını kontrol eder.
 
-Three.js 0.185.1, TypeScript 5.8.3 ve mevcut yerel MIT Preact çalışma zamanı kullanılır. Normal kullanımda üçüncü taraf 3D servisi veya CDN zorunlu değildir. Çekirdek strict TypeScript denetimi, bütün JSX bileşenlerinin tam semantik denetimi anlamına gelmez. Font dosyası dağıtılmaz.
+## Yayın
 
-## Tarayıcı doğrulaması
+Kimlik `v20-master-atelier`, manifest `release-v20.json`, paket `0.20.0`. Tek etkin derleyici `tools/build-v20.cjs`. Kaynak dizininin tarihsel olarak `source-v12` olması etkin sürümü değiştirmez.
 
-Python Playwright ve Pillow gerekir. `tests/v12/acceptance.py`, sandbox destekli Google Chrome kanalı ve Xvfb kullanır. Başka ortamda tarayıcı kurulumu ayrıca doğrulanmalıdır.
+Yalnız `elif-tasarim/` değiştirilebilir. Kök kişisel ana sayfaya dokunulmaz. Yeni canlı sürüm, testler ve public manifest doğrulamasından sonra tamamlandı sayılır.
 
-```sh
-xvfb-run -a python tests/v12/acceptance.py
-xvfb-run -a python tests/v11/acceptance.py
-xvfb-run -a python tests/v11/followup.py
-xvfb-run -a python tests/v11/matrix.py
-```
-
-Varsayılan test girdisi yerel taşınabilir önizlemedir. Gerçek HTTP testi için `BASE_URL`, sonu eğik çizgiyle biten yayın adresine ayarlanır. `EVIDENCE_DIR` sonuçların dizinini seçer. Bu testler mesaj göndermez.
-
-Yayından sonra `tests/v11/public_verify.py`, yeniden derlenen V12 manifesti ile gerçek public dosyaları ve doğrudan sayfaları karşılaştırır.
-
-## V12 C+ davranışı
-
-Ana tablanın çekmeceleri, yükseklik kumandası ve alt dolap sandalyenin bulunduğu negatif Z kullanım yönüne bakar. Hem mekân hem ürün görünümünde yatay yörünge serbesttir. Görüşü kapatan oda elemanları kullanıcı tarafındaki incelemede geçici saklanır. Raf ve aydınlatma tercihleri silinmez. Dikey kamera ve mesafe sınırları korunur.
-
-Genel, Çekmece tarafı, Arka, Soldan, Sağdan ve Üstten görünümleri bulunur. Fareyle ve klavyeyle tur, dokunma yakınlaştırması, otomatik dönüş, ölçü aktarımı ve görüntü dışa aktarımı test kapsamındadır. Gerçek fiziksel cihaz başarımı ayrı değerlendirilir.
-
-## Veri, ticari ve imalat sınırları
-
-Yunus Usta ve +90 530 879 71 69 kullanıcı tarafından verilmiştir. WhatsApp bağlantısı doğru alıcıyı açar. Bu, mesajın gönderildiğini veya teslim alındığını kanıtlamaz. Otomatik sipariş veritabanı, ödeme, fatura veya kargo servisi yoktur.
-
-Özel müşteri notları ve görseller açık sekmenin belleğinde tutulur. Yalnız açıkça kaydedilen herkese açık ilham kimlikleri kalıcı saklanır. Paylaşılabilir stüdyo bağlantıları özel not, ev fotoğrafı veya iletişim bilgisi taşımaz. Yenileme veya sekmeyi kapatma özel taslağı temizleyebilir.
-
-GitHub Pages yayını noindex portföy ve tasarım önizlemesidir. Bu etiket platformun ticari kullanım koşullarını ortadan kaldırmaz. Ticari alan adı, barındırma, işletme kapsamı ve izinler ayrıca değerlendirilir.
-
-Masa yüksekliği, yan tabla açısı ve yerleşim geometrisi fiziksel üretim çizimi, çarpışma çözümü, motor kapasitesi, taşıma dayanımı veya elektrik güvenliği onayı değildir. Kitaplık ve oda dekoru masa teklifine otomatik dahil değildir. Gerçek iş, montaj, konsept ve dış referans ayrımı korunur.
+`docs/V20_Teslim_Kapsami.md` kapsam ve sınırları açıklar. Noindex portföy ve konsept önizlemesi. Ödeme, CRM ve otomatik sipariş sunucusu yoktur. GLB/USDZ görselleştirme biçimleridir, imalat planı değildir. Fiziksel AR cihaz denemesi ayrıca gerekir.

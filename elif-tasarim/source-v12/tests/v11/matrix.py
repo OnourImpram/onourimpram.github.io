@@ -3,7 +3,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 import json,os
 R=Path(__file__).resolve().parents[2];BASE=os.environ.get('BASE_URL','');OUT=Path(os.environ.get('EVIDENCE_DIR',str(R/'evidence/v11/matrix')));OUT.mkdir(parents=True,exist_ok=True);rows=[];errors=[];stress=[]
-routes=json.loads((R/'dist/release-v12.json').read_text())['routes'];html=(R/'preview/Elif_Tasarim.html').read_text()
+routes=json.loads((R/'dist/release-v20.json').read_text())['routes'];html=(R/'preview/Elif_Tasarim.html').read_text()
 with sync_playwright() as p:
  exe=os.environ.get('CHROMIUM_PATH','/usr/bin/chromium');b=p.chromium.launch(executable_path=exe if Path(exe).exists() else None,headless=False,args=['--no-sandbox','--disable-dev-shm-usage','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
  page=b.new_page();page.on('pageerror',lambda e:errors.append(str(e)));page.emulate_media(reduced_motion='reduce')

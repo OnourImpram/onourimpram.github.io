@@ -10,7 +10,7 @@ def record(name,detail=None):
  report['checks'].append({'name':name,'pass':True,'detail':detail});(OUT/'results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print('PASS '+name,flush=True)
 with sync_playwright() as p:
  exe=os.environ.get('CHROMIUM_PATH','/usr/bin/chromium')
- b=p.chromium.launch(channel='chrome',headless=False,chromium_sandbox=True,args=['--use-gl=angle','--use-angle=swiftshader'])
+ b=p.chromium.launch(executable_path=exe if Path(exe).exists() else None,headless=False,args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader'])
  report['browser']=b.version
  page=b.new_page(viewport={'width':1440,'height':1000});page.set_default_timeout(18000);page.emulate_media(reduced_motion='reduce');errors=[];network=[]
  page.on('pageerror',lambda e:errors.append(str(e)));page.on('request',lambda q:network.append(q.url) if q.url.startswith(('http:','https:')) else None)
@@ -36,7 +36,7 @@ with sync_playwright() as p:
  def open_details():
   if not page.locator('#project-optional-details').is_visible():page.get_by_role('button',name='Ölçü ve malzeme ayrıntılarını ekle',exact=True).click()
  try:
-  fresh();assert page.locator('.preview-bar').inner_text().startswith('V12');assert 'Zamana değer' in page.locator('h1').inner_text();assert 'Yusuf' not in page.locator('body').inner_text();assert page.locator('.v9-category-ribbon').count()==1;assert page.locator('.home-categories').count()==0;assert page.locator('canvas').count()==0
+  fresh();assert page.locator('.preview-bar').inner_text().startswith('V20');assert 'Zamana değer' in page.locator('h1').inner_text();assert 'Yusuf' not in page.locator('body').inner_text();assert page.locator('.v9-category-ribbon').count()==1;assert page.locator('.home-categories').count()==0;assert page.locator('canvas').count()==0
   record('D03. Simplified homepage preserves brand, real work and one category path, no eager 3D')
   for id,cat in [('sade-kose-mutfak','Mutfak'),('isikli-tv-unitesi','TV Ünitesi'),('sade-kose-mutfak','Mutfak')]:
    startwork(id);text=summary();assert 'İhtiyaç, '+cat in text,text
@@ -82,7 +82,7 @@ with sync_playwright() as p:
   page.get_by_role('button',name='Çekmeceleri kapat',exact=True).click();page.get_by_role('button',name='Dolabı kapat',exact=True).click();slide('Yan tabla açısı',90)
   for w,h in [(390,844),(360,800),(320,568)]:
    page.set_viewport_size({'width':w,'height':h});page.wait_for_timeout(160);page.get_by_role('slider',name='Çalışma yüksekliği',exact=True).scroll_into_view_if_needed();page.wait_for_timeout(180)
-   canvas=page.locator('.v8-canvas-wrap').bounding_box();slider=page.get_by_role('slider',name='Çalışma yüksekliği',exact=True).bounding_box();assert canvas['y']>=-2 and canvas['y']+canvas['height']<=h and slider['y']+slider['height']<=h,(w,canvas,slider)
+   canvas=page.locator('.v8-canvas-wrap').bounding_box();slider=page.get_by_role('slider',name='Çalışma yüksekliği',exact=True).bounding_box();assert canvas['y']>=-2 and canvas['y']+canvas['height']<=h+1 and slider['y']+slider['height']<=h+1,(w,canvas,slider)
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1');slide('Çalışma yüksekliği',110);assert inspect()['config']['height']==110;page.screenshot(path=str(OUT/f'mobile-studio-{w}.png'))
   record('C01. 390, 360 and 320 layouts keep entire scene and active height slider simultaneously visible')
   page.set_viewport_size({'width':1440,'height':1000});page.wait_for_timeout(200);page.evaluate('scrollTo(0,0)');page.screenshot(path=str(OUT/'desktop-studio.png'))

@@ -1,0 +1,26 @@
+[
+  {
+    "file": "GLTFExporter.js",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r185/examples/jsm/exporters/GLTFExporter.js",
+    "upstream_git_blob": "ab3bb954be245a05c54489d8e64c580e3dadf8d1",
+    "local_sha256": "208392f2bd7a740c2d49e234adf0046c8f2722c4d6c2c4961c3921ffdf88bac1"
+  },
+  {
+    "file": "USDZExporter.js",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r185/examples/jsm/exporters/USDZExporter.js",
+    "upstream_git_blob": "134713323d1afecba2271ceb96aa60c60319bf65",
+    "local_sha256": "ceaa7c848734170b1d39b2b5907cff7ac4a2dab9e878de6db0fa0fc00dd0d983"
+  },
+  {
+    "file": "fflate.module.js",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r185/examples/jsm/libs/fflate.module.js",
+    "upstream_git_blob": "06383895963036ad297dc51421e6b2d1910f5df7",
+    "local_sha256": "209a4412eb48ce609edb4391992a792ffcc3983d30ee7e2b0b89a8c470f3cd8a"
+  },
+  {
+    "file": "THREE_EXPORTERS_LICENSE.txt",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r185/LICENSE",
+    "upstream_git_blob": "8ada2a5f982916b0ba4b7a0aa7de347587e745d7",
+    "local_sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+  }
+]

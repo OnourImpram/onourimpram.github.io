@@ -6,6 +6,7 @@ const target=(id:string)=>'/ilham-modelleri?hedef='+encodeURIComponent(id);
 export const selectionEntries:Selection[]=[...works.map(w=>({id:'work:'+w.id,title:w.subtitle,category:w.category,image:w.images[0],kind:'work' as const,path:'/proje/'+w.id})),...concepts.map(c=>({id:'concept:'+c.id,title:c.subtitle,category:c.category,image:c.image,kind:'concept' as const,path:target('concept:'+c.id)})),...pinterestReferences.map(p=>({id:'pin:'+p.id,title:pinLookup[p.id]?.label||p.title,category:p.category,kind:'reference' as const,path:target('pin:'+p.id)}))];
 export type SearchEntry=Omit<Selection,'kind'>&{kind:Selection['kind']|'page';keywords?:string};
 const pages:SearchEntry[]=[
+ {id:'page:devir-product',title:'Devir 01. Konsept masayı keşfedin',category:'ozel-tasarim',image:'devir-standing.webp',kind:'page',path:'/devir-01',keywords:'çalışma masası ofis konsept yükselen masa ürün tanıtımı'},
  {id:'page:devir',title:'Devir 01. Yükseklik ayarlı çalışma masası',category:'ozel-tasarim',image:'devir-poster.webp',kind:'page',path:'/tasarim-masasi',keywords:'3D üç boyutlu üçboyutlu three.js stüdyo çalışma masası yukseklik ayarli ofis masa çekmece'},
  {id:'page:bespoke',title:'Özel üretim. Nasıl ilerliyoruz?',category:'ozel-tasarim',kind:'page',path:'/ozel-uretim',keywords:'süreç özel ölçü teklif montaj keşif'},
  {id:'page:materials',title:'Malzeme ve yüzey seçenekleri',category:'ozel-tasarim',kind:'page',path:'/malzemeler',keywords:'ahşap masif lake kaplama malzeme meşe ceviz'},

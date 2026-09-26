@@ -1,0 +1,2 @@
+const{test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),ts=require('typescript');
+test('USDZ success fragments have a runtime binding',()=>{const source=fs.readFileSync('src/components/DesignWorkbench.tsx','utf8');assert.match(source,/import \{[^}]*Fragment[^}]*\} from 'react'/);const output=ts.transpileModule(source,{compilerOptions:{jsx:ts.JsxEmit.React,jsxFactory:'createElement',jsxFragmentFactory:'Fragment',module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020}}).outputText;assert.match(output,/react_1.Fragment/);});
