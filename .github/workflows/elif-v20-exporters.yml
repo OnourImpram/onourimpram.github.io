@@ -1,0 +1,35 @@
+name: Elif V20 exporter sources
+on:
+  push:
+    branches: [elif-v20-final-20260926]
+    paths: ['.github/workflows/elif-v20-exporters.yml']
+permissions:
+  contents: read
+jobs:
+  sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Fetch pinned Three.js exporter sources and keep licenses
+        shell: python
+        run: |
+          from urllib.request import urlopen
+          from pathlib import Path
+          import hashlib,json
+          p=Path('exporters');p.mkdir()
+          root='https://raw.githubusercontent.com/mrdoob/three.js/r185/'
+          files={'GLTFExporter.js':('examples/jsm/exporters/GLTFExporter.js','ab3bb954be245a05c54489d8e64c580e3dadf8d1'),'USDZExporter.js':('examples/jsm/exporters/USDZExporter.js','134713323d1afecba2271ceb96aa60c60319bf65'),'fflate.module.js':('examples/jsm/libs/fflate.module.js',None),'THREE_EXPORTERS_LICENSE.txt':('LICENSE',None)}
+          provenance=[]
+          for name,(src,expected)in files.items():
+              data=urlopen(root+src,timeout=25).read()
+              sha=hashlib.sha1(('blob '+str(len(data))+'\0').encode()+data).hexdigest()
+              if expected: assert sha==expected,(name,sha)
+              text=data.decode().replace("from 'three'","from './three.module.min.js'").replace("from '../libs/fflate.module.js'","from './fflate.module.js'")
+              (p/name).write_text(text)
+              provenance.append({'file':name,'source':root+src,'upstream_git_blob':sha,'local_sha256':hashlib.sha256(text.encode()).hexdigest()})
+          (p/'provenance.json').write_text(json.dumps(provenance,indent=2))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elif-v20-official-exporters
+          path: exporters
+          retention-days: 7
