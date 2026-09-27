@@ -1,10 +1,10 @@
 {
-  "release": "v21-trust-continuity",
+  "release": "v22-contact-complete",
   "mode": "preview",
   "indexable": false,
   "contact": {
     "telephone": true,
-    "email": false,
+    "email": true,
     "hours": false,
     "address": false
   },

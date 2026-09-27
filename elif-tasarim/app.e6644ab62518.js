@@ -224,6 +224,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = require("react");
 const ui_1 = require("./components/ui");
 const ServiceGuide_1 = require("./pages/ServiceGuide");
+const BasicContact_1 = require("./pages/BasicContact");
+const site_profile_1 = require("./lib/site-profile");
 const draft_session_1 = require("./lib/draft-session");
 const Home_1 = require("./pages/Home");
 const Devir_1 = require("./pages/Devir");
@@ -355,7 +357,8 @@ class App extends react_1.Component {
         return (0, react_1.createElement)(BringModel_1.BringModel, { key: this.state.path, ...a, query: qs, advanced: p === '/teklif-al' || new URLSearchParams(qs).get('detay') === '1' }); if (p === '/hakkimizda' || p === '/atolye')
         return (0, react_1.createElement)(Portfolio_1.AboutAtelier, { ...a, atelier: p === '/atolye' }); if (p === '/devir-01')
         return (0, react_1.createElement)(Devir_1.Devir, { ...a }); if (p === '/tasarim-masasi')
-        return (0, react_1.createElement)(DesignDesk_1.DesignDesk, { key: this.state.path, ...a, query: qs }); if (p === '/hizmet-ve-teklif')
+        return (0, react_1.createElement)(DesignDesk_1.DesignDesk, { key: this.state.path, ...a, query: qs }); if (p === '/kolay-iletisim')
+        return (0, react_1.createElement)(BasicContact_1.BasicContact, { ...a }); if (p === '/hizmet-ve-teklif')
         return (0, react_1.createElement)(ServiceGuide_1.ServiceGuide, { ...a }); if (p === '/iletisim')
         return (0, react_1.createElement)(V7Pages_1.ContactV7, { ...a }); if (p === '/gizlilik')
         return (0, react_1.createElement)(V7Pages_1.PrivacyV7, { ...a }); if (p === '/malzemeler')
@@ -363,7 +366,8 @@ class App extends react_1.Component {
         return (0, react_1.createElement)(Editorial_1.Bespoke, { ...a }); if (p === '/sikca-sorulan-sorular')
         return (0, react_1.createElement)(Editorial_1.FAQ, { ...a }); if (p === '/rehber' || p.startsWith('/rehber/'))
         return (0, react_1.createElement)(Editorial_1.Journal, { ...a, slug: p.split('/')[2] }); if (p === '/calisma-dosyam')
-        return (0, react_1.createElement)(V7Pages_1.SavedBoard, { ...a, remember: this.state.remember, setRemember: remember => { const ok = this.persist(this.state.favorites, remember); this.setState({ remember: remember && ok }); if (!ok)
+        return (0, react_1.createElement)(V7Pages_1.SavedBoard, { ...a, replaceFavorites: ids => { const favorites = (0, selections_1.validSelectionIds)(ids), ok = this.persist(favorites, this.state.remember); this.setState({ favorites, remember: ok ? this.state.remember : false }); if (!ok)
+                this.notify('Cihaz kaydı yapılamadı. İçe aktarılan seçimler açık sekmede korunuyor.'); }, remember: this.state.remember, setRemember: remember => { const ok = this.persist(this.state.favorites, remember); this.setState({ remember: remember && ok }); if (!ok)
                 this.notify('Tarayıcı kaydetmeye izin vermedi. Seçimler bu açık sekmede korunur.'); } }); return (0, react_1.createElement)("section", { className: "wrap empty-state missing-page" },
         (0, react_1.createElement)(ui_1.Eyebrow, null, "404 / B\u0130R YOL AYRIMI"),
         (0, react_1.createElement)("h1", null,
@@ -374,12 +378,12 @@ class App extends react_1.Component {
         (0, react_1.createElement)(ui_1.ButtonLink, { to: "/projeler", navigate: this.navigate }, "\u00C7al\u0131\u015Fmalar\u0131 ke\u015Ffet")); }
     render() {
         const s = this.state, a = this.actions(), nav = (to, label) => (0, react_1.createElement)(ui_1.Link, { key: to, to: to, navigate: this.navigate, "aria-current": s.path.split('?')[0] === to ? 'page' : undefined }, label);
-        const results = (0, selections_1.searchEntries)(s.searchQuery).slice(0, 8), contactText = (0, project_1.contextMessage)(s.path, (0, routes_1.pageTitle)(s.path.split('?')[0]).split('|')[0].trim(), (typeof window !== 'undefined' && window.__ELIF_SITE_URL__) || undefined), studio = s.path.split('?')[0] === '/tasarim-masasi';
+        const results = (0, selections_1.searchEntries)(s.searchQuery).slice(0, 8), contactText = (0, project_1.contextMessage)(s.path, (0, routes_1.pageTitle)(s.path.split('?')[0]).split('|')[0].trim(), (typeof window !== 'undefined' && window.__ELIF_SITE_URL__) || undefined), studio = s.path.split('?')[0] === '/tasarim-masasi', guided = ['/modelini-getir', '/teklif-al', '/kolay-iletisim'].includes(s.path.split('?')[0]);
         return (0, react_1.createElement)(react_1.Fragment, null,
             (0, react_1.createElement)("a", { href: "#main-content", className: "skip-link", onClick: e => { e.preventDefault(); document.getElementById('main-content')?.focus(); } }, "\u0130\u00E7eri\u011Fe ge\u00E7"),
             (0, react_1.createElement)("div", { className: "preview-bar" },
                 (0, react_1.createElement)("span", null,
-                    "V21 / TASARIM \u00D6N\u0130ZLEMES\u0130 ",
+                    "V22 / TASARIM \u00D6N\u0130ZLEMES\u0130 ",
                     (0, react_1.createElement)("i", null),
                     (0, react_1.createElement)("span", { className: "v9-preview-detail" }, "Ger\u00E7ek i\u015F ar\u015Fivi, do\u011Frudan ileti\u015Fim")),
                 (0, react_1.createElement)("button", { onClick: () => this.setState({ info: true }) },
@@ -455,12 +459,14 @@ class App extends react_1.Component {
                                 "\u0130stanbul, T\u00FCrkiye.",
                                 (0, react_1.createElement)("br", null),
                                 "Yeni adresi ziyaret \u00F6ncesinde teyit edin."),
-                            nav('/iletisim', 'İletişim ayrıntıları'))),
+                            (0, react_1.createElement)("a", { className: "v22-footer-email", href: 'mailto:' + (0, site_profile_1.getSiteProfile)().email }, (0, site_profile_1.getSiteProfile)().email),
+                            nav('/iletisim', 'İletişim ayrıntıları'),
+                            nav('/kolay-iletisim', 'Kolay iletişim'))),
                     (0, react_1.createElement)("div", { className: "footer-wordmark", "aria-hidden": "true" },
                         "elif tasar\u0131m",
                         (0, react_1.createElement)("span", null, "AT\u00D6LYE")),
                     (0, react_1.createElement)("div", { className: "footer-bottom" },
-                        (0, react_1.createElement)("span", null, "EL\u0130F TASARIM \u00B7 V21 / 2026"),
+                        (0, react_1.createElement)("span", null, "EL\u0130F TASARIM \u00B7 V22 / 2026"),
                         (0, react_1.createElement)("div", null,
                             nav('/gizlilik', 'Gizlilik ve dış servisler'),
                             (0, react_1.createElement)("button", { onClick: () => this.setState({ info: true }) }, "Cihaz kay\u0131tlar\u0131n\u0131 y\u00F6net")),
@@ -518,14 +524,14 @@ class App extends react_1.Component {
                     (0, react_1.createElement)(ui_1.Link, { to: "/gizlilik", navigate: p => { this.setState({ info: false }); this.navigate(p); }, className: "text-link" },
                         "Veri ve d\u0131\u015F servis a\u00E7\u0131klamas\u0131 ",
                         (0, react_1.createElement)(ui_1.Icon, null)))),
-            s.scrolled && !studio && !s.menu && !s.search && !s.info && (0, react_1.createElement)("div", { className: "v7-mobile-contact" },
+            s.scrolled && !studio && !guided && !s.menu && !s.search && !s.info && (0, react_1.createElement)("div", { className: "v7-mobile-contact" },
                 (0, react_1.createElement)("a", { href: 'tel:' + project_1.business.telephone },
                     (0, react_1.createElement)(ui_1.Icon, { name: "phone", size: 18 }),
                     "Ara"),
                 (0, react_1.createElement)("a", { href: (0, project_1.whatsappUrl)(contactText), target: "_blank", rel: "noopener noreferrer" },
                     "Yunus Usta\u2019ya yaz ",
                     (0, react_1.createElement)(ui_1.Icon, { name: "diagonal", size: 18 }))),
-            s.scrolled && !studio && (0, react_1.createElement)("button", { className: "v5-backtop", type: "button", "aria-label": "Sayfan\u0131n ba\u015F\u0131na d\u00F6n", onClick: () => window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }) },
+            s.scrolled && !studio && !guided && (0, react_1.createElement)("button", { className: "v5-backtop", type: "button", "aria-label": "Sayfan\u0131n ba\u015F\u0131na d\u00F6n", onClick: () => window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }) },
                 (0, react_1.createElement)("span", { className: "v5-up" },
                     (0, react_1.createElement)(ui_1.Icon, { name: "down", size: 18 })),
                 (0, react_1.createElement)("span", null, "Ba\u015Fa d\u00F6n")),
@@ -546,6 +552,7 @@ exports.ContactAlternatives = ContactAlternatives;
 const react_1 = require("react");
 const ui_1 = require("./ui");
 const project_1 = require("../lib/project");
+const TextCopy_1 = require("./TextCopy");
 const contact_options_1 = require("../lib/contact-options");
 function ContactAlternatives({ text }) { const email = (0, contact_options_1.emailDraft)(text); return (0, react_1.createElement)("section", { className: "v21-contact-alternatives", "aria-labelledby": "contact-alternative-title" },
     (0, react_1.createElement)("span", { className: "eyebrow" }, "BA\u015EKA B\u0130R YOLDAN DEVAM ED\u0130N"),
@@ -561,10 +568,59 @@ function ContactAlternatives({ text }) { const email = (0, contact_options_1.ema
         (0, react_1.createElement)("a", { className: "button button-outline", href: email.href },
             "E-posta tasla\u011F\u0131 haz\u0131rla ",
             (0, react_1.createElement)(ui_1.Icon, { name: "diagonal", size: 17 }))),
+    email.recipient && (0, react_1.createElement)("div", { className: "v22-email-target" },
+        (0, react_1.createElement)("span", null, "E-posta al\u0131c\u0131s\u0131"),
+        (0, react_1.createElement)("a", { href: 'mailto:' + email.recipient }, email.recipient),
+        (0, react_1.createElement)(TextCopy_1.TextCopy, { id: "v22-email-address-copy", text: email.recipient, label: "E-posta adresini kopyala" })),
     (0, react_1.createElement)("p", { className: "field-hint" }, "SMS d\u00FC\u011Fmesi numaray\u0131 a\u00E7ar, metninizi siz yazars\u0131n\u0131z. G\u00F6nderim \u00FCcretleri operat\u00F6r\u00FCn\u00FCze ba\u011Fl\u0131d\u0131r."),
     (0, react_1.createElement)("p", { className: "field-hint" }, email.recipient ? 'E-posta taslağının alıcısı, ' + email.recipient + '. Göndermeden önce özeti ve alıcıyı kontrol edin.' : 'İşletme e-posta adresi henüz doğrulanmadığından e-posta uygulaması alıcı alanı boş açılır. Yunus Usta’dan teyit ettiğiniz alıcıyı kendiniz girin. Bu, etkin bir kurumsal e-posta hattı değildir.'),
     email.needsAttachment && (0, react_1.createElement)("p", { className: "v21-email-note" }, "\u00D6zetiniz e-posta ba\u011Flant\u0131s\u0131 i\u00E7in uzun. Uygulama k\u0131sa bir ba\u015Flang\u0131\u00E7 metniyle a\u00E7\u0131l\u0131r. Tam \u00F6zeti a\u015Fa\u011F\u0131daki indirme se\u00E7ene\u011Fiyle saklay\u0131p e-postaya ekleyin."),
     (0, react_1.createElement)("p", { className: "field-hint" }, "Hi\u00E7bir d\u00FC\u011Fme kendili\u011Finden mesaj g\u00F6ndermez. Foto\u011Fraflar\u0131 ve proje dosyas\u0131n\u0131 se\u00E7ti\u011Finiz uygulamada ayr\u0131ca ekleyin.")); }
+
+},
+"src/components/ContactHandoff":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ContactHandoff = void 0;
+const react_1 = require("react");
+const ui_1 = require("./ui");
+const project_1 = require("../lib/project");
+const TextCopy_1 = require("./TextCopy");
+const ContactAlternatives_1 = require("./ContactAlternatives");
+class ContactHandoff extends react_1.Component {
+    constructor() {
+        super(...arguments);
+        this.state = { chosen: false };
+    }
+    componentDidUpdate(previous) { if (previous.text !== this.props.text && this.state.chosen)
+        this.setState({ chosen: false }); }
+    render() {
+        const transfer = (0, project_1.whatsappMessage)(this.props.text);
+        return (0, react_1.createElement)(react_1.Fragment, null,
+            (0, react_1.createElement)("section", { className: "v7-handoff v22-handoff", "aria-labelledby": "v22-handoff-title" },
+                (0, react_1.createElement)(ui_1.Eyebrow, null, "DO\u011ERUDAN YUNUS USTA"),
+                (0, react_1.createElement)("h3", { id: "v22-handoff-title" }, "\u00D6zetiniz haz\u0131r. Son ad\u0131m\u0131 tamamlayal\u0131m."),
+                (0, react_1.createElement)("p", null, "Haz\u0131r metni WhatsApp'ta kontrol edip g\u00F6nderin. \u0130sterseniz e-posta, telefon veya SMS ile de devam edebilirsiniz."),
+                transfer.needsAttachment && (0, react_1.createElement)("div", { className: "v11-long-message", role: "note" },
+                    (0, react_1.createElement)("strong", null, "\u00D6zetiniz tek ba\u011Flant\u0131 i\u00E7in uzun."),
+                    (0, react_1.createElement)("p", null, "WhatsApp a\u015Fa\u011F\u0131daki k\u0131sa giri\u015Fle a\u00E7\u0131l\u0131r. Tam \u00F6zeti kopyalay\u0131p yap\u0131\u015Ft\u0131r\u0131n veya indirdi\u011Finiz dosyay\u0131 g\u00F6r\u00FC\u015Fmeye ekleyin."),
+                    (0, react_1.createElement)("pre", { id: "whatsapp-actual-message" }, transfer.sentText)),
+                (0, react_1.createElement)("a", { className: "button", "data-whatsapp-message": transfer.needsAttachment ? 'short-with-attachment' : 'complete', href: transfer.url, target: "_blank", rel: "noopener noreferrer", onClick: () => this.setState({ chosen: true }) },
+                    "Yunus Usta\u2019ya WhatsApp\u2019ta yaz ",
+                    (0, react_1.createElement)(ui_1.Icon, { name: "diagonal" })),
+                (0, react_1.createElement)("p", { className: "field-hint" }, "Mesaj\u0131 uygulamada siz g\u00F6nderirsiniz. Bu sitede hen\u00FCz sipari\u015F veya g\u00F6nderim kayd\u0131 olu\u015Fmaz."),
+                this.state.chosen && (0, react_1.createElement)("div", { className: "v22-next-action", role: "status" },
+                    (0, react_1.createElement)("strong", null, "Son ad\u0131m, a\u00E7\u0131lan g\u00F6r\u00FC\u015Fmede."),
+                    (0, react_1.createElement)("ol", null,
+                        (0, react_1.createElement)("li", null, "Haz\u0131r mesaj\u0131 kontrol edip G\u00F6nder d\u00FC\u011Fmesine bas\u0131n."),
+                        (0, react_1.createElement)("li", null, this.props.photos ? this.props.photos + ' görseliniz var. Bunları ayrıca ekleyin veya aşağıdaki proje ZIP dosyasını belge olarak paylaşın.' : 'Görsel paylaşmak isterseniz görüşmeye ayrıca ekleyebilirsiniz.'),
+                        (0, react_1.createElement)("li", null, "Uygulama a\u00E7\u0131lmad\u0131ysa e-posta veya kopyalama yolunu kullan\u0131n. Haz\u0131rlad\u0131\u011F\u0131n\u0131z \u00F6zet bu sayfada duruyor.")),
+                    (0, react_1.createElement)("p", null, "Uygulaman\u0131n a\u00E7\u0131ld\u0131\u011F\u0131n\u0131, g\u00F6nderimi veya okunma bilgisini bu site do\u011Frulamaz."))),
+            (0, react_1.createElement)(TextCopy_1.TextCopy, { text: this.props.text, id: "v22-summary-copy" }),
+            (0, react_1.createElement)(ContactAlternatives_1.ContactAlternatives, { text: this.props.text }));
+    }
+}
+exports.ContactHandoff = ContactHandoff;
 
 },
 "src/components/DesignWorkbench":function(module,exports,require){
@@ -1191,6 +1247,71 @@ class DraftRecovery extends react_1.Component {
 exports.DraftRecovery = DraftRecovery;
 
 },
+"src/components/InspirationTransfer":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.InspirationTransfer = void 0;
+const react_1 = require("react");
+const ui_1 = require("./ui");
+const selection_backup_1 = require("../lib/selection-backup");
+const domain_1 = require("../lib/domain");
+class InspirationTransfer extends react_1.Component {
+    constructor() {
+        super(...arguments);
+        this.state = { pending: null, status: '', busy: false };
+        this.alive = true;
+        this.read = async (file) => { if (!file)
+            return; this.setState({ busy: true, pending: null, status: '' }); try {
+            if (file.size > selection_backup_1.MAX_SELECTION_FILE_BYTES)
+                throw Error('Dosya en fazla 64 KB olabilir.');
+            const ids = (0, selection_backup_1.decodeSelections)(await file.text());
+            if (this.alive)
+                this.setState({ pending: ids, status: ids.length + ' model bulundu. Mevcut listeniz henüz değiştirilmedi.' });
+        }
+        catch (e) {
+            if (this.alive)
+                this.setState({ status: e instanceof Error ? e.message : 'Dosya açılamadı. Mevcut seçimleriniz korunuyor.' });
+        }
+        finally {
+            if (this.alive)
+                this.setState({ busy: false });
+        } };
+        this.apply = (merge) => { if (!this.state.pending)
+            return; try {
+            const ids = merge ? (0, selection_backup_1.combineSelections)(this.props.ids, this.state.pending) : this.state.pending;
+            if (!merge && !window.confirm('Mevcut ilham seçkiniz bu dosyadaki ' + ids.length + ' modelle değiştirilsin mi?'))
+                return;
+            this.props.replace(ids);
+            this.setState({ pending: null, status: 'İlham dosyanız güncellendi. Otomatik olarak atölyeye gönderilmedi.' });
+        }
+        catch (e) {
+            this.setState({ status: e instanceof Error ? e.message : 'Seçkiler birleştirilemedi.' });
+        } };
+    }
+    componentWillUnmount() { this.alive = false; }
+    render() { return (0, react_1.createElement)("section", { className: "v22-inspiration-transfer", "aria-labelledby": "v22-transfer-title" },
+        (0, react_1.createElement)("h2", { id: "v22-transfer-title" }, "\u0130lham\u0131n\u0131z yan\u0131n\u0131zda kals\u0131n."),
+        (0, react_1.createElement)("p", null, "Se\u00E7ti\u011Finiz modelleri dosya olarak saklay\u0131n. Ba\u015Fka bir cihazda ayn\u0131 se\u00E7kiyi a\u00E7abilirsiniz. Yaln\u0131z herkese a\u00E7\u0131k model kimlikleri kaydedilir, ki\u015Fisel not veya foto\u011Fraf eklenmez."),
+        (0, react_1.createElement)("div", { className: "action-row" },
+            (0, react_1.createElement)("button", { type: "button", className: "button button-outline", disabled: !this.props.ids.length, onClick: () => (0, domain_1.downloadText)('Elif_Ilham_Dosyasi.json', (0, selection_backup_1.encodeSelections)(this.props.ids)) },
+                "\u0130lham dosyam\u0131 indir ",
+                (0, react_1.createElement)(ui_1.Icon, { name: "download", size: 17 })),
+            (0, react_1.createElement)("label", { className: "v22-file-label" },
+                "\u0130lham dosyam\u0131 a\u00E7",
+                (0, react_1.createElement)("input", { type: "file", accept: "application/json,.json", "aria-label": "Elif ilham dosyas\u0131n\u0131 a\u00E7", disabled: this.state.busy, onChange: e => { const f = e.currentTarget.files?.[0]; e.currentTarget.value = ''; this.read(f); } }))),
+        this.state.pending && (0, react_1.createElement)("div", { className: "v22-import-choice" },
+            (0, react_1.createElement)("p", null,
+                this.state.pending.length,
+                " model haz\u0131r. Nas\u0131l devam edelim?"),
+            (0, react_1.createElement)("div", { className: "action-row" },
+                (0, react_1.createElement)("button", { type: "button", className: "button", onClick: () => this.apply(true) }, "Mevcut se\u00E7imlerimle birle\u015Ftir"),
+                (0, react_1.createElement)("button", { type: "button", className: "button button-outline", onClick: () => this.apply(false) }, "Mevcut se\u00E7kiyi de\u011Fi\u015Ftir"),
+                (0, react_1.createElement)("button", { type: "button", className: "text-link", onClick: () => this.setState({ pending: null, status: 'İçe aktarma iptal edildi. Seçimleriniz değişmedi.' }) }, "Vazge\u00E7"))),
+        this.state.status && (0, react_1.createElement)("p", { role: "status", className: "v22-transfer-status" }, this.state.status)); }
+}
+exports.InspirationTransfer = InspirationTransfer;
+
+},
 "src/components/NumberEditor":function(module,exports,require){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1344,6 +1465,45 @@ function RoomDiagram({ fit: f }) { const maxW = Math.max(f.roomWidth, f.footprin
     (0, react_1.createElement)("figcaption", null, "Ortalanm\u0131\u015F dikd\u00F6rtgen s\u0131n\u0131r kar\u015F\u0131la\u015Ft\u0131rmas\u0131. Ger\u00E7ek masa konturu veya hareketin tarad\u0131\u011F\u0131 alan de\u011Fildir.")); }
 
 },
+"src/components/TextCopy":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TextCopy = void 0;
+const react_1 = require("react");
+const ui_1 = require("./ui");
+class TextCopy extends react_1.Component {
+    constructor() {
+        super(...arguments);
+        this.state = { manual: false, status: '', busy: false };
+        this.alive = true;
+        this.copy = async () => { const text = this.props.text; this.setState({ busy: true, status: '' }); try {
+            if (!navigator.clipboard?.writeText)
+                throw Error('unavailable');
+            await navigator.clipboard.writeText(text);
+            if (this.alive && text === this.props.text)
+                this.setState({ busy: false, manual: false, status: 'Kopyalandı. Seçtiğiniz görüşmeye kendiniz yapıştırabilirsiniz.' });
+        }
+        catch {
+            if (this.alive && text === this.props.text)
+                this.setState({ busy: false, manual: true, status: 'Panoya erişilemedi. Aşağıdaki metni seçip kendiniz kopyalayın veya özet dosyasını indirin.' }, () => { const input = document.getElementById(this.props.id); input?.focus({ preventScroll: true }); input?.select(); });
+        } };
+    }
+    componentWillUnmount() { this.alive = false; }
+    componentDidUpdate(previous) { if (previous.text !== this.props.text && (this.state.manual || this.state.status || this.state.busy))
+        this.setState({ manual: false, status: '', busy: false }); }
+    render() { return (0, react_1.createElement)("div", { className: "v22-copy" },
+        (0, react_1.createElement)("button", { type: "button", className: "text-link", disabled: this.state.busy, onClick: this.copy },
+            this.props.label || 'Tam özeti kopyala',
+            " ",
+            (0, react_1.createElement)(ui_1.Icon, { name: "copy", size: 17 })),
+        this.state.status && (0, react_1.createElement)("p", { className: "v22-copy-status", role: "status" }, this.state.status),
+        this.state.manual && (0, react_1.createElement)("div", { className: "v22-manual-copy" },
+            (0, react_1.createElement)("label", { htmlFor: this.props.id }, "Elle kopyalanacak metin"),
+            (0, react_1.createElement)("textarea", { id: this.props.id, readOnly: true, rows: 6, value: this.props.text }))); }
+}
+exports.TextCopy = TextCopy;
+
+},
 "src/components/ui":function(module,exports,require){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1364,7 +1524,9 @@ const react_1 = require("react");
 const domain_1 = require("../lib/domain");
 function image(name) { return typeof window !== 'undefined' && window.__ELIF_ASSETS__?.[name] || '/assets/' + name; }
 function Icon({ name = 'arrow', size = 20 }) {
-    const paths = { phone: (0, react_1.createElement)("path", { d: "M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4c-10 5-22-7-16-16Z" }), arrow: (0, react_1.createElement)(react_1.Fragment, null,
+    const paths = { copy: (0, react_1.createElement)(react_1.Fragment, null,
+            (0, react_1.createElement)("rect", { x: "8", y: "8", width: "12", height: "13", rx: "1" }),
+            (0, react_1.createElement)("path", { d: "M15 8V3H3v13h5" })), phone: (0, react_1.createElement)("path", { d: "M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4c-10 5-22-7-16-16Z" }), arrow: (0, react_1.createElement)(react_1.Fragment, null,
             (0, react_1.createElement)("path", { d: "M4 12h16M13 5l7 7-7 7" })), diagonal: (0, react_1.createElement)(react_1.Fragment, null,
             (0, react_1.createElement)("path", { d: "M5 19L19 5M5 5h14v14" })), search: (0, react_1.createElement)(react_1.Fragment, null,
             (0, react_1.createElement)("circle", { cx: "10.5", cy: "10.5", r: "6.5" }),
@@ -1548,7 +1710,7 @@ exports.faqs = [
     ['Nakliye ve montaj fiyata dahil mi?', 'Teklifte üretim, donanım, nakliye, taşıma ve montaj kapsamlarını ayrı sorun. Kat, asansör, erişim ve mevcut mobilyanın sökülmesi gibi ihtiyaçları baştan belirtin. Fotoğraftaki cihazlar, tezgâh, aydınlatma ve dekor kendiliğinden dahil sayılmaz.'],
     ['Kapora, ödeme ve iptal koşulları nasıl belirlenir?', 'Bu önizleme ödeme almaz veya sözleşme kurmaz. Ödeme planı, kapora, değişiklik ve iptal koşullarını üretim onayından önce işletmeden yazılı isteyin. Buradaki açıklamalar özel sözleşme veya yasal haklarınızın yerine geçmez.'],
     ['Garanti, bakım ve teslim sonrası destek nasıl konuşulur?', 'Ürünün gerçek malzemesi, kullanılan donanım ve yüzey işlemi için bakım talimatını ve destek kapsamını yazılı isteyin. Bu sitede doğrulanmamış garanti süresi verilmez. Bir sorun yaşarsanız ürün fotoğrafını ve ilgili proje bilgisini Yunus Usta ile paylaşın.'],
-    ['WhatsApp olmadan iletişim kurabilir miyim?', 'Telefonla arayabilir veya SMS uygulamasını açabilirsiniz. Proje özeti TXT veya ZIP olarak hazırlanır. E-posta taslağı açma seçeneği de vardır, fakat işletme e-posta adresi doğrulanmadığından alıcıyı kendiniz teyit ederek girmeniz gerekir. Hiçbiri otomatik gönderim değildir.'],
+    ['WhatsApp olmadan iletişim kurabilir miyim?', 'Telefonla arayabilir veya SMS uygulamasını açabilirsiniz. Proje özeti TXT veya ZIP olarak hazırlanır. E-posta taslağı atölyenin paylaşılan adresiyle açılır. Adres iletişim sayfasında da görünür. Hiçbiri otomatik gönderim değildir.'],
     ['Taslağıma daha sonra nasıl devam ederim?', 'Varsayılan olarak taslak açık sekmenin belleğindedir. Açıkça seçerseniz metin, model ve ölçüler son kayıttan itibaren yedi gün bu cihazda tutulur. Dönüşte geri yüklemeyi siz seçersiniz. JSON kurtarma dosyası da indirilebilir. Bu iki yöntem fotoğrafları içermez, görselleri yeniden ekleyin.'],
     ['Ne kadar görsel ekleyebilirim?', 'En fazla beş JPG, PNG veya WebP görseli ekleyebilirsiniz. Her kaynak dosya en fazla 10 MB, toplam kaynaklar en fazla 25 MB olmalıdır. Görseller paylaşım için bu cihazda hazırlanır. Özel belgeleri, kişileri ve adres bilgilerini paylaşmadan önce kendiniz kontrol edin.'],
     ['3D masa üretime hazır teknik çizim mi?', 'Hayır. Devir 01 ölçü, yüzey ve yerleşim konuşması için bir konsepttir. GLB ve USDZ dosyaları görsel modeldir. Gerçek motor, dayanım, taşıma kapasitesi ve çarpışmasız hareket atölye ve mekanizma tedarikçisiyle doğrulanmalıdır.'],
@@ -3050,8 +3212,9 @@ const portfolio_1 = require("./portfolio");
 const project_1 = require("./project");
 const site_profile_1 = require("./site-profile");
 const data_1 = require("./data");
-exports.routePaths = ['/hizmet-ve-teklif', '/devir-01', '/projeler', '/kategoriler', '/ilham-modelleri', '/modelini-getir', '/hakkimizda', '/atolye', ...portfolio_1.works.map(w => '/proje/' + w.id), ...portfolio_1.workCategories.map(c => '/kategoriler/' + c.id), '/', '/urunler', '/tasarim-masasi', '/atolyemiz', '/ozel-uretim', '/malzemeler', '/mekan-fikirleri', '/rehber', '/teklif-al', '/sikca-sorulan-sorular', '/iletisim', '/sepet', '/odeme', '/calisma-dosyam', '/gizlilik', '/atolye-demolari', ...data_1.products.map(p => '/urun/' + p.id), ...data_1.ideas.map(p => '/mekan-fikirleri/' + p.id), ...data_1.journal.map(p => '/rehber/' + p.id)];
-function pageTitle(path) { const p = path.split('?')[0]; if (p === '/hizmet-ve-teklif')
+exports.routePaths = ['/kolay-iletisim', '/hizmet-ve-teklif', '/devir-01', '/projeler', '/kategoriler', '/ilham-modelleri', '/modelini-getir', '/hakkimizda', '/atolye', ...portfolio_1.works.map(w => '/proje/' + w.id), ...portfolio_1.workCategories.map(c => '/kategoriler/' + c.id), '/', '/urunler', '/tasarim-masasi', '/atolyemiz', '/ozel-uretim', '/malzemeler', '/mekan-fikirleri', '/rehber', '/teklif-al', '/sikca-sorulan-sorular', '/iletisim', '/sepet', '/odeme', '/calisma-dosyam', '/gizlilik', '/atolye-demolari', ...data_1.products.map(p => '/urun/' + p.id), ...data_1.ideas.map(p => '/mekan-fikirleri/' + p.id), ...data_1.journal.map(p => '/rehber/' + p.id)];
+function pageTitle(path) { const p = path.split('?')[0]; if (p === '/kolay-iletisim')
+    return 'Kolay İletişim | Elif Tasarım'; if (p === '/hizmet-ve-teklif')
     return 'Hizmet ve Teklif Rehberi | Elif Tasarım'; if (p === '/devir-01')
     return 'Devir 01. Çalışma Biçiminize Yer Açın | Elif Tasarım'; if (p === '/arama')
     return 'Arama | Elif Tasarım'; if (p === '/calisma-dosyam')
@@ -3069,6 +3232,7 @@ function pageDescription(path) {
         return 'Elif Tasarım. ' + c.name + '. ' + c.detail;
     const desc = { '/': 'Zamana değer katan mobilyalar. İstanbul’daki aile atölyesinden gerçek çalışmalar, ilham modelleri ve Yunus Usta ile doğrudan iletişim.', '/modelini-getir': 'Pinterest bağlantısı, kendi fotoğrafınız veya fikrinizle başlayın. Ölçü ve kullanımınızı özetleyin, Yunus Usta ile WhatsApp’ta görüşün.', '/teklif-al': 'Kayıpsız ortak proje taslağı. Yaklaşık ölçü, malzeme ve kullanım ayrıntılarını birlikte hazırlayın.', '/arama': 'Elif Tasarım çalışma arşivi, ilham modelleri ve kategorilerinde arayın.', '/iletisim': 'Yunus Usta ile doğrudan iletişim. +90 530 879 71 69. Yeni atölye adresini ziyaret öncesinde teyit edin.', '/gizlilik': 'Elif Tasarım. Yerel proje taslağı, fotoğraf hazırlama, isteğe bağlı saklama, WhatsApp ve Pinterest hakkında açıklama.', '/calisma-dosyam': 'Gerçek çalışma, konsept model ve Pinterest modelini ortak ilham dosyanızda toplayın.' };
     const specific = {
+        '/kolay-iletisim': 'Form kullanmadan Elif Tasarım ile iletişim kurun. Görünür e-posta, telefon, SMS ve ilk mesaj için başlangıç metni.',
         '/hizmet-ve-teklif': 'Özel üretim mobilyada bütçe, malzeme, donanım, keşif, nakliye ve montaj kapsamını birlikte netleştirmek için görüşme rehberi.',
         '/devir-01': 'Devir 01. Yükselen yüzeyi, döner yan tablası ve çekmeceli depolamasıyla özel çalışma masası konsepti. Üç başlangıç düzenini keşfedin ve 3D stüdyoda karşılaştırın.',
         '/projeler': 'Atölyeden paylaşılan mutfak, kahve köşesi, TV ünitesi ve depolama çalışmalarını kaynak türü ve kullanım alanına göre inceleyin.',
@@ -3090,7 +3254,7 @@ function pageDescription(path) {
 exports.v7Routes = [...new Set([...exports.routePaths.filter(p => !['/urunler', '/sepet', '/odeme', '/atolye-demolari', '/atolyemiz', '/mekan-fikirleri'].includes(p) && !p.startsWith('/urun/') && !p.startsWith('/mekan-fikirleri/')), '/arama'])];
 function pageShareImage(path) { const p = path.split('?')[0]; if (p === '/hizmet-ve-teklif')
     return 'r13-full.webp'; const article = data_1.journal.find(j => '/rehber/' + j.id === p); if (article)
-    return article.image === 'joinery.webp' ? 'joinery-v8.webp' : article.image; if (['/iletisim', '/hakkimizda', '/atolye'].includes(p))
+    return article.image === 'joinery.webp' ? 'joinery-v8.webp' : article.image; if (['/iletisim', '/kolay-iletisim', '/hakkimizda', '/atolye'].includes(p))
     return 'work-joinery-full.webp'; if (p === '/malzemeler')
     return 'joinery-v8.webp'; if (p === '/sikca-sorulan-sorular')
     return 'concept-model-full.webp'; if (p === '/devir-01')
@@ -3128,6 +3292,39 @@ function pageSchema(path, site) {
 }
 
 },
+"src/lib/selection-backup":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MAX_SELECTION_FILE_BYTES = void 0;
+exports.encodeSelections = encodeSelections;
+exports.decodeSelections = decodeSelections;
+exports.combineSelections = combineSelections;
+const selections_1 = require("./selections");
+exports.MAX_SELECTION_FILE_BYTES = 65536;
+function validate(ids) {
+    if (!Array.isArray(ids) || ids.length > 24 || ids.some(id => typeof id !== 'string' || !selections_1.selectionEntries.some(entry => entry.id === id)))
+        throw Error('Dosyada geçersiz veya bu katalogda bulunmayan bir model var. İlham dosyanız değiştirilmedi.');
+    return [...new Set(ids)];
+}
+function encodeSelections(ids) { return JSON.stringify({ format: 'elif-inspiration', version: 1, ids: validate(ids) }, null, 2); }
+function decodeSelections(text) {
+    if (new TextEncoder().encode(text).length > exports.MAX_SELECTION_FILE_BYTES)
+        throw Error('Dosya en fazla 64 KB olabilir.');
+    let data;
+    try {
+        data = JSON.parse(text);
+    }
+    catch {
+        throw Error('Geçerli bir Elif ilham dosyası seçin.');
+    }
+    if (!data || data.format !== 'elif-inspiration' || data.version !== 1)
+        throw Error('Bu dosya Elif ilham dosyası biçiminde değil. Proje taslağı ve 3D karşılaştırma dosyaları farklıdır.');
+    return validate(data.ids);
+}
+function combineSelections(current, incoming) { const ids = [...new Set([...validate(current), ...validate(incoming)])]; if (ids.length > 24)
+    throw Error('Birleşen liste 24 modeli aşıyor. Önce mevcut seçkiden birkaç model çıkarın.'); return ids; }
+
+},
 "src/lib/selections":function(module,exports,require){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -3144,6 +3341,7 @@ const domain_1 = require("./domain");
 const target = (id) => '/ilham-modelleri?hedef=' + encodeURIComponent(id);
 exports.selectionEntries = [...portfolio_1.works.map(w => ({ id: 'work:' + w.id, title: w.subtitle, category: w.category, image: w.images[0], kind: 'work', path: '/proje/' + w.id })), ...portfolio_1.concepts.map(c => ({ id: 'concept:' + c.id, title: c.subtitle, category: c.category, image: c.image, kind: 'concept', path: target('concept:' + c.id) })), ...portfolio_1.pinterestReferences.map(p => ({ id: 'pin:' + p.id, title: pinterest_1.pinLookup[p.id]?.label || p.title, category: p.category, kind: 'reference', path: target('pin:' + p.id) }))];
 const pages = [
+    { id: 'page:basic-contact', title: 'Kolay iletişim. Form olmadan başlayın', category: 'ozel-tasarim', kind: 'page', path: '/kolay-iletisim', keywords: 'e-posta mail email telefon SMS WhatsApp iletişim' },
     { id: 'page:service', title: 'Hizmet ve teklif rehberi', category: 'ozel-tasarim', kind: 'page', path: '/hizmet-ve-teklif', keywords: 'bütçe fiyat nakliye montaj keşif garanti kapora ödeme hizmet bölgesi' },
     { id: 'page:faq', title: 'Sıkça sorulan sorular', category: 'ozel-tasarim', kind: 'page', path: '/sikca-sorulan-sorular', keywords: 'soru cevap teslim süre ücret iptal saklama kurtarma taslak SMS e-posta' },
     { id: 'page:devir-product', title: 'Devir 01. Konsept masayı keşfedin', category: 'ozel-tasarim', image: 'devir-standing.webp', kind: 'page', path: '/devir-01', keywords: 'çalışma masası ofis konsept yükselen masa ürün tanıtımı' },
@@ -3167,7 +3365,7 @@ function targetElementId(id) { return 'ilham-' + id.replace(/[^a-zA-Z0-9_-]/g, '
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getSiteProfile = getSiteProfile;
-const base = { email: null, hours: null, address: null, social: [], verifiedAt: '2026-09-27' };
+const base = { email: 'iletisim.eliftasarimatolyesi@gmail.com', hours: null, address: null, social: [], verifiedAt: '2026-09-27' };
 function getSiteProfile() { return { ...base, social: [...base.social], address: base.address ? { ...base.address } : null }; }
 
 },
@@ -3342,6 +3540,55 @@ if (!root)
 (0, client_1.createRoot)(root).render((0, react_1.createElement)(App_1.default, { initialPath: window.__ELIF_INITIAL__ || "/" }));
 
 },
+"src/pages/BasicContact":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BasicContact = BasicContact;
+const react_1 = require("react");
+const ui_1 = require("../components/ui");
+const TextCopy_1 = require("../components/TextCopy");
+const project_1 = require("../lib/project");
+const site_profile_1 = require("../lib/site-profile");
+const contact_options_1 = require("../lib/contact-options");
+const message = 'Merhaba Yunus Usta.\nYaptırmak istediğim ürün,\nYaklaşık ölçü veya kullanım alanı,\nBulunduğum ilçe,\nBenim için önemli ayrıntılar,';
+function BasicContact(a) {
+    const email = (0, site_profile_1.getSiteProfile)().email, mail = (0, contact_options_1.emailDraft)(message);
+    return (0, react_1.createElement)(react_1.Fragment, null,
+        (0, react_1.createElement)("header", { className: "v6-page-head wrap" },
+            (0, react_1.createElement)(ui_1.Eyebrow, null, "EL\u0130F / KOLAY \u0130LET\u0130\u015E\u0130M"),
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)("h1", null,
+                    "Tek bir mesajla",
+                    (0, react_1.createElement)("br", null),
+                    (0, react_1.createElement)("em", null, "ba\u015Flayabiliriz.")),
+                (0, react_1.createElement)("p", null, "Form doldurman\u0131z gerekmiyor. Fikrinizi size uygun ileti\u015Fim yoluyla do\u011Frudan at\u00F6lyeye ula\u015Ft\u0131r\u0131n."))),
+        (0, react_1.createElement)("section", { className: "wrap v22-basic-contact" },
+            (0, react_1.createElement)("div", { className: "v22-contact-card" },
+                (0, react_1.createElement)(ui_1.Eyebrow, null, "YUNUS USTA \u0130LE G\u00D6R\u00DC\u015E\u00DCN"),
+                (0, react_1.createElement)("h2", null, "\u00D6nce ihtiyac\u0131n\u0131z\u0131 konu\u015Fal\u0131m."),
+                (0, react_1.createElement)("p", null, "Foto\u011Fraf, ba\u011Flant\u0131 veya birka\u00E7 c\u00FCmle yeterli. Kesin \u00F6l\u00E7\u00FC ve malzeme se\u00E7imi g\u00F6r\u00FC\u015Fmede netle\u015Fir."),
+                (0, react_1.createElement)("a", { className: "v22-visible-email", href: mail.href }, email),
+                (0, react_1.createElement)("p", null,
+                    (0, react_1.createElement)("a", { href: 'tel:' + project_1.business.telephone }, project_1.business.display)),
+                (0, react_1.createElement)("div", { className: "action-row" },
+                    (0, react_1.createElement)("a", { className: "button", href: mail.href },
+                        "E-posta yaz ",
+                        (0, react_1.createElement)(ui_1.Icon, { name: "diagonal" })),
+                    (0, react_1.createElement)("a", { className: "button button-outline", href: (0, project_1.whatsappUrl)(message), target: "_blank", rel: "noopener noreferrer" },
+                        "WhatsApp\u2019ta yaz ",
+                        (0, react_1.createElement)(ui_1.Icon, { name: "diagonal" })),
+                    (0, react_1.createElement)("a", { className: "button button-outline", href: (0, contact_options_1.smsUrl)() }, "SMS uygulamas\u0131n\u0131 a\u00E7")),
+                (0, react_1.createElement)("p", { className: "field-hint" }, "Bu ba\u011Flant\u0131lar ileti\u015Fim uygulaman\u0131z\u0131 a\u00E7ar. Mesaj\u0131 siz g\u00F6nderirsiniz. E-posta uygulamas\u0131 a\u00E7\u0131lmazsa g\u00F6r\u00FCnen adresi kendi e-posta hesab\u0131n\u0131zda kullanabilirsiniz.")),
+            (0, react_1.createElement)("div", { className: "v22-contact-template" },
+                (0, react_1.createElement)(ui_1.Eyebrow, null, "\u0130LK MESAJ \u0130\u00C7\u0130N KISA B\u0130R YOL"),
+                (0, react_1.createElement)("h2", null, "Fikrinizi b\u00F6yle anlatabilirsiniz."),
+                (0, react_1.createElement)("pre", null, message),
+                (0, react_1.createElement)(TextCopy_1.TextCopy, { id: "v22-basic-copy", label: "Ba\u015Flang\u0131\u00E7 metnini kopyala", text: message }),
+                (0, react_1.createElement)("p", null, "Foto\u011Fraflar\u0131 ve \u00E7izimleri mesaj\u0131n\u0131za ayr\u0131ca ekleyin. Adres ve ziyaret d\u00FCzenini yola \u00E7\u0131kmadan Yunus Usta ile teyit edin."),
+                (0, react_1.createElement)(ui_1.ButtonLink, { to: "/modelini-getir", navigate: a.navigate, secondary: true }, "Ayr\u0131nt\u0131l\u0131 proje \u00F6zeti haz\u0131rlayay\u0131m"))));
+}
+
+},
 "src/pages/BringModel":function(module,exports,require){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -3354,7 +3601,7 @@ const source_context_1 = require("../lib/source-context");
 const model_request_1 = require("../lib/model-request");
 const project_1 = require("../lib/project");
 const DraftRecovery_1 = require("../components/DraftRecovery");
-const ContactAlternatives_1 = require("../components/ContactAlternatives");
+const ContactHandoff_1 = require("../components/ContactHandoff");
 const draft_session_1 = require("../lib/draft-session");
 const upload_1 = require("../lib/upload");
 const selections_1 = require("../lib/selections");
@@ -3487,7 +3734,7 @@ class BringModel extends react_1.Component {
                             (0, react_1.createElement)("span", null, "02"),
                             (0, react_1.createElement)("div", null,
                                 (0, react_1.createElement)("strong", null, "Tercih etti\u011Finiz kanaldan payla\u015F\u0131n."),
-                                (0, react_1.createElement)("small", null, "Telefon, WhatsApp veya haz\u0131rlad\u0131\u011F\u0131n\u0131z \u00F6zetle ba\u015Flay\u0131n."))),
+                                (0, react_1.createElement)("small", null, "Telefon, e-posta veya WhatsApp ile ba\u015Flay\u0131n."))),
                         (0, react_1.createElement)("li", null,
                             (0, react_1.createElement)("span", null, "03"),
                             (0, react_1.createElement)("div", null,
@@ -3502,6 +3749,10 @@ class BringModel extends react_1.Component {
                         (0, react_1.createElement)("summary", null, "Tasla\u011F\u0131m nerede saklan\u0131yor?"),
                         (0, react_1.createElement)("p", null, "Varsay\u0131lan olarak a\u00E7\u0131k sekmede korunur. Sa\u011Fdaki kurtarma alan\u0131ndan metin ve \u00F6l\u00E7\u00FCleri a\u00E7\u0131k izninizle bu cihazda yedi g\u00FCn saklayabilir veya bir taslak dosyas\u0131na indirebilirsiniz. Foto\u011Fraflar kurtarma kayd\u0131na dahil de\u011Fildir. Otomatik sunucu g\u00F6nderimi yap\u0131lmaz."))),
                 (0, react_1.createElement)("div", { className: "model-form" },
+                    (0, react_1.createElement)("div", { className: "v22-form-shortcut" },
+                        (0, react_1.createElement)(ui_1.Link, { to: "/kolay-iletisim", navigate: a.navigate },
+                            "Form yerine do\u011Frudan ileti\u015Fim kurun ",
+                            (0, react_1.createElement)(ui_1.Icon, { size: 16 }))),
                     (0, react_1.createElement)(DraftRecovery_1.DraftRecovery, { onRestore: () => this.setState({ v: project_1.projectStore.get(), files: [], step: 0, error: '', errorField: '', detailsOpen: !project_1.projectStore.get().unknown }) }),
                     (0, react_1.createElement)("nav", { className: "model-stepper", "aria-label": "Model payla\u015F\u0131m ad\u0131mlar\u0131" }, ['Modeliniz', 'Ayrıntılar', 'Görüşelim'].map((title, i) => (0, react_1.createElement)("button", { key: title, type: "button", "aria-current": step === i ? 'step' : undefined, disabled: i > step, onClick: () => this.go(i) },
                         (0, react_1.createElement)("span", null, String(i + 1).padStart(2, '0')),
@@ -3625,26 +3876,7 @@ class BringModel extends react_1.Component {
                                 (0, react_1.createElement)("details", { className: "v11-message-review", open: true },
                                     (0, react_1.createElement)("summary", null, "G\u00F6nderilecek proje \u00F6zetinin tamam\u0131"),
                                     (0, react_1.createElement)("pre", { id: "project-message-preview" }, this.text())),
-                                (0, react_1.createElement)("div", { className: "v7-handoff" },
-                                    (0, react_1.createElement)(ui_1.Eyebrow, null, "DO\u011ERUDAN YUNUS USTA"),
-                                    (0, react_1.createElement)("h3", null, "Konu\u015Fman\u0131n ilk ad\u0131m\u0131."),
-                                    (0, react_1.createElement)("p", null, "WhatsApp harici bir servistir. T\u0131klad\u0131\u011F\u0131n\u0131zda \u00F6nizlenen mesaj WhatsApp'a aktar\u0131l\u0131r. G\u00F6nder d\u00FC\u011Fmesine orada siz basars\u0131n\u0131z. Foto\u011Fraflar metin ba\u011Flant\u0131s\u0131na eklenmez."),
-                                    transfer.needsAttachment && (0, react_1.createElement)("div", { className: "v11-long-message", role: "note" },
-                                        (0, react_1.createElement)("strong", null, "\u00D6zetiniz tek ba\u011Flant\u0131 i\u00E7in uzun."),
-                                        (0, react_1.createElement)("p", null, "WhatsApp a\u015Fa\u011F\u0131daki k\u0131sa ba\u015Flang\u0131\u00E7 mesaj\u0131yla a\u00E7\u0131l\u0131r. Tam \u00F6zeti kopyalay\u0131p g\u00F6r\u00FC\u015Fmeye yap\u0131\u015Ft\u0131r\u0131n veya proje dosyas\u0131n\u0131 belge olarak ekleyin. Hi\u00E7bir ayr\u0131nt\u0131n\u0131z sessizce kesilmiyor."),
-                                        (0, react_1.createElement)("pre", { id: "whatsapp-actual-message" }, transfer.sentText),
-                                        (0, react_1.createElement)("button", { type: "button", className: "button button-outline", onClick: async () => { try {
-                                                await navigator.clipboard.writeText(this.text());
-                                                this.setState({ message: 'Tam özet kopyalandı. WhatsApp görüşmesine kendiniz yapıştırın.' });
-                                            }
-                                            catch {
-                                                this.setState({ message: 'Panoya erişilemiyor. Yalnız özeti indir seçeneğini kullanın.' });
-                                            } } }, "Tam \u00F6zeti kopyala")),
-                                    (0, react_1.createElement)("a", { className: "button", "data-whatsapp-message": transfer.needsAttachment ? 'short-with-attachment' : 'complete', href: transfer.url, target: "_blank", rel: "noopener noreferrer" },
-                                        "Yunus Usta\u2019ya WhatsApp\u2019ta yaz ",
-                                        (0, react_1.createElement)(ui_1.Icon, { name: "diagonal" })),
-                                    (0, react_1.createElement)("p", { className: "field-hint" }, "Bu site mesaj teslimini veya okundu bilgisini do\u011Frulamaz. Hen\u00FCz sipari\u015F olu\u015Fmad\u0131.")),
-                                (0, react_1.createElement)(ContactAlternatives_1.ContactAlternatives, { text: this.text() }),
+                                (0, react_1.createElement)(ContactHandoff_1.ContactHandoff, { text: this.text(), photos: files.length }),
                                 (0, react_1.createElement)("div", { className: "model-export" },
                                     (0, react_1.createElement)("button", { type: "button", className: "button button-outline", disabled: this.state.sharing, onClick: this.exportBundle },
                                         "\u00D6zet ve g\u00F6rselleri indir ",
@@ -4672,6 +4904,8 @@ const selections_1 = require("../lib/selections");
 const project_1 = require("../lib/project");
 const contact_options_1 = require("../lib/contact-options");
 const site_profile_1 = require("../lib/site-profile");
+const InspirationTransfer_1 = require("../components/InspirationTransfer");
+const TextCopy_1 = require("../components/TextCopy");
 const domain_1 = require("../lib/domain");
 exports.categorySupport = {
     'kahve-kosesi': { asset: 'r07', headline: 'Ölçünüze göre bir kahve köşesi.', intro: 'Cihazlarınızın yerleşimini, servis yüzeyini ve depolamayı birlikte düşünelim. Başlangıç noktamız alanınız ve gün içindeki kullanımınız.', questions: ['Hangi kahve makinesini kullanıyorsunuz?', 'Fincan ve ekipman için ne kadar saklama alanı gerekiyor?', 'Priz, su ve aydınlatma ihtiyacınız nedir?'] },
@@ -4768,6 +5002,7 @@ function SavedBoard(a) { const entries = (0, selections_1.selectedEntries)(a.fav
                 (0, react_1.createElement)("em", null, "Bir arada.")),
             (0, react_1.createElement)("p", null, "Ger\u00E7ek bir \u00E7al\u0131\u015Fma, bir konsept ve bir Pinterest modeli. Se\u00E7tiklerinizi tek bir g\u00F6r\u00FC\u015Fmede de\u011Ferlendirin."))),
     (0, react_1.createElement)("section", { className: "wrap v7-board" },
+        (0, react_1.createElement)(InspirationTransfer_1.InspirationTransfer, { ids: a.favorites, replace: a.replaceFavorites }),
         (0, react_1.createElement)("label", { className: "v7-check" },
             (0, react_1.createElement)("input", { type: "checkbox", checked: a.remember, onChange: e => a.setRemember(e.currentTarget.checked) }),
             "Se\u00E7ti\u011Fim herkese a\u00E7\u0131k model kimliklerini bu cihazda 30 g\u00FCn sakla."),
@@ -4817,7 +5052,12 @@ function ContactV7(a) { const profile = (0, site_profile_1.getSiteProfile)(); re
                 (0, react_1.createElement)("a", { className: "button button-outline", href: (0, contact_options_1.smsUrl)() },
                     "SMS uygulamas\u0131n\u0131 a\u00E7 ",
                     (0, react_1.createElement)(ui_1.Icon, { name: "diagonal" }))),
-            (0, react_1.createElement)("p", { className: "field-hint" }, "WhatsApp harici uygulamada a\u00E7\u0131l\u0131r. Mesaj\u0131 orada g\u00F6nderirsiniz. T\u0131klama, yan\u0131t veya mesaj teslimi garantisi de\u011Fildir.")),
+            (0, react_1.createElement)("div", { className: "v22-contact-email" },
+                (0, react_1.createElement)(ui_1.Eyebrow, null, "E-POSTA \u0130LE DE ULA\u015EAB\u0130L\u0130RS\u0130N\u0130Z"),
+                (0, react_1.createElement)("a", { className: "v22-visible-email", href: 'mailto:' + profile.email }, profile.email),
+                (0, react_1.createElement)(TextCopy_1.TextCopy, { id: "v22-contact-email-copy", text: profile.email || '', label: "E-posta adresini kopyala" }),
+                (0, react_1.createElement)("p", { className: "field-hint" }, "Adresimizi kendi e-posta uygulaman\u0131zda da kullanabilirsiniz. Foto\u011Fraf ve proje \u00F6zetinizi mesaj\u0131n\u0131za ayr\u0131ca ekleyin.")),
+            (0, react_1.createElement)("p", { className: "field-hint" }, "Telefon, SMS, WhatsApp ve e-posta ba\u011Flant\u0131lar\u0131 ilgili uygulamay\u0131 a\u00E7ar. Mesaj\u0131n\u0131z\u0131 uygulamada siz g\u00F6nderirsiniz.")),
         (0, react_1.createElement)("div", { className: "v7-contact-side" },
             (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: "work-joinery", alt: "Ah\u015Fap uygulama ar\u015Fivinden birle\u015Fim ayr\u0131nt\u0131s\u0131", sizes: "(max-width: 800px) 90vw, 40vw" }),
             (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: "process" }),
@@ -4838,6 +5078,9 @@ function ContactV7(a) { const profile = (0, site_profile_1.getSiteProfile)(); re
             (0, react_1.createElement)("p", null, "Telefon ve SMS ayn\u0131 do\u011Frulanm\u0131\u015F i\u015F numaras\u0131n\u0131 a\u00E7ar. \u00D6zetinizi indirip ba\u015Fka bir kanalda kendiniz payla\u015Fabilirsiniz."),
             profile.email && (0, react_1.createElement)("a", { href: 'mailto:' + profile.email }, profile.email))),
     (0, react_1.createElement)("section", { className: "wrap v7-contact-next" },
+        (0, react_1.createElement)(ui_1.Link, { to: "/kolay-iletisim", navigate: a.navigate, className: "text-link" },
+            "Sade ileti\u015Fim sayfas\u0131n\u0131 a\u00E7 ",
+            (0, react_1.createElement)(ui_1.Icon, null)),
         (0, react_1.createElement)("h2", null, "G\u00F6r\u00FC\u015Fmeye bir dosyayla gelin."),
         (0, react_1.createElement)("p", null, "Foto\u011Fraf\u0131n\u0131z\u0131, Pinterest ba\u011Flant\u0131n\u0131z\u0131 ve yakla\u015F\u0131k \u00F6l\u00E7\u00FCn\u00FCz\u00FC ayn\u0131 proje \u00F6zetinde haz\u0131rlayabilirsiniz. Foto\u011Fraf y\u00FCklemek zorunlu de\u011Fildir."),
         (0, react_1.createElement)(ui_1.ButtonLink, { to: "/modelini-getir", navigate: a.navigate }, "Proje fikrimi haz\u0131rlayay\u0131m"),
