@@ -1,0 +1,40 @@
+name: Elif V21 source review recovery
+on:
+  push:
+    branches: [elif-v21-rapor-20260927]
+    paths: ['.github/workflows/elif-v21-source-review.yml']
+permissions:
+  contents: read
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reconstruct exact reviewed sources without publication
+        run: python elif-v21-tools/apply.py
+      - name: Prepare dependencies and runtime for offline inspection
+        working-directory: elif-tasarim/source-v12
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build
+      - name: Package source and runtime without fonts
+        shell: python
+        run: |
+          from pathlib import Path
+          import zipfile
+          root=Path('elif-tasarim/source-v12');out=Path('v21-review');out.mkdir()
+          with zipfile.ZipFile(out/'v21-review-source.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in root.rglob('*'):
+                  if p.is_file() and p.suffix.lower() not in {'.ttf','.woff','.woff2','.otf','.eot'}:
+                      z.write(p,p.relative_to(root))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elif-v21-recovered-source
+          path: v21-review
+          retention-days: 14
