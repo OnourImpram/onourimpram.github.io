@@ -4506,3 +4506,34 @@ html{scroll-padding-top:125px}body{background:var(--v9-cream)}
 /* V20 completion. Long Turkish display words wrap at enlarged text sizes.
    No content clipping or document-overflow suppression is used. */
 .v13-devir-guide h2,.v13-devir-guide h3{overflow-wrap:anywhere}
+
+/* V21. The approved warm editorial visual language, extended for recovery and trust. */
+.v21-recovery{border:1px solid #c5b49d;background:#f7f2e9;margin:0 0 24px;color:#443629}
+.v21-recovery>summary{cursor:pointer;min-height:60px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;font-weight:600}
+.v21-recovery>summary>span{display:flex;align-items:center;gap:9px}.v21-recovery>summary small{font-size:11px;font-weight:400;color:#665540;line-height:1.5}
+.v21-recovery-body{border-top:1px solid #d1c4b1;padding:18px 22px}.v21-recovery-body p{font-size:13px;line-height:1.7;margin:0 0 14px}.v21-save-consent{display:flex;align-items:flex-start;gap:12px;font-size:14px;line-height:1.6;cursor:pointer;margin:22px 0}
+.v21-save-consent input{width:21px;height:21px;flex-shrink:0;accent-color:#654a32;margin-top:2px}.v21-save-consent small{display:block;font-size:12px;line-height:1.7;margin-top:6px;color:#63533e}
+.v21-recovery-actions{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.v21-import{position:relative;overflow:hidden;cursor:pointer}.v21-import input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.v21-import:focus-within{outline:3px solid #5e4931;outline-offset:4px}
+.v21-restore-notice{background:#eee7d9;border-left:3px solid #67735f;padding:18px;margin:12px 0}.v21-restore-notice strong{font:22px/1.25 Georgia,serif}.v21-restore-notice .text-link{margin:14px 0 0;display:block}.v21-recovery-status{background:#e8eee2;color:#31402d;border-left:3px solid #64755b;padding:12px 16px;font-size:13px;overflow-wrap:anywhere}
+.v21-contact-alternatives{padding:25px 0;border-top:1px solid #cbbb9f;margin-top:28px}.v21-contact-alternatives h3{font:28px/1.25 Georgia,serif;font-weight:400;margin:8px 0 12px}.v21-contact-alternatives p{font-size:14px;line-height:1.75}.v21-contact-alternatives .action-row{flex-wrap:wrap;gap:10px}.v21-contact-alternatives .button{padding:13px 16px;font-size:12px;min-height:44px}.v21-email-note{border-left:3px solid #856844;padding:12px 16px;background:#f2ebdf}
+.v21-contact-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin:50px auto 72px;border-top:1px solid #cbbb9f;padding-top:32px}.v21-contact-facts h3{font:25px/1.22 Georgia,serif;margin:13px 0;font-weight:400}.v21-contact-facts p{font-size:14px;line-height:1.8;color:#64533f}.v21-help-links{display:flex;gap:22px;flex-wrap:wrap;align-items:center;margin-top:24px;margin-bottom:44px}.v21-faq-intro{margin:5px 0 28px}
+.v21-guide-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(30px,6vw,90px);align-items:center;margin-bottom:84px}.v21-guide-hero>div:first-child{position:relative}.v21-guide-hero img{width:100%;aspect-ratio:4/3;object-fit:cover}.v21-guide-hero h2,.v21-guide-section h2,.v21-guide-terms h2{font:clamp(32px,4vw,52px)/1.1 Georgia,serif;font-weight:400;margin:15px 0 24px;overflow-wrap:anywhere}.v21-guide-hero p{font-size:15px;line-height:1.85;color:#635440}.v21-guide-hero .button{margin-top:16px}.v21-scope-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:38px 44px;margin:40px 0 75px}.v21-scope-grid article{border-top:1px solid #c8b99f;padding-top:20px}.v21-scope-grid article>span{font:italic 24px Georgia,serif;color:#80684c}.v21-scope-grid h3{font:26px/1.2 Georgia,serif;font-weight:400;margin:15px 0}.v21-scope-grid p{font-size:14px;line-height:1.85;color:#61523d}
+.v21-guide-terms{display:grid;grid-template-columns:1fr 1fr;gap:64px;background:#ece5d8;padding:45px;margin-bottom:60px}.v21-guide-terms p{font-size:14px;line-height:1.8}.v21-guide-terms h3{font:27px/1.2 Georgia,serif;font-weight:400;margin:10px 0 18px}.v21-guide-terms ul{padding-left:20px;font-size:14px;line-height:1.9}.v21-proof{display:flex;gap:24px;align-items:center;border-top:1px solid #cdbda5;padding-top:32px;padding-bottom:32px}.v21-proof>svg{flex-shrink:0}.v21-proof>div{flex:1;min-width:0}.v21-proof h2{font:27px/1.25 Georgia,serif;font-weight:400;margin:0 0 12px}.v21-proof p{font-size:14px;line-height:1.75;margin:0}.v21-proof .button{flex-shrink:0}
+[class*="v21-"] a:focus-visible,[class*="v21-"] button:focus-visible,[class*="v21-"] summary:focus-visible{outline:3px solid #4e6544;outline-offset:4px}
+.v21-contact-alternatives,.v21-recovery,.v21-guide-terms{overflow-wrap:anywhere}
+@media(max-width:900px){.v21-scope-grid{grid-template-columns:1fr 1fr}.v21-guide-hero{gap:32px}.v21-contact-facts{gap:22px}.v21-proof{flex-wrap:wrap}.v21-proof .button{margin-left:50px}}
+@media(max-width:700px){.v21-guide-hero,.v21-guide-terms,.v21-contact-facts{grid-template-columns:1fr}.v21-guide-hero{margin-bottom:50px}.v21-guide-terms{gap:26px;padding:26px}.v21-contact-facts{gap:24px}.v21-recovery>summary{display:block;padding:15px}.v21-recovery>summary small{display:block;margin:9px 0 0 27px}.v21-recovery-body{padding:16px}.v21-recovery-actions{display:grid;grid-template-columns:1fr}.v21-contact-alternatives .action-row{display:grid;grid-template-columns:1fr}.v21-contact-alternatives .button{justify-content:center}.v21-recovery-actions .button{justify-content:center}.v21-guide-hero .button{width:100%}}
+@media(max-width:450px){.v21-scope-grid{grid-template-columns:1fr;gap:24px}.v21-help-links{display:grid;grid-template-columns:1fr;gap:15px}.v21-proof>svg{display:none}.v21-proof .button{margin-left:0;width:100%}.v21-proof{display:block}.v21-proof p{margin-bottom:20px}.v21-guide-terms{padding:22px 18px}}
+/* The legacy form-wide 100% input rule must not stretch a consent checkbox. */
+.model-form .v21-save-consent input[type=checkbox]{width:21px;min-width:21px;height:21px;min-height:21px;flex:0 0 21px;padding:0;margin:3px 0 0}
+.model-form .v21-save-consent>span{flex:1 1 auto;min-width:0}
+
+/* Measured Lighthouse text contrast. Preserve layout, photography and the approved palette. */
+.eyebrow{color:#6b543c}
+.work-caption p{color:#6e5c48}
+.v6-process .v6-heading>p{color:#6b5943}
+.process-number{color:#806143}
+.v11-studio-invitation>div>small,.v6-final-cta p,.v8-primary-action>span,.v8-detail-grid article>span{color:#6b5943}
+.v6-final-cta .text-link{color:#543f2c}
+.model-stepper button>span,.model-dropzone span,.or-divider>span{color:#6b543c}
+.model-form .field-hint{color:#6b543c}
