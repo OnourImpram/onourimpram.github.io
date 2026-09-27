@@ -18,3 +18,13 @@
 /* The legacy form-wide 100% input rule must not stretch a consent checkbox. */
 .model-form .v21-save-consent input[type=checkbox]{width:21px;min-width:21px;height:21px;min-height:21px;flex:0 0 21px;padding:0;margin:3px 0 0}
 .model-form .v21-save-consent>span{flex:1 1 auto;min-width:0}
+
+/* Measured Lighthouse text contrast. Preserve layout, photography and the approved palette. */
+.eyebrow{color:#6b543c}
+.work-caption p{color:#6e5c48}
+.v6-process .v6-heading>p{color:#6b5943}
+.process-number{color:#806143}
+.v11-studio-invitation>div>small,.v6-final-cta p,.v8-primary-action>span,.v8-detail-grid article>span{color:#6b5943}
+.v6-final-cta .text-link{color:#543f2c}
+.model-stepper button>span,.model-dropzone span,.or-divider>span{color:#6b543c}
+.model-form .field-hint{color:#6b543c}
