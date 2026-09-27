@@ -1,0 +1,65 @@
+name: Elif V21 report completion
+on:
+  push:
+    branches: [elif-v21-rapor-20260927]
+    paths: ['.github/workflows/elif-v21-complete.yml']
+permissions:
+  contents: write
+jobs:
+  finish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Load verified plan tooling
+        run: python -m pip install PyYAML==6.0.2
+      - name: Recover, test, diagnose and stage only the verified report release
+        shell: python
+        run: |
+          from pathlib import Path
+          import yaml,subprocess,os
+          root=Path.cwd()
+          spec=yaml.safe_load((root/'.github/workflows/elif-v21-report.yml').read_text())
+          names=[
+            'Recover reviewed source only after checking every old and new hash',
+            'Build and run complete unit, privacy and publication contracts',
+            'Install isolated browser tools',
+            'Serve generated V21 over real HTTP',
+            'Consent, recovery, private file import, alternative contact and report pages',
+            'Preserve actual V20 exports and customer decisions',
+            'Optional Lighthouse laboratory diagnostics, not real-device certification',
+            'Preserve personal homepage and stage verified Elif publication only',
+            'Commit exact tested release to isolated staging branch',
+            'Package editable source, publication and portable preview without font files'
+          ]
+          for name in names:
+              found=[s for s in spec['jobs']['review-and-stage']['steps'] if s.get('name')==name]
+              assert len(found)==1,name
+              step=found[0];script=step['run']
+              if name.startswith('Optional Lighthouse'):
+                  script=script.replace('--no-fund lighthouse\n','--no-fund lighthouse@13.4.1\n')
+              print('::group::'+name,flush=True)
+              env={**os.environ,**step.get('env',{})};cwd=root/step.get('working-directory','.')
+              shell=step.get('shell','bash');assert shell in ['python','bash']
+              command=['python','-c',script] if shell=='python' else ['bash','-eo','pipefail','-c',script]
+              result=subprocess.run(command,cwd=cwd,env=env)
+              if result.returncode and not step.get('continue-on-error',False):raise SystemExit(result.returncode)
+              if result.returncode:print('Optional diagnostic did not complete. No score claimed.',flush=True)
+              if name=='Recover reviewed source only after checking every old and new hash':
+                  subprocess.run(['python','elif-v21-tools/final-review.py'],cwd=root,check=True)
+              print('::endgroup::',flush=True)
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v21-completed-evidence
+          path: elif-tasarim/source-v12/evidence/v21-stage
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-v21-completed-delivery
+          path: v21-delivery
+          retention-days: 14
