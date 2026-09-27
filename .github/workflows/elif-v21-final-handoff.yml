@@ -1,0 +1,61 @@
+name: Elif V21 final handoff verification
+on:
+  push:
+    branches: [elif-v21-rapor-20260927]
+    paths: ['.github/workflows/elif-v21-final-handoff.yml']
+permissions:
+  contents: read
+jobs:
+  verify-final:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 43f809698693907856c51876155cf717c4faccec
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Rebuild and retest the exact published source
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/v21-final
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build | tee evidence/v21-final/build.txt
+          cmp dist/release-v21.json ../release-v21.json
+          npm test | tee evidence/v21-final/unit.txt
+          npm run typecheck:core | tee evidence/v21-final/types.txt
+          npm run verify:dist | tee evidence/v21-final/integrity.txt
+          npm run launch:check | tee evidence/v21-final/launch.txt
+      - name: Verify live bytes and direct page addresses
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+          EVIDENCE_DIR: evidence/v21-final/public
+        run: python tests/v11/public_verify.py
+      - name: Install isolated browser tooling
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Exercise published consent, restoration, contact and real 3D flows
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/v21-final/report xvfb-run -a python tests/v21/acceptance.py | tee evidence/v21-final/report.txt
+          EVIDENCE_DIR=evidence/v21-final/exports xvfb-run -a python tests/v20/acceptance.py | tee evidence/v21-final/exports.txt
+          EVIDENCE_DIR=evidence/v21-final/decisions xvfb-run -a python tests/v11/acceptance.py | tee evidence/v21-final/decisions.txt
+          EVIDENCE_DIR=evidence/v21-final/orbit xvfb-run -a python tests/v12/acceptance.py | tee evidence/v21-final/orbit.txt
+          EVIDENCE_DIR=evidence/v21-final/matrix xvfb-run -a python tests/v11/matrix.py | tee evidence/v21-final/matrix.txt
+      - name: Confirm personal homepage unchanged
+        run: test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v21-final-handoff-evidence
+          path: elif-tasarim/source-v12/evidence/v21-final
+          retention-days: 14
+          if-no-files-found: error
