@@ -39,7 +39,12 @@ jobs:
           new="{getSiteProfile().email?'Alıcı alanı, '+getSiteProfile().email+' adresiyle hazırlanır.':'İşletme e-postası henüz eklenmemişse alıcıyı kendiniz teyit ederek girmelisiniz.'}"
           text=p.read_text();assert text.count(old)==1;p.write_text(text.replace(old,new))
           assert hashlib.sha256(p.read_bytes()).hexdigest()=='5aa1c564240e8abca8af5a9cece78eb190f6eced6e2b705c803c8db865d78f96'
-          print('Reproduced obsolete privacy text; corrected only the source disclosure.')
+          browser_test=Path('tests/v22/acceptance.py')
+          old_wait="document.querySelector('.v22-transfer-status').textContent.includes('biçiminde değil')"
+          new_wait="document.querySelector('.v22-transfer-status')?.textContent.includes('biçiminde değil')"
+          text=browser_test.read_text();assert text.count(old_wait)==1
+          browser_test.write_text(text.replace(old_wait,new_wait))
+          print('Reproduced obsolete privacy text; corrected its source. Async import feedback wait now tolerates the initial missing node, with the same expected text and timeout.')
       - name: Clean build, all tests, core types and exact manifest
         working-directory: elif-tasarim/source-v12
         run: |
