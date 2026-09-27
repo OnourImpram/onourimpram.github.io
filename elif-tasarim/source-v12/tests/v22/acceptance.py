@@ -79,7 +79,7 @@ with sync_playwright() as p:
   page.get_by_role('button',name='Mevcut seçimlerimle birleştir',exact=True).click();page.wait_for_function("()=>!document.querySelector('.v22-import-choice')");assert page.locator('.v7-result-grid article').count()==2
   page.get_by_label('Elif ilham dosyasını aç',exact=True).set_input_files(file);page.wait_for_selector('.v22-import-choice');page.once('dialog',lambda d:d.accept());page.get_by_role('button',name='Mevcut seçkiyi değiştir',exact=True).click();page.wait_for_function("()=>document.querySelectorAll('.v7-result-grid article').length===1")
   page.get_by_label('Elif ilham dosyasını aç',exact=True).set_input_files({'name':'invalid.json','mimeType':'application/json','buffer':b'{"format":"wrong"}'})
-  page.wait_for_function("()=>document.querySelector('.v22-transfer-status').textContent.includes('biçiminde değil')");assert page.locator('.v7-result-grid article').count()==1
+  page.wait_for_function("()=>document.querySelector('.v22-transfer-status')?.textContent.includes('biçiminde değil')");assert page.locator('.v7-result-grid article').count()==1
   capture('inspiration-mobile.png');rec('09. Public inspiration export, merge, explicit replacement, cancel and invalid import preserve correct choices')
   for route in ['iletisim','kolay-iletisim','calisma-dosyam']:
    visit(route);page.set_viewport_size({'width':390,'height':844})
