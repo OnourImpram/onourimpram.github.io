@@ -1,8 +1,8 @@
-# Elif Tasarım V21 çalışma sınırları
+# Elif Tasarım V22 çalışma sınırları
 
-Kullanıcının onayladığı amblemi, Zamana değer katan mobilyalar başlığını, gerçek proje ile konsept ayrımını ve +90 530 879 71 69 iletişimini koru.
+Kullanıcının onayladığı amblemi, Zamana değer katan mobilyalar başlığını, gerçek proje ile konsept ayrımını ve Yunus Usta iletişimini koru. Telefon +90 530 879 71 69. Kullanıcının sağladığı işletme e-postası iletisim.eliftasarimatolyesi@gmail.com. Posta kutusuna erişim veya teslim testi yapılmış sayılmaz.
 
-Tek etkin build `npm run build` ile `tools/build-v21.cjs` üzerinden üretilir. Eski yayın HTML'ine kod ekleme. `dist` test edilmeden yayınlama. Three.js yerel vendored modüllerini ve lisansını koru.
+Tek etkin build `npm run build` ile `tools/build-v22.cjs` üzerinden üretilir. Paket 0.22.0, kimlik v22-contact-complete, manifest release-v22.json. Tarihsel source-v12 klasör adı etkin sürüm değildir. Eski yayın HTML'ine kod ekleme. `dist` test edilmeden yayınlama. Three.js yerel modüllerini ve lisansını koru.
 
 GitHub yayını yalnız `elif-tasarim/` alt dizinini değiştirebilir. Kök index dosyasına dokunma. Uzak main tabanı değişmişse eski paketi körlemesine ezme. Force push yok.
 
@@ -12,4 +12,6 @@ GitHub yayını yalnız `elif-tasarim/` alt dizinini değiştirebilir. Kök inde
 
 Bu paketin hazır olması canlı yayının güncellendiği anlamına gelmez. Yayın sonrası gerçek URL ve manifest doğrulaması yap, yalnız gerçekten gözlenen sonucu raporla.
 
-Özel taslak kurtarma yalnız açık kullanıcı izniyle cihazda yedi günlük kayıttır. Fotoğraf dahil değildir. JSON kurtarma dosyası kişisel not içerir, herkese açık model dosyası gibi dağıtma. Raporlara dayalı işletme bilgilerini uydurma.
+Özel taslak kurtarma yalnız açık kullanıcı izniyle cihazda yedi günlük kayıttır. Fotoğraf dahil değildir. JSON kurtarma dosyası kişisel not içerir, herkese açık model dosyası gibi dağıtma. İlham dosyası yalnız katalog kimlikleri taşır. Devir karşılaştırma dosyası masa konfigürasyonudur. Üç dosyanın veri kapsamı birbirine karıştırılmaz.
+
+Tam özet kopyalama, pano reddi, uzun e-posta metni, geri dönüş ve JavaScript gerektirmeyen kolay iletişim yolu için tests/v22/acceptance.py çalıştırılır. İletişim bağlantısını açmayı, atölyeye teslim veya sipariş oluşturma olarak gösterme. Gerçek mesaj veya arama için ayrıca açık kullanıcı talebi gerekir.
