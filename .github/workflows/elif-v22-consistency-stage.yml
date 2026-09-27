@@ -1,0 +1,110 @@
+name: Elif V22 privacy consistency final gate
+on:
+  push:
+    branches: [elif-v22-final-consistency-20260927]
+    paths: ['.github/workflows/elif-v22-consistency-stage.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reproduce the old disclosure on the exact base
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/v22-consistency
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build
+      - name: Add a failing behavior contract then fix its source
+        working-directory: elif-tasarim/source-v12
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib,subprocess
+          p=Path('src/pages/V7Pages.tsx')
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=='eabde188ce3a35b2bd0e994cfd0056c43bad0117197fd7eefb3795c5ce2f06a0'
+          test=Path('tests/v22/privacy-contact.cjs')
+          assert not test.exists()
+          test.write_text("const{test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs');\ntest('V22 privacy disclosure describes the configured email recipient, not the obsolete empty-recipient flow',()=>{\n const html=fs.readFileSync('dist/gizlilik/index.html','utf8');\n assert.ok(!html.includes('İşletme e-postası doğrulanmadığı için alıcı boş bırakılır'),'Privacy page incorrectly says the recipient is empty');\n assert.ok(html.includes('Alıcı alanı, iletisim.eliftasarimatolyesi@gmail.com adresiyle hazırlanır.'),'Privacy page must accurately name the configured recipient');\n assert.ok(html.includes('Bu site e-posta veya SMS teslimini doğrulamaz.'),'Delivery boundary must remain explicit');\n});\n")
+          before=subprocess.run(['node','--test',str(test)],capture_output=True,text=True)
+          Path('evidence/v22-consistency/red.txt').write_text(before.stdout+before.stderr)
+          assert before.returncode!=0 and 'Privacy page incorrectly says the recipient is empty' in before.stdout
+          old='İşletme e-postası doğrulanmadığı için alıcı boş bırakılır, alıcıyı kendiniz teyit edip girmelisiniz.'
+          new="{getSiteProfile().email?'Alıcı alanı, '+getSiteProfile().email+' adresiyle hazırlanır.':'İşletme e-postası henüz eklenmemişse alıcıyı kendiniz teyit ederek girmelisiniz.'}"
+          text=p.read_text();assert text.count(old)==1;p.write_text(text.replace(old,new))
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=='5aa1c564240e8abca8af5a9cece78eb190f6eced6e2b705c803c8db865d78f96'
+          print('Reproduced obsolete privacy text; corrected only the source disclosure.')
+      - name: Clean build, all tests, core types and exact manifest
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          npm run build | tee evidence/v22-consistency/build.txt
+          npm test | tee evidence/v22-consistency/unit.txt
+          npm run typecheck:core | tee evidence/v22-consistency/types.txt
+          npm run verify:dist | tee evidence/v22-consistency/integrity.txt
+      - name: Install browser and test customer handoff on real HTTP
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Exercise email and client-side privacy consistency
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+          EVIDENCE_DIR: evidence/v22-consistency/customer
+        run: |
+          set -euo pipefail
+          node tools/serve-static.cjs dist 8000 > /tmp/elif-v22-consistency.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:8000/elif-tasarim/release-v22.json >/dev/null && break; sleep 1; done
+          xvfb-run -a python tests/v22/acceptance.py | tee evidence/v22-consistency/customer.txt
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          from pathlib import Path
+          import json
+          with sync_playwright() as p:
+              b=p.chromium.launch(headless=True,args=['--no-sandbox'])
+              page=b.new_page()
+              page.goto('http://127.0.0.1:8000/elif-tasarim/gizlilik/',wait_until='domcontentloaded')
+              page.wait_for_selector('#app .preview-bar')
+              body=page.locator('#app').inner_text()
+              assert 'Alıcı alanı, iletisim.eliftasarimatolyesi@gmail.com adresiyle hazırlanır.' in body
+              assert 'İşletme e-postası doğrulanmadığı için alıcı boş bırakılır' not in body
+              Path('evidence/v22-consistency/privacy-browser.json').write_text(json.dumps({'pass':True,'source':'actual hydrated HTTP page','messageSent':False}))
+              b.close()
+          PY
+      - name: Stage only verified Elif publication
+        shell: python
+        run: |
+          from pathlib import Path
+          import json,shutil,subprocess
+          assert subprocess.check_output(['git','hash-object','index.html'],text=True).strip()=='501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          root=Path('elif-tasarim');dist=root/'source-v12/dist'
+          old=json.loads((root/'release-v22.json').read_text())
+          for name in old['files']:
+              assert not Path(name).is_absolute() and '..' not in Path(name).parts
+              p=root/name
+              if p.is_file():p.unlink()
+          for p in dist.rglob('*'):
+              if p.is_file():
+                  target=root/p.relative_to(dist);target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,target)
+      - name: Commit tested consistency fix to its own branch
+        run: |
+          set -euo pipefail
+          git config user.name 'Onour Impram'
+          git config user.email 'onuribram@outlook.com'
+          git add -A elif-tasarim
+          git diff --cached --name-only | grep -v '^elif-tasarim/' && exit 1 || true
+          git commit -m 'fix(elif): align privacy email disclosure with actual V22 recipient'
+          git push origin HEAD:elif-v22-final-consistency-20260927
+          git rev-parse HEAD > elif-tasarim/source-v12/evidence/v22-consistency/staged-commit.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v22-consistency-evidence
+          path: elif-tasarim/source-v12/evidence/v22-consistency
+          retention-days: 14
