@@ -1,0 +1,58 @@
+name: Elif V22 final readability and publication gates
+on:
+  push:
+    branches: [elif-v22-ux-mail-final-20260927]
+    paths: ['.github/workflows/elif-v22-final-readability.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated script and browser tooling
+        run: |
+          python -m pip install PyYAML==6.0.2 playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Run every existing gate with the measured source fix
+        shell: python
+        run: |
+          from pathlib import Path
+          import yaml,subprocess,os
+          root=Path.cwd()
+          spec=yaml.safe_load((root/'.github/workflows/elif-v22-complete-and-stage.yml').read_text())
+          names=[
+            'Apply hash-verified recovered source changes within Elif only',
+            'Build, unit regressions, core types and exact file integrity',
+            'Serve only the generated release',
+            'Verify new email, handoff, clipboard fallback, inspiration and no-JavaScript paths',
+            'Preserve draft recovery, actual exports, customer decisions and full 360 orbit',
+            'Preserve the personal homepage and stage verified Elif release',
+            'Commit tested source and publication to the staging branch',
+            'Package exact source and publication without fonts'
+          ]
+          for name in names:
+              steps=[s for s in spec['jobs']['stage']['steps'] if s.get('name')==name]
+              assert len(steps)==1
+              s=steps[0];print('::group::'+name,flush=True)
+              command=['python','-c',s['run']] if s.get('shell')=='python' else ['bash','-eo','pipefail','-c',s['run']]
+              subprocess.run(command,cwd=root/s.get('working-directory','.'),env={**os.environ,**s.get('env',{})},check=True)
+              if name==names[0]:subprocess.run(['python','elif-v22-tools/measured-final-fixes.py'],cwd=root,check=True)
+              print('::endgroup::',flush=True)
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v22-final-readable-evidence
+          path: elif-tasarim/source-v12/evidence/v22-final
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-v22-final-delivery
+          path: v22-delivery
+          retention-days: 14
+          if-no-files-found: error
