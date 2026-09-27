@@ -25,7 +25,7 @@ with sync_playwright() as pw:
  def no(dialog):dialog.dismiss()
  try:
   page.goto(BASE+'hizmet-ve-teklif/',wait_until='domcontentloaded',timeout=60000)
-  assert page.locator('.preview-bar').inner_text().startswith('V21')
+  assert page.locator('.preview-bar').inner_text().startswith('V22')
   assert page.locator('.v21-scope-grid article').count()==6
   assert page.locator('meta[name=robots]').get_attribute('content')=='noindex,nofollow'
   terms=page.locator('.v21-guide-terms').inner_text()
@@ -77,13 +77,13 @@ with sync_playwright() as pw:
   panel();page.get_by_role('button',name='Cihazdaki kaydı sil',exact=True).click();assert read() is None;assert page.locator('#model-note').input_value()==value
   rec('08. Delete removes only the recovery record, not current typed work')
   page.get_by_role('button',name='Ayrıntı eklemeden özeti gör',exact=True).click();page.wait_for_selector('.v21-contact-alternatives')
-  summary=page.locator('#project-message-preview').inner_text();email=page.locator('.v21-contact-alternatives a[href^="mailto:"]').get_attribute('href')
-  assert email.startswith('mailto:?subject=');body=parse_qs(urlparse(email).query)['body'][0]
+  summary=page.locator('#project-message-preview').inner_text();email=page.locator('.v21-contact-alternatives a.button[href^="mailto:"]').get_attribute('href')
+  assert email.startswith('mailto:iletisim.eliftasarimatolyesi@gmail.com?subject=');body=parse_qs(urlparse(email).query)['body'][0]
   assert body==summary or 'ayrıntılı proje özeti' in body
   assert page.locator('.v21-contact-alternatives a[href^="sms:"]').get_attribute('href')=='sms:+905308797169'
   assert page.locator('.v21-contact-alternatives a[href^="tel:"]').get_attribute('href')=='tel:+905308797169'
-  assert 'alıcı alanı boş' in page.locator('.v21-contact-alternatives').inner_text()
-  rec('09. Phone and SMS use the supplied number, email has no invented recipient, no message sent')
+  assert 'iletisim.eliftasarimatolyesi@gmail.com' in page.locator('.v21-contact-alternatives').inner_text()
+  rec('09. Phone and SMS use the supplied number, email uses the user-supplied recipient, no message sent')
   page.screenshot(path=str(OUT/'contact-alternatives.png'),full_page=True)
   go('/iletisim');assert page.locator('a[href="sms:+905308797169"]').count()>0;assert page.locator('.v21-contact-facts').count()==1
   assert 'henüz' in page.locator('.v21-contact-facts').inner_text()

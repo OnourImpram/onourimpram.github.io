@@ -1,6 +1,6 @@
-# Elif Tasarım V21
+# Elif Tasarım V22
 
-Rapor odaklı güven ve devamlılık sürümü. Onaylı marka, gerçek portföy, Devir 01, çift kitaplık, gerçek 360 derece inceleme, üç tasarımı karşılaştırma ve GLB/USDZ çıktıları korunur.
+Rapor odaklı iletişimi tamamlama sürümü. Kullanıcının sağladığı iletisim.eliftasarimatolyesi@gmail.com adresi, pano izinli kopyalama ve yedek metin alanı, taşınabilir ilham dosyası ve JavaScript gerektirmeyen kolay iletişim sayfası eklenmiştir. Onaylı marka, gerçek portföy, Devir 01, çift kitaplık, gerçek 360 derece inceleme, üç tasarımı karşılaştırma ve GLB/USDZ çıktıları korunur.
 
 V21, açık izinli cihaz taslağı kurtarması, özel JSON taslağı indirme ve geri açma, alternatif iletişim yolları, genişletilmiş SSS, hizmet ve teklif rehberi, doğrulanmış bilgilerle yapılandırılmış veri ve ölçülmüş okunabilirlik düzeltmeleri ekler.
 
@@ -22,11 +22,12 @@ Yerel HTTP sunucusu 8000 portunda /elif-tasarim/ taban yolunu açar. Derleme pre
 
 ## Etkin sürüm
 
-Paket 0.21.0. Kimlik v21-trust-continuity. Yayın manifesti release-v21.json. Etkin derleyici tools/build-v21.cjs. Tarihsel source-v12 klasör adı, uygulamanın V12 olduğu anlamına gelmez. Önceki derleyiciler ve test dizinleri geçmiş ve regresyon amacıyla korunur.
+Paket 0.22.0. Kimlik v22-contact-complete. Yayın manifesti release-v22.json. Etkin derleyici tools/build-v22.cjs. Tarihsel source-v12 klasör adı, uygulamanın V12 olduğu anlamına gelmez. Önceki derleyiciler ve test dizinleri geçmiş ve regresyon amacıyla korunur.
 
 ## Kontroller
 
 ```sh
+BASE_URL=http://127.0.0.1:8000/elif-tasarim/ python tests/v22/acceptance.py
 BASE_URL=http://127.0.0.1:8000/elif-tasarim/ python tests/v21/acceptance.py
 BASE_URL=http://127.0.0.1:8000/elif-tasarim/ python tests/v20/acceptance.py
 BASE_URL=http://127.0.0.1:8000/elif-tasarim/ python tests/v11/acceptance.py
@@ -44,7 +45,7 @@ Tarayıcı kontrolleri Playwright ve Chromium gerektirir. Görünür tarayıcı 
 
 ## İşletme bilgileri ve ticari yayın
 
-Doğrulanmış işletme bilgilerinin tek kaynağı src/lib/site-profile.ts dosyasıdır. E-posta, saatler, adres ve sosyal profil URL'leri doğrulanmadan doldurulmaz. Telefon ve SMS aynı doğrulanmış numarayı kullanır. Alıcısı boş e-posta taslağı bağımsız bir kurumsal iletişim hattı değildir.
+Doğrulanmış işletme bilgilerinin tek kaynağı src/lib/site-profile.ts dosyasıdır. E-posta kullanıcı tarafından sağlanmıştır. Saatler, adres ve sosyal profil URL'leri doğrulanmadan doldurulmaz. Telefon ve SMS aynı doğrulanmış numarayı kullanır. E-posta bağlantıları sağlanan alıcıyı açar. Bağlantıya basmak gönderim veya teslim değildir.
 
 Önizlemenin noindex davranışı korunur. Ticari indeksleme için doğrulanmış alan adı, iletişim bilgileri ve içerik onayı gerekir. npm run launch:check -- --production eksik hazırlıkla başarısız olur. Noindex erişim kontrolü değildir. Bu herkese açık depoya müşteri kaydı veya özel dosya yüklenmez.
 
@@ -57,3 +58,8 @@ Yalnız elif-tasarim alt ağacı güncellenir. Kişisel kök ana sayfa ve diğer
 - docs/v21/IMPLEMENTATION.md. Kapsam ve uygulama kararları.
 - docs/v21/READABILITY_AUDIT.md. Ölçülmüş okunabilirlik ve laboratuvar sınırları.
 - docs/v21/FINAL_REVIEW.md. Kaynak kurtarma ve inceleme kaydı.
+
+## V22 kayıtları
+
+- docs/v22/IMPLEMENTATION.md. Kaynak rapor, uygulama ve sınırlar.
+- docs/v22/FINAL_UX_REVIEW.md. Son müşteri akışı incelemesi ve yeniden üretilen hatalar.
