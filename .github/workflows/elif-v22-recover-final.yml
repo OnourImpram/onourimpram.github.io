@@ -1,0 +1,46 @@
+name: Elif V22 recover saved work
+on:
+  push:
+    branches: [elif-v22-ux-mail-final-20260927]
+    paths: ['.github/workflows/elif-v22-recover-final.yml']
+permissions:
+  contents: read
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Decode saved work as data, do not execute it
+        shell: python
+        run: |
+          from pathlib import Path
+          import base64,zlib,gzip,json,zipfile,hashlib
+          out=Path('v22-recovery');out.mkdir()
+          report=[]
+          for stem in ['complete','source','delta']:
+              files=sorted(Path('elif-v22-tools').glob(stem+'-*.b64'))
+              try:
+                  packed=base64.b64decode(''.join(p.read_text().strip() for p in files),validate=True)
+                  raw=gzip.decompress(packed) if packed[:2]==b'\x1f\x8b' else zlib.decompress(packed)
+                  value=json.loads(raw)
+                  (out/(stem+'.json')).write_bytes(raw)
+                  report.append({'name':stem,'files':[str(p) for p in files],'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),'type':type(value).__name__,'keys':list(value)[:20] if isinstance(value,dict) else None})
+              except Exception as e:
+                  report.append({'name':stem,'error':str(e)})
+          (out/'recovery.json').write_text(json.dumps(report,indent=2))
+          print(json.dumps(report,indent=2))
+          root=Path('elif-tasarim/source-v12')
+          excluded={'node_modules','.git','dist','.compiled','evidence','preview'}
+          with zipfile.ZipFile(out/'baseline-source.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in root.rglob('*'):
+                  if p.is_file() and not excluded.intersection(p.relative_to(root).parts) and p.suffix.lower() not in {'.woff','.woff2','.ttf','.otf','.eot'}:
+                      z.write(p,p.relative_to(root))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elif-v22-recovered-work
+          path: v22-recovery
+          retention-days: 14
+          if-no-files-found: error
