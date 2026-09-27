@@ -1,0 +1,62 @@
+name: Elif V21 measured readability and final release
+on:
+  push:
+    branches: [elif-v21-rapor-20260927]
+    paths: ['.github/workflows/elif-v21-readability.yml']
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply focused fixes to the previously tested source
+        run: |
+          python -m pip install PyYAML==6.0.2
+          python elif-v21-tools/readability.py
+      - name: All report, privacy, 3D, visual, launch and publication checks
+        shell: python
+        run: |
+          from pathlib import Path
+          import yaml,subprocess,os
+          root=Path.cwd();spec=yaml.safe_load((root/'.github/workflows/elif-v21-report.yml').read_text())
+          names=[
+            'Build and run complete unit, privacy and publication contracts',
+            'Install isolated browser tools',
+            'Serve generated V21 over real HTTP',
+            'Consent, recovery, private file import, alternative contact and report pages',
+            'Preserve actual V20 exports and customer decisions',
+            'Optional Lighthouse laboratory diagnostics, not real-device certification',
+            'Preserve personal homepage and stage verified Elif publication only',
+            'Commit exact tested release to isolated staging branch',
+            'Package editable source, publication and portable preview without font files'
+          ]
+          for name in names:
+              found=[s for s in spec['jobs']['review-and-stage']['steps'] if s.get('name')==name];assert len(found)==1,name
+              step=found[0];script=step['run']
+              if name.startswith('Optional Lighthouse'):script=script.replace('--no-fund lighthouse\n','--no-fund lighthouse@13.4.1\n')
+              if name.startswith('Preserve personal homepage'):script=script.replace('release-v20.json','release-v21.json')
+              print('::group::'+name,flush=True)
+              env={**os.environ,**step.get('env',{})};cwd=root/step.get('working-directory','.')
+              shell=step.get('shell','bash');assert shell in ['python','bash']
+              command=['python','-c',script] if shell=='python' else ['bash','-eo','pipefail','-c',script]
+              result=subprocess.run(command,cwd=cwd,env=env)
+              if result.returncode and not step.get('continue-on-error',False):raise SystemExit(result.returncode)
+              if result.returncode:print('Optional diagnostic failed. No unmeasured score is claimed.',flush=True)
+              print('::endgroup::',flush=True)
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v21-readable-evidence
+          path: elif-tasarim/source-v12/evidence/v21-stage
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-v21-readable-delivery
+          path: v21-delivery
+          retention-days: 14
