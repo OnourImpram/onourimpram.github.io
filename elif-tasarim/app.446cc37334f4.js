@@ -223,6 +223,8 @@ exports.createRoot=(root)=>({render:(node)=>require("react").render(node,root)})
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = require("react");
 const ui_1 = require("./components/ui");
+const ServiceGuide_1 = require("./pages/ServiceGuide");
+const draft_session_1 = require("./lib/draft-session");
 const Home_1 = require("./pages/Home");
 const Devir_1 = require("./pages/Devir");
 const DesignDesk_1 = require("./pages/DesignDesk");
@@ -353,7 +355,8 @@ class App extends react_1.Component {
         return (0, react_1.createElement)(BringModel_1.BringModel, { key: this.state.path, ...a, query: qs, advanced: p === '/teklif-al' || new URLSearchParams(qs).get('detay') === '1' }); if (p === '/hakkimizda' || p === '/atolye')
         return (0, react_1.createElement)(Portfolio_1.AboutAtelier, { ...a, atelier: p === '/atolye' }); if (p === '/devir-01')
         return (0, react_1.createElement)(Devir_1.Devir, { ...a }); if (p === '/tasarim-masasi')
-        return (0, react_1.createElement)(DesignDesk_1.DesignDesk, { key: this.state.path, ...a, query: qs }); if (p === '/iletisim')
+        return (0, react_1.createElement)(DesignDesk_1.DesignDesk, { key: this.state.path, ...a, query: qs }); if (p === '/hizmet-ve-teklif')
+        return (0, react_1.createElement)(ServiceGuide_1.ServiceGuide, { ...a }); if (p === '/iletisim')
         return (0, react_1.createElement)(V7Pages_1.ContactV7, { ...a }); if (p === '/gizlilik')
         return (0, react_1.createElement)(V7Pages_1.PrivacyV7, { ...a }); if (p === '/malzemeler')
         return (0, react_1.createElement)(V7Pages_1.MaterialsV7, { ...a }); if (p === '/ozel-uretim')
@@ -376,7 +379,7 @@ class App extends react_1.Component {
             (0, react_1.createElement)("a", { href: "#main-content", className: "skip-link", onClick: e => { e.preventDefault(); document.getElementById('main-content')?.focus(); } }, "\u0130\u00E7eri\u011Fe ge\u00E7"),
             (0, react_1.createElement)("div", { className: "preview-bar" },
                 (0, react_1.createElement)("span", null,
-                    "V20 FINAL / TASARIM \u00D6N\u0130ZLEMES\u0130 ",
+                    "V21 / TASARIM \u00D6N\u0130ZLEMES\u0130 ",
                     (0, react_1.createElement)("i", null),
                     (0, react_1.createElement)("span", { className: "v9-preview-detail" }, "Ger\u00E7ek i\u015F ar\u015Fivi, do\u011Frudan ileti\u015Fim")),
                 (0, react_1.createElement)("button", { onClick: () => this.setState({ info: true }) },
@@ -438,6 +441,8 @@ class App extends react_1.Component {
                             nav('/hakkimizda', 'Hikâyemiz'),
                             nav('/atolye', 'Atölye'),
                             nav('/ozel-uretim', 'Nasıl çalışıyoruz?'),
+                            nav('/hizmet-ve-teklif', 'Hizmet ve teklif rehberi'),
+                            nav('/sikca-sorulan-sorular', 'Sıkça sorulan sorular'),
                             nav('/rehber', 'Atölye notları'),
                             nav('/gizlilik', 'Veri ve dış servisler')),
                         (0, react_1.createElement)("div", { className: "footer-column footer-contact" },
@@ -455,7 +460,7 @@ class App extends react_1.Component {
                         "elif tasar\u0131m",
                         (0, react_1.createElement)("span", null, "AT\u00D6LYE")),
                     (0, react_1.createElement)("div", { className: "footer-bottom" },
-                        (0, react_1.createElement)("span", null, "EL\u0130F TASARIM \u00B7 V20 FINAL / 2026"),
+                        (0, react_1.createElement)("span", null, "EL\u0130F TASARIM \u00B7 V21 / 2026"),
                         (0, react_1.createElement)("div", null,
                             nav('/gizlilik', 'Gizlilik ve dış servisler'),
                             (0, react_1.createElement)("button", { onClick: () => this.setState({ info: true }) }, "Cihaz kay\u0131tlar\u0131n\u0131 y\u00F6net")),
@@ -487,20 +492,21 @@ class App extends react_1.Component {
                 (0, react_1.createElement)(ui_1.TextLink, { to: '/arama?q=' + encodeURIComponent(s.searchQuery.trim()), navigate: this.navigate }, "T\u00FCm sonu\u00E7lar\u0131 g\u00F6r")),
             s.info && (0, react_1.createElement)(ui_1.Dialog, { title: "Bilgi ve cihaz kay\u0131tlar\u0131", onClose: () => this.setState({ info: false }) },
                 (0, react_1.createElement)("div", { className: "info-dialog" },
-                    (0, react_1.createElement)(ui_1.Eyebrow, null, "V20 FINAL / \u015EEFFAF B\u0130R BA\u015ELANGI\u00C7"),
+                    (0, react_1.createElement)(ui_1.Eyebrow, null, "V21 / \u015EEFFAF B\u0130R BA\u015ELANGI\u00C7"),
                     (0, react_1.createElement)("p", null,
                         "Yunus Usta'n\u0131n kullan\u0131c\u0131 taraf\u0131ndan payla\u015F\u0131lan i\u015F telefonu ",
                         project_1.business.display,
                         ". WhatsApp ve telefon ba\u011Flant\u0131lar\u0131 bu numaray\u0131 a\u00E7ar. Yeni a\u00E7\u0131k adres hen\u00FCz kesinle\u015Fmemi\u015Ftir."),
                     (0, react_1.createElement)("h3", null, "Mesaj\u0131 siz g\u00F6nderirsiniz."),
                     (0, react_1.createElement)("p", null, "Site proje \u00F6zetinizi haz\u0131rlar. Sitede \u00F6deme, sipari\u015F kayd\u0131 veya otomatik g\u00F6nderim yoktur. WhatsApp mesaj\u0131n\u0131 orada g\u00F6nderirsiniz. Dosya payla\u015F\u0131m\u0131 ayr\u0131 bir ad\u0131md\u0131r. A\u00E7\u0131ld\u0131, g\u00F6nderildi ve teslim al\u0131nd\u0131 ayn\u0131 durum de\u011Fildir."),
-                    (0, react_1.createElement)("h3", null, "Ki\u015Fisel taslak yaln\u0131z bellekte."),
-                    (0, react_1.createElement)("p", null, "Not, il\u00E7e, model ve g\u00F6rseller a\u00E7\u0131k sekme i\u00E7inde korunur, yeniden y\u00FCklemede silinebilir. A\u00E7\u0131k\u00E7a se\u00E7ti\u011Finizde yaln\u0131z herkese a\u00E7\u0131k ilham kimlikleri 30 g\u00FCn cihazda kal\u0131r. 3D se\u00E7enekleri bu a\u00E7\u0131k sekmede hat\u0131rlan\u0131r ve yaln\u0131z olu\u015Fturdu\u011Funuz model ba\u011Flant\u0131s\u0131nda payla\u015F\u0131l\u0131r. Analitik veya reklam pikseli y\u00FCklenmez."),
+                    (0, react_1.createElement)("h3", null, "Tasla\u011F\u0131n kontrol\u00FC sizde."),
+                    (0, react_1.createElement)("p", null, "Varsay\u0131lan olarak not, il\u00E7e, model ve g\u00F6rseller a\u00E7\u0131k sekmede korunur. Model formunda a\u00E7\u0131k\u00E7a se\u00E7erseniz metin ve \u00F6l\u00E7\u00FCler son kay\u0131ttan itibaren yedi g\u00FCn cihazda saklan\u0131r. Foto\u011Fraflar bu kayda dahil de\u011Fildir. S\u00FCresi dolan kay\u0131t sonraki kontrolde silinir. JSON kurtarma dosyas\u0131 ki\u015Fisel notlar\u0131n\u0131z\u0131 i\u00E7erebilir. Herkese a\u00E7\u0131k ilham kimlikleri i\u00E7in ayr\u0131 30 g\u00FCnl\u00FCk izin vard\u0131r. Analitik veya reklam pikseli y\u00FCklenmez."),
                     (0, react_1.createElement)("button", { className: "button button-outline", onClick: () => { if (window.confirm('Bu açık sekmedeki proje fikri, görseller ve bu cihazdaki Elif kayıtları silinsin mi?')) {
+                            draft_session_1.draftSession.disable();
                             project_1.projectStore.clear();
                             project_1.attachmentStore.clear();
                             try {
-                                Object.keys(localStorage).filter(k => k.startsWith('elif-v2:') || k.startsWith('elif-v7:')).forEach(k => localStorage.removeItem(k));
+                                Object.keys(localStorage).filter(k => k.startsWith('elif-v2:') || k.startsWith('elif-v7:') || k.startsWith('elif-v21:')).forEach(k => localStorage.removeItem(k));
                             }
                             catch { }
                             this.setState({ favorites: [], remember: false, info: false });
@@ -531,6 +537,34 @@ class App extends react_1.Component {
     }
 }
 exports.default = App;
+
+},
+"src/components/ContactAlternatives":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ContactAlternatives = ContactAlternatives;
+const react_1 = require("react");
+const ui_1 = require("./ui");
+const project_1 = require("../lib/project");
+const contact_options_1 = require("../lib/contact-options");
+function ContactAlternatives({ text }) { const email = (0, contact_options_1.emailDraft)(text); return (0, react_1.createElement)("section", { className: "v21-contact-alternatives", "aria-labelledby": "contact-alternative-title" },
+    (0, react_1.createElement)("span", { className: "eyebrow" }, "BA\u015EKA B\u0130R YOLDAN DEVAM ED\u0130N"),
+    (0, react_1.createElement)("h3", { id: "contact-alternative-title" }, "WhatsApp kullanm\u0131yor musunuz?"),
+    (0, react_1.createElement)("p", null, "Telefonla g\u00F6r\u00FC\u015Febilir, SMS uygulamas\u0131n\u0131 a\u00E7abilir veya haz\u0131rlad\u0131\u011F\u0131n\u0131z \u00F6zeti e-posta tasla\u011F\u0131na aktarabilirsiniz."),
+    (0, react_1.createElement)("div", { className: "action-row" },
+        (0, react_1.createElement)("a", { className: "button button-outline", href: 'tel:' + project_1.business.telephone },
+            "Telefonla ara ",
+            (0, react_1.createElement)(ui_1.Icon, { name: "phone", size: 17 })),
+        (0, react_1.createElement)("a", { className: "button button-outline", href: (0, contact_options_1.smsUrl)() },
+            "SMS ile g\u00F6r\u00FC\u015Fme ba\u015Flat ",
+            (0, react_1.createElement)(ui_1.Icon, { name: "diagonal", size: 17 })),
+        (0, react_1.createElement)("a", { className: "button button-outline", href: email.href },
+            "E-posta tasla\u011F\u0131 haz\u0131rla ",
+            (0, react_1.createElement)(ui_1.Icon, { name: "diagonal", size: 17 }))),
+    (0, react_1.createElement)("p", { className: "field-hint" }, "SMS d\u00FC\u011Fmesi numaray\u0131 a\u00E7ar, metninizi siz yazars\u0131n\u0131z. G\u00F6nderim \u00FCcretleri operat\u00F6r\u00FCn\u00FCze ba\u011Fl\u0131d\u0131r."),
+    (0, react_1.createElement)("p", { className: "field-hint" }, email.recipient ? 'E-posta taslağının alıcısı, ' + email.recipient + '. Göndermeden önce özeti ve alıcıyı kontrol edin.' : 'İşletme e-posta adresi henüz doğrulanmadığından e-posta uygulaması alıcı alanı boş açılır. Yunus Usta’dan teyit ettiğiniz alıcıyı kendiniz girin. Bu, etkin bir kurumsal e-posta hattı değildir.'),
+    email.needsAttachment && (0, react_1.createElement)("p", { className: "v21-email-note" }, "\u00D6zetiniz e-posta ba\u011Flant\u0131s\u0131 i\u00E7in uzun. Uygulama k\u0131sa bir ba\u015Flang\u0131\u00E7 metniyle a\u00E7\u0131l\u0131r. Tam \u00F6zeti a\u015Fa\u011F\u0131daki indirme se\u00E7ene\u011Fiyle saklay\u0131p e-postaya ekleyin."),
+    (0, react_1.createElement)("p", { className: "field-hint" }, "Hi\u00E7bir d\u00FC\u011Fme kendili\u011Finden mesaj g\u00F6ndermez. Foto\u011Fraflar\u0131 ve proje dosyas\u0131n\u0131 se\u00E7ti\u011Finiz uygulamada ayr\u0131ca ekleyin.")); }
 
 },
 "src/components/DesignWorkbench":function(module,exports,require){
@@ -1056,6 +1090,107 @@ class DeskExperience extends react_1.Component {
 exports.DeskExperience = DeskExperience;
 
 },
+"src/components/DraftRecovery":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DraftRecovery = void 0;
+const react_1 = require("react");
+const ui_1 = require("./ui");
+const project_1 = require("../lib/project");
+const draft_recovery_1 = require("../lib/draft-recovery");
+const draft_session_1 = require("../lib/draft-session");
+const domain_1 = require("../lib/domain");
+class DraftRecovery extends react_1.Component {
+    constructor() {
+        super(...arguments);
+        this.state = { enabled: false, message: '', record: { kind: 'empty' }, busy: false };
+        this.unsubscribe = null;
+        this.alive = true;
+        this.refresh = () => { if (this.alive)
+            this.setState(draft_session_1.draftSession.status()); };
+        this.restore = () => { const r = draft_session_1.draftSession.status().record; if (r.kind !== 'ready' || !r.draft) {
+            this.refresh();
+            return;
+        } if (!window.confirm('Kayıtlı metin ve ölçüler bu açık taslağın yerine getirilsin mi? Açık taslaktaki fotoğraflar kaldırılır, onları yeniden eklemeniz gerekir.'))
+            return; project_1.attachmentStore.clear(); draft_session_1.draftSession.restore(r.draft); this.props.onRestore(); this.refresh(); this.setState({ message: 'Taslak geri yüklendi. Fotoğrafları yeniden ekleyin. Otomatik cihaz kaydı için aşağıdaki izni ayrıca açabilirsiniz.' }); };
+        this.enable = (checked) => { if (checked) {
+            if (this.state.record.kind === 'ready' && !this.state.enabled && !window.confirm('Bu cihazdaki önceki kurtarma kaydı, açık taslağınızla değiştirilsin mi?'))
+                return;
+            draft_session_1.draftSession.enable();
+        }
+        else
+            draft_session_1.draftSession.disable(); this.refresh(); };
+        this.export = () => { try {
+            (0, domain_1.downloadText)('Elif_Proje_Taslagi.json', (0, draft_recovery_1.encodeDraft)(project_1.projectStore.get()));
+            this.setState({ message: 'Kurtarma dosyası hazırlandı. Kendi notunuz ve yazdığınız bölge dosyadadır. Özel dosyanızı güvenli saklayın. Fotoğraflar dahil değil.' });
+        }
+        catch (e) {
+            this.setState({ message: e instanceof Error ? e.message : 'Taslak dosyası oluşturulamadı.' });
+        } };
+        this.import = async (file) => { if (!file || this.state.busy)
+            return; if (file.size > draft_recovery_1.MAX_BACKUP_BYTES) {
+            this.setState({ message: 'En fazla 96 KB Elif taslak dosyası açılabilir.' });
+            return;
+        } this.setState({ busy: true }); try {
+            const value = (0, draft_recovery_1.decodeDraft)(await file.text());
+            if (!this.alive)
+                return;
+            if (!window.confirm('Dosyadaki proje, bu açık taslağın yerine açılsın mı? Mevcut fotoğraflar kaldırılır. İşlem atölyeye hiçbir veri göndermez.'))
+                return;
+            project_1.attachmentStore.clear();
+            draft_session_1.draftSession.restore(value);
+            this.props.onRestore();
+            this.refresh();
+            this.setState({ message: 'Dosyadaki taslak açıldı. Fotoğrafları yeniden ekleyin. Atölyeye otomatik gönderilmedi.' });
+        }
+        catch (e) {
+            if (this.alive)
+                this.setState({ message: e instanceof Error ? e.message : 'Taslak dosyası okunamadı.' });
+        }
+        finally {
+            if (this.alive)
+                this.setState({ busy: false });
+        } };
+    }
+    componentDidMount() { this.refresh(); this.unsubscribe = draft_session_1.draftSession.subscribe(this.refresh); }
+    componentWillUnmount() { this.alive = false; this.unsubscribe?.(); }
+    render() {
+        const s = this.state, pending = s.record.kind === 'ready' && !s.enabled;
+        return (0, react_1.createElement)("details", { className: "v21-recovery", open: pending },
+            (0, react_1.createElement)("summary", null,
+                (0, react_1.createElement)("span", null,
+                    (0, react_1.createElement)(ui_1.Icon, { name: "download", size: 18 }),
+                    " Fikrinize daha sonra devam edin"),
+                (0, react_1.createElement)("small", null, s.enabled ? 'Cihaz kurtarması açık' : pending ? 'Kayıtlı taslak bulundu' : 'İsteğe bağlı, yalnız sizin cihazınızda')),
+            (0, react_1.createElement)("div", { className: "v21-recovery-body" },
+                (0, react_1.createElement)("p", null, "Not, model ve \u00F6l\u00E7\u00FClerinizi koruyun. Varsay\u0131lan olarak yaln\u0131z a\u00E7\u0131k sekmededir. Foto\u011Fraflar ve ilham dosyan\u0131z bu kurtarma kayd\u0131na dahil de\u011Fildir."),
+                pending && (0, react_1.createElement)("div", { className: "v21-restore-notice" },
+                    (0, react_1.createElement)("strong", null, "\u00D6nceki tasla\u011F\u0131n\u0131z bu cihazda duruyor."),
+                    (0, react_1.createElement)("p", null, "Geri y\u00FCklemeden \u00F6nce a\u00E7\u0131k tasla\u011F\u0131n\u0131z\u0131 dosya olarak saklayabilirsiniz."),
+                    (0, react_1.createElement)("button", { type: "button", className: "button", onClick: this.restore }, "Kay\u0131tl\u0131 tasla\u011F\u0131 geri getir"),
+                    (0, react_1.createElement)("button", { type: "button", className: "text-link", onClick: () => { draft_session_1.draftSession.disable(); this.refresh(); } }, "Cihazdaki kayd\u0131 sil")),
+                (0, react_1.createElement)("label", { className: "v21-save-consent" },
+                    (0, react_1.createElement)("input", { type: "checkbox", checked: s.enabled, onChange: e => this.enable(e.currentTarget.checked) }),
+                    (0, react_1.createElement)("span", null,
+                        "Metin ve \u00F6l\u00E7\u00FClerimi bu cihazda 7 g\u00FCn sakla",
+                        (0, react_1.createElement)("small", null, "Se\u00E7ince sonraki de\u011Fi\u015Fiklikler de kaydedilir. Son kay\u0131ttan yedi g\u00FCn sonra, site tekrar kontrol etti\u011Finde kurtarma kayd\u0131 silinir. Ortak cihazlarda kullanmay\u0131n. Bu kay\u0131t \u015Fifreli bir m\u00FC\u015Fteri hesab\u0131 de\u011Fildir."))),
+                (0, react_1.createElement)("div", { className: "v21-recovery-actions" },
+                    (0, react_1.createElement)("button", { type: "button", className: "button button-outline", onClick: this.export },
+                        "Taslak dosyas\u0131n\u0131 indir ",
+                        (0, react_1.createElement)(ui_1.Icon, { name: "download", size: 16 })),
+                    (0, react_1.createElement)("label", { className: "button button-outline v21-import" },
+                        "Taslak dosyas\u0131n\u0131 a\u00E7",
+                        (0, react_1.createElement)("input", { type: "file", accept: ".json,application/json", "aria-label": "Elif proje tasla\u011F\u0131 dosyas\u0131n\u0131 a\u00E7", disabled: s.busy, onChange: e => { const file = e.currentTarget.files?.[0]; e.currentTarget.value = ''; void this.import(file); } }))),
+                (0, react_1.createElement)("p", { className: "field-hint" }, "\u0130ndirilen JSON dosyas\u0131 \u00F6zel notlar\u0131n\u0131z\u0131 i\u00E7erebilir. Herkese a\u00E7\u0131k masa kar\u015F\u0131la\u015Ft\u0131rma dosyas\u0131ndan farkl\u0131d\u0131r. Kaydetmek veya a\u00E7mak, at\u00F6lyeye talep g\u00F6ndermez."),
+                s.record.kind === 'invalid' && (0, react_1.createElement)("p", { role: "status" }, "Cihazdaki kurtarma kayd\u0131 okunam\u0131yor. A\u00E7\u0131k tasla\u011F\u0131n\u0131z de\u011Fi\u015Ftirilmedi. \u00D6nceki kayd\u0131 cihaz tercihleri alan\u0131ndan silebilirsiniz."),
+                s.record.kind === 'expired' && (0, react_1.createElement)("p", { role: "status" }, "\u00D6nceki kurtarma kayd\u0131n\u0131n s\u00FCresi dolmu\u015F ve bu cihazdan silinmi\u015F."),
+                s.record.kind === 'unavailable' && (0, react_1.createElement)("p", { role: "status" }, "Taray\u0131c\u0131 depolamas\u0131 kullan\u0131lam\u0131yor. Taslak dosyas\u0131n\u0131 indirerek devam edebilirsiniz."),
+                s.message && (0, react_1.createElement)("p", { className: "v21-recovery-status", role: "status" }, s.message)));
+    }
+}
+exports.DraftRecovery = DraftRecovery;
+
+},
 "src/components/NumberEditor":function(module,exports,require){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1356,6 +1491,25 @@ class Dialog extends react_1.Component {
 exports.Dialog = Dialog;
 
 },
+"src/lib/contact-options":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.smsUrl = void 0;
+exports.emailDraft = emailDraft;
+const project_1 = require("./project");
+const site_profile_1 = require("./site-profile");
+const smsUrl = () => 'sms:' + project_1.business.telephone;
+exports.smsUrl = smsUrl;
+function emailDraft(text, recipient = (0, site_profile_1.getSiteProfile)().email || '') {
+    if (recipient && !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/.test(recipient))
+        throw Error('Doğrulanmış tek bir e-posta adresi gerekli.');
+    const subject = 'Elif Tasarım. Proje görüşmesi', prefix = 'mailto:' + recipient + '?subject=' + encodeURIComponent(subject) + '&body=';
+    const needsAttachment = (prefix + encodeURIComponent(text)).length > 5000;
+    const sentText = needsAttachment ? 'Elif Tasarım için ayrıntılı proje özeti hazırladım. Tam özeti ve varsa görselleri bu e-postaya ayrıca ekleyeceğim.' : text;
+    return { recipient, href: prefix + encodeURIComponent(sentText), needsAttachment, fullText: text, sentText };
+}
+
+},
 "src/lib/data":function(module,exports,require){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1385,11 +1539,20 @@ exports.journal = [
     { id: 'bakim', title: 'Birlikte yaşadıkça güzelleşsin', subtitle: 'BAKIM NOTLARI', image: 'wood-walnut.webp', intro: 'Bakım, ürünün gerçek malzemesi ve yüzey işlemiyle birlikte düşünülür. Bu sayfa ürün özelindeki bakım talimatının yerini tutmaz.', sections: [['Önce yüzey bilgisini öğrenin', 'Üretimde kullanılan yüzey ürününün talimatını isteyin. Her ahşap görünümlü yüzeye aynı yağ, cila veya temizlik ürünü uygulanmaz.'], ['Küçük alışkanlıklar', 'Sıcak ve ıslak nesnelerin doğrudan teması gibi kullanım koşullarını atölyeyle konuşun. Ürününüz için uygun temizlik ve koruma yöntemini teyit edin.'], ['Müdahaleden önce danışın', 'Bir leke veya hasarda yüzeyi zımparalamadan ya da kimyasal uygulamadan önce ürünün fotoğrafı ve malzeme bilgisiyle destek isteyin.']] }
 ];
 exports.faqs = [
-    ['Ölçülerim henüz net değil. Yine de başlayabilir miyiz?', 'Evet. Özel ölçü formundaki “Ölçülerimi birlikte belirleyelim” seçeneğiyle ilerleyebilirsiniz. İlk aşamada ihtiyacınızı anlamak, kesin ölçüden daha önemlidir.'],
-    ['Görsellerdeki ürünler satın alınabilir mi?', 'Bu sürümdeki görseller, ürün adları, ölçüler ve fiyatlar tasarım örneğidir. Gerçek katalog ve onaylı fiyatlar henüz yerleştirilmedi; canlı satış yapılmaz.'],
-    ['Bir görsel veya çizim paylaşabilir miyim?', 'Teklif stüdyosuna en fazla 5 JPG, PNG veya WebP görseli ekleyebilirsiniz. Her dosya en fazla 10 MB olabilir. Bu önizlemede dosyalar yalnız açık sayfanızda işlenir, sunucuya gönderilmez.'],
-    ['Üretim ve teslim tarihi nasıl belirlenir?', 'Tarih; tasarım, malzeme, atölye kapasitesi ve teslimat koşulları netleşince teklifin bir parçası olur. Bu önizleme otomatik teslim sözü vermez.'],
-    ['Özel üretim ile standart sipariş arasında ne fark var?', 'Özel üretimde önce ihtiyacınız, ölçü, malzeme ve iş kapsamı netleştirilir. Onaylı teklif ve çizimden sonra üretim planlanır. Standart üründe ise seçili varyant ve satış koşulları önceden belirlenmiştir.']
+    ['Kesin ölçüm yok. Yine de görüşebilir miyiz?', 'Bir fotoğraf, bir model bağlantısı veya birkaç cümleyle başlayabilirsiniz. İlk görüşme için imalat ölçüsü zorunlu değildir. Son ölçü, malzeme ve çizim üretim öncesinde ayrıca netleşir.'],
+    ['Gerçek işler ile konseptleri nasıl ayırt ederim?', 'Atölye arşivi, uygulama aşaması, konsept model ve Pinterest referansı ayrı etiketlerle sunulur. Konsept model tamamlanmış müşteri işi değildir. Arşivde bir örneğin bulunması, aynı ürünün stokta olduğu anlamına gelmez.'],
+    ['Fiyatı ve bütçeyi hangi kararlar değiştirir?', 'Ölçü, gövde ve kapak yapısı, yüzey, ray ve menteşe gibi donanımlar, nakliye ve montaj koşulları bütçeyi birlikte etkiler. Önceliklerinizi paylaşabilirsiniz. Doğrulanmış fiyat listesi bulunmadığı için başlangıç tutarı gösterilmez. Hizmet ve teklif rehberi, karşılaştıracağınız kalemleri açıklar.'],
+    ['İstanbul’un hangi ilçelerine hizmet veriliyor?', 'Atölye İstanbul’dadır. İlçenizi ve işin türünü ilk mesajda paylaşın. Keşif, teslim, nakliye ve montaj uygunluğu görüşmede teyit edilir. Her ilçeye aynı kapsamda veya şehir dışına koşulsuz hizmet sözü verilmez.'],
+    ['Keşif ücretsiz mi, atölyeyi ziyaret edebilir miyim?', 'Yerinde inceleme gerekip gerekmediği, kapsamı ve varsa ücreti önceden konuşulmalıdır. Yeni atölye adresi ve ziyaret saatleri henüz kesinleşmediği için yola çıkmadan önce telefonla teyit edin. Bu sitede ücretsiz keşif veya sabit çalışma saati vaadi yoktur.'],
+    ['Üretim ve teslim süresi ne zaman netleşir?', 'Tasarım, malzeme ve donanım seçimi, atölye planı ve mekâna erişim değerlendirildikten sonra takvim görüşülür. Taslak çalışma ile onaylı üretim planı farklı aşamalardır. Otomatik veya sabit bir teslim süresi gösterilmez.'],
+    ['Nakliye ve montaj fiyata dahil mi?', 'Teklifte üretim, donanım, nakliye, taşıma ve montaj kapsamlarını ayrı sorun. Kat, asansör, erişim ve mevcut mobilyanın sökülmesi gibi ihtiyaçları baştan belirtin. Fotoğraftaki cihazlar, tezgâh, aydınlatma ve dekor kendiliğinden dahil sayılmaz.'],
+    ['Kapora, ödeme ve iptal koşulları nasıl belirlenir?', 'Bu önizleme ödeme almaz veya sözleşme kurmaz. Ödeme planı, kapora, değişiklik ve iptal koşullarını üretim onayından önce işletmeden yazılı isteyin. Buradaki açıklamalar özel sözleşme veya yasal haklarınızın yerine geçmez.'],
+    ['Garanti, bakım ve teslim sonrası destek nasıl konuşulur?', 'Ürünün gerçek malzemesi, kullanılan donanım ve yüzey işlemi için bakım talimatını ve destek kapsamını yazılı isteyin. Bu sitede doğrulanmamış garanti süresi verilmez. Bir sorun yaşarsanız ürün fotoğrafını ve ilgili proje bilgisini Yunus Usta ile paylaşın.'],
+    ['WhatsApp olmadan iletişim kurabilir miyim?', 'Telefonla arayabilir veya SMS uygulamasını açabilirsiniz. Proje özeti TXT veya ZIP olarak hazırlanır. E-posta taslağı açma seçeneği de vardır, fakat işletme e-posta adresi doğrulanmadığından alıcıyı kendiniz teyit ederek girmeniz gerekir. Hiçbiri otomatik gönderim değildir.'],
+    ['Taslağıma daha sonra nasıl devam ederim?', 'Varsayılan olarak taslak açık sekmenin belleğindedir. Açıkça seçerseniz metin, model ve ölçüler son kayıttan itibaren yedi gün bu cihazda tutulur. Dönüşte geri yüklemeyi siz seçersiniz. JSON kurtarma dosyası da indirilebilir. Bu iki yöntem fotoğrafları içermez, görselleri yeniden ekleyin.'],
+    ['Ne kadar görsel ekleyebilirim?', 'En fazla beş JPG, PNG veya WebP görseli ekleyebilirsiniz. Her kaynak dosya en fazla 10 MB, toplam kaynaklar en fazla 25 MB olmalıdır. Görseller paylaşım için bu cihazda hazırlanır. Özel belgeleri, kişileri ve adres bilgilerini paylaşmadan önce kendiniz kontrol edin.'],
+    ['3D masa üretime hazır teknik çizim mi?', 'Hayır. Devir 01 ölçü, yüzey ve yerleşim konuşması için bir konsepttir. GLB ve USDZ dosyaları görsel modeldir. Gerçek motor, dayanım, taşıma kapasitesi ve çarpışmasız hareket atölye ve mekanizma tedarikçisiyle doğrulanmalıdır.'],
+    ['Pinterest’teki bir modeli birebir ürettirebilir miyim?', 'Beğendiğiniz modelden başlayabiliriz. Ölçü, kullanım, malzeme, üretilebilirlik ve tasarım hakları birlikte değerlendirilir. Bağlantı paylaşmanız birebir kopya veya kesin üretim taahhüdü oluşturmaz.']
 ];
 
 },
@@ -1662,6 +1825,169 @@ function convertDimensions(v, target) {
     }
     return Object.keys(errors).length ? { ok: false, errors } : { ok: true, values };
 }
+
+},
+"src/lib/draft-recovery":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MAX_BACKUP_BYTES = exports.BACKUP_TTL_MS = exports.BACKUP_KEY = void 0;
+exports.encodeDraft = encodeDraft;
+exports.decodeDraft = decodeDraft;
+exports.createDraftBackup = createDraftBackup;
+const project_1 = require("./project");
+const model_request_1 = require("./model-request");
+const desk_v8_1 = require("./desk-v8");
+const portfolio_1 = require("./portfolio");
+exports.BACKUP_KEY = 'elif-v21:project-recovery';
+exports.BACKUP_TTL_MS = 7 * 24 * 60 * 60 * 1000;
+exports.MAX_BACKUP_BYTES = 96 * 1024;
+const limits = { systemPrefill: 2500, customerNote: 1600, studioNotice: 1200, systemDetails: 5000, category: 60, url: 2000, note: 1600, dimensions: 160, district: 100, timing: 160, interpretation: 200, width: 10, depth: 10, height: 10, material: 200, finish: 200, details: 1200, readiness: 200 };
+function object(x) { return !!x && typeof x === 'object' && !Array.isArray(x); }
+function text(x, max) { if (typeof x !== 'string' || x.length > max || /[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(x))
+    throw Error('Taslak alanı geçersiz veya çok uzun.'); return x; }
+function safeDraft(raw) {
+    if (!object(raw))
+        throw Error('Proje verisi bulunamadı.');
+    const d = (0, project_1.emptyProject)();
+    for (const [key, max] of Object.entries(limits)) {
+        if (key in raw)
+            d[key] = text(raw[key], max);
+    }
+    if (!portfolio_1.workCategories.some(c => c.id === d.category))
+        throw Error('Bilinmeyen proje kategorisi.');
+    if (raw.unit !== 'cm' && raw.unit !== 'mm')
+        throw Error('Ölçü birimi geçersiz.');
+    d.unit = raw.unit;
+    if (typeof raw.unknown !== 'boolean')
+        throw Error('Ölçü durumu geçersiz.');
+    d.unknown = raw.unknown;
+    if (d.url && !(0, model_request_1.normalizeReference)(d.url))
+        throw Error('Taslakta güvenli olmayan model bağlantısı var.');
+    d.url = (0, model_request_1.normalizeReference)(d.url) || '';
+    d.customerNote = d.note = d.customerNote || d.note;
+    if (raw.sourceRef !== null && raw.sourceRef !== undefined) {
+        const x = raw.sourceRef;
+        if (!object(x) || !['work', 'concept', 'reference', 'studio', 'idea'].includes(x.kind))
+            throw Error('Model kaynağı geçersiz.');
+        const url = text(x.url, 2000);
+        if (url && !(0, model_request_1.normalizeReference)(url))
+            throw Error('Model kaynağı bağlantısı geçersiz.');
+        const ref = { id: text(x.id, 150), kind: x.kind, title: text(x.title, 300), url: (0, model_request_1.normalizeReference)(url) || '' };
+        if (x.image !== undefined) {
+            const image = text(x.image, 120);
+            if (!/^[a-z0-9][a-z0-9_-]*(?:\.webp)?$/.test(image))
+                throw Error('Model görsel anahtarı geçersiz.');
+            ref.image = image;
+        }
+        d.sourceRef = ref;
+    }
+    if (raw.studioConfig !== null && raw.studioConfig !== undefined) {
+        if (!object(raw.studioConfig))
+            throw Error('3D seçenekleri geçersiz.');
+        const normalized = (0, desk_v8_1.normalizeStudio)(raw.studioConfig);
+        for (const key of Object.keys(normalized)) {
+            if (raw.studioConfig[key] !== normalized[key])
+                throw Error('3D seçenekleri desteklenen aralığın dışında.');
+        }
+        d.studioConfig = normalized;
+    }
+    d.selections = [];
+    return d;
+}
+function encodeDraft(draft, now = Date.now()) { const out = JSON.stringify({ format: 'elif-project-draft', version: 1, savedAt: now, project: safeDraft(draft) }, null, 2); if (new TextEncoder().encode(out).length > exports.MAX_BACKUP_BYTES)
+    throw Error('Taslak dosyası fazla büyük.'); return out; }
+function decodeDraft(input) { if (typeof input !== 'string' || new TextEncoder().encode(input).length > exports.MAX_BACKUP_BYTES)
+    throw Error('En fazla 96 KB taslak dosyası açılabilir.'); let r; try {
+    r = JSON.parse(input);
+}
+catch {
+    throw Error('Dosya geçerli JSON değil.');
+} if (!object(r) || r.format !== 'elif-project-draft' || r.version !== 1)
+    throw Error('Bu dosya Elif proje taslağı biçiminde değil.'); return safeDraft(r.project); }
+function createDraftBackup(storage) {
+    return {
+        save(draft, now = Date.now()) { try {
+            if (!storage)
+                throw Error('Cihaz depolaması kullanılamıyor.');
+            storage.setItem(exports.BACKUP_KEY, JSON.stringify({ savedAt: now, expiresAt: now + exports.BACKUP_TTL_MS, file: encodeDraft(draft, now) }));
+            return { ok: true };
+        }
+        catch {
+            return { ok: false, error: 'Cihaz kaydı yapılamadı. Taslağınız açık sekmede duruyor. Taslak dosyasını indirin.' };
+        } },
+        read(now = Date.now()) { try {
+            if (!storage)
+                return { kind: 'unavailable' };
+            const text = storage.getItem(exports.BACKUP_KEY);
+            if (!text)
+                return { kind: 'empty' };
+            if (text.length > exports.MAX_BACKUP_BYTES * 2)
+                return { kind: 'invalid' };
+            let r;
+            try {
+                r = JSON.parse(text);
+            }
+            catch {
+                return { kind: 'invalid' };
+            }
+            if (!object(r) || !Number.isFinite(r.savedAt) || !Number.isFinite(r.expiresAt) || r.expiresAt - r.savedAt !== exports.BACKUP_TTL_MS || r.savedAt > now + 300000)
+                return { kind: 'invalid' };
+            if (r.expiresAt <= now) {
+                storage.removeItem(exports.BACKUP_KEY);
+                return { kind: 'expired' };
+            }
+            try {
+                return { kind: 'ready', draft: decodeDraft(r.file), savedAt: r.savedAt, expiresAt: r.expiresAt };
+            }
+            catch {
+                return { kind: 'invalid' };
+            }
+        }
+        catch {
+            return { kind: 'unavailable' };
+        } },
+        erase() { try {
+            if (!storage)
+                return false;
+            storage.removeItem(exports.BACKUP_KEY);
+            return true;
+        }
+        catch {
+            return false;
+        } }
+    };
+}
+
+},
+"src/lib/draft-session":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.draftSession = void 0;
+const project_1 = require("./project");
+const draft_recovery_1 = require("./draft-recovery");
+let enabled = false, message = '';
+const listeners = new Set();
+const notify = () => listeners.forEach(fn => fn());
+function disk() { try {
+    return (0, draft_recovery_1.createDraftBackup)(typeof window !== 'undefined' ? window.localStorage : null);
+}
+catch {
+    return (0, draft_recovery_1.createDraftBackup)(null);
+} }
+project_1.projectStore.subscribe(draft => { if (!enabled)
+    return; const result = disk().save(draft); if (!result.ok) {
+    enabled = false;
+    message = result.error || 'Cihaz kaydı yapılamadı.';
+}
+else
+    message = 'Metin, model ve ölçüler bu cihazda kaydedildi. Fotoğraflar dahil değil.'; notify(); });
+exports.draftSession = {
+    status: () => ({ enabled, message, record: disk().read() }),
+    subscribe(fn) { listeners.add(fn); return () => listeners.delete(fn); },
+    enable() { const r = disk().save(project_1.projectStore.get()); enabled = r.ok; message = r.ok ? 'Yedi günlük cihaz kurtarması açık. Sonraki metin ve ölçü değişiklikleri kaydedilir.' : r.error || 'Kaydedilemedi.'; notify(); return r.ok; },
+    disable() { enabled = false; const ok = disk().erase(); message = ok ? 'Cihazdaki kurtarma kaydı silindi. Açık sekmedeki fikriniz korunuyor.' : 'Depolamaya erişilemedi. Tarayıcı site verilerini kullanarak kaydı temizleyin.'; notify(); return ok; },
+    restore(draft) { const d = project_1.projectStore.restore(draft); notify(); return d; },
+};
 
 },
 "src/lib/image-manifest":function(module,exports,require){
@@ -2585,6 +2911,13 @@ function createProjectStore() {
     let value = emptyProject(), activeKey = '', studioEntry = '';
     const legacySeeds = new Set();
     const get = () => clone(value);
+    const listeners = new Set();
+    const notify = () => { const snapshot = get(); for (const fn of listeners) {
+        try {
+            fn(clone(snapshot));
+        }
+        catch { }
+    } return snapshot; };
     const synchronizeStudio = () => {
         if (value.sourceRef?.kind !== 'studio' || !value.studioConfig)
             return;
@@ -2621,7 +2954,7 @@ function createProjectStore() {
                 value.dimensions = numericText(value);
             synchronizeStudio();
         }
-        return get();
+        return notify();
     };
     const adoptReference = (key, seed) => {
         if (activeKey === key)
@@ -2629,19 +2962,20 @@ function createProjectStore() {
         activeKey = key;
         const external = (0, model_request_1.normalizeReference)(seed.url || '') || '';
         value = { ...value, category: seed.category || 'ozel-tasarim', url: external, sourceRef: seed.sourceRef ? { ...seed.sourceRef } : { id: key, kind: external ? 'reference' : 'idea', title: seed.systemPrefill || seed.note || 'Seçilen model', url: external }, systemPrefill: seed.systemPrefill || seed.note || '', systemDetails: '', revision: value.revision + 1 };
-        return get();
+        return notify();
     };
     const getStudio = () => ({ ...(value.studioConfig || desk_v8_1.defaultStudio) });
     const setStudio = (config) => { const c = (0, desk_v8_1.normalizeStudio)(config), previous = value.studioConfig; value = { ...value, studioConfig: c, revision: value.revision + 1 }; if (value.sourceRef?.kind === 'studio' && !value.studioNotice) {
         value = { ...value, width: String(c.width), depth: String(c.depth), height: String(c.height), unit: 'cm', dimensions: `${c.width} × ${c.depth} × ${c.height} cm`, systemDetails: (0, desk_v8_1.studioSummary)(c), material: previous?.material !== c.material ? (0, desk_v8_1.studioRequestMaterial)(c.material) : value.material };
-    } return getStudio(); };
+    } notify(); return getStudio(); };
     const handoffStudio = (config) => {
         const c = (0, desk_v8_1.normalizeStudio)(config);
         activeKey = 'studio:devir-01';
         value = { ...value, sourceRef: { id: 'devir-01', kind: 'studio', title: 'Devir 01. Yükseklik ayarlı çalışma masası', url: '', image: 'devir-poster.webp' }, systemPrefill: 'Devir 01 çekmeceli, döner yan tablalı çalışma masası konseptini alanıma göre değerlendirmek istiyorum.', url: '', category: 'ozel-tasarim', studioConfig: c, studioNotice: '', width: String(c.width), depth: String(c.depth), height: String(c.height), unit: 'cm', unknown: false, dimensions: `${c.width} × ${c.depth} × ${c.height} cm`, material: (0, desk_v8_1.studioRequestMaterial)(c.material), finish: c.material === 'mese' ? 'Açık ton ve mat görünüm' : c.material === 'koyu' ? 'Koyu ton ve ahşap dokusu' : 'Birlikte değerlendirelim', systemDetails: (0, desk_v8_1.studioSummary)(c), revision: value.revision + 1 };
-        return get();
+        return notify();
     };
-    return { get, patch, adoptReference, getStudio, setStudio, handoffStudio, openStudio: (key, config) => { if (key && studioEntry !== key) {
+    return { get, patch, adoptReference, getStudio, setStudio, handoffStudio, subscribe: (fn) => { listeners.add(fn); return () => listeners.delete(fn); },
+        restore: (draft) => { value = { ...emptyProject(), ...clone(draft), revision: value.revision + 1 }; activeKey = ''; studioEntry = ''; legacySeeds.clear(); return notify(); }, openStudio: (key, config) => { if (key && studioEntry !== key) {
             studioEntry = key;
             setStudio(config);
         } return getStudio(); },
@@ -2654,8 +2988,8 @@ function createProjectStore() {
             if (v !== undefined && v !== '' && (!value[n] || (n === 'category' && value.category === 'ozel-tasarim')))
                 update[n] = v;
         } patch(update); },
-        clearSource: () => { activeKey = ''; value = { ...value, sourceRef: null, systemPrefill: '', url: '', systemDetails: '', revision: value.revision + 1 }; return get(); },
-        clear: () => { value = emptyProject(); activeKey = ''; studioEntry = ''; legacySeeds.clear(); } };
+        clearSource: () => { activeKey = ''; value = { ...value, sourceRef: null, systemPrefill: '', url: '', systemDetails: '', revision: value.revision + 1 }; return notify(); },
+        clear: () => { value = emptyProject(); activeKey = ''; studioEntry = ''; legacySeeds.clear(); notify(); } };
 }
 exports.projectStore = createProjectStore();
 function projectRows(v, files, selectionLabels = []) {
@@ -2710,11 +3044,15 @@ exports.v7Routes = exports.routePaths = void 0;
 exports.pageTitle = pageTitle;
 exports.pageDescription = pageDescription;
 exports.pageShareImage = pageShareImage;
+exports.indexableRoute = indexableRoute;
 exports.pageSchema = pageSchema;
 const portfolio_1 = require("./portfolio");
+const project_1 = require("./project");
+const site_profile_1 = require("./site-profile");
 const data_1 = require("./data");
-exports.routePaths = ['/devir-01', '/projeler', '/kategoriler', '/ilham-modelleri', '/modelini-getir', '/hakkimizda', '/atolye', ...portfolio_1.works.map(w => '/proje/' + w.id), ...portfolio_1.workCategories.map(c => '/kategoriler/' + c.id), '/', '/urunler', '/tasarim-masasi', '/atolyemiz', '/ozel-uretim', '/malzemeler', '/mekan-fikirleri', '/rehber', '/teklif-al', '/sikca-sorulan-sorular', '/iletisim', '/sepet', '/odeme', '/calisma-dosyam', '/gizlilik', '/atolye-demolari', ...data_1.products.map(p => '/urun/' + p.id), ...data_1.ideas.map(p => '/mekan-fikirleri/' + p.id), ...data_1.journal.map(p => '/rehber/' + p.id)];
-function pageTitle(path) { const p = path.split('?')[0]; if (p === '/devir-01')
+exports.routePaths = ['/hizmet-ve-teklif', '/devir-01', '/projeler', '/kategoriler', '/ilham-modelleri', '/modelini-getir', '/hakkimizda', '/atolye', ...portfolio_1.works.map(w => '/proje/' + w.id), ...portfolio_1.workCategories.map(c => '/kategoriler/' + c.id), '/', '/urunler', '/tasarim-masasi', '/atolyemiz', '/ozel-uretim', '/malzemeler', '/mekan-fikirleri', '/rehber', '/teklif-al', '/sikca-sorulan-sorular', '/iletisim', '/sepet', '/odeme', '/calisma-dosyam', '/gizlilik', '/atolye-demolari', ...data_1.products.map(p => '/urun/' + p.id), ...data_1.ideas.map(p => '/mekan-fikirleri/' + p.id), ...data_1.journal.map(p => '/rehber/' + p.id)];
+function pageTitle(path) { const p = path.split('?')[0]; if (p === '/hizmet-ve-teklif')
+    return 'Hizmet ve Teklif Rehberi | Elif Tasarım'; if (p === '/devir-01')
     return 'Devir 01. Çalışma Biçiminize Yer Açın | Elif Tasarım'; if (p === '/arama')
     return 'Arama | Elif Tasarım'; if (p === '/calisma-dosyam')
     return 'İlham Dosyanız | Elif Tasarım'; if (p === '/gizlilik')
@@ -2731,6 +3069,7 @@ function pageDescription(path) {
         return 'Elif Tasarım. ' + c.name + '. ' + c.detail;
     const desc = { '/': 'Zamana değer katan mobilyalar. İstanbul’daki aile atölyesinden gerçek çalışmalar, ilham modelleri ve Yunus Usta ile doğrudan iletişim.', '/modelini-getir': 'Pinterest bağlantısı, kendi fotoğrafınız veya fikrinizle başlayın. Ölçü ve kullanımınızı özetleyin, Yunus Usta ile WhatsApp’ta görüşün.', '/teklif-al': 'Kayıpsız ortak proje taslağı. Yaklaşık ölçü, malzeme ve kullanım ayrıntılarını birlikte hazırlayın.', '/arama': 'Elif Tasarım çalışma arşivi, ilham modelleri ve kategorilerinde arayın.', '/iletisim': 'Yunus Usta ile doğrudan iletişim. +90 530 879 71 69. Yeni atölye adresini ziyaret öncesinde teyit edin.', '/gizlilik': 'Elif Tasarım. Yerel proje taslağı, fotoğraf hazırlama, isteğe bağlı saklama, WhatsApp ve Pinterest hakkında açıklama.', '/calisma-dosyam': 'Gerçek çalışma, konsept model ve Pinterest modelini ortak ilham dosyanızda toplayın.' };
     const specific = {
+        '/hizmet-ve-teklif': 'Özel üretim mobilyada bütçe, malzeme, donanım, keşif, nakliye ve montaj kapsamını birlikte netleştirmek için görüşme rehberi.',
         '/devir-01': 'Devir 01. Yükselen yüzeyi, döner yan tablası ve çekmeceli depolamasıyla özel çalışma masası konsepti. Üç başlangıç düzenini keşfedin ve 3D stüdyoda karşılaştırın.',
         '/projeler': 'Atölyeden paylaşılan mutfak, kahve köşesi, TV ünitesi ve depolama çalışmalarını kaynak türü ve kullanım alanına göre inceleyin.',
         '/kategoriler': 'Mutfak, TV ünitesi, vestiyer, gardırop, kahve köşesi, sehpa, pergola ve özel tasarım için üretim alanlarımızı keşfedin.',
@@ -2749,7 +3088,12 @@ function pageDescription(path) {
     return desc[p] || specific[p] || ('Elif Tasarım. ' + pageTitle(p).split(' | ')[0] + '. Çalışmaları ve görüşme seçeneklerini keşfedin.');
 }
 exports.v7Routes = [...new Set([...exports.routePaths.filter(p => !['/urunler', '/sepet', '/odeme', '/atolye-demolari', '/atolyemiz', '/mekan-fikirleri'].includes(p) && !p.startsWith('/urun/') && !p.startsWith('/mekan-fikirleri/')), '/arama'])];
-function pageShareImage(path) { const p = path.split('?')[0]; if (p === '/devir-01')
+function pageShareImage(path) { const p = path.split('?')[0]; if (p === '/hizmet-ve-teklif')
+    return 'r13-full.webp'; const article = data_1.journal.find(j => '/rehber/' + j.id === p); if (article)
+    return article.image === 'joinery.webp' ? 'joinery-v8.webp' : article.image; if (['/iletisim', '/hakkimizda', '/atolye'].includes(p))
+    return 'work-joinery-full.webp'; if (p === '/malzemeler')
+    return 'joinery-v8.webp'; if (p === '/sikca-sorulan-sorular')
+    return 'concept-model-full.webp'; if (p === '/devir-01')
     return 'devir-standing.webp'; if (p === '/tasarim-masasi')
     return 'atelier-poster-v9.webp'; const work = portfolio_1.works.find(w => '/proje/' + w.id === p); if (work)
     return work.images[0] + '-full.webp'; const cat = portfolio_1.workCategories.find(c => '/kategoriler/' + c.id === p); if (cat) {
@@ -2757,7 +3101,31 @@ function pageShareImage(path) { const p = path.split('?')[0]; if (p === '/devir-
     return (representative ? representative.images[0] : cat.image) + '-full.webp';
 } if (['/modelini-getir', '/teklif-al', '/ilham-modelleri'].includes(p))
     return 'concept-model-full.webp'; return 'r13-full.webp'; }
-function pageSchema(path, site) { const route = path.split('?')[0], base = site.replace(/\/$/, ''); return { '@context': 'https://schema.org', '@type': 'WebPage', name: pageTitle(route), description: pageDescription(route), url: base + (route === '/' ? '/' : route + '/'), isPartOf: { '@type': 'WebSite', name: 'Elif Tasarım', url: base + '/' } }; }
+function indexableRoute(path) { return !['/arama', '/modelini-getir', '/teklif-al', '/calisma-dosyam', '/404'].includes(path.split('?')[0]); }
+function pageSchema(path, site) {
+    const route = path.split('?')[0], base = site.replace(/\/$/, ''), profile = (0, site_profile_1.getSiteProfile)(), url = base + (route === '/' ? '/' : route + '/');
+    const publisher = { '@type': profile.address ? 'LocalBusiness' : 'Organization', '@id': base + '/#atolye', name: project_1.business.name, url: base + '/', telephone: project_1.business.telephone, logo: base + '/assets/elif-amblem.png', areaServed: { '@type': 'City', name: project_1.business.city }, contactPoint: { '@type': 'ContactPoint', telephone: project_1.business.telephone, contactType: 'Proje görüşmesi', availableLanguage: 'tr' } };
+    if (profile.email)
+        publisher.email = profile.email;
+    if (profile.address)
+        publisher.address = { '@type': 'PostalAddress', ...profile.address };
+    if (profile.social.length)
+        publisher.sameAs = profile.social;
+    const crumbs = [{ name: 'Anasayfa', url: base + '/' }];
+    if (route.startsWith('/proje/'))
+        crumbs.push({ name: 'Bitirdiğimiz İşler', url: base + '/projeler/' });
+    if (route.startsWith('/kategoriler/'))
+        crumbs.push({ name: 'Kategoriler', url: base + '/kategoriler/' });
+    if (route.startsWith('/rehber/'))
+        crumbs.push({ name: 'Atölye Notları', url: base + '/rehber/' });
+    if (route !== '/')
+        crumbs.push({ name: pageTitle(route).split(' | ')[0], url });
+    const schema = { '@context': 'https://schema.org', '@type': 'WebPage', '@id': url + '#sayfa', name: pageTitle(route), description: pageDescription(route), url, inLanguage: 'tr-TR', publisher, isPartOf: { '@type': 'WebSite', '@id': base + '/#website', name: project_1.business.name, url: base + '/' }, breadcrumb: { '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })) } };
+    const article = data_1.journal.find(j => '/rehber/' + j.id === route);
+    if (article)
+        schema.mainEntity = { '@type': 'Article', headline: article.title, description: article.intro, image: base + '/assets/' + pageShareImage(route), inLanguage: 'tr-TR', author: { '@type': 'Organization', name: project_1.business.name }, publisher, mainEntityOfPage: url };
+    return schema;
+}
 
 },
 "src/lib/selections":function(module,exports,require){
@@ -2776,6 +3144,8 @@ const domain_1 = require("./domain");
 const target = (id) => '/ilham-modelleri?hedef=' + encodeURIComponent(id);
 exports.selectionEntries = [...portfolio_1.works.map(w => ({ id: 'work:' + w.id, title: w.subtitle, category: w.category, image: w.images[0], kind: 'work', path: '/proje/' + w.id })), ...portfolio_1.concepts.map(c => ({ id: 'concept:' + c.id, title: c.subtitle, category: c.category, image: c.image, kind: 'concept', path: target('concept:' + c.id) })), ...portfolio_1.pinterestReferences.map(p => ({ id: 'pin:' + p.id, title: pinterest_1.pinLookup[p.id]?.label || p.title, category: p.category, kind: 'reference', path: target('pin:' + p.id) }))];
 const pages = [
+    { id: 'page:service', title: 'Hizmet ve teklif rehberi', category: 'ozel-tasarim', kind: 'page', path: '/hizmet-ve-teklif', keywords: 'bütçe fiyat nakliye montaj keşif garanti kapora ödeme hizmet bölgesi' },
+    { id: 'page:faq', title: 'Sıkça sorulan sorular', category: 'ozel-tasarim', kind: 'page', path: '/sikca-sorulan-sorular', keywords: 'soru cevap teslim süre ücret iptal saklama kurtarma taslak SMS e-posta' },
     { id: 'page:devir-product', title: 'Devir 01. Konsept masayı keşfedin', category: 'ozel-tasarim', image: 'devir-standing.webp', kind: 'page', path: '/devir-01', keywords: 'çalışma masası ofis konsept yükselen masa ürün tanıtımı' },
     { id: 'page:devir', title: 'Devir 01. Yükseklik ayarlı çalışma masası', category: 'ozel-tasarim', image: 'devir-poster.webp', kind: 'page', path: '/tasarim-masasi', keywords: '3D üç boyutlu üçboyutlu three.js stüdyo çalışma masası yukseklik ayarli ofis masa çekmece' },
     { id: 'page:bespoke', title: 'Özel üretim. Nasıl ilerliyoruz?', category: 'ozel-tasarim', kind: 'page', path: '/ozel-uretim', keywords: 'süreç özel ölçü teklif montaj keşif' },
@@ -2791,6 +3161,14 @@ function selectedEntries(ids) { return validSelectionIds(ids).map(id => exports.
 function selectionSummary(ids) { return selectedEntries(ids).map(x => x.title + ' [' + x.id + ']' + (x.kind === 'reference' ? '\nKaynak, ' + (pinterest_1.pinLookup[x.id.slice(4)]?.canonical || 'https://pin.it/' + x.id.slice(4)) : '')); }
 function inspirationTarget(id) { return id ? exports.selectionEntries.find(x => x.id === id && ['concept', 'reference'].includes(x.kind)) || null : null; }
 function targetElementId(id) { return 'ilham-' + id.replace(/[^a-zA-Z0-9_-]/g, '-'); }
+
+},
+"src/lib/site-profile":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getSiteProfile = getSiteProfile;
+const base = { email: null, hours: null, address: null, social: [], verifiedAt: '2026-09-27' };
+function getSiteProfile() { return { ...base, social: [...base.social], address: base.address ? { ...base.address } : null }; }
 
 },
 "src/lib/source-context":function(module,exports,require){
@@ -2975,6 +3353,9 @@ const portfolio_1 = require("../lib/portfolio");
 const source_context_1 = require("../lib/source-context");
 const model_request_1 = require("../lib/model-request");
 const project_1 = require("../lib/project");
+const DraftRecovery_1 = require("../components/DraftRecovery");
+const ContactAlternatives_1 = require("../components/ContactAlternatives");
+const draft_session_1 = require("../lib/draft-session");
 const upload_1 = require("../lib/upload");
 const selections_1 = require("../lib/selections");
 const zip_1 = require("../lib/zip");
@@ -3105,8 +3486,8 @@ class BringModel extends react_1.Component {
                         (0, react_1.createElement)("li", null,
                             (0, react_1.createElement)("span", null, "02"),
                             (0, react_1.createElement)("div", null,
-                                (0, react_1.createElement)("strong", null, "WhatsApp\u2019ta siz g\u00F6nderin."),
-                                (0, react_1.createElement)("small", null, "Mesaj Yunus Usta\u2019n\u0131n numaras\u0131na a\u00E7\u0131l\u0131r."))),
+                                (0, react_1.createElement)("strong", null, "Tercih etti\u011Finiz kanaldan payla\u015F\u0131n."),
+                                (0, react_1.createElement)("small", null, "Telefon, WhatsApp veya haz\u0131rlad\u0131\u011F\u0131n\u0131z \u00F6zetle ba\u015Flay\u0131n."))),
                         (0, react_1.createElement)("li", null,
                             (0, react_1.createElement)("span", null, "03"),
                             (0, react_1.createElement)("div", null,
@@ -3119,8 +3500,9 @@ class BringModel extends react_1.Component {
                     (0, react_1.createElement)("p", { className: "fineprint" }, "Yunus Usta. Telefon numaras\u0131 i\u015Fletme i\u00E7in payla\u015F\u0131ld\u0131. Yeni at\u00F6lye adresini ziyaret \u00F6ncesinde g\u00F6r\u00FC\u015Fmede teyit edin."),
                     (0, react_1.createElement)("details", { className: "v11-data-note" },
                         (0, react_1.createElement)("summary", null, "Tasla\u011F\u0131m nerede saklan\u0131yor?"),
-                        (0, react_1.createElement)("p", null, "Tasla\u011F\u0131n\u0131z bu a\u00E7\u0131k sekmenin belle\u011Finde, site i\u00E7indeki ge\u00E7i\u015Flerde korunur. Sayfay\u0131 yenilemeden veya kapatmadan \u00F6nce proje dosyan\u0131z\u0131 indirin. Foto\u011Fraf ve notlar sunucuya g\u00F6nderilmez."))),
+                        (0, react_1.createElement)("p", null, "Varsay\u0131lan olarak a\u00E7\u0131k sekmede korunur. Sa\u011Fdaki kurtarma alan\u0131ndan metin ve \u00F6l\u00E7\u00FCleri a\u00E7\u0131k izninizle bu cihazda yedi g\u00FCn saklayabilir veya bir taslak dosyas\u0131na indirebilirsiniz. Foto\u011Fraflar kurtarma kayd\u0131na dahil de\u011Fildir. Otomatik sunucu g\u00F6nderimi yap\u0131lmaz."))),
                 (0, react_1.createElement)("div", { className: "model-form" },
+                    (0, react_1.createElement)(DraftRecovery_1.DraftRecovery, { onRestore: () => this.setState({ v: project_1.projectStore.get(), files: [], step: 0, error: '', errorField: '', detailsOpen: !project_1.projectStore.get().unknown }) }),
                     (0, react_1.createElement)("nav", { className: "model-stepper", "aria-label": "Model payla\u015F\u0131m ad\u0131mlar\u0131" }, ['Modeliniz', 'Ayrıntılar', 'Görüşelim'].map((title, i) => (0, react_1.createElement)("button", { key: title, type: "button", "aria-current": step === i ? 'step' : undefined, disabled: i > step, onClick: () => this.go(i) },
                         (0, react_1.createElement)("span", null, String(i + 1).padStart(2, '0')),
                         title))),
@@ -3262,6 +3644,7 @@ class BringModel extends react_1.Component {
                                         "Yunus Usta\u2019ya WhatsApp\u2019ta yaz ",
                                         (0, react_1.createElement)(ui_1.Icon, { name: "diagonal" })),
                                     (0, react_1.createElement)("p", { className: "field-hint" }, "Bu site mesaj teslimini veya okundu bilgisini do\u011Frulamaz. Hen\u00FCz sipari\u015F olu\u015Fmad\u0131.")),
+                                (0, react_1.createElement)(ContactAlternatives_1.ContactAlternatives, { text: this.text() }),
                                 (0, react_1.createElement)("div", { className: "model-export" },
                                     (0, react_1.createElement)("button", { type: "button", className: "button button-outline", disabled: this.state.sharing, onClick: this.exportBundle },
                                         "\u00D6zet ve g\u00F6rselleri indir ",
@@ -3287,7 +3670,7 @@ class BringModel extends react_1.Component {
                 (0, react_1.createElement)("p", null, "Bir model se\u00E7mek i\u00E7in galerilere d\u00F6nebilirsiniz. Kendi notunuz bu sekmede korunur, etkin model de\u011Fi\u015Fikli\u011Fi \u00F6zetinizde a\u00E7\u0131k\u00E7a g\u00F6r\u00FCn\u00FCr."),
                 (0, react_1.createElement)(ui_1.ButtonLink, { to: "/ilham-modelleri", navigate: a.navigate, secondary: true }, "\u0130lham modellerine bak"),
                 (0, react_1.createElement)("button", { type: "button", className: "text-link v11-new-project", onClick: () => { if (!window.confirm('Bu proje notları, ölçüleri ve eklenen fotoğraflar temizlensin mi? İlham dosyanızdaki herkese açık seçimler korunur.'))
-                        return; project_1.projectStore.clear(); project_1.attachmentStore.clear(); this.setState({ step: 0, v: project_1.projectStore.get(), files: [], error: '', errorField: '', message: '', detailsOpen: false }); a.navigate('/modelini-getir'); } }, "Yeni bir proje ba\u015Flat")));
+                        return; draft_session_1.draftSession.disable(); project_1.projectStore.clear(); project_1.attachmentStore.clear(); this.setState({ step: 0, v: project_1.projectStore.get(), files: [], error: '', errorField: '', message: '', detailsOpen: false }); a.navigate('/modelini-getir'); } }, "Yeni bir proje ba\u015Flat")));
     }
 }
 exports.BringModel = BringModel;
@@ -3653,8 +4036,10 @@ function FAQ(a) {
         (0, react_1.createElement)(ui_1.PageIntro, { kicker: "SIK\u00C7A SORULAN SORULAR", title: (0, react_1.createElement)(react_1.Fragment, null,
                 "Akl\u0131n\u0131zda",
                 (0, react_1.createElement)("br", null),
-                (0, react_1.createElement)("em", null, "kalmas\u0131n.")), desc: "\u00D6zel \u00FCretim ve bu \u00F6nizlemenin \u00E7al\u0131\u015Fma bi\u00E7imi hakk\u0131nda merak edilenler." }),
+                (0, react_1.createElement)("em", null, "kalmas\u0131n.")), desc: "B\u00FCt\u00E7e, ke\u015Fif, montaj, teslim ve taslak g\u00FCvenli\u011Fi. \u0130lk g\u00F6r\u00FC\u015Fmeden \u00F6nce s\u0131k sorulan sorular." }),
         (0, react_1.createElement)("section", { className: "wrap narrow" },
+            (0, react_1.createElement)("div", { className: "v21-faq-intro" },
+                (0, react_1.createElement)(ui_1.TextLink, { to: "/hizmet-ve-teklif", navigate: a.navigate }, "Teklif kapsam\u0131n\u0131 nas\u0131l kar\u015F\u0131la\u015Ft\u0131r\u0131r\u0131m?")),
             (0, react_1.createElement)(ui_1.Accordion, { items: data_1.faqs })),
         (0, react_1.createElement)(ui_1.Callout, { navigate: a.navigate }));
 }
@@ -3771,12 +4156,14 @@ class Home extends react_1.Component {
                                 "Birlikte ",
                                 (0, react_1.createElement)("em", null, "nas\u0131l ilerleriz?"))),
                         (0, react_1.createElement)("p", null, "Acele bir se\u00E7im de\u011Fil, iyi d\u00FC\u015F\u00FCn\u00FClm\u00FC\u015F bir par\u00E7a. Her a\u015Famada ihtiyac\u0131n\u0131z\u0131 ve kullan\u0131m\u0131n\u0131z\u0131 merkeze al\u0131r\u0131z.")),
-                    (0, react_1.createElement)("div", { className: "process-steps" }, [['Fikrinizi dinleriz.', 'Bir Pinterest bağlantısı, fotoğraf veya kendi çiziminiz. Önce nasıl kullanacağınızı konuşuruz.'], ['Ölçüyü netleştiririz.', 'Malzeme, renk, donanım ve alanın ölçülerini birlikte değerlendiririz. Teklif bu ayrıntılarla şekillenir.'], ['Atölyede şekillenir.', 'Üzerinde anlaşılan tasarım, ölçü ve malzemeyle üretim planlanır.'], ['Yerini bulur.', 'Teslim ve gerekiyorsa yerinde uygulama, projenin koşullarına göre birlikte düzenlenir.']].map(([title, text], i) => (0, react_1.createElement)("article", { key: title },
-                        (0, react_1.createElement)("span", { className: "process-number" },
-                            "0",
-                            i + 1),
-                        (0, react_1.createElement)("h3", null, title),
-                        (0, react_1.createElement)("p", null, text)))))),
+                    (0, react_1.createElement)("div", { className: "process-steps" },
+                        [['Fikrinizi dinleriz.', 'Bir Pinterest bağlantısı, fotoğraf veya kendi çiziminiz. Önce nasıl kullanacağınızı konuşuruz.'], ['Ölçüyü netleştiririz.', 'Malzeme, renk, donanım ve alanın ölçülerini birlikte değerlendiririz. Teklif bu ayrıntılarla şekillenir.'], ['Atölyede şekillenir.', 'Üzerinde anlaşılan tasarım, ölçü ve malzemeyle üretim planlanır.'], ['Yerini bulur.', 'Teslim ve gerekiyorsa yerinde uygulama, projenin koşullarına göre birlikte düzenlenir.']].map(([title, text], i) => (0, react_1.createElement)("article", { key: title },
+                            (0, react_1.createElement)("span", { className: "process-number" },
+                                "0",
+                                i + 1),
+                            (0, react_1.createElement)("h3", null, title),
+                            (0, react_1.createElement)("p", null, text))),
+                        (0, react_1.createElement)(ui_1.TextLink, { to: "/hizmet-ve-teklif", navigate: a.navigate }, "Teklif kapsam\u0131n\u0131 birlikte netle\u015Ftirelim")))),
             (0, react_1.createElement)("section", { className: "wrap v11-studio-invitation", id: "uc-boyutlu-studyo" },
                 (0, react_1.createElement)("div", null,
                     (0, react_1.createElement)(ui_1.Eyebrow, null, "DEV\u0130R 01 / \u0130NTERAKT\u0130F KONSEPT ST\u00DCDYOSU"),
@@ -4179,6 +4566,94 @@ function AboutAtelier(a) {
 }
 
 },
+"src/pages/ServiceGuide":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ServiceGuide = ServiceGuide;
+const react_1 = require("react");
+const ui_1 = require("../components/ui");
+const PortfolioUI_1 = require("../components/PortfolioUI");
+const portfolio_1 = require("../lib/portfolio");
+function ServiceGuide(a) {
+    const completed = portfolio_1.works.filter(w => w.status === 'work'), categories = new Set(completed.map(w => w.category)).size;
+    return (0, react_1.createElement)(react_1.Fragment, null,
+        (0, react_1.createElement)("header", { className: "v6-page-head wrap" },
+            (0, react_1.createElement)(ui_1.Eyebrow, null, "EL\u0130F / H\u0130ZMET VE TEKL\u0130F REHBER\u0130"),
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)("h1", null,
+                    "G\u00FCzel bir i\u015F,",
+                    (0, react_1.createElement)("br", null),
+                    (0, react_1.createElement)("em", null, "a\u00E7\u0131k bir anla\u015Fmayla ba\u015Flar.")),
+                (0, react_1.createElement)("p", null, "Bir modelin foto\u011Fraf\u0131ndan, size ait bir mobilyaya. \u00D6l\u00E7\u00FCy\u00FC, malzemeyi ve kapsam\u0131 ayn\u0131 a\u00E7\u0131kl\u0131kla konu\u015Fal\u0131m."))),
+        (0, react_1.createElement)("section", { className: "wrap v21-guide-hero" },
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: "r13", alt: "Elif Tasar\u0131m at\u00F6lye ar\u015Fivindeki mutfak uygulamas\u0131", eager: true, sizes: "(max-width: 800px) 92vw, 52vw" }),
+                (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: "work" })),
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)(ui_1.Eyebrow, null, "\u00D6NCE NEYE \u0130HT\u0130YACINIZ VAR?"),
+                (0, react_1.createElement)("h2", null,
+                    "Bir b\u00FCt\u00E7eden \u00F6nce,",
+                    (0, react_1.createElement)("br", null),
+                    (0, react_1.createElement)("em", null, "bir \u00F6ncelik.")),
+                (0, react_1.createElement)("p", null, "Daha fazla depolama, rahat bir \u00E7al\u0131\u015Fma alan\u0131 veya evinize uyan bir \u00F6l\u00E7\u00FC. \u00D6nceli\u011Finizi ve varsa b\u00FCt\u00E7e beklentinizi ilk g\u00F6r\u00FC\u015Fmede payla\u015F\u0131n."),
+                (0, react_1.createElement)("p", null, "Burada do\u011Frulanm\u0131\u015F fiyat listesi bulunmuyor. Ayn\u0131 g\u00F6r\u00FCn\u00FCm, farkl\u0131 g\u00F6vde, kapak, donan\u0131m ve uygulama kararlar\u0131yla farkl\u0131 bir kapsama d\u00F6n\u00FC\u015Febilir."),
+                (0, react_1.createElement)(ui_1.ButtonLink, { to: "/modelini-getir", navigate: a.navigate }, "Fikrimi ve \u00F6nceliklerimi haz\u0131rlayay\u0131m"))),
+        (0, react_1.createElement)("section", { className: "wrap v21-guide-section" },
+            (0, react_1.createElement)(ui_1.Eyebrow, null, "TEKL\u0130FLER\u0130 AYNI KAPSAMDA KAR\u015EILA\u015ETIRIN"),
+            (0, react_1.createElement)("h2", null,
+                "Fiyat\u0131n arkas\u0131ndaki",
+                (0, react_1.createElement)("br", null),
+                (0, react_1.createElement)("em", null, "alt\u0131 karar.")),
+            (0, react_1.createElement)("div", { className: "v21-scope-grid" }, [
+                ['Ölçü ve yerleşim', 'En, derinlik ve yükseklik yanında kapak, çekmece ve geçiş alanını da konuşun. İlk ölçü, üretim için onaylanmış son ölçü değildir.'],
+                ['Gövde ve kapak', 'Ahşap türü, masif veya kaplama yaklaşımı, levha ve kapak yapısı ayrı kalemlerdir. Yalnız fotoğrafın rengine bakarak aynı malzemeyi varsaymayın.'],
+                ['Yüzey ve numune', 'Matlık, renk ve doku için gerçek numuneyi isteyin. Ekrandaki tonun üretim onayı olmadığını akılda tutun.'],
+                ['Donanım ve ayrıntı', 'Ray, menteşe, kulp, aydınlatma ve hareketli mekanizmanın kapsamını ayrı sorun. Marka ve model ancak doğrulanınca teklifin parçası olur.'],
+                ['Taşıma ve montaj', 'İlçe, kat, asansör ve erişim durumunu paylaşın. Söküm, nakliye, taşıma, montaj ve elektrik işlerinin dahil olup olmadığını yazılı netleştirin.'],
+                ['Takvim ve onay', 'Çizim, son ölçü, revizyon, ödeme planı ve teslim beklentisi birlikte netleşsin. Taslak görüşme, üretim talimatı veya kesin sipariş değildir.']
+            ].map(([title, text], i) => (0, react_1.createElement)("article", { key: title },
+                (0, react_1.createElement)("span", null,
+                    "0",
+                    i + 1),
+                (0, react_1.createElement)("h3", null, title),
+                (0, react_1.createElement)("p", null, text))))),
+        (0, react_1.createElement)("section", { className: "wrap v21-guide-terms" },
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)(ui_1.Eyebrow, null, "\u0130STANBUL / PROJEN\u0130ZE G\u00D6RE"),
+                (0, react_1.createElement)("h2", null,
+                    "Gelmeden \u00F6nce,",
+                    (0, react_1.createElement)("br", null),
+                    (0, react_1.createElement)("em", null, "konu\u015Fal\u0131m.")),
+                (0, react_1.createElement)("p", null, "Yeni at\u00F6lye adresi ve ziyaret saatleri kesinle\u015Fmedi. Yunus Usta ile g\u00F6r\u00FC\u015Fmeden yola \u00E7\u0131kmay\u0131n. \u0130l\u00E7enizi belirterek ke\u015Fif, nakliye ve montaj uygunlu\u011Funu sorun."),
+                (0, react_1.createElement)(ui_1.TextLink, { to: "/iletisim", navigate: a.navigate }, "Do\u011Frudan ileti\u015Fim")),
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)("h3", null, "Yaz\u0131l\u0131 olarak netle\u015Ftirilecekler"),
+                (0, react_1.createElement)("ul", null,
+                    (0, react_1.createElement)("li", null, "\u00DCretilecek par\u00E7alar, malzeme ve donan\u0131m kapsam\u0131."),
+                    (0, react_1.createElement)("li", null, "Ke\u015Fif gereklili\u011Fi ve varsa \u00FCcreti."),
+                    (0, react_1.createElement)("li", null, "Fiyat, kapora ve \u00F6deme a\u015Famalar\u0131."),
+                    (0, react_1.createElement)("li", null, "De\u011Fi\u015Fiklik, iptal ve teslim ko\u015Fullar\u0131."),
+                    (0, react_1.createElement)("li", null, "Bak\u0131m talimat\u0131, garanti ve teslim sonras\u0131 destek kapsam\u0131.")),
+                (0, react_1.createElement)("p", { className: "field-hint" }, "Bu sayfa genel g\u00F6r\u00FC\u015Fme haz\u0131rl\u0131\u011F\u0131d\u0131r. \u0130\u015Fletmenin onayl\u0131 s\u00F6zle\u015Fmesinin veya yasal haklar\u0131n\u0131z\u0131n yerine ge\u00E7mez. \u00DCcretsiz ke\u015Fif, kesin fiyat veya garanti s\u00FCresi vaat edilmez."))),
+        (0, react_1.createElement)("section", { className: "wrap v21-proof" },
+            (0, react_1.createElement)(ui_1.Icon, { name: "hand", size: 28 }),
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)("h2", null, "\u0130\u015Fi, foto\u011Fraf\u0131ndan ve ayr\u0131nt\u0131s\u0131ndan tan\u0131y\u0131n."),
+                (0, react_1.createElement)("p", null,
+                    "Payla\u015F\u0131lan ar\u015Fivde ",
+                    completed.length,
+                    " tamamlanm\u0131\u015F \u00E7al\u0131\u015Fma kayd\u0131, ",
+                    categories,
+                    " kullan\u0131m kategorisinde incelenebilir. Bu say\u0131 i\u015Fletmenin toplam i\u015F adedi de\u011Fil, yaln\u0131z sitedeki se\u00E7kidir. Uygulama foto\u011Fraflar\u0131 ve konsept modeller ayr\u0131 etiketlidir.")),
+            (0, react_1.createElement)(ui_1.ButtonLink, { to: "/projeler", navigate: a.navigate, secondary: true }, "Ger\u00E7ek i\u015Fleri incele")),
+        (0, react_1.createElement)("section", { className: "wrap v21-help-links" },
+            (0, react_1.createElement)(ui_1.TextLink, { to: "/sikca-sorulan-sorular", navigate: a.navigate }, "S\u0131k\u00E7a sorulan sorular"),
+            (0, react_1.createElement)(ui_1.TextLink, { to: "/rehber/olcu-alma", navigate: a.navigate }, "\u00D6l\u00E7\u00FC haz\u0131rl\u0131\u011F\u0131"),
+            (0, react_1.createElement)(ui_1.TextLink, { to: "/rehber/malzeme-secimi", navigate: a.navigate }, "Malzeme se\u00E7imi"),
+            (0, react_1.createElement)(ui_1.TextLink, { to: "/rehber/bakim", navigate: a.navigate }, "Bak\u0131m notlar\u0131")));
+}
+
+},
 "src/pages/V7Pages":function(module,exports,require){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -4195,6 +4670,8 @@ const PortfolioUI_1 = require("../components/PortfolioUI");
 const portfolio_1 = require("../lib/portfolio");
 const selections_1 = require("../lib/selections");
 const project_1 = require("../lib/project");
+const contact_options_1 = require("../lib/contact-options");
+const site_profile_1 = require("../lib/site-profile");
 const domain_1 = require("../lib/domain");
 exports.categorySupport = {
     'kahve-kosesi': { asset: 'r07', headline: 'Ölçünüze göre bir kahve köşesi.', intro: 'Cihazlarınızın yerleşimini, servis yüzeyini ve depolamayı birlikte düşünelim. Başlangıç noktamız alanınız ve gün içindeki kullanımınız.', questions: ['Hangi kahve makinesini kullanıyorsunuz?', 'Fincan ve ekipman için ne kadar saklama alanı gerekiyor?', 'Priz, su ve aydınlatma ihtiyacınız nedir?'] },
@@ -4313,7 +4790,7 @@ function SavedBoard(a) { const entries = (0, selections_1.selectedEntries)(a.fav
             (0, react_1.createElement)("h2", null, "\u0130lham dosyan\u0131z hen\u00FCz bo\u015F."),
             (0, react_1.createElement)("p", null, "\u00C7al\u0131\u015Fma veya model kartlar\u0131ndaki kalp d\u00FC\u011Fmesiyle se\u00E7iminizi ekleyin."),
             (0, react_1.createElement)(ui_1.ButtonLink, { to: "/projeler", navigate: a.navigate }, "Ger\u00E7ek \u00E7al\u0131\u015Fmalar\u0131 ke\u015Ffet")))); }
-function ContactV7(a) { return (0, react_1.createElement)(react_1.Fragment, null,
+function ContactV7(a) { const profile = (0, site_profile_1.getSiteProfile)(); return (0, react_1.createElement)(react_1.Fragment, null,
     (0, react_1.createElement)("header", { className: "v6-page-head wrap" },
         (0, react_1.createElement)(ui_1.Eyebrow, null, "EL\u0130F / DO\u011ERUDAN AT\u00D6LYE"),
         (0, react_1.createElement)("div", null,
@@ -4336,17 +4813,39 @@ function ContactV7(a) { return (0, react_1.createElement)(react_1.Fragment, null
                     (0, react_1.createElement)(ui_1.Icon, { name: "diagonal" })),
                 (0, react_1.createElement)("a", { className: "button button-outline", href: 'tel:' + project_1.business.telephone },
                     "Telefonla ara ",
-                    (0, react_1.createElement)(ui_1.Icon, { name: "phone" }))),
+                    (0, react_1.createElement)(ui_1.Icon, { name: "phone" })),
+                (0, react_1.createElement)("a", { className: "button button-outline", href: (0, contact_options_1.smsUrl)() },
+                    "SMS uygulamas\u0131n\u0131 a\u00E7 ",
+                    (0, react_1.createElement)(ui_1.Icon, { name: "diagonal" }))),
             (0, react_1.createElement)("p", { className: "field-hint" }, "WhatsApp harici uygulamada a\u00E7\u0131l\u0131r. Mesaj\u0131 orada g\u00F6nderirsiniz. T\u0131klama, yan\u0131t veya mesaj teslimi garantisi de\u011Fildir.")),
         (0, react_1.createElement)("div", { className: "v7-contact-side" },
             (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: "work-joinery", alt: "Ah\u015Fap uygulama ar\u015Fivinden birle\u015Fim ayr\u0131nt\u0131s\u0131", sizes: "(max-width: 800px) 90vw, 40vw" }),
             (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: "process" }),
             (0, react_1.createElement)("h3", null, "\u0130stanbul\u2019da, yeni at\u00F6lyemize haz\u0131rlan\u0131yoruz."),
             (0, react_1.createElement)("p", null, "Yeni a\u00E7\u0131k adres ve ziyaret d\u00FCzeni hen\u00FCz kesinle\u015Fmedi. Yola \u00E7\u0131kmadan \u00F6nce Yunus Usta ile g\u00F6r\u00FC\u015F\u00FCn. Hizmet b\u00F6lgesi, ke\u015Fif, teslim ve montaj kapsam\u0131 projenize g\u00F6re netle\u015Ftirilir."))),
+    (0, react_1.createElement)("section", { className: "wrap v21-contact-facts", "aria-label": "G\u00F6r\u00FC\u015Fme ve ziyaret bilgileri" },
+        (0, react_1.createElement)("article", null,
+            (0, react_1.createElement)(ui_1.Eyebrow, null, "H\u0130ZMET B\u00D6LGES\u0130"),
+            (0, react_1.createElement)("h3", null, "\u0130stanbul, projenize g\u00F6re."),
+            (0, react_1.createElement)("p", null, "\u0130l\u00E7enizi ve ihtiya\u00E7 duydu\u011Funuz i\u015Fi payla\u015F\u0131n. Ke\u015Fif, nakliye ve montaj uygunlu\u011Funu ilk g\u00F6r\u00FC\u015Fmede netle\u015Ftirin.")),
+        (0, react_1.createElement)("article", null,
+            (0, react_1.createElement)(ui_1.Eyebrow, null, "Z\u0130YARET VE SAATLER"),
+            (0, react_1.createElement)("h3", null, "Yola \u00E7\u0131kmadan teyit edin."),
+            (0, react_1.createElement)("p", null, profile.hours || 'Yeni adres ve çalışma saatleri henüz kesinleşmedi. Ziyaretinizi telefonla görüşerek planlayın.')),
+        (0, react_1.createElement)("article", null,
+            (0, react_1.createElement)(ui_1.Eyebrow, null, "WHATSAPP DI\u015EINDA"),
+            (0, react_1.createElement)("h3", null, "Bir konu\u015Fman\u0131n ba\u015Fka yollar\u0131."),
+            (0, react_1.createElement)("p", null, "Telefon ve SMS ayn\u0131 do\u011Frulanm\u0131\u015F i\u015F numaras\u0131n\u0131 a\u00E7ar. \u00D6zetinizi indirip ba\u015Fka bir kanalda kendiniz payla\u015Fabilirsiniz."),
+            profile.email && (0, react_1.createElement)("a", { href: 'mailto:' + profile.email }, profile.email))),
     (0, react_1.createElement)("section", { className: "wrap v7-contact-next" },
         (0, react_1.createElement)("h2", null, "G\u00F6r\u00FC\u015Fmeye bir dosyayla gelin."),
         (0, react_1.createElement)("p", null, "Foto\u011Fraf\u0131n\u0131z\u0131, Pinterest ba\u011Flant\u0131n\u0131z\u0131 ve yakla\u015F\u0131k \u00F6l\u00E7\u00FCn\u00FCz\u00FC ayn\u0131 proje \u00F6zetinde haz\u0131rlayabilirsiniz. Foto\u011Fraf y\u00FCklemek zorunlu de\u011Fildir."),
-        (0, react_1.createElement)(ui_1.ButtonLink, { to: "/modelini-getir", navigate: a.navigate }, "Proje fikrimi haz\u0131rlayay\u0131m"))); }
+        (0, react_1.createElement)(ui_1.ButtonLink, { to: "/modelini-getir", navigate: a.navigate }, "Proje fikrimi haz\u0131rlayay\u0131m"),
+        (0, react_1.createElement)("div", { className: "v21-help-links" },
+            (0, react_1.createElement)(ui_1.ButtonLink, { to: "/hizmet-ve-teklif", navigate: a.navigate, secondary: true }, "Hizmet ve teklif rehberi"),
+            (0, react_1.createElement)(ui_1.Link, { to: "/sikca-sorulan-sorular", navigate: a.navigate, className: "text-link" },
+                "S\u0131k\u00E7a sorulan sorular ",
+                (0, react_1.createElement)(ui_1.Icon, null))))); }
 function PrivacyV7(a) { return (0, react_1.createElement)("section", { className: "wrap v7-readable" },
     (0, react_1.createElement)(ui_1.Eyebrow, null, "EL\u0130F / VER\u0130 VE DI\u015E SERV\u0130SLER"),
     (0, react_1.createElement)("h1", null,
@@ -4355,13 +4854,18 @@ function PrivacyV7(a) { return (0, react_1.createElement)("section", { className
         (0, react_1.createElement)("em", null, "Kontrol de sizde.")),
     (0, react_1.createElement)("p", null, "Bu a\u00E7\u0131klama tasar\u0131m \u00F6nizlemesinin fiil\u00EE davran\u0131\u015F\u0131n\u0131 anlat\u0131r. Tam ticari ayd\u0131nlatma metni veya hukuki uygunluk onay\u0131 de\u011Fildir. \u0130\u015Fletmenin veri sorumlusu bilgileri ve ticari hizmet \u015Fartlar\u0131 yay\u0131na ge\u00E7meden \u00F6nce tamamlanmal\u0131d\u0131r."),
     (0, react_1.createElement)("h2", null, "Proje tasla\u011F\u0131 ve g\u00F6rseller"),
-    (0, react_1.createElement)("p", null, "Model ba\u011Flant\u0131s\u0131, notlar, yakla\u015F\u0131k \u00F6l\u00E7\u00FC, il\u00E7e ve se\u00E7ti\u011Finiz foto\u011Fraflar bu a\u00E7\u0131k sekmenin belle\u011Finde i\u015Flenir. Site i\u00E7indeki model ve \u00F6l\u00E7\u00FC ak\u0131\u015Flar\u0131 aras\u0131nda korunur. Varsay\u0131lan olarak sunucuya g\u00F6nderilmez, kal\u0131c\u0131 taray\u0131c\u0131 depolamas\u0131na yaz\u0131lmaz. Yenileme veya sekmeyi kapatma veriyi silebilir. \u00D6ncesinde proje dosyan\u0131z\u0131 kendi cihaz\u0131n\u0131za indirin."),
+    (0, react_1.createElement)("p", null, "Model ba\u011Flant\u0131s\u0131, notlar, yakla\u015F\u0131k \u00F6l\u00E7\u00FC, il\u00E7e ve se\u00E7ti\u011Finiz foto\u011Fraflar bu a\u00E7\u0131k sekmenin belle\u011Finde i\u015Flenir. Site i\u00E7indeki model ve \u00F6l\u00E7\u00FC ak\u0131\u015Flar\u0131 aras\u0131nda korunur. Varsay\u0131lan olarak sunucuya g\u00F6nderilmez, kal\u0131c\u0131 taray\u0131c\u0131 depolamas\u0131na yaz\u0131lmaz. Yenileme veya sekmeyi kapatma veriyi silebilir. Model formunda a\u00E7\u0131k izninizle yedi g\u00FCnl\u00FCk cihaz kurtarmas\u0131n\u0131 etkinle\u015Ftirebilir veya \u00F6zel JSON taslak dosyas\u0131n\u0131 indirebilirsiniz."),
     (0, react_1.createElement)("p", null, "Foto\u011Fraflar cihaz\u0131n\u0131zda en fazla 2000 piksel JPEG payla\u015F\u0131m kopyas\u0131 olarak haz\u0131rlan\u0131r. Dosya metadata\u2019s\u0131 bu kopyaya aktar\u0131lmaz. Foto\u011Frafta g\u00F6r\u00FCnen ki\u015Fi, adres, belge ve \u00F6zel nesneler otomatik silinmez. Payla\u015Fmadan \u00F6nce g\u00F6r\u00FCnt\u00FCy\u00FC kontrol edin."),
+    (0, react_1.createElement)("h2", null, "\u0130zinli taslak kurtarma"),
+    (0, react_1.createElement)("p", null, "Model formundaki izin kutusunu se\u00E7erseniz metin, model ba\u011Flant\u0131s\u0131 ve \u00F6l\u00E7\u00FCler yerel taray\u0131c\u0131 depolamas\u0131na yaz\u0131l\u0131r. Sonraki de\u011Fi\u015Fiklikler de kaydedilir. Son kay\u0131ttan itibaren yedi g\u00FCn ge\u00E7ince, site kayd\u0131 yeniden kontrol etti\u011Fi ilk anda siler. Taray\u0131c\u0131 kapal\u0131yken ba\u011F\u0131ms\u0131z bir silme g\u00F6revi \u00E7al\u0131\u015Fmaz. Geri geldi\u011Finizde kayd\u0131 a\u00E7may\u0131 siz se\u00E7ersiniz. Foto\u011Fraflar, dosyalar ve ilham dosyan\u0131z bu kayda dahil de\u011Fildir."),
+    (0, react_1.createElement)("p", null, "Bu kay\u0131t \u015Fifreli bir hesap de\u011Fildir. Ayn\u0131 taray\u0131c\u0131 profilini kullanan ki\u015Filer eri\u015Febilir. Ortak bilgisayarda a\u00E7may\u0131n. \u0130zin kutusunu kapatmak veya cihaz kay\u0131tlar\u0131n\u0131 silmek kurtarma kayd\u0131n\u0131 kald\u0131r\u0131r, a\u00E7\u0131k taslaktaki notu silmez. Taray\u0131c\u0131 depolamay\u0131 engellerse kay\u0131t yap\u0131lamad\u0131\u011F\u0131 a\u00E7\u0131klan\u0131r. \u0130ndirilen JSON dosyas\u0131 ki\u015Fisel not ve il\u00E7e bilgisi i\u00E7erir, kendiniz g\u00FCvenli saklay\u0131n. JSON dosyas\u0131 cihazdaki yedi g\u00FCnl\u00FCk s\u00FCreden ba\u011F\u0131ms\u0131zd\u0131r."),
     (0, react_1.createElement)("h2", null, "\u0130lham dosyas\u0131 ve cihaz tercihleri"),
-    (0, react_1.createElement)("p", null, "\u0130lham dosyas\u0131 varsay\u0131lan olarak bellektedir. A\u00E7\u0131k\u00E7a se\u00E7erseniz yaln\u0131z herkese a\u00E7\u0131k \u00E7al\u0131\u015Fma ve model kimlikleri 30 g\u00FCn yerel depolamada kal\u0131r. 3D se\u00E7enekleri a\u00E7\u0131k sekmede hat\u0131rlan\u0131r. Olu\u015Fturdu\u011Funuz tasar\u0131m ba\u011Flant\u0131s\u0131 yaln\u0131z herkese a\u00E7\u0131k model se\u00E7eneklerini ta\u015F\u0131r. \u00D6zel m\u00FC\u015Fteri notlar\u0131 bu ba\u011Flant\u0131ya eklenmez. Not ve g\u00F6rseller bu izinlere dahil de\u011Fildir. Depolama tercihleri alan\u0131ndan kay\u0131tlar\u0131 silebilirsiniz."),
+    (0, react_1.createElement)("p", null, "\u0130lham dosyas\u0131 varsay\u0131lan olarak bellektedir. A\u00E7\u0131k\u00E7a se\u00E7erseniz yaln\u0131z herkese a\u00E7\u0131k \u00E7al\u0131\u015Fma ve model kimlikleri 30 g\u00FCn yerel depolamada kal\u0131r. 3D se\u00E7enekleri a\u00E7\u0131k sekmede hat\u0131rlan\u0131r. Olu\u015Fturdu\u011Funuz tasar\u0131m ba\u011Flant\u0131s\u0131 yaln\u0131z herkese a\u00E7\u0131k model se\u00E7eneklerini ta\u015F\u0131r. \u00D6zel m\u00FC\u015Fteri notlar\u0131 bu ba\u011Flant\u0131ya eklenmez. \u0130lham kimliklerini saklama izni, \u00F6zel notlar\u0131 saklama izni de\u011Fildir. Model formundaki kurtarma izni ayr\u0131d\u0131r. Depolama tercihleri alan\u0131ndan kay\u0131tlar\u0131 silebilirsiniz."),
     (0, react_1.createElement)("h2", null, "WhatsApp, telefon ve cihaz payla\u015F\u0131m\u0131"),
     (0, react_1.createElement)("p", null, "WhatsApp'a yaz d\u00FC\u011Fmesi, kullan\u0131c\u0131 taraf\u0131ndan i\u015Fletme ileti\u015Fimi i\u00E7in verilen +90 530 879 71 69 numaras\u0131n\u0131 a\u00E7ar. D\u00FC\u011Fmeye bast\u0131\u011F\u0131n\u0131zda proje \u00F6zeti WhatsApp'\u0131n URL parametresine aktar\u0131l\u0131r ve harici servis kendi kurallar\u0131na g\u00F6re i\u015Fler. Siteden otomatik mesaj g\u00F6nderilmez. Foto\u011Fraflar bu metin ba\u011Flant\u0131s\u0131na dahil de\u011Fildir."),
     (0, react_1.createElement)("p", null, "Cihazdan payla\u015F se\u00E7ene\u011Fi, desteklenen cihazlarda i\u015Fletim sisteminin payla\u015F\u0131m men\u00FCs\u00FCn\u00FC a\u00E7ar. Uygulama ve al\u0131c\u0131y\u0131 siz se\u00E7ersiniz. ZIP veya TXT indirme yaln\u0131z dosyay\u0131 cihaz\u0131n\u0131za haz\u0131rlar. Bu site mesaj\u0131n g\u00F6nderildi\u011Fini, teslim edildi\u011Fini veya okundu\u011Funu do\u011Frulayamaz."),
+    (0, react_1.createElement)("h2", null, "SMS ve e-posta tasla\u011F\u0131"),
+    (0, react_1.createElement)("p", null, "SMS d\u00FC\u011Fmesi i\u015Fletme numaras\u0131n\u0131 cihaz\u0131n\u0131z\u0131n mesaj uygulamas\u0131nda a\u00E7ar. SMS metnini ve g\u00F6nderimini siz y\u00F6netirsiniz. E-posta tasla\u011F\u0131 se\u00E7ene\u011Fi, g\u00F6r\u00FCnt\u00FClenen proje metnini e-posta uygulamas\u0131na ta\u015F\u0131r. \u0130\u015Fletme e-postas\u0131 do\u011Frulanmad\u0131\u011F\u0131 i\u00E7in al\u0131c\u0131 bo\u015F b\u0131rak\u0131l\u0131r, al\u0131c\u0131y\u0131 kendiniz teyit edip girmelisiniz. Uzun \u00F6zetlerde k\u0131sa giri\u015F metni ayr\u0131 a\u00E7\u0131klan\u0131r. Tam dosyay\u0131 ve foto\u011Fraflar\u0131 ayr\u0131ca ekleyin. Bu site e-posta veya SMS teslimini do\u011Frulamaz."),
     (0, react_1.createElement)("h2", null, "Tasar\u0131m kar\u015F\u0131la\u015Ft\u0131rmas\u0131 ve 3D dosyalar\u0131"),
     (0, react_1.createElement)("p", null, "Kar\u015F\u0131la\u015Ft\u0131rma defterindeki en fazla \u00FC\u00E7 masa konfig\u00FCrasyonu ve bu sahnelerden al\u0131nan g\u00F6r\u00FCnt\u00FCler yaln\u0131z a\u00E7\u0131k sekmede tutulur. JSON dosyas\u0131 yaln\u0131z masa se\u00E7eneklerini i\u00E7erir. Oda \u00F6l\u00E7\u00FCleri, m\u00FC\u015Fteri notlar\u0131 ve ev foto\u011Fraflar\u0131 bu dosyaya eklenmez. GLB ve USDZ d\u0131\u015Fa aktar\u0131m\u0131 cihaz\u0131n\u0131zda yap\u0131l\u0131r. Bir sunucuya model veya ki\u015Fisel veri g\u00F6nderilmez. Yazd\u0131r\u0131labilir tasar\u0131m sayfas\u0131 da yaln\u0131z a\u00E7\u0131k model se\u00E7eneklerini i\u00E7erir. AR davran\u0131\u015F\u0131 cihaz\u0131n kendi g\u00F6r\u00FCnt\u00FCleyicisine ba\u011Fl\u0131d\u0131r."),
     (0, react_1.createElement)("h2", null, "Pinterest"),

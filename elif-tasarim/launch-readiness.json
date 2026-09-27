@@ -1,0 +1,17 @@
+{
+  "release": "v21-trust-continuity",
+  "mode": "preview",
+  "indexable": false,
+  "contact": {
+    "telephone": true,
+    "email": false,
+    "hours": false,
+    "address": false
+  },
+  "schema": "Organization",
+  "robotsLocation": "Subpath copy. Production robots.txt must be served at the host root.",
+  "sitemapGenerated": false,
+  "externalProfilesVerified": false,
+  "serverLeadCapture": false,
+  "analytics": false
+}

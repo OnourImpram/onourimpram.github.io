@@ -9,10 +9,12 @@ export function convertMeasure(value:string,from:'cm'|'mm',to:'cm'|'mm'):string|
 function numericText(v:ProjectDraft):string{return [v.width,v.depth,v.height].every(n=>!!convertMeasure(n,v.unit,'mm'))?[v.width,v.depth,v.height].join(' × ')+' '+v.unit:''}
 export function measurementText(v:ProjectDraft):string{return (!v.unknown?numericText(v):v.dimensions)||'Birlikte belirlenecek'}
 const clone=(v:ProjectDraft):ProjectDraft=>({...v,selections:[...v.selections],sourceRef:v.sourceRef?{...v.sourceRef}:null,studioConfig:v.studioConfig?{...v.studioConfig}:null});
-/** Private draft is memory-only. The selected source and author text are never interchangeable. */
+/** Default is memory-only. Optional recovery subscribes only after explicit user consent. */
 export function createProjectStore(){
  let value=emptyProject(),activeKey='',studioEntry='';const legacySeeds=new Set<string>();
  const get=()=>clone(value);
+ const listeners=new Set<(draft:ProjectDraft)=>void>();
+ const notify=()=>{const snapshot=get();for(const fn of listeners){try{fn(clone(snapshot))}catch{}}return snapshot;};
  const synchronizeStudio=()=>{
   if(value.sourceRef?.kind!=='studio'||!value.studioConfig)return;
   const nums=[value.width,value.depth,value.height].map(n=>Number(convertMeasure(n,value.unit,'cm'))),ranges=[[120,220],[65,95],[80,125]];
@@ -31,24 +33,25 @@ export function createProjectStore(){
    if(!value.unknown&&numericText(value))value.dimensions=numericText(value);
    synchronizeStudio();
   }
-  return get();
+  return notify();
  };
  const adoptReference=(key:string,seed:Partial<ProjectDraft>)=>{
   if(activeKey===key)return get();activeKey=key;
   const external=normalizeReference(seed.url||'')||'';
   value={...value,category:seed.category||'ozel-tasarim',url:external,sourceRef:seed.sourceRef?{...seed.sourceRef}:{id:key,kind:external?'reference':'idea',title:seed.systemPrefill||seed.note||'Seçilen model',url:external},systemPrefill:seed.systemPrefill||seed.note||'',systemDetails:'',revision:value.revision+1};
-  return get();
+  return notify();
  };
  const getStudio=()=>({... (value.studioConfig||defaultStudio)});
- const setStudio=(config:StudioConfig)=>{const c=normalizeStudio(config),previous=value.studioConfig;value={...value,studioConfig:c,revision:value.revision+1};if(value.sourceRef?.kind==='studio'&&!value.studioNotice){value={...value,width:String(c.width),depth:String(c.depth),height:String(c.height),unit:'cm',dimensions:`${c.width} × ${c.depth} × ${c.height} cm`,systemDetails:studioSummary(c),material:previous?.material!==c.material?studioRequestMaterial(c.material):value.material};}return getStudio()};
+ const setStudio=(config:StudioConfig)=>{const c=normalizeStudio(config),previous=value.studioConfig;value={...value,studioConfig:c,revision:value.revision+1};if(value.sourceRef?.kind==='studio'&&!value.studioNotice){value={...value,width:String(c.width),depth:String(c.depth),height:String(c.height),unit:'cm',dimensions:`${c.width} × ${c.depth} × ${c.height} cm`,systemDetails:studioSummary(c),material:previous?.material!==c.material?studioRequestMaterial(c.material):value.material};}notify();return getStudio()};
  const handoffStudio=(config:StudioConfig)=>{
   const c=normalizeStudio(config);activeKey='studio:devir-01';
-  value={...value,sourceRef:{id:'devir-01',kind:'studio',title:'Devir 01. Yükseklik ayarlı çalışma masası',url:'',image:'devir-poster.webp'},systemPrefill:'Devir 01 çekmeceli, döner yan tablalı çalışma masası konseptini alanıma göre değerlendirmek istiyorum.',url:'',category:'ozel-tasarim',studioConfig:c,studioNotice:'',width:String(c.width),depth:String(c.depth),height:String(c.height),unit:'cm',unknown:false,dimensions:`${c.width} × ${c.depth} × ${c.height} cm`,material:studioRequestMaterial(c.material),finish:c.material==='mese'?'Açık ton ve mat görünüm':c.material==='koyu'?'Koyu ton ve ahşap dokusu':'Birlikte değerlendirelim',systemDetails:studioSummary(c),revision:value.revision+1};return get();
+  value={...value,sourceRef:{id:'devir-01',kind:'studio',title:'Devir 01. Yükseklik ayarlı çalışma masası',url:'',image:'devir-poster.webp'},systemPrefill:'Devir 01 çekmeceli, döner yan tablalı çalışma masası konseptini alanıma göre değerlendirmek istiyorum.',url:'',category:'ozel-tasarim',studioConfig:c,studioNotice:'',width:String(c.width),depth:String(c.depth),height:String(c.height),unit:'cm',unknown:false,dimensions:`${c.width} × ${c.depth} × ${c.height} cm`,material:studioRequestMaterial(c.material),finish:c.material==='mese'?'Açık ton ve mat görünüm':c.material==='koyu'?'Koyu ton ve ahşap dokusu':'Birlikte değerlendirelim',systemDetails:studioSummary(c),revision:value.revision+1};return notify();
  };
- return {get,patch,adoptReference,getStudio,setStudio,handoffStudio,openStudio:(key:string,config:StudioConfig)=>{if(key&&studioEntry!==key){studioEntry=key;setStudio(config)}return getStudio()},
+ return {get,patch,adoptReference,getStudio,setStudio,handoffStudio,subscribe:(fn:(draft:ProjectDraft)=>void)=>{listeners.add(fn);return ()=>listeners.delete(fn)},
+  restore:(draft:ProjectDraft)=>{value={...emptyProject(),...clone(draft),revision:value.revision+1};activeKey='';studioEntry='';legacySeeds.clear();return notify()},openStudio:(key:string,config:StudioConfig)=>{if(key&&studioEntry!==key){studioEntry=key;setStudio(config)}return getStudio()},
   seed:(key:string,seed:Partial<ProjectDraft>,replace=false)=>{if(legacySeeds.has(key))return;legacySeeds.add(key);if(replace){patch(seed);return}const update:Partial<ProjectDraft>={};for(const [k,v]of Object.entries(seed)){const n=k as keyof ProjectDraft;if(v!==undefined&&v!==''&&(!(value as any)[n]||(n==='category'&&value.category==='ozel-tasarim')))(update as any)[n]=v;}patch(update);},
-  clearSource:()=>{activeKey='';value={...value,sourceRef:null,systemPrefill:'',url:'',systemDetails:'',revision:value.revision+1};return get()},
-  clear:()=>{value=emptyProject();activeKey='';studioEntry='';legacySeeds.clear()}
+  clearSource:()=>{activeKey='';value={...value,sourceRef:null,systemPrefill:'',url:'',systemDetails:'',revision:value.revision+1};return notify()},
+  clear:()=>{value=emptyProject();activeKey='';studioEntry='';legacySeeds.clear();notify()}
  };
 }
 export const projectStore=createProjectStore();

@@ -1,15 +1,16 @@
 {
-  "name": "elif-tasarim-v20",
-  "version": "0.20.0",
+  "name": "elif-tasarim-v21",
+  "version": "0.21.0",
   "private": true,
-  "description": "Elif Tasar\u0131m V20. Product storytelling, real 360 studio, comparison and model export.",
+  "description": "Elif Tasarım V21. Report-driven draft recovery, contact choices, content and verified publication readiness.",
   "scripts": {
-    "build": "node tools/build-v20.cjs",
-    "test": "node tools/compile-domain.cjs && node --test --test-concurrency=1 tests/domain.test.cjs tests/v7/unit.cjs tests/v8/unit.cjs tests/v7/server.test.cjs tests/v9/state.cjs tests/v9/*.mjs tests/v10/*.cjs tests/v10/*.mjs tests/v11/*.cjs tests/v12/*.mjs tests/v13/*.cjs tests/v20/*.cjs",
-    "typecheck:core": "tsc --strict --noEmit --target ES2020 --module commonjs --lib ES2020,DOM src/lib/project.ts src/lib/upload.ts src/lib/zip.ts src/lib/selections.ts src/lib/desk-v8.ts src/lib/source-context.ts src/lib/room-fit.ts src/lib/design-board.ts src/lib/design-sheet.ts",
+    "build": "node tools/build-v21.cjs",
+    "test": "node tools/compile-domain.cjs && node --test --test-concurrency=1 tests/domain.test.cjs tests/v7/unit.cjs tests/v8/unit.cjs tests/v7/server.test.cjs tests/v9/state.cjs tests/v9/*.mjs tests/v10/*.cjs tests/v10/*.mjs tests/v11/*.cjs tests/v12/*.mjs tests/v13/*.cjs tests/v20/*.cjs tests/v21/*.cjs",
+    "typecheck:core": "tsc --strict --noEmit --target ES2020 --module commonjs --lib ES2020,DOM src/lib/project.ts src/lib/upload.ts src/lib/zip.ts src/lib/selections.ts src/lib/desk-v8.ts src/lib/source-context.ts src/lib/room-fit.ts src/lib/design-board.ts src/lib/design-sheet.ts src/lib/draft-recovery.ts src/lib/draft-session.ts src/lib/contact-options.ts src/lib/site-profile.ts",
     "serve": "node tools/serve-static.cjs dist 8000",
     "test:browser": "python tests/v11/acceptance.py",
-    "verify:dist": "node tools/verify-v20.cjs"
+    "verify:dist": "node tools/verify-v21.cjs",
+    "launch:check": "node tools/launch-check.cjs"
   },
   "devDependencies": {
     "typescript": "5.8.3"
