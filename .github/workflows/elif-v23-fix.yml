@@ -24,10 +24,15 @@ jobs:
           set +e
           node --test tests/v23/visibility.cjs > evidence/v23/red/contracts.txt 2>&1
           result=$?
+          node --test tests/v23/fragment.cjs > evidence/v23/red/fragment.txt 2>&1
+          fragment_result=$?
           set -e
           cat evidence/v23/red/contracts.txt
+          cat evidence/v23/red/fragment.txt
           test "$result" -ne 0
+          test "$fragment_result" -ne 0
           grep -q '# fail 5' evidence/v23/red/contracts.txt
+          grep -q '# fail 1' evidence/v23/red/fragment.txt
       - name: Install browser tools
         run: |
           python -m pip install playwright==1.55.0 Pillow==11.3.0
@@ -40,8 +45,10 @@ jobs:
           cd ../..
           for i in {1..20}; do curl -fsS http://127.0.0.1:8000/elif-tasarim/release-v22.json >/dev/null && break || sleep 1; done
           python elif-v23-tools/render-products.py
-      - name: Apply bounded fixes
-        run: python elif-v23-tools/fix.py
+      - name: Apply bounded fixes and preserve section navigation
+        run: |
+          python elif-v23-tools/fix.py
+          python elif-v23-tools/finish.py
       - name: Clean build, unit suite and strict core
         working-directory: elif-tasarim/source-v12
         run: |
@@ -68,6 +75,7 @@ jobs:
           EVIDENCE_DIR=evidence/v23/exports xvfb-run -a python tests/v20/acceptance.py
           EVIDENCE_DIR=evidence/v23/decisions xvfb-run -a python tests/v11/acceptance.py
           EVIDENCE_DIR=evidence/v23/orbit xvfb-run -a python tests/v12/acceptance.py
+          EVIDENCE_DIR=evidence/v23/matrix xvfb-run -a python tests/v11/matrix.py
       - name: Stage verified files only inside Elif
         shell: python
         run: |
@@ -88,7 +96,7 @@ jobs:
           git config user.name 'Onour Impram'
           git config user.email 'onuribram@outlook.com'
           git add -A elif-tasarim
-          git commit -m 'fix(elif): verified product visibility, resilient images and bootstrap recovery'
+          git commit -m 'fix(elif): verified product visibility, resilient images and section navigation'
           git push origin HEAD:elif-v23-visibility-20260928
       - uses: actions/upload-artifact@v4
         if: always()
