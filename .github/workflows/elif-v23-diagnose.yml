@@ -1,0 +1,27 @@
+name: Elif V23 live visibility diagnosis
+on:
+  push:
+    branches: [elif-v23-visibility-20260928]
+    paths: ['.github/workflows/elif-v23-diagnose.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install browser
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Read-only live diagnosis
+        run: python elif-v23-tools/diagnose.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v23-before-visibility
+          path: v23-diagnosis
+          retention-days: 14
