@@ -1,0 +1,75 @@
+name: Elif V22 final handoff September 28
+on:
+  push:
+    branches: [elif-v22-final-consistency-20260927]
+    paths: ['.github/workflows/elif-v22-handoff-20260928.yml']
+permissions:
+  contents: read
+jobs:
+  verify-final:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2bb3d7951f2b6b98ff3caf21052f0a5b7386efa2
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Rebuild and retest the published version
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/v22-handoff
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build | tee evidence/v22-handoff/build.txt
+          cmp dist/release-v22.json ../release-v22.json
+          npm test | tee evidence/v22-handoff/unit.txt
+          npm run typecheck:core | tee evidence/v22-handoff/types.txt
+          npm run verify:dist | tee evidence/v22-handoff/integrity.txt
+      - name: Verify actual public bytes and every direct route
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+          EVIDENCE_DIR: evidence/v22-handoff/public
+        run: python tests/v11/public_verify.py
+      - name: Install isolated browser tooling
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Verify actual email, mobile handoff, clipboard fallback and no-JavaScript paths
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+          EVIDENCE_DIR: evidence/v22-handoff/customer
+        run: |
+          set -euo pipefail
+          python tests/v22/acceptance.py | tee evidence/v22-handoff/customer.txt
+      - name: Verify actual privacy text and the personal homepage
+        working-directory: elif-tasarim/source-v12
+        shell: python
+        run: |
+          import json,subprocess
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          out=Path('evidence/v22-handoff')
+          with sync_playwright() as p:
+              b=p.chromium.launch(headless=True)
+              page=b.new_page(viewport={'width':1280,'height':900})
+              page.goto('https://onourimpram.github.io/elif-tasarim/gizlilik/',wait_until='domcontentloaded')
+              page.wait_for_selector('#app .preview-bar')
+              text=page.locator('#main-content').inner_text()
+              email='iletisim.eliftasarimatolyesi@gmail.com'
+              assert email in text
+              assert 'alıcısı boş' not in text.lower()
+              (out/'privacy-current.json').write_text(json.dumps({'url':page.url,'email':email,'email_present':True,'stale_blank_recipient_claim':False},ensure_ascii=False,indent=2))
+              b.close()
+          assert subprocess.check_output(['git','hash-object','../../index.html'],text=True).strip()=='501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v22-handoff-20260928-evidence
+          path: elif-tasarim/source-v12/evidence/v22-handoff
+          retention-days: 14
+          if-no-files-found: error
