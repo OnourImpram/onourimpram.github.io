@@ -1,0 +1,65 @@
+name: Elif fragment root cause
+on:
+  push:
+    branches: [elif-v23-visibility-20260928]
+    paths: ['.github/workflows/elif-anchor-diagnosis.yml']
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare the same interrupted repair
+        run: |
+          set -euo pipefail
+          cd elif-tasarim/source-v12
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build
+          node tools/serve-static.cjs dist 8000 >/tmp/elif-anchor-server.txt 2>&1 &
+          cd ../..
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+          python elif-v23-tools/render-products.py
+          python elif-v23-tools/fix.py
+          cd elif-tasarim/source-v12
+          npm run build
+      - name: Capture actual DOM ownership and scroll sequence
+        shell: python
+        run: |
+          from playwright.sync_api import sync_playwright
+          import json
+          from pathlib import Path
+          out=Path('anchor-diagnosis');out.mkdir(exist_ok=True)
+          with sync_playwright() as p:
+              browser=p.chromium.launch(headless=True,args=['--no-sandbox','--use-gl=angle','--use-angle=swiftshader'])
+              page=browser.new_page(viewport={'width':1440,'height':1000},reduced_motion='reduce')
+              page.add_init_script('''
+              window.__trace=[];
+              const record=(type,data)=>window.__trace.push({type,data,y:scrollY,hash:location.hash,ready:document.documentElement.dataset.appReady,at:performance.now()});
+              const scroll=window.scrollTo.bind(window);window.scrollTo=(...a)=>{record('scrollTo',{args:a,stack:new Error().stack});return scroll(...a)};
+              const into=Element.prototype.scrollIntoView;Element.prototype.scrollIntoView=function(...a){record('scrollIntoView',{args:a,id:this.id,root:this.closest('#app,#static-content')?.id,box:this.getBoundingClientRect().toJSON(),stack:new Error().stack});return into.apply(this,a)};
+              const replace=history.replaceState.bind(history);history.replaceState=(...a)=>{record('replaceState',a);return replace(...a)};
+              addEventListener('hashchange',()=>record('hashchange',{}));addEventListener('popstate',e=>record('popstate',e.state));
+              ''')
+              page.goto('http://127.0.0.1:8000/elif-tasarim/devir-01/#devir-baslangic',wait_until='domcontentloaded')
+              page.wait_for_selector('html[data-app-ready="true"]')
+              page.wait_for_function("()=>document.querySelectorAll('.v20-devir img').length===6&&[...document.querySelectorAll('.v20-devir img')].every(x=>x.complete&&x.naturalWidth>0)")
+              page.wait_for_timeout(700)
+              result=page.evaluate('''()=>({trace:window.__trace,hash:location.hash,y:scrollY,target:document.querySelector('#app #devir-baslangic')?.getBoundingClientRect().toJSON(),copies:document.querySelectorAll('#devir-baslangic').length,ready:document.documentElement.dataset.appReady})''')
+              (out/'scroll-trace.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
+              print(json.dumps(result,ensure_ascii=False,indent=2))
+              page.screenshot(path=str(out/'anchor-failure.png'),full_page=True)
+              browser.close()
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-fragment-root-cause
+          path: anchor-diagnosis
+          retention-days: 14
