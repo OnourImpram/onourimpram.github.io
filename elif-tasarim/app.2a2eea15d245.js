@@ -258,7 +258,7 @@ class App extends react_1.Component {
         this.saveEntry = () => { if (!this.entry)
             return; const path = this.currentLocation(), route = this.state.path.split('?')[0]; this.entries.set(this.entry, { path: path.split('?')[0] === route && !['/modelini-getir', '/teklif-al'].includes(route) ? path : this.state.path, y: window.scrollY }); };
         this.onLocation = () => { const id = history.state?.elifEntry, found = typeof id === 'number' ? this.entries.get(id) : undefined; if (id === this.entry && found)
-            return; this.entry = found ? id : Date.now() + Math.random(); this.restoring = found?.y ?? 0; const path = found?.path || this.currentLocation(); if (!found)
+            return; this.entry = found ? id : Date.now() + Math.random(); const fragment = window.location.hash && !window.location.hash.startsWith('#/'); this.restoring = found ? found.y : fragment ? null : 0; const path = found?.path || this.currentLocation(); if (!found)
             this.entries.set(this.entry, { path, y: 0 }); history.replaceState({ ...history.state, elifEntry: this.entry }, ''); this.setState({ path, menu: false, search: false }, this.afterRoute); };
         this.onScroll = () => { this.saveEntry(); const scrolled = window.scrollY > 550; if (scrolled !== this.state.scrolled)
             this.setState({ scrolled }); };
@@ -294,6 +294,7 @@ class App extends react_1.Component {
                 document.head.appendChild(schema);
             }
             schema.textContent = JSON.stringify((0, routes_1.pageSchema)(route, site));
+            const anchor = window.location.hash && !window.location.hash.startsWith('#/') ? window.location.hash : '';
             document.documentElement.dataset.page = route === '/tasarim-masasi' ? 'studio' : route === '/modelini-getir' || route === '/teklif-al' ? 'project' : 'content';
             const restore = this.restoring;
             this.restoring = null;
@@ -306,7 +307,10 @@ class App extends react_1.Component {
                 const p = new URLSearchParams(this.state.path.split('?')[1] || '');
                 p.delete('ref');
                 p.delete('fikir');
-                history.replaceState({ ...history.state, elifEntry: this.entry }, '', (0, domain_1.publicHref)(route + (p.size ? '?' + p.toString() : '')));
+                history.replaceState({ ...history.state, elifEntry: this.entry }, '', (0, domain_1.publicHref)(route + (p.size ? '?' + p.toString() : '')) + anchor);
+            }
+            if (anchor && restore === null) {
+                requestAnimationFrame(() => { const target = document.getElementById(anchor.slice(1)); target?.scrollIntoView({ behavior: 'instant' }); });
             }
         };
         this.navigate = (path) => { path = normalizePath(path); if (!path.startsWith('/') || path.startsWith('//'))
@@ -383,7 +387,7 @@ class App extends react_1.Component {
             (0, react_1.createElement)("a", { href: "#main-content", className: "skip-link", onClick: e => { e.preventDefault(); document.getElementById('main-content')?.focus(); } }, "\u0130\u00E7eri\u011Fe ge\u00E7"),
             (0, react_1.createElement)("div", { className: "preview-bar" },
                 (0, react_1.createElement)("span", null,
-                    "V22 / TASARIM \u00D6N\u0130ZLEMES\u0130 ",
+                    "V22.1 / TASARIM \u00D6N\u0130ZLEMES\u0130 ",
                     (0, react_1.createElement)("i", null),
                     (0, react_1.createElement)("span", { className: "v9-preview-detail" }, "Ger\u00E7ek i\u015F ar\u015Fivi, do\u011Frudan ileti\u015Fim")),
                 (0, react_1.createElement)("button", { onClick: () => this.setState({ info: true }) },
@@ -466,7 +470,7 @@ class App extends react_1.Component {
                         "elif tasar\u0131m",
                         (0, react_1.createElement)("span", null, "AT\u00D6LYE")),
                     (0, react_1.createElement)("div", { className: "footer-bottom" },
-                        (0, react_1.createElement)("span", null, "EL\u0130F TASARIM \u00B7 V22 / 2026"),
+                        (0, react_1.createElement)("span", null, "EL\u0130F TASARIM \u00B7 V22.1 / 2026"),
                         (0, react_1.createElement)("div", null,
                             nav('/gizlilik', 'Gizlilik ve dış servisler'),
                             (0, react_1.createElement)("button", { onClick: () => this.setState({ info: true }) }, "Cihaz kay\u0131tlar\u0131n\u0131 y\u00F6net")),
@@ -1395,15 +1399,16 @@ exports.SourceTag = SourceTag;
 exports.WorkCard = WorkCard;
 exports.ModelCallout = ModelCallout;
 const react_1 = require("react");
+const ResilientImage_1 = require("./ResilientImage");
 const ui_1 = require("./ui");
 const image_manifest_1 = require("../lib/image-manifest");
 const portfolio_1 = require("../lib/portfolio");
 function VImage({ asset, alt, className = '', eager = false, sizes = '(max-width: 680px) 100vw, 50vw', full = false }) {
     const m = image_manifest_1.imageManifest[asset];
     if (!m)
-        return (0, react_1.createElement)("img", { src: (0, ui_1.image)(asset), alt: alt, className: className, loading: eager ? 'eager' : 'lazy' });
+        return (0, react_1.createElement)(ResilientImage_1.ResilientImage, { src: (0, ui_1.image)(asset), alt: alt, className: className, loading: eager ? 'eager' : 'lazy' });
     const max = m.variants[m.variants.length - 1], fallback = full ? max : m.variants[Math.min(1, m.variants.length - 1)];
-    return (0, react_1.createElement)("img", { src: (0, ui_1.image)(fallback.file), srcSet: m.variants.map((v) => (0, ui_1.image)(v.file) + ' ' + v.width + 'w').join(', '), sizes: sizes, width: m.width, height: m.height, alt: alt, className: className, loading: eager ? 'eager' : 'lazy', decoding: eager ? 'sync' : 'async', fetchPriority: eager ? 'high' : 'auto' });
+    return (0, react_1.createElement)(ResilientImage_1.ResilientImage, { src: (0, ui_1.image)(fallback.file), fallbackSrc: (0, ui_1.image)(max.file), srcSet: m.variants.map((v) => (0, ui_1.image)(v.file) + ' ' + v.width + 'w').join(', '), sizes: sizes, width: m.width, height: m.height, alt: alt, className: className, loading: eager ? 'eager' : 'lazy', decoding: eager ? 'sync' : 'async', fetchPriority: eager ? 'high' : 'auto' });
 }
 function SourceTag({ kind = 'work' }) { return (0, react_1.createElement)("span", { className: 'source-tag source-' + kind }, ({ work: 'Atölye arşivi', process: 'Uygulama aşaması', concept: 'Konsept model', reference: 'Pinterest ilhamı' })[kind]); }
 function WorkCard({ work: w, actions: a, featured = false, index = 0 }) {
@@ -1439,6 +1444,45 @@ function ModelCallout({ navigate, compact = false }) { return (0, react_1.create
             "Modelimi payla\u015Fmak istiyorum ",
             (0, react_1.createElement)(ui_1.Icon, null)),
         (0, react_1.createElement)("small", null, "\u00D6l\u00E7\u00FC, malzeme ve \u00FCretilebilirlik Yunus Usta ile de\u011Ferlendirilir."))); }
+
+},
+"src/components/ResilientImage":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ResilientImage = void 0;
+const react_1 = require("react");
+class ResilientImage extends react_1.Component {
+    constructor() {
+        super(...arguments);
+        this.state = { retried: false, failed: false };
+        this.element = null;
+        this.onError = () => {
+            if (this.state.failed)
+                return;
+            this.setState(this.state.retried ? { failed: true } : { retried: true });
+        };
+    }
+    componentDidMount() {
+        if (this.element?.complete && !this.element.naturalWidth)
+            this.onError();
+    }
+    componentDidUpdate(previous) {
+        if (previous.src !== this.props.src || previous.srcSet !== this.props.srcSet)
+            this.setState({ retried: false, failed: false });
+    }
+    render() {
+        const { fallbackSrc, src, srcSet, alt, className = '', ...rest } = this.props;
+        if (this.state.failed)
+            return (0, react_1.createElement)("span", { className: 'image-unavailable ' + className, role: "status" },
+                (0, react_1.createElement)("strong", null, "G\u00F6rsel y\u00FCklenemedi."),
+                (0, react_1.createElement)("span", null, alt || 'Bu bölümün görseli şu anda görüntülenemiyor.'),
+                (0, react_1.createElement)("small", null, "Sayfadaki bilgiler ve ileti\u015Fim se\u00E7enekleri kullan\u0131labilir. Ba\u011Flant\u0131n\u0131z d\u00FCzeldi\u011Finde sayfay\u0131 yeniden a\u00E7abilirsiniz."));
+        const fallback = fallbackSrc || src;
+        const retry = fallback.startsWith('data:') || fallback.startsWith('blob:') ? fallback : fallback + (fallback.includes('?') ? '&' : '?') + 'elif-image-retry=1';
+        return (0, react_1.createElement)("img", { ...rest, className: className, src: this.state.retried ? retry : src, srcSet: this.state.retried ? undefined : srcSet, alt: alt, ref: el => { this.element = el; }, onError: this.onError });
+    }
+}
+exports.ResilientImage = ResilientImage;
 
 },
 "src/components/RoomDiagram":function(module,exports,require){
@@ -1522,7 +1566,15 @@ exports.Callout = Callout;
 exports.Accordion = Accordion;
 const react_1 = require("react");
 const domain_1 = require("../lib/domain");
-function image(name) { return typeof window !== 'undefined' && window.__ELIF_ASSETS__?.[name] || '/assets/' + name; }
+const ResilientImage_1 = require("./ResilientImage");
+function image(name) {
+    const w = typeof window !== 'undefined' ? window : null;
+    if (w?.__ELIF_ASSETS__?.[name])
+        return w.__ELIF_ASSETS__[name];
+    const base = (w?.__ELIF_BASE__ ?? (typeof document !== 'undefined' ? document.documentElement.dataset.base : '') ?? '').replace(/\/$/, '');
+    const alias = { 'office.webp': 'office-v8.webp', 'joinery.webp': 'joinery-v8.webp' };
+    return base + '/assets/' + (alias[name] || name);
+}
 function Icon({ name = 'arrow', size = 20 }) {
     const paths = { copy: (0, react_1.createElement)(react_1.Fragment, null,
             (0, react_1.createElement)("rect", { x: "8", y: "8", width: "12", height: "13", rx: "1" }),
@@ -1568,7 +1620,7 @@ function ButtonLink({ to, navigate, children, secondary = false }) { return (0, 
     (0, react_1.createElement)(Icon, null)); }
 function Eyebrow({ children }) { return (0, react_1.createElement)("div", { className: "eyebrow" }, children); }
 function Photo({ name, alt, ratio = '', className = '', caption = true, eager = false }) { return (0, react_1.createElement)("figure", { className: 'photo ' + className, style: ratio ? { aspectRatio: ratio } : undefined },
-    (0, react_1.createElement)("img", { src: image(name), alt: alt, loading: eager ? 'eager' : 'lazy', decoding: "async" }),
+    (0, react_1.createElement)(ResilientImage_1.ResilientImage, { src: image(name), alt: alt, loading: eager ? 'eager' : 'lazy', decoding: "async", fetchPriority: eager ? 'high' : 'auto' }),
     caption && (0, react_1.createElement)("figcaption", null, "Konsept model")); }
 function SectionHead({ number, title, sub, to, navigate }) { return (0, react_1.createElement)("div", { className: "section-head" },
     (0, react_1.createElement)("div", null,
@@ -3534,6 +3586,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = require("react");
 const client_1 = require("react-dom/client");
 const App_1 = __importDefault(require("./App"));
+const context = window;
+const html = document.documentElement;
+if (context.__ELIF_BASE__ === undefined)
+    context.__ELIF_BASE__ = html.dataset.base || '';
+if (context.__ELIF_SITE_URL__ === undefined)
+    context.__ELIF_SITE_URL__ = html.dataset.site;
+if (context.__ELIF_INITIAL__ === undefined)
+    context.__ELIF_INITIAL__ = html.dataset.route || '/';
 const root = document.getElementById('app');
 if (!root)
     throw new Error('Uygulama kökü bulunamadı');
@@ -3957,7 +4017,7 @@ const react_1 = require("react");
 const ui_1 = require("../components/ui");
 const desk_v8_1 = require("../lib/desk-v8");
 const project_1 = require("../lib/project");
-const configurations = [{ title: 'Odak', subtitle: 'Kompakt bir başlangıç.', width: 160, depth: 75, height: 80, angle: 0, material: 'mese' }, { title: 'Akış', subtitle: 'İki yüzey, tek çalışma düzeni.', width: 180, depth: 80, height: 80, angle: 90, material: 'ceviz' }, { title: 'Hareket', subtitle: 'Ayakta çalışmaya bir bakış.', width: 200, depth: 85, height: 110, angle: 180, material: 'koyu' }];
+const configurations = [{ title: 'Odak', subtitle: 'Kompakt bir başlangıç.', width: 160, depth: 75, height: 80, angle: 0, material: 'mese', image: 'devir-odak-v23.webp' }, { title: 'Akış', subtitle: 'İki yüzey, tek çalışma düzeni.', width: 180, depth: 80, height: 80, angle: 90, material: 'ceviz', image: 'devir-akis-v23.webp' }, { title: 'Hareket', subtitle: 'Ayakta çalışmaya bir bakış.', width: 200, depth: 85, height: 110, angle: 180, material: 'koyu', image: 'devir-hareket-v23.webp' }];
 function Devir(a) {
     return (0, react_1.createElement)("div", { className: "v20-devir" },
         (0, react_1.createElement)("section", { className: "v20-product-hero wrap" },
@@ -3970,12 +4030,10 @@ function Devir(a) {
                         (0, react_1.createElement)("br", null),
                         (0, react_1.createElement)("em", null, "yer a\u00E7\u0131n."))),
                 (0, react_1.createElement)("p", null, "Biraz y\u00FCkselir. Y\u00F6n de\u011Fi\u015Ftirir. G\u00FCnl\u00FCk e\u015Fyalar\u0131n\u0131za yer a\u00E7ar. Devir, \u00E7al\u0131\u015Fma alan\u0131n\u0131 sabit bir kal\u0131p yerine sizinle birlikte d\u00FC\u015F\u00FCnmek i\u00E7in tasarland\u0131."),
-                (0, react_1.createElement)(ui_1.ButtonLink, { to: "/tasarim-masasi", navigate: a.navigate },
-                    "Kendi Devir\u2019inizi tasarlay\u0131n ",
-                    (0, react_1.createElement)(ui_1.Icon, { name: "diagonal", size: 17 })),
+                (0, react_1.createElement)(ui_1.ButtonLink, { to: "/tasarim-masasi", navigate: a.navigate }, "Kendi Devir\u2019inizi tasarlay\u0131n"),
                 (0, react_1.createElement)("small", null, "Y\u00FCkseklik ayarl\u0131 masa konsepti. Hen\u00FCz onaylanm\u0131\u015F \u00FCr\u00FCn \u015Fartnamesi de\u011Fildir.")),
             (0, react_1.createElement)("div", { className: "v20-product-visual" },
-                (0, react_1.createElement)(ui_1.Photo, { name: "devir-standing.webp", alt: "Y\u00FCkseltilmi\u015F Devir konsepti, Three.js modelinden \u00FCr\u00FCn g\u00F6r\u00FCn\u00FCm\u00FC", ratio: "4/5", eager: true }),
+                (0, react_1.createElement)(ui_1.Photo, { name: "devir-hareket-v23.webp", alt: "Y\u00FCkseltilmi\u015F Devir konsepti, Three.js modelinden \u00FCr\u00FCn g\u00F6r\u00FCn\u00FCm\u00FC", ratio: "3/2", eager: true }),
                 (0, react_1.createElement)("span", { className: "v20-product-stamp" },
                     "01",
                     (0, react_1.createElement)("br", null),
@@ -3998,7 +4056,7 @@ function Devir(a) {
                 (0, react_1.createElement)("p", null, "Ana tabla ile y\u00FCkselen \u00E7ekmeceler, yerini koruyan alt depolama ve ba\u011F\u0131ms\u0131z yan \u00E7al\u0131\u015Fma y\u00FCzeyi. Her par\u00E7a, ba\u015Fka bir kullan\u0131m ihtimalini birlikte d\u00FC\u015F\u00FCnmek i\u00E7in."),
                 (0, react_1.createElement)("p", null, "St\u00FCdyoda renk ve \u00F6l\u00E7\u00FC se\u00E7mek, \u00FCretim karar\u0131 vermek de\u011Fildir. \u0130htiyac\u0131n\u0131z\u0131 daha a\u00E7\u0131k anlatman\u0131n bir yoludur. Sonra Yunus Usta ile malzemeyi, mekanizmay\u0131 ve uygulamay\u0131 netle\u015Ftirirsiniz."))),
         (0, react_1.createElement)("section", { className: "v20-room-editorial" },
-            (0, react_1.createElement)(ui_1.Photo, { name: "atelier-evening-v9.webp", alt: "\u0130ki kitapl\u0131kl\u0131 \u00E7al\u0131\u015Fma alan\u0131nda Devir konsepti", ratio: "16/9" }),
+            (0, react_1.createElement)(ui_1.Photo, { name: "devir-atolye-v23.webp", alt: "\u0130ki kitapl\u0131kl\u0131 \u00E7al\u0131\u015Fma alan\u0131nda Devir konsepti", ratio: "16/9", eager: true }),
             (0, react_1.createElement)("div", null,
                 (0, react_1.createElement)(ui_1.Eyebrow, null, "MEK\u00C2NI B\u0130RL\u0130KTE HAYAL EDEL\u0130M"),
                 (0, react_1.createElement)("h2", null,
@@ -4020,7 +4078,8 @@ function Devir(a) {
                 (0, react_1.createElement)("span", { className: "v20-start-num" },
                     "0",
                     i + 1),
-                (0, react_1.createElement)("div", { className: 'v20-start-swatch ' + c.material }),
+                (0, react_1.createElement)(ui_1.Photo, { name: c.image, alt: c.title + ' başlangıcı. ' + c.width + ' × ' + c.depth + ' cm, ' + c.height + ' cm yükseklik, ' + c.material + ' görünümü. Gerçek 3D modelden konsept.', ratio: "3/2", caption: false, eager: true }),
+                (0, react_1.createElement)("div", { className: 'v20-start-swatch ' + c.material, "aria-hidden": "true" }),
                 (0, react_1.createElement)("h3", null, c.title),
                 (0, react_1.createElement)("p", null, c.subtitle),
                 (0, react_1.createElement)("small", null,
@@ -4035,7 +4094,7 @@ function Devir(a) {
                     "Bu fikirle ba\u015Fla ",
                     (0, react_1.createElement)(ui_1.Icon, null)))))),
         (0, react_1.createElement)("section", { className: "wrap v20-detail-editorial", id: "devir-detay" },
-            (0, react_1.createElement)(ui_1.Photo, { name: "devir-detail.webp", alt: "Devir modelinin depolama ve birle\u015Fim ayr\u0131nt\u0131s\u0131", ratio: "1" }),
+            (0, react_1.createElement)(ui_1.Photo, { name: "devir-detay-v23.webp", alt: "Devir modelinin depolama ve birle\u015Fim ayr\u0131nt\u0131s\u0131", ratio: "3/2", eager: true }),
             (0, react_1.createElement)("div", null,
                 (0, react_1.createElement)(ui_1.Eyebrow, null, "\u0130Y\u0130 D\u00DC\u015E\u00DCN\u00DCLM\u00DC\u015E B\u0130R G\u00DCNL\u00DCK HAYAT"),
                 (0, react_1.createElement)("h2", null,

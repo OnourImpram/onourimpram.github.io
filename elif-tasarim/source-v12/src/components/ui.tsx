@@ -1,5 +1,6 @@
 import { createElement, Fragment, Component, type ReactNode } from 'react';
 import { publicHref } from '../lib/domain';
+import { ResilientImage } from './ResilientImage';
 import { products, type Product } from '../lib/data';
 export type CartLine = {
     key: string;
@@ -20,7 +21,13 @@ export type PageProps = {
     removeCart: (key: string) => void;
     openInfo: () => void;
 };
-export function image(name: string) { return typeof window !== 'undefined' && (window as any).__ELIF_ASSETS__?.[name] || '/assets/' + name; }
+export function image(name: string) {
+ const w = typeof window !== 'undefined' ? window as any : null;
+ if (w?.__ELIF_ASSETS__?.[name]) return w.__ELIF_ASSETS__[name];
+ const base = (w?.__ELIF_BASE__ ?? (typeof document !== 'undefined' ? document.documentElement.dataset.base : '') ?? '').replace(/\/$/, '');
+ const alias: Record<string,string> = {'office.webp':'office-v8.webp', 'joinery.webp':'joinery-v8.webp'};
+ return base + '/assets/' + (alias[name] || name);
+}
 export function Icon({ name = 'arrow', size = 20 }: {
     name?: string;
     size?: number;
@@ -58,7 +65,7 @@ export function Photo({ name, alt, ratio = '', className = '', caption = true, e
     className?: string;
     caption?: boolean;
     eager?: boolean;
-}) { return <figure className={'photo ' + className} style={ratio ? { aspectRatio: ratio } : undefined}><img src={image(name)} alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async"/>{caption && <figcaption>Konsept model</figcaption>}</figure>; }
+}) { return <figure className={'photo ' + className} style={ratio ? { aspectRatio: ratio } : undefined}><ResilientImage src={image(name)} alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async" fetchPriority={eager ? 'high' : 'auto'}/>{caption && <figcaption>Konsept model</figcaption>}</figure>; }
 export function SectionHead({ number, title, sub, to, navigate }: {
     number: string;
     title: ReactNode;

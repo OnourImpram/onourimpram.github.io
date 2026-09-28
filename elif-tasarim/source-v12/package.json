@@ -1,11 +1,11 @@
 {
   "name": "elif-tasarim-v22",
-  "version": "0.22.0",
+  "version": "0.22.1",
   "private": true,
-  "description": "Elif Tasar\u0131m V22. Verified email and complete customer handoff.",
+  "description": "Elif Tasarım V22. Verified email and complete customer handoff.",
   "scripts": {
     "build": "node tools/build-v22.cjs",
-    "test": "node tools/compile-domain.cjs && node --test --test-concurrency=1 tests/domain.test.cjs tests/v7/unit.cjs tests/v8/unit.cjs tests/v7/server.test.cjs tests/v9/state.cjs tests/v9/*.mjs tests/v10/*.cjs tests/v10/*.mjs tests/v11/*.cjs tests/v12/*.mjs tests/v13/*.cjs tests/v20/*.cjs tests/v21/*.cjs tests/v22/*.cjs",
+    "test": "node tools/compile-domain.cjs && node --test --test-concurrency=1 tests/domain.test.cjs tests/v7/unit.cjs tests/v8/unit.cjs tests/v7/server.test.cjs tests/v9/state.cjs tests/v9/*.mjs tests/v10/*.cjs tests/v10/*.mjs tests/v11/*.cjs tests/v12/*.mjs tests/v13/*.cjs tests/v20/*.cjs tests/v21/*.cjs tests/v22/*.cjs tests/v23/*.cjs",
     "typecheck:core": "tsc --strict --noEmit --target ES2020 --module commonjs --lib ES2020,DOM src/lib/project.ts src/lib/upload.ts src/lib/zip.ts src/lib/selections.ts src/lib/desk-v8.ts src/lib/source-context.ts src/lib/room-fit.ts src/lib/design-board.ts src/lib/design-sheet.ts src/lib/draft-recovery.ts src/lib/draft-session.ts src/lib/contact-options.ts src/lib/site-profile.ts src/lib/selection-backup.ts",
     "serve": "node tools/serve-static.cjs dist 8000",
     "test:browser": "python tests/v11/acceptance.py",
