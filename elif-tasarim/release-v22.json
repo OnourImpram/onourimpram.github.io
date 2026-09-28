@@ -1,6 +1,6 @@
 {
-  "release": "v22-contact-complete",
-  "version": "0.22.0",
+  "release": "v22.1-visible-content",
+  "version": "0.22.1",
   "baseline": "c6d3561958069448f2c929e421bc987fede3b50a",
   "basePath": "/elif-tasarim",
   "siteUrl": "https://onourimpram.github.io/elif-tasarim",
@@ -66,6 +66,7 @@
     "src/components/NumberEditor",
     "src/components/PinterestPreview",
     "src/components/PortfolioUI",
+    "src/components/ResilientImage",
     "src/components/RoomDiagram",
     "src/components/TextCopy",
     "src/components/ui",
@@ -109,20 +110,20 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "404.html": {
-      "bytes": 10276,
-      "sha256": "293aae4352c02ddf3462cff70a2b2365ce2ce2ee5b04f659a3e3a0e5d728c7c9"
+      "bytes": 10362,
+      "sha256": "72299930df6d99279355f2129d780bd1483f6d98455fd53e8c36153156608491"
     },
     "_headers": {
       "bytes": 454,
       "sha256": "835350a34b7cf76db0f0021748967875b45f26e84fe56cfa6ec5859361b2312f"
     },
-    "app.9f3e35a646f5.js": {
-      "bytes": 442078,
-      "sha256": "9f3e35a646f560c17d58e28eb6b80e009b60f6d1db8f2aefa9b5fd21763b3d09"
+    "app.2a2eea15d245.js": {
+      "bytes": 445907,
+      "sha256": "2a2eea15d245faa36f910c7696901520820f32e711ad7c3151797f3fba973827"
     },
     "arama/index.html": {
-      "bytes": 45587,
-      "sha256": "78d9f767c1538cc5edf4cc326670b7a59e9e273a40ad8fd90c21003ece9cb29a"
+      "bytes": 45673,
+      "sha256": "9b458b807841d963c1a27b3a274e7bc032c8efc15faecceaa1b94b5bf0214c8f"
     },
     "assets/atelier-evening-v9.webp": {
       "bytes": 194646,
@@ -252,9 +253,29 @@
       "bytes": 214736,
       "sha256": "931a6bbbd6c0771cc5cc9a76cbc80570d6076debc8e093304617cdca025cd35b"
     },
+    "assets/devir-akis-v23.webp": {
+      "bytes": 22048,
+      "sha256": "010a7210371b47ff9ccc9c8b3b23427ef602267e1dcf653caed24e7524dfaf4b"
+    },
+    "assets/devir-atolye-v23.webp": {
+      "bytes": 114264,
+      "sha256": "6c7a183fbf712887a8f6fe5cb96f1cdfa831df2c4c13375ed0019ef4741d0230"
+    },
     "assets/devir-detail.webp": {
       "bytes": 127530,
       "sha256": "ec85ec53f91d16acf477369ecaccb4516de0b7699e21a0ebb888c84841373009"
+    },
+    "assets/devir-detay-v23.webp": {
+      "bytes": 45000,
+      "sha256": "ba8a9b8ff9443036bbda37bf51ea854ce390a74f873efbd8d341c68fa22cd204"
+    },
+    "assets/devir-hareket-v23.webp": {
+      "bytes": 34032,
+      "sha256": "b979a5fd1dc217565c4c2129048a567bff6a3730c62892baeb7002801a06b348"
+    },
+    "assets/devir-odak-v23.webp": {
+      "bytes": 27550,
+      "sha256": "eb920d9363839656ea31527eafcc8157360559f8b0629426657dbd507c35be2f"
     },
     "assets/devir-poster.webp": {
       "bytes": 77072,
@@ -553,8 +574,8 @@
       "sha256": "931a6bbbd6c0771cc5cc9a76cbc80570d6076debc8e093304617cdca025cd35b"
     },
     "atolye/index.html": {
-      "bytes": 17377,
-      "sha256": "fae518562aa5198bf71e67f100403c61c1baa0741e7a4d7d0aeb18c8ddd42319"
+      "bytes": 17463,
+      "sha256": "a4d32c980b7df476afe34ee83a04b2ff328b583ee0b4d84d1e9ece5af41180df"
     },
     "atolye-demolari/index.html": {
       "bytes": 260,
@@ -565,184 +586,184 @@
       "sha256": "3eae1c0dcb168aa04f576184ee509b09d455dfeec4115f44d4cca51338445d9b"
     },
     "calisma-dosyam/index.html": {
-      "bytes": 11733,
-      "sha256": "5f7e6057274e49bca7a1211970d0823425b2774c3bf162e539adb462fd90e480"
+      "bytes": 11819,
+      "sha256": "863245c5b97ecf8fb81392bfe73e18323222e7ef278d5325f1b40722a032eac7"
     },
-    "config.7a405a8dd9c4.js": {
-      "bytes": 6525,
-      "sha256": "7a405a8dd9c4992fb8c6ce61bf4c6322618e1149ddbd466248ce635d61cb3e3a"
+    "config.58f9ab3095a7.js": {
+      "bytes": 6862,
+      "sha256": "58f9ab3095a76e67222efbfb3e2cf192458a634a369a60e630de3fdecd292a02"
     },
     "devir-01/index.html": {
-      "bytes": 18620,
-      "sha256": "73b4e73a63e3b4bdfd6c3cb3b7d7b46eb78502351d1bfdc1d6eb7347ab34caf6"
+      "bytes": 19492,
+      "sha256": "8a45e124b4af1b55ca59735bc71e75512dd92d137397ee081f5d663e8499f588"
     },
     "gizlilik/index.html": {
-      "bytes": 16238,
-      "sha256": "6a7188da52a50d2fd4ab257d9e16f271df4d0eeced121c1cad9a23f3588826c0"
+      "bytes": 16324,
+      "sha256": "4ca721e6ebcbc42ff46aad3dcf71883fe4e20d2883205321e6a5564f828b95fb"
     },
     "hakkimizda/index.html": {
-      "bytes": 14064,
-      "sha256": "f0c189be8c7f5c7cdfd0413f2765b9a6719a2c8b82a4dd4e5ef337629bd6253d"
+      "bytes": 14150,
+      "sha256": "7efaa56f99d0c18115fb6ef6d0e3f64daaefd9d553f9665a9d76eb4128589df4"
     },
     "hizmet-ve-teklif/index.html": {
-      "bytes": 16461,
-      "sha256": "0a3bc5442a9b6c5543522cf1f86abf984a3173ef3d98676eb680bbce5fbe5836"
+      "bytes": 16547,
+      "sha256": "85e34c9bd456216a93f808d4a9cb3a1db5f58ff7cc5f0947a560a22be6738b79"
     },
     "iletisim/index.html": {
-      "bytes": 15565,
-      "sha256": "d1ea4c01230c149492166e04c2c964e6eaa884cfb0566b9c14592a873a0d6fc8"
+      "bytes": 15651,
+      "sha256": "a2c20c2183cb9e4b56dbef5764bb673be3b08de0aab09381b6462a6ac7588b70"
     },
     "ilham-modelleri/index.html": {
-      "bytes": 44952,
-      "sha256": "c8faeafc5c79867796e420cb63bdee694cd8cc2af56515ae8e1535a84de4416d"
+      "bytes": 45038,
+      "sha256": "5ef1b39fc01ccc99072a32e61a60684ab47024935779e7f4f01428074d8911fb"
     },
     "index.html": {
-      "bytes": 33672,
-      "sha256": "3281034db021de252c2954d11e519691e49d20fb536fe6b9c2510bffbaf3ddc6"
+      "bytes": 33788,
+      "sha256": "e1663293c327f6ffb19648fb23072387903c385aa4e2239f7e289de16142e633"
     },
     "kategoriler/gardrop/index.html": {
-      "bytes": 19636,
-      "sha256": "e24741c204fcaa09e6d530dadaf755184775eed7fb1565c222a056c8e2915050"
+      "bytes": 19722,
+      "sha256": "baf1e48ffd5357d51c17ff042a309d7370f2cfd34d06e17f231224ee1b679368"
     },
     "kategoriler/index.html": {
-      "bytes": 18873,
-      "sha256": "b1a38bb21886076c62d2f1fde529a5f8b01f70946f09587ed0fcefbb9f1f8ab3"
+      "bytes": 18959,
+      "sha256": "88ba63937919802772a38c7c7aec2fe3e3ad021f72c89b5b695347b2ebdc0c90"
     },
     "kategoriler/kahve-kosesi/index.html": {
-      "bytes": 20808,
-      "sha256": "42529d44f39eccd93a05fc83840b2c6cc0281ff4f24bdea741bdcbf84edd178e"
+      "bytes": 20894,
+      "sha256": "a779e2dc64d1514c215b6fbc9419d2f28239a0e8a85db903547a12344621ac16"
     },
     "kategoriler/mutfak/index.html": {
-      "bytes": 20493,
-      "sha256": "05241d583d8fa8752217a4525babdc825e700d58f642a0dab70dc5efea70ef81"
+      "bytes": 20579,
+      "sha256": "2ec58a10f39a726371c476756340a0aa767b1c8c0b33540437178e4149825880"
     },
     "kategoriler/ozel-tasarim/index.html": {
-      "bytes": 16783,
-      "sha256": "c6b6bbeb5aea8f5b6311f158dbe32561be239c43dfa8a0b447fb0017b44bf437"
+      "bytes": 16869,
+      "sha256": "d354729be85818fe26e64715ba485eeb9611615262b9f808bf505e6a7c5959d3"
     },
     "kategoriler/pergola/index.html": {
-      "bytes": 16959,
-      "sha256": "7f25c4cae071e7ee884a622cb077a47cb33233aa87b06a731154b401bdbe1810"
+      "bytes": 17045,
+      "sha256": "94b5036132c9bcf0c4e0e932f93475aca7d635eb5f8e71123bd37245c63302cc"
     },
     "kategoriler/sehpa/index.html": {
-      "bytes": 15677,
-      "sha256": "191693d230646a8543dc2a16e45fdf9e44ab8a1da8223333cac9760ddd83bad0"
+      "bytes": 15763,
+      "sha256": "d7e144362af901a8bc4164e7ea74480934ebfc0c82a6f2addf8b1276e5572180"
     },
     "kategoriler/tv-unitesi/index.html": {
-      "bytes": 17466,
-      "sha256": "8395921601f2ce97150105ba01a53fc217330619f74d2bb72646887f4de42ebc"
+      "bytes": 17552,
+      "sha256": "2ac1da9d3ebac746c782742c41587ec96f4eb93225c7cce10852ab1798289bfe"
     },
     "kategoriler/vestiyer/index.html": {
-      "bytes": 16613,
-      "sha256": "7a59cd0ea617e3209e2474953724f232fd3c6b3db79fb1f55ad11b9e45549850"
+      "bytes": 16699,
+      "sha256": "dd40b29cd70073add3f1c55c49c01a69057720404c7abdf72eae4783bc7b6a28"
     },
     "kolay-iletisim/index.html": {
-      "bytes": 13711,
-      "sha256": "0fc86efd20fb8a0246fa5e5d14c651f3329e105e1a3e3ceaf86951537fd96c72"
+      "bytes": 13797,
+      "sha256": "3d37d608a1dc10257705b4aebeeb047f747b52e21cae7d656eb36563f8a10983"
     },
     "launch-readiness.json": {
-      "bytes": 423,
-      "sha256": "d86bea56d52dccb6c2d3603a181dea66bf4f9631d9d776bf512d0107534d6f7b"
+      "bytes": 424,
+      "sha256": "27f148bfacf18e6d8eb47691a47fb54f5314eedc6f9db50424ec7f39dd5deb70"
     },
     "malzemeler/index.html": {
-      "bytes": 13007,
-      "sha256": "ff18863f94e1dc79891fb15c9c1b4ef47f29472e921b0a9f2d3342ab7cc3eace"
+      "bytes": 13093,
+      "sha256": "44a5e8854ab9f6060dc7a1e23a72b4098da0ef06da1bd5470320e32d5687286e"
     },
     "mekan-fikirleri/index.html": {
       "bytes": 278,
       "sha256": "d685617205c6d9af3545302d186ba59625208e42aedd5e8a326f094c272aca9e"
     },
     "modelini-getir/index.html": {
-      "bytes": 17948,
-      "sha256": "0bc0fc6bf2e03442de4db994b09bb442031a07df7eb117557f64f0ba254fdef5"
+      "bytes": 18034,
+      "sha256": "f1395dcddf7a5af55feb3c479628ccc116728d957d799c8a21b954127683e0ed"
     },
     "odeme/index.html": {
       "bytes": 276,
       "sha256": "7bca13f687c63bfab90e514f3b8a27a8619b342a48559f07473de0d7730bffad"
     },
     "ozel-uretim/index.html": {
-      "bytes": 13727,
-      "sha256": "2244b0039fc7c686c38cb695337ea3a2fc989977adeb454d184fbc41cc4f595d"
+      "bytes": 13843,
+      "sha256": "9c512809b547259636b77be6089c4ebd711eb3b4e09389f0e820229128586e9c"
     },
     "proje/ahsap-bahce-kamelyasi/index.html": {
-      "bytes": 18238,
-      "sha256": "56e2e55d79b561eecf8416828c2b4dec3b70a17f779a56edbd0cfaed46a2a3ec"
+      "bytes": 18324,
+      "sha256": "f57a66a8be007dc87c62a5b43a51346c885a32aabeea3fcc28cbbf0f63896a15"
     },
     "proje/amber-kahve-kosesi/index.html": {
-      "bytes": 20839,
-      "sha256": "06dd815947d716f4a6c13ffa07e9a2aca894241d0e8eda5902cb31de1f7c78a3"
+      "bytes": 20925,
+      "sha256": "845116c3ca0d9fed4de7d150867b1647c7acc7550ff2b3fa091cb2855c8114fa"
     },
     "proje/cam-kapak-giyinme/index.html": {
-      "bytes": 20857,
-      "sha256": "1454a85c8b28c949b00ba8cbc78da85b11643cf8a9ef3d2f78c702ec0dc8a591"
+      "bytes": 20943,
+      "sha256": "93713645c1f496fca5c3969bcdb12547b845abc9e67e135cf6750bfd02becc14"
     },
     "proje/cerceve-kapak-mutfak/index.html": {
-      "bytes": 20778,
-      "sha256": "7adef3d1d64003ba932b35e8a90712ebad15075a64d847bd7d78bc38265b23d0"
+      "bytes": 20864,
+      "sha256": "b966227b77ce4c913ac5d94aa16368c3f8ce6fae8ded4c5e2e807c718c384cd2"
     },
     "proje/cizgili-gardirop/index.html": {
-      "bytes": 20699,
-      "sha256": "6968818a23ff58f2cb5f08b36f54bcfe0a4167099619678354a7efca9fd67a11"
+      "bytes": 20785,
+      "sha256": "bc509578f0dab10179cc39cfbfca4b943c5f4c672be3c5d2cc29c0d9d4b951cb"
     },
     "proje/iki-ton-mutfak/index.html": {
-      "bytes": 20840,
-      "sha256": "5c9482967e5121df0c2e4aa41da4bab961b86d395c89c953718b51e675b238ef"
+      "bytes": 20926,
+      "sha256": "d90dd218a7e73548e9903ce9486db04b7c4e021729eac6f7ddb83c59041f425c"
     },
     "proje/isikli-tv-unitesi/index.html": {
-      "bytes": 19107,
-      "sha256": "84ab41f315d1a66ff5309dff5061460407974cc7cd7707ee3d1a8dee571fd21c"
+      "bytes": 19193,
+      "sha256": "b33566f954d73d2f505108b6faa824089e5398deace37308bd277ae829c1d2b9"
     },
     "proje/kemerli-kahve-kosesi/index.html": {
-      "bytes": 22685,
-      "sha256": "86e6cb305e5ff47860fb7fffaf645644c7cbf2025056fd42055d92e0b0c845c4"
+      "bytes": 22771,
+      "sha256": "44c829edd7a577e477c716423ae88ee4dd05a7f4d188afc6b1add6fd14afe237"
     },
     "proje/klasik-gardirop/index.html": {
-      "bytes": 20829,
-      "sha256": "9f1059ea978a45d9fd08eca70ee9804cbbbc44cbfe432ef6cdc3aea73fed5993"
+      "bytes": 20915,
+      "sha256": "59e1c645fd66f9d6f9e5200c2ab0b5ae4d0d18e013817c3da51b03aef0ddba6c"
     },
     "proje/klasik-mutfak-kurulumu/index.html": {
-      "bytes": 22503,
-      "sha256": "e518d259c795fa6397829055ce11cc0d12d76034b87b67a9e1fc0e273ddf5270"
+      "bytes": 22589,
+      "sha256": "7507b28c7844d811a74f77b40124c2333a438b6907d311d9fbf50a0705f467ca"
     },
     "proje/mutfak-kurulum-asamasi/index.html": {
-      "bytes": 22396,
-      "sha256": "0eda37105e5fb2a48d1da2b0aeee58194139f2391c1187dd34a43daecb66a1b8"
+      "bytes": 22482,
+      "sha256": "39e6d44dea0f5260781fc14011a8364bce2a3660cd762e8f8848f0bdb1cab15d"
     },
     "proje/rafli-depolama/index.html": {
-      "bytes": 17473,
-      "sha256": "701fe2943531168d6a874c612e1d26461132f8e9f09279f8470d6793391af858"
+      "bytes": 17559,
+      "sha256": "8a040a00b7d062e1b01899ffc91ca923f687077c58646ee017f7aff0f2c42d18"
     },
     "proje/sade-kose-mutfak/index.html": {
-      "bytes": 22500,
-      "sha256": "c19619b0ad9bfe562eb709e058bb4cad3c139256ef0278462cd4a6ae8262aa77"
+      "bytes": 22586,
+      "sha256": "a7969d14b641315e61b4437d66521e0e6b4c26e1170b5e6015598a8a05d60da6"
     },
     "proje/vitrinli-servis-unitesi/index.html": {
-      "bytes": 21594,
-      "sha256": "370dec65bd667cbf22dc509e33b78e666d049299e5c05cd62e2be86a738fd815"
+      "bytes": 21680,
+      "sha256": "c7fb0355e6180cf8c5d3a6eb8e7557f4ee02ba610c5edecff0b4080ac28a6a55"
     },
     "proje/yatak-cevresi-depolama/index.html": {
-      "bytes": 17258,
-      "sha256": "44c2c0ce8648477c3bd76123379e94ef4dea96d8232e6a14e8cc602239315f98"
+      "bytes": 17344,
+      "sha256": "0d66ead4580f852040b134ff0de9adfa4aba021d97187c28c43dcfbbfc040a70"
     },
     "projeler/index.html": {
-      "bytes": 33546,
-      "sha256": "70cdef8e18798a148398b95e71c32284ddd3ecd01df061d4a6da2ccbeda1db96"
+      "bytes": 33632,
+      "sha256": "305f053c9cd49cee7f88218331f6cb02ce7de67570d410d85f5c04802f03fd2a"
     },
     "rehber/bakim/index.html": {
-      "bytes": 13761,
-      "sha256": "f469613b95dc232491177a3ac74ace7002afb982ec60fe041e8816acdaa2e036"
+      "bytes": 13877,
+      "sha256": "c5c6077ec66fbdc7c2b133f2f3f4d2b0a9136113ab8f141c1fd95ec222b7d15a"
     },
     "rehber/index.html": {
-      "bytes": 13062,
-      "sha256": "7af8d3ff7d9c3200cedb8f993b64a2ebfdb40cbf57820e411de1e5e01561851d"
+      "bytes": 13238,
+      "sha256": "33d8dab58329bdc29d3693f0192e899eaacdb3fcedaff10919b61c222814f859"
     },
     "rehber/malzeme-secimi/index.html": {
-      "bytes": 13753,
-      "sha256": "423bb48fcc177836153d50d33c3d3bac30bdeab3da40e83153fe0f0400f2031a"
+      "bytes": 13869,
+      "sha256": "f1d643f157aa32bca570adba475bce8641647e6592759e6b32438db0ad78c5d1"
     },
     "rehber/olcu-alma/index.html": {
-      "bytes": 14047,
-      "sha256": "1db496927be227ea21e3019d639946c89db7e2803adfc9eb1e59d8bc52137d57"
+      "bytes": 14163,
+      "sha256": "3aea904de37c3b0154b3c4147df77ad3bab2a92633603e059f048591003fd549"
     },
     "robots.txt": {
       "bytes": 23,
@@ -753,20 +774,20 @@
       "sha256": "7bca13f687c63bfab90e514f3b8a27a8619b342a48559f07473de0d7730bffad"
     },
     "sikca-sorulan-sorular/index.html": {
-      "bytes": 19947,
-      "sha256": "9d761023b904b9d61c0f2f754c913bcb044418fb018d3323d0c4232262642c30"
+      "bytes": 20033,
+      "sha256": "faba2e457bd16063f08c9a5249ff2875365580a04bcd6e97358a6cedf3b49bfe"
     },
-    "styles.fcc8ee25d9cd.css": {
-      "bytes": 254428,
-      "sha256": "fcc8ee25d9cde4fab4bcc24596b5fbb1e0a117abad5470bfc04670848ffbce24"
+    "styles.0884082a5b3c.css": {
+      "bytes": 256380,
+      "sha256": "0884082a5b3cbd42c530797939b7abdb88fe59d406f24eb2840379150db4fd99"
     },
     "tasarim-masasi/index.html": {
-      "bytes": 31488,
-      "sha256": "77e6c4d7b35731dc32e206d75444936282bf9d41f544060241ab969b81ac3b11"
+      "bytes": 31664,
+      "sha256": "cdf647c6b6812d01579219847bdef350d725586b69aeb1c481812805fae7bb44"
     },
     "teklif-al/index.html": {
-      "bytes": 17795,
-      "sha256": "876b81231eaf4c74c89cfb130003a625749ca77e7b2c6b5763a8d1dab1445ca6"
+      "bytes": 17881,
+      "sha256": "ea4021c4e7a5fdfebe875989e31dfc9a9f037ae6792264488486fa457c229b34"
     },
     "three/atelier-room.mjs": {
       "bytes": 9830,

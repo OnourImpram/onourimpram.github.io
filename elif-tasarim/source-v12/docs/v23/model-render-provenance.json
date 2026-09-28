@@ -1,0 +1,152 @@
+[
+  {
+    "file": "devir-odak-v23.webp",
+    "width": 1200,
+    "height": 800,
+    "sha256": "eb920d9363839656ea31527eafcc8157360559f8b0629426657dbd507c35be2f",
+    "source": "local original Three.js r185 procedural model",
+    "configuration": {
+      "width": 160,
+      "depth": 75,
+      "height": 80,
+      "angle": 0,
+      "material": "mese",
+      "drawers": false,
+      "door": false,
+      "shelves": "none",
+      "room": "product",
+      "shelfLight": 65,
+      "lighting": "day"
+    },
+    "geometry": {
+      "mainTopY": 0.8,
+      "fixedPanelY": 0.305,
+      "returnTopY": 0.695,
+      "wingAngle": 0,
+      "cabinetDrawerZ": 0.305,
+      "mainDrawerZ": 0.363,
+      "doorAngle": 0
+    },
+    "notProductionCAD": true
+  },
+  {
+    "file": "devir-akis-v23.webp",
+    "width": 1200,
+    "height": 800,
+    "sha256": "010a7210371b47ff9ccc9c8b3b23427ef602267e1dcf653caed24e7524dfaf4b",
+    "source": "local original Three.js r185 procedural model",
+    "configuration": {
+      "width": 180,
+      "depth": 80,
+      "height": 80,
+      "angle": 90,
+      "material": "ceviz",
+      "drawers": false,
+      "door": false,
+      "shelves": "none",
+      "room": "product",
+      "shelfLight": 65,
+      "lighting": "day"
+    },
+    "geometry": {
+      "mainTopY": 0.8,
+      "fixedPanelY": 0.305,
+      "returnTopY": 0.695,
+      "wingAngle": 1.5707963267948966,
+      "cabinetDrawerZ": 0.33,
+      "mainDrawerZ": 0.388,
+      "doorAngle": 0
+    },
+    "notProductionCAD": true
+  },
+  {
+    "file": "devir-hareket-v23.webp",
+    "width": 1920,
+    "height": 1280,
+    "sha256": "b979a5fd1dc217565c4c2129048a567bff6a3730c62892baeb7002801a06b348",
+    "source": "local original Three.js r185 procedural model",
+    "configuration": {
+      "width": 200,
+      "depth": 85,
+      "height": 110,
+      "angle": 180,
+      "material": "koyu",
+      "drawers": false,
+      "door": false,
+      "shelves": "none",
+      "room": "product",
+      "shelfLight": 65,
+      "lighting": "day"
+    },
+    "geometry": {
+      "mainTopY": 1.1,
+      "fixedPanelY": 0.305,
+      "returnTopY": 0.695,
+      "wingAngle": 3.141592653589793,
+      "cabinetDrawerZ": 0.355,
+      "mainDrawerZ": 0.413,
+      "doorAngle": 0
+    },
+    "notProductionCAD": true
+  },
+  {
+    "file": "devir-detay-v23.webp",
+    "width": 1920,
+    "height": 1280,
+    "sha256": "ba8a9b8ff9443036bbda37bf51ea854ce390a74f873efbd8d341c68fa22cd204",
+    "source": "local original Three.js r185 procedural model",
+    "configuration": {
+      "width": 180,
+      "depth": 80,
+      "height": 90,
+      "angle": 90,
+      "material": "ceviz",
+      "drawers": true,
+      "door": true,
+      "shelves": "none",
+      "room": "product",
+      "shelfLight": 65,
+      "lighting": "day"
+    },
+    "geometry": {
+      "mainTopY": 0.9,
+      "fixedPanelY": 0.305,
+      "returnTopY": 0.695,
+      "wingAngle": 1.5707963267948966,
+      "cabinetDrawerZ": 0.56,
+      "mainDrawerZ": 0.688,
+      "doorAngle": 1.6964600329384885
+    },
+    "notProductionCAD": true
+  },
+  {
+    "file": "devir-atolye-v23.webp",
+    "width": 1920,
+    "height": 1280,
+    "sha256": "6c7a183fbf712887a8f6fe5cb96f1cdfa831df2c4c13375ed0019ef4741d0230",
+    "source": "local original Three.js r185 procedural model",
+    "configuration": {
+      "width": 180,
+      "depth": 80,
+      "height": 80,
+      "angle": 90,
+      "material": "ceviz",
+      "drawers": false,
+      "door": false,
+      "shelves": "both",
+      "room": "atelier",
+      "shelfLight": 65,
+      "lighting": "evening"
+    },
+    "geometry": {
+      "mainTopY": 0.8,
+      "fixedPanelY": 0.305,
+      "returnTopY": 0.695,
+      "wingAngle": 1.5707963267948966,
+      "cabinetDrawerZ": 0.33,
+      "mainDrawerZ": 0.388,
+      "doorAngle": 0
+    },
+    "notProductionCAD": true
+  }
+]
