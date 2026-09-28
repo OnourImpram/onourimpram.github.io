@@ -1,0 +1,118 @@
+name: Elif visible product repair
+on:
+  push:
+    branches: [elif-v23-visibility-20260928]
+    paths: ['.github/workflows/elif-v23-fix.yml']
+permissions:
+  contents: write
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reproduce failed contracts on the unchanged V22 product
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/v23/red
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build
+          set +e
+          node --test tests/v23/visibility.cjs > evidence/v23/red/contracts.txt 2>&1
+          result=$?
+          set -e
+          cat evidence/v23/red/contracts.txt
+          test "$result" -ne 0
+          grep -q '# fail 5' evidence/v23/red/contracts.txt
+      - name: Install browser tools
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Start actual HTTP preview and render original model variants
+        run: |
+          set -euo pipefail
+          cd elif-tasarim/source-v12
+          node tools/serve-static.cjs dist 8000 > /tmp/elif-visibility-server.txt 2>&1 &
+          cd ../..
+          for i in {1..20}; do curl -fsS http://127.0.0.1:8000/elif-tasarim/release-v22.json >/dev/null && break || sleep 1; done
+          python elif-v23-tools/render-products.py
+      - name: Apply bounded fixes
+        run: python elif-v23-tools/fix.py
+      - name: Clean build, unit suite and strict core
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          npm run build | tee evidence/v23/build.txt
+          npm test | tee evidence/v23/unit.txt
+          npm run typecheck:core
+          npm run verify:dist
+      - name: Reject missing publication references
+        run: python elif-v23-tools/check-media.py
+      - name: Prove actual images, navigation and request failure recovery
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+          EVIDENCE_DIR: evidence/v23/visibility
+        run: python tests/v23/browser.py
+      - name: Preserve contact, configuration, model export and full orbit
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/v23/contact python tests/v22/acceptance.py
+          EVIDENCE_DIR=evidence/v23/exports xvfb-run -a python tests/v20/acceptance.py
+          EVIDENCE_DIR=evidence/v23/decisions xvfb-run -a python tests/v11/acceptance.py
+          EVIDENCE_DIR=evidence/v23/orbit xvfb-run -a python tests/v12/acceptance.py
+      - name: Stage verified files only inside Elif
+        shell: python
+        run: |
+          from pathlib import Path
+          import json,shutil,subprocess
+          assert subprocess.check_output(['git','hash-object','index.html'],text=True).strip()=='501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          root=Path('elif-tasarim');dist=root/'source-v12/dist'
+          manifest=json.loads((root/'release-v22.json').read_text())
+          for name in manifest['files']:
+              p=root/name
+              if p.is_file():p.unlink()
+          (root/'release-v22.json').unlink()
+          for p in dist.rglob('*'):
+              if p.is_file():
+                  target=root/p.relative_to(dist);target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,target)
+      - name: Commit tested source and publication to the isolated branch
+        run: |
+          git config user.name 'Onour Impram'
+          git config user.email 'onuribram@outlook.com'
+          git add -A elif-tasarim
+          git commit -m 'fix(elif): verified product visibility, resilient images and bootstrap recovery'
+          git push origin HEAD:elif-v23-visibility-20260928
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-visibility-repair-evidence
+          path: elif-tasarim/source-v12/evidence/v23
+          retention-days: 14
+      - name: Package verified delivery without fonts
+        if: success()
+        shell: python
+        run: |
+          from pathlib import Path
+          import zipfile
+          out=Path('visibility-delivery');out.mkdir(exist_ok=True)
+          root=Path('elif-tasarim');src=root/'source-v12'
+          excluded={'node_modules','.git','dist','.compiled','evidence','__pycache__'}
+          for name,base,extra in [('Elif_Tasarim_V22_1_Kaynak.zip',src,set()),('Elif_Tasarim_V22_1_Yayin.zip',root,{'source-v12'})]:
+              with zipfile.ZipFile(out/name,'w',zipfile.ZIP_DEFLATED) as z:
+                  for p in base.rglob('*'):
+                      rel=p.relative_to(base)
+                      if p.is_file() and not (excluded|extra).intersection(rel.parts) and p.suffix.lower() not in {'.woff','.woff2','.ttf','.otf'}:z.write(p,rel)
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-visibility-repair-delivery
+          path: visibility-delivery
+          retention-days: 14
