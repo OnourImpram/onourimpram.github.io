@@ -58,7 +58,7 @@ export function Photo({ name, alt, ratio = '', className = '', caption = true, e
     className?: string;
     caption?: boolean;
     eager?: boolean;
-}) { return <figure className={'photo ' + className} style={ratio ? { aspectRatio: ratio } : undefined}><img src={image(name)} alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async"/>{caption && <figcaption>Konsept model</figcaption>}</figure>; }
+}) { return <figure className={'photo ' + className} style={ratio ? { aspectRatio: ratio } : undefined}><img src={image(name)} alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async" onError={e=>{const img=e.currentTarget;img.hidden=true;img.closest('figure')?.classList.add('image-missing')}}/>{caption && <figcaption>Konsept model</figcaption>}</figure>; }
 export function SectionHead({ number, title, sub, to, navigate }: {
     number: string;
     title: ReactNode;
