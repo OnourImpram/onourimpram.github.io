@@ -1,0 +1,63 @@
+/* V23 Premium Finish. Completes product storytelling and prevents empty visual states. */
+.v23-devir .photo.image-missing{display:grid;place-items:center;min-height:240px;background:linear-gradient(135deg,#efe6d8,#e3d5c1);border:1px solid #d4c3ab;position:relative}
+.v23-devir .photo.image-missing::before{content:"Konsept görseli yüklenemedi";font:16px/1.5 Georgia,serif;color:#6d5942;text-align:center;padding:24px}
+.v23-devir .photo.image-missing figcaption{display:none}
+.v23-product-visual{background:#e9dfd0}
+.v23-product-visual .photo{aspect-ratio:16/10!important;min-height:0}
+.v23-product-visual .photo img{width:100%;height:100%;object-fit:cover;mix-blend-mode:normal}
+.v23-hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:22px}
+.v23-hero-actions .button{margin-top:0}
+.v23-hero-actions .text-link{font-size:12px}
+
+.v23-value-grid{display:grid;grid-template-columns:.85fr 1.5fr;gap:70px;padding-top:15px;padding-bottom:95px}
+.v23-value-heading h2{font:clamp(34px,4vw,54px)/1.08 Georgia,serif;font-weight:400;letter-spacing:-.03em;margin:18px 0 22px}
+.v23-value-heading h2 em{font-weight:400;color:#806f59}
+.v23-value-heading>p{font-size:14px;line-height:1.85;color:#725f49}
+.v23-value-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.v23-value-cards article{min-width:0;border-top:1px solid #cdbca4;padding:22px 4px 4px}
+.v23-value-cards article>span{font:italic 24px Georgia,serif;color:#927b5e}
+.v23-value-cards h3{font:28px/1.15 Georgia,serif;font-weight:400;margin:18px 0 12px}
+.v23-value-cards p{font-size:13px;line-height:1.8;color:#715f49;margin:0}
+
+.v23-start-grid>a{padding:0;background:#eee6d8;overflow:hidden;min-height:0}
+.v23-start-grid>a:hover{background:#e9ddc8}
+.v23-start-image{position:relative;aspect-ratio:4/3;background:#e6dac7;overflow:hidden;border-bottom:1px solid #d4c3ab}
+.v23-start-image .photo{margin:0;width:100%;height:100%;aspect-ratio:4/3!important}
+.v23-start-image .photo img{width:100%;height:100%;object-fit:cover}
+.v23-start-image .v20-start-num{position:absolute;top:15px;left:16px;background:#fff8e9e8;padding:7px 9px;color:#71593f;font-size:17px}
+.v23-material-chip{position:absolute;right:14px;bottom:14px;display:flex;align-items:center;gap:7px;background:#fff9edeb;border:1px solid #d3c0a5;padding:7px 9px;font-size:10px;color:#5f4c37}
+.v23-material-chip i{width:16px;height:16px;border-radius:50%;background:#b89b74;box-shadow:inset 0 0 0 1px #fff8}
+.v23-material-chip.ceviz i{background:#765139}.v23-material-chip.mese i{background:#c1a078}.v23-material-chip.koyu i{background:#3b332a}
+.v23-start-copy{padding:24px 26px 28px}
+.v23-start-grid h3{font-size:38px;margin:0 0 10px}
+.v23-start-grid p{margin:0 0 8px}
+.v23-start-grid strong{display:block;font-size:12px;line-height:1.6;color:#52412e;font-weight:600;margin:10px 0}
+.v23-start-grid small{margin-top:10px}
+.v23-start-grid .text-link{margin-top:20px}
+.v23-start-grid .v20-start-swatch{display:none}
+
+.v23-proof-bridge{display:grid;grid-template-columns:1.4fr .65fr;gap:70px;align-items:end;border-top:1px solid #d4c5b0;padding-top:55px;padding-bottom:75px}
+.v23-proof-bridge h2{font:clamp(32px,3.5vw,49px)/1.1 Georgia,serif;font-weight:400;letter-spacing:-.03em;margin:16px 0 20px}
+.v23-proof-bridge h2 em{font-weight:400;color:#826e55}
+.v23-proof-bridge p{font-size:14px;line-height:1.9;color:#735f48;max-width:760px}
+.v23-proof-bridge>div:last-child{display:grid;gap:15px;justify-items:start}
+
+@media(max-width:900px){
+ .v23-value-grid{grid-template-columns:1fr;gap:30px;padding-bottom:65px}
+ .v23-value-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .v23-proof-bridge{grid-template-columns:1fr;gap:25px}
+ .v23-product-visual .photo{aspect-ratio:3/2!important}
+}
+@media(max-width:700px){
+ .v23-value-cards{grid-template-columns:1fr}
+ .v23-value-cards article{padding-top:16px}
+ .v23-start-copy{padding:22px}
+ .v23-start-grid h3{font-size:34px}
+ .v23-proof-bridge{padding-top:40px;padding-bottom:55px}
+}
+@media(max-width:480px){
+ .v23-hero-actions{display:grid;grid-template-columns:1fr;gap:12px}
+ .v23-hero-actions .button{width:100%;justify-content:center}
+ .v23-product-visual .photo{aspect-ratio:4/3!important}
+ .v23-material-chip{font-size:9px}
+}
