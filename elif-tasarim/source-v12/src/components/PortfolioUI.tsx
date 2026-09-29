@@ -4,7 +4,7 @@ import {imageManifest} from '../lib/image-manifest';
 import {categoryName,type Work} from '../lib/portfolio';
 export function VImage({asset,alt,className='',eager=false,sizes='(max-width: 680px) 100vw, 50vw',full=false}:{asset:string;alt:string;className?:string;eager?:boolean;sizes?:string;full?:boolean}) {
  const m=(imageManifest as any)[asset];
- if(!m)return <img src={image(asset)} alt={alt} className={className} loading={eager?'eager':'lazy'}/>;
+ if(!m)return <img src={image(asset)} alt={alt} className={className} loading={eager?'eager':'lazy'} onError={e=>{const img=e.currentTarget;img.hidden=true;img.parentElement?.classList.add('image-missing')}}/>;
  const max=m.variants[m.variants.length-1],fallback=full?max:m.variants[Math.min(1,m.variants.length-1)];
  return <img src={image(fallback.file)} srcSet={m.variants.map((v:any)=>image(v.file)+' '+v.width+'w').join(', ')} sizes={sizes} width={m.width} height={m.height} alt={alt} className={className} loading={eager?'eager':'lazy'} decoding={eager?'sync':'async'} fetchPriority={eager?'high':'auto'}/>;
 }
