@@ -1,5 +1,5 @@
 name: Elif V23 premium finish stage
-# rerun after aligning canonical trailing-slash URL assertion
+# final rerun after measured 200-percent Devir reflow fix
 on:
   push:
     branches: [elif-v23-premium-finish-20260929]
