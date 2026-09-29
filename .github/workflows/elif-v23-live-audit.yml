@@ -1,0 +1,67 @@
+name: Elif V23 live blank-content audit
+on:
+  push:
+    branches: [elif-v23-live-audit-20260929]
+    paths: ['.github/workflows/elif-v23-live-audit.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Rebuild and retest exact current source
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/v23-live-audit
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build | tee evidence/v23-live-audit/build.txt
+          npm test | tee evidence/v23-live-audit/unit.txt
+          npm run typecheck:core
+          npm run verify:dist
+      - name: Install Chromium tooling
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Sweep every live route, decoded image and visible main content
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+          EVIDENCE_DIR: evidence/v23-live-audit/desktop
+        run: xvfb-run -a python tests/v23/browser.py | tee evidence/v23-live-audit/desktop.txt
+      - name: Repeat the rendered-content sweep at mobile width
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+          EVIDENCE_DIR: evidence/v23-live-audit/mobile
+        run: xvfb-run -a python tests/v23/mobile-media.py | tee evidence/v23-live-audit/mobile.txt
+      - name: Verify every public byte and direct route
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+          EVIDENCE_DIR: evidence/v23-live-audit/public
+        run: python tests/v11/public_verify.py
+      - name: Recheck protected customer and 3D flows
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/v23-live-audit/contact xvfb-run -a python tests/v22/acceptance.py
+          EVIDENCE_DIR=evidence/v23-live-audit/exports xvfb-run -a python tests/v20/acceptance.py
+          EVIDENCE_DIR=evidence/v23-live-audit/orbit xvfb-run -a python tests/v12/acceptance.py
+      - name: Confirm personal homepage unchanged
+        run: test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v23-live-audit-evidence
+          path: elif-tasarim/source-v12/evidence/v23-live-audit
+          retention-days: 14
