@@ -61,3 +61,7 @@
  .v23-product-visual .photo{aspect-ratio:4/3!important}
  .v23-material-chip{font-size:9px}
 }
+
+/* Controlled 200% text reflow: long editorial words may break rather than widen the document. */
+.v23-devir h1,.v23-devir h2,.v23-devir h3,.v23-devir .eyebrow,.v23-devir .text-link{overflow-wrap:anywhere;min-width:0}
+.v23-devir,.v23-devir section,.v23-devir article,.v23-devir div{box-sizing:border-box;min-width:0}
