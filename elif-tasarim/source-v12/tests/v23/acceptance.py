@@ -22,7 +22,7 @@ with sync_playwright() as p:
   for i in range(3):
    img=cards.nth(i).locator('img');img.scroll_into_view_if_needed();page.wait_for_function("(i)=>document.querySelectorAll('.v23-start-grid>a img')[i]?.naturalWidth>0",arg=i)
    assert cards.nth(i).locator('.v23-start-image').is_visible()
-   assert '/tasarim-masasi?' in cards.nth(i).get_attribute('href')
+   href=cards.nth(i).get_attribute('href');assert '/tasarim-masasi/' in href and '?' in href,href
   assert page.locator('.v20-start-swatch').count()==0
   rec('02. All three starting concepts show a real product image and link to the configured 3D studio')
   assert page.locator('#devir-kullanim .v23-value-cards article').count()==3
