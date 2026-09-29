@@ -1,4 +1,5 @@
 name: Elif V23 premium finish stage
+# rerun after aligning active release contracts
 on:
   push:
     branches: [elif-v23-premium-finish-20260929]
