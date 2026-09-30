@@ -1,5 +1,5 @@
 name: Elif V23 premium finish stage
-# authoritative rerun on the exact latest V23 source and regression set
+# final authoritative V23 rerun with desktop and mobile media sweeps
 on:
   push:
     branches: [elif-v23-premium-finish-20260930]
@@ -47,6 +47,12 @@ jobs:
           BASE_URL: http://127.0.0.1:8000/elif-tasarim/
           EVIDENCE_DIR: evidence/v23/stage
         run: xvfb-run -a python tests/v23/browser.py
+      - name: Sweep every canonical route on a mobile viewport
+        working-directory: elif-tasarim/source-v12
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+          EVIDENCE_DIR: evidence/v23/mobile
+        run: xvfb-run -a python tests/v23/mobile-media.py
       - name: Preserve completed handoff and real 3D behavior
         working-directory: elif-tasarim/source-v12
         env:
