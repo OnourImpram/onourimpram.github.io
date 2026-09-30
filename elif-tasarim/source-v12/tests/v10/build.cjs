@@ -5,7 +5,7 @@ test('V11 has one active reproducible build and pinned engine/compiler',()=>{
 });
 test('clean V11 builds reproduce every publication byte and include local room/engine',()=>{
  cp.execFileSync(process.execPath,['tools/build-v23.cjs']);const a=fs.readFileSync('dist/release-v23.json','utf8'),m=JSON.parse(a);
- assert.equal(m.release,'v22.1-visible-content');assert.equal(m.routes.length,46);assert.equal(m.indexable,false);
+ assert.equal(m.release,'v23-premium-finish');assert.equal(m.routes.length,46);assert.equal(m.indexable,false);
  for(const n of ['three/atelier-room.mjs','three/desk-scene.mjs','three/vendor/three.module.min.js','three/vendor/THREE_LICENSE.txt'])assert.ok(m.files[n],n);
  cp.execFileSync(process.execPath,['tools/build-v23.cjs']);assert.equal(fs.readFileSync('dist/release-v23.json','utf8'),a);
  for(const [n,v]of Object.entries(m.files)){const b=fs.readFileSync('dist/'+n);assert.equal(b.length,v.bytes);assert.equal(crypto.createHash('sha256').update(b).digest('hex'),v.sha256,n)}
