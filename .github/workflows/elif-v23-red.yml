@@ -1,0 +1,21 @@
+name: Elif V23 red gate
+on:
+  push:
+    branches: [elif-v23-premium-finish-20260930]
+    paths: ['.github/workflows/elif-v23-red.yml']
+permissions:
+  contents: read
+jobs:
+  red:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prove V23 identity contract fails before implementation
+        working-directory: elif-tasarim/source-v12
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          node --test --test-concurrency=1 tests/v23/visibility.cjs
