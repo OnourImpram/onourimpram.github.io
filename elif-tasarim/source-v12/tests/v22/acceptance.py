@@ -24,7 +24,7 @@ with sync_playwright() as p:
   page.screenshot(path=str(O/name),full_page=full)
  try:
   visit('iletisim')
-  assert page.locator('.preview-bar').inner_text().startswith('V22')
+  assert page.locator('.preview-bar').inner_text().startswith('V23')
   email=page.locator('.v7-contact-main a.v22-visible-email');assert email.inner_text()==EMAIL and email.get_attribute('href')=='mailto:'+EMAIL
   assert page.locator('.v22-footer-email').inner_text()==EMAIL
   schema=json.loads(page.locator('script[type="application/ld+json"]').text_content());assert schema['publisher']['email']==EMAIL and schema['publisher']['@type']=='Organization' and 'address' not in schema['publisher']
@@ -93,7 +93,7 @@ with sync_playwright() as p:
   assert q.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
   q.screenshot(path=str(O/'no-javascript-mobile.png'),full_page=True);plain.close()
   rec('11. Real HTML fallback exposes recipient, telephone and starter template with JavaScript disabled')
-  assert not errors,errors;assert not external,external;rec('12. No uncaught errors and no unsolicited external communication in the tested V22 flows')
+  assert not errors,errors;assert not external,external;rec('12. No uncaught errors and no unsolicited external communication in the tested V23 flows')
  except Exception:
   report['failure']=traceback.format_exc();report['errors']=errors;(O/'results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));page.screenshot(path=str(O/'failure.png'),full_page=True);raise
  finally:b.close()
