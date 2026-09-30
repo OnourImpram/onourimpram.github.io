@@ -17,13 +17,19 @@ with sync_playwright() as p:
    page.goto(BASE+route.strip('/')+('/' if route.strip('/') else ''),wait_until='domcontentloaded',timeout=60000)
    page.wait_for_selector('html[data-app-ready="true"]',timeout=20000)
    images=page.locator('main img')
-   for i in range(images.count()):
-    image=images.nth(i)
-    if image.is_visible():
-     image.scroll_into_view_if_needed(timeout=8000)
-     page.wait_for_function('(i)=>{const x=document.querySelectorAll("main img")[i];return !!x&&x.complete&&x.naturalWidth>0}',arg=i,timeout=20000)
-     appearance=image.evaluate('''x=>{let opacity=1;for(let el=x;el;el=el.parentElement){const c=getComputedStyle(el);opacity*=Number(c.opacity);if(c.visibility==='hidden'||c.display==='none')return {visible:false,opacity};}const r=x.getBoundingClientRect();return {visible:r.width>0&&r.height>0,opacity};}''')
-     assert appearance['visible'] and appearance['opacity']>0.01,(route,i,appearance)
+   # Hydration can replace image elements while scrolling. Traverse the page, then
+   # inspect the current DOM rather than holding stale element handles.
+   height=page.evaluate('document.body.scrollHeight')
+   for y in range(0,min(20000,height)+1,560):
+    page.evaluate('(y)=>scrollTo(0,y)',y)
+    page.wait_for_timeout(70)
+   page.evaluate('scrollTo(0,document.body.scrollHeight)')
+   page.wait_for_timeout(120)
+   page.wait_for_function("""()=>[...document.querySelectorAll('main img')].filter(i=>{const r=i.getBoundingClientRect();return r.width>0&&r.height>0}).every(i=>i.complete&&i.naturalWidth>0)""",timeout=20000)
+   appearances=page.evaluate("""()=>[...document.querySelectorAll('main img')].map((x,i)=>{let opacity=1,hidden=false;for(let el=x;el;el=el.parentElement){const c=getComputedStyle(el);opacity*=Number(c.opacity);if(c.visibility==='hidden'||c.display==='none'){hidden=true;break}}const r=x.getBoundingClientRect();return {i,src:x.currentSrc||x.src,boxVisible:r.width>0&&r.height>0,hidden,opacity,complete:x.complete,naturalWidth:x.naturalWidth}})""")
+   for appearance in appearances:
+    if appearance['boxVisible'] and not appearance['hidden']:
+     assert appearance['opacity']>0.01 and appearance['complete'] and appearance['naturalWidth']>0,(route,appearance)
    assert not page.locator('.image-unavailable').count(),route
    text=page.locator('main').inner_text().strip()
    assert text,route
