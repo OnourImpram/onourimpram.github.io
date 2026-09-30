@@ -75,7 +75,7 @@ with sync_playwright() as p:
   page.screenshot(path=str(OUT/'devir-no-javascript.png'),full_page=True);passed('10. Product content, all media and contact links work without JavaScript')
   page.close();ctx.close()
   ctx=b.new_context(viewport={'width':1440,'height':1000},reduced_motion='reduce');page=ctx.new_page();page.on('pageerror',lambda e:errors.append(str(e)))
-  manifest=json.loads((ROOT/'dist/release-v22.json').read_text())
+  manifest=json.loads((ROOT/'dist/release-v23.json').read_text())
   for route in manifest['routes']:
    visit(route.strip('/')+('/' if route.strip('/') else ''))
    for y in range(0,min(18000,page.evaluate('document.body.scrollHeight')),650):page.evaluate('(y)=>scrollTo(0,y)',y);page.wait_for_timeout(70)
