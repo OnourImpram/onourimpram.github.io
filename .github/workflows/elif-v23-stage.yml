@@ -1,4 +1,5 @@
 name: Elif V23 premium finish stage
+# rerun after aligning legacy release identity checks
 on:
   push:
     branches: [elif-v23-premium-finish-20260930]
