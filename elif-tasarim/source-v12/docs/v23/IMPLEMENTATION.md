@@ -1,6 +1,6 @@
-# Devir görünürlük onarımı. V22.1
+# Elif Tasarım V23. Premium Finish
 
-Kapsam, kullanıcının Devir 01 gibi boş, hatalı ve eksik alanları düzeltme talebidir. Marka ve gerçek çalışma arşivi yeniden tasarlanmaz. Sadece elif-tasarim yayın alanı değişir.
+Kapsam, Devir 01 ve diğer kanonik sayfalarda boş, hatalı veya eksik görünen alanları temizlemek, ürün anlatısını gerçek görsellerle güçlendirmek ve V23'ü bağımsız doğrulanabilir bir sürüm olarak yayımlamaktır. Marka, gerçek iş arşivi, Yunus Usta iletişimi ve gizlilik öncelikleri korunur.
 
 ## Doğrulanan sorunlar
 
@@ -10,8 +10,12 @@ Kapsam, kullanıcının Devir 01 gibi boş, hatalı ve eksik alanları düzeltme
 
 İlk HTTP görsel kontrolü dört ana senaryoyu geçti, fakat bölüm bağlantısında hedefin y konumu 2274 piksel kaldı. Yeni hash gezintisi geçmişte bulunmayınca router sıfır konumu geri yükleyip tarayıcının bölüm kaydırmasını eziyordu. Yeni bölüm bağlantısı, kayıtlı geçmiş konumundan ayrıldı. Üç ayrı sözleşme yeni hash, olağan rota ve kayıtlı geri gezinmeyi sınar. Test toleransı değiştirilmedi.
 
-## Yayın kontrolü
+## V23 teslim kapsamı
 
-Dosyanın 200 yanıtı veya derleme manifesti tek başına görsel doğrulaması değildir. Tarayıcıda ürün görsellerinin çözülmesi, görünür kutuları, gerçek başlangıç modelinin açılması, mobil yerleşim, bölüm bağlantısı, engellenmiş config betiği, geçici ve kalıcı görsel hatası ve JavaScript kapalı içerik ayrı sınanır. Bütün kanonik sayfalarda kaydırma sonrası görsellerin çözülmesi ve boş olmayan içerik kontrol edilir.
+Devir 01 hero, oda sahnesi, üç gerçek başlangıç renderı ve detay görseli kaydırma beklemeden görünür. Başlangıç kartları renk örneği yerine ürünü gösterir ve yüzey adını açıkça yazar. Yükselme, dönme ve depolama kararlarını açıklayan ürün katmanı eklenmiştir.
 
-Yunus Usta, +90 530 879 71 69, iletisim.eliftasarimatolyesi@gmail.com, noindex, onaylı gizlilik seçenekleri, çift raf ve 360 derece model korunur. Gerçek mesaj gönderilmez. Gerçek telefon veya mekanik ürün güvenliği doğrulaması iddia edilmez.
+Görsel isteği geçici başarısız olursa yalnız bir yeniden deneme yapılır. Kalıcı hatada boş kutu bırakılmaz, açık erişilebilir hata durumu ve mevcut proje eylemleri korunur. V23 tarayıcı testi tüm kanonik rotalarda ana içeriğin boş olmadığını, görünür görsellerin çözüldüğünü ve yatay taşma bulunmadığını tarar.
+
+Etkin paket 0.23.0. Kimlik `v23-premium-finish`. Derleyici `tools/build-v23.cjs`, manifest `release-v23.json`, bütünlük kontrolü `tools/verify-v23.cjs`.
+
+Yunus Usta, +90 530 879 71 69, iletisim.eliftasarimatolyesi@gmail.com, noindex önizleme, Devir 01 360 derece stüdyo, çift raf, karşılaştırma ve GLB/USDZ korunur. Adres, fiyat, yorum, üretim garantisi veya doğrulanmamış işletme verisi eklenmez.
