@@ -5,7 +5,7 @@ import json,os,traceback
 ROOT=Path.cwd()
 BASE=os.environ['BASE_URL'].rstrip('/')+'/'
 OUT=Path(os.environ.get('EVIDENCE_DIR','evidence/v23/mobile'));OUT.mkdir(parents=True,exist_ok=True)
-manifest=json.loads((ROOT/'dist/release-v22.json').read_text())
+manifest=json.loads((ROOT/'dist/release-v23.json').read_text())
 report={'base':BASE,'viewport':{'width':390,'height':844},'routes':[],'errors':[],'limits':['Isolated Chromium mobile viewport, not a physical device','No message or form submitted']}
 def save(): (OUT/'results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
 with sync_playwright() as p:
