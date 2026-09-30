@@ -1,5 +1,5 @@
 name: Elif V23 premium finish stage
-# final rerun after launch-readiness manifest alignment
+# final rerun after preserved browser regressions were promoted to V23
 on:
   push:
     branches: [elif-v23-premium-finish-20260930]
