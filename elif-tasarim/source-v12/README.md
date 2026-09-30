@@ -1,8 +1,8 @@
-# Elif Tasarım V22
+# Elif Tasarım V23
 
 Rapor odaklı iletişimi tamamlama sürümü. Kullanıcının sağladığı iletisim.eliftasarimatolyesi@gmail.com adresi, pano izinli kopyalama ve yedek metin alanı, taşınabilir ilham dosyası ve JavaScript gerektirmeyen kolay iletişim sayfası eklenmiştir. Onaylı marka, gerçek portföy, Devir 01, çift kitaplık, gerçek 360 derece inceleme, üç tasarımı karşılaştırma ve GLB/USDZ çıktıları korunur.
 
-V21, açık izinli cihaz taslağı kurtarması, özel JSON taslağı indirme ve geri açma, alternatif iletişim yolları, genişletilmiş SSS, hizmet ve teklif rehberi, doğrulanmış bilgilerle yapılandırılmış veri ve ölçülmüş okunabilirlik düzeltmeleri ekler.
+V23, V22'nin tamamlanmış iletişim ve kurtarma akışlarını korur. Ayrıca Devir 01 için gerçek ürün renderları, görünür hata durumları ve boş sayfa/görsel taraması ekler. V21, açık izinli cihaz taslağı kurtarması, özel JSON taslağı indirme ve geri açma, alternatif iletişim yolları, genişletilmiş SSS, hizmet ve teklif rehberi, doğrulanmış bilgilerle yapılandırılmış veri ve ölçülmüş okunabilirlik düzeltmeleri ekler.
 
 ## Çalıştırma
 
@@ -22,7 +22,7 @@ Yerel HTTP sunucusu 8000 portunda /elif-tasarim/ taban yolunu açar. Derleme pre
 
 ## Etkin sürüm
 
-Paket 0.22.0. Kimlik v22-contact-complete. Yayın manifesti release-v22.json. Etkin derleyici tools/build-v22.cjs. Tarihsel source-v12 klasör adı, uygulamanın V12 olduğu anlamına gelmez. Önceki derleyiciler ve test dizinleri geçmiş ve regresyon amacıyla korunur.
+Paket 0.23.0. Kimlik v23-premium-finish. Yayın manifesti release-v23.json. Etkin derleyici tools/build-v23.cjs. Tarihsel source-v12 klasör adı, uygulamanın V12 olduğu anlamına gelmez. Önceki derleyiciler ve test dizinleri geçmiş ve regresyon amacıyla korunur.
 
 ## Kontroller
 
