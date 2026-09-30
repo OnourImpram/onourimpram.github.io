@@ -1,5 +1,5 @@
 name: Elif V23 premium finish stage
-# final rerun after preserved browser regressions were promoted to V23
+# authoritative rerun on the exact latest V23 source and regression set
 on:
   push:
     branches: [elif-v23-premium-finish-20260930]
