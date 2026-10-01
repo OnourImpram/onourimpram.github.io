@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 3f0b1c93a48a04de022399a065399dc3da2f513b
+          ref: 2093b2807ef55089e4a01551ce2712cb915e3bb3
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
@@ -93,9 +93,31 @@ jobs:
       - name: Check unchanged personal homepage
         working-directory: .
         run: test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+      - name: Package exact verified source and publication
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile,shutil
+          out=Path('delivery-v23');out.mkdir(exist_ok=True)
+          excluded={'.git','node_modules','dist','preview','evidence','.compiled','__pycache__','delivery-v23'}
+          fonts={'.woff','.woff2','.ttf','.otf','.eot'}
+          with zipfile.ZipFile(out/'Elif_Tasarim_V23_Kaynak_ve_Testler.zip','w',zipfile.ZIP_DEFLATED)as z:
+              for f in sorted(Path('.').rglob('*')):
+                  if f.is_file() and not excluded.intersection(f.parts) and f.suffix.lower() not in fonts:z.write(f,f.as_posix())
+          with zipfile.ZipFile(out/'Elif_Tasarim_V23_Yayin_Dosyalari.zip','w',zipfile.ZIP_DEFLATED)as z:
+              for f in sorted(Path('dist').rglob('*')):
+                  if f.is_file() and f.suffix.lower() not in fonts:z.write(f,Path('elif-tasarim')/f.relative_to('dist'))
+          shutil.copy2('preview/Elif_Tasarim.html',out/'Elif_Tasarim_V23.html')
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: elif-v23-final-handoff-evidence
           path: elif-tasarim/source-v12/evidence/v23-final
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-v23-verified-final-delivery
+          path: elif-tasarim/source-v12/delivery-v23
           retention-days: 14
