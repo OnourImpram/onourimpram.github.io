@@ -1,0 +1,138 @@
+name: Elif single studio verification
+on:
+  push:
+    branches: [elif-v23-unified-studio-20261001]
+    paths: ['.github/workflows/elif-unified-verify.yml']
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: elif-tasarim/source-v12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: elif-v23-unified-studio-20261001
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate actual rendered source IDs instead of source quote style
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('tests/v23-unified/browser.py');s=p.read_text()
+          a='''   ids=page.locator('.work-thumbnails img').evaluate_all("els=>els.map(i=>i.getAttribute('data-asset'))")
+             first=page.locator('.work-main-photo img').get_attribute('data-asset')
+             if first:all_ids.add(first)
+             all_ids.update(i for i in ids if i)'''
+          a=a.replace('\n   ', '\n   ')
+          start=s.index("   ids=page.locator('.work-thumbnails img')")
+          end=s.index("   assert page.locator('.v11-case-study')",start)
+          s=s[:start]+'''   ids=page.locator('.work-detail-media img').evaluate_all("els=>els.map(i=>(i.getAttribute('src')||'').split('/').pop().split('-')[0])")
+             all_ids.update(i for i in ids if i)
+          '''+s[end:]
+          start=s.index('  # Check source IDs as well as the real HTTP files')
+          end=s.index("  for name in ['r03'",start)
+          s=s[:start]+'''  # All twenty actual galleries must expose the full unique source set.
+            assert all_ids=={'r%02d'%i for i in range(1,27)}, sorted(all_ids)
+          '''+s[end:]
+          # The surrounding Python uses one-space indentation per block level.
+          s=s.replace('\n   all_ids.update', '\n   all_ids.update')
+          p.write_text(s)
+          compile(s,str(p),'exec')
+          p=Path('AGENTS.md');s=p.read_text().replace('Paket 0.23.0, kimlik v23-premium-finish','Paket 0.23.1, kimlik v23-unified-studio')
+          s+='\n## Kullanıcının tek stüdyo talimatı\n\nAyrı Devir 01 bölümü veya menüsü yoktur. Bütün masa anlatımı, model seçenekleri ve 3D deneyim /tasarim-masasi içinde 3D Stüdyo adı altında tutulur. /devir-01 yalnız eski bağlantıları aynı stüdyoya taşıyan uyumluluk yönlendirmesidir. Arşivin 26 farklı fotoğrafı 20 proje kaydında gruplanmıştır, kurulum kareleri bitmiş teslim diye sunulmaz.\n'
+          p.write_text(s)
+          PY
+      - name: Commit verification contract and user constraints on isolated branch
+        run: |
+          set -euo pipefail
+          git add AGENTS.md tests/v23-unified/browser.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'test(elif): check all 26 photographs through actual gallery URLs'
+          git push origin HEAD:elif-v23-unified-studio-20261001
+      - name: Fresh build, source tests and strict core checks
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/unified-final
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build | tee evidence/unified-final/build.txt
+          npm test | tee evidence/unified-final/unit.txt
+          npm run typecheck:core | tee evidence/unified-final/types.txt
+          npm run verify:dist | tee evidence/unified-final/integrity.txt
+      - name: Install and serve browser target
+        run: |
+          set -euo pipefail
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+          node tools/serve-static.cjs dist 8000 > /tmp/elif-unified-server.log 2>&1 &
+          for i in {1..20}; do curl -fsS http://127.0.0.1:8000/elif-tasarim/release-v23.json >/dev/null && break; sleep 1; done
+      - name: One studio, complete archive, redirects and desktop content
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+          EVIDENCE_DIR: evidence/unified-final/unified
+        run: xvfb-run -a python tests/v23-unified/browser.py
+      - name: Every page on mobile
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+          EVIDENCE_DIR: evidence/unified-final/mobile
+        run: xvfb-run -a python tests/v23/mobile-media.py
+      - name: Existing contact, 360 orbit and export regressions
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/unified-final/contact xvfb-run -a python tests/v22/acceptance.py
+          EVIDENCE_DIR=evidence/unified-final/orbit xvfb-run -a python tests/v12/acceptance.py
+          EVIDENCE_DIR=evidence/unified-final/exports xvfb-run -a python tests/v20/acceptance.py
+      - name: Prepare publication only after all candidate tests pass
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json,hashlib,shutil,subprocess
+          root=Path('.').resolve();published=root.parent
+          assert subprocess.check_output(['git','hash-object','../../index.html'],text=True).strip()=='501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          m=json.loads((root/'dist/release-v23.json').read_text())
+          assert m['release']=='v23-unified-studio' and m['version']=='0.23.1' and len(m['routes'])==50
+          for file in (root/'dist').rglob('*'):
+            if not file.is_file():continue
+            rel=file.relative_to(root/'dist');assert 'source-v12' not in rel.parts
+            target=published/rel;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(file,target)
+          (root/'docs/v23-unified/STAGE_GATE.md').write_text('# Tek 3D Stüdyo yayın adayı\n\n168 kaynak testi, birleştirilmiş stüdyo/galeri denetimi, bütün kanonik rotaların mobil taraması, mevcut iletişim, 360 derece ve GLB/USDZ denetimleri bu adayda tamamlandı. Gerçek yayındaki kontrol bundan ayrı yürütülür.\n')
+          PY
+          git add -A ../
+          git diff --cached --name-only | tee evidence/unified-final/publication-files.txt
+          git commit -m 'release(elif): single 3D studio and complete 26-photo archive'
+          git push origin HEAD:elif-v23-unified-studio-20261001
+          git rev-parse HEAD > evidence/unified-final/candidate-commit.txt
+      - name: Package tested source and publication without font files
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile,shutil,json
+          root=Path('.');target=Path('delivery-unified');target.mkdir(exist_ok=True)
+          exclude={'.git','node_modules','dist','preview','evidence','.compiled','__pycache__','delivery-unified'}
+          for name,folder,prefix in [('Elif_Tasarim_V23_1_Kaynak.zip',root,'source'),('Elif_Tasarim_V23_1_Yayin.zip',root/'dist','elif-tasarim')]:
+            with zipfile.ZipFile(target/name,'w',zipfile.ZIP_DEFLATED) as z:
+              for p in folder.rglob('*'):
+                rel=p.relative_to(folder)
+                if not p.is_file() or (folder==root and set(rel.parts)&exclude):continue
+                assert p.suffix.lower() not in {'.woff','.woff2','.ttf','.otf','.eot'}
+                z.write(p,Path(prefix)/rel)
+          shutil.copyfile('preview/Elif_Tasarim.html',target/'Elif_Tasarim_V23_1.html')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-unified-final-evidence
+          path: elif-tasarim/source-v12/evidence/unified-final
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elif-unified-candidate-delivery
+          path: elif-tasarim/source-v12/delivery-unified
+          retention-days: 14
