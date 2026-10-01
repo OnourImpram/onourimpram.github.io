@@ -1,0 +1,146 @@
+name: Elif hero final stage and live verification
+on:
+  push:
+    branches: [elif-hero-clarity-20261001]
+    paths: [.github/workflows/elif-hero-finish.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: elif-hero-clarity
+  cancel-in-progress: false
+jobs:
+  finish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: OnourImpram/onourimpram.github.io
+      EXPECTED_BASE: 56f9e346f5616853191e2c1c245da4e40926943c
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply original verified delta and narrow review fixes
+        run: |
+          set -euo pipefail
+          gh api repos/$REPO/git/blobs/608d2a0bc8173af2d0cee7c2ea46e714d79e1ff4 > "$RUNNER_TEMP/change-blob.json"
+          python - <<'PY'
+          import json,base64,lzma,hashlib,os
+          from pathlib import Path
+          wrapper=json.loads((Path(os.environ['RUNNER_TEMP'])/'change-blob.json').read_text())
+          raw=lzma.decompress(base64.b64decode(base64.b64decode(wrapper['content'])))
+          assert hashlib.sha256(raw).hexdigest()=='746d65a956af62508d950c5595e3ca7ec64f8be5e9319a059036818e39268de5'
+          changes=json.loads(raw);assert len(changes)==8
+          root=Path('elif-tasarim/source-v12');pending=[]
+          for item in changes:
+              relative=Path(item['path']);assert not relative.is_absolute() and '..' not in relative.parts
+              path=root/relative;before=path.read_bytes() if path.exists() else None
+              assert (hashlib.sha256(before).hexdigest() if before is not None else None)==item['before'],str(path)
+              if before is None:content=item['text']
+              else:
+                  content=before.decode()
+                  for start,end,text in reversed(item['edits']):content=content[:start]+text+content[end:]
+              result=content.encode();assert hashlib.sha256(result).hexdigest()==item['after'],str(path)
+              pending.append((path,result))
+          for path,data in pending:path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+          p=root/'src/pages/Home.tsx';s=p.read_text();old='hold=(held:boolean)=>{this.hover=held;this.explicitPlay=false;this.reschedule()}';new='hold=(held:boolean)=>{this.hover=held;if(held)this.explicitPlay=false;this.reschedule()}';assert old in s;p.write_text(s.replace(old,new))
+          p=root/'src/seo.css';p.write_text(p.read_text()+'\n/* Tablet CTA needs its own space above the larger navigation panel. */\n@media(min-width:701px) and (max-width:960px){.v232-carousel .v6-hero-inner{padding-bottom:225px}.v234-bottom .v6-hero-caption{display:none}}\n')
+          p=root/'tests/seo/hero-rotation.cjs';p.write_text(p.read_text()+"\ntest('explicit play remains active when pointer leaves controls while the Play button retains focus',()=>environment(delays=>{const {Home}=load('src/pages/Home.tsx');const h=new Home({});h.state.paused=true;h.focus=true;h.hover=true;h.togglePlayback();assert.equal(h.canPlay(),true);h.hold(false);assert.equal(h.canPlay(),true);assert.ok(delays.length>=2)}));\n")
+          p=root/'tests/seo/hero-browser.py';s=p.read_text();old="  record('02. Pause holds and explicit Play resumes even while its button retains keyboard focus')";new="  current=active();p.mouse.move(900,350);p.wait_for_function('(i)=>Number(document.querySelector(\".v232-scene.is-active\").dataset.slide)!==i',arg=current,timeout=4200)\n  record('02. Pause holds and explicit Play keeps running with retained focus and after leaving the controls')";assert old in s;p.write_text(s.replace(old,new))
+          p=root/'docs/hero/2026-10-01.md';p.write_text(p.read_text()+'\nEk kontroller. 768 pikselde büyüyen gezinme panelinin CTA alanına bindirmesi ölçüldü ve tablet için içerik boşluğu ayrıldı. Oynat tıklamasından sonra fareyi kontrollerden çekmek, düğmedeki odak nedeniyle gösterimi yeniden durdurmamalı; yeni regresyon testi bunu doğrular.\n')
+          PY
+      - name: Build, unit, type and file-integrity gates
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/hero
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build > evidence/hero/build.txt
+          npm test > evidence/hero/unit.txt
+          npm run typecheck:core > evidence/hero/types.txt
+          npm run verify:dist > evidence/hero/integrity.txt
+      - name: Install isolated HTTP browser
+        run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Timing, navigation, layout, SEO and direct 3D regression
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          node tools/serve-static.cjs dist 8000 > evidence/hero/server.txt 2>&1 &
+          sleep 2
+          BASE_URL=http://127.0.0.1:8000/elif-tasarim/ EVIDENCE_DIR=evidence/hero/stage python tests/seo/hero-browser.py
+          BASE_URL=http://127.0.0.1:8000/elif-tasarim/ EVIDENCE_DIR=evidence/hero/seo python tests/seo/browser.py
+          BASE_URL=http://127.0.0.1:8000/elif-tasarim/ EVIDENCE_DIR=evidence/hero/interaction python tests/v23-interaction/browser.py
+      - name: Preserve tested product and evidence
+        run: |
+          mkdir -p "$RUNNER_TEMP/elif-source" "$RUNNER_TEMP/elif-dist" "$RUNNER_TEMP/elif-evidence"
+          rsync -a --exclude=node_modules --exclude=dist --exclude=preview --exclude=evidence --exclude=.compiled --exclude=__pycache__ --exclude=.git elif-tasarim/source-v12/ "$RUNNER_TEMP/elif-source/"
+          rsync -a elif-tasarim/source-v12/dist/ "$RUNNER_TEMP/elif-dist/"
+          rsync -a elif-tasarim/source-v12/evidence/hero/ "$RUNNER_TEMP/elif-evidence/"
+      - name: Publish only tested Elif files, preserve other projects
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git diff --quiet "$EXPECTED_BASE" origin/main -- elif-tasarim
+          ROOT_BEFORE=$(git rev-parse origin/main:index.html)
+          git reset --hard origin/main
+          git clean -fd -- elif-tasarim/source-v12
+          rsync -a --delete --exclude=source-v12 "$RUNNER_TEMP/elif-dist/" elif-tasarim/
+          mkdir -p elif-tasarim/source-v12
+          rsync -a --delete "$RUNNER_TEMP/elif-source/" elif-tasarim/source-v12/
+          git add -- elif-tasarim
+          test -n "$(git diff --cached --name-only)"
+          test -z "$(git diff --cached --name-only | grep -v '^elif-tasarim/' || true)"
+          test "$(git rev-parse :index.html)" = "$ROOT_BEFORE"
+          git config user.name 'Onour Impram'
+          git config user.email 'onuribram@outlook.com'
+          git commit -m 'fix(elif): faster visible carousel, scoped pause and accessible direct navigation'
+          git push origin HEAD:main
+          git rev-parse HEAD > "$RUNNER_TEMP/elif-evidence/publication-commit.txt"
+          echo "PUBLISHED_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          gh api -X POST repos/$REPO/pages/builds > "$RUNNER_TEMP/elif-evidence/pages-build.json" || true
+      - name: Verify actual public bytes and live timings
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          npm ci --ignore-scripts --no-audit --no-fund
+          cp -a "$RUNNER_TEMP/elif-dist" dist
+          BASE_URL=https://onourimpram.github.io/elif-tasarim/ EVIDENCE_DIR="$RUNNER_TEMP/elif-evidence/public" python tests/v11/public_verify.py
+          BASE_URL=https://onourimpram.github.io/elif-tasarim/ EVIDENCE_DIR="$RUNNER_TEMP/elif-evidence/live" python tests/seo/hero-browser.py
+      - name: Package exact tested product
+        if: success()
+        run: |
+          python - <<'PY'
+          import os,zipfile,json
+          from pathlib import Path
+          t=Path(os.environ['RUNNER_TEMP']);out=Path('hero-delivery');out.mkdir(exist_ok=True)
+          for folder,name in [('elif-source','Elif_Acilis_Guncel_Kaynak.zip'),('elif-dist','Elif_Acilis_Guncel_Yayin.zip')]:
+              with zipfile.ZipFile(out/name,'w',zipfile.ZIP_DEFLATED) as z:
+                  for p in sorted((t/folder).rglob('*')):
+                      if p.is_file() and p.suffix.lower() not in {'.woff','.woff2','.ttf','.otf','.eot'} and '__pycache__' not in p.parts:z.write(p,p.relative_to(t/folder))
+          (out/'publication.json').write_text(json.dumps({'commit':os.environ['PUBLISHED_COMMIT'],'url':'https://onourimpram.github.io/elif-tasarim/','scope':'Carousel interaction repair, not field performance certification'},indent=2))
+          PY
+      - name: Collect evidence on success or failure
+        if: always()
+        run: |
+          mkdir -p hero-evidence
+          if [ -d elif-tasarim/source-v12/evidence/hero ]; then rsync -a elif-tasarim/source-v12/evidence/hero/ hero-evidence/; fi
+          if [ -d "$RUNNER_TEMP/elif-evidence" ]; then rsync -a "$RUNNER_TEMP/elif-evidence/" hero-evidence/; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-hero-clarity-final-evidence
+          path: hero-evidence/
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-hero-clarity-final-delivery
+          path: hero-delivery/
+          retention-days: 14
