@@ -1,0 +1,184 @@
+name: Publish corrected MARSAM institutional site
+on:
+  push:
+    branches: [publish/marsam-scope-20261001]
+    paths: [.github/workflows/marsam-scope-publish.yml]
+permissions:
+  contents: read
+concurrency:
+  group: marsam-review-publication
+  cancel-in-progress: false
+env:
+  SOURCE_COMMIT: 37fe3fe678ccb3854398b18db51f604a378e2f78
+  BASE_PATH: /MARSAM/
+  PAGES_PREVIEW: 'true'
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: ${{ env.SOURCE_COMMIT }}
+          path: .marsam-source
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Rebuild and verify the corrected source
+        working-directory: .marsam-source
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$SOURCE_COMMIT"
+          mkdir -p verification
+          npm run check | tee verification/scope-pages.txt
+      - name: Replace only the MARSAM public subtree
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json,os,shutil,subprocess
+          source=Path('.marsam-source/dist');target=Path('MARSAM')
+          assert source.is_dir() and target.is_dir() and not target.is_symlink()
+          m=json.loads((source/'build-manifest.json').read_text())
+          assert m['version']=='0.4.0' and m['base']=='/MARSAM/'
+          assert m['previewDeploymentAuthorized'] and not m['publicationAuthorized']
+          m['deploymentCommit']=os.environ['SOURCE_COMMIT']
+          m['deploymentHost']='OnourImpram/onourimpram.github.io'
+          (source/'build-manifest.json').write_text(json.dumps(m,ensure_ascii=False,indent=2)+'\n')
+          allowed={'.html','.css','.js','.json','.svg','.png','.txt','.ris','.bib'}
+          files={}
+          for f in sorted(source.rglob('*')):
+              if f.is_file():
+                  assert not f.is_symlink()
+                  assert f.suffix in allowed or f.name in {'.nojekyll','_headers'},f
+                  files[f.relative_to(source).as_posix()]={'sha256':hashlib.sha256(f.read_bytes()).hexdigest(),'bytes':f.stat().st_size}
+          release={'release':'marsam-review-0.4.0','sourceCommit':os.environ['SOURCE_COMMIT'],'url':'https://onourimpram.github.io/MARSAM/','mode':'institutional-review','formalApproval':False,'files':files}
+          (source/'release.json').write_text(json.dumps(release,ensure_ascii=False,indent=2)+'\n')
+          baseline=subprocess.check_output(['git','ls-tree','HEAD']).decode()
+          Path('.marsam-source/verification/host-before.txt').write_text(baseline)
+          shutil.rmtree(target);shutil.copytree(source,target)
+          assert not (target/'tr/network').exists()
+          assert not (target/'tr/resource/duke-resources').exists()
+          print('Public files',len(files)+1)
+          PY
+      - name: Stage generated site without changing other sites
+        run: |
+          set -euo pipefail
+          git add -- MARSAM
+          python - <<'PY'
+          import subprocess
+          changed=subprocess.check_output(['git','diff','--cached','--name-only','-z']).decode().split('\0')
+          assert all(p.startswith('MARSAM/') for p in changed if p)
+          assert len([p for p in changed if p])>300
+          PY
+          git config user.name 'Onour Impram'
+          git config user.email '215815131+OnourImpram@users.noreply.github.com'
+          git commit -m 'build: stage corrected centre website and remove obsolete benchmark pages'
+          git push origin HEAD:publish/marsam-scope-20261001
+          git rev-parse HEAD > .marsam-source/verification/host-candidate.txt
+          git rev-parse HEAD:MARSAM > .marsam-source/verification/site-tree.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-scope-staging
+          path: .marsam-source/verification
+          retention-days: 7
+  verify-public:
+    needs: stage
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: ${{ env.SOURCE_COMMIT }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser and reconstruct route manifest
+        run: |
+          npm run build
+          python -m pip install playwright==1.57.0
+          python -m playwright install chromium
+      - name: Wait for deliberate publication of the exact source
+        run: |
+          set -euo pipefail
+          mkdir -p verification
+          for i in {1..120}; do
+            if curl -fsS --max-time 15 "https://onourimpram.github.io/MARSAM/release.json?source=$SOURCE_COMMIT" > /tmp/release.json; then
+              if python -c "import json,os;m=json.load(open('/tmp/release.json'));assert m['sourceCommit']==os.environ['SOURCE_COMMIT'] and m['release']=='marsam-review-0.4.0'"; then
+                cp /tmp/release.json verification/public-release.json
+                exit 0
+              fi
+            fi
+            sleep 5
+          done
+          exit 1
+      - name: Check every published file and removal of obsolete pages
+        run: |
+          python - <<'PY'
+          from concurrent.futures import ThreadPoolExecutor
+          from urllib.request import urlopen
+          from urllib.error import HTTPError
+          from pathlib import Path
+          import hashlib,json,time
+          m=json.loads(Path('verification/public-release.json').read_text());root=m['url']
+          def check(item):
+              path,meta=item
+              for attempt in range(4):
+                  try:
+                      with urlopen(root+path+'?v=0.4.0',timeout=30)as r:
+                          body=r.read();assert r.status==200
+                      assert hashlib.sha256(body).hexdigest()==meta['sha256'],path
+                      return path
+                  except Exception:
+                      if attempt==3:raise
+                      time.sleep(2)
+          files=[(p,v)for p,v in m['files'].items() if p not in {'.nojekyll','_headers'}]
+          with ThreadPoolExecutor(max_workers=8)as pool:checked=list(pool.map(check,files))
+          removed=[]
+          for l in ['tr','en','de','zh','ru','ar','id','ms']:
+              for path in ['network/','resource/duke-resources/','resource/harvard-resources/','resource/smbi-resources/','resource/iapr-resources/']:
+                  try:
+                      with urlopen(root+l+'/'+path+'?v=0.4.0',timeout=30)as r:raise AssertionError('Obsolete page still published '+l+'/'+path)
+                  except HTTPError as exc:assert exc.code==404
+                  removed.append(l+'/'+path)
+          Path('verification/public-byte-checks.json').write_text(json.dumps({'release':m['release'],'sourceCommit':m['sourceCommit'],'passed':True,'checkedFiles':len(checked),'removedRoutesChecked':removed},indent=2))
+          PY
+      - name: Verify public content and real interactions in all eight languages
+        env:
+          PREVIEW_ORIGIN: https://onourimpram.github.io
+        run: python tests/scope_e2e.py
+      - name: Verify search excludes old institutional records
+        run: |
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          from pathlib import Path
+          import json
+          checks=[]
+          with sync_playwright()as p:
+              b=p.chromium.launch();page=b.new_page()
+              for l,q in [('tr','maneviyat'),('ar','الإرشاد'),('id','konseling'),('ms','kaunseling')]:
+                  page.goto('https://onourimpram.github.io/MARSAM/'+l+'/search/',wait_until='networkidle')
+                  page.locator('#page-search').fill(q);page.wait_for_selector('[data-search-results] .search-result')
+                  checks.append(l+' search')
+                  page.locator('#page-search').fill('Harvard');page.wait_for_timeout(500)
+                  assert page.locator('[data-search-results] .search-result').count()==0
+                  checks.append(l+' old benchmark absent')
+              b.close()
+          Path('verification/public-search.json').write_text(json.dumps({'passed':True,'checks':checks},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-scope-live-evidence
+          path: |
+            verification
+            .browser-results/scope
+          include-hidden-files: true
+          retention-days: 7
