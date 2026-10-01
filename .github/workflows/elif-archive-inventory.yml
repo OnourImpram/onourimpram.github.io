@@ -1,0 +1,40 @@
+name: Elif archived media inventory
+on:
+  push:
+    branches: [elif-v23-unified-studio-20261001]
+    paths: ['.github/workflows/elif-archive-inventory.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Inventory unique historic image and archive objects
+        run: |
+          python - <<'PY'
+          import subprocess,json,hashlib
+          from pathlib import Path
+          records=[]
+          for row in subprocess.check_output(['git','rev-list','--objects','--all'],text=True).splitlines():
+            parts=row.split(' ',1)
+            if len(parts)!=2:continue
+            sha,path=parts
+            if not path.lower().endswith(('.jpeg','.jpg','.webp','.png','.zip')):continue
+            if not any(s in path.lower() for s in ('elif','whatsapp','r03','r11','r16','r17','r20','r21','r24','r25','r26')):continue
+            data=subprocess.check_output(['git','cat-file','blob',sha])
+            records.append({'sha':sha,'path':path,'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data)})
+          Path('archive-inventory.json').write_text(json.dumps(records,ensure_ascii=False,indent=2))
+          print('Unique images/archives',len(records))
+          for x in records:
+            if x['path'].endswith('.zip') or any('/r'+s in x['path'] for s in ['03','11','16','17','20','21','24','25','26']): print(x)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elif-existing-media-inventory
+          path: archive-inventory.json
+          retention-days: 7
