@@ -2,10 +2,7 @@ name: Elif SEO content and verified publication
 on:
   push:
     branches: [elif-seo-20261001]
-    paths:
-      - '.github/workflows/elif-seo.yml'
-      - '.github/elif-seo/**'
-      - 'elif-tasarim/source-v12/tests/seo/**'
+    paths: ['.github/workflows/elif-seo.yml', '.github/elif-seo/**', 'elif-tasarim/source-v12/tests/seo/**']
 permissions:
   contents: write
 concurrency:
@@ -25,11 +22,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Guard the approved baseline and apply source updates
+      - name: Guard the approved Elif baseline, preserve unrelated concurrent publications
         run: |
           set -euo pipefail
           git fetch origin main
-          test "$(git rev-parse origin/main)" = '72923f20ee73011178b57fe1703b841e997ec562'
+          git merge-base --is-ancestor 72923f20ee73011178b57fe1703b841e997ec562 origin/main
+          git diff --exit-code 72923f20ee73011178b57fe1703b841e997ec562 origin/main -- elif-tasarim
           python - <<'PY'
           from pathlib import Path
           import subprocess
@@ -83,13 +81,14 @@ jobs:
           BASE_URL: http://127.0.0.1:8000/elif-tasarim/
           EVIDENCE_DIR: evidence/seo/matrix
         run: python tests/v11/matrix.py
-      - name: Stage the checked source and runtime without publishing main
+      - name: Stage the checked Elif subtree on current main without publishing it
         run: |
           set -euo pipefail
           git fetch origin main
-          test "$(git rev-parse origin/main)" = '72923f20ee73011178b57fe1703b841e997ec562'
+          git diff --exit-code 72923f20ee73011178b57fe1703b841e997ec562 origin/main -- elif-tasarim
           P=/tmp/elif-seo-approved
           git worktree add --detach "$P" origin/main
+          git rev-parse origin/main > evidence/seo/publication-parent.txt
           test "$(git -C "$P" hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
           rsync -a --delete --exclude=source-v12 dist/ "$P/elif-tasarim/"
           rsync -a --delete --exclude=node_modules --exclude=dist --exclude=preview --exclude=evidence --exclude=.compiled --exclude=.git --exclude=__pycache__ ./ "$P/elif-tasarim/source-v12/"
