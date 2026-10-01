@@ -80,7 +80,7 @@ jobs:
         env:
           BASE_URL: http://127.0.0.1:8000/elif-tasarim/
           EVIDENCE_DIR: evidence/seo/matrix
-        run: python tests/v11/matrix.py
+        run: xvfb-run -a python tests/v11/matrix.py
       - name: Stage the checked Elif subtree on current main without publishing it
         run: |
           set -euo pipefail
