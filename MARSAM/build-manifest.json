@@ -5,10 +5,10 @@
     "formalApprovalVerified": false
   },
   "previewDeploymentAuthorized": true,
-  "version": "0.4.0",
+  "version": "0.5.0",
   "base": "/MARSAM/",
   "mode": "preview",
-  "generatedAt": "2026-10-01T15:35:04.469Z",
+  "generatedAt": "2026-10-01T16:30:33.359Z",
   "locales": [
     "tr",
     "en",
@@ -423,6 +423,6 @@
       "direction": "ltr"
     }
   },
-  "deploymentCommit": "37fe3fe678ccb3854398b18db51f604a378e2f78",
+  "deploymentCommit": "1795948e7a903f747711028e71603fa00536a16c",
   "deploymentHost": "OnourImpram/onourimpram.github.io"
 }
