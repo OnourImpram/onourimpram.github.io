@@ -1,0 +1,82 @@
+name: Confirm final live design and workflows
+on:
+  push:
+    branches: [publish/marsam-editorial-05]
+    paths: [.github/workflows/marsam-design-final-smoke.yml]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  confirm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Preserve the preceding failure context
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p evidence
+          gh api repos/OnourImpram/onourimpram.github.io/actions/jobs/110478906306/logs | tail -100 > evidence/previous-check-tail.txt
+      - name: Prepare a browser with Chinese glyph support
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install --no-install-recommends -y fonts-noto-cjk
+          python -m pip install -q playwright==1.57.0
+          python -m playwright install chromium
+      - name: Verify unqueried public assets and all final flows with named assertions
+        run: |
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          from pathlib import Path
+          from urllib.request import urlopen,Request
+          import json,hashlib,time,traceback
+          root='https://onourimpram.github.io/MARSAM/';out=Path('evidence');results=[]
+          release=json.load(urlopen(root+'release.json?final=confirmed',timeout=30))
+          assert release['sourceCommit']=='a5dfb6558be5dbbf180321e114f4725b3e6b9657'
+          expected=release['files']['editorial.css']['sha256']
+          for attempt in range(90):
+              css=urlopen(root+'editorial.css',timeout=25).read()
+              if hashlib.sha256(css).hexdigest()==expected:break
+              time.sleep(5)
+          assert hashlib.sha256(css).hexdigest()==expected,'unqueried public stylesheet has not settled'
+          (out/'asset-confirmation.json').write_text(json.dumps({'passed':True,'sourceCommit':release['sourceCommit'],'unqueriedStylesheetSHA256':expected,'attempts':attempt+1},indent=2))
+          def record(name,ok,detail=None):results.append({'name':name,'passed':bool(ok),'detail':detail})
+          with sync_playwright()as p:
+              b=p.chromium.launch();c=b.new_context(accept_downloads=True);page=c.new_page()
+              for l in ['tr','en','de','zh','ru','ar','id','ms']:
+                  for w in [320,390,768,1440]:
+                      page.set_viewport_size({'width':w,'height':1000});r=page.goto(root+l+'/?review=final',wait_until='networkidle')
+                      record(f'HTTP {l} {w}',r.status==200)
+                      record(f'layout {l} {w}',page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'))
+                      info=page.locator('.discovery-bar form button').evaluate('el=>{let r=document.createRange();r.selectNodeContents(el);return {rects:r.getClientRects().length,whiteSpace:getComputedStyle(el).whiteSpace,text:el.textContent}}')
+                      record(f'search label {l} {w}',info['rects']==1 and info['whiteSpace']=='nowrap',info)
+                      if w in [390,1440]:
+                          page.screenshot(path=str(out/f'{l}-home-{w}-top.png'))
+                          if l=='tr' and w==1440:page.screenshot(path=str(out/'tr-home-full.png'),full_page=True)
+              def flow(name,fn):
+                  try:fn();record(name,True)
+                  except Exception as e:record(name,False,str(e));(out/(name.replace(' ','-')+'-failure.txt')).write_text(traceback.format_exc())
+              def search():
+                  page.goto(root+'tr/search/',wait_until='networkidle');page.locator('#page-search').fill('maneviyat');page.wait_for_selector('[data-search-results] .search-result')
+              def saved():
+                  page.goto(root+'tr/dossier/theory-and-integration/',wait_until='networkidle');page.locator('[data-save]').click();page.reload(wait_until='networkidle');assert page.locator('[data-save]').get_attribute('aria-pressed')=='true'
+              def ris():
+                  page.goto(root+'tr/resource/theories-book/',wait_until='networkidle')
+                  with page.expect_download()as d:page.locator('a[download][href$=".ris"]').click()
+                  text=Path(d.value.path()).read_text();assert 'TY  - ' in text
+              def comparison():
+                  page.goto(root+'tr/compare/?ids=theories-book,three-waves',wait_until='networkidle');page.wait_for_selector('.comparison-table')
+                  with page.expect_download()as d:page.locator('[data-comparison-export]').click()
+                  assert len(json.loads(Path(d.value.path()).read_text())['items'])==2
+              for name,fn in [('public search',search),('persistent reading list',saved),('native RIS download',ris),('comparison export',comparison)]:flow(name,fn)
+              c.close();b.close()
+          (out/'final-workflow-checks.json').write_text(json.dumps({'sourceCommit':release['sourceCommit'],'passed':all(x['passed']for x in results),'checks':results},ensure_ascii=False,indent=2))
+          failed=[x for x in results if not x['passed']]
+          print(json.dumps(failed,ensure_ascii=False));assert not failed
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-final-confirmed-live
+          path: evidence/
+          retention-days: 7
