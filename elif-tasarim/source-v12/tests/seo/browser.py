@@ -3,6 +3,7 @@ from playwright.sync_api import sync_playwright
 import os,json,traceback
 BASE=os.environ.get('BASE_URL','http://127.0.0.1:8000/elif-tasarim/').rstrip('/')+'/'
 ROOT=Path(__file__).resolve().parents[2];OUT=Path(os.environ.get('EVIDENCE_DIR','evidence/seo/browser'));OUT.mkdir(parents=True,exist_ok=True)
+PUBLIC_SITE=json.loads((ROOT/'dist/release-v23.json').read_text())['siteUrl'].rstrip('/')+'/'
 report={'base':BASE,'checks':[],'limits':['Chromium software rendering','No ranking, conversion or field performance measurement','No actual message, account or payment action']}
 def rec(name):
  report['checks'].append({'name':name,'pass':True});(OUT/'results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print('PASS',name,flush=True)
@@ -28,7 +29,7 @@ with sync_playwright() as pw:
   rec('04. Three service pages have distinct decisions, owned project evidence and matching optional preparation, no mandatory extra form')
   routes=['/','/kategoriler/kahve-kosesi','/kategoriler/mutfak','/kategoriler/tv-unitesi','/rehber/bakim','/modelini-getir','/tasarim-masasi']
   for route in routes:
-   go(route);h=head();assert h['robots']=='noindex,nofollow' and h['og']=='Elif Tasarım';assert h['canonical']==BASE+('' if route=='/' else route.strip('/')+'/');assert h['schema']['name']==h['title'];assert h['schema']['description']==h['description']
+   go(route);h=head();assert h['robots']=='noindex,nofollow' and h['og']=='Elif Tasarım';assert h['canonical']==PUBLIC_SITE+('' if route=='/' else route.strip('/')+'/');assert h['schema']['name']==h['title'];assert h['schema']['description']==h['description']
   rec('05. Initial routes and hydrated metadata share title, description, canonical, organization and preview robots')
   go('/');p.evaluate('document.documentElement.dataset.indexable="true"');p.evaluate('location.hash="#/kategoriler/mutfak"');p.wait_for_function('document.querySelector("meta[name=robots]").content==="index,follow"');p.evaluate('location.hash="#/modelini-getir"');p.wait_for_function('document.querySelector("meta[name=robots]").content==="noindex,nofollow"');p.evaluate('document.documentElement.dataset.indexable="false"');rec('06. Explicit future index mode still excludes the private project flow after client navigation')
   p.set_viewport_size({'width':390,'height':844})
@@ -39,5 +40,5 @@ with sync_playwright() as pw:
   nojs=b.new_context(java_script_enabled=False,viewport={'width':390,'height':844});n=nojs.new_page();n.goto(BASE+'kategoriler/kahve-kosesi/',wait_until='domcontentloaded',timeout=60000);assert n.locator('#static-content .seo-decisions article').count()==4;assert n.locator('meta[property="og:site_name"]').get_attribute('content')=='Elif Tasarım';assert n.locator('meta[name=robots]').get_attribute('content')=='noindex,nofollow';nojs.close();rec('08. Useful category content and head metadata exist in the first HTML without JavaScript')
   assert not errors,errors;rec('09. No uncaught error in SEO, carousel readiness or preparation flows')
  except Exception:
-  report['failure']=traceback.format_exc();report['errors']=errors;(OUT/'results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));p.screenshot(path=str(OUT/'failure.png'),full_page=True);raise
+  report['failure']=traceback.format_exc();report['errors']=errors;report['last_head']=head();(OUT/'results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));p.screenshot(path=str(OUT/'failure.png'),full_page=True);raise
  finally:b.close()
