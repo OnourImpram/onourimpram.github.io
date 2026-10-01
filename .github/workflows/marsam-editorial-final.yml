@@ -1,0 +1,160 @@
+name: Final MARSAM design publication
+on:
+  push:
+    branches: [publish/marsam-editorial-05]
+    paths: [.github/workflows/marsam-editorial-final.yml]
+permissions:
+  contents: read
+env:
+  SOURCE_COMMIT: a5dfb6558be5dbbf180321e114f4725b3e6b9657
+  BASE_PATH: /MARSAM/
+  PAGES_PREVIEW: 'true'
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: ${{ env.SOURCE_COMMIT }}
+          path: .marsam-source
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify final source and regression suites
+        working-directory: .marsam-source
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE_PATH=/ npm run check
+          npm run check
+          python -m pip install -q playwright==1.57.0
+          python -m playwright install chromium
+          python tests/browser_e2e.py & core=$!
+          python tests/scope_e2e.py & scope=$!
+          wait "$core"
+          wait "$scope"
+      - name: Rebuild the isolated public subtree and release ledger
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json,hashlib,shutil,os
+          root=Path('.marsam-source/dist');m=json.loads((root/'build-manifest.json').read_text())
+          assert m['version']=='0.5.0' and m['previewDeploymentAuthorized'] is True and m['publicationAuthorized'] is False
+          assert m['institution']['formalApprovalVerified'] is False
+          m['deploymentCommit']=os.environ['SOURCE_COMMIT'];m['deploymentHost']='OnourImpram/onourimpram.github.io'
+          (root/'build-manifest.json').write_text(json.dumps(m,ensure_ascii=False,indent=2)+'\n')
+          files={f.relative_to(root).as_posix():{'sha256':hashlib.sha256(f.read_bytes()).hexdigest(),'bytes':f.stat().st_size}for f in root.rglob('*')if f.is_file()}
+          assert not any(p.endswith(('.ttf','.otf','.woff','.woff2','.ttc'))for p in files)
+          release={'release':'marsam-editorial-0.5.0-final','sourceCommit':os.environ['SOURCE_COMMIT'],'url':'https://onourimpram.github.io/MARSAM/','mode':'institutional-review','formalApproval':False,'files':files}
+          (root/'release.json').write_text(json.dumps(release,ensure_ascii=False,indent=2)+'\n')
+          shutil.rmtree('MARSAM');shutil.copytree(root,'MARSAM')
+          PY
+      - name: Commit only MARSAM to the candidate branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -- MARSAM
+          python - <<'PY'
+          import subprocess
+          names=subprocess.check_output(['git','diff','--cached','--name-only','-z']).decode().split('\0')
+          assert all(n.startswith('MARSAM/')for n in names if n)
+          PY
+          git config user.name 'Onour Impram'
+          git config user.email '215815131+OnourImpram@users.noreply.github.com'
+          git commit -m 'build: stage final MARSAM design typography without touching unrelated sites'
+          git push origin HEAD:publish/marsam-editorial-05
+  verify-public:
+    needs: stage
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: ${{ env.SOURCE_COMMIT }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare complete glyph support in the test runner only
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install --no-install-recommends -y fonts-noto-cjk
+          npm run build
+          python -m pip install -q playwright==1.57.0
+          python -m playwright install chromium
+          mkdir -p verification
+          fc-match 'Noto Serif CJK SC' > verification/final-font-environment.txt
+      - name: Require the explicitly promoted release
+        shell: bash
+        run: |
+          set -euo pipefail
+          for i in {1..120}; do
+            if curl -fsS --max-time 12 "https://onourimpram.github.io/MARSAM/release.json?source=$SOURCE_COMMIT" > /tmp/release.json; then
+              if python -c "import json,os;assert json.load(open('/tmp/release.json'))['sourceCommit']==os.environ['SOURCE_COMMIT']"; then
+                cp /tmp/release.json verification/final-public-release.json
+                exit 0
+              fi
+            fi
+            sleep 5
+          done
+          exit 1
+      - name: Verify each actually served file
+        run: |
+          python - <<'PY'
+          from concurrent.futures import ThreadPoolExecutor
+          from urllib.request import urlopen
+          from pathlib import Path
+          import json,hashlib,time
+          m=json.load(open('verification/final-public-release.json'))
+          def check(item):
+              path,info=item
+              for i in range(3):
+                  try:
+                      with urlopen(m['url']+path+'?release=05final',timeout=25)as r:data=r.read();assert r.status==200
+                      assert hashlib.sha256(data).hexdigest()==info['sha256'],path
+                      return path
+                  except Exception:
+                      if i==2:raise
+                      time.sleep(2)
+          with ThreadPoolExecutor(max_workers=8)as pool:paths=list(pool.map(check,[(p,v)for p,v in m['files'].items()if p not in {'.nojekyll','_headers'}]))
+          Path('verification/final-public-bytes.json').write_text(json.dumps({'passed':True,'sourceCommit':m['sourceCommit'],'checked':len(paths)},indent=2))
+          PY
+      - name: Verify the actual public design, mobile navigation and downloads
+        env:
+          PREVIEW_ORIGIN: https://onourimpram.github.io
+        run: python tests/design_e2e.py
+      - name: Verify final CJK control and persistent search workflows
+        run: |
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          from pathlib import Path
+          import json
+          root='https://onourimpram.github.io/MARSAM/';checks=[]
+          with sync_playwright()as p:
+              b=p.chromium.launch();c=b.new_context(accept_downloads=True);page=c.new_page(viewport={'width':1440,'height':1000})
+              page.goto(root+'zh/',wait_until='networkidle')
+              assert page.locator('.discovery-bar form button').evaluate('el=>{let r=document.createRange();r.selectNodeContents(el);return r.getClientRects().length}')==1;checks.append('CJK search label on one line')
+              page.goto(root+'tr/search/',wait_until='networkidle');page.locator('#page-search').fill('maneviyat');page.wait_for_selector('[data-search-results] .search-result');checks.append('public search')
+              page.goto(root+'tr/dossier/theory-and-integration/',wait_until='networkidle');page.locator('[data-save]').click();page.reload(wait_until='networkidle');assert page.locator('[data-save]').get_attribute('aria-pressed')=='true';checks.append('persistent reading list')
+              page.goto(root+'tr/resource/theories-book/',wait_until='networkidle')
+              with page.expect_download()as d:page.locator('a[download][href$=".ris"]').click()
+              assert 'TY  - ' in Path(d.value.path()).read_text();checks.append('native RIS download');c.close();b.close()
+          Path('verification/final-public-core.json').write_text(json.dumps({'passed':True,'checks':checks},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-design-final-live
+          path: |
+            verification/final-*
+            verification/editorial-browser.json
+            .browser-results/editorial/
+          include-hidden-files: true
+          retention-days: 7
