@@ -30,3 +30,6 @@ html{scroll-padding-top:180px}body{background:var(--paper);font-size:16px}h1,h2{
 
 .article-layout{justify-content:start}.locale-abbr{display:none}
 @media(max-width:600px){.language-select summary>.locale-abbr{display:inline;font-size:.67rem}.language-select summary>bdi{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
+
+/* Short search actions remain on one line in every script. */
+.discovery-bar form>button{white-space:nowrap;flex-shrink:0}

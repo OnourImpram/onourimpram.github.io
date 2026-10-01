@@ -1,6 +1,6 @@
 {
-  "release": "marsam-editorial-0.5.0",
-  "sourceCommit": "1795948e7a903f747711028e71603fa00536a16c",
+  "release": "marsam-editorial-0.5.0-final",
+  "sourceCommit": "a5dfb6558be5dbbf180321e114f4725b3e6b9657",
   "url": "https://onourimpram.github.io/MARSAM/",
   "mode": "institutional-review",
   "formalApproval": false,
@@ -22,7 +22,7 @@
       "bytes": 550
     },
     "build-manifest.json": {
-      "sha256": "e8081492124cf6f23f55a8587bfe5b31521850e8c4f6b62af1b93b2b7777ce0f",
+      "sha256": "f606043ff7b3d39411ca0d14749eba538d9636b122c1e6054ece9cdf4047f664",
       "bytes": 12433
     },
     "index.html": {
@@ -30,8 +30,8 @@
       "bytes": 57494
     },
     "editorial.css": {
-      "sha256": "e9608ace0273ed4d0602c3c38bf0013b448fb64da62f445edfffb44b2fb3839e",
-      "bytes": 43160
+      "sha256": "dbcabde13353c094d93f9fa680668a779507c64065dcc0aa3e26875abf85ea91",
+      "bytes": 43285
     },
     "robots.txt": {
       "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1",
