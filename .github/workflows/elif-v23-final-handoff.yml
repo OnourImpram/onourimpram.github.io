@@ -1,0 +1,101 @@
+name: Elif V23 final handoff
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/elif-v23-final-handoff.yml']
+permissions:
+  contents: read
+jobs:
+  final-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: elif-tasarim/source-v12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 3f0b1c93a48a04de022399a065399dc3da2f513b
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Rebuild and verify exact published source
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/v23-final
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build | tee evidence/v23-final/build.txt
+          npm test | tee evidence/v23-final/unit.txt
+          npm run typecheck:core | tee evidence/v23-final/types.txt
+          npm run verify:dist | tee evidence/v23-final/integrity.txt
+          cmp dist/release-v23.json ../release-v23.json
+      - name: Verify actual public bytes and routes
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+          EVIDENCE_DIR: evidence/v23-final/public
+        run: python tests/v11/public_verify.py
+      - name: Install test browser
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Product visibility, failures and all desktop routes
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+          EVIDENCE_DIR: evidence/v23-final/desktop
+        run: xvfb-run -a python tests/v23/browser.py
+      - name: All canonical routes on mobile
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+          EVIDENCE_DIR: evidence/v23-final/mobile
+        run: xvfb-run -a python tests/v23/mobile-media.py
+      - name: Preserve contact and 360 degree operation
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/v23-final/contact xvfb-run -a python tests/v22/acceptance.py
+          EVIDENCE_DIR=evidence/v23-final/orbit xvfb-run -a python tests/v12/acceptance.py
+      - name: Capture decoded and painted product sections
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          import json
+          out=Path('evidence/v23-final/painted');out.mkdir(parents=True,exist_ok=True)
+          with sync_playwright() as p:
+              b=p.chromium.launch(headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
+              page=b.new_page(viewport={'width':1440,'height':1000},reduced_motion='reduce')
+              errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+              page.goto('https://onourimpram.github.io/elif-tasarim/devir-01/',wait_until='domcontentloaded',timeout=60000)
+              page.wait_for_selector('html[data-app-ready="true"]')
+              page.wait_for_function("()=>document.querySelectorAll('.v20-devir img').length===6")
+              for selector,name in [('.v20-product-hero','hero'),('.v20-room-editorial','room'),('#devir-baslangic','variants'),('#devir-detay','detail')]:
+                  block=page.locator(selector);block.scroll_into_view_if_needed()
+                  block.evaluate("async(e)=>{await Promise.all([...e.querySelectorAll('img')].map(i=>i.decode()));await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}")
+                  page.wait_for_timeout(120)
+                  assert block.locator('.image-unavailable').count()==0
+                  block.screenshot(path=str(out/(name+'-desktop.png')))
+              page.evaluate('scrollTo(0,0)');page.wait_for_timeout(200)
+              page.screenshot(path=str(out/'devir-desktop.png'),full_page=True)
+              for width in [320,390,768]:
+                  page.set_viewport_size({'width':width,'height':844})
+                  for selector in ['.v20-product-hero','.v20-room-editorial','#devir-baslangic','#devir-detay']:
+                      block=page.locator(selector);block.scroll_into_view_if_needed()
+                      block.evaluate("async(e)=>{await Promise.all([...e.querySelectorAll('img')].map(i=>i.decode()));await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}")
+                  assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
+                  page.evaluate('scrollTo(0,0)');page.wait_for_timeout(150)
+                  page.screenshot(path=str(out/('devir-'+str(width)+'.png')),full_page=True)
+              assert not errors,errors
+              (out/'result.json').write_text(json.dumps({'pass':True,'images':6,'desktopSections':4,'mobileWidths':[320,390,768],'errors':errors,'capture':'decoded actual live images after natural scroll and paint','notTested':['physical phone','AR placement','message delivery']},indent=2))
+              b.close()
+          PY
+      - name: Check unchanged personal homepage
+        working-directory: .
+        run: test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v23-final-handoff-evidence
+          path: elif-tasarim/source-v12/evidence/v23-final
+          retention-days: 14
