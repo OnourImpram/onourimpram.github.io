@@ -2,3 +2,32 @@
 @media(max-width:780px){.seo-decisions,.seo-real-example{grid-template-columns:1fr;gap:24px}.seo-real-example,.seo-preparation{padding:22px}.seo-guide-links{gap:10px 20px}.seo-service-guide{margin-top:28px}.seo-form-hint{padding:14px 16px}}
 /* Enlarged Turkish words must stay inside the existing category heading column. */
 .v6-section .v6-heading>div{min-width:0;max-width:100%}.v6-section .v6-heading h2{overflow-wrap:anywhere}
+
+/* Carousel discoverability: background motion does not move the reading or action targets. */
+.v232-carousel .v232-scene{transition-duration:600ms}
+.v234-bottom{align-items:flex-end!important;gap:26px!important}
+.v234-controls{width:fit-content;max-width:100%;padding:12px 16px 10px;background:#2e251ddd;border:1px solid #ffffff50;color:#fff5e7;backdrop-filter:blur(5px);position:relative}
+.v234-controls-heading{display:flex;gap:20px;justify-content:space-between;font-size:11px;line-height:1.7;margin-bottom:8px}
+.v234-controls-heading>span:first-child{letter-spacing:.04em}
+.v234-current-scene{color:#ecd1a7;font-variant-numeric:tabular-nums}
+.v234-control-row{display:flex;align-items:center;gap:8px}
+.v234-controls .v6-scene-controls{display:grid;grid-template-columns:repeat(5,44px);gap:4px}
+.v234-controls .v6-scene-controls button{width:44px;min-width:44px;min-height:44px;font-size:12px;justify-content:center;padding:0;border:1px solid #ffffff36;font-variant-numeric:tabular-nums}
+.v234-controls .v6-scene-controls button[aria-pressed=true]{background:#ecd7b6;color:#372819;border-color:#ecd7b6}
+.v234-controls .v6-scene-controls i,.v234-controls .scene-word{display:none!important}
+.v234-arrow{min-width:44px;width:44px;min-height:44px;border:1px solid #ffffff60;display:inline-flex;align-items:center;justify-content:center;color:inherit}
+.v234-previous svg{transform:rotate(180deg)}
+.v234-controls .v232-pause{margin-left:2px!important;min-height:44px;min-width:70px;font-size:12px;background:transparent;border-color:#ffffff60}
+.v234-controls button:hover{background:#ffffff18}
+.v234-controls button:focus-visible{outline:2px solid #ffe1ae;outline-offset:3px}
+.v234-progress{height:2px;background:#ffffff30;margin-top:10px;overflow:hidden}
+.v234-progress span{display:block;background:#f1cd92;width:100%;height:100%;transform-origin:left;transform:scaleX(0);animation:none}
+.v234-progress[data-running=true] span{animation:elif-carousel-progress linear forwards}
+@keyframes elif-carousel-progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.v234-loading{display:block;font-size:11px;line-height:1.6;margin-top:7px;max-width:430px}
+.v234-bottom .v6-hero-caption{margin-left:auto;max-width:280px;line-height:1.5}
+@media(max-width:700px){.v234-bottom{bottom:53px!important}.v234-controls{width:100%;padding:10px 12px}.v234-control-row{display:grid;grid-template-columns:44px 1fr 44px;gap:7px}.v234-controls .v6-scene-controls{grid-column:1/4;grid-row:1;grid-template-columns:repeat(5,minmax(44px,1fr));width:100%}.v234-controls .v6-scene-controls button{width:100%}.v234-previous{grid-column:1;grid-row:2}.v234-next{grid-column:3;grid-row:2}.v234-controls .v232-pause{grid-column:2;grid-row:2;justify-self:center}.v234-controls-heading{gap:8px;font-size:11px}.v234-bottom .v6-hero-caption{display:none}.v232-carousel .v6-hero-inner{padding-bottom:220px}.v234-loading{max-width:none}}
+@media(prefers-reduced-motion:reduce){.v232-carousel .v232-scene{transition:none}.v234-progress span{animation:none!important}}
+
+/* Tablet CTA needs its own space above the larger navigation panel. */
+@media(min-width:701px) and (max-width:960px){.v232-carousel .v6-hero-inner{padding-bottom:225px}.v234-bottom .v6-hero-caption{display:none}}

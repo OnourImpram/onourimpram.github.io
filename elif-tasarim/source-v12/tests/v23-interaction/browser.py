@@ -26,7 +26,7 @@ with sync_playwright() as pw:
   assert seen==[0,1,2,3,4,0],seen;record('01. All five loaded images advance in order and wrap to the first')
   p.get_by_role('button',name='Otomatik geçişi durdur',exact=True).click();fixed=active();p.mouse.move(0,0);p.locator('.v232-pause').evaluate('e=>e.blur()');p.wait_for_timeout(5400);assert active()==fixed
   for i in range(5):
-   p.locator('.v6-scene-controls button').nth(i).click();assert active()==i;p.wait_for_timeout(1100);p.locator('.v6-hero').screenshot(path=str(O/f'hero-{i+1}.png'))
+   p.locator('.v6-scene-controls button').nth(i).click();p.wait_for_function('(i)=>Number(document.querySelector(".v232-scene.is-active").dataset.slide)===i',arg=i);assert active()==i;p.wait_for_timeout(1100);p.locator('.v6-hero').screenshot(path=str(O/f'hero-{i+1}.png'))
   record('02. Pause holds the image and every manual scene control works')
   for w in [320,390,768]:
    p.set_viewport_size({'width':w,'height':844});assert p.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),w

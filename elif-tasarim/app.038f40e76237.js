@@ -2367,6 +2367,41 @@ exports.draftSession = {
 };
 
 },
+"src/lib/hero-rotation":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.HERO_FADE = exports.HERO_INTERVAL = exports.HERO_FIRST_DELAY = void 0;
+exports.decodeHeroFrame = decodeHeroFrame;
+exports.HERO_FIRST_DELAY = 2200;
+exports.HERO_INTERVAL = 3200;
+exports.HERO_FADE = 600;
+async function decodeHeroFrame(getImage, timeout = 5000) {
+    const until = Date.now() + timeout;
+    while (Date.now() < until) {
+        const image = getImage();
+        if (!image)
+            return false;
+        if (image.complete && image.naturalWidth > 0) {
+            const source = image.currentSrc || image.src;
+            let timer;
+            try {
+                const ready = await Promise.race([Promise.resolve(image.decode()).then(() => true, () => false), new Promise(resolve => { timer = setTimeout(() => resolve(false), Math.max(0, until - Date.now())); })]);
+                if (ready && source === (image.currentSrc || image.src) && image.naturalWidth > 0)
+                    return true;
+            }
+            catch { }
+            finally {
+                if (timer !== undefined)
+                    clearTimeout(timer);
+            }
+        }
+        if (Date.now() < until)
+            await new Promise(resolve => setTimeout(resolve, Math.min(80, until - Date.now())));
+    }
+    return false;
+}
+
+},
 "src/lib/image-manifest":function(module,exports,require){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -4609,6 +4644,7 @@ const ui_1 = require("../components/ui");
 const PortfolioUI_1 = require("../components/PortfolioUI");
 const portfolio_1 = require("../lib/portfolio");
 const V7Pages_1 = require("./V7Pages");
+const hero_rotation_1 = require("../lib/hero-rotation");
 const desk_1 = require("../lib/desk");
 const scenes = [
     { image: 'concept-hero', alt: "Ahşap görünümlü oval yemek masası, sandalyeler ve aydınlatmalı mutfak. Konsept model.", caption: 'Yaşamın etrafında toplandığı yer.', label: 'Yemek', kind: 'concept' },
@@ -4620,7 +4656,7 @@ const scenes = [
 class Home extends react_1.Component {
     constructor() {
         super(...arguments);
-        this.state = { scene: 0, desk: { ...desk_1.defaultDesk }, chapter: 0, paused: false, requested: [0, 1] };
+        this.state = { scene: 0, desk: { ...desk_1.defaultDesk }, chapter: 0, paused: false, requested: [0, 1], loading: null, playing: false, epoch: 0, status: '' };
         this.alive = false;
         this.serial = 0;
         this.hero = null;
@@ -4629,32 +4665,81 @@ class Home extends react_1.Component {
         this.hover = false;
         this.focus = false;
         this.motion = null;
-        this.reschedule = () => { this.serial++; window.clearInterval(this.timer); this.timer = undefined; if (this.state.paused || this.motion?.matches || document.hidden || !this.visible || this.hover || this.focus)
-            return; this.timer = window.setInterval(() => this.setScene((this.state.scene + 1) % scenes.length), 5000); };
+        this.first = true;
+        this.automatic = false;
+        this.explicitPlay = false;
+        this.nextCandidate = null;
+        this.canPlay = () => !this.state.paused && !this.motion?.matches && !document.hidden && this.visible && (!(this.hover || this.focus) || this.explicitPlay);
+        this.reschedule = () => {
+            window.clearTimeout(this.timer);
+            this.timer = undefined;
+            if (!this.canPlay()) {
+                if (this.automatic) {
+                    this.serial++;
+                    this.automatic = false;
+                    if (this.state.loading !== null)
+                        this.setState({ loading: null });
+                }
+                if (this.state.playing)
+                    this.setState({ playing: false });
+                return;
+            }
+            if (this.state.loading !== null)
+                return;
+            const delay = this.first ? hero_rotation_1.HERO_FIRST_DELAY : hero_rotation_1.HERO_INTERVAL;
+            this.setState(s => ({ playing: true, epoch: s.epoch + 1 }));
+            this.timer = window.setTimeout(() => { this.timer = undefined; void this.setScene(this.nextCandidate ?? ((this.state.scene + 1) % scenes.length), true); }, delay);
+        };
+        this.hold = (held) => { this.hover = held; if (held)
+            this.explicitPlay = false; this.reschedule(); };
+        this.togglePlayback = () => { const paused = !this.state.paused; this.explicitPlay = !paused; if (paused) {
+            this.serial++;
+            this.automatic = false;
+        } this.setState({ paused, loading: paused ? null : this.state.loading }, this.reschedule); };
         this.warm = (scene) => { const next = (scene + 1) % scenes.length; if (!this.state.requested.includes(next))
             this.setState(s => ({ requested: [...s.requested, next] })); };
-        this.setScene = (scene) => { const token = ++this.serial; this.setState(s => ({ requested: s.requested.includes(scene) ? s.requested : [...s.requested, scene] }), async () => { const img = this.hero?.querySelector('[data-slide="' + scene + '"] img'); if (!img)
-            return; try {
-            await img.decode();
-            if (!img.naturalWidth)
-                throw Error('not-ready');
-            if (this.alive && token === this.serial)
-                this.setState({ scene }, () => { this.warm(scene); this.reschedule(); });
-        }
-        catch {
-            if (this.alive && token === this.serial)
-                this.reschedule();
-        } }); };
+        this.setScene = (scene, automatic = false) => {
+            if (scene < 0 || scene >= scenes.length || automatic && !this.canPlay())
+                return Promise.resolve();
+            window.clearTimeout(this.timer);
+            this.timer = undefined;
+            const token = ++this.serial;
+            this.automatic = automatic;
+            if (!automatic)
+                this.explicitPlay = false;
+            if (scene === this.state.scene) {
+                this.setState({ paused: automatic ? this.state.paused : true, loading: null, playing: false, status: '' }, this.reschedule);
+                return Promise.resolve();
+            }
+            return new Promise(finish => this.setState(s => ({ requested: s.requested.includes(scene) ? s.requested : [...s.requested, scene], paused: automatic ? s.paused : true, loading: scene, playing: false, status: '' }), async () => {
+                const ready = await (0, hero_rotation_1.decodeHeroFrame)(() => this.alive && token === this.serial ? this.hero?.querySelector('[data-slide="' + scene + '"] img') || null : null);
+                if (!this.alive || token !== this.serial) {
+                    finish();
+                    return;
+                }
+                this.automatic = false;
+                if (ready) {
+                    this.first = false;
+                    this.nextCandidate = null;
+                    this.setState({ scene, loading: null, status: '' }, () => { this.warm(scene); this.reschedule(); finish(); });
+                }
+                else {
+                    this.nextCandidate = (scene + 1) % scenes.length;
+                    this.warm(scene);
+                    this.setState({ loading: null, status: 'Bu görsel açılamadı. Mevcut görüntüyü koruduk; başka bir görsel seçebilirsiniz.' }, () => { this.reschedule(); finish(); });
+                }
+            }));
+        };
     }
     componentDidMount() { this.alive = true; this.motion = matchMedia('(prefers-reduced-motion: reduce)'); this.motion.addEventListener('change', this.reschedule); document.addEventListener('visibilitychange', this.reschedule); if (this.hero) {
         this.observer = new IntersectionObserver(es => { this.visible = es[0].isIntersecting; this.reschedule(); });
         this.observer.observe(this.hero);
     } this.reschedule(); }
-    componentWillUnmount() { this.alive = false; this.serial++; window.clearInterval(this.timer); this.observer?.disconnect(); this.motion?.removeEventListener('change', this.reschedule); document.removeEventListener('visibilitychange', this.reschedule); }
+    componentWillUnmount() { this.alive = false; this.serial++; window.clearTimeout(this.timer); this.observer?.disconnect(); this.motion?.removeEventListener('change', this.reschedule); document.removeEventListener('visibilitychange', this.reschedule); }
     render() {
         const a = this.props, s = this.state, scene = scenes[s.scene];
         return (0, react_1.createElement)("div", { className: "v6-home" },
-            (0, react_1.createElement)("section", { className: "v6-hero v232-carousel", ref: el => this.hero = el, "aria-label": "Elif Tasar\u0131m a\u00E7\u0131l\u0131\u015F se\u00E7kisi", "aria-roledescription": "slayt g\u00F6sterisi", onMouseEnter: () => { this.hover = true; this.reschedule(); }, onMouseLeave: () => { this.hover = false; this.reschedule(); }, onFocusCapture: () => { this.focus = true; this.reschedule(); }, onBlurCapture: e => { if (!e.currentTarget.contains(e.relatedTarget)) {
+            (0, react_1.createElement)("section", { className: "v6-hero v232-carousel", ref: el => this.hero = el, "aria-label": "Elif Tasar\u0131m a\u00E7\u0131l\u0131\u015F se\u00E7kisi", "aria-roledescription": "slayt g\u00F6sterisi", onFocusCapture: () => { this.focus = true; this.explicitPlay = false; this.reschedule(); }, onBlurCapture: e => { if (!e.currentTarget.contains(e.relatedTarget)) {
                     this.focus = false;
                     this.reschedule();
                 } } },
@@ -4671,15 +4756,31 @@ class Home extends react_1.Component {
                         "\u0130stanbul\u2019daki aile at\u00F6lyemizden, ya\u015Fam alan\u0131n\u0131za.",
                         (0, react_1.createElement)("br", null),
                         "\u00D6l\u00E7\u00FCn\u00FCze ve ihtiyac\u0131n\u0131za g\u00F6re, do\u011Frudan ustas\u0131yla."),
-                    (0, react_1.createElement)("div", { className: "v6-hero-actions" },
+                    (0, react_1.createElement)("div", { className: "v6-hero-actions", onMouseEnter: () => this.hold(true), onMouseLeave: () => this.hold(false) },
                         (0, react_1.createElement)(ui_1.ButtonLink, { to: "/projeler", navigate: a.navigate }, "Bitirdi\u011Fimiz i\u015Fleri ke\u015Ffedin"),
                         (0, react_1.createElement)(ui_1.TextLink, { to: "/modelini-getir", navigate: a.navigate, light: true }, "Kendi modelinizi getirin"))),
-                (0, react_1.createElement)("div", { className: "wrap v6-hero-bottom" },
-                    (0, react_1.createElement)("div", { className: "v6-scene-controls", role: "group", "aria-label": "A\u00E7\u0131l\u0131\u015F sahneleri" }, scenes.map((sc, i) => (0, react_1.createElement)("button", { key: sc.image, onClick: () => this.setScene(i), "aria-pressed": s.scene === i, "aria-label": String(i + 1).padStart(2, '0') + ' ' + sc.label + ' sahnesi' },
-                        (0, react_1.createElement)("span", null, String(i + 1).padStart(2, '0')),
-                        (0, react_1.createElement)("i", null),
-                        (0, react_1.createElement)("span", { className: "scene-word" }, sc.label)))),
-                    (0, react_1.createElement)("button", { type: "button", className: "v232-pause", "aria-label": s.paused ? 'Otomatik geçişi başlat' : 'Otomatik geçişi durdur', "aria-pressed": s.paused, onClick: () => this.setState({ paused: !s.paused }, this.reschedule) }, s.paused ? 'Oynat' : 'Duraklat'),
+                (0, react_1.createElement)("div", { className: "wrap v6-hero-bottom v234-bottom" },
+                    (0, react_1.createElement)("div", { className: "v234-controls", onMouseEnter: () => this.hold(true), onMouseLeave: () => this.hold(false), "data-carousel-state": s.loading !== null ? 'loading' : s.playing ? 'playing' : 'paused' },
+                        (0, react_1.createElement)("div", { className: "v234-controls-heading" },
+                            (0, react_1.createElement)("span", null, "5 mek\u00E2n\u0131 ke\u015Ffedin"),
+                            (0, react_1.createElement)("span", { className: "v234-current-scene" },
+                                String(s.scene + 1).padStart(2, '0'),
+                                " / 05 \u00B7 ",
+                                scene.label)),
+                        (0, react_1.createElement)("div", { className: "v234-control-row" },
+                            (0, react_1.createElement)("button", { type: "button", className: "v234-arrow v234-previous", "aria-label": "\u00D6nceki g\u00F6rsel", onClick: () => this.setScene((s.scene + scenes.length - 1) % scenes.length) },
+                                (0, react_1.createElement)(ui_1.Icon, { size: 19 })),
+                            (0, react_1.createElement)("div", { className: "v6-scene-controls", role: "group", "aria-label": "A\u00E7\u0131l\u0131\u015F sahneleri" }, scenes.map((sc, i) => (0, react_1.createElement)("button", { key: sc.image, type: "button", onClick: () => this.setScene(i), "aria-pressed": s.scene === i, "aria-label": String(i + 1).padStart(2, '0') + ' ' + sc.label + ' sahnesi' },
+                                (0, react_1.createElement)("span", null, String(i + 1).padStart(2, '0')),
+                                (0, react_1.createElement)("i", null),
+                                (0, react_1.createElement)("span", { className: "scene-word" }, sc.label)))),
+                            (0, react_1.createElement)("button", { type: "button", className: "v234-arrow v234-next", "aria-label": "Sonraki g\u00F6rsel", onClick: () => this.setScene((s.scene + 1) % scenes.length) },
+                                (0, react_1.createElement)(ui_1.Icon, { size: 19 })),
+                            (0, react_1.createElement)("button", { type: "button", className: "v232-pause", "aria-label": s.paused ? 'Otomatik geçişi başlat' : 'Otomatik geçişi durdur', "aria-pressed": s.paused, onClick: this.togglePlayback }, s.paused ? 'Oynat' : 'Duraklat')),
+                        (0, react_1.createElement)("div", { className: "v234-progress", "aria-hidden": "true", "data-running": s.playing ? 'true' : 'false' },
+                            (0, react_1.createElement)("span", { key: s.epoch, style: { animationDuration: (this.first ? hero_rotation_1.HERO_FIRST_DELAY : hero_rotation_1.HERO_INTERVAL) + 'ms' } })),
+                        s.loading !== null && (0, react_1.createElement)("span", { className: "v234-loading", role: "status" }, "G\u00F6rsel haz\u0131rlan\u0131yor\u2026"),
+                        s.status && (0, react_1.createElement)("span", { className: "v234-loading", role: "status" }, s.status)),
                     (0, react_1.createElement)("span", { className: "v6-hero-caption" }, scene.caption),
                     (0, react_1.createElement)("button", { className: "hero-down", "aria-label": "Bitirdi\u011Fimiz i\u015Flere kayd\u0131r", onClick: () => document.getElementById('bitirdigimiz-isler')?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }) },
                         (0, react_1.createElement)(ui_1.Icon, { name: "down" }))),
