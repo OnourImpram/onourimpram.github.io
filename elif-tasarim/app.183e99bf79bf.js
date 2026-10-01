@@ -4620,7 +4620,7 @@ const scenes = [
 class Home extends react_1.Component {
     constructor() {
         super(...arguments);
-        this.state = { scene: 0, desk: { ...desk_1.defaultDesk }, chapter: 0, paused: false, requested: [0, 1] };
+        this.state = { scene: 0, desk: { ...desk_1.defaultDesk }, chapter: 0, paused: false, requested: [0, 1], mode: 'idle', duration: 2200, cycle: 0, announcement: '', notice: '' };
         this.alive = false;
         this.serial = 0;
         this.hero = null;
@@ -4629,35 +4629,102 @@ class Home extends react_1.Component {
         this.hover = false;
         this.focus = false;
         this.motion = null;
-        this.reschedule = () => { this.serial++; window.clearInterval(this.timer); this.timer = undefined; if (this.state.paused || this.motion?.matches || document.hidden || !this.visible || this.hover || this.focus)
-            return; this.timer = window.setInterval(() => this.setScene((this.state.scene + 1) % scenes.length), 5000); };
+        this.hasAdvanced = false;
+        this.reschedule = () => {
+            const ticket = ++this.serial;
+            window.clearTimeout(this.timer);
+            this.timer = undefined;
+            const mode = this.motion?.matches ? 'reduced' : this.state.paused ? 'paused' : document.hidden ? 'hidden' : !this.visible ? 'offscreen' : this.focus ? 'focus' : this.hover ? 'hover' : 'running';
+            const duration = this.hasAdvanced ? 3200 : 2200;
+            this.setState(s => ({ mode, duration, cycle: s.cycle + 1 }), () => {
+                if (!this.alive || mode !== 'running' || ticket !== this.serial)
+                    return;
+                this.timer = window.setTimeout(() => { this.timer = undefined; if (ticket === this.serial)
+                    this.setScene((this.state.scene + 1) % scenes.length, false); }, duration);
+            });
+        };
         this.warm = (scene) => { const next = (scene + 1) % scenes.length; if (!this.state.requested.includes(next))
             this.setState(s => ({ requested: [...s.requested, next] })); };
-        this.setScene = (scene) => { const token = ++this.serial; this.setState(s => ({ requested: s.requested.includes(scene) ? s.requested : [...s.requested, scene] }), async () => { const img = this.hero?.querySelector('[data-slide="' + scene + '"] img'); if (!img)
-            return; try {
-            await img.decode();
-            if (!img.naturalWidth)
-                throw Error('not-ready');
-            if (this.alive && token === this.serial)
-                this.setState({ scene }, () => { this.warm(scene); this.reschedule(); });
-        }
-        catch {
-            if (this.alive && token === this.serial)
-                this.reschedule();
-        } }); };
+        this.setScene = (scene, manual = true) => {
+            const token = ++this.serial;
+            window.clearTimeout(this.timer);
+            this.timer = undefined;
+            return new Promise(resolve => this.setState(s => ({ requested: s.requested.includes(scene) ? s.requested : [...s.requested, scene], mode: 'loading', notice: '' }), async () => {
+                let timeout;
+                try {
+                    const img = this.hero?.querySelector('[data-slide="' + scene + '"] img');
+                    if (!img)
+                        throw Error('image-unavailable');
+                    await Promise.race([img.decode(), new Promise((_, reject) => { timeout = window.setTimeout(() => reject(Error('image-timeout')), 8000); })]);
+                    if (!img.naturalWidth)
+                        throw Error('image-empty');
+                    if (this.alive && token === this.serial) {
+                        this.hasAdvanced = true;
+                        this.setState({ scene, announcement: manual ? scenes[scene].label + ' sahnesi, ' + (scene + 1) + ' / 5.' : '' }, () => { this.warm(scene); this.reschedule(); });
+                    }
+                }
+                catch {
+                    if (this.alive && token === this.serial)
+                        this.setState({ paused: true, notice: 'Bu görsel yüklenemedi. Başka bir mekân seçebilirsiniz.', announcement: manual ? 'Görsel yüklenemedi. Önceki görsel korunuyor.' : '' }, this.reschedule);
+                }
+                finally {
+                    window.clearTimeout(timeout);
+                    resolve();
+                }
+            }));
+        };
+        this.onHeroFocus = (e) => { this.focus = true; if (e.target?.matches?.(':focus-visible'))
+            this.setState({ paused: true }, this.reschedule);
+        else
+            this.reschedule(); };
+        this.onHeroBlur = (e) => { if (!e.currentTarget.contains(e.relatedTarget)) {
+            this.focus = false;
+            this.reschedule();
+        } };
+        this.togglePlayback = () => {
+            if (this.motion?.matches)
+                return;
+            if (this.state.paused) {
+                this.focus = false;
+                this.hover = false;
+                this.setState({ paused: false, notice: '' }, this.reschedule);
+            }
+            else
+                this.setState({ paused: true }, this.reschedule);
+        };
     }
-    componentDidMount() { this.alive = true; this.motion = matchMedia('(prefers-reduced-motion: reduce)'); this.motion.addEventListener('change', this.reschedule); document.addEventListener('visibilitychange', this.reschedule); if (this.hero) {
-        this.observer = new IntersectionObserver(es => { this.visible = es[0].isIntersecting; this.reschedule(); });
-        this.observer.observe(this.hero);
-    } this.reschedule(); }
-    componentWillUnmount() { this.alive = false; this.serial++; window.clearInterval(this.timer); this.observer?.disconnect(); this.motion?.removeEventListener('change', this.reschedule); document.removeEventListener('visibilitychange', this.reschedule); }
+    componentDidMount() {
+        this.alive = true;
+        this.motion = matchMedia('(prefers-reduced-motion: reduce)');
+        this.motion.addEventListener('change', this.reschedule);
+        document.addEventListener('visibilitychange', this.reschedule);
+        if (this.hero) {
+            this.observer = new IntersectionObserver(es => { const visible = es[0].isIntersecting; if (visible !== this.visible) {
+                this.visible = visible;
+                this.reschedule();
+            } });
+            this.observer.observe(this.hero);
+        }
+        this.reschedule();
+    }
+    componentWillUnmount() { this.alive = false; this.serial++; window.clearTimeout(this.timer); this.observer?.disconnect(); this.motion?.removeEventListener('change', this.reschedule); document.removeEventListener('visibilitychange', this.reschedule); }
+    statusText() {
+        if (this.state.notice)
+            return this.state.notice;
+        if (this.state.mode === 'reduced')
+            return 'Hareket azaltma açık. Oklarla keşfedin.';
+        if (this.state.mode === 'loading')
+            return 'Sıradaki görsel hazırlanıyor…';
+        if (this.state.mode === 'paused')
+            return 'Duraklatıldı. Oklarla keşfedin.';
+        if (this.state.mode === 'hover' || this.state.mode === 'focus')
+            return 'Seçim sırasında geçiş bekletiliyor.';
+        return 'Otomatik seçki · Oklarla da gezebilirsiniz.';
+    }
     render() {
         const a = this.props, s = this.state, scene = scenes[s.scene];
         return (0, react_1.createElement)("div", { className: "v6-home" },
-            (0, react_1.createElement)("section", { className: "v6-hero v232-carousel", ref: el => this.hero = el, "aria-label": "Elif Tasar\u0131m a\u00E7\u0131l\u0131\u015F se\u00E7kisi", "aria-roledescription": "slayt g\u00F6sterisi", onMouseEnter: () => { this.hover = true; this.reschedule(); }, onMouseLeave: () => { this.hover = false; this.reschedule(); }, onFocusCapture: () => { this.focus = true; this.reschedule(); }, onBlurCapture: e => { if (!e.currentTarget.contains(e.relatedTarget)) {
-                    this.focus = false;
-                    this.reschedule();
-                } } },
+            (0, react_1.createElement)("section", { className: "v6-hero v232-carousel v234-carousel", ref: el => this.hero = el, "aria-label": "Elif Tasar\u0131m a\u00E7\u0131l\u0131\u015F se\u00E7kisi", "aria-roledescription": "slayt g\u00F6sterisi", "data-playback": s.mode, onFocusCapture: this.onHeroFocus, onBlurCapture: this.onHeroBlur },
                 scenes.map((sc, i) => (0, react_1.createElement)("div", { className: 'v6-hero-scene v232-scene' + (i === s.scene ? ' is-active' : ''), key: sc.image, "aria-hidden": i !== s.scene, "data-slide": i }, s.requested.includes(i) && (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: sc.image, alt: sc.alt, eager: true, priority: i === 0 ? 'high' : 'low', full: true, sizes: "100vw" }))),
                 (0, react_1.createElement)("div", { className: "v6-hero-shade" }),
                 (0, react_1.createElement)("div", { className: "wrap v6-hero-inner" },
@@ -4675,15 +4742,35 @@ class Home extends react_1.Component {
                         (0, react_1.createElement)(ui_1.ButtonLink, { to: "/projeler", navigate: a.navigate }, "Bitirdi\u011Fimiz i\u015Fleri ke\u015Ffedin"),
                         (0, react_1.createElement)(ui_1.TextLink, { to: "/modelini-getir", navigate: a.navigate, light: true }, "Kendi modelinizi getirin"))),
                 (0, react_1.createElement)("div", { className: "wrap v6-hero-bottom" },
-                    (0, react_1.createElement)("div", { className: "v6-scene-controls", role: "group", "aria-label": "A\u00E7\u0131l\u0131\u015F sahneleri" }, scenes.map((sc, i) => (0, react_1.createElement)("button", { key: sc.image, onClick: () => this.setScene(i), "aria-pressed": s.scene === i, "aria-label": String(i + 1).padStart(2, '0') + ' ' + sc.label + ' sahnesi' },
-                        (0, react_1.createElement)("span", null, String(i + 1).padStart(2, '0')),
-                        (0, react_1.createElement)("i", null),
-                        (0, react_1.createElement)("span", { className: "scene-word" }, sc.label)))),
-                    (0, react_1.createElement)("button", { type: "button", className: "v232-pause", "aria-label": s.paused ? 'Otomatik geçişi başlat' : 'Otomatik geçişi durdur', "aria-pressed": s.paused, onClick: () => this.setState({ paused: !s.paused }, this.reschedule) }, s.paused ? 'Oynat' : 'Duraklat'),
+                    (0, react_1.createElement)("div", { className: "hero-sequence", onMouseEnter: () => { this.hover = true; this.reschedule(); }, onMouseLeave: () => { this.hover = false; this.reschedule(); } },
+                        (0, react_1.createElement)("div", { className: "hero-sequence-head" },
+                            (0, react_1.createElement)("div", null,
+                                (0, react_1.createElement)("span", { className: "hero-sequence-label" }, "BE\u015E MEK\u00C2NLIK KONSEPT SE\u00C7K\u0130S\u0130"),
+                                (0, react_1.createElement)("span", { className: "hero-sequence-position" },
+                                    scene.label,
+                                    (0, react_1.createElement)("small", null,
+                                        String(s.scene + 1).padStart(2, '0'),
+                                        " / 05"))),
+                            (0, react_1.createElement)("div", { className: "hero-sequence-actions" },
+                                (0, react_1.createElement)("button", { type: "button", className: "v232-pause", "aria-label": s.paused ? 'Otomatik geçişi başlat' : 'Otomatik geçişi durdur', "aria-pressed": s.paused, disabled: s.mode === 'reduced', title: s.mode === 'reduced' ? 'Sisteminizin hareket azaltma tercihi açık' : undefined, onClick: this.togglePlayback }, s.mode === 'reduced' ? 'Sabit' : s.paused ? 'Oynat' : 'Duraklat'),
+                                (0, react_1.createElement)("button", { type: "button", className: "hero-sequence-arrow", "aria-label": "\u00D6nceki mek\u00E2n", onClick: () => this.setScene((s.scene + 4) % 5) },
+                                    (0, react_1.createElement)(ui_1.Icon, { name: "arrow" })),
+                                (0, react_1.createElement)("button", { type: "button", className: "hero-sequence-arrow", "aria-label": "Sonraki mek\u00E2n", onClick: () => this.setScene((s.scene + 1) % 5) },
+                                    (0, react_1.createElement)(ui_1.Icon, { name: "arrow" })))),
+                        (0, react_1.createElement)("div", { className: "v6-scene-controls", role: "group", "aria-label": "A\u00E7\u0131l\u0131\u015F sahneleri" }, scenes.map((sc, i) => (0, react_1.createElement)("button", { type: "button", key: sc.image, onClick: () => this.setScene(i), "aria-pressed": s.scene === i, "aria-label": String(i + 1).padStart(2, '0') + ' ' + sc.label + ' sahnesi' },
+                            (0, react_1.createElement)("span", { className: "hero-sequence-choice" },
+                                (0, react_1.createElement)("span", null, String(i + 1).padStart(2, '0')),
+                                (0, react_1.createElement)("span", { className: "scene-word" }, sc.label)),
+                            (0, react_1.createElement)("i", { "aria-hidden": "true" },
+                                (0, react_1.createElement)("span", { key: s.cycle + '-' + i, className: "hero-sequence-progress", style: { animationDuration: s.duration + 'ms' } }))))),
+                        (0, react_1.createElement)("p", { className: "hero-sequence-status" },
+                            (0, react_1.createElement)("span", { "aria-hidden": "true" }),
+                            this.statusText())),
                     (0, react_1.createElement)("span", { className: "v6-hero-caption" }, scene.caption),
                     (0, react_1.createElement)("button", { className: "hero-down", "aria-label": "Bitirdi\u011Fimiz i\u015Flere kayd\u0131r", onClick: () => document.getElementById('bitirdigimiz-isler')?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }) },
                         (0, react_1.createElement)(ui_1.Icon, { name: "down" }))),
-                (0, react_1.createElement)("span", { className: "hero-source" }, scene.kind === 'concept' ? 'KONSEPT MODEL' : 'GERÇEK ÇALIŞMA FOTOĞRAFI / ATÖLYE ARŞİVİ')),
+                (0, react_1.createElement)("span", { className: "hero-source" }, "KONSEPT MODEL"),
+                (0, react_1.createElement)("span", { className: "sr-only", role: "status", "aria-live": "polite", "aria-atomic": "true" }, s.announcement)),
             (0, react_1.createElement)("section", { id: "bitirdigimiz-isler", className: "wrap v6-section home-works" },
                 (0, react_1.createElement)("div", { className: "v6-heading" },
                     (0, react_1.createElement)("div", null,
