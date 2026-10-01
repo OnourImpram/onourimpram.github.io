@@ -1,0 +1,43 @@
+name: Elif media transfer check
+on:
+  push:
+    branches: [elif-v23-unified-studio-20261001]
+    paths: ['.github/workflows/elif-media-transfer-check.yml']
+permissions:
+  contents: write
+jobs:
+  transfer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch authorised archive
+        env:
+          MEDIA_URL: 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-3400-820a-b954-34531731e0f1/raw?se=2026-10-01T09%3A43%3A23Z&sp=r&sv=2026-02-06&sr=b&scid=077dd122-54d3-5702-ab28-a59e68bb70aa&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-01T06%3A14%3A25Z&ske=2026-10-02T06%3A14%3A25Z&sks=b&skv=2026-02-06&sig=Hhs6FnIVTqDm26IjY8fwRKuP1Yv3N2N25LHzdJ3S3UY%3D'
+        run: |
+          python - <<'PY'
+          import os,urllib.request,urllib.error,hashlib,zipfile,io
+          from pathlib import Path
+          try:
+            request=urllib.request.Request(os.environ['MEDIA_URL'],headers={'User-Agent':'Mozilla/5.0','Accept':'application/octet-stream'})
+            data=urllib.request.urlopen(request,timeout=35).read()
+          except urllib.error.HTTPError as e:
+            print('HTTP',e.code,'Date',e.headers.get('Date'));print(e.read().decode('utf-8','replace')[:3000]);raise SystemExit(1)
+          assert hashlib.sha256(data).hexdigest()=='a7b2ce0c8ff0a75a2c6ccae6403bf130b735f5325fbbf58e56e04650b9c707c9'
+          allowed={'r%02d-full.webp'%i for i in [3,11,16,17,20,21,24,25,26]}
+          z=zipfile.ZipFile(io.BytesIO(data));assert set(z.namelist())==allowed
+          target=Path('elif-tasarim/source-v12/public/assets')
+          for name in sorted(allowed):
+            p=target/name;assert not p.exists()
+            body=z.read(name);assert body[:4]==b'RIFF' and body[8:12]==b'WEBP';p.write_bytes(body)
+          print('Verified original transfer',len(data))
+          PY
+      - name: Preserve exact source photos
+        run: |
+          set -euo pipefail
+          git add elif-tasarim/source-v12/public/assets/r*-full.webp
+          test "$(git diff --cached --name-only | wc -l)" = 9
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'feat(elif): preserve all nine newly supplied original portfolio derivatives'
+          git push origin HEAD:elif-v23-unified-studio-20261001
