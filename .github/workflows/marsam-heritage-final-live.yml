@@ -1,0 +1,127 @@
+name: Confirm live MARSAM heritage delivery
+on:
+  push:
+    branches: [publish/marsam-heritage-06]
+    paths: [.github/workflows/marsam-heritage-final-live.yml]
+permissions:
+  contents: read
+env:
+  SOURCE_COMMIT: 038506a0313509437ba038043188f3aa0c398cb6
+  HOST_COMMIT: 7a15cd6d9daec45a81a60b1669bbad24b81a789f
+  BASE_PATH: /MARSAM/
+  PAGES_PREVIEW: 'true'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: ${{ env.SOURCE_COMMIT }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify the exact source and both deployment paths
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$SOURCE_COMMIT"
+          mkdir -p verification
+          BASE_PATH=/ npm run check > verification/heritage-final-root.log
+          npm run check > verification/heritage-final-pages.log
+          git archive HEAD --format=zip -o verification/heritage-final-source.zip
+      - name: Install the browser without changing the application
+        timeout-minutes: 3
+        run: |
+          python -m pip install --timeout 25 -q playwright==1.57.0
+          python -m playwright install chromium
+      - name: Install script coverage on the test host, not in distributed files
+        timeout-minutes: 3
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.local/share/fonts/marsam-test"
+          for family in Serif Sans; do
+            curl --fail --location --retry 2 --connect-timeout 15 --max-time 75 "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/$family/OTF/SimplifiedChinese/Noto${family}CJKsc-Regular.otf" -o "$HOME/.local/share/fonts/marsam-test/Noto${family}CJKsc-Regular.otf"
+          done
+          fc-cache -f
+          fc-match 'Noto Serif CJK SC' > verification/heritage-final-font-environment.txt
+          fc-match 'Noto Sans CJK SC' >> verification/heritage-final-font-environment.txt
+          test "$(grep -c CJK verification/heritage-final-font-environment.txt)" = 2
+          test "$(git hash-object "$HOME/.local/share/fonts/marsam-test/NotoSerifCJKsc-Regular.otf")" = cba8a4783cc38574ac7cda52cae7d9b4241c07a5
+      - name: Require the exact public release and validate its served bytes
+        run: |
+          python - <<'PY'
+          from urllib.request import urlopen,Request
+          from concurrent.futures import ThreadPoolExecutor
+          from pathlib import Path
+          import json,hashlib,os,time
+          root='https://onourimpram.github.io/MARSAM/'
+          for attempt in range(60):
+              try:
+                  with urlopen(root+'release.json?verify=heritage-final',timeout=20) as r:m=json.load(r)
+                  if m.get('sourceCommit')==os.environ['SOURCE_COMMIT']:break
+              except Exception:pass
+              time.sleep(4)
+          else:raise AssertionError('Expected MARSAM release is not publicly served')
+          assert m['release']=='marsam-heritage-0.6.0' and m['mode']=='institutional-review' and m['formalApproval'] is False
+          assert not any(p.endswith(('.ttf','.otf','.woff','.woff2','.ttc'))for p in m['files'])
+          Path('verification/heritage-final-release.json').write_text(json.dumps(m,ensure_ascii=False,indent=2))
+          def check(item):
+              path,info=item
+              for retry in range(3):
+                  try:
+                      with urlopen(Request(root+path+'?verify=heritage-final',headers={'User-Agent':'MARSAM-delivery-verification'}),timeout=25)as r:data=r.read();assert r.status==200
+                      assert hashlib.sha256(data).hexdigest()==info['sha256'],path
+                      return path
+                  except Exception:
+                      if retry==2:raise
+                      time.sleep(2)
+          with ThreadPoolExecutor(max_workers=8)as pool:paths=list(pool.map(check,[(p,v)for p,v in m['files'].items()if p not in {'.nojekyll','_headers'}]))
+          for path in ['heritage.css','heritage.js','tr/index.html']:
+              for retry in range(30):
+                  data=urlopen(root+path,timeout=20).read()
+                  if hashlib.sha256(data).hexdigest()==m['files'][path]['sha256']:break
+                  time.sleep(3)
+              assert hashlib.sha256(data).hexdigest()==m['files'][path]['sha256'],path
+          Path('verification/heritage-final-bytes.json').write_text(json.dumps({'passed':True,'sourceCommit':m['sourceCommit'],'checkedFiles':len(paths),'unqueriedAssetsMatch':True},indent=2))
+          PY
+      - name: Exercise real public design, eight scripts and bibliographic downloads
+        env:
+          PREVIEW_ORIGIN: https://onourimpram.github.io
+        run: python tests/heritage_e2e.py
+      - name: Verify public core workflows and unrelated-site preservation
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          from pathlib import Path
+          import json,subprocess,os
+          root='https://onourimpram.github.io/MARSAM/';checks=[]
+          with sync_playwright()as p:
+              b=p.chromium.launch();c=b.new_context(accept_downloads=True,viewport={'width':1440,'height':1000});page=c.new_page()
+              page.goto(root+'tr/search/',wait_until='networkidle');page.locator('#page-search').fill('maneviyat');page.wait_for_selector('[data-search-results] .search-result');checks.append('public search')
+              page.goto(root+'tr/dossier/theory-and-integration/',wait_until='networkidle');page.locator('[data-save]').click();page.reload(wait_until='networkidle');assert page.locator('[data-save]').get_attribute('aria-pressed')=='true';checks.append('persistent reading list')
+              page.goto(root+'tr/compare/?ids=theories-book,three-waves',wait_until='networkidle');page.wait_for_selector('.comparison-table')
+              with page.expect_download()as d:page.locator('[data-comparison-export]').click()
+              assert len(json.loads(Path(d.value.path()).read_text())['items'])==2;checks.append('native comparison export')
+              c.close();b.close()
+          def tree(ref):return json.loads(subprocess.check_output(['gh','api',f'repos/OnourImpram/onourimpram.github.io/git/trees/{ref}']))['tree']
+          before={x['path']:x['sha'] for x in tree('22964095d8280c1c97499a88afacebbe0ffb9eac')if x['path']!='MARSAM'}
+          after={x['path']:x['sha'] for x in tree(os.environ['HOST_COMMIT'])if x['path']!='MARSAM'}
+          assert before==after
+          Path('verification/heritage-final-core.json').write_text(json.dumps({'passed':True,'checks':checks,'unrelatedRootEntriesUnchanged':before,'hostCommit':os.environ['HOST_COMMIT']},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-heritage-final-live
+          path: |
+            verification/heritage-final-*
+            verification/heritage-browser.json
+            .browser-results/heritage/
+          include-hidden-files: true
+          retention-days: 7
