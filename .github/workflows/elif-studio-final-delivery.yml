@@ -1,0 +1,115 @@
+name: Elif single studio final delivery
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/elif-studio-final-delivery.yml']
+permissions:
+  contents: read
+jobs:
+  finish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: elif-tasarim/source-v12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cbb8d79194cd9d95208902574b2e81fdeb0faadb
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Recheck unchanged source and exact public bytes
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/unified-close
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build | tee evidence/unified-close/build.txt
+          npm test | tee evidence/unified-close/unit.txt
+          npm run typecheck:core | tee evidence/unified-close/types.txt
+          npm run verify:dist | tee evidence/unified-close/integrity.txt
+          cmp dist/release-v23.json ../release-v23.json
+          BASE_URL=https://onourimpram.github.io/elif-tasarim/ EVIDENCE_DIR=evidence/unified-close/public python tests/v11/public_verify.py
+      - name: Install isolated browser tooling
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Check painted public content and distinguish native requests from the one explicit retry
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          import json
+          BASE='https://onourimpram.github.io/elif-tasarim/'
+          out=Path('evidence/unified-close/painted');out.mkdir(parents=True,exist_ok=True)
+          result={'base':BASE,'checks':[],'functionalRun':36848267019,'limits':['Isolated Chromium','No message delivery','No physical AR test']}
+          def note(name):
+            result['checks'].append({'name':name,'pass':True});(out/'results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));print('PASS',name,flush=True)
+          with sync_playwright() as p:
+            browser=p.chromium.launch(headless=True,args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
+            context=browser.new_context(viewport={'width':1440,'height':1000},reduced_motion='reduce');page=context.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+            def ready(path):
+              page.goto(BASE+path,wait_until='domcontentloaded',timeout=60000);page.wait_for_selector('html[data-app-ready="true"]',timeout=30000)
+            def capture(selector,name):
+              block=page.locator(selector);block.scroll_into_view_if_needed()
+              block.evaluate("async e=>{await Promise.all([...e.querySelectorAll('img')].map(i=>i.decode()));await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}")
+              page.wait_for_timeout(120);block.screenshot(path=str(out/name))
+            ready('tasarim-masasi/');page.wait_for_selector('[data-three-status=ready]',timeout=120000)
+            assert page.locator('main h1').count()==1 and page.get_by_role('navigation',name='Ana gezinme').get_by_role('link',name='3D Stüdyo',exact=True).count()==1
+            assert page.locator('a[href*="/devir-01"]').count()==0
+            capture('#studio-deneyimi','studio-desktop.png');capture('#studio-baslangic','presets-desktop.png');capture('#studio-detay','details-desktop.png')
+            note('Actual scene, preset renders and explanation remain in one canonical studio')
+            page.set_viewport_size({'width':390,'height':844});capture('#studio-baslangic','presets-mobile.png');assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
+            ready('proje/ahsap-bahce-kamelyasi/');capture('.work-detail-media','pergola-gallery-mobile.png');note('Real multi-angle workshop gallery renders on mobile')
+            page.set_viewport_size({'width':1440,'height':1000});ready('');capture('.v6-hero','home-desktop.png')
+            assert not errors,errors;context.close()
+            context=browser.new_context(viewport={'width':1280,'height':900});context.route('**/config.*.js',lambda route:route.abort());page=context.new_page();ready('tasarim-masasi/');page.wait_for_selector('.studio-preset-grid img',timeout=15000)
+            assert page.locator('.missing-page').count()==0 and page.evaluate("window.__ELIF_BASE__==='/elif-tasarim'")
+            page.wait_for_function("()=>[...document.querySelectorAll('.studio-guide img')].every(i=>i.complete&&i.naturalWidth>0)",timeout=15000)
+            note('Blocked registry recovers the correct studio route and real guide media');context.close()
+            attempts=[];context=browser.new_context(viewport={'width':390,'height':844})
+            def fail(route):attempts.append(route.request.url);route.abort()
+            context.route('**/assets/devir-odak-v23.webp*',fail);page=context.new_page();ready('tasarim-masasi/')
+            page.wait_for_selector('.studio-preset-grid .image-unavailable',timeout=15000)
+            initial=sum('elif-image-retry=1' not in u for u in attempts)
+            retry=sum('elif-image-retry=1' in u for u in attempts)
+            assert 1<=initial<=2 and retry==1,attempts
+            observed=attempts[:];page.wait_for_timeout(500);assert attempts==observed,attempts
+            assert page.locator('.studio-preset-grid>a').count()==3 and page.locator('.studio-preset-grid .image-unavailable').count()==1
+            assert page.locator('.studio-preset-grid>a').first.get_attribute('href').startswith('/elif-tasarim/tasarim-masasi/')
+            result['requestAccounting']={'nativeAndHydratedRequests':initial,'explicitRetries':retry,'stableAfterMilliseconds':500}
+            note('One explicit image retry, no loop, readable failure state and three working configuration links')
+            context.close();browser.close()
+          PY
+      - name: Confirm protected personal root and package the exact verified release
+        run: |
+          set -euo pipefail
+          test "$(git hash-object ../../index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile,shutil,subprocess,json
+          root=Path('.');target=Path('delivery-public');target.mkdir(exist_ok=True)
+          exclude={'.git','node_modules','dist','preview','evidence','.compiled','__pycache__','delivery-public','delivery-unified'}
+          for name,folder,prefix in [('Elif_Tasarim_V23_1_Kaynak.zip',root,'source'),('Elif_Tasarim_V23_1_Yayin.zip',root/'dist','elif-tasarim')]:
+            with zipfile.ZipFile(target/name,'w',zipfile.ZIP_DEFLATED) as z:
+              for p in folder.rglob('*'):
+                rel=p.relative_to(folder)
+                if not p.is_file() or (folder==root and set(rel.parts)&exclude):continue
+                assert p.suffix.lower() not in {'.woff','.woff2','.ttf','.otf','.eot'}
+                z.write(p,Path(prefix)/rel)
+          shutil.copyfile('preview/Elif_Tasarim.html',target/'Elif_Tasarim_V23_1.html')
+          (target/'publication-commit.txt').write_text(subprocess.check_output(['git','rev-parse','HEAD'],text=True))
+          Path('evidence/unified-close/scope.json').write_text(json.dumps({'sourceCommit':'cbb8d79194cd9d95208902574b2e81fdeb0faadb','earlierFunctionalLiveRun':36848267019,'candidateFullExportsRun':36847196580,'thisRun':'fresh build, unit, public hashes, painted sections and request-failure accounting','runtimeChanged':False,'rootUnchanged':True},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-studio-final-evidence
+          path: elif-tasarim/source-v12/evidence/unified-close
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elif-studio-final-delivery
+          path: elif-tasarim/source-v12/delivery-public
+          retention-days: 14
