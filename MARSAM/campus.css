@@ -18,3 +18,39 @@ body{background:#fff}.wide{width:min(1320px,calc(100% - 104px))}h1,h2{font-famil
 
 /* Text-range overflow confirmed in German/Russian network headings at 320px. */
 .section-heading h2{overflow-wrap:anywhere;hyphens:auto}
+
+/* 0.4. Institutional scope. The centre's remit, not a research question, leads. */
+.centre-hero .campus-hero-grid{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:96px;padding-block:64px 68px}
+.centre-hero.campus-hero h1{font-size:clamp(2.4rem,4.1vw,3.85rem);line-height:1.13;max-width:760px;overflow-wrap:break-word;hyphens:auto;font-weight:500}
+.centre-hero .campus-hero-copy>p{font-size:.97rem;max-width:665px;line-height:1.85}
+.centre-pillars{border-top:1px solid #7598b3;min-width:0}
+.centre-pillars>a{display:flex;gap:20px;align-items:center;padding:27px 0;border-bottom:1px solid #7598b3;color:white}
+.centre-pillars>a:hover{color:#e7d7b8}
+.centre-pillars .pillar-no{font:1rem/1.4 Georgia,serif;color:#d1b888;align-self:start;margin-top:5px}
+.centre-pillars h2{font-size:1.55rem;letter-spacing:-.02em;color:inherit;margin:0 0 7px}
+.centre-pillars p{font-size:.79rem;line-height:1.65;color:#d7e5f1;margin:0}
+.centre-pillars>a>div{flex:1;min-width:0}.centre-pillars>a>.icon{width:19px}
+.centre-introduction{display:grid;grid-template-columns:1fr 1.4fr;gap:90px;align-items:start}
+.centre-introduction h2{font-size:2.35rem;line-height:1.3;overflow-wrap:anywhere}
+.centre-introduction p{font-size:.96rem;line-height:1.9;max-width:760px}
+.centre-updates{display:grid;grid-template-columns:1fr 1fr;gap:65px;border-top:1px solid var(--line)}
+.centre-updates h2{font-size:1.85rem}.centre-updates p{font-size:.86rem;color:var(--muted)}
+.centre-empty{max-width:800px;padding:32px;background:var(--sheet);border-inline-start:3px solid var(--ink)}
+.centre-empty p{font-size:1rem;line-height:1.85;margin-bottom:22px}
+.centre-publications .source-card{padding-block:27px 51px}
+.centre-hero .hero-actions{gap:26px}
+.centre-hero .hero-actions .text-link{max-width:260px}
+:lang(ar) .centre-hero.campus-hero h1{font-size:3rem;letter-spacing:0;line-height:1.5}
+:lang(zh-Hans) .centre-hero.campus-hero h1{letter-spacing:.02em;line-height:1.45}
+@media(max-width:1000px){.centre-hero .campus-hero-grid{gap:40px;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}.centre-introduction{gap:40px}.centre-pillars h2{font-size:1.35rem}.centre-pillars>a{gap:14px}.centre-hero.campus-hero h1{font-size:2.8rem}}
+@media(max-width:700px){.centre-hero .campus-hero-grid{display:block;padding-block:35px 37px}.centre-hero.campus-hero h1{font-size:2.55rem;line-height:1.17;overflow-wrap:anywhere}.centre-pillars{margin-top:35px}.centre-pillars>a{padding-block:20px}.centre-introduction{display:block}.centre-introduction h2{font-size:1.9rem}.centre-introduction p{font-size:.9rem}.centre-updates{display:block}.centre-updates>div+div{margin-top:35px}.centre-empty{padding:23px}.centre-hero .campus-hero-copy>p{font-size:.87rem}:lang(ar) .centre-hero.campus-hero h1{font-size:2.45rem;line-height:1.5}:lang(zh-Hans) .centre-hero.campus-hero h1{font-size:2.25rem;line-height:1.4}}
+@media print{.centre-pillars{display:none}.centre-introduction,.centre-updates{display:block}.centre-hero .campus-hero-grid{display:block}}
+
+/* The German cards exceeded their min-content track at 320px. Russian education
+   headings painted beyond the content width. Wrap the text, never mask the page. */
+.theme-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.theme-tile,.portal-introduction>div,.audience-routes>a>div{min-width:0}
+.theme-tile{overflow-wrap:anywhere}
+body[data-campus] main h2,body[data-campus] main h3{overflow-wrap:anywhere;hyphens:auto}
+@media(max-width:850px){.theme-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.theme-grid{grid-template-columns:minmax(0,1fr)}}
