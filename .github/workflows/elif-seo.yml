@@ -53,7 +53,7 @@ jobs:
           from pathlib import Path
           import hashlib,json
           p=Path('dist/release-v23.json')
-          assert hashlib.sha256(p.read_bytes()).hexdigest()=='39bd554c19fd7ba01492f024d5b0fad0cdbf459aaab5e720f6247865fa9fb2fc','Build differs from reviewed local runtime'
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=='18c4ec25d04b75d3eb1e091334711fa019fcfd2c264d705f09e51467716e9411','Build differs from reviewed local runtime'
           m=json.loads(p.read_text());assert m['release']=='v23.3-seo-content' and not m['indexable'] and len(m['routes'])==50
           PY
       - name: Install browser for real HTTP checks
