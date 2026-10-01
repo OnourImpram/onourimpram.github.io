@@ -12,11 +12,14 @@ with sync_playwright()as p:
  page=browser.new_page(viewport={'width':1440,'height':1000});page.set_default_timeout(30000);page.emulate_media(reduced_motion='reduce');errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
  try:
   
-  if B:page.goto(B+'devir-01/',wait_until='domcontentloaded',timeout=60000)
+  if B:page.goto(B+'tasarim-masasi/',wait_until='domcontentloaded',timeout=60000)
   else:
-   page.set_content((R/'preview/Elif_Tasarim.html').read_text(),wait_until='domcontentloaded',timeout=60000);page.evaluate('location.hash="#/devir-01"');page.wait_for_timeout(150)
-  assert page.locator('h1').count()==1;assert page.locator('canvas').count()==0;assert page.locator('.v20-start-grid>a').count()==3;page.evaluate("async()=>{document.querySelectorAll('img').forEach(i=>i.loading='eager');await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})))}");page.screenshot(path=str(O/'devir-product-desktop.png'),full_page=True);rec('01. Editorial product page, three real starting configurations, no eager WebGL')
-  page.locator('.v20-start-grid>a').first.click();page.wait_for_selector('[data-three-status=ready]',timeout=120000)
+   page.set_content((R/'preview/Elif_Tasarim.html').read_text(),wait_until='domcontentloaded',timeout=60000);page.evaluate('location.hash="#/tasarim-masasi"');page.wait_for_timeout(150)
+  page.wait_for_selector('[data-three-status=ready]',timeout=120000)
+  assert page.locator('main h1').count()==1;assert page.locator('.v8-canvas-host canvas').count()==1;assert page.locator('.studio-preset-grid>a').count()==3
+  page.evaluate("async()=>{document.querySelectorAll('img').forEach(i=>i.loading='eager');await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})))}")
+  page.screenshot(path=str(O/'unified-studio-desktop.png'),full_page=True);rec('01. One 3D studio contains the actual scene and all three starting configurations')
+  page.locator('.studio-preset-grid>a').first.click();page.wait_for_selector('[data-three-status=ready]',timeout=120000)
   inspect=lambda:page.evaluate("document.querySelector('.v8-canvas-host').__elif3D.inspect()")
   assert inspect()['config']['width']==160 and inspect()['config']['material']=='mese';rec('02. Starting choice reaches actual geometry')
   page.get_by_role('tab',name='Ölçü',exact=True).click();inp=page.get_by_role('spinbutton',name='Masa eni, sayı girişi',exact=True);inp.fill('203');inp.press('Tab');assert inspect()['config']['width']==203
