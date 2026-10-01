@@ -1,0 +1,20 @@
+ <section className="v6-hero v232-carousel v234-carousel" ref={el=>this.hero=el} aria-label="Elif Tasarım açılış seçkisi" aria-roledescription="slayt gösterisi" data-playback={s.mode} onFocusCapture={this.onHeroFocus} onBlurCapture={this.onHeroBlur}>
+  {scenes.map((sc,i)=><div className={'v6-hero-scene v232-scene'+(i===s.scene?' is-active':'')} key={sc.image} aria-hidden={i!==s.scene} data-slide={i}>{s.requested.includes(i)&&<VImage asset={sc.image} alt={sc.alt} eager priority={i===0?'high':'low'} full sizes="100vw"/>}</div>)}
+  <div className="v6-hero-shade"/>
+  <div className="wrap v6-hero-inner"><Eyebrow>İSTANBUL / EL YAPIMI MOBİLYA ATÖLYESİ</Eyebrow><h1>Zamana değer<br/>{" "}<em>katan mobilyalar.</em></h1><p>İstanbul’daki aile atölyemizden, yaşam alanınıza.<br/>Ölçünüze ve ihtiyacınıza göre, doğrudan ustasıyla.</p><div className="v6-hero-actions"><ButtonLink to="/projeler" navigate={a.navigate}>Bitirdiğimiz işleri keşfedin</ButtonLink><TextLink to="/modelini-getir" navigate={a.navigate} light>Kendi modelinizi getirin</TextLink></div></div>
+  <div className="wrap v6-hero-bottom">
+   <div className="hero-sequence" onMouseEnter={()=>{this.hover=true;this.reschedule()}} onMouseLeave={()=>{this.hover=false;this.reschedule()}}>
+    <div className="hero-sequence-head"><div><span className="hero-sequence-label">BEŞ MEKÂNLIK KONSEPT SEÇKİSİ</span><span className="hero-sequence-position">{scene.label}<small>{String(s.scene+1).padStart(2,'0')} / 05</small></span></div>
+     <div className="hero-sequence-actions">
+      <button type="button" className="v232-pause" aria-label={s.paused?'Otomatik geçişi başlat':'Otomatik geçişi durdur'} aria-pressed={s.paused} disabled={s.mode==='reduced'} title={s.mode==='reduced'?'Sisteminizin hareket azaltma tercihi açık':undefined} onClick={this.togglePlayback}>{s.mode==='reduced'?'Sabit':s.paused?'Oynat':'Duraklat'}</button>
+      <button type="button" className="hero-sequence-arrow" aria-label="Önceki mekân" onClick={()=>this.setScene((s.scene+4)%5)}><Icon name="arrow"/></button>
+      <button type="button" className="hero-sequence-arrow" aria-label="Sonraki mekân" onClick={()=>this.setScene((s.scene+1)%5)}><Icon name="arrow"/></button>
+     </div>
+    </div>
+    <div className="v6-scene-controls" role="group" aria-label="Açılış sahneleri">{scenes.map((sc,i)=><button type="button" key={sc.image} onClick={()=>this.setScene(i)} aria-pressed={s.scene===i} aria-label={String(i+1).padStart(2,'0')+' '+sc.label+' sahnesi'}><span className="hero-sequence-choice"><span>{String(i+1).padStart(2,'0')}</span><span className="scene-word">{sc.label}</span></span><i aria-hidden="true"><span key={s.cycle+'-'+i} className="hero-sequence-progress" style={{animationDuration:s.duration+'ms'}}/></i></button>)}</div>
+    <p className="hero-sequence-status"><span aria-hidden="true"/>{this.statusText()}</p>
+   </div>
+   <span className="v6-hero-caption">{scene.caption}</span><button className="hero-down" aria-label="Bitirdiğimiz işlere kaydır" onClick={()=>document.getElementById('bitirdigimiz-isler')?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant' as ScrollBehavior:'smooth'})}><Icon name="down"/></button>
+  </div>
+  <span className="hero-source">KONSEPT MODEL</span><span className="sr-only" role="status" aria-live="polite" aria-atomic="true">{s.announcement}</span>
+ </section>
