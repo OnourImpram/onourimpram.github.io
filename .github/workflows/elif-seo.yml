@@ -1,0 +1,153 @@
+name: Elif SEO content and verified publication
+on:
+  push:
+    branches: [elif-seo-20261001]
+    paths:
+      - '.github/workflows/elif-seo.yml'
+      - '.github/elif-seo/**'
+      - 'elif-tasarim/source-v12/tests/seo/**'
+permissions:
+  contents: write
+concurrency:
+  group: elif-seo-publication
+  cancel-in-progress: false
+jobs:
+  verify-stage-live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: elif-tasarim/source-v12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Guard the approved baseline and apply source updates
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = '72923f20ee73011178b57fe1703b841e997ec562'
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+          baseline='72923f20ee73011178b57fe1703b841e997ec562'
+          names=['package.json','package-lock.json','src/App.tsx','src/components/PortfolioUI.tsx','src/lib/routes.ts','src/pages/Home.tsx','src/pages/Portfolio.tsx','src/pages/BringModel.tsx','tools/build-v23.cjs']
+          for name in names:
+            expected=subprocess.check_output(['git','show',baseline+':elif-tasarim/source-v12/'+name])
+            assert Path(name).read_bytes()==expected,('Source baseline changed',name)
+          PY
+          python ../../.github/elif-seo/apply.py
+          mkdir -p evidence/seo
+      - name: Clean build, source tests and core type checks
+        run: |
+          set -euo pipefail
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build | tee evidence/seo/build.txt
+          npm test | tee evidence/seo/unit.txt
+          npm run typecheck:core | tee evidence/seo/types.txt
+          npm run verify:dist | tee evidence/seo/integrity.txt
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          p=Path('dist/release-v23.json')
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=='39bd554c19fd7ba01492f024d5b0fad0cdbf459aaab5e720f6247865fa9fb2fc','Build differs from reviewed local runtime'
+          m=json.loads(p.read_text());assert m['release']=='v23.3-seo-content' and not m['indexable'] and len(m['routes'])==50
+          PY
+      - name: Install browser for real HTTP checks
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Start isolated site server
+        run: |
+          node tools/serve-static.cjs dist 8000 > /tmp/elif-seo-server.log 2>&1 &
+          for i in {1..15}; do curl -fsS http://127.0.0.1:8000/elif-tasarim/release-v23.json >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: SEO, decoded-image transitions and optional service preparation
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+          EVIDENCE_DIR: evidence/seo/stage
+        run: python tests/seo/browser.py
+      - name: Preserve carousel, direct model interaction and customer contact
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/seo/interaction python tests/v23-interaction/browser.py
+          EVIDENCE_DIR=evidence/seo/contact xvfb-run -a python tests/v22/acceptance.py
+          EVIDENCE_DIR=evidence/seo/orbit xvfb-run -a python tests/v12/acceptance.py
+      - name: Preserve all route and responsive layouts
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+          EVIDENCE_DIR: evidence/seo/matrix
+        run: python tests/v11/matrix.py
+      - name: Stage the checked source and runtime without publishing main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = '72923f20ee73011178b57fe1703b841e997ec562'
+          P=/tmp/elif-seo-approved
+          git worktree add --detach "$P" origin/main
+          test "$(git -C "$P" hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          rsync -a --delete --exclude=source-v12 dist/ "$P/elif-tasarim/"
+          rsync -a --delete --exclude=node_modules --exclude=dist --exclude=preview --exclude=evidence --exclude=.compiled --exclude=.git --exclude=__pycache__ ./ "$P/elif-tasarim/source-v12/"
+          git -C "$P" add -- elif-tasarim
+          git -C "$P" diff --cached --name-only > evidence/seo/published-paths.txt
+          python - <<'PY'
+          from pathlib import Path
+          names=Path('evidence/seo/published-paths.txt').read_text().splitlines()
+          assert names and all(n.startswith('elif-tasarim/') for n in names)
+          PY
+          git -C "$P" -c user.name='Onour Impram' -c user.email='onuribram@outlook.com' commit -m 'Elif V23.3: prioritize hero, enrich existing services and unify SEO metadata'
+          git -C "$P" rev-parse HEAD > evidence/seo/publication-commit.txt
+          git -C "$P" push origin "HEAD:refs/heads/elif-seo-ready-$GITHUB_RUN_ID"
+      - name: Wait for authorized Pages publication of the exact candidate
+        run: |
+          for i in {1..120}; do
+            curl -fsS "https://onourimpram.github.io/elif-tasarim/release-v23.json?verify=$GITHUB_RUN_ID" -o /tmp/elif-seo-live.json || true
+            if cmp -s dist/release-v23.json /tmp/elif-seo-live.json; then exit 0; fi
+            sleep 5
+          done
+          echo 'Candidate is staged but exact live release not confirmed.' >&2
+          exit 1
+      - name: Verify every public file and route
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+          EVIDENCE_DIR: evidence/seo/public
+        run: python tests/v11/public_verify.py
+      - name: Repeat SEO and direct interaction checks on the public site
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/seo/live python tests/seo/browser.py
+          EVIDENCE_DIR=evidence/seo/live-interaction python tests/v23-interaction/browser.py
+      - name: Package exact delivered files
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile,shutil
+          root=Path('.');out=Path('delivery-seo');out.mkdir(exist_ok=True)
+          omit={'.git','node_modules','dist','preview','evidence','.compiled','__pycache__','delivery-seo'}
+          for filename,folder,prefix in [('Elif_Tasarim_SEO_Kaynak.zip',root,'source'),('Elif_Tasarim_SEO_Yayin.zip',root/'dist','elif-tasarim')]:
+            with zipfile.ZipFile(out/filename,'w',zipfile.ZIP_DEFLATED) as z:
+              for p in folder.rglob('*'):
+                rel=p.relative_to(folder)
+                if not p.is_file() or (folder==root and set(rel.parts)&omit):continue
+                assert p.suffix.lower() not in {'.woff','.woff2','.ttf','.otf','.eot'}
+                z.write(p,Path(prefix)/rel)
+          shutil.copyfile('preview/Elif_Tasarim.html',out/'Elif_Tasarim_SEO.html')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-seo-evidence
+          path: elif-tasarim/source-v12/evidence/seo
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elif-seo-delivery
+          path: elif-tasarim/source-v12/delivery-seo
+          retention-days: 14
