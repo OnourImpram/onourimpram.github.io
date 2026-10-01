@@ -812,7 +812,7 @@ const hotspotCopy = {
 function loadRuntime() { const w = window; if (w.ElifDesk3D)
     return Promise.resolve(w.ElifDesk3D); if (w.__ELIF_LOAD_3D__)
     return w.__ELIF_LOAD_3D__(); if (runtimePromise)
-    return runtimePromise; runtimePromise = new Promise((resolve, reject) => { const script = document.createElement('script'); script.type = 'module'; script.src = (w.__ELIF_BASE__ || '/elif-tasarim') + '/three/desk-scene.mjs?v=v20-master-atelier'; script.onload = () => w.ElifDesk3D ? resolve(w.ElifDesk3D) : reject(Error('3D initialization failed')); script.onerror = () => { runtimePromise = null; script.remove(); reject(Error('3D runtime unavailable')); }; document.head.appendChild(script); }); return runtimePromise; }
+    return runtimePromise; runtimePromise = new Promise((resolve, reject) => { const script = document.createElement('script'); script.type = 'module'; script.src = (w.__ELIF_BASE__ || '/elif-tasarim') + '/three/desk-scene.mjs?v=v23.2-interactive'; script.onload = () => w.ElifDesk3D ? resolve(w.ElifDesk3D) : reject(Error('3D initialization failed')); script.onerror = () => { runtimePromise = null; script.remove(); reject(Error('3D runtime unavailable')); }; document.head.appendChild(script); }); return runtimePromise; }
 class DeskExperience extends react_1.Component {
     constructor(p) {
         super(p);
@@ -834,7 +834,8 @@ class DeskExperience extends react_1.Component {
                     this.setState({ status }); }, motion: (rotating) => { if (this.alive)
                     this.setState({ rotating }); }, camera: (view) => { if (this.alive)
                     this.setState({ view }); }, hotspot: (hotspot) => { if (this.alive)
-                    this.setState({ hotspot }); } });
+                    this.setState({ hotspot }); }, change: (patch) => { if (this.alive)
+                    this.change(patch); } });
             this.engine.light(this.state.config.lighting);
             this.engine.dimensions(this.state.dimensions);
             this.engine.hotspots?.(this.state.hotspots);
@@ -1017,7 +1018,7 @@ class DeskExperience extends react_1.Component {
                         (0, react_1.createElement)("span", null, "DETAY NOKTASI"),
                         (0, react_1.createElement)("strong", null, hotspotCopy[this.state.hotspot].title),
                         (0, react_1.createElement)("p", null, hotspotCopy[this.state.hotspot].body)),
-                    (0, react_1.createElement)("span", { className: "v8-canvas-hint" }, ready ? 'Sürükleyerek 360° inceleyin. İki parmakla yakınlaştırın.' : 'Gerçek zamanlı üç boyutlu model'),
+                    (0, react_1.createElement)("span", { className: "v8-canvas-hint" }, ready ? 'Çekmeceye veya dolaba dokunarak açın. Sürükleyerek 360° inceleyin.' : 'Gerçek zamanlı üç boyutlu model'),
                     (0, react_1.createElement)("span", { className: "v8-scene-label" }, "Konsept model")),
                 (0, react_1.createElement)("div", { className: "v11-quick-controls", "aria-label": "G\u00F6r\u00FCnt\u00FCn\u00FCn yan\u0131nda h\u0131zl\u0131 ayarlar" },
                     (0, react_1.createElement)("label", { htmlFor: 'quick-height-' + prefix },
@@ -4527,18 +4528,41 @@ const PortfolioUI_1 = require("../components/PortfolioUI");
 const portfolio_1 = require("../lib/portfolio");
 const V7Pages_1 = require("./V7Pages");
 const desk_1 = require("../lib/desk");
-const scenes = [{ image: 'r13', caption: 'Atölyeden, evin kalbine.', label: 'Mutfak', kind: 'work' }, { image: 'r07', caption: 'Yunus Usta’nın arşivinden.', label: 'Kahve', kind: 'work' }, { image: 'r22', caption: 'Yaşam alanında yerini bulan emek.', label: 'Yaşam', kind: 'work' }];
+const scenes = [
+    { image: 'concept-hero', caption: 'Yaşamın etrafında toplandığı yer.', label: 'Yemek', kind: 'concept' },
+    { image: 'concept-gardrop', caption: 'Her ayrıntıya yer açan bir düzen.', label: 'Giyinme', kind: 'concept' },
+    { image: 'concept-kahve', caption: 'Günün en sevdiğiniz köşesi.', label: 'Kahve', kind: 'concept' },
+    { image: 'concept-sehpa', caption: 'Bir arada, doğal ve yalın.', label: 'Salon', kind: 'concept' },
+    { image: 'concept-tv', caption: 'Mekânınıza göre düşünülmüş.', label: 'TV', kind: 'concept' }
+];
 class Home extends react_1.Component {
     constructor() {
         super(...arguments);
-        this.state = { scene: 0, desk: { ...desk_1.defaultDesk }, chapter: 0 };
+        this.state = { scene: 0, desk: { ...desk_1.defaultDesk }, chapter: 0, paused: false };
+        this.hero = null;
+        this.observer = null;
+        this.visible = true;
+        this.hover = false;
+        this.focus = false;
+        this.motion = null;
+        this.reschedule = () => { window.clearInterval(this.timer); this.timer = undefined; if (this.state.paused || this.motion?.matches || document.hidden || !this.visible || this.hover || this.focus)
+            return; this.timer = window.setInterval(() => this.setState(s => ({ scene: (s.scene + 1) % scenes.length })), 5000); };
+        this.setScene = (scene) => this.setState({ scene }, this.reschedule);
     }
+    componentDidMount() { this.motion = matchMedia('(prefers-reduced-motion: reduce)'); this.motion.addEventListener('change', this.reschedule); document.addEventListener('visibilitychange', this.reschedule); if (this.hero) {
+        this.observer = new IntersectionObserver(es => { this.visible = es[0].isIntersecting; this.reschedule(); });
+        this.observer.observe(this.hero);
+    } this.reschedule(); }
+    componentWillUnmount() { window.clearInterval(this.timer); this.observer?.disconnect(); this.motion?.removeEventListener('change', this.reschedule); document.removeEventListener('visibilitychange', this.reschedule); }
     render() {
         const a = this.props, s = this.state, scene = scenes[s.scene];
         return (0, react_1.createElement)("div", { className: "v6-home" },
-            (0, react_1.createElement)("section", { className: "v6-hero", "aria-label": "Elif Tasar\u0131m a\u00E7\u0131l\u0131\u015F se\u00E7kisi" },
-                (0, react_1.createElement)("div", { className: "v6-hero-scene", key: scene.image },
-                    (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: scene.image, alt: scene.caption + (scene.kind === 'concept' ? ' Konsept mobilya sahnesi.' : ' Atölyeden paylaşılan çalışma fotoğrafı.'), eager: true, full: true, sizes: "100vw" })),
+            (0, react_1.createElement)("section", { className: "v6-hero v232-carousel", ref: el => this.hero = el, "aria-label": "Elif Tasar\u0131m a\u00E7\u0131l\u0131\u015F se\u00E7kisi", "aria-roledescription": "slayt g\u00F6sterisi", onMouseEnter: () => { this.hover = true; this.reschedule(); }, onMouseLeave: () => { this.hover = false; this.reschedule(); }, onFocusCapture: () => { this.focus = true; this.reschedule(); }, onBlurCapture: e => { if (!e.currentTarget.contains(e.relatedTarget)) {
+                    this.focus = false;
+                    this.reschedule();
+                } } },
+                scenes.map((sc, i) => (0, react_1.createElement)("div", { className: 'v6-hero-scene v232-scene' + (i === s.scene ? ' is-active' : ''), key: sc.image, "aria-hidden": i !== s.scene, "data-slide": i },
+                    (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: sc.image, alt: sc.caption + ' Konsept model.', eager: true, full: true, sizes: "100vw" }))),
                 (0, react_1.createElement)("div", { className: "v6-hero-shade" }),
                 (0, react_1.createElement)("div", { className: "wrap v6-hero-inner" },
                     (0, react_1.createElement)(ui_1.Eyebrow, null, "\u0130STANBUL / EL YAPIMI MOB\u0130LYA AT\u00D6LYES\u0130"),
@@ -4555,10 +4579,11 @@ class Home extends react_1.Component {
                         (0, react_1.createElement)(ui_1.ButtonLink, { to: "/projeler", navigate: a.navigate }, "Bitirdi\u011Fimiz i\u015Fleri ke\u015Ffedin"),
                         (0, react_1.createElement)(ui_1.TextLink, { to: "/modelini-getir", navigate: a.navigate, light: true }, "Kendi modelinizi getirin"))),
                 (0, react_1.createElement)("div", { className: "wrap v6-hero-bottom" },
-                    (0, react_1.createElement)("div", { className: "v6-scene-controls", role: "group", "aria-label": "A\u00E7\u0131l\u0131\u015F sahneleri" }, scenes.map((sc, i) => (0, react_1.createElement)("button", { key: sc.image, onClick: () => this.setState({ scene: i }), "aria-pressed": s.scene === i, "aria-label": String(i + 1).padStart(2, '0') + ' ' + sc.label + ' sahnesi' },
+                    (0, react_1.createElement)("div", { className: "v6-scene-controls", role: "group", "aria-label": "A\u00E7\u0131l\u0131\u015F sahneleri" }, scenes.map((sc, i) => (0, react_1.createElement)("button", { key: sc.image, onClick: () => this.setScene(i), "aria-pressed": s.scene === i, "aria-label": String(i + 1).padStart(2, '0') + ' ' + sc.label + ' sahnesi' },
                         (0, react_1.createElement)("span", null, String(i + 1).padStart(2, '0')),
                         (0, react_1.createElement)("i", null),
                         (0, react_1.createElement)("span", { className: "scene-word" }, sc.label)))),
+                    (0, react_1.createElement)("button", { type: "button", className: "v232-pause", "aria-label": s.paused ? 'Otomatik geçişi başlat' : 'Otomatik geçişi durdur', "aria-pressed": s.paused, onClick: () => this.setState({ paused: !s.paused }, this.reschedule) }, s.paused ? 'Oynat' : 'Duraklat'),
                     (0, react_1.createElement)("span", { className: "v6-hero-caption" }, scene.caption),
                     (0, react_1.createElement)("button", { className: "hero-down", "aria-label": "Bitirdi\u011Fimiz i\u015Flere kayd\u0131r", onClick: () => document.getElementById('bitirdigimiz-isler')?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }) },
                         (0, react_1.createElement)(ui_1.Icon, { name: "down" }))),

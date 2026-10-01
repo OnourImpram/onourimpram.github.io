@@ -23,7 +23,7 @@ with ThreadPoolExecutor(max_workers=4)as pool:results=list(pool.map(verify,m['fi
 pages=[];descs=[]
 for path in m['routes']:
  data=get(path.strip('/')+'/' if path!='/' else '').decode();description=re.search(r'<meta name="description" content="([^"]+)"',data).group(1);descs.append(description)
- pages.append({'path':path,'v11':'v23-unified-studio'in data,'noindex':'noindex,nofollow'in data,'legacyName':bool(re.search('Yusuf',data)),'description':description})
+ pages.append({'path':path,'v11':'v23.2-interactive'in data,'noindex':'noindex,nofollow'in data,'legacyName':bool(re.search('Yusuf',data)),'description':description})
 assert all(x['v11']and x['noindex']and not x['legacyName']for x in pages);assert len(set(descs))==len(descs)
 missing=None
 try:get('v11-this-page-does-not-exist/')
