@@ -2,7 +2,7 @@
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 from urllib.parse import urlparse,parse_qs
-import os,json,traceback
+import os,json,traceback,time
 ROOT=Path(__file__).resolve().parents[2]
 BASE=os.environ.get('BASE_URL','http://127.0.0.1:8000/elif-tasarim/').rstrip('/')+'/'
 OUT=Path(os.environ.get('EVIDENCE_DIR',str(ROOT/'evidence/v23/visibility')));OUT.mkdir(parents=True,exist_ok=True)
@@ -15,7 +15,13 @@ with sync_playwright() as p:
  def visit(path):
   page.goto(BASE+path.lstrip('/'),wait_until='domcontentloaded',timeout=60000);page.wait_for_selector('html[data-app-ready="true"]')
  def devir_ready():
-  page.wait_for_function("()=>document.querySelectorAll('.v20-devir img').length===6&&[...document.querySelectorAll('.v20-devir img')].every(i=>i.complete&&i.naturalWidth>0)",timeout=12000)
+  # Inspect the same six native image states without depending on RAF in a no-script context.
+  deadline=time.monotonic()+12
+  while True:
+   states=page.locator('.v20-devir img').evaluate_all("xs=>xs.map(i=>({src:i.currentSrc||i.src,complete:i.complete,width:i.naturalWidth}))")
+   if len(states)==6 and all(i['complete'] and i['width']>0 for i in states):return
+   if time.monotonic()>=deadline:raise AssertionError({'imageReadiness':states,'url':page.url})
+   page.wait_for_timeout(100)
  try:
   visit('devir-01/');devir_ready();assert page.locator('.image-unavailable').count()==0
   r=page.locator('.v20-product-visual .photo').bounding_box();assert abs(r['width']/r['height']-1.5)<.02
@@ -86,7 +92,10 @@ with sync_playwright() as p:
    report['routes'].append({'route':route,'mainCharacters':len(page.locator('main').inner_text()),'loadedImages':page.locator('main img').count(),'pass':True});save()
   assert not errors,errors;passed('11. Every canonical route has visible content and decoded media after normal scrolling',{'routes':len(report['routes']),'uncaughtErrors':errors})
  except Exception:
-  report['failure']=traceback.format_exc();save()
+  report['failure']=traceback.format_exc()
+  try:report['imageStates']=page.locator('.v20-devir img').evaluate_all("xs=>xs.map(i=>({src:i.currentSrc||i.src,complete:i.complete,width:i.naturalWidth}))")
+  except Exception:pass
+  save()
   try:page.screenshot(path=str(OUT/'failure.png'),full_page=True)
   except Exception:pass
   raise
