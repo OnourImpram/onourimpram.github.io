@@ -1,0 +1,171 @@
+name: Elif V23 consistent final release
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/elif-v23-close.yml']
+permissions:
+  contents: write
+concurrency:
+  group: elif-v23-final-publication
+  cancel-in-progress: false
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: elif-tasarim/source-v12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Record failing release contract before correction
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/v23-close
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build > evidence/v23-close/before-build.txt
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          assert json.loads(Path('package.json').read_text())['version']=='0.23.0'
+          Path('tests/v23/release-consistency.cjs').write_text("const {test}=require('node:test');\nconst assert=require('node:assert/strict');\nconst fs=require('node:fs');\ntest('active V23 package and generated publication manifest have the same version',()=>{\n const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));\n const manifest=JSON.parse(fs.readFileSync('dist/release-v23.json','utf8'));\n assert.equal(manifest.version,pkg.version);\n assert.equal(manifest.release,'v23-premium-finish');\n});\n")
+          PY
+          set +e
+          node --test tests/v23/release-consistency.cjs > evidence/v23-close/release-red.txt 2>&1
+          red=$?
+          set -e
+          test "$red" -ne 0
+          grep -q '0.22.1' evidence/v23-close/release-red.txt
+          grep -q '0.23.0' evidence/v23-close/release-red.txt
+      - name: Make version derive from the actual package
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('tools/build-v23.cjs');s=p.read_text()
+          assert s.count("version:'0.22.1'")==1
+          p.write_text(s.replace("version:'0.22.1'","version:JSON.parse(fs.readFileSync('package.json','utf8')).version"))
+          p=Path('AGENTS.md');s=p.read_text().replace('V22 çalışma sınırları','V23 çalışma sınırları').replace('tools/build-v22.cjs','tools/build-v23.cjs').replace('Paket 0.22.0, kimlik v22-contact-complete, manifest release-v22.json.','Paket 0.23.0, kimlik v23-premium-finish, manifest release-v23.json.')
+          p.write_text(s)
+          PY
+      - name: Fresh full build and unit verification
+        run: |
+          set -euo pipefail
+          npm run build | tee evidence/v23-close/build.txt
+          npm test | tee evidence/v23-close/unit.txt
+          npm run typecheck:core | tee evidence/v23-close/types.txt
+          npm run verify:dist | tee evidence/v23-close/integrity.txt
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          new=json.loads(Path('dist/release-v23.json').read_text())
+          old=json.loads(Path('../release-v23.json').read_text())
+          assert new['version']=='0.23.0' and new['release']=='v23-premium-finish'
+          assert old['files']==new['files'], 'Runtime bytes must remain exactly the tested V23 site'
+          assert old['routes']==new['routes']
+          expected=dict(old);expected['version']='0.23.0';assert expected==new
+          Path('../release-v23.json').write_bytes(Path('dist/release-v23.json').read_bytes())
+          PY
+      - name: Publish only the verified metadata and regression contract
+        run: |
+          set -euo pipefail
+          cd ../..
+          test "$(git hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          git add elif-tasarim/release-v23.json elif-tasarim/source-v12/tools/build-v23.cjs elif-tasarim/source-v12/tests/v23/release-consistency.cjs elif-tasarim/source-v12/AGENTS.md
+          python - <<'PY'
+          import subprocess
+          changed=set(subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines())
+          allowed={'elif-tasarim/release-v23.json','elif-tasarim/source-v12/tools/build-v23.cjs','elif-tasarim/source-v12/tests/v23/release-consistency.cjs','elif-tasarim/source-v12/AGENTS.md'}
+          assert changed==allowed,changed
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'fix(elif): align final V23 manifest with package and preserve runtime bytes'
+          git push origin HEAD:main
+          git rev-parse HEAD > elif-tasarim/source-v12/evidence/v23-close/publication-commit.txt
+      - name: Wait for exact metadata publication
+        run: |
+          set -euo pipefail
+          for i in {1..60}; do
+            curl -fsS 'https://onourimpram.github.io/elif-tasarim/release-v23.json?verify=v23-close' -o /tmp/elif-release.json || true
+            if cmp -s dist/release-v23.json /tmp/elif-release.json; then exit 0; fi
+            sleep 5
+          done
+          echo 'Exact V23 manifest was not observed' >&2
+          exit 1
+      - name: Verify live files and direct routes
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+          EVIDENCE_DIR: evidence/v23-close/public
+        run: python tests/v11/public_verify.py
+      - name: Install browser tooling
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: All live product media, request failures and mobile routes
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/v23-close/visibility xvfb-run -a python tests/v23/browser.py
+          EVIDENCE_DIR=evidence/v23-close/mobile xvfb-run -a python tests/v23/mobile-media.py
+          EVIDENCE_DIR=evidence/v23-close/contact xvfb-run -a python tests/v22/acceptance.py
+          EVIDENCE_DIR=evidence/v23-close/orbit xvfb-run -a python tests/v12/acceptance.py
+      - name: Record fully decoded and painted product views
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          import json
+          out=Path('evidence/v23-close/painted');out.mkdir(parents=True,exist_ok=True)
+          with sync_playwright() as p:
+              b=p.chromium.launch(headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
+              page=b.new_page(viewport={'width':1440,'height':1000},reduced_motion='reduce')
+              page.goto('https://onourimpram.github.io/elif-tasarim/devir-01/',wait_until='domcontentloaded',timeout=60000)
+              page.wait_for_selector('html[data-app-ready="true"]')
+              for width in [1440,390]:
+                  page.set_viewport_size({'width':width,'height':1000 if width==1440 else 844})
+                  for selector,name in [('.v20-product-hero','hero'),('.v20-room-editorial','room'),('#devir-baslangic','variants'),('#devir-detay','detail')]:
+                      block=page.locator(selector);block.scroll_into_view_if_needed()
+                      block.evaluate("async(e)=>{await Promise.all([...e.querySelectorAll('img')].map(i=>i.decode()));await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}")
+                      page.wait_for_timeout(150)
+                      assert block.locator('.image-unavailable').count()==0
+                      block.screenshot(path=str(out/(name+'-'+str(width)+'.png')))
+                  page.evaluate('scrollTo(0,0)');page.wait_for_timeout(150)
+                  assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
+                  page.screenshot(path=str(out/('devir-'+str(width)+'.png')),full_page=True)
+              (out/'result.json').write_text(json.dumps({'pass':True,'sections':4,'viewports':[1440,390],'capture':'live images decoded and painted after scrolling','notTested':['physical phone','AR placement','message delivery']},indent=2))
+              b.close()
+          PY
+      - name: Package exact verified source and publication
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile,shutil
+          out=Path('delivery-v23');out.mkdir(exist_ok=True)
+          excluded={'.git','node_modules','dist','preview','evidence','.compiled','__pycache__','delivery-v23'}
+          fonts={'.woff','.woff2','.ttf','.otf','.eot'}
+          with zipfile.ZipFile(out/'Elif_Tasarim_V23_Kaynak_ve_Testler.zip','w',zipfile.ZIP_DEFLATED)as z:
+              for f in sorted(Path('.').rglob('*')):
+                  if f.is_file() and not excluded.intersection(f.parts) and f.suffix.lower() not in fonts:z.write(f,f.as_posix())
+          with zipfile.ZipFile(out/'Elif_Tasarim_V23_Yayin_Dosyalari.zip','w',zipfile.ZIP_DEFLATED)as z:
+              for f in sorted(Path('dist').rglob('*')):
+                  if f.is_file() and f.suffix.lower() not in fonts:z.write(f,Path('elif-tasarim')/f.relative_to('dist'))
+          shutil.copy2('preview/Elif_Tasarim.html',out/'Elif_Tasarim_V23.html')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v23-consistent-final-evidence
+          path: elif-tasarim/source-v12/evidence/v23-close
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: elif-v23-consistent-final-delivery
+          path: elif-tasarim/source-v12/delivery-v23
+          retention-days: 14
