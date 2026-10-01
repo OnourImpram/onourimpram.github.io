@@ -274,6 +274,7 @@ class App extends react_1.Component {
             } node.content = value; };
             document.title = title;
             setMeta('description', description);
+            setMeta('robots', (0, routes_1.pageRobots)(route, document.documentElement.dataset.indexable === 'true'));
             setMeta('og:title', title, true);
             setMeta('og:description', description, true);
             setMeta('og:url', site + (route === '/' ? '/' : route + '/'), true);
@@ -1398,12 +1399,12 @@ const ResilientImage_1 = require("./ResilientImage");
 const ui_1 = require("./ui");
 const image_manifest_1 = require("../lib/image-manifest");
 const portfolio_1 = require("../lib/portfolio");
-function VImage({ asset, alt, className = '', eager = false, sizes = '(max-width: 680px) 100vw, 50vw', full = false }) {
+function VImage({ asset, alt, className = '', eager = false, sizes = '(max-width: 680px) 100vw, 50vw', full = false, priority, onLoad }) {
     const m = image_manifest_1.imageManifest[asset];
     if (!m)
         return (0, react_1.createElement)(ResilientImage_1.ResilientImage, { src: (0, ui_1.image)(asset), alt: alt, className: className, loading: eager ? 'eager' : 'lazy' });
     const max = m.variants[m.variants.length - 1], fallback = full ? max : m.variants[Math.min(1, m.variants.length - 1)];
-    return (0, react_1.createElement)(ResilientImage_1.ResilientImage, { src: (0, ui_1.image)(fallback.file), fallbackSrc: (0, ui_1.image)(max.file), srcSet: m.variants.map((v) => (0, ui_1.image)(v.file) + ' ' + v.width + 'w').join(', '), sizes: sizes, width: m.width, height: m.height, alt: alt, className: className, loading: eager ? 'eager' : 'lazy', decoding: eager ? 'sync' : 'async', fetchPriority: eager ? 'high' : 'auto' });
+    return (0, react_1.createElement)(ResilientImage_1.ResilientImage, { src: (0, ui_1.image)(fallback.file), fallbackSrc: (0, ui_1.image)(max.file), srcSet: m.variants.map((v) => (0, ui_1.image)(v.file) + ' ' + v.width + 'w').join(', '), sizes: sizes, width: m.width, height: m.height, alt: alt, className: className, loading: eager ? 'eager' : 'lazy', decoding: priority === 'low' ? 'async' : eager ? 'sync' : 'async', fetchPriority: priority || (eager ? 'high' : 'auto'), onLoad: onLoad });
 }
 function SourceTag({ kind = 'work' }) { return (0, react_1.createElement)("span", { className: 'source-tag source-' + kind }, ({ work: 'Atölye arşivi', process: 'Uygulama aşaması', concept: 'Konsept model', reference: 'Pinterest ilhamı' })[kind]); }
 function WorkCard({ work: w, actions: a, featured = false, index = 0 }) {
@@ -1523,6 +1524,54 @@ function RoomDiagram({ fit: f }) { const maxW = Math.max(f.roomWidth, f.footprin
             f.roomDepth,
             " cm")),
     (0, react_1.createElement)("figcaption", null, "Ortalanm\u0131\u015F dikd\u00F6rtgen s\u0131n\u0131r kar\u015F\u0131la\u015Ft\u0131rmas\u0131. Ger\u00E7ek masa konturu veya hareketin tarad\u0131\u011F\u0131 alan de\u011Fildir.")); }
+
+},
+"src/components/ServiceGuide":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ServiceGuide = ServiceGuide;
+exports.PreparationHint = PreparationHint;
+const react_1 = require("react");
+const service_content_1 = require("../lib/service-content");
+const portfolio_1 = require("../lib/portfolio");
+const ui_1 = require("./ui");
+const PortfolioUI_1 = require("./PortfolioUI");
+function ServiceGuide({ category, navigate }) { const x = service_content_1.serviceContent[category]; if (!x)
+    return null; const project = portfolio_1.works.find(p => p.id === x.project); return (0, react_1.createElement)("section", { className: "wrap seo-service-guide", "aria-label": "\u00D6zel \u00FCretim karar rehberi" },
+    (0, react_1.createElement)("header", null,
+        (0, react_1.createElement)(ui_1.Eyebrow, null, "ALANINIZA G\u00D6RE D\u00DC\u015E\u00DCNEL\u0130M"),
+        (0, react_1.createElement)("h2", null, x.title),
+        (0, react_1.createElement)("p", null, x.intro)),
+    (0, react_1.createElement)("div", { className: "seo-decisions" }, x.sections.map(([title, text], i) => (0, react_1.createElement)("article", { key: title },
+        (0, react_1.createElement)("span", { className: "eyebrow" },
+            "0",
+            i + 1),
+        (0, react_1.createElement)("h3", null, title),
+        (0, react_1.createElement)("p", null, text)))),
+    (0, react_1.createElement)("div", { className: "seo-real-example" },
+        (0, react_1.createElement)("div", null,
+            (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: project.images[0], alt: project.subtitle + '. ' + project.features.join(', ') + '. Atölyeden paylaşılan çalışma.', sizes: "(max-width: 800px) 90vw, 40vw" }),
+            (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: project.status })),
+        (0, react_1.createElement)("div", null,
+            (0, react_1.createElement)(ui_1.Eyebrow, null, "KEND\u0130 AR\u015E\u0130V\u0130M\u0130ZDEN"),
+            (0, react_1.createElement)("h3", null, project.subtitle),
+            (0, react_1.createElement)("p", null, project.description),
+            (0, react_1.createElement)(ui_1.TextLink, { to: '/proje/' + project.id, navigate: navigate }, "Ger\u00E7ek \u00E7al\u0131\u015Fmay\u0131 incele"),
+            (0, react_1.createElement)("p", { className: "field-hint" }, "Foto\u011Frafta g\u00F6r\u00FCnen d\u00FCzeni anlat\u0131yoruz. Bu i\u015Fin m\u00FC\u015Fteri hik\u00E2yesi, kesin \u00F6l\u00E7\u00FCs\u00FC ve teknik malzeme kayd\u0131 hen\u00FCz payla\u015F\u0131lmad\u0131."))),
+    (0, react_1.createElement)("div", { className: "seo-preparation" },
+        (0, react_1.createElement)("h3", null, "G\u00F6r\u00FC\u015Fme \u00F6ncesi k\u00FC\u00E7\u00FCk bir haz\u0131rl\u0131k."),
+        (0, react_1.createElement)("ul", null, x.preparation.map(v => (0, react_1.createElement)("li", { key: v }, v))),
+        (0, react_1.createElement)("p", null, "Hepsini haz\u0131rlaman\u0131z gerekmiyor. Bildiklerinizle ba\u015Flayabilirsiniz."),
+        (0, react_1.createElement)(ui_1.ButtonLink, { to: '/modelini-getir?kategori=' + category, navigate: navigate }, "Bu bilgilerle fikrimi haz\u0131rlayay\u0131m"),
+        (0, react_1.createElement)("p", { className: "field-hint" }, x.note),
+        (0, react_1.createElement)("div", { className: "seo-guide-links" },
+            (0, react_1.createElement)(ui_1.TextLink, { to: "/rehber/olcu-alma", navigate: navigate }, "\u00D6l\u00E7\u00FC haz\u0131rl\u0131\u011F\u0131"),
+            (0, react_1.createElement)(ui_1.TextLink, { to: "/rehber/malzeme-secimi", navigate: navigate }, "Malzeme karar\u0131"),
+            (0, react_1.createElement)(ui_1.TextLink, { to: "/hizmet-ve-teklif", navigate: navigate }, "Teklif kapsam\u0131")))); }
+function PreparationHint({ category }) { const x = service_content_1.serviceContent[category]; return x ? (0, react_1.createElement)("details", { className: "seo-form-hint" },
+    (0, react_1.createElement)("summary", null, "Bu \u00FCr\u00FCn i\u00E7in hangi bilgiyi payla\u015Fabilirim?"),
+    (0, react_1.createElement)("ul", null, x.preparation.map(v => (0, react_1.createElement)("li", { key: v }, v))),
+    (0, react_1.createElement)("p", null, "Bu bir zorunlu alan listesi de\u011Fil. \u0130sterseniz a\u00E7\u0131klama notunuza ekleyin. \u00DCretim \u00F6l\u00E7\u00FCs\u00FC ayr\u0131ca teyit edilir.")) : null; }
 
 },
 "src/components/StudioGuide":function(module,exports,require){
@@ -3539,18 +3588,21 @@ function evaluateRoomFit(roomWidth, roomDepth, footprint) {
 "src/lib/routes":function(module,exports,require){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.v7Routes = exports.routePaths = void 0;
+exports.seoApprovedRoutes = exports.v7Routes = exports.routePaths = exports.seoTitles = void 0;
 exports.pageTitle = pageTitle;
 exports.pageDescription = pageDescription;
 exports.pageShareImage = pageShareImage;
 exports.indexableRoute = indexableRoute;
+exports.pageRobots = pageRobots;
 exports.pageSchema = pageSchema;
+exports.seoTitles = { "/": "İstanbul Özel Ölçü Mobilya Atölyesi | Elif Tasarım", "/kategoriler/kahve-kosesi": "Özel Ölçü Kahve Köşesi Dolabı | Elif Tasarım", "/kategoriler/mutfak": "İstanbul Özel Ölçü Mutfak Dolabı | Elif Tasarım", "/kategoriler/tv-unitesi": "Ölçüye Özel TV Ünitesi ve Depolama | Elif Tasarım", "/rehber/bakim": "Ahşap Mobilya Bakımı. Yüzeye Göre Temizlik | Elif Tasarım", "/rehber/olcu-alma": "Özel Mobilya İçin Ölçü Hazırlığı | Elif Tasarım", "/rehber/malzeme-secimi": "Mobilyada Gövde, Kapak ve Yüzey Seçimi | Elif Tasarım" };
 const portfolio_1 = require("./portfolio");
 const project_1 = require("./project");
 const site_profile_1 = require("./site-profile");
 const data_1 = require("./data");
 exports.routePaths = ['/kolay-iletisim', '/hizmet-ve-teklif', '/projeler', '/kategoriler', '/ilham-modelleri', '/modelini-getir', '/hakkimizda', '/atolye', ...portfolio_1.works.map(w => '/proje/' + w.id), ...portfolio_1.workCategories.map(c => '/kategoriler/' + c.id), '/', '/urunler', '/tasarim-masasi', '/atolyemiz', '/ozel-uretim', '/malzemeler', '/mekan-fikirleri', '/rehber', '/teklif-al', '/sikca-sorulan-sorular', '/iletisim', '/sepet', '/odeme', '/calisma-dosyam', '/gizlilik', '/atolye-demolari', ...data_1.products.map(p => '/urun/' + p.id), ...data_1.ideas.map(p => '/mekan-fikirleri/' + p.id), ...data_1.journal.map(p => '/rehber/' + p.id)];
-function pageTitle(path) { const p = path.split('?')[0]; if (p === '/kolay-iletisim')
+function pageTitle(path) { const p = path.split('?')[0]; if (exports.seoTitles[p])
+    return exports.seoTitles[p]; if (p === '/kolay-iletisim')
     return 'Kolay İletişim | Elif Tasarım'; if (p === '/hizmet-ve-teklif')
     return 'Hizmet ve Teklif Rehberi | Elif Tasarım'; if (p === '/arama')
     return 'Arama | Elif Tasarım'; if (p === '/calisma-dosyam')
@@ -3599,7 +3651,9 @@ function pageShareImage(path) { const p = path.split('?')[0]; if (p === '/hizmet
     return (representative ? representative.images[0] : cat.image) + '-full.webp';
 } if (['/modelini-getir', '/teklif-al', '/ilham-modelleri'].includes(p))
     return 'concept-model-full.webp'; return 'r13-full.webp'; }
-function indexableRoute(path) { return !['/arama', '/modelini-getir', '/teklif-al', '/calisma-dosyam', '/404'].includes(path.split('?')[0]); }
+exports.seoApprovedRoutes = ["/", "/hakkimizda", "/iletisim", "/projeler", "/kategoriler", "/ozel-uretim", "/hizmet-ve-teklif", "/rehber", "/rehber/bakim", "/rehber/olcu-alma", "/rehber/malzeme-secimi", "/kategoriler/kahve-kosesi", "/kategoriler/mutfak", "/kategoriler/tv-unitesi", "/proje/kemerli-kahve-kosesi", "/proje/sade-kose-mutfak", "/proje/isikli-tv-unitesi", "/tasarim-masasi"];
+function indexableRoute(path) { return exports.seoApprovedRoutes.includes(path.split('?')[0]); }
+function pageRobots(path, approved) { return approved && indexableRoute(path) ? 'index,follow' : 'noindex,nofollow'; }
 function pageSchema(path, site) {
     const route = path.split('?')[0], base = site.replace(/\/$/, ''), profile = (0, site_profile_1.getSiteProfile)(), url = base + (route === '/' ? '/' : route + '/');
     const publisher = { '@type': profile.address ? 'LocalBusiness' : 'Organization', '@id': base + '/#atolye', name: project_1.business.name, url: base + '/', telephone: project_1.business.telephone, logo: base + '/assets/elif-amblem.png', areaServed: { '@type': 'City', name: project_1.business.city }, contactPoint: { '@type': 'ContactPoint', telephone: project_1.business.telephone, contactType: 'Proje görüşmesi', availableLanguage: 'tr' } };
@@ -3692,6 +3746,32 @@ function selectedEntries(ids) { return validSelectionIds(ids).map(id => exports.
 function selectionSummary(ids) { return selectedEntries(ids).map(x => x.title + ' [' + x.id + ']' + (x.kind === 'reference' ? '\nKaynak, ' + (pinterest_1.pinLookup[x.id.slice(4)]?.canonical || 'https://pin.it/' + x.id.slice(4)) : '')); }
 function inspirationTarget(id) { return id ? exports.selectionEntries.find(x => x.id === id && ['concept', 'reference'].includes(x.kind)) || null : null; }
 function targetElementId(id) { return 'ilham-' + id.replace(/[^a-zA-Z0-9_-]/g, '-'); }
+
+},
+"src/lib/service-content":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.serviceContent = void 0;
+exports.serviceContent = {
+    'kahve-kosesi': { title: 'Kahve köşesi dolabı. Makinenizden başlayalım.', intro: 'Bir kahve alanını yalnız dolabın eniyle planlamayalım. Makineyi kullanırken, temizlerken ve fincan hazırlarken yaptığınız hareketleri de konuşalım.', sections: [
+            ['Makinenin ölçüsü tek başına yetmez.', 'Marka ve modeli, su haznesinin nasıl çıkarıldığını ve varsa üst kapağın açılma yönünü paylaşın. Cihazın üretici belgesindeki kullanım ve havalandırma boşluklarını ayrıca kontrol edelim. Her makineye uyan tek bir niş derinliği vermek doğru olmaz.'],
+            ['Açık raf mı, kapalı depolama mı?', 'Günlük fincanları el altında tutmakla yedek ekipmanları saklamak farklı ihtiyaçlar. Görünmesini istediğiniz parçaları, kapalı dolapta duracakları ve çekmeceye ayıracağınız küçük gereçleri üç grupta düşünün.'],
+            ['Servis yüzeyi de çalışma alanıdır.', 'Makinenin yanında fincan koyacağınız, öğütücüyü kullanacağınız veya ekipmanı temizleyeceğiniz yüzeyi tarif edin. Kablo çıkışı, priz konumu, su bağlantısı ve aydınlatma ayrı kararlardır. Elektrik ve tesisat işinin teklife dahil olduğunu varsaymayın.'],
+            ['Fotoğraftaki ayrıntıyı kendi alanınıza uyarlayın.', 'Kemerli orta bölüm, cam yan vitrin ve alt çekmeceler, arşivdeki gerçek örnekte birlikte görülebilir. Aynı görünümün sizin alanınızda nasıl çalışacağı cihaz ve ölçü bilgisiyle değerlendirilir. Fotoğraftan malzeme markası, fiyat veya teslim süresi çıkarılmaz.']
+        ], preparation: ['Makinenin marka/modeli veya ürün belgesi.', 'Hazne ve kapak açılırken çekilmiş bir fotoğraf.', 'Duvarın tamamı, yaklaşık en ve priz konumları.', 'Açıkta kalmasını ve saklanmasını istediğiniz ekipmanlar.'], project: 'kemerli-kahve-kosesi', note: 'Üretim ölçüsü değildir. Cihaz açıklıkları üretici bilgisiyle, mobilya ve uygulama kapsamı Yunus Usta ile ayrıca teyit edilir.' },
+    'mutfak': { title: 'Mutfak dolabı. Görünüm kadar günlük düzen.', intro: 'Mevcut alanı, korunacak cihazları ve sık kullandığınız eşyaları birlikte ele alalım. Bir planın fotoğrafta güzel görünmesi, sizin mutfağınıza aynen uyacağı anlamına gelmez.', sections: [
+            ['Önce korunacakları belirleyin.', 'Beyaz eşya, tezgâh, evye ve tesisattan hangileri kalacak? Cihaz marka/modelini ve mevcut bağlantı noktalarını paylaşın. Dolap siparişi, tezgâh veya elektrik işlerinin otomatik olarak dahil olduğu anlamına gelmez.'],
+            ['Çekmece ve kapağı kullanımına göre seçin.', 'Tencere, tabak, kuru gıda ve temizlik malzemelerinin nerede duracağını düşünün. Bir çekmecenin açılması için gereken alanı yalnız kapalı dolap ölçüsünden anlayamayız. Geçişler, kapılar ve karşıdaki mobilya da yerleşimin parçasıdır.'],
+            ['Aynı ölçü, aynı teklif demek değildir.', 'Gövde, kapak, yüzey, ray ve menteşeleri ayrı kalemler olarak konuşun. İki teklifi karşılaştırırken yalnız toplam tutara değil, donanım ve montaj kapsamına da bakın. Gerçek ürün seçimi ve numune onayı olmadan aynı renk aynı malzeme sayılmaz.'],
+            ['Yaklaşık ölçüyle başlayın, son ölçüyü onaylayın.', 'Duvar boyunca yaklaşık en, tavan yüksekliği, pencere ve kapı konumları ilk görüşmeye yardımcı olur. Fotoğraf ve ölçü hazırlığı, yerinde inceleme ya da imalata esas son ölçünün yerine geçmez.']
+        ], preparation: ['Mekânın iki köşesinden genel fotoğraf.', 'Kalacak cihazların marka/model listesi.', 'Yaklaşık duvar ölçüleri ve pencere/kapı konumları.', 'Bugünkü mutfakta zorlandığınız üç kullanım durumu.'], project: 'sade-kose-mutfak', note: 'Üretim öncesinde son ölçü, kapak ve donanım, tezgâh, tesisat, taşıma ve montaj kapsamları yazılı olarak netleşir.' },
+    'tv-unitesi': { title: 'TV ünitesi. Ekran, kablo ve depolama bir arada.', intro: 'Panelin görünümünü seçmeden önce ekranınızı, diğer cihazları ve duvarın kullanımını konuşalım. Yalnız televizyonun inç ölçüsü bütün yerleşimi tarif etmez.', sections: [
+            ['Ekranı ve diğer cihazları birlikte listeleyin.', 'TV modeli, ayak veya askı tercihi, ses sistemi, oyun konsolu ve modem gibi cihazları belirtin. Üreticinin montaj ve havalandırma talimatları cihaz özelinde değerlendirilmelidir. Evrensel askı yüksekliği veya kapalı raf ölçüsü vermiyoruz.'],
+            ['Kablolar gizlensin, erişim kaybolmasın.', 'Priz, anten ve veri noktalarının fotoğrafını paylaşın. Günlük kullanımda görünmeyen bir kablonun bakım veya cihaz değişiminde erişilebilir olması da önemlidir. Panel ve dolabın arkasına nasıl ulaşılacağını tasarım görüşmesinde sorun.'],
+            ['Sergileme ile depolamayı ayırın.', 'Kitap, dekor ve kapalı tutulacak cihazlar için farklı alanlar gerekebilir. Açık raf, cam bölüm ve kapaklı alt dolap seçeneklerini neyi kullanacağınız üzerinden karşılaştırın. Aydınlatma ve elektrik bağlantıları ayrı iş kapsamlarıdır.'],
+            ['Duvar ve geçiş alanı belirleyicidir.', 'Duvarın eni, kapı açılımı, süpürgelik ve yakın mobilyalar yerleşimi etkiler. Duvara sabitleme uygunluğu ve taşıma ihtiyacı yerinde kontrol edilmelidir. Bir arşiv fotoğrafı duvarınızın taşıma kapasitesini kanıtlamaz.']
+        ], preparation: ['TV marka/modeli, ayak veya askı tercihi.', 'Ses sistemi ve diğer cihazların listesi.', 'Duvarın tamamı ve bağlantı noktalarının fotoğrafı.', 'Saklanacak eşyalar ve açıkta sergilenecek parçalar.'], project: 'isikli-tv-unitesi', note: 'Üretim ölçüsü, duvar bağlantısı ve cihaz gereklilikleri ayrıca kontrol edilir. Görseldeki TV, dekor ve elektrik işleri kendiliğinden teklif kapsamına girmez.' }
+};
 
 },
 "src/lib/site-profile":function(module,exports,require){
@@ -3951,6 +4031,7 @@ function BasicContact(a) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BringModel = void 0;
+const ServiceGuide_1 = require("../components/ServiceGuide");
 const react_1 = require("react");
 const ui_1 = require("../components/ui");
 const PortfolioUI_1 = require("../components/PortfolioUI");
@@ -4108,6 +4189,7 @@ class BringModel extends react_1.Component {
                         (0, react_1.createElement)("summary", null, "Tasla\u011F\u0131m nerede saklan\u0131yor?"),
                         (0, react_1.createElement)("p", null, "Varsay\u0131lan olarak a\u00E7\u0131k sekmede korunur. Sa\u011Fdaki kurtarma alan\u0131ndan metin ve \u00F6l\u00E7\u00FCleri a\u00E7\u0131k izninizle bu cihazda yedi g\u00FCn saklayabilir veya bir taslak dosyas\u0131na indirebilirsiniz. Foto\u011Fraflar kurtarma kayd\u0131na dahil de\u011Fildir. Otomatik sunucu g\u00F6nderimi yap\u0131lmaz."))),
                 (0, react_1.createElement)("div", { className: "model-form" },
+                    (0, react_1.createElement)(ServiceGuide_1.PreparationHint, { category: v.category }),
                     (0, react_1.createElement)("div", { className: "v22-form-shortcut" },
                         (0, react_1.createElement)(ui_1.Link, { to: "/kolay-iletisim", navigate: a.navigate },
                             "Form yerine do\u011Frudan ileti\u015Fim kurun ",
@@ -4529,31 +4611,46 @@ const portfolio_1 = require("../lib/portfolio");
 const V7Pages_1 = require("./V7Pages");
 const desk_1 = require("../lib/desk");
 const scenes = [
-    { image: 'concept-hero', caption: 'Yaşamın etrafında toplandığı yer.', label: 'Yemek', kind: 'concept' },
-    { image: 'concept-gardrop', caption: 'Her ayrıntıya yer açan bir düzen.', label: 'Giyinme', kind: 'concept' },
-    { image: 'concept-kahve', caption: 'Günün en sevdiğiniz köşesi.', label: 'Kahve', kind: 'concept' },
-    { image: 'concept-sehpa', caption: 'Bir arada, doğal ve yalın.', label: 'Salon', kind: 'concept' },
-    { image: 'concept-tv', caption: 'Mekânınıza göre düşünülmüş.', label: 'TV', kind: 'concept' }
+    { image: 'concept-hero', alt: "Ahşap görünümlü oval yemek masası, sandalyeler ve aydınlatmalı mutfak. Konsept model.", caption: 'Yaşamın etrafında toplandığı yer.', label: 'Yemek', kind: 'concept' },
+    { image: 'concept-gardrop', alt: "Cam kapaklı gardıroplar, aydınlatılmış raflar ve orta depolama adası. Giyinme odası konsepti.", caption: 'Her ayrıntıya yer açan bir düzen.', label: 'Giyinme', kind: 'concept' },
+    { image: 'concept-kahve', alt: "Cam yan vitrinler, kemerli raflar ve çekmeceli kahve dolabı. Konsept model.", caption: 'Günün en sevdiğiniz köşesi.', label: 'Kahve', kind: 'concept' },
+    { image: 'concept-sehpa', alt: "Oval orta sehpa ve iç içe zigonlar bulunan oturma alanı. Konsept model.", caption: 'Bir arada, doğal ve yalın.', label: 'Salon', kind: 'concept' },
+    { image: 'concept-tv', alt: "Dikey çizgili TV paneli, açık raflar ve kapalı alt depolama. Konsept model.", caption: 'Mekânınıza göre düşünülmüş.', label: 'TV', kind: 'concept' }
 ];
 class Home extends react_1.Component {
     constructor() {
         super(...arguments);
-        this.state = { scene: 0, desk: { ...desk_1.defaultDesk }, chapter: 0, paused: false };
+        this.state = { scene: 0, desk: { ...desk_1.defaultDesk }, chapter: 0, paused: false, requested: [0, 1] };
+        this.alive = false;
+        this.serial = 0;
         this.hero = null;
         this.observer = null;
         this.visible = true;
         this.hover = false;
         this.focus = false;
         this.motion = null;
-        this.reschedule = () => { window.clearInterval(this.timer); this.timer = undefined; if (this.state.paused || this.motion?.matches || document.hidden || !this.visible || this.hover || this.focus)
-            return; this.timer = window.setInterval(() => this.setState(s => ({ scene: (s.scene + 1) % scenes.length })), 5000); };
-        this.setScene = (scene) => this.setState({ scene }, this.reschedule);
+        this.reschedule = () => { this.serial++; window.clearInterval(this.timer); this.timer = undefined; if (this.state.paused || this.motion?.matches || document.hidden || !this.visible || this.hover || this.focus)
+            return; this.timer = window.setInterval(() => this.setScene((this.state.scene + 1) % scenes.length), 5000); };
+        this.warm = (scene) => { const next = (scene + 1) % scenes.length; if (!this.state.requested.includes(next))
+            this.setState(s => ({ requested: [...s.requested, next] })); };
+        this.setScene = (scene) => { const token = ++this.serial; this.setState(s => ({ requested: s.requested.includes(scene) ? s.requested : [...s.requested, scene] }), async () => { const img = this.hero?.querySelector('[data-slide="' + scene + '"] img'); if (!img)
+            return; try {
+            await img.decode();
+            if (!img.naturalWidth)
+                throw Error('not-ready');
+            if (this.alive && token === this.serial)
+                this.setState({ scene }, () => { this.warm(scene); this.reschedule(); });
+        }
+        catch {
+            if (this.alive && token === this.serial)
+                this.reschedule();
+        } }); };
     }
-    componentDidMount() { this.motion = matchMedia('(prefers-reduced-motion: reduce)'); this.motion.addEventListener('change', this.reschedule); document.addEventListener('visibilitychange', this.reschedule); if (this.hero) {
+    componentDidMount() { this.alive = true; this.motion = matchMedia('(prefers-reduced-motion: reduce)'); this.motion.addEventListener('change', this.reschedule); document.addEventListener('visibilitychange', this.reschedule); if (this.hero) {
         this.observer = new IntersectionObserver(es => { this.visible = es[0].isIntersecting; this.reschedule(); });
         this.observer.observe(this.hero);
     } this.reschedule(); }
-    componentWillUnmount() { window.clearInterval(this.timer); this.observer?.disconnect(); this.motion?.removeEventListener('change', this.reschedule); document.removeEventListener('visibilitychange', this.reschedule); }
+    componentWillUnmount() { this.alive = false; this.serial++; window.clearInterval(this.timer); this.observer?.disconnect(); this.motion?.removeEventListener('change', this.reschedule); document.removeEventListener('visibilitychange', this.reschedule); }
     render() {
         const a = this.props, s = this.state, scene = scenes[s.scene];
         return (0, react_1.createElement)("div", { className: "v6-home" },
@@ -4561,8 +4658,7 @@ class Home extends react_1.Component {
                     this.focus = false;
                     this.reschedule();
                 } } },
-                scenes.map((sc, i) => (0, react_1.createElement)("div", { className: 'v6-hero-scene v232-scene' + (i === s.scene ? ' is-active' : ''), key: sc.image, "aria-hidden": i !== s.scene, "data-slide": i },
-                    (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: sc.image, alt: sc.caption + ' Konsept model.', eager: true, full: true, sizes: "100vw" }))),
+                scenes.map((sc, i) => (0, react_1.createElement)("div", { className: 'v6-hero-scene v232-scene' + (i === s.scene ? ' is-active' : ''), key: sc.image, "aria-hidden": i !== s.scene, "data-slide": i }, s.requested.includes(i) && (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: sc.image, alt: sc.alt, eager: true, priority: i === 0 ? 'high' : 'low', full: true, sizes: "100vw" }))),
                 (0, react_1.createElement)("div", { className: "v6-hero-shade" }),
                 (0, react_1.createElement)("div", { className: "wrap v6-hero-inner" },
                     (0, react_1.createElement)(ui_1.Eyebrow, null, "\u0130STANBUL / EL YAPIMI MOB\u0130LYA AT\u00D6LYES\u0130"),
@@ -4681,6 +4777,7 @@ exports.Inspiration = exports.WorkDetail = exports.Projects = void 0;
 exports.ConceptCard = ConceptCard;
 exports.Categories = Categories;
 exports.AboutAtelier = AboutAtelier;
+const ServiceGuide_1 = require("../components/ServiceGuide");
 const V7Pages_1 = require("./V7Pages");
 const PinterestPreview_1 = require("../components/PinterestPreview");
 const pinterest_1 = require("../lib/pinterest");
@@ -4872,6 +4969,7 @@ function Categories(a) {
                     (0, react_1.createElement)("p", null, cat.line)),
                 (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: V7Pages_1.categorySupport[cat.id] ? 'work' : 'concept' })),
             (0, react_1.createElement)(V7Pages_1.CategoryDecision, { category: cat.id, navigate: a.navigate }),
+            (0, react_1.createElement)(ServiceGuide_1.ServiceGuide, { category: cat.id, navigate: a.navigate }),
             (0, react_1.createElement)("section", { className: "wrap v6-section" },
                 (0, react_1.createElement)("div", { className: "v6-heading" },
                     (0, react_1.createElement)("div", null,

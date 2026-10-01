@@ -3,11 +3,11 @@ import {ResilientImage} from './ResilientImage';
 import {image,Link,Icon,type PageProps} from './ui';
 import {imageManifest} from '../lib/image-manifest';
 import {categoryName,type Work} from '../lib/portfolio';
-export function VImage({asset,alt,className='',eager=false,sizes='(max-width: 680px) 100vw, 50vw',full=false}:{asset:string;alt:string;className?:string;eager?:boolean;sizes?:string;full?:boolean}) {
+export function VImage({asset,alt,className='',eager=false,sizes='(max-width: 680px) 100vw, 50vw',full=false,priority,onLoad}:{asset:string;alt:string;className?:string;eager?:boolean;sizes?:string;full?:boolean;priority?:'high'|'low'|'auto';onLoad?:()=>void}) {
  const m=(imageManifest as any)[asset];
  if(!m)return <ResilientImage src={image(asset)} alt={alt} className={className} loading={eager?'eager':'lazy'}/>;
  const max=m.variants[m.variants.length-1],fallback=full?max:m.variants[Math.min(1,m.variants.length-1)];
- return <ResilientImage src={image(fallback.file)} fallbackSrc={image(max.file)} srcSet={m.variants.map((v:any)=>image(v.file)+' '+v.width+'w').join(', ')} sizes={sizes} width={m.width} height={m.height} alt={alt} className={className} loading={eager?'eager':'lazy'} decoding={eager?'sync':'async'} fetchPriority={eager?'high':'auto'}/>;
+ return <ResilientImage src={image(fallback.file)} fallbackSrc={image(max.file)} srcSet={m.variants.map((v:any)=>image(v.file)+' '+v.width+'w').join(', ')} sizes={sizes} width={m.width} height={m.height} alt={alt} className={className} loading={eager?'eager':'lazy'} decoding={priority==='low'?'async':eager?'sync':'async'} fetchPriority={priority||(eager?'high':'auto')} onLoad={onLoad}/>;
 }
 export function SourceTag({kind='work'}:{kind?:'work'|'process'|'concept'|'reference'}){return <span className={'source-tag source-'+kind}>{({work:'Atölye arşivi',process:'Uygulama aşaması',concept:'Konsept model',reference:'Pinterest ilhamı'})[kind]}</span>}
 export function WorkCard({work:w,actions:a,featured=false,index=0}:{work:Work;actions:PageProps;featured?:boolean;index?:number}){return <article className={'work-card'+(featured?' featured-work':'')} data-work={w.id}>
