@@ -1,0 +1,138 @@
+name: Elif hero discovery and verified release
+on:
+  push:
+    branches: [elif-hero-discovery-20261001]
+    paths: ['.github/workflows/elif-hero-discovery.yml', '.github/elif-hero/**', 'elif-tasarim/source-v12/tests/hero/**', 'elif-tasarim/source-v12/src/hero-refinement.css']
+permissions:
+  contents: write
+concurrency:
+  group: elif-hero-discovery
+  cancel-in-progress: false
+jobs:
+  verify-stage-live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: elif-tasarim/source-v12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Guard exact Elif baseline and apply only the scoped refinement
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git merge-base --is-ancestor 026d7bda0e324c90b9c79a95ece6dbae1744ef15 origin/main
+          git diff --exit-code 026d7bda0e324c90b9c79a95ece6dbae1744ef15 origin/main -- elif-tasarim
+          python ../../.github/elif-hero/apply.py
+          mkdir -p evidence/hero
+      - name: Clean build, source regressions and exact reviewed runtime
+        run: |
+          set -euo pipefail
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build | tee evidence/hero/build.txt
+          npm test | tee evidence/hero/unit.txt
+          npm run typecheck:core | tee evidence/hero/types.txt
+          npm run verify:dist | tee evidence/hero/integrity.txt
+          python - <<'PY'
+          from pathlib import Path
+          import json,hashlib
+          p=Path('dist/release-v23.json')
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=='8f1bfd8f9af0d229355b85c84fc803b7e9d1cf59ac6daa6d3792633277a98508','Runtime differs from locally reviewed build'
+          m=json.loads(p.read_text());assert m['release']=='v23.4-hero-discovery' and not m['indexable'] and len(m['routes'])==50
+          PY
+          git diff --exit-code -- public/three src/components/DeskExperience.tsx src/lib/service-content.ts src/lib/routes.ts
+      - name: Install Chromium
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Start isolated HTTP preview
+        run: |
+          node tools/serve-static.cjs dist 8000 > /tmp/elif-hero-http.log 2>&1 &
+          for i in {1..15}; do curl -fsS http://127.0.0.1:8000/elif-tasarim/release-v23.json >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Actual timing, hover, keyboard and small-screen discoverability
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+          EVIDENCE_DIR: evidence/hero/stage
+        run: python tests/hero/browser.py
+      - name: Preserve SEO content, direct 3D manipulation and contact
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/hero/seo python tests/seo/browser.py
+          EVIDENCE_DIR=evidence/hero/interaction python tests/v23-interaction/browser.py
+          EVIDENCE_DIR=evidence/hero/contact xvfb-run -a python tests/v22/acceptance.py
+      - name: Preserve all responsive routes
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+          EVIDENCE_DIR: evidence/hero/matrix
+        run: xvfb-run -a python tests/v11/matrix.py
+      - name: Stage verified subtree on current main, retaining other projects
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git diff --exit-code 026d7bda0e324c90b9c79a95ece6dbae1744ef15 origin/main -- elif-tasarim
+          P=/tmp/elif-hero-approved
+          git worktree add --detach "$P" origin/main
+          git rev-parse origin/main > evidence/hero/publication-parent.txt
+          test "$(git -C "$P" hash-object index.html)" = '501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          rsync -a --delete --exclude=source-v12 dist/ "$P/elif-tasarim/"
+          rsync -a --delete --exclude=node_modules --exclude=dist --exclude=preview --exclude=evidence --exclude=.compiled --exclude=.git --exclude=__pycache__ ./ "$P/elif-tasarim/source-v12/"
+          git -C "$P" add -- elif-tasarim
+          git -C "$P" diff --cached --name-only > evidence/hero/published-paths.txt
+          python - <<'PY'
+          from pathlib import Path
+          paths=Path('evidence/hero/published-paths.txt').read_text().splitlines()
+          assert paths and all(p.startswith('elif-tasarim/') for p in paths)
+          PY
+          git -C "$P" -c user.name='Onour Impram' -c user.email='onuribram@outlook.com' commit -m 'Elif V23.4: visible fast hero sequence, named controls and reliable pause'
+          git -C "$P" rev-parse HEAD > evidence/hero/publication-commit.txt
+          git -C "$P" push origin "HEAD:refs/heads/elif-hero-ready-$GITHUB_RUN_ID"
+      - name: Wait for connector-authorized Pages promotion
+        run: |
+          for i in {1..120}; do
+            curl -fsS "https://onourimpram.github.io/elif-tasarim/release-v23.json?verify=$GITHUB_RUN_ID" -o /tmp/elif-hero-live.json || true
+            if cmp -s dist/release-v23.json /tmp/elif-hero-live.json; then exit 0; fi
+            sleep 5
+          done
+          echo 'Exact live release was not confirmed.' >&2
+          exit 1
+      - name: Verify public files and actual public timing
+        env:
+          BASE_URL: https://onourimpram.github.io/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/hero/public python tests/v11/public_verify.py
+          EVIDENCE_DIR=evidence/hero/live python tests/hero/browser.py
+      - name: Package tested source and exact published output
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          root=Path('.');out=Path('delivery-hero');out.mkdir(exist_ok=True)
+          omit={'.git','node_modules','dist','preview','evidence','.compiled','__pycache__','delivery-hero'}
+          for name,folder,prefix in [('Elif_V23_4_Kaynak.zip',root,'source'),('Elif_V23_4_Yayin.zip',root/'dist','elif-tasarim')]:
+            with zipfile.ZipFile(out/name,'w',zipfile.ZIP_DEFLATED) as z:
+              for p in folder.rglob('*'):
+                rel=p.relative_to(folder)
+                if not p.is_file() or (folder==root and set(rel.parts)&omit):continue
+                assert p.suffix.lower() not in {'.woff','.woff2','.ttf','.otf','.eot'}
+                z.write(p,Path(prefix)/rel)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-hero-evidence
+          path: elif-tasarim/source-v12/evidence/hero
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elif-hero-delivery
+          path: elif-tasarim/source-v12/delivery-hero
+          retention-days: 14
