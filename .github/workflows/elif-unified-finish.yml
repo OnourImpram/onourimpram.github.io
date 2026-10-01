@@ -1,0 +1,161 @@
+name: Elif unified studio final candidate
+on:
+  push:
+    branches: [elif-v23-unified-studio-20261001]
+    paths: ['.github/workflows/elif-unified-finish.yml']
+permissions:
+  contents: write
+jobs:
+  finish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: elif-tasarim/source-v12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: elif-v23-unified-studio-20261001
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Record visitor-facing copy regression before fixing wording
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/unified-release
+          cat > tests/v23-unified/editorial.cjs <<'JS'
+          const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs');
+          test('project narratives speak to the workshop visitor rather than referring to an assistant user',()=>{
+           const source=fs.readFileSync('src/lib/portfolio.ts','utf8');
+           assert.doesNotMatch(source,/Kullanıcının/);
+           assert.match(source,/ilan filigranı korunmuştur/);
+          });
+          JS
+          set +e
+          node --test tests/v23-unified/editorial.cjs > evidence/unified-release/editorial-red.txt 2>&1
+          code=$?
+          set -e
+          test "$code" -ne 0
+          grep -q 'Kullanıcının' evidence/unified-release/editorial-red.txt
+      - name: Apply explicit visitor wording and migrate only the obsolete export entry screen
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('src/lib/portfolio.ts');s=p.read_text()
+          changes={
+            'Kullanıcının tamamlanan işler olarak paylaştığı arşivdeki ekran görüntüsü':'Paylaşılan arşivdeki ekran görüntüsü',
+            'Kullanıcının iş arşivinden ilettiği ekran görüntüsündeki':'Paylaşılan ekran görüntüsündeki',
+            'Kullanıcının tamamlanan işler arşivinden paylaşılan görünüm.':'Atölyenin paylaştığı tamamlanan işler arşivinden.',
+            'Kullanıcının iş arşivinden paylaşılan fotoğraf korunmuştur.':'Atölyenin paylaştığı arşivden.'}
+          for old,new in changes.items():
+            assert old in s,old;s=s.replace(old,new)
+          p.write_text(s)
+          p=Path('tests/v20/acceptance.py');s=p.read_text();preserved=s[s.index('  inspect=lambda:'):]
+          s=s.replace("B+'devir-01/'","B+'tasarim-masasi/'").replace('location.hash="#/devir-01"','location.hash="#/tasarim-masasi"')
+          start=s.index("  assert page.locator('h1').count()==1;");end=s.index('  inspect=lambda:',start)
+          replacement='''  page.wait_for_selector('[data-three-status=ready]',timeout=120000)
+            assert page.locator('main h1').count()==1;assert page.locator('.v8-canvas-host canvas').count()==1;assert page.locator('.studio-preset-grid>a').count()==3
+            page.evaluate("async()=>{document.querySelectorAll('img').forEach(i=>i.loading='eager');await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})))}")
+            page.screenshot(path=str(O/'unified-studio-desktop.png'),full_page=True);rec('01. One 3D studio contains the actual scene and all three starting configurations')
+            page.locator('.studio-preset-grid>a').first.click();page.wait_for_selector('[data-three-status=ready]',timeout=120000)
+          '''
+          replacement='\n'.join(line[10:] if line.startswith('          ') else line for line in replacement.split('\n'))
+          s=s[:start]+replacement+s[end:]
+          assert s[s.index('  inspect=lambda:'):]==preserved,'All fourteen later geometry/export checks must remain identical'
+          compile(s,str(p),'exec');p.write_text(s)
+          PY
+      - name: Preserve isolated correction before the test gate
+        run: |
+          set -euo pipefail
+          git add src/lib/portfolio.ts tests/v20/acceptance.py tests/v23-unified/editorial.cjs
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'fix(elif): refine visitor copy and migrate preserved exports to the single studio'
+          git push origin HEAD:elif-v23-unified-studio-20261001
+      - name: Full clean build and 169 source regressions
+        run: |
+          set -euo pipefail
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build | tee evidence/unified-release/build.txt
+          npm test | tee evidence/unified-release/unit.txt
+          npm run typecheck:core | tee evidence/unified-release/types.txt
+          npm run verify:dist | tee evidence/unified-release/integrity.txt
+      - name: Install browser and serve candidate
+        run: |
+          set -euo pipefail
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+          node tools/serve-static.cjs dist 8000 > /tmp/elif-unified-server.log 2>&1 &
+          for i in {1..20}; do curl -fsS http://127.0.0.1:8000/elif-tasarim/release-v23.json >/dev/null && break; sleep 1; done
+      - name: Real geometry, comparison, GLB and USDZ after studio consolidation
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+          EVIDENCE_DIR: evidence/unified-release/exports
+        run: xvfb-run -a python tests/v20/acceptance.py
+      - name: One studio, every archive photograph, redirects and all desktop pages
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+          EVIDENCE_DIR: evidence/unified-release/unified
+        run: xvfb-run -a python tests/v23-unified/browser.py
+      - name: All canonical pages on mobile
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+          EVIDENCE_DIR: evidence/unified-release/mobile
+        run: xvfb-run -a python tests/v23/mobile-media.py
+      - name: Preserve full handoff and 360-degree operation
+        env:
+          BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR=evidence/unified-release/contact xvfb-run -a python tests/v22/acceptance.py
+          EVIDENCE_DIR=evidence/unified-release/orbit xvfb-run -a python tests/v12/acceptance.py
+      - name: Prepare exact publication and remove expired one-shot transfer workflows
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json,shutil,subprocess
+          root=Path('.').resolve();published=root.parent;repo=root.parents[1]
+          assert subprocess.check_output(['git','hash-object','../../index.html'],text=True).strip()=='501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          m=json.loads((root/'dist/release-v23.json').read_text())
+          assert m['release']=='v23-unified-studio' and m['version']=='0.23.1' and len(m['routes'])==50
+          for file in (root/'dist').rglob('*'):
+            if not file.is_file():continue
+            rel=file.relative_to(root/'dist');assert 'source-v12' not in rel.parts
+            target=published/rel;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(file,target)
+          for name in ['elif-archive-inventory.yml','elif-import-archive-media.yml','elif-owned-media-access.yml','elif-media-transfer-check.yml','elif-unified-stage.yml','elif-unified-verify.yml','elif-unified-finish.yml']:
+            p=repo/'.github/workflows'/name
+            if p.exists():p.unlink()
+          (root/'docs/v23-unified/STAGE_GATE.md').write_text('# Tek 3D Stüdyo yayın adayı\n\n169 kaynak testi, 15 gerçek model ve GLB/USDZ kontrol grubu, 11 birleşik stüdyo/arşiv kontrol grubu, 50 masaüstü ve 50 mobil rota, 12 iletişim ve 20 tam tur kontrol grubu bu adayda tamamlandı. Gerçek yayındaki kontrol ayrı yürütülür. 26 farklı fotoğraf 20 proje dosyasında tutulur. Eski Devir adresi yalnız uyumluluk yönlendirmesidir.\n')
+          PY
+          git add -A ../ ../../.github/workflows
+          git diff --cached --name-only | tee evidence/unified-release/publication-files.txt
+          git commit -m 'release(elif): one 3D studio, complete original archive, verified customer journey'
+          git push origin HEAD:elif-v23-unified-studio-20261001
+          git rev-parse HEAD > evidence/unified-release/candidate-commit.txt
+      - name: Package tested source and publication
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile,shutil
+          root=Path('.');target=Path('delivery-unified');target.mkdir(exist_ok=True)
+          exclude={'.git','node_modules','dist','preview','evidence','.compiled','__pycache__','delivery-unified'}
+          for name,folder,prefix in [('Elif_Tasarim_V23_1_Kaynak.zip',root,'source'),('Elif_Tasarim_V23_1_Yayin.zip',root/'dist','elif-tasarim')]:
+            with zipfile.ZipFile(target/name,'w',zipfile.ZIP_DEFLATED) as z:
+              for p in folder.rglob('*'):
+                rel=p.relative_to(folder)
+                if not p.is_file() or (folder==root and set(rel.parts)&exclude):continue
+                assert p.suffix.lower() not in {'.woff','.woff2','.ttf','.otf','.eot'}
+                z.write(p,Path(prefix)/rel)
+          shutil.copyfile('preview/Elif_Tasarim.html',target/'Elif_Tasarim_V23_1.html')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-unified-release-evidence
+          path: elif-tasarim/source-v12/evidence/unified-release
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elif-unified-candidate-delivery
+          path: elif-tasarim/source-v12/delivery-unified
+          retention-days: 14
