@@ -1,0 +1,146 @@
+name: Elif hero clarity and verified publication
+on:
+  push:
+    branches: [elif-hero-clarity-20261001]
+    paths: [.github/workflows/elif-hero-clarity.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: elif-hero-clarity
+  cancel-in-progress: false
+jobs:
+  verify-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: OnourImpram/onourimpram.github.io
+      EXPECTED_BASE: 56f9e346f5616853191e2c1c245da4e40926943c
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply verified bounded source changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api repos/$REPO/git/blobs/608d2a0bc8173af2d0cee7c2ea46e714d79e1ff4 > "$RUNNER_TEMP/change-blob.json"
+          python - <<'PY'
+          import json,base64,lzma,hashlib,os
+          from pathlib import Path
+          wrapper=json.loads((Path(os.environ['RUNNER_TEMP'])/'change-blob.json').read_text())
+          encoded=base64.b64decode(wrapper['content'])
+          raw=lzma.decompress(base64.b64decode(encoded))
+          assert hashlib.sha256(raw).hexdigest()=='746d65a956af62508d950c5595e3ca7ec64f8be5e9319a059036818e39268de5'
+          changes=json.loads(raw);assert len(changes)==8
+          root=Path('elif-tasarim/source-v12');pending=[]
+          for item in changes:
+              relative=Path(item['path']);assert not relative.is_absolute() and '..' not in relative.parts
+              path=root/relative
+              before=path.read_bytes() if path.exists() else None
+              assert (hashlib.sha256(before).hexdigest() if before is not None else None)==item['before'],str(path)
+              if before is None:content=item['text']
+              else:
+                  content=before.decode()
+                  for start,end,text in reversed(item['edits']):content=content[:start]+text+content[end:]
+              result=content.encode();assert hashlib.sha256(result).hexdigest()==item['after'],str(path)
+              pending.append((path,result))
+          for path,data in pending:path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+          print('Applied eight hash-verified source/test/doc files; no asset or private data transfer.')
+          PY
+      - name: Build and source regression gates
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/hero
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build > evidence/hero/build.txt
+          npm test > evidence/hero/unit.txt
+          npm run typecheck:core > evidence/hero/types.txt
+          npm run verify:dist > evidence/hero/integrity.txt
+      - name: Install isolated browser
+        run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Actual HTTP carousel, SEO and direct 3D regression
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          node tools/serve-static.cjs dist 8000 > evidence/hero/server.txt 2>&1 &
+          sleep 2
+          BASE_URL=http://127.0.0.1:8000/elif-tasarim/ EVIDENCE_DIR=evidence/hero/stage python tests/seo/hero-browser.py
+          BASE_URL=http://127.0.0.1:8000/elif-tasarim/ EVIDENCE_DIR=evidence/hero/seo python tests/seo/browser.py
+          BASE_URL=http://127.0.0.1:8000/elif-tasarim/ EVIDENCE_DIR=evidence/hero/interaction python tests/v23-interaction/browser.py
+      - name: Preserve verified source and outputs
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/elif-source" "$RUNNER_TEMP/elif-dist" "$RUNNER_TEMP/elif-evidence"
+          rsync -a --exclude=node_modules --exclude=dist --exclude=preview --exclude=evidence --exclude=.compiled --exclude=__pycache__ --exclude=.git elif-tasarim/source-v12/ "$RUNNER_TEMP/elif-source/"
+          rsync -a elif-tasarim/source-v12/dist/ "$RUNNER_TEMP/elif-dist/"
+          rsync -a elif-tasarim/source-v12/evidence/hero/ "$RUNNER_TEMP/elif-evidence/"
+          cp elif-tasarim/source-v12/preview/Elif_Tasarim.html "$RUNNER_TEMP/Elif_Tasarim.html"
+      - name: Publish only tested Elif subtree without overwriting concurrent work
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git diff --quiet "$EXPECTED_BASE" origin/main -- elif-tasarim
+          ROOT_BEFORE=$(git rev-parse origin/main:index.html)
+          git reset --hard origin/main
+          git clean -fd -- elif-tasarim/source-v12
+          rsync -a --delete --exclude=source-v12 "$RUNNER_TEMP/elif-dist/" elif-tasarim/
+          mkdir -p elif-tasarim/source-v12
+          rsync -a --delete "$RUNNER_TEMP/elif-source/" elif-tasarim/source-v12/
+          git add -- elif-tasarim
+          test -n "$(git diff --cached --name-only)"
+          test -z "$(git diff --cached --name-only | grep -v '^elif-tasarim/' || true)"
+          test "$(git rev-parse :index.html)" = "$ROOT_BEFORE"
+          git config user.name 'Onour Impram'
+          git config user.email 'onuribram@outlook.com'
+          git commit -m 'fix(elif): make five-image hero visibly rotate with direct navigation and safe pause'
+          git push origin HEAD:main
+          git rev-parse HEAD > "$RUNNER_TEMP/elif-evidence/publication-commit.txt"
+          echo "PUBLISHED_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          gh api -X POST repos/$REPO/pages/builds > "$RUNNER_TEMP/elif-evidence/pages-build.json" || true
+      - name: Restore test runtime, verify actual public bytes and live carousel
+        working-directory: elif-tasarim/source-v12
+        run: |
+          set -euo pipefail
+          npm ci --ignore-scripts --no-audit --no-fund
+          cp -a "$RUNNER_TEMP/elif-dist" dist
+          BASE_URL=https://onourimpram.github.io/elif-tasarim/ EVIDENCE_DIR="$RUNNER_TEMP/elif-evidence/public" python tests/v11/public_verify.py
+          BASE_URL=https://onourimpram.github.io/elif-tasarim/ EVIDENCE_DIR="$RUNNER_TEMP/elif-evidence/live" python tests/seo/hero-browser.py
+      - name: Package tested sources without font binaries
+        if: success()
+        run: |
+          python - <<'PY'
+          import os,zipfile,json
+          from pathlib import Path
+          temp=Path(os.environ['RUNNER_TEMP']);out=Path('hero-delivery');out.mkdir(exist_ok=True)
+          forbidden={'.woff','.woff2','.ttf','.otf','.eot'}
+          for folder,name in [('elif-source','Elif_Acilis_Guncel_Kaynak.zip'),('elif-dist','Elif_Acilis_Guncel_Yayin.zip')]:
+              with zipfile.ZipFile(out/name,'w',zipfile.ZIP_DEFLATED)as z:
+                  for p in sorted((temp/folder).rglob('*')):
+                      if p.is_file() and p.suffix.lower() not in forbidden and '__pycache__' not in p.parts:z.write(p,p.relative_to(temp/folder))
+          (out/'publication.json').write_text(json.dumps({'commit':os.environ['PUBLISHED_COMMIT'],'url':'https://onourimpram.github.io/elif-tasarim/','note':'Narrow hero interaction repair; no claim of field performance or physical-device certification'},indent=2))
+          PY
+      - name: Upload evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: elif-hero-clarity-evidence
+          path: |
+            elif-tasarim/source-v12/evidence/hero/
+            ${{ runner.temp }}/elif-evidence/
+          retention-days: 14
+      - name: Upload final publication
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: elif-hero-clarity-delivery
+          path: hero-delivery/
+          retention-days: 14
