@@ -8,7 +8,7 @@
   "version": "0.5.0",
   "base": "/MARSAM/",
   "mode": "preview",
-  "generatedAt": "2026-10-01T16:30:33.359Z",
+  "generatedAt": "2026-10-01T16:46:12.715Z",
   "locales": [
     "tr",
     "en",
@@ -423,6 +423,6 @@
       "direction": "ltr"
     }
   },
-  "deploymentCommit": "1795948e7a903f747711028e71603fa00536a16c",
+  "deploymentCommit": "a5dfb6558be5dbbf180321e114f4725b3e6b9657",
   "deploymentHost": "OnourImpram/onourimpram.github.io"
 }
