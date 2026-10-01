@@ -1,0 +1,182 @@
+name: Publish and verify MARSAM heritage release
+on:
+  push:
+    branches: [publish/marsam-heritage-06]
+    paths: [.github/workflows/marsam-heritage-publish.yml]
+permissions:
+  contents: read
+env:
+  SOURCE_COMMIT: 038506a0313509437ba038043188f3aa0c398cb6
+  BASE_PATH: /MARSAM/
+  PAGES_PREVIEW: 'true'
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: ${{ env.SOURCE_COMMIT }}
+          path: .marsam-source
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check the exact source and generated routes
+        working-directory: .marsam-source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$SOURCE_COMMIT"
+          mkdir -p verification
+          npm run check | tee verification/heritage-release-check.log
+      - name: Replace only MARSAM in the candidate branch
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json,hashlib,shutil,os,subprocess
+          root=Path('.marsam-source/dist');m=json.loads((root/'build-manifest.json').read_text())
+          assert m['version']=='0.6.0' and m['base']=='/MARSAM/'
+          assert m['previewDeploymentAuthorized'] is True and m['publicationAuthorized'] is False
+          assert m['institution']['formalApprovalVerified'] is False
+          assert m['locales']==['tr','en','de','zh','ru','ar','id','ms']
+          m['deploymentCommit']=os.environ['SOURCE_COMMIT'];m['deploymentHost']='OnourImpram/onourimpram.github.io'
+          (root/'build-manifest.json').write_text(json.dumps(m,ensure_ascii=False,indent=2)+'\n')
+          allowed={'.html','.css','.js','.json','.svg','.png','.webp','.txt','.ris','.bib'};files={}
+          for f in root.rglob('*'):
+              if not f.is_file():continue
+              assert not f.is_symlink()
+              assert f.suffix in allowed or f.name in {'.nojekyll','_headers'},str(f)
+              files[f.relative_to(root).as_posix()]={'sha256':hashlib.sha256(f.read_bytes()).hexdigest(),'bytes':f.stat().st_size}
+          assert not any(p.endswith(('.ttf','.otf','.woff','.woff2','.ttc'))for p in files)
+          r={'release':'marsam-heritage-0.6.0','sourceCommit':os.environ['SOURCE_COMMIT'],'url':'https://onourimpram.github.io/MARSAM/','mode':'institutional-review','formalApproval':False,'files':files}
+          (root/'release.json').write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n')
+          assert json.loads(Path('MARSAM/release.json').read_text())['mode']=='institutional-review'
+          shutil.rmtree('MARSAM');shutil.copytree(root,'MARSAM')
+          assert subprocess.check_output(['git','hash-object','index.html']).decode().strip()=='501229ef0c1d25dbc4554e27ca089b03e590c7e0'
+          PY
+      - name: Commit the isolated candidate without promoting unrelated changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -- MARSAM
+          python - <<'PY'
+          import subprocess
+          paths=subprocess.check_output(['git','diff','--cached','--name-only','-z']).decode().split('\0')
+          assert all(p.startswith('MARSAM/')for p in paths if p)
+          PY
+          git config user.name 'Onour Impram'
+          git config user.email '215815131+OnourImpram@users.noreply.github.com'
+          git commit -m 'build: stage MARSAM heritage design and verified publication catalogue'
+          git push origin HEAD:publish/marsam-heritage-06
+          git rev-parse HEAD > .marsam-source/verification/heritage-candidate-sha.txt
+          git rev-parse HEAD:MARSAM > .marsam-source/verification/heritage-candidate-tree.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-heritage-staged
+          path: .marsam-source/verification/heritage-*
+          retention-days: 7
+  verify-public:
+    needs: stage
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: ${{ env.SOURCE_COMMIT }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare real browser
+        timeout-minutes: 3
+        run: |
+          npm run build
+          python -m pip install --timeout 25 -q playwright==1.57.0
+          python -m playwright install chromium
+          mkdir -p verification
+      - name: Prepare script coverage on the test host only
+        timeout-minutes: 2
+        run: |
+          sudo apt-get -o Acquire::Retries=0 -o Acquire::http::Timeout=20 install --no-install-recommends -y fonts-noto-cjk
+          fc-match 'Noto Serif CJK SC' > verification/heritage-live-font-environment.txt
+          grep -q CJK verification/heritage-live-font-environment.txt
+      - name: Require explicit promotion of this release
+        shell: bash
+        run: |
+          set -euo pipefail
+          for i in {1..100}; do
+            if curl -fsS --max-time 12 "https://onourimpram.github.io/MARSAM/release.json?source=$SOURCE_COMMIT" > /tmp/release.json; then
+              if python -c "import json,os,sys;sys.exit(0 if json.load(open('/tmp/release.json')).get('sourceCommit')==os.environ['SOURCE_COMMIT'] else 1)"; then
+                cp /tmp/release.json verification/heritage-live-release.json
+                exit 0
+              fi
+            fi
+            sleep 5
+          done
+          echo 'Expected release is not public. Do not claim publication.' >&2
+          exit 1
+      - name: Verify the bytes actually delivered by GitHub Pages
+        run: |
+          python - <<'PY'
+          from concurrent.futures import ThreadPoolExecutor
+          from urllib.request import urlopen,Request
+          from pathlib import Path
+          import json,hashlib,time
+          m=json.load(open('verification/heritage-live-release.json'))
+          def check(item):
+              name,info=item
+              for attempt in range(3):
+                  try:
+                      with urlopen(Request(m['url']+name+'?release=heritage06',headers={'User-Agent':'MARSAM-release-verification'}),timeout=25)as r:data=r.read();assert r.status==200
+                      assert hashlib.sha256(data).hexdigest()==info['sha256'],name
+                      return name
+                  except Exception:
+                      if attempt==2:raise
+                      time.sleep(2)
+          with ThreadPoolExecutor(max_workers=8)as pool:paths=list(pool.map(check,[(p,v)for p,v in m['files'].items()if p not in {'.nojekyll','_headers'}]))
+          for name in ['heritage.css','heritage.js']:
+              for attempt in range(60):
+                  with urlopen(m['url']+name,timeout=25)as r:data=r.read()
+                  if hashlib.sha256(data).hexdigest()==m['files'][name]['sha256']:break
+                  time.sleep(3)
+              assert hashlib.sha256(data).hexdigest()==m['files'][name]['sha256'],name
+          Path('verification/heritage-live-bytes.json').write_text(json.dumps({'passed':True,'sourceCommit':m['sourceCommit'],'checked':len(paths),'unqueriedHeritageAssetsMatch':True},indent=2))
+          PY
+      - name: Test the actual public eight-language design and bibliographic downloads
+        env:
+          PREVIEW_ORIGIN: https://onourimpram.github.io
+        run: python tests/heritage_e2e.py
+      - name: Retest public search, saved readings and native comparison export
+        run: |
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          from pathlib import Path
+          import json
+          root='https://onourimpram.github.io/MARSAM/';checks=[]
+          with sync_playwright()as p:
+              browser=p.chromium.launch();ctx=browser.new_context(accept_downloads=True,viewport={'width':1440,'height':1000});page=ctx.new_page()
+              page.goto(root+'tr/search/',wait_until='networkidle');page.locator('#page-search').fill('maneviyat');page.wait_for_selector('[data-search-results] .search-result');checks.append('public search')
+              page.goto(root+'tr/dossier/theory-and-integration/',wait_until='networkidle');page.locator('[data-save]').click();page.reload(wait_until='networkidle');assert page.locator('[data-save]').get_attribute('aria-pressed')=='true';checks.append('persistent reading list')
+              page.goto(root+'tr/compare/?ids=theories-book,three-waves',wait_until='networkidle');page.wait_for_selector('.comparison-table')
+              with page.expect_download()as d:page.locator('[data-comparison-export]').click()
+              assert len(json.loads(Path(d.value.path()).read_text())['items'])==2;checks.append('native comparison export')
+              ctx.close();browser.close()
+          Path('verification/heritage-live-core.json').write_text(json.dumps({'passed':True,'checks':checks},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-heritage-live-evidence
+          path: |
+            verification/heritage-live-*
+            verification/heritage-browser.json
+            .browser-results/heritage/
+          include-hidden-files: true
+          retention-days: 7
