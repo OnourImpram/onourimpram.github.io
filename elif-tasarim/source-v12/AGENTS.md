@@ -2,7 +2,7 @@
 
 Kullanıcının onayladığı amblemi, Zamana değer katan mobilyalar başlığını, gerçek proje ile konsept ayrımını ve Yunus Usta iletişimini koru. Telefon +90 530 879 71 69. Kullanıcının sağladığı işletme e-postası iletisim.eliftasarimatolyesi@gmail.com. Posta kutusuna erişim veya teslim testi yapılmış sayılmaz.
 
-Tek etkin build `npm run build` ile `tools/build-v23.cjs` üzerinden üretilir. Paket 0.23.0, kimlik v23-premium-finish, manifest release-v23.json. Tarihsel source-v12 klasör adı etkin sürüm değildir. Eski yayın HTML'ine kod ekleme. `dist` test edilmeden yayınlama. Three.js yerel modüllerini ve lisansını koru.
+Tek etkin build `npm run build` ile `tools/build-v23.cjs` üzerinden üretilir. Paket 0.23.1, kimlik v23-unified-studio, manifest release-v23.json. Tarihsel source-v12 klasör adı etkin sürüm değildir. Eski yayın HTML'ine kod ekleme. `dist` test edilmeden yayınlama. Three.js yerel modüllerini ve lisansını koru.
 
 GitHub yayını yalnız `elif-tasarim/` alt dizinini değiştirebilir. Kök index dosyasına dokunma. Uzak main tabanı değişmişse eski paketi körlemesine ezme. Force push yok.
 
@@ -15,3 +15,7 @@ Bu paketin hazır olması canlı yayının güncellendiği anlamına gelmez. Yay
 Özel taslak kurtarma yalnız açık kullanıcı izniyle cihazda yedi günlük kayıttır. Fotoğraf dahil değildir. JSON kurtarma dosyası kişisel not içerir, herkese açık model dosyası gibi dağıtma. İlham dosyası yalnız katalog kimlikleri taşır. Devir karşılaştırma dosyası masa konfigürasyonudur. Üç dosyanın veri kapsamı birbirine karıştırılmaz.
 
 Tam özet kopyalama, pano reddi, uzun e-posta metni, geri dönüş ve JavaScript gerektirmeyen kolay iletişim yolu için tests/v22/acceptance.py çalıştırılır. İletişim bağlantısını açmayı, atölyeye teslim veya sipariş oluşturma olarak gösterme. Gerçek mesaj veya arama için ayrıca açık kullanıcı talebi gerekir.
+
+## Kullanıcının tek stüdyo talimatı
+
+Ayrı Devir 01 bölümü veya menüsü yoktur. Bütün masa anlatımı, model seçenekleri ve 3D deneyim /tasarim-masasi içinde 3D Stüdyo adı altında tutulur. /devir-01 yalnız eski bağlantıları aynı stüdyoya taşıyan uyumluluk yönlendirmesidir. Arşivin 26 farklı fotoğrafı 20 proje kaydında gruplanmıştır, kurulum kareleri bitmiş teslim diye sunulmaz.

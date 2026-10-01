@@ -92,15 +92,12 @@ with sync_playwright() as p:
   all_ids=set()
   for route in project_routes:
    visit(route.strip('/')+'/')
-   ids=page.locator('.work-thumbnails img').evaluate_all("els=>els.map(i=>i.getAttribute('data-asset'))")
-   first=page.locator('.work-main-photo img').get_attribute('data-asset')
-   if first:all_ids.add(first)
+   ids=page.locator('.work-detail-media img').evaluate_all("els=>els.map(i=>(i.getAttribute('src')||'').split('/').pop().split('-')[0])")
    all_ids.update(i for i in ids if i)
    assert page.locator('.v11-case-study').count()==1,route
   assert len(project_routes)==20,len(project_routes)
-  # Check source IDs as well as the real HTTP files because data-asset is optional in the presentation.
-  portfolio=Path(ROOT/'src/lib/portfolio.ts').read_text()
-  for image_id in ['r%02d'%i for i in range(1,27)]: assert "'"+image_id+"'" in portfolio,image_id
+  # All twenty actual galleries must expose the full unique source set.
+  assert all_ids=={'r%02d'%i for i in range(1,27)}, sorted(all_ids)
   for name in ['r03','r11','r16','r17','r20','r21','r24','r25','r26']:
    response=ctx.request.get(BASE+'assets/'+name+'-full.webp');assert response.ok and len(response.body())>25000,name
   passed('07. All twenty project dossiers exist and every unique archive photo is represented without inventing technical specifications',{'uniqueArchivePhotos':26,'newPhotoFiles':9,'projectDossiers':20})
