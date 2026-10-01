@@ -759,5 +759,154 @@ export const imageManifest = {
       2048,
       876
     ]
+  },
+  "r03": {
+    "kind": "process",
+    "width": 1080,
+    "height": 1440,
+    "variants": [
+      {
+        "file": "r03-full.webp",
+        "width": 1080,
+        "height": 1440,
+        "bytes": 78522
+      }
+    ],
+    "source": "WhatsApp Image 2026-09-22 at 16.07.21 (1).jpeg",
+    "sourceSha256": "8dba3be7cd03c892883d946a00ae11b043c88108a0b4dc76f422042de1f480d7",
+    "crop": null
+  },
+  "r11": {
+    "kind": "process",
+    "width": 1440,
+    "height": 1050,
+    "variants": [
+      {
+        "file": "r11-full.webp",
+        "width": 1440,
+        "height": 1050,
+        "bytes": 41202
+      }
+    ],
+    "source": "WhatsApp Image 2026-09-22 at 16.08.29 (3).jpeg",
+    "sourceSha256": "7b1e318d0c4570a6eb79e9f53c73688c33a238741eeca28729f29d55a57f5cb5",
+    "crop": [
+      0,
+      0,
+      1580,
+      1152
+    ]
+  },
+  "r16": {
+    "kind": "work",
+    "width": 1080,
+    "height": 1440,
+    "variants": [
+      {
+        "file": "r16-full.webp",
+        "width": 1080,
+        "height": 1440,
+        "bytes": 331988
+      }
+    ],
+    "source": "WhatsApp Image 2026-09-22 at 16.08.30 (2).jpeg",
+    "sourceSha256": "93da45ec05e48cd8adef2fe19a008be4bdc37fab82bf8b298d1fca03f760e57b",
+    "crop": null
+  },
+  "r17": {
+    "kind": "work",
+    "width": 1080,
+    "height": 1440,
+    "variants": [
+      {
+        "file": "r17-full.webp",
+        "width": 1080,
+        "height": 1440,
+        "bytes": 351604
+      }
+    ],
+    "source": "WhatsApp Image 2026-09-22 at 16.08.30 (3).jpeg",
+    "sourceSha256": "31056cf0668fc98a485bde3c4e5f29e9fd597e89ca98934893ffea76a1a5fd5c",
+    "crop": null
+  },
+  "r20": {
+    "kind": "work",
+    "width": 1440,
+    "height": 1080,
+    "variants": [
+      {
+        "file": "r20-full.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 272440
+      }
+    ],
+    "source": "WhatsApp Image 2026-09-22 at 16.08.31 (2).jpeg",
+    "sourceSha256": "98f712df0cbae63d806f5689ebcaf5d523a0b427c7d2fbff8e5ee1bf2f11e404",
+    "crop": null
+  },
+  "r21": {
+    "kind": "work",
+    "width": 1055,
+    "height": 1217,
+    "variants": [
+      {
+        "file": "r21-full.webp",
+        "width": 1055,
+        "height": 1217,
+        "bytes": 81956
+      }
+    ],
+    "source": "WhatsApp Image 2026-09-22 at 16.08.31 (3).jpeg",
+    "sourceSha256": "9405d33bdb2404886b3b03dcd666cd83ada9329397c9a7f4beaec22edb3ecfe8",
+    "crop": null
+  },
+  "r24": {
+    "kind": "work",
+    "width": 777,
+    "height": 810,
+    "variants": [
+      {
+        "file": "r24-full.webp",
+        "width": 777,
+        "height": 810,
+        "bytes": 31426
+      }
+    ],
+    "source": "WhatsApp Image 2026-09-22 at 16.08.32 (1).jpeg",
+    "sourceSha256": "0d852236e1db7500f2e57285e19872df577fcb1516cea6a653b63426faf1bc3d",
+    "crop": null
+  },
+  "r25": {
+    "kind": "work",
+    "width": 812,
+    "height": 880,
+    "variants": [
+      {
+        "file": "r25-full.webp",
+        "width": 812,
+        "height": 880,
+        "bytes": 50292
+      }
+    ],
+    "source": "WhatsApp Image 2026-09-22 at 16.08.32 (2).jpeg",
+    "sourceSha256": "63f30160f5f9e58ce550b0081f64f969cedaa54c78df3048d65cce1edd59459f",
+    "crop": null
+  },
+  "r26": {
+    "kind": "work",
+    "width": 662,
+    "height": 810,
+    "variants": [
+      {
+        "file": "r26-full.webp",
+        "width": 662,
+        "height": 810,
+        "bytes": 35602
+      }
+    ],
+    "source": "WhatsApp Image 2026-09-22 at 16.08.33.jpeg",
+    "sourceSha256": "03d0e5533779d04ebca07d69086a8d344d6212d0583f0dcb5183d223f1159690",
+    "crop": null
   }
-};
+} as const;
