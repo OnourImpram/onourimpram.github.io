@@ -1,0 +1,628 @@
+[
+  {
+    "id": "s-aservic",
+    "type": "webpage",
+    "title": "Spiritual and religious best practices",
+    "URL": "https://aservic.org/wp-content/uploads/2026/02/ASERVIC.-2025.-Spiritual-and-Religious-Best-Practices-1.pdf",
+    "note": "Association for Spiritual, Ethical, and Religious Values in Counseling. (2025). Spiritual and religious best practices.",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s-vieten",
+    "type": "webpage",
+    "title": "Spiritual and religious competencies in psychology",
+    "URL": "https://pubmed.ncbi.nlm.nih.gov/34264695/",
+    "note": "Vieten, C., & Lukoff, D. (2022). Spiritual and religious competencies in psychology. American Psychologist, 77(1), 26–38. https://doi.org/10.1037/amp0000821",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s-captari",
+    "type": "webpage",
+    "title": "Integrating clients’ religion and spirituality within psychotherapy: A comprehensive meta-analysis",
+    "URL": "https://doi.org/10.1002/jclp.22681",
+    "note": "Captari, L. E., Hook, J. N., Hoyt, W., Davis, D. E., McElroy-Heltzel, S. E., & Worthington, E. L., Jr. (2018). Integrating clients’ religion and spirituality within psychotherapy: A comprehensive meta-analysis. Journal of Clinical Psychology, 74(11), 1938–1951. https://doi.org/10.1002/jclp.22681",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s-swift",
+    "type": "webpage",
+    "title": "Client preference accommodation for religious/spiritual integration and psychotherapy outcomes in naturalistic practice settings",
+    "URL": "https://pubmed.ncbi.nlm.nih.gov/34553982/",
+    "note": "Swift, J. K., Bird, M. O., Penix, E. A., & Trusty, W. T. (2022). Client preference accommodation for religious/spiritual integration and psychotherapy outcomes in naturalistic practice settings. Psychotherapy, 59(3), 392–399. https://doi.org/10.1037/pst0000386",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s-tunc",
+    "type": "article-journal",
+    "title": "Sacred Tensions: How Mental Health Professionals Navigate Spirituality, Ethics, and Professional Identity",
+    "URL": "https://link.springer.com/article/10.1007/s11089-025-01244-0",
+    "note": "M. Furkan Tunç, Halil Ekşi. (2025). Sacred Tensions: How Mental Health Professionals Navigate Spirituality, Ethics, and Professional Identity. Pastoral Psychology, 74(6), 937–958. https://doi.org/10.1007/s11089-025-01244-0",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1007/s11089-025-01244-0",
+    "container-title": "Pastoral Psychology",
+    "volume": "74",
+    "issue": "6",
+    "page": "937–958",
+    "author": [
+      {
+        "literal": "M. Furkan Tunç"
+      },
+      {
+        "literal": "Halil Ekşi"
+      }
+    ]
+  },
+  {
+    "id": "s-hodge",
+    "type": "webpage",
+    "title": "Metaphysical diversity in mental health discourse: The key to scientific progress in the helping professions",
+    "URL": "https://doi.org/10.37898/spc.2021.6.3.154",
+    "note": "Hodge, D. R. (2021). Metaphysical diversity in mental health discourse: The key to scientific progress in the helping professions. Spiritual Psychology and Counseling, 6(3), 7–30. https://doi.org/10.37898/spc.2021.6.3.154",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s-pargament",
+    "type": "webpage",
+    "title": "From research to practice: Three waves in the evolution of the psychology of religion and spirituality",
+    "URL": "https://doi.org/10.37898/spc.2023.8.3.191",
+    "note": "Pargament, K. I. (2023). From research to practice: Three waves in the evolution of the psychology of religion and spirituality. Spiritual Psychology and Counseling, 8(3), 207–225. https://doi.org/10.37898/spc.2023.8.3.191",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s-eksi",
+    "type": "book",
+    "title": "Psikoterapi ve Psikolojik Danışma Kuramları: Manevi Boyutlarıyla",
+    "URL": "https://www.kaknus.com.tr/urun/psikoterapi-ve-psikolojik-danisma-kuramlari/",
+    "note": "Halil Ekşi (Ed.). (2024). Psikoterapi ve Psikolojik Danışma Kuramları: Manevi Boyutlarıyla. Kaknüs Yayınları. ISBN 978-975-256-715-3.",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "ISBN": "978-975-256-715-3",
+    "publisher": "Kaknüs Yayınları",
+    "page": "784",
+    "edition": "1",
+    "editor": [
+      {
+        "literal": "Halil Ekşi"
+      }
+    ]
+  },
+  {
+    "id": "s-toad",
+    "type": "webpage",
+    "title": "Türkiye Ölçme Araçları Dizini",
+    "URL": "https://toad.halileksi.net/",
+    "note": "TOAD. (n.d.). Türkiye Ölçme Araçları Dizini. Accessed 2026-10-01."
+  },
+  {
+    "id": "s-prisma",
+    "type": "webpage",
+    "title": "PRISMA statement",
+    "URL": "https://www.prisma-statement.org/",
+    "note": "PRISMA. (n.d.). PRISMA statement. Official website, accessed 2026-10-01."
+  },
+  {
+    "id": "s-who-ai",
+    "type": "webpage",
+    "title": "Ethics and governance of artificial intelligence for health",
+    "URL": "https://www.who.int/publications/i/item/9789240029200",
+    "note": "World Health Organization. (2021). Ethics and governance of artificial intelligence for health. WHO.",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s-ukm-counselling",
+    "type": "webpage",
+    "title": "The Islamic counselling approach in addressing anxiety among adolescents in higher education institutions (HEIs)",
+    "URL": "https://spaj.ukm.my/jalhikmah/index.php/jalhikmah/article/view/514",
+    "note": "Sazali, N. A., & Hanin Hamjah, S. (2024). The Islamic counselling approach in addressing anxiety among adolescents in higher education institutions (HEIs). Al-Hikmah, 16(1), 153–172. https://doi.org/10.17576/alhikmah.2024.161/514",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    }
+  },
+  {
+    "id": "s-trauma-spirituality",
+    "type": "book",
+    "title": "Travmanın İzinde Maneviyat: Bütüncül Bir Psikoterapi Rehberi",
+    "URL": "https://www.nobelyayin.com/travmanin-izinde-maneviyat-butuncul-bir-psikoterapi-rehberi-23386.html",
+    "note": "Halil Ekşi (Ed.). (2026). Travmanın İzinde Maneviyat: Bütüncül Bir Psikoterapi Rehberi. Nobel Akademik Yayıncılık. ISBN 978-625-8804-58-4.",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "ISBN": "978-625-8804-58-4",
+    "publisher": "Nobel Akademik Yayıncılık",
+    "page": "384",
+    "edition": "1",
+    "editor": [
+      {
+        "literal": "Halil Ekşi"
+      }
+    ]
+  },
+  {
+    "id": "s-spiritual-counselling-book",
+    "type": "book",
+    "title": "Manevi Yönelimli Psikolojik Danışma",
+    "URL": "https://www.nobelyayin.com/manevi-yonelimli-psikolojik-danisma-15894.html",
+    "note": "Halil Ekşi (Ed.). (2024). Manevi Yönelimli Psikolojik Danışma. Nobel Akademik Yayıncılık. ISBN 978-605-033-256-8.",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "ISBN": "978-605-033-256-8",
+    "publisher": "Nobel Akademik Yayıncılık",
+    "page": "384",
+    "edition": "3",
+    "editor": [
+      {
+        "literal": "Halil Ekşi"
+      }
+    ]
+  },
+  {
+    "id": "s-discovering-spirituality",
+    "type": "book",
+    "title": "Maneviyatın Keşfi: 21 Boyutta Kendi Kendine Yardım Kılavuzu",
+    "URL": "https://www.nobelyayin.com/maneviyatin-kesfi-21-boyutta-kendi-kendine-yardim-kilavuzu-21519.html",
+    "note": "Halil Ekşi, Dilek Günel, Ece Yağcı Akgündüz, Emre Gürkan, Fadile Zeynep Çavuş, Yasemin Altıntaş. (2024). Maneviyatın Keşfi: 21 Boyutta Kendi Kendine Yardım Kılavuzu. Nobel Akademik Yayıncılık. ISBN 978-625-371-703-2.",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "ISBN": "978-625-371-703-2",
+    "publisher": "Nobel Akademik Yayıncılık",
+    "page": "374",
+    "edition": "1",
+    "author": [
+      {
+        "literal": "Halil Ekşi"
+      },
+      {
+        "literal": "Dilek Günel"
+      },
+      {
+        "literal": "Ece Yağcı Akgündüz"
+      },
+      {
+        "literal": "Emre Gürkan"
+      },
+      {
+        "literal": "Fadile Zeynep Çavuş"
+      },
+      {
+        "literal": "Yasemin Altıntaş"
+      }
+    ]
+  },
+  {
+    "id": "s-spiritual-practices",
+    "type": "book",
+    "title": "Manevi Yaşam Pratikleri",
+    "URL": "https://www.nobelyayin.com/manevi-yasam-pratikleri-21520.html",
+    "note": "Halil Ekşi (Ed.). (2024). Manevi Yaşam Pratikleri. Nobel Akademik Yayıncılık. ISBN 978-625-371-699-8.",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "ISBN": "978-625-371-699-8",
+    "publisher": "Nobel Akademik Yayıncılık",
+    "page": "184",
+    "edition": "1",
+    "editor": [
+      {
+        "literal": "Halil Ekşi"
+      }
+    ]
+  },
+  {
+    "id": "s-techniques-101",
+    "type": "book",
+    "title": "Psikoterapi ve Psikolojik Danışmada Manevi Yönelimli 101 Teknik",
+    "URL": "https://www.nobelyayin.com/psikoterapi-ve-psikolojik-danismada-manevi-yonelimli-101-teknik-18476.html",
+    "note": "Halil Ekşi (Ed.). (2024). Psikoterapi ve Psikolojik Danışmada Manevi Yönelimli 101 Teknik. Nobel Akademik Yayıncılık. ISBN 978-625-417-915-0.",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "ISBN": "978-625-417-915-0",
+    "publisher": "Nobel Akademik Yayıncılık",
+    "page": "610",
+    "edition": "2",
+    "editor": [
+      {
+        "literal": "Halil Ekşi"
+      }
+    ]
+  },
+  {
+    "id": "s-family-spiritual",
+    "type": "book",
+    "title": "Aile Terapisi: Manevi Yönelimli Bir Perspektif",
+    "URL": "https://www.nobelyayin.com/aile-terapisi-manevi-yonelimli-bir-perspektif-16429.html",
+    "note": "Halil Ekşi (Ed.). (2023). Aile Terapisi: Manevi Yönelimli Bir Perspektif. Nobel Akademik Yayıncılık. ISBN 978-625-406-392-3.",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "ISBN": "978-625-406-392-3",
+    "publisher": "Nobel Akademik Yayıncılık",
+    "page": "338",
+    "edition": "2",
+    "editor": [
+      {
+        "literal": "Halil Ekşi"
+      }
+    ]
+  },
+  {
+    "id": "s-group-counselling",
+    "type": "book",
+    "title": "Grupla Psikolojik Danışma Uygulamaları: Psikospiritüel Gelişim Kılavuzu",
+    "URL": "https://www.nobelyayin.com/grupla-psikolojik-danisma-uygulamalari-psikospirituel-gelisim-kilavuzu-17677.html",
+    "note": "Halil Ekşi, Osman Hatun (Eds.). (2023). Grupla Psikolojik Danışma Uygulamaları: Psikospiritüel Gelişim Kılavuzu. Nobel Akademik Yayıncılık. ISBN 978-625-417-005-8.",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "ISBN": "978-625-417-005-8",
+    "publisher": "Nobel Akademik Yayıncılık",
+    "page": "450",
+    "edition": "2",
+    "editor": [
+      {
+        "literal": "Halil Ekşi"
+      },
+      {
+        "literal": "Osman Hatun"
+      }
+    ]
+  },
+  {
+    "id": "s-cbt-spiritual",
+    "type": "book",
+    "title": "Bilişsel Davranışçı Terapi: Manevi Perspektifli Teori ve Uygulamalar",
+    "URL": "https://www.nobelyayin.com/bilissel-davranisci-terapi-manevi-perspektifli-teori-ve-uygulamalar-18795.html",
+    "note": "Tuğba Turgut, Halil Ekşi. (2022). Bilişsel Davranışçı Terapi: Manevi Perspektifli Teori ve Uygulamalar. Nobel Akademik Yayıncılık. ISBN 978-625-427-158-8.",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "ISBN": "978-625-427-158-8",
+    "publisher": "Nobel Akademik Yayıncılık",
+    "page": "224",
+    "edition": "1",
+    "author": [
+      {
+        "literal": "Tuğba Turgut"
+      },
+      {
+        "literal": "Halil Ekşi"
+      }
+    ]
+  },
+  {
+    "id": "s-spiritual-burnout",
+    "type": "article-journal",
+    "title": "The Spiritual Burnout Scale: Development and Psychometric Validation of a Measure of Spiritual Resource Depletion in Türkiye",
+    "URL": "https://pubmed.ncbi.nlm.nih.gov/42766252/",
+    "note": "Nesrullah Okan, Osman Hatun, Füsun Ekşi, Halil Ekşi, Nihat Köse. (2026). The Spiritual Burnout Scale: Development and Psychometric Validation of a Measure of Spiritual Resource Depletion in Türkiye. Journal of Religion and Health. https://doi.org/10.1007/s10943-026-02801-4",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10943-026-02801-4",
+    "container-title": "Journal of Religion and Health",
+    "author": [
+      {
+        "literal": "Nesrullah Okan"
+      },
+      {
+        "literal": "Osman Hatun"
+      },
+      {
+        "literal": "Füsun Ekşi"
+      },
+      {
+        "literal": "Halil Ekşi"
+      },
+      {
+        "literal": "Nihat Köse"
+      }
+    ]
+  },
+  {
+    "id": "s-sipas",
+    "type": "article-journal",
+    "title": "Spiritually Integrated Process Assessment Scale (SIPAS): Validity and Reliability Study",
+    "URL": "https://dergipark.org.tr/en/pub/spiritualpc/article/1793082",
+    "note": "Halil Eksi, Havvanur Akyol, Neslihan Aydın, Fatma Betül Karalı, Mehmet Özalp, M. Furkan Tunç, Ebru Talibe Turgut. (2026). Spiritually Integrated Process Assessment Scale (SIPAS): Validity and Reliability Study. Spiritual Psychology and Counseling, 11(2), 211–232. https://doi.org/10.37898/spiritualpc.1793082",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.37898/spiritualpc.1793082",
+    "container-title": "Spiritual Psychology and Counseling",
+    "volume": "11",
+    "issue": "2",
+    "page": "211–232",
+    "author": [
+      {
+        "literal": "Halil Eksi"
+      },
+      {
+        "literal": "Havvanur Akyol"
+      },
+      {
+        "literal": "Neslihan Aydın"
+      },
+      {
+        "literal": "Fatma Betül Karalı"
+      },
+      {
+        "literal": "Mehmet Özalp"
+      },
+      {
+        "literal": "M. Furkan Tunç"
+      },
+      {
+        "literal": "Ebru Talibe Turgut"
+      }
+    ]
+  },
+  {
+    "id": "s-loneliness-spirituality",
+    "type": "article-journal",
+    "title": "The Mediating Role of Loneliness in the Relationship Between Spirituality and Anxiety Levels Among University Students in Turkiye",
+    "URL": "https://dergipark.org.tr/en/pub/spiritualpc/article/1603809",
+    "note": "Yasemin Ekici, Figen Kasapoğlu. (2026). The Mediating Role of Loneliness in the Relationship Between Spirituality and Anxiety Levels Among University Students in Turkiye. Spiritual Psychology and Counseling, 11(2), 195–210. https://doi.org/10.37898/spiritualpc.1603809",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.37898/spiritualpc.1603809",
+    "container-title": "Spiritual Psychology and Counseling",
+    "volume": "11",
+    "issue": "2",
+    "page": "195–210",
+    "author": [
+      {
+        "literal": "Yasemin Ekici"
+      },
+      {
+        "literal": "Figen Kasapoğlu"
+      }
+    ]
+  },
+  {
+    "id": "s-professional-training",
+    "type": "article-journal",
+    "title": "Addressing Spirituality in Counseling: Turkish Mental Health Professionals’ Views on a Training Program for Professional Competencies",
+    "URL": "https://link.springer.com/article/10.1007/s10943-025-02551-9",
+    "note": "Halil Ekşi, Ebru Talibe Turgut, Fatma Betül Karalı, Hale Şen, Havvanur Akyol, Neslihan Aydın, Yusuf Ziya Koç. (2026). Addressing Spirituality in Counseling: Turkish Mental Health Professionals’ Views on a Training Program for Professional Competencies. Journal of Religion and Health, 65(3), 2796–2824. https://doi.org/10.1007/s10943-025-02551-9",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10943-025-02551-9",
+    "container-title": "Journal of Religion and Health",
+    "volume": "65",
+    "issue": "3",
+    "page": "2796–2824",
+    "author": [
+      {
+        "literal": "Halil Ekşi"
+      },
+      {
+        "literal": "Ebru Talibe Turgut"
+      },
+      {
+        "literal": "Fatma Betül Karalı"
+      },
+      {
+        "literal": "Hale Şen"
+      },
+      {
+        "literal": "Havvanur Akyol"
+      },
+      {
+        "literal": "Neslihan Aydın"
+      },
+      {
+        "literal": "Yusuf Ziya Koç"
+      }
+    ]
+  },
+  {
+    "id": "s-spiritual-integrity",
+    "type": "article-journal",
+    "title": "Measuring Spiritual Integrity in Turkish Culture: A Psychometric Approach to Understanding the Relationship Between Spirituality and Well-Being",
+    "URL": "https://link.springer.com/article/10.1007/s10943-025-02329-z",
+    "note": "Nesrullah Okan, Füsun Ekşi, Erdal Zengin, Halil Ekşi. (2025). Measuring Spiritual Integrity in Turkish Culture: A Psychometric Approach to Understanding the Relationship Between Spirituality and Well-Being. Journal of Religion and Health, 64(4), 3209–3235. https://doi.org/10.1007/s10943-025-02329-z",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10943-025-02329-z",
+    "container-title": "Journal of Religion and Health",
+    "volume": "64",
+    "issue": "4",
+    "page": "3209–3235",
+    "author": [
+      {
+        "literal": "Nesrullah Okan"
+      },
+      {
+        "literal": "Füsun Ekşi"
+      },
+      {
+        "literal": "Erdal Zengin"
+      },
+      {
+        "literal": "Halil Ekşi"
+      }
+    ]
+  },
+  {
+    "id": "s-spirituality-dimensions",
+    "type": "article-journal",
+    "title": "Unveiling the Multifaceted Nature of Spirituality: Assessing the Dimensions of the Spirituality Inventory in the Turkish Context—A Preliminary Adaptation and Validity Reliability Study",
+    "URL": "https://pubmed.ncbi.nlm.nih.gov/40274690/",
+    "note": "Halil Ekşi, Dilek Günel, Ece Yağcı Akgündüz, Emre Gürkan, Fadile Zeynep Çavuş, Yasemin Altıntaş. (2025). Unveiling the Multifaceted Nature of Spirituality: Assessing the Dimensions of the Spirituality Inventory in the Turkish Context—A Preliminary Adaptation and Validity Reliability Study. Journal of Religion and Health, 64(4), 3105–3127. https://doi.org/10.1007/s10943-025-02313-7",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10943-025-02313-7",
+    "container-title": "Journal of Religion and Health",
+    "volume": "64",
+    "issue": "4",
+    "page": "3105–3127",
+    "author": [
+      {
+        "literal": "Halil Ekşi"
+      },
+      {
+        "literal": "Dilek Günel"
+      },
+      {
+        "literal": "Ece Yağcı Akgündüz"
+      },
+      {
+        "literal": "Emre Gürkan"
+      },
+      {
+        "literal": "Fadile Zeynep Çavuş"
+      },
+      {
+        "literal": "Yasemin Altıntaş"
+      }
+    ]
+  },
+  {
+    "id": "s-spiritual-struggles",
+    "type": "article-journal",
+    "title": "Dini ve Manevi Mücadele Ölçeği’nin Türkçe Uyarlaması: Geçerlik ve Güvenirlik Çalışması",
+    "URL": "https://dergipark.org.tr/tr/pub/ilted/article/1564927",
+    "note": "Dilanur Rehber, Muhammet Enes Vural, Halil Ekşi. (2025). Dini ve Manevi Mücadele Ölçeği’nin Türkçe Uyarlaması: Geçerlik ve Güvenirlik Çalışması. İlahiyat Tetkikleri Dergisi(63), 45–54. https://doi.org/10.29288/ilted.1564927",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.29288/ilted.1564927",
+    "container-title": "İlahiyat Tetkikleri Dergisi",
+    "issue": "63",
+    "page": "45–54",
+    "author": [
+      {
+        "literal": "Dilanur Rehber"
+      },
+      {
+        "literal": "Muhammet Enes Vural"
+      },
+      {
+        "literal": "Halil Ekşi"
+      }
+    ]
+  }
+]
