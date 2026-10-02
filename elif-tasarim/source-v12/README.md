@@ -1,3 +1,29 @@
+# Elif Tasarım V25
+
+Sekiz onaylı baza konsepti, on altı açık ve kapalı görünüm. Ahşap ağırlıklı dört model, döşemeli dört yorum. Gerçek atölye arşivi ayrı tutulur.
+
+Etkin sürüm `0.25.0`. Etkin derleyici `tools/build-v25.cjs`, etkin manifest `release-v25.json`. `release-v23.json` aynı kaydın önceki doğrulama araçları için uyumluluk kopyasıdır.
+
+Baza sayfası `/kategoriler/baza-yatak/`. Ana sayfa, kategori, ilham seçkisi, arama, ilham dosyası ve modele özel proje özetiyle bağlantılıdır. Görsel üretim onayı değildir.
+
+## Kontrol komutları
+
+```sh
+npm ci
+npm run build
+npm run typecheck:core
+npm test
+npm run verify:dist
+python tests/v25/site-audit.py
+BASE_URL=http://127.0.0.1:8000/elif-tasarim/ python tests/v25/browser.py
+```
+
+HTTP testlerinden önce `npm run serve` çalıştırılır. Python testleri Playwright, Chromium ve beautifulsoup4 gerektirir. İletişim testleri sentetik örneklerle yapılır, gerçek mesaj göndermez.
+
+Sitenin mevcut yayın biçimi `noindex` önizlemesidir. Adres, çalışma saatleri, malzeme numuneleri ve imalat donanımı doğrulanmadan ticari doğrulama iddiasında bulunulmaz. `_headers` dosyası GitHub Pages üzerinde sunucu kuralı oluşturmaz.
+
+## Önceki sürüm notları
+
 # Elif Tasarım V23.3
 
 Tek 3D Stüdyo, beşli açılış görseli ve gerçek iş arşivi üzerine SEO ve karar içeriği güncellemesi.

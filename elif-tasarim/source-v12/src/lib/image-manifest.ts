@@ -908,5 +908,533 @@ export const imageManifest = {
     "source": "WhatsApp Image 2026-09-22 at 16.08.33.jpeg",
     "sourceSha256": "03d0e5533779d04ebca07d69086a8d344d6212d0583f0dcb5183d223f1159690",
     "crop": null
+  },
+  "bed-ceviz-yalin-open": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-ceviz-yalin-open-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 14256
+      },
+      {
+        "file": "bed-ceviz-yalin-open-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 31514
+      },
+      {
+        "file": "bed-ceviz-yalin-open-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 51388
+      }
+    ],
+    "source": "i_kili_kaldırmalı_ceviz_depolama_yatağı.png",
+    "sourceSha256": "c31b0d3ab342262ed44d9a4660ee9037b3a02f10e232cc8f5bcb53190727c50f",
+    "crop": [
+      0,
+      0,
+      1122,
+      724
+    ]
+  },
+  "bed-ceviz-yalin-closed": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-ceviz-yalin-closed-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 7298
+      },
+      {
+        "file": "bed-ceviz-yalin-closed-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 23928
+      },
+      {
+        "file": "bed-ceviz-yalin-closed-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 51858
+      }
+    ],
+    "source": "i_kili_kaldırmalı_ceviz_depolama_yatağı.png",
+    "sourceSha256": "c31b0d3ab342262ed44d9a4660ee9037b3a02f10e232cc8f5bcb53190727c50f",
+    "crop": [
+      0,
+      724,
+      1122,
+      1402
+    ]
+  },
+  "bed-mese-cizgi-open": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-mese-cizgi-open-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 14280
+      },
+      {
+        "file": "bed-mese-cizgi-open-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 31282
+      },
+      {
+        "file": "bed-mese-cizgi-open-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 50994
+      }
+    ],
+    "source": "kaldırılabilir_depolama_özellikli_meşe_karyola.png",
+    "sourceSha256": "3dd7c15290a65ac4729d734897c4026e4afcc4cbbd00729bf3c3a136fb0e88ce",
+    "crop": [
+      0,
+      0,
+      1122,
+      724
+    ]
+  },
+  "bed-mese-cizgi-closed": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-mese-cizgi-closed-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 8080
+      },
+      {
+        "file": "bed-mese-cizgi-closed-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 24492
+      },
+      {
+        "file": "bed-mese-cizgi-closed-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 47680
+      }
+    ],
+    "source": "kaldırılabilir_depolama_özellikli_meşe_karyola.png",
+    "sourceSha256": "3dd7c15290a65ac4729d734897c4026e4afcc4cbbd00729bf3c3a136fb0e88ce",
+    "crop": [
+      0,
+      724,
+      1122,
+      1402
+    ]
+  },
+  "bed-ceviz-cerceve-open": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-ceviz-cerceve-open-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 13860
+      },
+      {
+        "file": "bed-ceviz-cerceve-open-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 31842
+      },
+      {
+        "file": "bed-ceviz-cerceve-open-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 56090
+      }
+    ],
+    "source": "modern_walnut_storage_bed_views.png",
+    "sourceSha256": "ba8af49e5181695974673db22e5e1548289eeeac9aa32014ea01029e05903a29",
+    "crop": [
+      0,
+      0,
+      1122,
+      724
+    ]
+  },
+  "bed-ceviz-cerceve-closed": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-ceviz-cerceve-closed-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 7504
+      },
+      {
+        "file": "bed-ceviz-cerceve-closed-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 26702
+      },
+      {
+        "file": "bed-ceviz-cerceve-closed-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 56840
+      }
+    ],
+    "source": "modern_walnut_storage_bed_views.png",
+    "sourceSha256": "ba8af49e5181695974673db22e5e1548289eeeac9aa32014ea01029e05903a29",
+    "crop": [
+      0,
+      724,
+      1122,
+      1402
+    ]
+  },
+  "bed-ceviz-kusak-open": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-ceviz-kusak-open-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 14644
+      },
+      {
+        "file": "bed-ceviz-kusak-open-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 34448
+      },
+      {
+        "file": "bed-ceviz-kusak-open-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 58794
+      }
+    ],
+    "source": "kaldırmalı_depolamalı_modern_ahşap_yatak.png",
+    "sourceSha256": "c92ac02ec1a80c1340b1c8f1d3eaec0fe48455216aa1fb1fe03da707e69ab30f",
+    "crop": [
+      0,
+      0,
+      1122,
+      724
+    ]
+  },
+  "bed-ceviz-kusak-closed": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-ceviz-kusak-closed-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 8336
+      },
+      {
+        "file": "bed-ceviz-kusak-closed-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 30064
+      },
+      {
+        "file": "bed-ceviz-kusak-closed-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 66256
+      }
+    ],
+    "source": "kaldırmalı_depolamalı_modern_ahşap_yatak.png",
+    "sourceSha256": "c92ac02ec1a80c1340b1c8f1d3eaec0fe48455216aa1fb1fe03da707e69ab30f",
+    "crop": [
+      0,
+      724,
+      1122,
+      1402
+    ]
+  },
+  "bed-keten-ceviz-open": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-keten-ceviz-open-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 13702
+      },
+      {
+        "file": "bed-keten-ceviz-open-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 29108
+      },
+      {
+        "file": "bed-keten-ceviz-open-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 50256
+      }
+    ],
+    "source": "bej_depolama_yatağı_i_ki_görünüm.png",
+    "sourceSha256": "f46a1da64d43513db90f0eb937daac77747debc8ae89848ab9140dfe9e0990a4",
+    "crop": [
+      0,
+      0,
+      1122,
+      724
+    ]
+  },
+  "bed-keten-ceviz-closed": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-keten-ceviz-closed-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 6774
+      },
+      {
+        "file": "bed-keten-ceviz-closed-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 20410
+      },
+      {
+        "file": "bed-keten-ceviz-closed-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 42908
+      }
+    ],
+    "source": "bej_depolama_yatağı_i_ki_görünüm.png",
+    "sourceSha256": "f46a1da64d43513db90f0eb937daac77747debc8ae89848ab9140dfe9e0990a4",
+    "crop": [
+      0,
+      724,
+      1122,
+      1402
+    ]
+  },
+  "bed-yumusak-bukle-open": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-yumusak-bukle-open-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 13870
+      },
+      {
+        "file": "bed-yumusak-bukle-open-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 39312
+      },
+      {
+        "file": "bed-yumusak-bukle-open-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 75146
+      }
+    ],
+    "source": "modern_greige_lift_up_storage_bed.png",
+    "sourceSha256": "3cb40769adeef4409a29628323634de73be520130ecaa63bfaa71f6a31a858c7",
+    "crop": [
+      0,
+      0,
+      1122,
+      724
+    ]
+  },
+  "bed-yumusak-bukle-closed": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-yumusak-bukle-closed-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 11252
+      },
+      {
+        "file": "bed-yumusak-bukle-closed-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 48912
+      },
+      {
+        "file": "bed-yumusak-bukle-closed-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 103390
+      }
+    ],
+    "source": "modern_greige_lift_up_storage_bed.png",
+    "sourceSha256": "3cb40769adeef4409a29628323634de73be520130ecaa63bfaa71f6a31a858c7",
+    "crop": [
+      0,
+      724,
+      1122,
+      1402
+    ]
+  },
+  "bed-antrasit-hat-open": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-antrasit-hat-open-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 12680
+      },
+      {
+        "file": "bed-antrasit-hat-open-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 29974
+      },
+      {
+        "file": "bed-antrasit-hat-open-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 53792
+      }
+    ],
+    "source": "modern_çift_mekanizmalı_depolama_karyolası.png",
+    "sourceSha256": "3a52a2a81270f58808f1de9b4633984034649adbcb4332e7a361544c9c22984b",
+    "crop": [
+      0,
+      0,
+      1122,
+      724
+    ]
+  },
+  "bed-antrasit-hat-closed": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-antrasit-hat-closed-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 7636
+      },
+      {
+        "file": "bed-antrasit-hat-closed-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 26796
+      },
+      {
+        "file": "bed-antrasit-hat-closed-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 54876
+      }
+    ],
+    "source": "modern_çift_mekanizmalı_depolama_karyolası.png",
+    "sourceSha256": "3a52a2a81270f58808f1de9b4633984034649adbcb4332e7a361544c9c22984b",
+    "crop": [
+      0,
+      724,
+      1122,
+      1402
+    ]
+  },
+  "bed-kum-dokusu-open": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-kum-dokusu-open-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 12970
+      },
+      {
+        "file": "bed-kum-dokusu-open-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 33530
+      },
+      {
+        "file": "bed-kum-dokusu-open-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 61002
+      }
+    ],
+    "source": "taupe_depolama_yatak_takımı.png",
+    "sourceSha256": "849a2c4188889000fff818916adf7a0031dc556732aed9824dfb6bdd1b858ebb",
+    "crop": [
+      0,
+      0,
+      1122,
+      724
+    ]
+  },
+  "bed-kum-dokusu-closed": {
+    "kind": "concept",
+    "width": 1122,
+    "height": 748,
+    "variants": [
+      {
+        "file": "bed-kum-dokusu-closed-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 7548
+      },
+      {
+        "file": "bed-kum-dokusu-closed-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 30906
+      },
+      {
+        "file": "bed-kum-dokusu-closed-full.webp",
+        "width": 1122,
+        "height": 748,
+        "bytes": 71336
+      }
+    ],
+    "source": "taupe_depolama_yatak_takımı.png",
+    "sourceSha256": "849a2c4188889000fff818916adf7a0031dc556732aed9824dfb6bdd1b858ebb",
+    "crop": [
+      0,
+      724,
+      1122,
+      1402
+    ]
   }
 } as const;

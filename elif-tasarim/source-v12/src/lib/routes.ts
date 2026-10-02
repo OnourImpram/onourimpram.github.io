@@ -1,4 +1,4 @@
-export const seoTitles:Record<string,string>={"/": "İstanbul Özel Ölçü Mobilya Atölyesi | Elif Tasarım", "/kategoriler/kahve-kosesi": "Özel Ölçü Kahve Köşesi Dolabı | Elif Tasarım", "/kategoriler/mutfak": "İstanbul Özel Ölçü Mutfak Dolabı | Elif Tasarım", "/kategoriler/tv-unitesi": "Ölçüye Özel TV Ünitesi ve Depolama | Elif Tasarım", "/rehber/bakim": "Ahşap Mobilya Bakımı. Yüzeye Göre Temizlik | Elif Tasarım", "/rehber/olcu-alma": "Özel Mobilya İçin Ölçü Hazırlığı | Elif Tasarım", "/rehber/malzeme-secimi": "Mobilyada Gövde, Kapak ve Yüzey Seçimi | Elif Tasarım"};
+export const seoTitles:Record<string,string>={"/kategoriler/baza-yatak":"Ahşap ve Döşemeli Baza Modelleri | Elif Tasarım","/": "İstanbul Özel Ölçü Mobilya Atölyesi | Elif Tasarım", "/kategoriler/kahve-kosesi": "Özel Ölçü Kahve Köşesi Dolabı | Elif Tasarım", "/kategoriler/mutfak": "İstanbul Özel Ölçü Mutfak Dolabı | Elif Tasarım", "/kategoriler/tv-unitesi": "Ölçüye Özel TV Ünitesi ve Depolama | Elif Tasarım", "/rehber/bakim": "Ahşap Mobilya Bakımı. Yüzeye Göre Temizlik | Elif Tasarım", "/rehber/olcu-alma": "Özel Mobilya İçin Ölçü Hazırlığı | Elif Tasarım", "/rehber/malzeme-secimi": "Mobilyada Gövde, Kapak ve Yüzey Seçimi | Elif Tasarım"};
 import {works,workCategories} from './portfolio';
 import {business} from './project';
 import {getSiteProfile} from './site-profile';
@@ -9,7 +9,7 @@ export function pageDescription(path:string){const p=path.split('?')[0],w=works.
  '/kolay-iletisim':'Form kullanmadan Elif Tasarım ile iletişim kurun. Görünür e-posta, telefon, SMS ve ilk mesaj için başlangıç metni.',
  '/hizmet-ve-teklif':'Özel üretim mobilyada bütçe, malzeme, donanım, keşif, nakliye ve montaj kapsamını birlikte netleştirmek için görüşme rehberi.',
  '/projeler':'Atölyeden paylaşılan mutfak, kahve köşesi, TV ünitesi ve depolama çalışmalarını kaynak türü ve kullanım alanına göre inceleyin.',
- '/kategoriler':'Mutfak, TV ünitesi, vestiyer, gardırop, kahve köşesi, sehpa, pergola ve özel tasarım için üretim alanlarımızı keşfedin.',
+ '/kategoriler':'Mutfak, TV ünitesi, vestiyer, gardırop, kahve köşesi, sehpa, pergola, baza ve özel tasarım için üretim alanlarımızı keşfedin.',
  '/ilham-modelleri':'Konsept seçkileri ve kaynağı korunan Pinterest modelleri. Beğendiğiniz ayrıntıyı ilham dosyanıza ekleyin veya kendi fikrinize başlangıç yapın.',
  '/hakkimizda':'Yunus Usta’nın aileden öğrendiği marangozluk ve ihtiyaca göre çalışma yaklaşımı. Elif Tasarım’ın atölye hikâyesi.',
  '/atolye':'Üretim ve uygulama aşamalarından gerçek atölye arşivi. Montaj fotoğrafları bitmiş işlerden ayrı gösterilir.',
