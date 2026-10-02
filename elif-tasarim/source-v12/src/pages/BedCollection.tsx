@@ -1,11 +1,10 @@
 import {createElement,Fragment,Component} from 'react';
-import {image,Link,Icon,ButtonLink,TextLink,Eyebrow,Dialog,Accordion,type PageProps} from '../components/ui';
+import {image,Link,Icon,TextLink,Eyebrow,Dialog,Accordion,type PageProps} from '../components/ui';
 import {VImage,SourceTag,ModelCallout} from '../components/PortfolioUI';
 import {beds,type BedConcept} from '../lib/beds';
 import {modelHref} from '../lib/portfolio';
 import {targetElementId} from '../lib/selections';
 
-const collectionPath='/kategoriler/baza-yatak';
 const viewLabel=(open:boolean)=>open?'Depolama görünümü':'Kapalı görünüm';
 
 /** The approved views are visual studies. A lift-frame image is not a tested mechanism. */
@@ -21,8 +20,14 @@ export class BedCard extends Component<{bed:BedConcept;navigate:(p:string)=>void
  }
 }
 
-export class BedCollection extends Component<PageProps,{group:'all'|'wood'|'upholstered'}>{
+export class BedCollection extends Component<PageProps&{query?:string},{group:'all'|'wood'|'upholstered'}>{
  state:{group:'all'|'wood'|'upholstered'}={group:'all'};
+ private focusFrame:number|undefined;
+ focusModel=()=>{if(this.focusFrame!==undefined)cancelAnimationFrame(this.focusFrame);const id=new URLSearchParams(this.props.query||'').get('model');if(!id||!beds.some(b=>b.id===id))return;this.setState({group:'all'},()=>{this.focusFrame=requestAnimationFrame(()=>{this.focusFrame=requestAnimationFrame(()=>{const node=document.getElementById(targetElementId('concept:'+id));node?.focus({preventScroll:true});node?.scrollIntoView({block:'start',behavior:'instant' as ScrollBehavior});});});});};
+ componentDidMount(){this.focusModel();}
+ componentDidUpdate(previous:PageProps&{query?:string}){if(previous.query!==this.props.query)this.focusModel();}
+ componentWillUnmount(){if(this.focusFrame!==undefined)cancelAnimationFrame(this.focusFrame);}
+
  render(){const a=this.props,items=beds.filter(b=>this.state.group==='all'||b.group===this.state.group);return <>
  <header className="wrap bed-collection-hero"><div className="bed-hero-copy"><Link to="/kategoriler" navigate={a.navigate} className="bed-back">Üretim alanları <Icon size={16}/></Link><Eyebrow>ELİF / BAZA VE YATAK</Eyebrow><h1>Günün sonunda,<br/><em>size ait bir yer.</em></h1><p>Ahşabın karakteri, döşemenin yumuşaklığı ve saklamaya ayrılan alan. Yatak odanız için sekiz farklı başlangıç fikri.</p><a className="button" href="#baza-seckisi">Modelleri keşfedin <Icon/></a><p className="bed-hero-disclosure">Bu seçki, yapay zekâ ile hazırlanmış tasarım konseptlerinden oluşur. Tamamlanmış atölye işi, stok ürünü veya üretim onayı değildir.</p></div><figure className="bed-hero-visual"><VImage asset="bed-ceviz-yalin-open" alt="Ceviz Yalın baza konseptinin açık depolama görünümü. Ahşap görünümlü gövde ve krem başlık." eager full priority="high" sizes="(max-width: 800px) 100vw, 58vw"/><figcaption><span>Ceviz Yalın</span><span>Ahşap ağırlıklı konsept</span></figcaption></figure></header>
  <div className="wrap bed-collection-summary"><span><strong>08</strong> tasarım yorumu</span><span><strong>04</strong> ahşap ağırlıklı model</span><span><strong>02</strong> görünüm, her modelde</span></div>
@@ -35,5 +40,3 @@ export class BedCollection extends Component<PageProps,{group:'all'|'wood'|'upho
  ]}/></div></div></section><ModelCallout navigate={a.navigate}/>
  </>;}
 }
-
-export function BedTeaser({actions:a}:{actions:PageProps}){return <section className="wrap bed-home-teaser"><div><Eyebrow>YENİ SEÇKİ / BAZA VE YATAK</Eyebrow><h2>Ahşabın sıcaklığı.<br/><em>Odanızın yeni çizgisi.</em></h2><p>Ahşap ağırlıklı dört yorum ve dört döşemeli alternatif. Sekiz baza konseptini açık ve kapalı görünümleriyle keşfedin.</p><ButtonLink to={collectionPath} navigate={a.navigate}>Baza modellerini inceleyin</ButtonLink><small>Yapay zekâ ile hazırlanmış konsept seçkisidir.</small></div><Link to={collectionPath} navigate={a.navigate} className="bed-home-visual"><VImage asset="bed-mese-cizgi-closed" alt="Açık ahşap görünümlü Meşe Çizgi baza konsepti, kapalı görünüm" sizes="(max-width: 800px) 100vw, 55vw"/><span>Meşe Çizgi <Icon name="diagonal" size={18}/></span></Link></section>}

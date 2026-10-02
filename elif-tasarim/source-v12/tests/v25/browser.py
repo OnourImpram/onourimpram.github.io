@@ -28,7 +28,7 @@ with sync_playwright() as pw:
  try:
   visit('kategoriler/baza-yatak/');assert p.locator('[data-bed]').count()==8
   assert p.locator('h1').count()==1 and 'size ait bir yer' in p.locator('h1').inner_text()
-  assert p.locator('meta[name=elif-release]').get_attribute('content')=='v25-bed-collection'
+  assert p.locator('meta[name=elif-release]').get_attribute('content')=='v25.1-balanced-discovery'
   assert p.locator('meta[name=robots]').get_attribute('content')=='noindex,nofollow'
   assert 'yapay zekâ' in p.locator('.bed-hero-disclosure').inner_text()
   ok('01. Eight approved concepts have one dedicated V25 route and truthful metadata')
@@ -75,12 +75,14 @@ with sync_playwright() as pw:
    assert q.locator('.bed-direct-views a').count()==16;assert q.locator('h1').count()==1
    q.screenshot(path=str(O/'collection-no-js.png'),full_page=True);nojs.close()
    ok('08. JavaScript-disabled collection exposes all eight concepts and sixteen full-view links')
-  visit('');p.set_viewport_size({'width':1440,'height':1000});assert p.locator('.bed-home-teaser').count()==1
+  visit('');p.set_viewport_size({'width':1440,'height':1000});assert p.locator('.bed-home-teaser').count()==0
+  assert p.locator('.home-inspiration [data-concept]').count()==3
+  assert len(set(p.locator('.home-inspiration [data-concept]').evaluate_all("es=>es.map(e=>e.dataset.category)")))==3
   ys=p.locator('.v9-category-ribbon>a').evaluate_all('es=>es.map(e=>Math.round(e.getBoundingClientRect().top))');assert len(ys)==9 and len(set(ys))==1,ys
-  assert p.locator('.home-works').evaluate('e=>e.compareDocumentPosition(document.querySelector(".bed-home-teaser"))&Node.DOCUMENT_POSITION_FOLLOWING')
+  assert p.locator('.home-works').evaluate('e=>e.compareDocumentPosition(document.querySelector(".home-inspiration"))&Node.DOCUMENT_POSITION_FOLLOWING')
   assert p.get_by_role('navigation',name='Ana gezinme').get_by_role('link',name='3D Stüdyo',exact=True).count()==1
   shot('home-desktop.png');p.set_viewport_size({'width':390,'height':844});shot('home-mobile.png')
-  ok('09. Real work remains first on the homepage, followed by an integrated bed invitation and one 3D studio')
+  ok('09. Real work remains first on the homepage, followed by diverse inspiration and one 3D studio')
   routes=json.loads((R/'dist/release-v25.json').read_text())['routes']
   for width in [320,390,768,1440]:
    p.set_viewport_size({'width':width,'height':900})

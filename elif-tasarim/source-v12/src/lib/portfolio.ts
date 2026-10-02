@@ -2,7 +2,6 @@ import {beds} from './beds';
 export type WorkCategory='mutfak'|'tv-unitesi'|'vestiyer'|'gardrop'|'kahve-kosesi'|'sehpa'|'pergola'|'ozel-tasarim'|'baza-yatak';
 export type Work={id:string;title:string;category:WorkCategory;images:string[];status:'work'|'process';subtitle:string;description:string;features:string[]};
 export const workCategories=[
- {id:'baza-yatak',name:'Baza ve Yatak',short:'Yatak odanız',image:'bed-ceviz-yalin-closed',line:'Ahşabın karakteri, döşemenin yumuşaklığı.',detail:'Ahşap ağırlıklı ve döşemeli sekiz baza konsepti. Açık ve kapalı görünümlerle tasarım fikrini keşfedin. Ölçü, malzeme ve mekanizma uygunluğu ayrıca değerlendirilir.'},
  {id:'mutfak',name:'Mutfak',short:'Mutfak',image:'concept-mutfak',line:'Günün başladığı, evin buluştuğu yer.',detail:'Kapak düzeninden depolama alanlarına, ölçünüz ve kullanım alışkanlıklarınız etrafında tasarlanan mutfaklar.'},
  {id:'tv-unitesi',name:'TV Ünitesi',short:'Yaşam alanı',image:'concept-tv',line:'Salonunuzun sakin odağı.',detail:'Duvar panelleri, raflar ve kapalı depolamayı bir araya getiren, mekâna göre şekillenen TV üniteleri.'},
  {id:'vestiyer',name:'Vestiyer ve Depolama',short:'Antre',image:'concept-vestiyer',line:'Evin ilk karşılaması.',detail:'Giriş alanında askılık, ayakkabı ve günlük eşyalar için yer açan ölçüye özel çözümler.'},
@@ -11,6 +10,7 @@ export const workCategories=[
  {id:'sehpa',name:'Orta Sehpa ve Zigon Sehpa',short:'Sehpa & zigon',image:'concept-sehpa',line:'Bazen küçük bir parça her şeyi değiştirir.',detail:'Orta sehpa, yan sehpa ve iç içe geçen zigon fikirleri. Beğendiğiniz formu alanınıza göre birlikte değerlendirelim.'},
  {id:'pergola',name:'Pergola ve Açık Alan Yapıları',short:'Bahçe & dış mekân',image:'concept-pergola',line:'Hayata dışarıda da yer açalım.',detail:'Bahçe ve açık alan için ahşap kamelya ve üst yapı çalışmaları. Uygulama koşulları ve teknik uygunluk ayrıca değerlendirilir.'},
  {id:'ozel-tasarim',name:'Özel Tasarım Projeler',short:'Size özel',image:'concept-model',line:'Katalogda olmayan bir fikriniz mi var?',detail:'Mekânınız, çiziminiz veya bir referansınız üzerinden başlarız. Ne üretilebileceğini birlikte netleştiririz.'},
+ {id:'baza-yatak',name:'Baza ve Yatak',short:'Yatak odanız',image:'bed-ceviz-yalin-closed',line:'Ahşabın karakteri, döşemenin yumuşaklığı.',detail:'Ahşap ağırlıklı ve döşemeli sekiz baza konsepti. Açık ve kapalı görünümlerle tasarım fikrini keşfedin. Ölçü, malzeme ve mekanizma uygunluğu ayrıca değerlendirilir.'},
 ] as const;
 export const works:Work[]=[
  {id:'sade-kose-mutfak',title:'Sade çizgiler, sıcak bir mutfak.',category:'mutfak',images:['r13'],status:'work',subtitle:'L plan mutfak uygulaması',description:'Açık tonlu kapaklar, koyu renk cihazlar ve tezgâh altı depolama aynı düzende buluşuyor. Atölyenin paylaşılan iş arşivinden.',features:['L biçiminde yerleşim','Üst ve alt dolap bütünlüğü','Tezgâh arası aydınlatma']},
@@ -36,7 +36,6 @@ export const works:Work[]=[
 ];
 export const featuredWorks=['sade-kose-mutfak','isikli-tv-unitesi','kemerli-kahve-kosesi','rafli-depolama','cam-kapak-giyinme','ahsap-bahce-kamelyasi'];
 export const concepts=[
- ...beds,
  {id:'oval-orta-sehpa',title:'Bir araya gelmenin doğal hâli.',category:'sehpa',image:'concept-sehpa',subtitle:'Oval orta sehpa ve zigon fikri'},
  {id:'kahve-ritueli',title:'Kendinize küçük bir köşe.',category:'kahve-kosesi',image:'concept-kahve',subtitle:'Işıklı vitrin ve kahve köşesi fikri'},
  {id:'sakin-antre',title:'Eve ilk adım.',category:'vestiyer',image:'concept-vestiyer',subtitle:'Banklı ve aynalı vestiyer fikri'},
@@ -45,7 +44,16 @@ export const concepts=[
  {id:'duzenli-bir-alan',title:'Düzen için tasarlanmış.',category:'gardrop',image:'concept-gardrop',subtitle:'Cam ve çizgili kapaklarla giyinme fikri'},
  {id:'bahcede-zaman',title:'Gölgesinde güzel zamanlar.',category:'pergola',image:'concept-pergola',subtitle:'Ahşap kamelya fikri'},
  {id:'bir-masanin-etrafinda',title:'Bir masanın etrafında.',category:'ozel-tasarim',image:'concept-hero',subtitle:'Ahşap yemek alanı fikri'},
+ ...beds,
 ] as const;
+/** A discovery page shows breadth. Variants remain in their dedicated category. */
+export function inspirationConcepts(category='all') {
+ if(category!=='all')return concepts.filter(c=>c.category===category);
+ const seen=new Set<string>();
+ return concepts.filter(c=>{if(seen.has(c.category))return false;seen.add(c.category);return true;});
+}
+const homeConceptIds=['oval-orta-sehpa','kahve-ritueli','sakin-antre'];
+export const homeConcepts=homeConceptIds.map(id=>concepts.find(c=>c.id===id)!);
 export const pinterestReferences=[
  {id:'3T8k8Pwyv',group:'atelier',title:'Ustanın seçkisi 01',category:'ozel-tasarim'},
  {id:'2lc0S9lQO',group:'atelier',title:'Ustanın seçkisi 02',category:'ozel-tasarim'},
