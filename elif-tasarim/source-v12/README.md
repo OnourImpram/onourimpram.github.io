@@ -1,10 +1,25 @@
-# Elif Tasarım V25
+# Elif Tasarım V25.1. Dengeli keşif düzeltmesi
 
-Sekiz onaylı baza konsepti, on altı açık ve kapalı görünüm. Ahşap ağırlıklı dört model, döşemeli dört yorum. Gerçek atölye arşivi ayrı tutulur.
+V25 üzerine kullanıcı geri bildirimi doğrultusunda düzenleme. Yeni marka dili veya yeni görsel üretimi değildir.
 
-Etkin sürüm `0.25.0`. Etkin derleyici `tools/build-v25.cjs`, etkin manifest `release-v25.json`. `release-v23.json` aynı kaydın önceki doğrulama araçları için uyumluluk kopyasıdır.
+Ana sayfadaki bağımsız baza vitrini kaldırıldı. Sehpa, kahve köşesi ve antre fikirlerinden oluşan üçlü ilham seçkisi eklendi. Genel İlham Modelleri görünümünde sekiz özgün oda fikri ve aynı boyutta tek baza temsilcisi vardır. Baza filtresi sekiz modeli kompakt kartlarla açar. Ayrıntılı açık ve kapalı galeriler kendi kategori sayfasında korunur.
 
-Baza sayfası `/kategoriler/baza-yatak/`. Ana sayfa, kategori, ilham seçkisi, arama, ilham dosyası ve modele özel proje özetiyle bağlantılıdır. Görsel üretim onayı değildir.
+Üretim alanları önceki sırayla başlar, Baza ve Yatak son kategoridir. Kategori dizinindeki tek başına kalan onuncu ilham kartı yerine normal bağlantı bulunur. Pinterest seçkilerine sayfa başından geçilir. Kaydetme kimlikleri, eski derin bağlantılar, gerçek işler ve 3D Stüdyo korunur.
+
+Etkin paket `0.25.1`, kimlik `v25.1-balanced-discovery`. Derleyici `tools/build-v25.cjs`, manifest `release-v25.json`. `release-v23.json` aynı manifestin uyumluluk kopyasıdır. Tarihsel `source-v12` klasörü ürün sürümü değildir.
+
+## Düzeltmenin ek kontrolleri
+
+```sh
+node --test tests/v25/balance.cjs
+BASE_URL=http://127.0.0.1:8000/elif-tasarim/ python tests/v25/balance-browser.py
+```
+
+Aşağıdaki genel kontrol ve işletim komutları da geçerlidir. V25 ana sayfa testindeki baza vitrini beklentisi düzeltilmiş kullanıcı kapsamına göre değiştirilmiştir. Test eşikleri gevşetilmemiştir. Yalnız `elif-tasarim/` alt ağacı yayımlanır.
+
+## V25 koleksiyonu, korunan işlevler
+
+Sekiz onaylı baza konsepti, on altı açık ve kapalı görünüm. Ahşap ağırlıklı dört model, döşemeli dört yorum. Gerçek atölye arşivi ayrı tutulur. Baza sayfası `/kategoriler/baza-yatak/`. Görseller üretim onayı değildir.
 
 ## Kontrol komutları
 
@@ -24,13 +39,13 @@ Sitenin mevcut yayın biçimi `noindex` önizlemesidir. Adres, çalışma saatle
 
 ## Önceki sürüm notları
 
-# Elif Tasarım V23.3
+### Elif Tasarım V23.3
 
 Tek 3D Stüdyo, beşli açılış görseli ve gerçek iş arşivi üzerine SEO ve karar içeriği güncellemesi.
 
 Kahve köşesi, mutfak ve TV ünitesinin mevcut kategori sayfaları genel görüşme hazırlığıyla zenginleştirildi. İlk açılış fotoğrafı yüksek öncelikli, sonraki düşük önceliklidir. Başka kareye geçiş, görüntü çözümlendikten sonra yapılır. Arama başlıkları ve ilk HTML ile istemci metadata politikası birlikte yönetilir.
 
-## Etkin ürün
+### V23.3 dönemindeki ürün kimliği
 
 Paket 0.23.3. Kimlik v23.3-seo-content. Manifest release-v23.json. Etkin derleyici tools/build-v23.cjs. Tarihsel source-v12 dizin adı sürümü belirtmez. /devir-01/ ayrı içerik sayfası değildir, tek stüdyoya eski bağlantı uyumluluğu içindir.
 
