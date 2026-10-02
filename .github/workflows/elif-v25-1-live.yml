@@ -1,0 +1,92 @@
+name: Elif V25.1 live verification
+on:
+  push:
+    branches: [elif-v25-1-balance-20261002]
+    paths: [.github/workflows/elif-v25-1-live.yml]
+permissions:
+  contents: read
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      BASE_URL: https://onourimpram.github.io/elif-tasarim/
+      EVIDENCE_ROOT: /tmp/elif-balance-live
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dc0e9f4aaa9925464ba947c4af90defd1e727c34
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reproduce exact publication and verify protected siblings
+        run: |
+          mkdir -p "$EVIDENCE_ROOT"
+          test -z "$(git diff --name-only HEAD^ HEAD | grep -v '^elif-tasarim/' || true)"
+          test "$(git rev-parse HEAD:MARSAM)" = 06c49165af1cbc96fd4af6d596a0261a9b8b101a
+          test "$(git rev-parse HEAD:index.html)" = 501229ef0c1d25dbc4554e27ca089b03e590c7e0
+          git ls-tree HEAD > "$EVIDENCE_ROOT/published-root-tree.txt"
+          cd elif-tasarim/source-v12
+          npm ci
+          npm run build
+          cmp dist/release-v25.json ../release-v25.json
+          pip install playwright==1.55.0 beautifulsoup4==4.13.5
+          python -m playwright install --with-deps chromium
+      - name: Verify actual public CDN bytes
+        run: |
+          python - <<'PY'
+          import pathlib,json,time,hashlib,urllib.request,urllib.error,concurrent.futures,os
+          root=pathlib.Path('elif-tasarim');expected=(root/'release-v25.json').read_bytes();m=json.loads(expected);base=os.environ['BASE_URL'];out=pathlib.Path(os.environ['EVIDENCE_ROOT'])
+          assert m['release']=='v25.1-balanced-discovery' and m['version']=='0.25.1'
+          def get(path):
+              req=urllib.request.Request(base+path+'?verify=dc0e9f4aaa9925464ba947c4af90defd1e727c34',headers={'Cache-Control':'no-cache','User-Agent':'Elif-Visual-Balance-Verification/1.0'})
+              with urllib.request.urlopen(req,timeout=45) as r:return r.status,r.read()
+          last=''
+          for attempt in range(40):
+              try:
+                  status,body=get('release-v25.json')
+                  if status==200 and body==expected:break
+                  last='manifest bytes not equal yet'
+              except Exception as e:last=str(e)
+              time.sleep(10)
+          else:raise RuntimeError(last)
+          def verify(item):
+              path,f=item
+              try:status,body=get(path)
+              except urllib.error.HTTPError as e:
+                  if path in ['.nojekyll','_headers'] and e.code==404:return {'path':path,'hostingControlNotPublic':True,'status':404}
+                  raise
+              assert status==200 and len(body)==f['bytes'] and hashlib.sha256(body).hexdigest()==f['sha256'],path
+              return {'path':path,'bytes':len(body),'sha256':f['sha256'],'pass':True}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:items=list(pool.map(verify,m['files'].items()))
+          result={'publication':'dc0e9f4aaa9925464ba947c4af90defd1e727c34','release':m['release'],'version':m['version'],'manifestMatched':True,'routes':len(m['routes']),'indexable':m['indexable'],'verifiedFiles':sum(x.get('pass',False) for x in items),'files':items,'pass':True}
+          (out/'http-integrity.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
+          print('LIVE PUBLIC FILES MATCH',result['verifiedFiles'])
+          PY
+      - name: Live visual balance, retained galleries, 3D and all-page mobile audit
+        run: |
+          cd elif-tasarim/source-v12
+          failed=0
+          for test in v25/balance-browser v25/browser v23-unified/browser v23/mobile-media; do
+            name="${test//\//-}"
+            mkdir -p "$EVIDENCE_ROOT/$name"
+            if EVIDENCE_DIR="$EVIDENCE_ROOT/$name" timeout 360 xvfb-run -a python "tests/$test.py" > "$EVIDENCE_ROOT/$name/run.log" 2>&1; then
+              echo "LIVE PASS $test"
+            else
+              echo "LIVE FAIL $test"
+              cat "$EVIDENCE_ROOT/$name/run.log"
+              failed=1
+            fi
+          done
+          exit "$failed"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v25-1-live-evidence
+          path: /tmp/elif-balance-live/
+          retention-days: 14
