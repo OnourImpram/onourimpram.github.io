@@ -1,0 +1,62 @@
+name: Elif V25.2 rendered image proof
+on:
+  push:
+    branches: [elif-v25-2-enrichment-20261002]
+    paths: [.github/workflows/elif-v25-2-image-proof.yml]
+permissions:
+  contents: read
+jobs:
+  image-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 098f3896d4f69b12ecd473c407b3d108874e8b69
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser and serve exact compiled candidate
+        run: |
+          pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+          mkdir -p /tmp/image-proof
+          nohup python -m http.server 8000 --directory "$GITHUB_WORKSPACE" > /tmp/image-proof/server.log 2>&1 &
+      - name: Inspect image placement, decode and scroll-driven visibility
+        run: |
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          from pathlib import Path
+          import json
+          out=Path('/tmp/image-proof');results=[]
+          with sync_playwright() as pw:
+              b=pw.chromium.launch(headless=True,args=['--no-sandbox'])
+              for width in [1440,390]:
+                  p=b.new_page(viewport={'width':width,'height':960},reduced_motion='reduce')
+                  p.goto('http://127.0.0.1:8000/elif-tasarim/ilham-modelleri/',wait_until='domcontentloaded')
+                  p.wait_for_selector('html[data-app-ready=true]')
+                  p.evaluate("document.querySelectorAll('img').forEach(i=>i.loading='eager')")
+                  image=p.locator('.model-callout-image img');image.wait_for()
+                  p.wait_for_function("()=>{let i=document.querySelector('.model-callout-image img');return i.complete&&i.naturalWidth>0}")
+                  def state(label):
+                      results.append({'stage':label,'width':width,**image.evaluate("i=>({src:i.currentSrc,complete:i.complete,naturalWidth:i.naturalWidth,naturalHeight:i.naturalHeight,box:i.getBoundingClientRect().toJSON(),parent:i.parentElement.getBoundingClientRect().toJSON(),css:{display:getComputedStyle(i).display,opacity:getComputedStyle(i).opacity,visibility:getComputedStyle(i).visibility,position:getComputedStyle(i).position,top:getComputedStyle(i).top,left:getComputedStyle(i).left,objectFit:getComputedStyle(i).objectFit}})")})
+                  state('loaded')
+                  p.screenshot(path=str(out/f'loaded-{width}.png'),full_page=True)
+                  image.evaluate('async i=>await i.decode()')
+                  state('decoded')
+                  p.screenshot(path=str(out/f'decoded-{width}.png'),full_page=True)
+                  p.locator('.model-callout').scroll_into_view_if_needed();p.wait_for_timeout(300)
+                  state('scrolled')
+                  p.locator('.model-callout').screenshot(path=str(out/f'scrolled-{width}.png'))
+                  assert image.evaluate("i=>{let a=i.getBoundingClientRect(),b=i.parentElement.getBoundingClientRect();return a.width>100&&a.height>100&&a.right>b.left&&a.left<b.right&&a.bottom>b.top&&a.top<b.bottom}")
+                  p.close()
+              b.close()
+          (out/'states.json').write_text(json.dumps(results,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v25-2-image-proof
+          path: /tmp/image-proof/
+          retention-days: 14
