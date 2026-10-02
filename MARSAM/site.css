@@ -18,7 +18,7 @@
 /* Restored heritage entry. Current discovery and content are retained. */
 
 .editorial-hero{position:relative;isolation:isolate;border-bottom:1px solid #d1c6ae;background:linear-gradient(115deg,#f7f3e9 0%,#f3eddf 56%,#ede7d8 100%)}
-.editorial-hero:before{content:'';position:absolute;inset:0;background-image:url('assets/heritage/geometry.svg');background-size:320px;opacity:.22;pointer-events:none;z-index:-1;mask-image:linear-gradient(90deg,#000,transparent 21%,transparent 79%,#000)}
+
 .editorial-hero:after{content:'';height:4px;position:absolute;inset-inline:0;bottom:0;background:linear-gradient(90deg,#9b7944 0 12%,#386963 12% 52%,#c5b17b 52% 72%,#294d62 72% 100%);opacity:.78}
 .editorial-hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:4.5rem;align-items:center;padding-block:3.2rem 3.4rem;min-height:620px}
 .editorial-hero-copy{min-width:0}.editorial-hero-copy>.eyebrow{letter-spacing:.14em;font-size:.77rem;color:#776245;margin-bottom:1.6rem}
@@ -45,7 +45,7 @@
 /* Original upper rosette becomes a continuous full-interior ground. */
 .manuscript-pattern{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:url('assets/heritage/rosette.svg');background-position:center;background-size:116% auto;background-repeat:repeat;opacity:.32}
 /* Ornament stays in page margins. Reading surfaces keep their plain paper fill. */
-body::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:url('assets/heritage/geometry.svg');background-size:300px;opacity:.14;mask-image:linear-gradient(90deg,#000,transparent 9%,transparent 91%,#000)}
+
 @media(max-width:650px){body::before{display:none}.manuscript-pattern{opacity:.32}}
 @media print{body::before,.manuscript-pattern{display:none!important}.reading-selection{background:white}}
 @media(forced-colors:active){body::before,.manuscript-pattern{display:none!important}.reading-selection{background:Canvas}.site-footer{background:Canvas!important}}
@@ -94,3 +94,21 @@ body::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none
 .lab-command,.lab-code pre{background:var(--surface-reading);padding:1rem;border:1px solid var(--border);overflow:auto;max-width:100%;font: .85rem/1.7 monospace;white-space:pre-wrap;overflow-wrap:anywhere}.lab-code summary{cursor:pointer;min-height:44px;padding-block:.6rem}.lab-output{border-block:1px solid var(--border);padding-block:1.5rem;margin-block:2rem}.lab-output h2{font-size:1.5rem}
 @media(max-width:650px){.workbench-grid{grid-template-columns:1fr}.workbench-card h3{font-size:1.4rem}.research-downloads{display:block}.research-downloads li{margin-bottom:.6rem}}
 @media print{.workbench-grid{display:block}.workbench-card{break-inside:avoid}.lab-code pre{white-space:pre-wrap}.research-downloads a{color:black}}
+
+/* MARSAM Iznik cini. Original, sparse botanical compositions in negative space.
+   Gutter masks are tied to the existing reading-room container, not percentages
+   of the viewport. Only artwork alpha fades. No white overlays or new theme. */
+body{--cini-gutter:max(2rem,calc((100% - var(--layout-page))/2))}
+body::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:url('assets/cini/iznik-corner-a.svg'),url('assets/cini/iznik-corner-b.svg');background-size:36rem auto,34rem auto;background-position:left -13rem top 40rem,right -11rem bottom 30rem;background-repeat:no-repeat;opacity:.07;mask-image:linear-gradient(90deg,#000,transparent calc(var(--cini-gutter) - 10px),transparent calc(100% - var(--cini-gutter) + 10px),#000)}
+.editorial-hero{overflow:clip}
+.editorial-hero::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:url('assets/cini/iznik-corner-a.svg'),url('assets/cini/iznik-corner-b.svg');background-size:39rem auto,38rem auto;background-position:left -17rem top -7rem,right -14rem bottom -7rem;background-repeat:no-repeat;opacity:.105;mask-image:linear-gradient(90deg,#000,transparent calc(var(--cini-gutter) - 8px),transparent calc(100% - var(--cini-gutter) + 8px),#000)}
+.editorial-hero-copy{position:relative;isolation:isolate}
+.editorial-hero-copy::before{content:'';position:absolute;bottom:calc(100% + 1.15rem);left:calc(-1*var(--cini-gutter));width:min(38rem,calc(100% + 2rem));height:9rem;z-index:-1;pointer-events:none;background-image:url('assets/cini/iznik-corner-a.svg');background-repeat:no-repeat;background-size:35rem auto;background-position:left -2rem top -7rem;opacity:.095;mask-image:radial-gradient(ellipse at 24% 15%,#000 28%,transparent 78%)}
+@media(max-width:1100px){body::before{opacity:.045}.editorial-hero::before{opacity:.065}.editorial-hero-copy::before{height:6rem;opacity:.065;background-size:29rem auto}}
+@media(max-width:900px){body{--cini-gutter:1.5rem}.editorial-hero::before{display:none}.editorial-hero-copy::before{width:min(25rem,100%);height:4rem;bottom:calc(100% + .7rem);background-size:23rem auto;background-position:left -3rem top -5rem;opacity:.055}}
+@media(max-width:650px){body{--cini-gutter:1rem}body::before,.editorial-hero::before{display:none}.editorial-hero-copy::before{left:auto;right:-1rem;bottom:calc(100% + .15rem);height:2.5rem;width:11rem;background-image:url('assets/cini/iznik-corner-b.svg');background-size:15rem auto;background-position:right -2rem top -8rem;opacity:.06;mask-image:radial-gradient(ellipse at 100% 0,#000 25%,transparent 85%)}}
+@media(forced-colors:active){body::before,.editorial-hero::before,.editorial-hero-copy::before{display:none!important}}
+@media print{body::before,.editorial-hero::before,.editorial-hero-copy::before{display:none!important}}
+/* End MARSAM Iznik cini */
+
+@supports not (mask-image:linear-gradient(#000,transparent)){body::before,.editorial-hero::before,.editorial-hero-copy::before{display:none!important}}

@@ -1,7 +1,7 @@
 {
-  "release": "marsam-matte-research-0.8.0",
-  "version": "0.8.0",
-  "sourceCommit": "91703cb6a91c03b67840965589f8c42bda477a73",
+  "release": "marsam-iznik-cini-0.8.1",
+  "version": "0.8.1",
+  "sourceCommit": "0bf0a06f122ffc808273d918ef77ebe9ef79ba5d",
   "url": "https://onourimpram.github.io/MARSAM/",
   "mode": "institutional-review",
   "formalApproval": false,
@@ -13,7 +13,7 @@
       "bytes": 0
     },
     "404.html": {
-      "sha256": "48ed96ad7f137ba9f8530cf281793a66d8c5d47ea9434054e030f06babfdc378",
+      "sha256": "1e514734c96e14f8cbbf5ac2e7a5f01fd0b8c6749403f022cda889b22c6acc89",
       "bytes": 1061
     },
     "app.js": {
@@ -21,272 +21,280 @@
       "bytes": 11905
     },
     "ar/about/index.html": {
-      "sha256": "9a8463033f849e354c86a0589d8655f92d6b0584136d8fa46bc4b36ddfcf0e04",
+      "sha256": "308cd7f09fd13b19cf78b27a19c87f4cec44a677ded5ce85b3109b0f25e155d8",
       "bytes": 52194
     },
     "ar/approaches/index.html": {
-      "sha256": "7bad247823fc45a93ac2db30ec85284f8bec4f7af8f5158c159c805703a3bd85",
+      "sha256": "49ae683dc2a550c82afc0da933806f6046aa490ee97e594f326ecdc1cc6f0ecd",
       "bytes": 61065
     },
     "ar/books/index.html": {
-      "sha256": "cc858b1c593a28a8cc56d7b24530f576a48e74220856c7ce320e095d7c011ea8",
+      "sha256": "83a216337915a12d05b14de5c620635c1e0bd9d11beb7e0b4e59f4193f62a57e",
       "bytes": 80649
     },
     "ar/collections/index.html": {
-      "sha256": "4d00323bfb69fbecbf14c3f4ded95d6359c5c5f081fccfb5af208f7e66487248",
+      "sha256": "c426c3ea14767ccb504f99d1eb51a67cb96a0dbf7becac0a09d81fce122d83eb",
       "bytes": 97405
     },
     "ar/compare/index.html": {
-      "sha256": "abba7f4daf1d61ff37541e1783d7302af0d0b945ad4139f13ba871a8891d2059",
+      "sha256": "94008554c39322a038f2f1d0332b9e252a44f2043909ee6b2193400e4777d2be",
       "bytes": 104510
     },
     "ar/concepts/index.html": {
-      "sha256": "40b46ccdae85b309e15afd982fee08688c8dcc26bcd447d3d333c344c9998453",
+      "sha256": "17f576977d2373093d4ecd5fb1b92e5551722ff8d6e606134048c160b0eb25d4",
       "bytes": 63251
     },
     "ar/contribute/index.html": {
-      "sha256": "9cf534b8ad36f26296a2ff440421c036c2d6de860c135eaac1717f5351b57799",
+      "sha256": "367fb72b51895e7626deef0783606f32d494b7c672ea39de5957388821ae92ca",
       "bytes": 52707
     },
     "ar/data-access/index.html": {
-      "sha256": "02dbceabcd156588a6272bc36d7774a1f4773229a936e346944bb12a0dd89c72",
+      "sha256": "a630d752655b826cba97faf05e03ea27c228baea726ce488959212887b1aeb77",
       "bytes": 59095
     },
     "ar/dossier/assessment-and-permission/index.html": {
-      "sha256": "6e83e0a9310151d19375a3731f71bd45bb89e077ea97354a1afc2626c9b154bc",
+      "sha256": "f5d6b3b914d46bdea7c163aa9e611569cc9184e973e309cbc5680044f198892d",
       "bytes": 59261
     },
     "ar/dossier/culture-and-worldviews/index.html": {
-      "sha256": "e175597c5a186046a9490d72d2afdea649b4bab36fc478969c177174edb31cb3",
+      "sha256": "33112feb9bfcfd9c53cefb1a6adf45a65a7d415076b20b6bcdf880613b9d9cf7",
       "bytes": 60113
     },
     "ar/dossier/digital-tools-and-responsibility/index.html": {
-      "sha256": "7abe95e05dc42612a96596aa25fffe7ff29afdb7f393dfc15d69134ab1079b2d",
+      "sha256": "f7a95931b02341d44bd77265c0654f2072b03038636ce7ec02b727118edf7023",
       "bytes": 60091
     },
     "ar/dossier/preferences-and-boundaries/index.html": {
-      "sha256": "bbc76fce1177e894f5fc198eded28af58482354c77a45b32d6bd1d5d8c60bd2c",
+      "sha256": "01c268e3908b577bd5d99e6332da4288b930d53e3c3b80444c9d819190443d2a",
       "bytes": 59822
     },
     "ar/dossier/question-to-design/index.html": {
-      "sha256": "be3f7b6a0ea8fc2b6dbbb42744952c432797f81076561d787309506682dfe2a0",
+      "sha256": "bcda348422e289011af08df09b55f9ee7e0c5c9e40495e2870eba2d2db0dfe09",
       "bytes": 59603
     },
     "ar/dossier/reading-evidence/index.html": {
-      "sha256": "9429713ff326492102cffb53f57bbfb17f8ccf3817d817ada63cb4e558a306d2",
+      "sha256": "2d635842d2e215e2291bb08202823ac953574f33ce6108076377f8be75875df8",
       "bytes": 59805
     },
     "ar/dossier/theory-and-integration/index.html": {
-      "sha256": "cb3c6e4ee7dd4824424066810c4ddc426da767013197cc77e57a21e249b327b2",
+      "sha256": "4520acf8ec21e494674b20ac0af9562261081c951584031aa2dde3d3a6355c20",
       "bytes": 59981
     },
     "ar/dossier/understanding-spiritual-experience/index.html": {
-      "sha256": "47a9ce5802417770ff5a05a936372e08c67b2012aa99b2498971cce63506ecba",
+      "sha256": "beb848edb90190cd770d2f2db147b4e4e21ceca0147fca45482dfead34dbe5ff",
       "bytes": 60160
     },
     "ar/editorial/index.html": {
-      "sha256": "2e05f3dc16487705459cbbec635d8ec871e04ed11646055f732f02601ad52e5c",
+      "sha256": "dade1493e5431d77062d5d0d943c5b33589aa051956f428ebe32bc75feab00aa",
       "bytes": 53377
     },
     "ar/ethics/index.html": {
-      "sha256": "2106a392829974b356b2b0459fa161f9793e6c0e191ac49388fa6ad2388cd035",
+      "sha256": "6887ed761ce4df69554b5f11191bb97844f7c91d5a9afeb192086ff161765fec",
       "bytes": 59416
     },
     "ar/events/index.html": {
-      "sha256": "e8aaedaf6e52cd1ad28ec60174fc9534081f2c21a7019b7a55b841b355907697",
+      "sha256": "b5ce0613f279713afd9647b84adc8684c45c398d5cc95cf0b996a911a193a358",
       "bytes": 50322
     },
     "ar/governance/index.html": {
-      "sha256": "3e9afe70866eb70475fb86790cc4b2ed8f7992e560f5f91542a7a34ab521b3e0",
+      "sha256": "604a55382521cee88702df63b27453b7dbd8aa7b9db539b1c60d5e0a1c277b79",
       "bytes": 53333
     },
     "ar/index.html": {
-      "sha256": "e22437ad000793a27da1fe605920fcbe8ee80a59e46da4cdb8e32971c8974655",
+      "sha256": "d74a51e1b9c939097c195ebb04d8c41b88a9b5bcdc8f1304f32c57df8ccd044d",
       "bytes": 72413
     },
     "ar/learning/foundations/index.html": {
-      "sha256": "ae25dfdf68cb7a165e9714c93f1ba413e1df5034c6a8eee1880d45eda529c4db",
+      "sha256": "a470e79ff6b4c66b6f30f5f00c030243e17fcf97ec6aa0b6695e880cf5565299",
       "bytes": 53689
     },
     "ar/learning/index.html": {
-      "sha256": "dd15a590ce6dd359e3b75cb485f41563208980b699cf9d56eaa94f5dd21ab4dd",
+      "sha256": "55b1c40cdfc5ca1f5ac3bd6fdead53b0017f61a5e75686cffd0f78cc4b142a7a",
       "bytes": 52178
     },
     "ar/learning/professional/index.html": {
-      "sha256": "15a6f3b6b5e949556219278c3bf040ace703d6b1a02b860d4f6d3c45d1813c35",
+      "sha256": "63b660e21aa3750b2dbb22d7a2aa8958b9b825b9aa31e2a785df5494b5c474a0",
       "bytes": 53833
     },
     "ar/learning/research/index.html": {
-      "sha256": "005bf736979d2d3b9610b207b22bea7269a578e0fcd69a8cfba466b05ab96d51",
+      "sha256": "95201c607371fe8d39b4148e7fb17dc22b3d5708fb574f64862785621fcf5052",
       "bytes": 53563
     },
     "ar/library/index.html": {
-      "sha256": "cda5cab0c39e82d2af1d2ca76ff2eb321ce8800b1774b94e10eebde9feac8f8c",
+      "sha256": "0f3d7ecc9effba253018f61ee0157942e269f232224d5399476783fcfcbe1511",
       "bytes": 112551
     },
     "ar/measurement-guide/index.html": {
-      "sha256": "c91158d79a6f43bbb23f3ed07d16ab6eaa6eb9e9bac815d0dbbe8ce268c12c88",
+      "sha256": "f88240411c2057a08ab43bc86fa5d63561b6028587e1a917022fe190447d704d",
       "bytes": 57881
     },
     "ar/measures/index.html": {
-      "sha256": "b6a4b7b3c38c46a5eb16a64d58fd735b0d7c124cfa5983cfd91c0a02d2257d8c",
+      "sha256": "415248da853de020ece53b9c941c77d86bd65a90d62f5b7fc2af68e407fff87c",
       "bytes": 67190
     },
     "ar/media/index.html": {
-      "sha256": "f48ffeb1a8e5b235ff1d9d9dea856680ea9d13edda9f13ee92ebdf661f3a1cf3",
+      "sha256": "26fc1d4e7704462a661104153bf7b119eec959311950c57bc929362d85ddd579",
       "bytes": 50463
     },
     "ar/methods/index.html": {
-      "sha256": "1f6d46ce7c42727ef9baf7f80fcadd52a0d8b06d391e8f0636cea77627ea2154",
+      "sha256": "fb305559728a45e87113a573937a42288b8801d1e2df4f265cd42838ecfaa8b2",
       "bytes": 66461
     },
     "ar/news/index.html": {
-      "sha256": "81e83d11868af59e39bb118fb5bb63921fc0cc34e5b71d7ce62724d37078bcfc",
+      "sha256": "2606f5d0dcc1bdb3a2419a336039a87349f0446c73dbd6271ab9d4e75f10da32",
       "bytes": 49971
     },
     "ar/participate/index.html": {
-      "sha256": "d2874142ac900f4731fad58aac38fe692071c8718d8940335b15da4c81441538",
+      "sha256": "ae5cab51468322451a104058446b7cc147a4d04083894215aa385d24fcbbcc29",
       "bytes": 52913
     },
     "ar/practice/index.html": {
-      "sha256": "c8ebee05310a992d710bca7c2012089d3e97ef876ae78bf6ff342a66bb7b819a",
+      "sha256": "9eae922cb1febd705e1f07dae78913c486dc9deae00cb79027f3868704510cb3",
       "bytes": 70375
     },
     "ar/projects/index.html": {
-      "sha256": "6d7a20c23fccdc48bdefeb7797c748592c2425d9d3d8da0423ffa94d648d9f4e",
+      "sha256": "2c987c69caab4d4810fb8dc841e9e6e14f02b32b72dabfe83464ec2aef42ae9b",
       "bytes": 50481
     },
     "ar/publications/index.html": {
-      "sha256": "6d386f0d284af22268f4a67a93b4ca356eafdbd9833b59773817333abce79ef7",
+      "sha256": "1c010c6675eaa9e5043c107409f3cf123e374643e8fac4126581bbe8c0b81b68",
       "bytes": 84971
     },
     "ar/reproducible-lab/index.html": {
-      "sha256": "7c8706cb181e1e18006bdb8a4e9008b85a479891e543c57974bbc7a30be058db",
+      "sha256": "705b44f80a3c931be6222cf57c8334b57c2cd9ec2d3f16aaebdecef5853cd2f2",
       "bytes": 61857
     },
     "ar/research/index.html": {
-      "sha256": "cf8914ecf5b73b121d591a726e300abf59a326d3162b511458ba0b280c7815e4",
+      "sha256": "4cf1e50504099fd6afc94a7dbeb7c46a18ba527f9e9a703025ae7f660672a4f2",
       "bytes": 55122
     },
     "ar/research-guide/index.html": {
-      "sha256": "5f7f4aa7d267c86aebde45ed8d7f3f9d187d8f63b9dbeb13dc5c64c8a84f5b4e",
+      "sha256": "9c930b8b5e4716fe09617ec34ce291730c40cc57912a36a0fba2fb611d77fa34",
       "bytes": 57847
     },
     "ar/resource/ai-health-ethics/index.html": {
-      "sha256": "104076549857d61f4541dd1b74ec527ed207eeef48828472d7460de1fe83d525",
+      "sha256": "02d5c90a98f1497db411da43a329ce9e9bb3ea7ad56ba2c4409fceabf9385ee8",
       "bytes": 58952
     },
     "ar/resource/aservic-principles/index.html": {
-      "sha256": "74f47eb2f738f2b270022c820683c603b5c1db6d3a67584844fda63be649a92a",
+      "sha256": "288c4430b4fea28bf6c0397fc791ebc359980899556c7d5b796959e4b6df8e50",
       "bytes": 60389
     },
     "ar/resource/cbt-spiritual/index.html": {
-      "sha256": "f42c918098236cce0711bf7903368edd50589326d91f56033f9ff8c0d7804f62",
+      "sha256": "390f83d366728282a23b4ec4769f2b9fa3777ef0aaa85fe09450b6274603a08a",
       "bytes": 60527
     },
     "ar/resource/client-preference/index.html": {
-      "sha256": "00fd98f91539c21e09aee50bac4443199739ba17ce9da00f862f6dc040611be3",
+      "sha256": "d850f3b1c651f24f85f279f85e6a1d1f9dbd00d790552bb702530277bf9a8914",
       "bytes": 58801
     },
     "ar/resource/discovering-spirituality/index.html": {
-      "sha256": "a80efa12590e2b044c750f58461ad2222bfc183ca42bfde320d66d5103be1f12",
+      "sha256": "db6fc19bca47280269109fb4c96931ec3861316a919e0e7a01441cdb0b805e9b",
       "bytes": 60842
     },
     "ar/resource/family-spiritual/index.html": {
-      "sha256": "841ac5c74d0ba21bad29bfaa44f4c0df46b6474825a72b59ae61f1d109ebd071",
+      "sha256": "4d4171c81e29ab8098c38614769e31759670ca6afe0e9e0dc49f503b5bd5e903",
       "bytes": 60465
     },
     "ar/resource/group-counselling/index.html": {
-      "sha256": "7a3850e0a75be7d6b4492dad8c404c48c7a91ba71102d21c7c5fc5ff8a0d7a78",
+      "sha256": "c36ce445bfd559d1d7d55039f3f1d1b4d24c6ca64475593eeaf812cdc4cd5ee9",
       "bytes": 60894
     },
     "ar/resource/integration-meta-analysis/index.html": {
-      "sha256": "d3d09c2137821a4e4d09d8c668af341c8beef71b2c4ab32d94285f5042ec9a20",
+      "sha256": "6d920dffa7648d4ae2585cc61f808c32a8b47cba2ab8da40ecf3d79a2f309f8f",
       "bytes": 57579
     },
     "ar/resource/loneliness-spirituality/index.html": {
-      "sha256": "206ec5c5b8e031cf3ad7983e436ae199454b8d36a95fc308286c273e36925335",
+      "sha256": "69867c475b503c1ffe56bedcffd3ffb6c13d37898dc5f216d5f886d4ddc61eeb",
       "bytes": 60816
     },
     "ar/resource/malaysia-ukm-counselling/index.html": {
-      "sha256": "6f26d642f446b765cfd39964ca131144a097f88c159cdf28407e5188ea929d26",
+      "sha256": "7479cdd745fecbc26e875f2a0c367654fbe61c42da95166dd5dff52ec7c7c909",
       "bytes": 60233
     },
     "ar/resource/metaphysical-diversity/index.html": {
-      "sha256": "5298f1220ac87a11e20242eb7cbf8385c4fd3bb58c4fc3afa989898d98b1089e",
+      "sha256": "ac59cfad3943507548522853e089160050e05c464628f740c6077e53495586f9",
       "bytes": 58904
     },
     "ar/resource/prisma-guidance/index.html": {
-      "sha256": "a45cbb71261320c3626d004e8bd685004afcbcc10137c6832620d2ef84316169",
+      "sha256": "b880df7d33eb3906676d7815ce231786730f02914c410e72730dccc8fa7755ef",
       "bytes": 59716
     },
     "ar/resource/professional-training/index.html": {
-      "sha256": "933754a0708399894d97cf6a3b2d741de2a8a78f1ac5bd4a8089d868db05891f",
+      "sha256": "645ea4aa150a563b45dcbc33b3178ddcf129e22d9eae9c2cf5fa189128fef40d",
       "bytes": 61038
     },
     "ar/resource/sacred-tensions/index.html": {
-      "sha256": "3304696d18b3865193c8edc26e71f0fe7e5fe0f8d66b490ede0fe96f7e2ed0d1",
+      "sha256": "c138409104da8db6d059270d2c5e51956012d93b510a7a70c4e4aae9321b71d7",
       "bytes": 59770
     },
     "ar/resource/sipas/index.html": {
-      "sha256": "58f1073ba78d57ff7e4791b1a8775b4dcfad1b760d116e2a8dbbb1bfae9ecb66",
+      "sha256": "6492f0bc7bcddbbee3a71a6057e5ea12f610e66afb063e1dff3b1b7b67d4a3bc",
       "bytes": 60634
     },
     "ar/resource/spiritual-burnout/index.html": {
-      "sha256": "99a43f3d6ce9934d7a418c83f4f2d0784badf4d1281db5b9a843953364c21f5b",
+      "sha256": "73938110b12bf60084cc47129ce8173eb58808e623204cd34693da844a94a735",
       "bytes": 60565
     },
     "ar/resource/spiritual-competence/index.html": {
-      "sha256": "1d2b577b7d11b684048514d14817fa6e882b6835d7c7f0b601050b59d56e3eb3",
+      "sha256": "b785870339e0532abd9109d13124475337dee23888cbb8c5072e479c9481af00",
       "bytes": 59998
     },
     "ar/resource/spiritual-counselling-book/index.html": {
-      "sha256": "dcfb9a58c581743aa914a1067b139b24fc1faf5542d26a05fd922f80f13df9b3",
+      "sha256": "02791dff8f7852c1c3109400e672f56b94a8f30bea0b76f8945312f046b0894c",
       "bytes": 61353
     },
     "ar/resource/spiritual-integrity/index.html": {
-      "sha256": "6df319f2c488f10d14842be9d93fe4f2b71a702d1bc35cd1eb2ef7601f7a17f0",
+      "sha256": "508ca27b474ced883bd80f1766b1fc4cd4c442d690d417e84af7b6de36a08ccd",
       "bytes": 60732
     },
     "ar/resource/spiritual-practices/index.html": {
-      "sha256": "57628e35917bdc9513408284e0d4cd9638516e710ea3200cb7c078cdfe5ce194",
+      "sha256": "e53627d52ebd8e0c9eb9b10ea3438c0ab0943aebd1b0186c2cb4c260969a28e1",
       "bytes": 60540
     },
     "ar/resource/spiritual-struggles/index.html": {
-      "sha256": "1bdccf7a51d96323fd2a855c7e6c3cbfa19f04c5e3db5f5819907cadbc15d8bc",
+      "sha256": "0ad8f32d75b5e7c18f44af95298e879efd829f1c044843470a9b95c56bc50516",
       "bytes": 60620
     },
     "ar/resource/spirituality-dimensions/index.html": {
-      "sha256": "be262294c001d6b02a67056b33114bec5c314e3bdc9cff96693564a24a8bc86e",
+      "sha256": "bb4cb21d32299b4235c2f9d4109cc911066192f148522bf83d4c3f0d0d63c390",
       "bytes": 60975
     },
     "ar/resource/techniques-101/index.html": {
-      "sha256": "8fa8fc7ac24843ee7cd8caa326feb737ad206022e59cc7c1880a6340dd2f0e6c",
+      "sha256": "4bcea75bd6eaa60d2f4c48baf065365ea8d3ef1baa240b71000d3979ff5e01f8",
       "bytes": 60709
     },
     "ar/resource/theories-book/index.html": {
-      "sha256": "c403068176793844275d0f86b9376c910c45ffe90e85eb3512e4990d5e14b294",
+      "sha256": "3d84cbdafea4ac6c09ae286e10dc87546f8f449a367ee7b5e329fe116f89bed9",
       "bytes": 58587
     },
     "ar/resource/three-waves/index.html": {
-      "sha256": "6a26c04a917312afa2c9eba1b260e9bd2345a2e4b1ae14b8d179051c155f0cd1",
+      "sha256": "83572a8ce73c2c4bd86e36764ff3520baac4fbecf6d3f54da593896065c67ba1",
       "bytes": 59711
     },
     "ar/resource/toad-directory/index.html": {
-      "sha256": "7808c123021eb782ea32122a43ca48164867ebf66e1f98ea14c7c907afd179da",
+      "sha256": "33ea66de7832e3e26a81e0d4550b38d5095f0daeaecdfafc43f7d4150532d5fe",
       "bytes": 57226
     },
     "ar/resource/trauma-spirituality/index.html": {
-      "sha256": "fbcc38b451e2853f89bce26cbe8ce83e962dc3ac4df80edd4bb00ef73d1fc0b8",
+      "sha256": "2ea36976ebcf2e26d7936509e44e23fcb7b4356b4d749429a36e109ee27cea3f",
       "bytes": 60831
     },
     "ar/saved/index.html": {
-      "sha256": "69cb7cd885b16dfe45e4a0b91af25c5702f2c25eda19cb3213dd7cb1bb7fd493",
+      "sha256": "cdb00e6453a1f13d2416546d32f6b31b2c7842ca85e9d66e1b1372cd37c9a193",
       "bytes": 50697
     },
     "ar/search/index.html": {
-      "sha256": "7e9dd9f8b1889d856ff7ee1c1fe1b178a7512188855728152d75c2c5be20d167",
+      "sha256": "3c4fb05ced93040dce7635f9b03bd8c0ff31d3dc45d52dbd63dd66607dfc7d96",
       "bytes": 109404
+    },
+    "assets/cini/iznik-corner-a.svg": {
+      "sha256": "744a7253627ddddf155f091f21cee7cd947a50022c08d62dbb1802cc6e5fd140",
+      "bytes": 5443
+    },
+    "assets/cini/iznik-corner-b.svg": {
+      "sha256": "33e27b2652b29e8b43dffff1011d379f44fda91c3d433dfe1206327b8bf32fde",
+      "bytes": 5452
     },
     "assets/heritage/LICENSE.txt": {
       "sha256": "35e2d80531535e20f54a3a036c3e960921a127a085d0879ca08fd9fad31a2b14",
@@ -361,8 +369,8 @@
       "bytes": 357
     },
     "build-manifest.json": {
-      "sha256": "2f34b4bca96973992e37488a0891aa2736e3f918241f3d49a23996909f21db16",
-      "bytes": 19161
+      "sha256": "dd8d66f6dc95028e3d87954af2ce9efdd8919053b764f03646552b2571e12537",
+      "bytes": 19157
     },
     "campus-core.js": {
       "sha256": "bd4e222ae20e8d966024d52564a997ff243a1f80450ca302e53da90647d8bdc8",
@@ -601,7 +609,7 @@
       "bytes": 144572
     },
     "data/research-object-ledger.json": {
-      "sha256": "cf3750c0c5a9ef4a867f6c6125850f81aff22c157635551f04b57fe2434616f7",
+      "sha256": "0052265e9c98aab7925e92cc8a45e6a653c95fba8b5421f3659976fac1ff2820",
       "bytes": 17362
     },
     "data/search-ar.json": {
@@ -649,539 +657,539 @@
       "bytes": 372
     },
     "de/about/index.html": {
-      "sha256": "186ddc423da3e5bc7f8f89d13b56bfaa3f02bad1a598323ee774b19239195d22",
+      "sha256": "9ef0f57e678f55abe884190dc4b41d318777c64b273caee6c79776d0159a8f22",
       "bytes": 44714
     },
     "de/approaches/index.html": {
-      "sha256": "dc449de36d81eabe6020a9ba360c721532da577f19f66e4730b7001fef5c16f1",
+      "sha256": "3311241d2caddf27f0474a8b0d48ff9ec5b78ca0cd72ed3001539d553b68801d",
       "bytes": 52977
     },
     "de/books/index.html": {
-      "sha256": "2b73ca5323ad34c6ea7b6abec0a9afd3f9a95595657dc8e40c5c7ee1c9314b38",
+      "sha256": "b2cdf8d9f5e23585ee4cd4822fc49ab0242c8a5250b8bf9bda19fdc3e43fbc32",
       "bytes": 72577
     },
     "de/collections/index.html": {
-      "sha256": "a2da5275d5ea947dde71887bda91a9a942fb8e861f06fc0b525fe2062c35ef8b",
+      "sha256": "d626a929a3a69ca6eeccb4bd58866e3694aeeaeed471d4eb91c78e0ce5a4dcc6",
       "bytes": 86658
     },
     "de/compare/index.html": {
-      "sha256": "427066f777ced4d91f63c8424101249efa135b2061573c3f1ef9b3ae0dee18c3",
+      "sha256": "cb78419a29b740dc6854c330270ddf75b5a34c7ac000eef14350add9ebf7f80d",
       "bytes": 90304
     },
     "de/concepts/index.html": {
-      "sha256": "71b223238a0d8102ee219d4fb0ecdf116779c45b444c35ad6ef3ab78ac85f562",
+      "sha256": "a49ea7ec04975fa2f3b951f703536414f034f1840128b5dd23d3f8da490fa146",
       "bytes": 54692
     },
     "de/contribute/index.html": {
-      "sha256": "06ac0267fc11e8ba909081ccefc9ef5096e9533b9a0a2ded9995323e9c50f960",
+      "sha256": "33b7b5c89e403d0566cea9ed66d5c6c5aec959c930c43406d34683f7333387d9",
       "bytes": 45403
     },
     "de/data-access/index.html": {
-      "sha256": "876fd43247489320e97bdd1885960fec5cf0269a1a5de6e6d73746b98e8833ca",
+      "sha256": "16a3e6f13c338c8e3ae563880aebbf2af2ea293da0b88618a3d40319f246e9e7",
       "bytes": 50895
     },
     "de/dossier/assessment-and-permission/index.html": {
-      "sha256": "119e0bd86007158e4896ca671eb7b235f24f7e0a63245177f3f3f0b331e06f60",
+      "sha256": "b2b09020c466f7bb7601301296d152cf75c75fa4c22784f0519de6176c94212c",
       "bytes": 51033
     },
     "de/dossier/culture-and-worldviews/index.html": {
-      "sha256": "d8815e961906ab235cf5b4ab5cb479746589026a77cb10f51dba97904bd33ba9",
+      "sha256": "1769d893084fb4061dba1588f8d7a0ee15e4271bc56ae94eca0c7a4c80ed1084",
       "bytes": 51579
     },
     "de/dossier/digital-tools-and-responsibility/index.html": {
-      "sha256": "15b2d2b9b67d28f27217d7d6309ab7bf76bf86d39bfc812b4d262cc3d10bc684",
+      "sha256": "866042a452a3c305ae764f4fb208300d0ae9d7111a861571f2c9c3bc4a715402",
       "bytes": 51473
     },
     "de/dossier/preferences-and-boundaries/index.html": {
-      "sha256": "9c4719eccd05d44a1bc5b16e162949f6cfd9bf73c972b359b7fb225776522a5a",
+      "sha256": "cee3c0ac56eec74a6147247ee49c1eb518f7ff49fe9ef20dab5265a823a13003",
       "bytes": 51509
     },
     "de/dossier/question-to-design/index.html": {
-      "sha256": "b34c7b0bf210ecbe578c3fc3b70362bf31eb4499e2862e03145a5798ddbfd0d1",
+      "sha256": "367c89818544fc70c9ffb33ad7afd1936cbf7fb7c70772828b5dc498e88c79a9",
       "bytes": 51202
     },
     "de/dossier/reading-evidence/index.html": {
-      "sha256": "4bb3cf8fd7e500e93afd1bf822d7a2ccd47a5278ffdd618b166c1162d38ca8d0",
+      "sha256": "6a7737844a07f303dc9e8094c55af73abd19e032fa699b3efa085eaea4d285c4",
       "bytes": 51423
     },
     "de/dossier/theory-and-integration/index.html": {
-      "sha256": "1a7016a4490c9012eb9262180b112ce7fb4a84d61d81650c386a45800447e2a4",
+      "sha256": "125763ba5525af25f5b0adf32cdfa4dde80442bc2e632fd9211b799ea28a453f",
       "bytes": 51576
     },
     "de/dossier/understanding-spiritual-experience/index.html": {
-      "sha256": "13d454080eeab67fb42ec59af747a04af2f4f9cd054d8e49600b60ca75cac738",
+      "sha256": "925258bccc055da6e817d9cbcb7d229ca62220ae535f73d1a38e0b5a35fe4b46",
       "bytes": 51840
     },
     "de/editorial/index.html": {
-      "sha256": "ff9e84197d5b9229d68b1501c93eb56e1b4d36e83da3b0c989c9addce0e8407c",
+      "sha256": "baec28555e2b0addff028907691327d310014e82cc45bbe8e6fc0b6d60828806",
       "bytes": 45347
     },
     "de/ethics/index.html": {
-      "sha256": "12e208650cfe4f628922c70fc992443fad05467c939f70ef6a4b9bbcb4de3365",
+      "sha256": "464c0d4ea3e6f49daae25543a900e35649d4569a678361fe5a1af4d5aa9e8d72",
       "bytes": 51136
     },
     "de/events/index.html": {
-      "sha256": "7e7db92a27f3ba48d574ac72a26f16364351969d52504e5036896d48cd437932",
+      "sha256": "980f5c84f70165e5abf229016a59615623b93fa751dd754a4115797ed3e79ab4",
       "bytes": 43191
     },
     "de/governance/index.html": {
-      "sha256": "d9bf1ded97c1e22677f4921ec84b66d48dd4a875c792571755cb765699e753c9",
+      "sha256": "7a1f4d91d0f2240adb0bcc4b4f637e32e9917ac4b130319aa10d59c9e64fc097",
       "bytes": 45677
     },
     "de/index.html": {
-      "sha256": "c5920b0053fccf64dbc792cac41cfbdc27d55dc83b390ad0d3e3c0657f799481",
+      "sha256": "2923c2c78d2a9cc67ec6ebbd4e3e59c788bd485cc54bfc2352bda1ff9a1fca32",
       "bytes": 63740
     },
     "de/learning/foundations/index.html": {
-      "sha256": "b9af82ce08f77feb97a8e7f328b432aba08576b6bbcce66cb0ab4c5385a8e42d",
+      "sha256": "bc1b0ac1eecfcf206ff0c7694fcbbab269fa7fd58484f8b686a622aaa967d8d6",
       "bytes": 46141
     },
     "de/learning/index.html": {
-      "sha256": "082e5de67e86cfceb0ceaf045cd3c0a71bfec375feaffb0fa96e4eda2c0bf971",
+      "sha256": "d9bfea1e7201525944894e625880f3d4f06226603531024273321e8a6a203302",
       "bytes": 44689
     },
     "de/learning/professional/index.html": {
-      "sha256": "7e20e2cbc41b399dbd4c0613681eefd5ed5572703e3150c7c1cbfcef51439302",
+      "sha256": "d4e1bd7cc71102006c2ce91dd4ce4af4084967e1ef792ff3ab4f3ffb6086b4fb",
       "bytes": 46216
     },
     "de/learning/research/index.html": {
-      "sha256": "8675c31af0f3c120ce4fd66a34db35d4e99f80d97aa02ba9d99c9b071a74bc89",
+      "sha256": "fb2695cef1152b1fc099b0fbeec1237e09032b96f454b1a1b5afb63205b2952c",
       "bytes": 46042
     },
     "de/library/index.html": {
-      "sha256": "fc47083740159d75de5728089cb3df7c23833f6144280f570285c6ffb7ed9b1b",
+      "sha256": "2c1f187727dafaf3a47342ecfd0d240015d9d520285161020f30ee82437b5493",
       "bytes": 101145
     },
     "de/measurement-guide/index.html": {
-      "sha256": "c739f67304915dad060d884f1aa435d0d3213aff3a266cb7b179fff6b9226cce",
+      "sha256": "2183b2ea60fc01447d9eb5aecaa84a232a3295c458c59ba82b16ba8729d63163",
       "bytes": 49780
     },
     "de/measures/index.html": {
-      "sha256": "52e8f3fac80a802e9dcd8d07df32a1e07ac07c85cdb2f1a0e827627384d2165d",
+      "sha256": "e17bde312b5b1e24bfb7b0358cd13565420b62d9bd767fa213e5dc076619845b",
       "bytes": 58775
     },
     "de/media/index.html": {
-      "sha256": "253b933a62d08357d42a1df5111b225196d2bc2e3b771d62e1347ae39a9f676a",
+      "sha256": "409164f06398762982b9bd85fbc54d89f89168a0f84e0166b88de9e847cc27de",
       "bytes": 43167
     },
     "de/methods/index.html": {
-      "sha256": "ea5ea795bd1a018aa196488f986d0947126baed7ced21463a3af80700e935939",
+      "sha256": "eb0b2f9032f4f670d843319c7a69815799ccff9824c3b11f2c89f03d673f5a0c",
       "bytes": 57761
     },
     "de/news/index.html": {
-      "sha256": "b6c2f6e588a80c8b4a917e73a0805eb77a2e4a505edc1a1a45927c05565ad41d",
+      "sha256": "8174efd4ed610356a32bd4dd1945d9dc9f562b86b297104463ec7e534e52f5b5",
       "bytes": 42904
     },
     "de/participate/index.html": {
-      "sha256": "72c727ace1703d394951ec89c4cff3ef2580ce8f5afb5c9b78950b281d548134",
+      "sha256": "a99b205b143e985cef3f07f809fd31a45b50cec8b112620f9a9a5cdfa596853f",
       "bytes": 45395
     },
     "de/practice/index.html": {
-      "sha256": "3ba602827829c96d4b52ad74e836e985d6ebdea467eb5a1410a848c5697edb3c",
+      "sha256": "e0dd9944cc21d5d696c5c1b9022786bff6b1653892b21fbf86293b503dc250e9",
       "bytes": 61651
     },
     "de/projects/index.html": {
-      "sha256": "f45d0fa9fecc4e50eca74f8c55d587a6b2560801563bb8842fd46e3a2b1c8b94",
+      "sha256": "020fb3f02205f5a28d73be34620269e24190419052c5c04d4635b16e1a75f8ff",
       "bytes": 43259
     },
     "de/publications/index.html": {
-      "sha256": "5c0eab8fec5e8c9a0d3f43afe097895429832f943967e96bd1868295faadad77",
+      "sha256": "404710331f607be25d01f0fd6cbddb5bff3a8e4eb2a2c6449475ffe0c8f0aacd",
       "bytes": 76925
     },
     "de/reproducible-lab/index.html": {
-      "sha256": "e29846fafceb31c286d8fda3e6e82a21dda65c4e56c1cdcb7b54d578d9a615fb",
+      "sha256": "8b53a006ec8567832b7834017dcd623a453737bcc20005fc836854cbc708a28a",
       "bytes": 53844
     },
     "de/research/index.html": {
-      "sha256": "3d83af499736cd4a1236c3d805416b4420393cb29d5a55d4922076a0291689d5",
+      "sha256": "e3cdd9b6ed2b655d439ec20b4efae7579d827e287d2f727fc6931f41e3b36b53",
       "bytes": 47509
     },
     "de/research-guide/index.html": {
-      "sha256": "8c60618537a7ad288d5beafb1915abbde87dc1b1ec0a473f39ccdd1dd9746b3b",
+      "sha256": "1a12fc9036e9428b13e997bd3d8adce3c062a2e3772135b98b93d17071a48d44",
       "bytes": 49820
     },
     "de/resource/ai-health-ethics/index.html": {
-      "sha256": "99bcf9d10dd090355cb033e0086205429525d9bc41da4b8e26c15a0260594762",
+      "sha256": "df62c7c876c3959672fcc994a9d4e4eb0a3f80e8a7138016d41229f0cc624224",
       "bytes": 50427
     },
     "de/resource/aservic-principles/index.html": {
-      "sha256": "8b3831a92cacb9b0646e7afb016862ad02b971a507cefe8e1d30d9f26fe5395d",
+      "sha256": "347920b138ddc59a377cfd96ff3105ad27b32f9ba2a75728687ac8473efde788",
       "bytes": 51957
     },
     "de/resource/cbt-spiritual/index.html": {
-      "sha256": "4da41f66c4b4b664a07251098744571dc9d1932573b610f7190ea06e5b1aed07",
+      "sha256": "97bc3e0ec83c501967d7b75b0516794bcef3d77a1a2660b66b1090a6c924642c",
       "bytes": 52410
     },
     "de/resource/client-preference/index.html": {
-      "sha256": "8ab33a5c5b12939e27f5e840cd1c3a5d5f507621a71574a83f3e83d5515a08b9",
+      "sha256": "62978e15d0b7fff1a23925afa77118ae74fe3797679b4560c0aed8160ec352c8",
       "bytes": 50728
     },
     "de/resource/discovering-spirituality/index.html": {
-      "sha256": "65bf2da1cbed788306c33cf8b7df662db27d3b9439bb7919f40aa6cf2b2b255a",
+      "sha256": "773a912350ab80d054260d25dfa02a7dd82ea8dbf7fb02ec872a5e2703cd3c7a",
       "bytes": 52650
     },
     "de/resource/family-spiritual/index.html": {
-      "sha256": "40d1a6ac50c924ce7de3c48ba3359fac731593102c1c385ee998a0fd5793d47a",
+      "sha256": "1ac1e30a9955b165ddc8b80fe4f204dd28cf690e90bf13cbf7cac2a54b459dbf",
       "bytes": 52301
     },
     "de/resource/group-counselling/index.html": {
-      "sha256": "606ae594d5d029f085997c7e498b425f91e1b5a49bbd47e09bbc7c09aa4cb535",
+      "sha256": "3894ed1ef2d678709ea5f9eac97d9a9adb00ca23996cb25c79fd2362025888a4",
       "bytes": 52638
     },
     "de/resource/integration-meta-analysis/index.html": {
-      "sha256": "28c212fcc1ae02604fd93e24d009f580983ad2410589d4834cdd49f2cb27fe7f",
+      "sha256": "a190a20468113d0ded6979f80d458c269daa08c7ccb928a3451f544b34e7230a",
       "bytes": 49704
     },
     "de/resource/loneliness-spirituality/index.html": {
-      "sha256": "a3e82af9380d68e9979771c1005c851699a9095bec609a0663fa86d6360eb609",
+      "sha256": "add4c3cb226571d62e36b1c67b7ec696e3db26ab87cdae388e9395354bcda7e2",
       "bytes": 52759
     },
     "de/resource/malaysia-ukm-counselling/index.html": {
-      "sha256": "59f97e79400676b92c6da49a7aadc4fe924ce5d53ee0b3a8091582cb5eae8a4d",
+      "sha256": "7bb37531b485b7b1f69648587785ac0be313875b8c80a76050671e4694b08c01",
       "bytes": 52083
     },
     "de/resource/metaphysical-diversity/index.html": {
-      "sha256": "e5b10b6eaac10799ccc03bfebfe8cb51e1fa8f29d58b2fe0e5a90b287e3dca1f",
+      "sha256": "7fcf7eed1869b9b31c73acc9a219ecdd97090bfe6845f2cb9977132ca983cd44",
       "bytes": 50854
     },
     "de/resource/prisma-guidance/index.html": {
-      "sha256": "5670ad7930dab08aeda4b9b14509e238ab5201c8167b36117144852c82a3c8bb",
+      "sha256": "a9ee08d952d32116dcce3c13a61e0935a0aa3c9d3102580481d52974a111a1b0",
       "bytes": 51413
     },
     "de/resource/professional-training/index.html": {
-      "sha256": "73afbc9f9ea695ca9cea7cb455aff89f126559ea19bb5aa401de10f4fe8f58e2",
+      "sha256": "fd185a211e6aa5a140ea3f4136deed6c7918ed528ed051c4dc3c1a9a4490316a",
       "bytes": 52876
     },
     "de/resource/sacred-tensions/index.html": {
-      "sha256": "5a61604d1094250c1e7026f8664cf2c72a0044ad5e96c5faa632b849245f2abc",
+      "sha256": "4cc69083ad94ce2e46135252f8caef26169883d7ba6e124000cc04f6b7273eb0",
       "bytes": 51563
     },
     "de/resource/sipas/index.html": {
-      "sha256": "f6c5d841be357e33447bc3367deecc5e62c8dc4a60a9241350318898e4f24563",
+      "sha256": "5cfd7e78ec43b7a0b7557e3670671407a913abff0c738ad4f6b1e2eaebdcf13b",
       "bytes": 52406
     },
     "de/resource/spiritual-burnout/index.html": {
-      "sha256": "5d2f0371a9fb4d03a397f351a16d86bc8fbe4578bcf88b33ab038f565bc2a923",
+      "sha256": "860d9d4fb11fe4f67564b0007d81b53142ba074c5bf9aa40cacc22388001225d",
       "bytes": 52445
     },
     "de/resource/spiritual-competence/index.html": {
-      "sha256": "000b7040c1f26aba3f0ef341f89c463988559695113b7ddcce3c62648aeb3bcf",
+      "sha256": "530f7b103482f144080c56c2f0adbacd8b3d8d5a56b1dccc4542ebe639620be0",
       "bytes": 51772
     },
     "de/resource/spiritual-counselling-book/index.html": {
-      "sha256": "85c206bb2310ea73a87bf52e646ebc4342dd8e3bf9b9134b1a457a527b76902a",
+      "sha256": "4335d774d8aa3f0de4ff3b695f02f1a75a295c386d5a3a9c9265f847804cfc3d",
       "bytes": 53088
     },
     "de/resource/spiritual-integrity/index.html": {
-      "sha256": "d01ba80e24c64dee0f682db3f40fb45d84879f66f5250043ef374e21672eef40",
+      "sha256": "c8310450695d474681904f144183826b4b6f1352048727b8cb5ea9b98fff9d7c",
       "bytes": 52693
     },
     "de/resource/spiritual-practices/index.html": {
-      "sha256": "d25b1b4983484d7d4a3ce2658ee6a7bd6362060897543dfcbcc3fd1dec1bf895",
+      "sha256": "e0eb3361824f96224fc9253bef57247ce8b4c36b8401102cac7d26d252f62551",
       "bytes": 52263
     },
     "de/resource/spiritual-struggles/index.html": {
-      "sha256": "f7ca6328835d78a1c517a3b9da225aa9cf062c2e26438ff482d05509f30e97f3",
+      "sha256": "3ae90b3b529bee7505ce6d8794e7f9fc62768fe8cde52e02fd96b26b6c58dc85",
       "bytes": 52501
     },
     "de/resource/spirituality-dimensions/index.html": {
-      "sha256": "57e1d699dc8137a6785f49f0cd961cc2313b88857acdf81ad3051118b2370390",
+      "sha256": "1073572284c62d6cd6de9993754d9ee99a88b6e67605d3a5ed236e9effb4e6b0",
       "bytes": 52912
     },
     "de/resource/techniques-101/index.html": {
-      "sha256": "b1986c38c6b99a0d757fb532a88f360ae1738c13805a8ce7ee2926958b590f7e",
+      "sha256": "19c493dbbe0030961f7bb505d9c3dcf9e63909d35ebad185beffa98bf4be9b83",
       "bytes": 52662
     },
     "de/resource/theories-book/index.html": {
-      "sha256": "f6250f797a6c774655303cf623034bde4a966b85c8f216daecf9aa723fc87619",
+      "sha256": "5b4bd1982083bcdee9979b7c0d53bc88c4ae5fbb503c80684868569696ce2cb1",
       "bytes": 50559
     },
     "de/resource/three-waves/index.html": {
-      "sha256": "5e899869049c29a27a60feb9c9ca6feb9140549da1ba072e32a7d50ae6cb6b57",
+      "sha256": "afd72563a5837dee3f353a06bc0d16fd998986a6a70850031113a0cbf1e5346f",
       "bytes": 51581
     },
     "de/resource/toad-directory/index.html": {
-      "sha256": "e5b1115d4cc35fd62487e2b8342818b9fc090718e5e3d09c7d1ec65bef2c2346",
+      "sha256": "241e68012b27ecc0e83c45293cd7c50b2c1c7c120c60dd9225f49a9dc8f8fdc3",
       "bytes": 49129
     },
     "de/resource/trauma-spirituality/index.html": {
-      "sha256": "e8b85f2db575a4c4e7c44bea7a6c790bbc5ef59deb44ce81fe8f3553241c44e6",
+      "sha256": "76ce58e9fc7bb20f1789172735aa699063800107db6e05b418961f3e863a351a",
       "bytes": 52698
     },
     "de/saved/index.html": {
-      "sha256": "79f18ec2f5971271407b2902679f75e2172a7f28efb4e702022d9bfac48fa7a8",
+      "sha256": "bca6d82d8176b7546ae2202dcbbd699280300ddb7e511866f182a0d2940d2814",
       "bytes": 43420
     },
     "de/search/index.html": {
-      "sha256": "61da4662372ea2c8eb06829c5b05da68ab893effa7b49fcfc732131742b32a7b",
+      "sha256": "c395d55198a900a642c453a4f248cc7a8958a3e5e63997b84e064fe99380ccb1",
       "bytes": 98327
     },
     "en/about/index.html": {
-      "sha256": "e3cad63985a9c19cde98bc1ba602e30fe03c781d47bd3388786e318825218aa2",
+      "sha256": "bdd52858dba61c370d16917adf1a693097e356db2117268a07ce03bad21ef90f",
       "bytes": 43420
     },
     "en/approaches/index.html": {
-      "sha256": "b9c7b7c0a6a5c33f7b6e90bfe6fad6b836573d9ba62f3f3e5b8a8228811a4e59",
+      "sha256": "2504ba9d9e154a8693b342ed474498261e009d1bc2de543f9ef309cba8c7aca8",
       "bytes": 51769
     },
     "en/books/index.html": {
-      "sha256": "2f8d50621f14f2e1cd27f613b6600b95933ce7334618a7991752e36bd4273126",
+      "sha256": "781c62a20eaed0e8763cedbf7a87e898d9d0f5dd9f00070786708f8f09e10c84",
       "bytes": 71355
     },
     "en/collections/index.html": {
-      "sha256": "93500c1930b6766fad6cbdca064df22f6b056d835b0045b16d3afe6c9d2205b6",
+      "sha256": "537fa1848bd01e9a89f592c0388fc31da101a99ab5d260415b1a22f5f5580474",
       "bytes": 85110
     },
     "en/compare/index.html": {
-      "sha256": "66166a112d1e86d1dac0ed2c808f019749348e8696f6f9ee25b61470b98121d7",
+      "sha256": "1fc6ef838cb07d6d14b7c8ace16077c7f64e71040fe599a921a48a816a16079c",
       "bytes": 86827
     },
     "en/concepts/index.html": {
-      "sha256": "86cf0a7f5751eb233bd995eba557c8ca19ad0d7e381f8845330fcc69fc05e03a",
+      "sha256": "ce8138a78a083e703372d9b1163c933a52301414968cbf34f50a8607a5008aeb",
       "bytes": 53668
     },
     "en/contribute/index.html": {
-      "sha256": "588bbb5e80bbd46471d463eac800616d669d16c7e1b5beac87a817d3cd966aa8",
+      "sha256": "fa88997c011f2d665ac425e8ca2b000e4af12b0b92853ee5d9909018fc51547f",
       "bytes": 44222
     },
     "en/data-access/index.html": {
-      "sha256": "899ba4187b3cd2b0ec80fd0f258921f4fff07988fb33732ce6161a2635c9d081",
+      "sha256": "eab3d85e6b09c5655e4799fa74b44a5871782f0ae6b69877ebc6b1396c7213d7",
       "bytes": 49841
     },
     "en/dossier/assessment-and-permission/index.html": {
-      "sha256": "0eabd0c279f9f8138fbbe81675fd6c6bc71b6a1031930179220ba3595ff26952",
+      "sha256": "702fd4059617aeb27dd2e89ba24af65eafe57d67554a93f472915fca03a6e559",
       "bytes": 49878
     },
     "en/dossier/culture-and-worldviews/index.html": {
-      "sha256": "2ee347c49b6f02bc4aafb75df1fc968cf1a17388c35628d079dcdd41ca0bf500",
+      "sha256": "e33af862d3bbc4b91cfc5d92f1ba4bf2221caeb4e72d559172ef17076be258ed",
       "bytes": 50493
     },
     "en/dossier/digital-tools-and-responsibility/index.html": {
-      "sha256": "239366809871fb24d42211ce76edd9aec649d642fb84bc9e92b1eb3cdf7c7f40",
+      "sha256": "bf08b8d63a06e323217418bfc601b4a1ac4fcd58174989b3e8c018da8f247d09",
       "bytes": 50325
     },
     "en/dossier/preferences-and-boundaries/index.html": {
-      "sha256": "c42ac3879b3d6879f2bd1187781a89a012069aca2eebdbe670943501451c5ded",
+      "sha256": "6b2623438c8559ed30f431862627635efcfb9b50f71dd0333ea04f583aa5f978",
       "bytes": 50367
     },
     "en/dossier/question-to-design/index.html": {
-      "sha256": "712114c40ff1c5034c670321a10cd1b26729d2f67e28a1bdc1fed7cccda324d3",
+      "sha256": "dca8a28db25482e31c029933dbc6c0635a75ab89d00e292937814d17f28d5c2d",
       "bytes": 50154
     },
     "en/dossier/reading-evidence/index.html": {
-      "sha256": "4aaa1d9b87992ddadef2ccd6c6162b8e02a52e7c97d9c110a9bc82c9928952d8",
+      "sha256": "a25f0121fecc9cd0a84e03ffe0d00e1ece305088558b115ab03f091088de0550",
       "bytes": 50373
     },
     "en/dossier/theory-and-integration/index.html": {
-      "sha256": "e809ea5bff6d12be9e38ee22414cd4d0ddb77c932d56e2a05a9c70bfe1959282",
+      "sha256": "fc0fff5ba6a75567548a49e13d5e116993d09153f532d8d8a28326bc1d44d320",
       "bytes": 50458
     },
     "en/dossier/understanding-spiritual-experience/index.html": {
-      "sha256": "19e985c13d69ce786a686bf91a505413cac895dbe04715212b248e7b530cb3fc",
+      "sha256": "0fd51c84e69c7bb190994391a675d44366c978af94fa6a039d25cce89464bedd",
       "bytes": 50680
     },
     "en/editorial/index.html": {
-      "sha256": "75e3b2646d91dbd1986a892ccc5af169f9f5d2eb07291970755073c5f7756503",
+      "sha256": "dfd3603976126d3bdf27026f7bd43819746b7b930087dd338336ab0c3035acca",
       "bytes": 44161
     },
     "en/ethics/index.html": {
-      "sha256": "b855b0d27bc6d5a08217e644240583c05eb9c98fcffdb39bfdddc0782e0b6359",
+      "sha256": "05d0ce591c4a264d48ed2fd48490bb9d8f8e1b77412167380b0a42d5cc3934ba",
       "bytes": 49982
     },
     "en/events/index.html": {
-      "sha256": "8348d34431a9fae10b0865939c410c3599f1390750c6ea4bf508e1017559bb8e",
+      "sha256": "180af613ecbd01ac577772ad1d2f965f17d8631cd7c12669c30e0bcd69b8d9ff",
       "bytes": 42018
     },
     "en/governance/index.html": {
-      "sha256": "32dc38dba8819d2a21aa29c38b989a052fe82d72425cf40376f839f84350a38c",
+      "sha256": "67e04b243dbbb90af488d3035a78b0e6adbb07864a5dce8d2c9476b52a74470b",
       "bytes": 44341
     },
     "en/index.html": {
-      "sha256": "75a5d8bf88ec06d43a4f832f88591d2b740ed8fc137f29e762105867822c5f74",
+      "sha256": "711194610f910d401b86291e4b9e9fbdf5c18850328e382bdc7d468f439b6f57",
       "bytes": 62506
     },
     "en/learning/foundations/index.html": {
-      "sha256": "62332b41de88435e9d0f845180cd63e222383c56ce94375757874cd3a895ff79",
+      "sha256": "56c2aa68db6d9e79277586c7dc5bfe3b93f566fdf8bab4082f7c7b8e1917eb69",
       "bytes": 45117
     },
     "en/learning/index.html": {
-      "sha256": "070bd64fd3890ee7aef515d153c491a17e77187bf5e844110f1330326de08293",
+      "sha256": "161a46500e18815ec3f747af1fe61483e1a4b9b0818bbd445058623b5227f1ac",
       "bytes": 43709
     },
     "en/learning/professional/index.html": {
-      "sha256": "12f29fec9303a414f5167202d2f411673a1f318be9a5d969c68821d611df3789",
+      "sha256": "e34ece24a67b41ad3149ec25619e6de7204170ee45b1524c81465e582b8ecb26",
       "bytes": 45219
     },
     "en/learning/research/index.html": {
-      "sha256": "336ce52b673b36898f2e4617e02e62e23c310c819c0f68483f1b4a91c65e8e57",
+      "sha256": "be369c556b1228d67b1ab7615af28d7896e76fad24cbe41b10b8c3401f207f55",
       "bytes": 44934
     },
     "en/library/index.html": {
-      "sha256": "1eff50f7dfb7de2b53208b6009c60570de00c0b5aed515e9dd72ed8d0a66944d",
+      "sha256": "0e7614b53f3879e0a3253bb4606ab944c55675363e9c44329480f0ceacfc2d77",
       "bytes": 99582
     },
     "en/measurement-guide/index.html": {
-      "sha256": "a28809d95f698ab6e77702e13af156c8963a5f5c18c8ce855b4459950e93400a",
+      "sha256": "7dec162666e7ccfb3c49edebb555ebb117ad9fb83ddf1d61449403999912de26",
       "bytes": 48717
     },
     "en/measures/index.html": {
-      "sha256": "f2769d2fe7af914cb8cd0da54d15810c4d30bcb8a150fab7c685881012364c64",
+      "sha256": "d450ea08f9815a08bd4456dc4b77c0bd63928fe37005f8c123ca4f2a6fd7d541",
       "bytes": 57424
     },
     "en/media/index.html": {
-      "sha256": "f7150391c35b19cbd61b221999a3dfe7d2d4e9e3d0224a200a9b25cb1ee9c5f9",
+      "sha256": "35bf8d8806d943d0aef344b29888d8d9ab5344f0ebd3ccb9988e83ead5eacc9d",
       "bytes": 42078
     },
     "en/methods/index.html": {
-      "sha256": "9e54ff745ab7054890d7b6933e3fa3dfe5eaed909977f4befa62765150383b26",
+      "sha256": "452604d8c246e19ecf034488e994716c6e7a50262a7afbd2a23d879c0370d8a3",
       "bytes": 56488
     },
     "en/news/index.html": {
-      "sha256": "02fb75de3b8f59f979c66cfb82f7994c0fd7584f9659f5c7c8bba6d14774b6c5",
+      "sha256": "68eb0f5ea8c515adda99d51212968c6fae3839828c9fdb1525dae7c9911e2cd5",
       "bytes": 41774
     },
     "en/participate/index.html": {
-      "sha256": "263971c8a6d378915d40f80b63c38226c527547f8c5fd3064198d5684b44d1fe",
+      "sha256": "140d81767cd6af629d5f8156d2dc57ccff2186d1c482be9a3a39cd9b35b77aa1",
       "bytes": 44318
     },
     "en/practice/index.html": {
-      "sha256": "6a69bea14bad66f749dabdc084b43748fd30c83b5b419c6bb018e6c765f484d1",
+      "sha256": "a35f8091764f31b11aee4667164d6ba253178b35ec674ead9307fbe7bdebd41b",
       "bytes": 60406
     },
     "en/projects/index.html": {
-      "sha256": "4a312819c771bd6471f71c613330d07b5e6ea54be2a2ed7831f2fa86c0f5ac20",
+      "sha256": "e36aad1143cee15d2c762256d709abdf00fa651331833f90d794b324db6a3a87",
       "bytes": 42115
     },
     "en/publications/index.html": {
-      "sha256": "48c5a63ff57807079e1104c25e8954e9708985bc7beba8dbea27c0a3c224ea3d",
+      "sha256": "69f262731a6b7ade623c5b26e4c78d956e7d89d05349e546b77bf8296c5b58b9",
       "bytes": 75703
     },
     "en/reproducible-lab/index.html": {
-      "sha256": "25234ea2c32a54427d4be3702bbb8a59fff094ee6640bf820ed4643ce1774699",
+      "sha256": "61e1606d11b105026faee7dd092f5775ab6c9a11c354ba9108260d8ca4a79c94",
       "bytes": 52749
     },
     "en/research/index.html": {
-      "sha256": "945addb6a734477c471e50e14185c2b487573afd45824730c0259d66f0861e0f",
+      "sha256": "af6d5c14db5e339bc5cbdb20ffdcc9328a548a8424f941c79f73aeacfb947b2d",
       "bytes": 46320
     },
     "en/research-guide/index.html": {
-      "sha256": "55bfdd1221939e0ef51963f80d5452a0ea6bd9cbc1dabee980a8831df4157d15",
+      "sha256": "fb6a65671f89b3ac63ec86549b653dd1346d6723bca6fcdfc095e9efd977d390",
       "bytes": 48684
     },
     "en/resource/ai-health-ethics/index.html": {
-      "sha256": "4d77ba07e16c578b02db4a19fbcc0241fbe1642e77864471c16b2635975d04b4",
+      "sha256": "b07cf4484582aa153d3f03e0ce9aa94d9c8926c9e4e8acd959e111330b7a4ad2",
       "bytes": 49050
     },
     "en/resource/aservic-principles/index.html": {
-      "sha256": "db5461ddbe7b58e5cc606f3c4a182002c7ff9814500e59d529e772e31fce1fb4",
+      "sha256": "b5c348802a80e5cc5abb618837f5df666c0be61b24046dd48f7a4c1a6088b590",
       "bytes": 50600
     },
     "en/resource/cbt-spiritual/index.html": {
-      "sha256": "902a8ee848a1739276103be850c61c5786f0ba9d72a4fc33245cc8ee06bc9914",
+      "sha256": "3c8129edef482f67a5c3c8a2cb165a80871884537913b11f7c157403605a45e7",
       "bytes": 51047
     },
     "en/resource/client-preference/index.html": {
-      "sha256": "a5b0ec1ce8afce02d096c865c10e5e8d18ab0a134d45e982d6fb09b4b3a808ae",
+      "sha256": "702505333da1933f5ac429acef0561ef2af9cdc044eb6a338c6f5b962a5e011b",
       "bytes": 49368
     },
     "en/resource/discovering-spirituality/index.html": {
-      "sha256": "59e818fb9cae9b27a5c683972d17480dc8750d8fb9fc4f57512e88db8bbbece4",
+      "sha256": "b3a4b54286b14b56dd544e1dde2bebfa926b5f1a5f6ad84eafe2f63f158ec961",
       "bytes": 51329
     },
     "en/resource/family-spiritual/index.html": {
-      "sha256": "1a9474cf9b00e75ddc2fc39c91611fd00e04696cd0024f62013360a2917b7b45",
+      "sha256": "2cd99e47e6e6054ed4208c39d070cb9527321e77fac85054dbb6bca7cf9ff04c",
       "bytes": 50963
     },
     "en/resource/group-counselling/index.html": {
-      "sha256": "bfff5905296d4e187ad616c565c246c8a90045b391fa8341788d69f47cbc765e",
+      "sha256": "43126cb5399135b887e0d445c13056b8c1ac8448d04f6be8ba86c1c1b9ab3626",
       "bytes": 51317
     },
     "en/resource/integration-meta-analysis/index.html": {
-      "sha256": "7f143348aa2a47446e939d4f7c5f393b225d88ef326a2054d6d808e376228330",
+      "sha256": "3da54c8c12b7f3849a20ac2653a0143969ca1f3bfbe38af3a0b31ec23734f1be",
       "bytes": 48295
     },
     "en/resource/loneliness-spirituality/index.html": {
-      "sha256": "43d9446c0a45e5b2d6dae30b44ccd08891db60d01e21dca703f686c892e94c19",
+      "sha256": "0808448c6c4c7aa8fdf6f35e21d33b11c4766a35ea0fb0428ee9406ea3ac4a13",
       "bytes": 51386
     },
     "en/resource/malaysia-ukm-counselling/index.html": {
-      "sha256": "56a32978eae84b22b32d134753352c2baf3af5dad2b26c162cf561403f9fa561",
+      "sha256": "0aab48f197a693dd2614bf7bbe0092fef2424178fb560b9dc55923bfb4e1381f",
       "bytes": 50805
     },
     "en/resource/metaphysical-diversity/index.html": {
-      "sha256": "d306b2f9c47029a6646a7c99bdc66dcbf6e8881a1148a16cd759c40cb44a4a6a",
+      "sha256": "164c8553b3fb0158cde15827f10d2b3753a3c67fca5d4100f80ff7d092801683",
       "bytes": 49452
     },
     "en/resource/prisma-guidance/index.html": {
-      "sha256": "9784fec515ef0f9deade7fc965b8a64f489d683f06c505751cbfe7712fa91a4a",
+      "sha256": "1f78896127e79b09fcf1815fdb976b9ce0b3b2f0bc327dbdbfad93b1c18da3d4",
       "bytes": 50054
     },
     "en/resource/professional-training/index.html": {
-      "sha256": "10ad2332be95609c13efa453022d496627b5b01a5793f1cc3129d9578bd2078d",
+      "sha256": "317cba9d47925065f2aac2022dff10f30c67f89c4c0d1ba74d8046046284f2bb",
       "bytes": 51552
     },
     "en/resource/sacred-tensions/index.html": {
-      "sha256": "cadac13e46936b0df6f9b25413aa3cef8628df3a42f175218f87d0ef21e69617",
+      "sha256": "d3d28baef573a1b0e157b4cfac8d7b3d874870a6a13cb91e260db29d7d2022ab",
       "bytes": 50156
     },
     "en/resource/sipas/index.html": {
-      "sha256": "5f93fc075d9faa6f66caaf58af145d34232da4dfdaec81456e969142ad70a4fb",
+      "sha256": "68fbd1db77106d4140dd327550d43aaec588c64299957f40481c699c53b0c6d5",
       "bytes": 51122
     },
     "en/resource/spiritual-burnout/index.html": {
-      "sha256": "7cad01668daf19a66f0f9e114aeac78f50edc8c1eb7c019084ec34c1e279138c",
+      "sha256": "42c31dd4d8a08dc587b5259478a0671c5498fba4938be814e3e1eecc8f428f2f",
       "bytes": 51105
     },
     "en/resource/spiritual-competence/index.html": {
-      "sha256": "dd695a2036c0cf588fa80ea5f35e8f336d16f5d7448cfbe6f886cfe9de7bc163",
+      "sha256": "161f8771687d813d4fa3c6f5f14cbfd672893ff140fcc9d4f0248a8d647bcc4d",
       "bytes": 50420
     },
     "en/resource/spiritual-counselling-book/index.html": {
-      "sha256": "2eed195b5fd68da1eef2ff905963a832d36471be3df81bacc8bdccf505d148c9",
+      "sha256": "5d16d7dd59ef81ba1d300df5563755ee0de86ea7c40a2bbb2160ea9cbb993fe7",
       "bytes": 51779
     },
     "en/resource/spiritual-integrity/index.html": {
-      "sha256": "f3a302bc8a6179d80c12f2d5411dd2c6eef217fab2a1805b5b257e360640f5c8",
+      "sha256": "038406f2e1def28014d940dcc6393724293eebdc2dea72deb97f0da730ec69cf",
       "bytes": 51303
     },
     "en/resource/spiritual-practices/index.html": {
-      "sha256": "096125f8aff328f3fe08f0461b2d7462e5f18f18140db0e32e2a56752019e32c",
+      "sha256": "125efe98593dd7f6a6d1b7674d6f38f1ec4a5b7eeaade3029069ec7e846bc779",
       "bytes": 50970
     },
     "en/resource/spiritual-struggles/index.html": {
-      "sha256": "09d76256a4adfa293c69885ed4f9820dee8e3b16d3ecec850079cfd417b827fd",
+      "sha256": "8eebfa8a7c1e7468c56fec270cdfd3386eed5f73b631a013ca96b73a8fb55d74",
       "bytes": 51129
     },
     "en/resource/spirituality-dimensions/index.html": {
-      "sha256": "2fd0994cf00535ceef2323710fd3369cda77506f5bd4c5ea21b7f1079a29179b",
+      "sha256": "c445187500efc7e0d7429930b1b68b3230eeff87aed211edcae527ba9ff0f19d",
       "bytes": 51588
     },
     "en/resource/techniques-101/index.html": {
-      "sha256": "b6b4ac32ede9fdee1a149808dc89343f2eaa999bbebbea8d56c5a306e50c24cc",
+      "sha256": "4d0038227f98c812a5c0ea4f65f190daf2141cde44e0a9a46e4204c3abcbafdb",
       "bytes": 51367
     },
     "en/resource/theories-book/index.html": {
-      "sha256": "60ca60b7312279c8712fab48b65429aaa0e11ab114abbd293867d0a13516a571",
+      "sha256": "3e04b996497c249a0ab4441dad325c920824be67f5ce7027c401d401e83dc910",
       "bytes": 49176
     },
     "en/resource/three-waves/index.html": {
-      "sha256": "30722bac99aff3afdaf7da07644713c7b7fc6c57760b163e8219a2aafc154f78",
+      "sha256": "2856839085693259f23977358e783935d5a80d9b5789afceaa64cab953c4fc08",
       "bytes": 50265
     },
     "en/resource/toad-directory/index.html": {
-      "sha256": "e99d6d808f462ed80701004e8c641286d3cde91f1826f1604c5748ed2320b15d",
+      "sha256": "213da05c848939f62f653257154e791bf16db23179d258aecb4e3c23a78eb7d8",
       "bytes": 47729
     },
     "en/resource/trauma-spirituality/index.html": {
-      "sha256": "210792537252095bcbfe9c9d6ca5ed1521d9a2e35bd678ad14a9673c6e2b2719",
+      "sha256": "fa43d7b558d4361a5952c0ff03c34c2272f0694f71b7c39c26efec87a2d58554",
       "bytes": 51307
     },
     "en/saved/index.html": {
-      "sha256": "705f4ece0bdc2c0e8b9a9155b0a4969f99a36e127194b747e47040b09b363fc2",
+      "sha256": "13ec28e7e1ddeb4b6ef7cdf051315683ebd9d72726ed014556f2f9927b9432f9",
       "bytes": 42278
     },
     "en/search/index.html": {
-      "sha256": "06c6887633e0be695b86565b851ab9754dead9f4c3fe6de7c5c359c9d819b206",
+      "sha256": "ac5f16c8d45a60dcdf7f6c4c8b614916b02e64bd8c70dd7d30617fa0b2a484d9",
       "bytes": 96696
     },
     "heritage.js": {
@@ -1189,543 +1197,543 @@
       "bytes": 2928
     },
     "id/about/index.html": {
-      "sha256": "4e58d646770dd391f57483a6ec8beaedad5abf6b50e276341be57320afda152f",
+      "sha256": "2513e1080b6090125b340aa8939af6a7e4247bc8c68c28336b75b8779c089e9e",
       "bytes": 43949
     },
     "id/approaches/index.html": {
-      "sha256": "2b37d32d5ae907ab5e444d26f335c8b54892bebda3d265914fd92af7ebd210ce",
+      "sha256": "f730ca65cbbe59be5fcd1ebe21ff4c3b930f2c257dbe9b5676844f9e4f8918ab",
       "bytes": 52149
     },
     "id/books/index.html": {
-      "sha256": "e6f339f23f532ec590bfc26bcafae8f0492374223f773c2d331dcf3219c998fa",
+      "sha256": "a52a3529540797ad6e5388962705c044e952e9f648961d0b8bcc44a3cc05171f",
       "bytes": 71728
     },
     "id/collections/index.html": {
-      "sha256": "37162c221a008291ab2847568093f3632742a16adce2cbdc633547f00d1dfca8",
+      "sha256": "3f90c8e21d6a1c9db63649934571e33e3c98606394f87e3266700f1af20c8cff",
       "bytes": 85495
     },
     "id/compare/index.html": {
-      "sha256": "4d668833108bc5c0f0459807417cf90067506b82cc4b8f718b2e68427dea5e25",
+      "sha256": "393025a9acf7fcc290ffc78e5d4c2365a767ee0e1d3f5e7cd53f1fb413034286",
       "bytes": 88054
     },
     "id/concepts/index.html": {
-      "sha256": "dc6fd78bb13070e47ad86a111b4e513b50566b2e29e5cf89aed1e1b2763e1247",
+      "sha256": "f6ed28c455b8cd816baaba1986178cc3ca94ecd04c2bc4ad6bd22e41771c4b21",
       "bytes": 54009
     },
     "id/contribute/index.html": {
-      "sha256": "22372d831f12515b2d5102986d31dad4d2ece394560d23c43d998cefdcc5c3e5",
+      "sha256": "e1fb4a8084e0ad6fd5e762c5ddeff12f59053b363460c7b12225131b54762d63",
       "bytes": 44616
     },
     "id/data-access/index.html": {
-      "sha256": "4f4736b89b9aef10888dac21adebeed3085b865d51b0e423e2301da44bafa873",
+      "sha256": "557d5d4d135ffcca8d2b239c30d9b5eb15773a7492e4f830f0dfd6d77d8f3cb4",
       "bytes": 50028
     },
     "id/dossier/assessment-and-permission/index.html": {
-      "sha256": "da5c3f5aab0c5e7522732da1547f6e6cb80ec7a5f6cb6aff168fe1688713f329",
+      "sha256": "e989876b3f33b138249ea5467567e549bbaead2229d46b2d67d3d692b51c260e",
       "bytes": 50200
     },
     "id/dossier/culture-and-worldviews/index.html": {
-      "sha256": "ed691a432180cc928a1b3190abdc3270bea6b37292f397aaffcfbb7533f26ab5",
+      "sha256": "59beec1927f3f006809b6c175b4970f3572800b81bf7d2c38f2625949131bb0b",
       "bytes": 50966
     },
     "id/dossier/digital-tools-and-responsibility/index.html": {
-      "sha256": "41e413c133b775b2b205cf9f4c1d29320477823688ca9f74d738951c3881a9ed",
+      "sha256": "1991ad80045c319d95824f1c5d1ab645e463b0e612a2189623ad5ef2ee60da93",
       "bytes": 50710
     },
     "id/dossier/preferences-and-boundaries/index.html": {
-      "sha256": "1b05a761f2d5580db55a5013e05f561b16a114033f611c822b8cee3dea214a32",
+      "sha256": "8f8d63565267a5f719306c10044103e9fe5da8cf3ed4db6f44fb755b9e214596",
       "bytes": 50776
     },
     "id/dossier/question-to-design/index.html": {
-      "sha256": "6cac8bb363dde56bd5c944fd32f3a4c8cb203f90a7543c3dbd40b779b1f87de8",
+      "sha256": "dbd3da77dd4d4b4fe5d00be889f2f6758dcbd45fe5646d0329c689497ba55cea",
       "bytes": 50578
     },
     "id/dossier/reading-evidence/index.html": {
-      "sha256": "2e78b9fc958326ec91049c9e2f8681d8926760e1afb0c24d0d560b56f1001f8e",
+      "sha256": "cc7c2b0df2fd1f5b329b387791870047bf26af9658b5547d4ff1679c0a121563",
       "bytes": 50856
     },
     "id/dossier/theory-and-integration/index.html": {
-      "sha256": "b69286dd324bf53ec50a66dd1162f5e09cce4b7a89d6298bf4c9f7722a35923b",
+      "sha256": "2b39895a9fa3fa299fa47cf0e29abbbac30351a2a758e537b9796e88c1be2f78",
       "bytes": 50848
     },
     "id/dossier/understanding-spiritual-experience/index.html": {
-      "sha256": "f2bab080924eb707c8c792a3a0227efe3dcfdce1313f2e9ccd0b504d15d3aa7a",
+      "sha256": "6d92132848a70bc260ade62129c2e4c47d000d7a65714aafc70f3d1a0edb1ef6",
       "bytes": 51140
     },
     "id/editorial/index.html": {
-      "sha256": "3344b27864ad7be81a711af74c2e0227d0c038a307db88a366835b7cf275f0f2",
+      "sha256": "56c73e4d37ae559d7aa0f7a1f1ef652f69df501afdc5d25f855e4a58bd390e00",
       "bytes": 44673
     },
     "id/ethics/index.html": {
-      "sha256": "a94377bbb4c42c3aa8dbc78b371faf1527828d8f8703542e8229a77284f42e0d",
+      "sha256": "369e5d590c4fc729055e1df4a98c0f396354a6637b902cbfb649c628fd1ab984",
       "bytes": 50384
     },
     "id/events/index.html": {
-      "sha256": "2dc31e183c97a6a1f4b0373a60b91e5599c004edc7e18ab5ace0661947bfaea2",
+      "sha256": "b0f06be58015f11b2bfd06df574b9944d910a4e363723f00620c79065d3a1157",
       "bytes": 42457
     },
     "id/governance/index.html": {
-      "sha256": "de8cd078a68fd6435347764a1109269d0ce7a11cf688f93a8420a828712a951c",
+      "sha256": "423f79529d11066f469f2f7f13846a3263c52b278a77a1552f8bad06605cfeea",
       "bytes": 44671
     },
     "id/index.html": {
-      "sha256": "5534401f74b5f3f5755ec0dd6791bcf53465dd472c202d49364ee21b1766c82f",
+      "sha256": "d70acce08a6f9e8db2834685dcd2faf89f00dd52d24a2cca8e9c2148ab69ef8b",
       "bytes": 62822
     },
     "id/learning/foundations/index.html": {
-      "sha256": "bc5fd06d38d7a762222863cc2895a3a864116d0908adbad6fa7c98651456537f",
+      "sha256": "743189605a8c5d4dcc127c4768f988a171574cebbca91df0eea10f23d54d911c",
       "bytes": 45475
     },
     "id/learning/index.html": {
-      "sha256": "8b1f80346e7bba24814b58a1323ffdd3229586c126848c440f1d7db5c2579491",
+      "sha256": "c11894dc37d96d279d3484be28fa23895b22f08314a5a8256b5444440d160423",
       "bytes": 44095
     },
     "id/learning/professional/index.html": {
-      "sha256": "7bf1ddf40b4d7df89980222087a6e89ee76dc13d322b9dceeb7193d085e564a4",
+      "sha256": "25b2c86f0ee6685c37af4c1ea1efe80a58b407559fc42901dfaed3571ae3784c",
       "bytes": 45599
     },
     "id/learning/research/index.html": {
-      "sha256": "0353488aba7acd1f2e3ffa6a42501a85e2577cfa762dd6914f498ac9035e4528",
+      "sha256": "d0041659eeb81e617988c72de8b762add66bef0bc290b64de4f09348551ff9f6",
       "bytes": 45311
     },
     "id/library/index.html": {
-      "sha256": "17b62be6420a545eda2c40abf31f88a93f0458444488f1f42885d4c3cfcdfb9f",
+      "sha256": "46643f00da28d563ac84e6607615aea9424fab336d627e6f46d419af5c485549",
       "bytes": 99961
     },
     "id/measurement-guide/index.html": {
-      "sha256": "e516ad419a5e243aacc75d009e4c3b0cb3903f10ec43a06352ef87752858dd92",
+      "sha256": "ef74299707181c89c069d406e2734bb52e00d7b73a88ff6d8528804c9be57cf0",
       "bytes": 48832
     },
     "id/measures/index.html": {
-      "sha256": "29719fb7ac78211adccc6da7729833df57efde1922fe2a6c04ec1ff5b1818851",
+      "sha256": "f87d02c965b6a0525893570059ea9ff8f1ebcb3c3047c2694be32337c6ff966d",
       "bytes": 57798
     },
     "id/media/index.html": {
-      "sha256": "9f4b27b953bcf28bc4ca73438a44d594aa253fcccaac262f2d72075940859ffa",
+      "sha256": "b5cf571c670e92b4a404cbac231ef54e9a5589cfca283585525ba724dded92ea",
       "bytes": 42469
     },
     "id/methods/index.html": {
-      "sha256": "57ac25045e15457a780e3d72b41a42edf35d3982eaf457ee54e0034d1834f9f1",
+      "sha256": "55eb7dd043a02b66b7ee3c4a1c6f644420b10269ac0e6c82e5ceb52809f131b9",
       "bytes": 56888
     },
     "id/news/index.html": {
-      "sha256": "2d0f32f16d1ce1fce80e12f250ab5bbbd3175226f0976c451d6408a9d69276e0",
+      "sha256": "c313461c8e5c79bf23586d8af91865eb26e0eef06a21af6367a93bc2d2fd81e0",
       "bytes": 42185
     },
     "id/participate/index.html": {
-      "sha256": "0ad00a2926f2858716f37bde78a587ecdaebf671c435fa21e597f2d1fc878526",
+      "sha256": "8cf6656cd2cc47976c683054b6a5151e913f33bc76b386d32de4cc13a0d7fb9d",
       "bytes": 44854
     },
     "id/practice/index.html": {
-      "sha256": "9f611bc8525680e083bc3b7b4a2fb15ec65a0010e8df421a20b14790dd403a51",
+      "sha256": "823046af39e27b33e73fc3a1032c451170800b44217d4a81e41fd404e004c928",
       "bytes": 60805
     },
     "id/projects/index.html": {
-      "sha256": "8e2bdfcc42346de5ec2e7bcbfd3b6ff140dfd799e19b24417e472d229af7a577",
+      "sha256": "c68e5326d4666b80ba429e38ca0fdcd02fcde9d4c742d0ea5e057104fd844c42",
       "bytes": 42517
     },
     "id/publications/index.html": {
-      "sha256": "467b1d28a7df2f1e6d63b858871c16cc6915bbb3cd93893548c14a374594e437",
+      "sha256": "fa1df7ec0a550857192348dd3ef89a16e52eaf6f6e04f5a5fed1f10f6643fd61",
       "bytes": 75998
     },
     "id/reproducible-lab/index.html": {
-      "sha256": "6f590ae1a79fd6dd98f84771b13e109b179a7a7c97e507226ecb777c60a2056f",
+      "sha256": "1a2b44921c62a827557898eb0438231237ad43f26a3c664183aa0a48719cb7d3",
       "bytes": 52940
     },
     "id/research/index.html": {
-      "sha256": "86ca83cb5f00b5459f08cf0d1a5be620b03ed4afa7c5597361696f45b9deca0e",
+      "sha256": "4f6ee309aae6376971e7978d0c814d1413de462cea59b903d315c88fd5cbe7d5",
       "bytes": 46614
     },
     "id/research-guide/index.html": {
-      "sha256": "204dcbdbe7a398fb03d3d6b6275b9d438bcb50ab592a7f6287f3aa355737016d",
+      "sha256": "76f5a153f763693f71b3c02238001264b23fa552d16c1e69a1a1528d39a4019c",
       "bytes": 48940
     },
     "id/resource/ai-health-ethics/index.html": {
-      "sha256": "bf8ec636c60f32703c376ee3aafa0b92e9f4e6eab31a60a671349b8ab83a8157",
+      "sha256": "dd4e1281a4bd922a3330288641b1959759657922f99fca521e98f8f2e5abd059",
       "bytes": 49577
     },
     "id/resource/aservic-principles/index.html": {
-      "sha256": "0b17af7611669eb900e19f5ab09078bcc2de63ca59a72c2a440ba7eb777adb74",
+      "sha256": "4380f58b891973e6c2944b4b70bea231253bba54a4c0b81fa35b13ce41ec3eca",
       "bytes": 51015
     },
     "id/resource/cbt-spiritual/index.html": {
-      "sha256": "e1a979127d43d7c2773b932a64dd35184a2e463958066ef3c58b5321fc2516bf",
+      "sha256": "167092c9f16bd35c3b627165f3dc235609f34429170435493f0151e7b9aaa1ac",
       "bytes": 51389
     },
     "id/resource/client-preference/index.html": {
-      "sha256": "1160ce198e76973134bee7f16608aa1c3f262e679976d75da32ae4ba32d65bae",
+      "sha256": "6e376a5b1fb7a7c28d8646a3497db97e052a1b45af1f7fde1ec6c565fa7aaedf",
       "bytes": 49818
     },
     "id/resource/discovering-spirituality/index.html": {
-      "sha256": "90fe90b350ee60ef7ca15011a6910deeafde41e0df65f1c245029d98ee1ffab5",
+      "sha256": "4b74b2a2f0fe0fb3d755370b89b1f9dbc7a503ccffe2dd4266e3a478bc5bc357",
       "bytes": 51696
     },
     "id/resource/family-spiritual/index.html": {
-      "sha256": "8a600d67204be5de92fe7c73e569ba9a683ea1d9ab559d50b1a4ee9a61b3b4bd",
+      "sha256": "6dce6acd27d3514672315a6fe1c17b63c61386c7b381da4881d50c96e99aea76",
       "bytes": 51329
     },
     "id/resource/group-counselling/index.html": {
-      "sha256": "2b8b306fbfca015798a19bc0df3b266fd937f4d8053cfcb09fac38b217b0cab9",
+      "sha256": "ea131a05a6884cddd396466339e9b66873518d97c48a91db8a1b6db5724020f5",
       "bytes": 51663
     },
     "id/resource/integration-meta-analysis/index.html": {
-      "sha256": "e1e0679b04b36cba9e31c767488fd638ee9f9d7f3024d945d08a311de982526f",
+      "sha256": "d7e5fe4bef3cfc30a6e219a2695671aee60f13a27e33c2542331e63db02b1165",
       "bytes": 48771
     },
     "id/resource/loneliness-spirituality/index.html": {
-      "sha256": "beffd891c3ef0647a6206a93130a9d3c3c711e5c7215bb8f54f5d29a2a30a5af",
+      "sha256": "9d0775ed94152747ad62a6d79e99f77ba7897d70e40690dc111180e075b35238",
       "bytes": 51717
     },
     "id/resource/malaysia-ukm-counselling/index.html": {
-      "sha256": "5e325e6e345fa8dccaa841eeee3ee5de3d18e81ecac802fc0709d94c7a6194f1",
+      "sha256": "ffa9639fbd7b6ff4a39081b8da1d7667f6debf8a9fc8e7d75b31c0d93b1ecd1e",
       "bytes": 51166
     },
     "id/resource/metaphysical-diversity/index.html": {
-      "sha256": "a79b998b2b70d89b7a8fa4881099516e5da405312c196c0560870068ad1327a8",
+      "sha256": "0cff21e36996560c78303e53c89bae8d9c361748799cc6b73c2352107d81d2c2",
       "bytes": 49953
     },
     "id/resource/prisma-guidance/index.html": {
-      "sha256": "a19e5f336f39fffb97e9f40277f5058859427f49c7a5d6001fe0c81678a7f982",
+      "sha256": "bece423bc9f9d6bec1f186be064e0c5aed04876b03ab4c9f0053ed08152cb9f5",
       "bytes": 50545
     },
     "id/resource/professional-training/index.html": {
-      "sha256": "c72d42df000bb906f7affdbeb1c020c4986d2f3af398c2d540fb053a38ce83eb",
+      "sha256": "ce15647cb315890d32f69ca5d3c33741dafa78181c1c25e29518a3f4d716fde8",
       "bytes": 51982
     },
     "id/resource/sacred-tensions/index.html": {
-      "sha256": "4eb1a519234f216aaa1c78271fa908b5c3b4510c6c5ee7048b1d7b5774b9a546",
+      "sha256": "e6ce75eccb81df0b0c665e796f6e5b38c1723f72ec4c3f65f72fa9880cf45404",
       "bytes": 50628
     },
     "id/resource/sipas/index.html": {
-      "sha256": "2eefe30dd880da20423bae4544a3140ecfbeae8d09488b2dae22acd51b205c4b",
+      "sha256": "238a5a5195812019013df4a92c9b2d15994fdd593cbe0c4a2181e826ca3dcb7b",
       "bytes": 51435
     },
     "id/resource/spiritual-burnout/index.html": {
-      "sha256": "522991ee0b33ceb58cb0f6c03fba3be79ad2fb67f770824355b271fa43870f71",
+      "sha256": "6181021494219b5a9ea4a15f9dfa248fbfcf1438cc92c96f23ec09087a2b9a12",
       "bytes": 51428
     },
     "id/resource/spiritual-competence/index.html": {
-      "sha256": "f1caaada368af48a7d492f861c74e9557c4010cdd681feccee32e777a7adaa17",
+      "sha256": "cc8a36dd37966baa7fd39aaf1110155d9cbb17048e8ec91aee2996258b85ac99",
       "bytes": 50899
     },
     "id/resource/spiritual-counselling-book/index.html": {
-      "sha256": "91573e7db418f783a99dc3dfb8e3c9b06a029ef674e673cb15e43d1963d06de7",
+      "sha256": "eecbb1edb064eef82e7d8354fa20016de982a301354513e245c9627281e7f1e4",
       "bytes": 52123
     },
     "id/resource/spiritual-integrity/index.html": {
-      "sha256": "69a1c53a0f1d1884c4cf480bddb2511f2b87ec03b69817f15e416005efc04b57",
+      "sha256": "baf039a017a9c2869c3e58dc2600a5dea61a77c796f4464ded3b1493508d20f5",
       "bytes": 51718
     },
     "id/resource/spiritual-practices/index.html": {
-      "sha256": "4bad75ab5561cbc8d1f348e5821a668aa51f0e4c0f994c56ebf848d1d2186d60",
+      "sha256": "f1a02fd1778bdf5b812bc5f8aebd21ea57b08edba0a3fa1763b772969f325f66",
       "bytes": 51374
     },
     "id/resource/spiritual-struggles/index.html": {
-      "sha256": "196049796dfccdaefb6322a4852eca578a42aea497fe519e64e96bb35d61f1ec",
+      "sha256": "c05907567dafded7fe9916db8176838f08f9081c64aa63b800573a79c1525bb1",
       "bytes": 51452
     },
     "id/resource/spirituality-dimensions/index.html": {
-      "sha256": "c14e7bdfc4ff693ea5f65496a8a0f91d2a6ed0293d80c1f1134ac433cc3ca0ea",
+      "sha256": "ff888bf8dd512b38fb30113205dc757d79ee28fb8f8a26583d83019b837876c9",
       "bytes": 51817
     },
     "id/resource/techniques-101/index.html": {
-      "sha256": "406f795d0a1b63db33e50a13e96b0560afe21a8967a5e7212a5da43617f2c11f",
+      "sha256": "e23f5f17e017b0b04895c88834b7248032dec212a610121584c8a8a39f0fb613",
       "bytes": 51688
     },
     "id/resource/theories-book/index.html": {
-      "sha256": "4404d6f3b2309ce78dd7a8aa1dc9a0a2d3c124c67b76b18d8510b378ae67f485",
+      "sha256": "982799ed249a7ac9eacc3600267700f0143d66628b82be6a94516d2b54ec316a",
       "bytes": 49571
     },
     "id/resource/three-waves/index.html": {
-      "sha256": "bb5e8a27c7cedaf176db1618ef50ce2ef2dc7b5cf5ece1125eb6f4e4ae116d53",
+      "sha256": "166f002aa3c52ba2ef419b8d32a30b43be957b54dd5d185f1b9d4c1e581b557c",
       "bytes": 50661
     },
     "id/resource/toad-directory/index.html": {
-      "sha256": "0080221502e4341d8eaaa71307f6e7c7574386a432403c4d30988e64b8dce09a",
+      "sha256": "d0e264106174f30c2af0a8df540ea1e18a01fa1e2d24f5ed338daf0d121f729c",
       "bytes": 48280
     },
     "id/resource/trauma-spirituality/index.html": {
-      "sha256": "14ac26073b01a70c4f16bd84fb080b0092d8677a6618349d3caf5ff95b7f7c9d",
+      "sha256": "bc45ffd1d394a102a145d249835d3646c157e0eeeebb315e6edbe581cd3c407f",
       "bytes": 51652
     },
     "id/saved/index.html": {
-      "sha256": "f8b5b3f739ad55d2f558bd804e5358dc2f0ea19395fc532ae6242fb83f345505",
+      "sha256": "1a5e24f16fe6b39d0c6cd7443346b48e23c7a411e5a91f52e37d2ab15894eb2f",
       "bytes": 42715
     },
     "id/search/index.html": {
-      "sha256": "d11005e02701ba38dfb17aebad0d5cb4f99efd626abaeba2313013fc6fd8b30a",
+      "sha256": "3ff04b498568404b6b18dc41d5a7a50149580bf86acd5389f0bcdd6e3c5d7172",
       "bytes": 97147
     },
     "index.html": {
-      "sha256": "fd84a25df8f6e7f180902ff80ee53b9541778d6f4d435e9644078a941052404d",
+      "sha256": "c045e5659206e231fa0aa97045fd6f4cee9a9461efe8123591a14be8cc6f9a95",
       "bytes": 64262
     },
     "ms/about/index.html": {
-      "sha256": "b8c856ba5c034984d43f07b6200e30eefabdef73b40e0c5683352155818a6ad3",
+      "sha256": "cf32a370f5033a7a99fb30fcce88c852df68efca3e056b08e14a14ff4da40678",
       "bytes": 43894
     },
     "ms/approaches/index.html": {
-      "sha256": "16b2629a50a5d2817cf53474ffcad542a2c77d649f72dfb83effe61dca4d8b23",
+      "sha256": "f638ddd268580e8179e15908f5601c0b93d65b906e8e44734371ed800e9952a7",
       "bytes": 52276
     },
     "ms/books/index.html": {
-      "sha256": "5cb9ae935598e570680b85e56eb37d7990fc9d88c036d82590366464e285ef5d",
+      "sha256": "64f581981e338428405f3a82c9da657f8285167eaeafea8df24dc3dd533d4ffa",
       "bytes": 71828
     },
     "ms/collections/index.html": {
-      "sha256": "6abd975fcb12aa4e793109203c18d13225524f9b42d821c8e3b823d8d132c0be",
+      "sha256": "20a77c23d9371d25ca01729e621674a42ba6a0d440e3e4cf67497cf4c5adfe44",
       "bytes": 85587
     },
     "ms/compare/index.html": {
-      "sha256": "48ba39981bff2bef0f941022291a07d8fe254f99aab116100933eff2e5201b56",
+      "sha256": "230ef02b32179147d4b0cf923081d5a5fb208d6b6602b815799d688cde1db395",
       "bytes": 88058
     },
     "ms/concepts/index.html": {
-      "sha256": "d62942027a1b189202f5c6601cd7a02a054e7da584e646b0d9f3a1669cbcb064",
+      "sha256": "1bfda815312a44a866f7e789fa7b5757bb66c79dcfc2594d051e8257bf0c0306",
       "bytes": 54129
     },
     "ms/contribute/index.html": {
-      "sha256": "ce93a7985dc485737d18f79251db18c426d497e0a99c9dadcdf7a4e56571dbc3",
+      "sha256": "8741e20be34ad8517cf214368c851dd29678c6581c8c5af56b6823ab4f92dd5c",
       "bytes": 44674
     },
     "ms/data-access/index.html": {
-      "sha256": "7203e54e3335fda4bee0b940fc11a1cab6d5189dad47bd896f8a9b800e25f96f",
+      "sha256": "599fa86691e81b476c600dae1d8ce2ed993b52e4c1a8149b6481150bfd1f8e80",
       "bytes": 50108
     },
     "ms/dossier/assessment-and-permission/index.html": {
-      "sha256": "304bcf369596b640e87b4ecdb5bb34aa028fb91e2807d10e28e2a4f3fa74b83c",
+      "sha256": "5cca13df265a49aa58f337b1f55d92fcccaa5cdbf15a4ba624a28d20b99c36b7",
       "bytes": 50270
     },
     "ms/dossier/culture-and-worldviews/index.html": {
-      "sha256": "3c325574bebd66a43d6c89bb4167b508e485eaf57cdc2824ec6fd722b27a5838",
+      "sha256": "d897de337188927a96f9c62d7ef17213ca2e59ef9a476a0be034d99f096a6362",
       "bytes": 51062
     },
     "ms/dossier/digital-tools-and-responsibility/index.html": {
-      "sha256": "d557b08dde533d9fb17c85a650b1517615ef59816666a7fec09b9a31e304e197",
+      "sha256": "992fdc5e547822a6197437f4f0c16522c5d7ae094b5920cb147752436c3a8709",
       "bytes": 50852
     },
     "ms/dossier/preferences-and-boundaries/index.html": {
-      "sha256": "9e0bc298b70e455b594b8064ce5b651ca1819b4744e77d630bd487bd960890fd",
+      "sha256": "9418e5633cb26a0ed9a596edf4b7622bd4c1d59a6328799f6f4827dff2d3e2d4",
       "bytes": 50910
     },
     "ms/dossier/question-to-design/index.html": {
-      "sha256": "490af25826e264f1de1cc5a4e566ed47f214a8b5eb6c7d4844df04ee5fca9306",
+      "sha256": "adc1d45d497890656f542c1d4030d82f8e8f9e6608f47a405bad172c545e50f7",
       "bytes": 50621
     },
     "ms/dossier/reading-evidence/index.html": {
-      "sha256": "d7a11851d71e71b77ad3f4db20ca9060b11143f5d5587186a62fd704ea7689d3",
+      "sha256": "e47ecc89f659bbb5e0179ea18e3bd215276283cbbf0259e2d833b02e7c8d3052",
       "bytes": 50927
     },
     "ms/dossier/theory-and-integration/index.html": {
-      "sha256": "453ce3c186dea5d3bb1a0369e8c7ac27cade401b63c5b4ce336c5c946751a6f6",
+      "sha256": "5bd4dc57aff2545f5890aff3761a65fb2643c528ff464471066dc68050816d8c",
       "bytes": 50930
     },
     "ms/dossier/understanding-spiritual-experience/index.html": {
-      "sha256": "8bcd19c1e844b20acfc9ecf9c0efede9fe9e82dc542ec34c1b872e76e38337f5",
+      "sha256": "2cd781499ea6c9016d27ce77374c0da6fa8e489706d07241a7b2cf63b5bf955f",
       "bytes": 51298
     },
     "ms/editorial/index.html": {
-      "sha256": "ad464c399374eefcc396552df2152d96cf1bd53d4593e3b4af7c58567970ed1c",
+      "sha256": "c473856251996de79b08ca414906e410cea6143e45581096ae06d699c1bae2b6",
       "bytes": 44719
     },
     "ms/ethics/index.html": {
-      "sha256": "5754b093855498a42abec4d018076b9d70c72245aa9b3f0c636af8e5cd1404eb",
+      "sha256": "e1e8a8d88ba17775f6ddc00c54a98795871c0f76d438c59b947de779e17eb6ff",
       "bytes": 50448
     },
     "ms/events/index.html": {
-      "sha256": "203fd388babf18746820625991e3d714950cda886fa0e563a4be8166bfe147ed",
+      "sha256": "b92a3ef615844bf3ca3d381bcec5431932d8bf72727e67507a52beee2d0ec740",
       "bytes": 42451
     },
     "ms/governance/index.html": {
-      "sha256": "f98dbe7c021c6ff10b9723af64a8afdd768a1f53efe6438d4ca11077da5c554b",
+      "sha256": "e1a4fe3efe5a6894ece3139d4640d09defb9bb53392e431475b802f5c85f767f",
       "bytes": 44702
     },
     "ms/index.html": {
-      "sha256": "77def1489ac7c21a041294560e4be3faf69e3d9546efd13442a99248fc72f3b3",
+      "sha256": "5eb0571a95b7d2d8e6febd60c5616b3f1a51e6d968ae7f6070797f9a49e19a9f",
       "bytes": 62920
     },
     "ms/learning/foundations/index.html": {
-      "sha256": "513327e5f5fc7929ed432347cbd97b1ad722a7efe0fbc6fbf21062642df8e502",
+      "sha256": "8976f451cdd0e96f32f52351a85ea0de2cdaf16b07382255a538a88ba9507b1a",
       "bytes": 45515
     },
     "ms/learning/index.html": {
-      "sha256": "30643296ddf0f8a94ba6632e87bf2780eea14f330cba5f8e43e62585089db08d",
+      "sha256": "848877866ea1074dafe69ae622067d200216754ddb4a305fee8edd4f6b57e276",
       "bytes": 44136
     },
     "ms/learning/professional/index.html": {
-      "sha256": "8513b414bde052f0c6f30e779bb3d7c84d16b36c66cb5fdafef785f368badea0",
+      "sha256": "6cf373fc28772f7f4a837a7a68783eb4a4cc36ad430357844e65b3aded3d8a29",
       "bytes": 45650
     },
     "ms/learning/research/index.html": {
-      "sha256": "0f3286a96a7e322ec4762d03948f4f0bc16a0091d556d48e63f19f02ac61cce8",
+      "sha256": "86ddba6b4e3919ea956f8235de1ae6ab1af2a989bc4c6c8c8bb6e21a41a295b4",
       "bytes": 45436
     },
     "ms/library/index.html": {
-      "sha256": "059ae731d2c106f17c54b4027c360109ffd248627258859708ed66e4f201ed6b",
+      "sha256": "a569c44146a6a4752aff4eb4324bd6d86ce10ffc2fe6589c40154fa1a262748a",
       "bytes": 100132
     },
     "ms/measurement-guide/index.html": {
-      "sha256": "d976b864e35372c7c5f92d144531e2c984663544f8b87e313b8aa61f1b35f4a1",
+      "sha256": "cbb71baecda97f61de688f9e00e8571029100f8203066395721295a0ec01faef",
       "bytes": 48901
     },
     "ms/measures/index.html": {
-      "sha256": "244f40692a5efab8694be153defbc7fdfbd054201122e43e7427341a72c84022",
+      "sha256": "5f0431a3149969857b8f0431d1cdc05ff368abfed92a3f2ae355d55d56ae7f8a",
       "bytes": 57892
     },
     "ms/media/index.html": {
-      "sha256": "00e9052cee6cbbb4dee8ad38b54f4e933539580f2a199b41d3ba58bf7cee19f0",
+      "sha256": "a1bb20d73ce53eb2d1f4dda9402bd710d107c205db5429b08bd86078eac3860b",
       "bytes": 42490
     },
     "ms/methods/index.html": {
-      "sha256": "1d7733b256794486e3372c0d75a6a5c5884c24b46814249558c383c5403b6e7e",
+      "sha256": "2b043ecdb83cb280835dac4dbd2fffc9ea7bdcc25eced9eb650fd4ba357a2f02",
       "bytes": 57012
     },
     "ms/news/index.html": {
-      "sha256": "5bbaba37bfc7aa890d541df9ba9925f747bce639f24df43601efa2d8c1c929e6",
+      "sha256": "324eb6ec77b4b48ac3388b41e51da173dfe0a68d4facdeb662625f2256322379",
       "bytes": 42204
     },
     "ms/participate/index.html": {
-      "sha256": "31782730d4d7624fe0e11bf1b8077427ccad871efb439a820a03f79e5a76f8b2",
+      "sha256": "0d0ca8fc70d7a7dd4aa3908a8bff6007671b85809aac29d52d7fc90ef6fe8d9c",
       "bytes": 44834
     },
     "ms/practice/index.html": {
-      "sha256": "0703e894b047f1b75045386312bb9b9844acd8b6e69dc45b28405c928a2e0dcf",
+      "sha256": "2b01534592071c29443f07e15334b3c837f9fb4784e1f494787247602ff499f6",
       "bytes": 60857
     },
     "ms/projects/index.html": {
-      "sha256": "8a9a6e807044612be80dd3a044f839ac371809deb00c9166504954be2abd5615",
+      "sha256": "1c560ddf5bfc28744a5289907c56c9bbcbe17e06d633312ad31c563411bdc227",
       "bytes": 42542
     },
     "ms/publications/index.html": {
-      "sha256": "01f197c17036b88e867be1c44d2dd2289ecdea7980011ae9ee6ed6abc13680df",
+      "sha256": "35199e052ddd7052070c23fc681a25b689bf6324478f4d311b8b5c6a0c75f935",
       "bytes": 76042
     },
     "ms/reproducible-lab/index.html": {
-      "sha256": "711fd0f0bf73a49c1722ee9503317313051027d75f09c192a711302ecbe948d1",
+      "sha256": "18c0eb8f66f5aa30a934706d8bfad161fdcb854152ef2914e9a2ef02341b614e",
       "bytes": 52885
     },
     "ms/research/index.html": {
-      "sha256": "2ff3ec32035fad00c4396086825ba8a68bd993c13f68e4c919962ac6223d6663",
+      "sha256": "88e12bea06980c69984ab9d175c5573f592bf206752d595734a8b46ab9973e62",
       "bytes": 46669
     },
     "ms/research-guide/index.html": {
-      "sha256": "ffaf863b8155b15427b460979f168335acbf7dcef8bd20b9ba151d13027231ba",
+      "sha256": "12738297af3b71ee4940da73faa2340a80b31516fd09e037ad0e470f62a195c5",
       "bytes": 48979
     },
     "ms/resource/ai-health-ethics/index.html": {
-      "sha256": "1ae72fd21af29bf49ddd174f76cca5daf347907ea18fa11f74e744dc512cc1d9",
+      "sha256": "3138c36901c898a3a662716b574733e94dcd812e109a5cc0bdc795827cfc04cd",
       "bytes": 49627
     },
     "ms/resource/aservic-principles/index.html": {
-      "sha256": "611af2576f5b508c274b52a2b6756e2dc520b962381442f9d53d151b1ca743bb",
+      "sha256": "f4ef6409deb1cc2a668d5302add68e19294d87514bc7abaa8e65b7523b6ee75c",
       "bytes": 51034
     },
     "ms/resource/cbt-spiritual/index.html": {
-      "sha256": "90cb46b452efd1f9c22a1ac060bf3ea8b1cef6da5cbc4dd53936d648debea2b5",
+      "sha256": "1be4b8495fecbf3f9591b870622ddc2209ef751cf914d0bba5b356826ee2fb3c",
       "bytes": 51524
     },
     "ms/resource/client-preference/index.html": {
-      "sha256": "47f66ccba2de9f070e68cd22f1b4b726039ab104a27a3361e4b08b6e4d38c003",
+      "sha256": "805f348ab8401b0e249f048f3448bfe465b432bc93a017a4cdd006300bd34252",
       "bytes": 49862
     },
     "ms/resource/discovering-spirituality/index.html": {
-      "sha256": "228ae5ec37edfa9c78f9a0d3bc1b0cdef8eccffd36828e962b4152561a5c87a5",
+      "sha256": "68843688f1613d7812a2b2da1e78a8bda7c98dc7db570345e06b377a53a36743",
       "bytes": 51757
     },
     "ms/resource/family-spiritual/index.html": {
-      "sha256": "304b5f1d8f94ddac9c8d0a1f4f8141153f7cfd792275f5f4fc38bfa74639319d",
+      "sha256": "4fbcdac9ecaa726291e60abd54ceedc3231fd2947de69d2542cc7fe1380292cb",
       "bytes": 51424
     },
     "ms/resource/group-counselling/index.html": {
-      "sha256": "88456cb0add1a98de2149ecbb52474a0c35692fdc830a9598c3909890578813f",
+      "sha256": "92a87bc98e7f909a6fc867e3aa237a3afc427b0de877ce31f91e6da353bf3f50",
       "bytes": 51744
     },
     "ms/resource/integration-meta-analysis/index.html": {
-      "sha256": "d8614aba79bf18bfde83d32a5d2a8c78bb9e29d086d9d6cea6b5e901be8c270d",
+      "sha256": "f6ccf43a80276b16a7e25d5550c5f87a331de4ec3034564ce1fc406d852bd5f2",
       "bytes": 48809
     },
     "ms/resource/loneliness-spirituality/index.html": {
-      "sha256": "7d594c7a7dac6774841c09d8bb2add4002b2da20bca27256b91d4971e0c66d95",
+      "sha256": "2142a63756c746b62c23f8a0ce5f11848289aef35a14e68ac45e374e622830e7",
       "bytes": 51838
     },
     "ms/resource/malaysia-ukm-counselling/index.html": {
-      "sha256": "712db42ec71cfeec1bbf4c1e20808ba0a703933ab817b699ba465802f365d8c9",
+      "sha256": "3a0adc3e6251cdfe943fcd160b082dc2aeedc1b4a9539c9b36c539ccd0e38d41",
       "bytes": 51305
     },
     "ms/resource/metaphysical-diversity/index.html": {
-      "sha256": "19fb59b5f0a01a685b05a0c4e8e233a95a1e3242e7a2006b993d7263a7bf3d0a",
+      "sha256": "d61546444693f9c1734c38445331b0ff0d632057904c5fbb8cd9c2677159b54e",
       "bytes": 49986
     },
     "ms/resource/prisma-guidance/index.html": {
-      "sha256": "2f399a9f3f4e6a14b935b6555a60a25004cf60a7bb571f07bb8765198136ec51",
+      "sha256": "abf14df9e338f0e2fe9c63023efe68bd7ffab5c144fb2eae331566bca15d5a90",
       "bytes": 50609
     },
     "ms/resource/professional-training/index.html": {
-      "sha256": "6f6eb4617c6b7026d737d66ba9e65e671919d3dc5fdb9355023f88689dbc1573",
+      "sha256": "cb6495496d53de208f7c15d973a5ab87dfd4d3d11ad8a711911d409d51aa3803",
       "bytes": 52047
     },
     "ms/resource/sacred-tensions/index.html": {
-      "sha256": "6d94642f6c885b19fa1d0de66bcd6b2f7235349d12effd1fb3009e3a9709f294",
+      "sha256": "e3fa28c5a8c63dec95058895dd43dac3afb3d033eefccb8f224c77e733f157f2",
       "bytes": 50658
     },
     "ms/resource/sipas/index.html": {
-      "sha256": "4b7e25479337a20f3029295b879355e52e6399672827e82da4a601e7490fbc0d",
+      "sha256": "a54bdb18e488bb62380a1aa844c1d5aaff4b68920abe6b9a5eb7a7526acb1a6b",
       "bytes": 51533
     },
     "ms/resource/spiritual-burnout/index.html": {
-      "sha256": "1b8040dc033306b98d2c8b150b13bdcb684793cafd7d8c94f79731c22237917e",
+      "sha256": "4cbb5610d009cdc0e94d0c55e1cb0fa7ba65b9dced17cc0950b477b901b9e568",
       "bytes": 51529
     },
     "ms/resource/spiritual-competence/index.html": {
-      "sha256": "e993843ee5f50d035be52046b112dc64ed8bc520cf2e0965f4855257b96d1edd",
+      "sha256": "337008e233e0f769f865df2474726df17ea9192d1660ca4665d5bbce64635859",
       "bytes": 50962
     },
     "ms/resource/spiritual-counselling-book/index.html": {
-      "sha256": "0cbcfb4aa7450965388d7f16d8fcf0cba8b40a9fdfc41177390528905c87b310",
+      "sha256": "3b08fa554392e5f57b8093fd308fbd03cf9b4dd44d547bdf589147cbae0ba63a",
       "bytes": 52207
     },
     "ms/resource/spiritual-integrity/index.html": {
-      "sha256": "e2b73b3466efd41630676d2ccda3dc23a8d51db7a6a5e6a052ebeaf69b570e48",
+      "sha256": "3ca41650d378c745cb72abb6e655f5213318ad159fb52615714ac757dc222492",
       "bytes": 51821
     },
     "ms/resource/spiritual-practices/index.html": {
-      "sha256": "71a36ec26467999e638ecd0d1271c8e00890fc6c6cf99648465ce5cc7dbd6b73",
+      "sha256": "2ef16a4ae9699a1f50652e7925f37f0a4575960e465bcb9c4864db267e2a357b",
       "bytes": 51421
     },
     "ms/resource/spiritual-struggles/index.html": {
-      "sha256": "0eecde5a2e39d33041fa58e2b00236ee6c116d85b3cb0d4052bdcab2ef2a5dd5",
+      "sha256": "123e240c373b0c4f3cdd4b0f1d7917df2d325129978a2b92d5842d35685bcb49",
       "bytes": 51560
     },
     "ms/resource/spirituality-dimensions/index.html": {
-      "sha256": "3a75ff201e828b158435c50e786aa0feae8bdbb1afd63892c0c9126e15bbdc4f",
+      "sha256": "7deb347219d522b9351bf3d4f7015fea657d1c4715c12656df6685e7e325c877",
       "bytes": 51918
     },
     "ms/resource/techniques-101/index.html": {
-      "sha256": "b4489a4b9dfc26bd5cf7370a17e782f1ea59b9bb8bb0dfa37051278347446461",
+      "sha256": "3c99abd7828db1ad2e25679877ca03896d3201d133114ab1a711c6a7c2c9acb2",
       "bytes": 51806
     },
     "ms/resource/theories-book/index.html": {
-      "sha256": "a57ed03ca871b09b2479e9096a9a5fa62c5f176a24acd99afe2c64d6b37569b5",
+      "sha256": "988e116f576cdef597a4bdf90dd114aecf87f6115de2290904b373ff8658b6af",
       "bytes": 49603
     },
     "ms/resource/three-waves/index.html": {
-      "sha256": "dcce41b0fac64ca07817a3eaca5d129a679dd2829d08c5129572c3226d703c51",
+      "sha256": "e9cd5769bed7901d875844460765ce09ecb6e5f47ac0be621b0ffdf3fd517162",
       "bytes": 50763
     },
     "ms/resource/toad-directory/index.html": {
-      "sha256": "31e66feb721ba9b08447010694869d8fae4cd228c8f48b09295ed06f03e3ae20",
+      "sha256": "7ad9d59abe1c86676e10eac50259ec2f1ca6e7b03b1dfae2eabc75feda8c019d",
       "bytes": 48279
     },
     "ms/resource/trauma-spirituality/index.html": {
-      "sha256": "7b53cbd54e485441627c0c64f654cb1dd59c6b171ca8152580f9f9e4f65a298b",
+      "sha256": "68df197a05870c1421be043ecc8f1232a3544b0a3284745f09fffc908be65f88",
       "bytes": 51708
     },
     "ms/saved/index.html": {
-      "sha256": "d9ee3446ce0205c26f4d21df3ae16e75fe02f8e98505e4c638eca91a7f42092f",
+      "sha256": "518a4aec4c501b04d1ba0829eb999c8648729077a28e116373806a0fb37ebaa8",
       "bytes": 42779
     },
     "ms/search/index.html": {
-      "sha256": "88496030454d5b3e74c5899c7f877b95265aa2bd8dbdcccb4e59d046952a8a91",
+      "sha256": "5075b63f0626ee44ca5842570824e2c502b19c204f9bdfaf5d813e0f3a2e98d5",
       "bytes": 97274
     },
     "research-downloads/catalogue.csl.json": {
@@ -1753,7 +1761,7 @@
       "bytes": 341
     },
     "research-downloads/lab-manifest.json": {
-      "sha256": "a2f2eac7c56bce8977125700e32bce7cb487cefa104ef3fb8e5e34ce9e7bd133",
+      "sha256": "e501e21a623429dffc656b92a07f61f4cc08fd447bb86d27b3e9de04cf2d38f0",
       "bytes": 944
     },
     "research-downloads/measurement-evidence.csv": {
@@ -1785,271 +1793,271 @@
       "bytes": 26
     },
     "ru/about/index.html": {
-      "sha256": "1c0701b2a4f6173e97abfd76a1767c8ff1fa40ef3621b3fd3067f4256b249a78",
+      "sha256": "1eb761fe4dab6042bd60dbd31fe5fe73dfec1bcc7ea9d1155cd338b02a78e557",
       "bytes": 58983
     },
     "ru/approaches/index.html": {
-      "sha256": "f486550870d488d6cc1002ec17a2c9f25fe24bee9e561d9bdb27c1ac9adccb32",
+      "sha256": "41f730b1cf282aab211f49e05fdc7d2b5ea2a8970e1e7eb6e15316feb5222026",
       "bytes": 68344
     },
     "ru/books/index.html": {
-      "sha256": "dbb2c607b56c392887dc26b2311a27b23d9ba61e91ca87ed51ed0b19ac23df98",
+      "sha256": "e40f971683cda81092d89fc00088124a5b24bc4d2281ea029d88a2353abf6efe",
       "bytes": 87346
     },
     "ru/collections/index.html": {
-      "sha256": "77e1a68b168f7dcd84a4fcf2c78cab705d6c0aa3b8b3efe8932575c246ec1b4c",
+      "sha256": "e8ff06d708a6f15a58cd31dbfdb1d55f5ec8a9a28c5d82f8981829de52f50bad",
       "bytes": 107681
     },
     "ru/compare/index.html": {
-      "sha256": "d75a54bc0235fa8cfee9e7ac874f5269e5f6d0764431f1e4db3c68049dfbda1f",
+      "sha256": "0a461ca2797ebe76da7a67062f80ebf6b88a034c4a39e32c3a5b6fd0b92db5ca",
       "bytes": 118563
     },
     "ru/concepts/index.html": {
-      "sha256": "4738e917a6045147b01a83f0664346a6232af70a1c29ad333cd7507508268cc1",
+      "sha256": "e32c4dd8331c2edeae0f7fa4a059da09196756ef9a268e0ce8565ab7b6011e30",
       "bytes": 70478
     },
     "ru/contribute/index.html": {
-      "sha256": "b317f3af8c6a8aaf93709abbac6c450e98e5c9f8c105f59c63952519cb2c8c72",
+      "sha256": "ca0d845ab3819c3bc531a6355ca1290bfe3611c91a7ff44fcbcac06c383a2c19",
       "bytes": 59173
     },
     "ru/data-access/index.html": {
-      "sha256": "4a5ab280f96e83a71418a0b32229f32be8fb39912f76307772e1c17b7d4a27c8",
+      "sha256": "5b54a04016c44c24191af08334779a13ac1eaa91beff6b9d6f3f8e8f63083692",
       "bytes": 66081
     },
     "ru/dossier/assessment-and-permission/index.html": {
-      "sha256": "360e28a33cd9436054066ecffd4c77dd9abc83f7b234b23de6c18562c5c30752",
+      "sha256": "88215359f990163ccb95bc90ee4559af4518ccb5793fa632f5cc7e5e800cc92f",
       "bytes": 66473
     },
     "ru/dossier/culture-and-worldviews/index.html": {
-      "sha256": "7501b0303a7c6f64fe80cf376402e4f78fb44b4d6544b8f7ebd76f514b1968d9",
+      "sha256": "51bd58a49c0c4b2d54fee35f970c8b5722de68b974a59d495b460dae56c49560",
       "bytes": 67366
     },
     "ru/dossier/digital-tools-and-responsibility/index.html": {
-      "sha256": "91f99baeafe38fc95888625f8f3f34a9db56a760cb693a2816a84a614837983b",
+      "sha256": "ed44270f57fec15e2bc8877264bf88f9ec75e53d6bdf7e7cd121b764eac9e14c",
       "bytes": 67203
     },
     "ru/dossier/preferences-and-boundaries/index.html": {
-      "sha256": "f3fe7dd8814d1882245a1c85c7a233c8978ec42eb7696edcc515a2a7556f4f5e",
+      "sha256": "6cc096d6588ca5a39de405c184d71814616aae7792eeba2646c4fdc0a6a327a0",
       "bytes": 67010
     },
     "ru/dossier/question-to-design/index.html": {
-      "sha256": "5b81b02f7f0362b233436b2d4ced6adb79d6c753b1103fe010820086ed134b71",
+      "sha256": "c7437801b6701a3bdf2a4a1f8d306c617a353152f0b1127116e79ef6609aab96",
       "bytes": 66846
     },
     "ru/dossier/reading-evidence/index.html": {
-      "sha256": "2ba3e4a017aca1cdb9dcf5fa20ee41da230d508f40832f1116e5e8c30105bc78",
+      "sha256": "f02b7dba88a6f519d6cde7476b3253f757aefdc9fb881969172bb9d7e5ad3f57",
       "bytes": 67117
     },
     "ru/dossier/theory-and-integration/index.html": {
-      "sha256": "453d9c1125678bce3ac8dca7f9f1a4828c6e5ab3f3c04f32967fa8035e1d0316",
+      "sha256": "5eb5c2fae0980acb281931f64fa5f6c5d12dd28a092c5276f3cdf8eb11f14135",
       "bytes": 67023
     },
     "ru/dossier/understanding-spiritual-experience/index.html": {
-      "sha256": "d443855e5300bc54db3b933179881dabba0b174c6580f9d7c268daceac8b49c0",
+      "sha256": "1fc54dbf70b99dd55325ef952048cd34249a18e9670a57f357911c72c5cfbb6f",
       "bytes": 67532
     },
     "ru/editorial/index.html": {
-      "sha256": "504cd4cb8c7a36f1c1097c72102abe20cdc33ce35347accfa2d8cc8e30c39dfc",
+      "sha256": "b710ae6cfbe1856ae505bfdf790f4066107b6e81788d0302225896f2db6e8784",
       "bytes": 59881
     },
     "ru/ethics/index.html": {
-      "sha256": "5d5c35029b0b8245b2854d5b588d334f09f583ebc8b39b668a9898dc9f909d4b",
+      "sha256": "bc800c008d7d95e5af53a80ff189a34c7b415b55c65fa924d736cb80171b9ba2",
       "bytes": 66206
     },
     "ru/events/index.html": {
-      "sha256": "1244dc31e8426926615518b06e9397d8dea5988523a5366ab2780534ead54c54",
+      "sha256": "9387f62057a1baa831b04c686a9a08d2894a238d197969d818fdd611612d6b51",
       "bytes": 56446
     },
     "ru/governance/index.html": {
-      "sha256": "b8e71d21ff20aa7389e3d2f7f1330f3d89799ce2568590234f27d994c925eed6",
+      "sha256": "9712a2bc3a922e28ba843e44947e7d8881c4b3ca08c895c6359f3b018f953312",
       "bytes": 60360
     },
     "ru/index.html": {
-      "sha256": "9ed148b24789198f0e0196b42b176e3d1a01cd02595eebec72b3b1583f633968",
+      "sha256": "e5a9a74285a866fadc86a146b1a8f68ca768f370f6ae30fa14220d5c0e97d136",
       "bytes": 79917
     },
     "ru/learning/foundations/index.html": {
-      "sha256": "71bff67c5632a7a579816a08df431c883dcace2672c0c5aca14bf86aeca9acf3",
+      "sha256": "1af1429cc32c0bb1a9973ba04207671e977b0ea7433d922aa41b16438591047a",
       "bytes": 60212
     },
     "ru/learning/index.html": {
-      "sha256": "5950216a2f86c3389110f946e52df8e575bea3d92070c695fe405007f52f446d",
+      "sha256": "d876eae4d23ea9f98ea5bf61e8ba8744f01390c37e6095eb6f22c2e76c5f0014",
       "bytes": 58449
     },
     "ru/learning/professional/index.html": {
-      "sha256": "fb054199d283990f65c0d994322e3bb8b7ce847cf6feaee15b389f85dc75bb9a",
+      "sha256": "7db8358e0dec4cd31088128ead1bfbb32a441dae66dc0edbd6adc024bfe429e1",
       "bytes": 60394
     },
     "ru/learning/research/index.html": {
-      "sha256": "5cf01106ce2126d52afe89cce1c5f03cae5fb1509ff15ff50ac31dcf42c7a61e",
+      "sha256": "89238982047eecd0712cd59aa1da89eed32cfe2ed9e9494f12a369b5d106908d",
       "bytes": 60182
     },
     "ru/library/index.html": {
-      "sha256": "ea2e4408f83a7f9eaa2fca150c2fdb4d169c41eb26b3cfd19e591b84c27481a2",
+      "sha256": "f15e13b29f586db2795c709bde6707ea59ff561edbeb668e38f3af191d81eeb9",
       "bytes": 123320
     },
     "ru/measurement-guide/index.html": {
-      "sha256": "f3afd952039807c8cfae94c9636637642e73543175bd36e8edaf7a4d45a2b7ff",
+      "sha256": "ff0f59564867b6343c1ae0899d41620c8708e7a7cd13eec6fc0fe0c3e867f85f",
       "bytes": 65028
     },
     "ru/measures/index.html": {
-      "sha256": "89c6086a6e38392dfda546f8de0ab790b339bbb84d3349a0e04e70101f9e40d1",
+      "sha256": "cf220d577a17de0ec4f1ba5b38a5e5319d9a538b4cf495962006a8a1cb6e691f",
       "bytes": 74258
     },
     "ru/media/index.html": {
-      "sha256": "dd1ee4c0410273c45d443e5b8b56b977be2810d46e7e858a11631214ea33598d",
+      "sha256": "ee21bcf204a82d79d674a9a25ec6c1524b1aef89efdb32e6233005f670a8323c",
       "bytes": 56446
     },
     "ru/methods/index.html": {
-      "sha256": "9140c48382a92fb4567a7aebb06d77fa84c5727ec703f85ef2c9bf00656fd64d",
+      "sha256": "5b972b9384594ac31575a134c8e14daee7deb9b4944e2f5856f918643295b5d5",
       "bytes": 73861
     },
     "ru/news/index.html": {
-      "sha256": "697da3d21275ebeb087c31948e04b3c044ffaa67b175a134e2f7c2356cfc610f",
+      "sha256": "d58808001f995a2f0cee22b84dba7f15e415d738713472c882f45dcbb0a08c2f",
       "bytes": 56029
     },
     "ru/participate/index.html": {
-      "sha256": "816d9e3f962b72ae956d8f0570b2536d69247a6141fac26d8d9ecdc1d74dfbdf",
+      "sha256": "e715d64cd2c3d68d55e60e267e661cff962844331c2f96676d49a38ceb6577b2",
       "bytes": 59294
     },
     "ru/practice/index.html": {
-      "sha256": "dbcb878c2319a6b62eb318fa11bcdd811a8495c1dddb11b61bc289c08eb5e0b3",
+      "sha256": "46959582eedc52a37272fd1c208620826c15c48c642fcdb6b36eecc90e37ffce",
       "bytes": 78367
     },
     "ru/projects/index.html": {
-      "sha256": "23fce87d5d922c49290b5e55f64d688437458b84904dd5a67d9f0e3c4fec4c9f",
+      "sha256": "79761fbedff8262aada0ab9b83f7b48a42f1af63bd3e409d4b5fae1aedd450de",
       "bytes": 56686
     },
     "ru/publications/index.html": {
-      "sha256": "518df03c27b75b640615710c1c4cff9b25aafd18809926dc1d365e7bc8c5c77e",
+      "sha256": "ae4b83d58c54d10d476ad9b97b989b71469a4794d5e4976b3775e1e629c0a2dd",
       "bytes": 92366
     },
     "ru/reproducible-lab/index.html": {
-      "sha256": "c116b13f49ed776591acf6111eece4bee778c79b74db0379e8e49d5cb23d4e0d",
+      "sha256": "029661a78a7422b677c43d2c1b243f97227e0dad9cf2bc3e70b266a14c5a41bb",
       "bytes": 69246
     },
     "ru/research/index.html": {
-      "sha256": "ba26db3ac4ca318d699dcd8d47dbd033a212cd1dbe5a751cf30c27f7b9c00c64",
+      "sha256": "23bae59ad82c0b527be0409bf6155c51fcd8606ae19597c56b858c812c09d74f",
       "bytes": 61917
     },
     "ru/research-guide/index.html": {
-      "sha256": "401999812ec84dc95c6d70fe74da91e2c2060145786dfd408f20fa9a5cae0d41",
+      "sha256": "a29081162bda6573857f705066de57adeb1f4b086c02336a625f3435ac29073f",
       "bytes": 65224
     },
     "ru/resource/ai-health-ethics/index.html": {
-      "sha256": "8d2511a57c21dc9d689b3c36d169b09bc1b5edae2f55a81da35f72c0464e286d",
+      "sha256": "fb2b44776fe6ab533c30d06cf6c647abd45ffad4a5ec5c9d33ee42fce9a9d12e",
       "bytes": 65868
     },
     "ru/resource/aservic-principles/index.html": {
-      "sha256": "949bada439139faadfe6306420554ab497888253bbef31dce6a6f9a2d9b03a52",
+      "sha256": "001ffe0be62ab03acf067d4ca93efb70fe548f87ea4bd1fc28269f696da226d6",
       "bytes": 67606
     },
     "ru/resource/cbt-spiritual/index.html": {
-      "sha256": "5b258924fa5257a59df5cc64ee7873e5483b00aee3559cdb0c47af89d04c6e57",
+      "sha256": "7b53c2914fc447483408d94f8c4491e946a389b347e9a894a932c5c5c1823f33",
       "bytes": 67814
     },
     "ru/resource/client-preference/index.html": {
-      "sha256": "90405d4882c15393f9b67dff3e80863eaf396b5baa3dde897d00fc04af2c7e88",
+      "sha256": "bf71ba4b9c2e61875ec1cd15078ce6a41ea3a14dbd9c9a3fcb64dede8bf6b719",
       "bytes": 65935
     },
     "ru/resource/discovering-spirituality/index.html": {
-      "sha256": "b2f2d6a38871e670dede018ded8149e1d05e8684724a0dcdf90da743e5cfe977",
+      "sha256": "720a9084bceb8ab43e45b250b54918018c5646166edf4094eff060a2a19f8e05",
       "bytes": 67922
     },
     "ru/resource/family-spiritual/index.html": {
-      "sha256": "fc6a8d2358f85bcf9e6049bc9913c8f149c05f29b9e9e48abcb8165427c183e7",
+      "sha256": "6db948c945c6d03cb1e29c13058d1f78fb3349c8de0083d1c202864424340b63",
       "bytes": 67663
     },
     "ru/resource/group-counselling/index.html": {
-      "sha256": "1f2325cda8c9db8f222cdc1e16ddfdd87445a969ea64317b6e24f4d3b3c2f96d",
+      "sha256": "744867c9f2764fdeae2207aac6ba75d74442c187ad845719975fc8091433b029",
       "bytes": 68134
     },
     "ru/resource/integration-meta-analysis/index.html": {
-      "sha256": "6bb8ba648aa9a1d0042913ad0560922d391c033e252047a275370bedf3f8179b",
+      "sha256": "c795c1aae5fb28a559e8eab0cfee241548a9afaa435162dd1eeb7d938900243f",
       "bytes": 64648
     },
     "ru/resource/loneliness-spirituality/index.html": {
-      "sha256": "1f3d9224ea6453ef78f469acd45b52ce4e960059c85322e3bc25d29f5a16ceb5",
+      "sha256": "4373ae24a0eff389ebb545f9c2f2bf9c876a65e80d0618db45c4d0c47e653952",
       "bytes": 68086
     },
     "ru/resource/malaysia-ukm-counselling/index.html": {
-      "sha256": "f0127d15a85e36b1fb553010e3b40fed8360b9a5a923deed213c8657cc19fefa",
+      "sha256": "c9c95c4402215fb1a181d001f9be0658a0d89fb4fbd6470261f37886e8a06843",
       "bytes": 67773
     },
     "ru/resource/metaphysical-diversity/index.html": {
-      "sha256": "110281284320f0d891b9120298d5c0f0bf456affd09f03a2ce513c478d5f491c",
+      "sha256": "09ff440dbc315c87941c631dcb272d25e3c9ec10c94805cd5a12c2859311d398",
       "bytes": 66129
     },
     "ru/resource/prisma-guidance/index.html": {
-      "sha256": "0a4d7a9c21bd43464b958f3b7e579ae35d93b9cb6ba8c437e59671186d7db3c2",
+      "sha256": "0dd48d8edd92fb191c1542fa29684e3d7534c4b8c48ce78a8a350a73108dc01a",
       "bytes": 66976
     },
     "ru/resource/professional-training/index.html": {
-      "sha256": "277732dc1c27688e354531cf26cd706ab83a6d40b669e219190517eee781b6af",
+      "sha256": "918e70671bb30ee9ea4d95fa091fd45edfdb927b7ce612c2ad80942e19b549bb",
       "bytes": 68344
     },
     "ru/resource/sacred-tensions/index.html": {
-      "sha256": "4d4e09546301d74030e230451756a1e160d2307f275398029cd41ee335d0f9c3",
+      "sha256": "7bfd8a8b39898698f7f2385e187b69ddcac519d4f9eaa87275acc80241023bbb",
       "bytes": 67085
     },
     "ru/resource/sipas/index.html": {
-      "sha256": "20360d271f095fe4dc2b8a37a833a7e1e91360138080cbafc637932b640b9160",
+      "sha256": "1d389c1d8278a0639bc5c9f6404676f6b7ebe03bbdeae723814896b9eb130e4d",
       "bytes": 67897
     },
     "ru/resource/spiritual-burnout/index.html": {
-      "sha256": "59126d9cd77a7fcc039cb76d67618e43a35d8cfd5b9acd348cb323b79c2c535b",
+      "sha256": "4325536f5a9ea7c2f6d85e8723adb9c0ae6c056268bd0e49f2e5754e5492b930",
       "bytes": 67815
     },
     "ru/resource/spiritual-competence/index.html": {
-      "sha256": "2aa7bec24cfe9bf737d834b24659e7a53a593dc36b459f0cd691ddba88fc1075",
+      "sha256": "7d5ca0b60309eb05a2b6751d450d4f59b8ae691192709adb46bb6e130c0fa03b",
       "bytes": 67152
     },
     "ru/resource/spiritual-counselling-book/index.html": {
-      "sha256": "5ebd6a4f12f1c480d6d2800cfcac87a79de127fd91ea2f927e9e928ba937d433",
+      "sha256": "a58a2905c624f47abc785b1733a3b5bfae865bdc395b59048967e683784eafe8",
       "bytes": 68655
     },
     "ru/resource/spiritual-integrity/index.html": {
-      "sha256": "2a0dba08c42ad137a3fedde476df66c8fff3d5d8f2738608aa5795df349f2115",
+      "sha256": "75ccab8bdded8d6a3b929cf64811314c0a2491d9fc1a1431e2545a827b5ddb55",
       "bytes": 68065
     },
     "ru/resource/spiritual-practices/index.html": {
-      "sha256": "d4e95028784d076784497d9866cf30778dc35dabc53ab4eb4a57bdad24e75d74",
+      "sha256": "3cf85e48ca14aadcfc6f733bcfa9671dff0e4a35fb2424227db60b560ddb13f7",
       "bytes": 67597
     },
     "ru/resource/spiritual-struggles/index.html": {
-      "sha256": "fa8f1b08b32b78c5f0f25e6456f6e1b79d4e8e81e80453546782ba81aef0f6da",
+      "sha256": "eb1435bb55c3aa84583e516757b319d6519b95225009d20bce607baaa4637bfb",
       "bytes": 67816
     },
     "ru/resource/spirituality-dimensions/index.html": {
-      "sha256": "eedad5d4dc72d3111a7b1addbe7f9f60d71165cfe338c1ff49d2d545f056e947",
+      "sha256": "1e1dda66c7331e04c4f50d91a4ca82cbdcf9dd71609be4467d79b53dff9bb035",
       "bytes": 68252
     },
     "ru/resource/techniques-101/index.html": {
-      "sha256": "04ba165a66deb25ab217ee85d7bd1c23577ba25def6684afa7e07cd9087a680e",
+      "sha256": "8b067c1ff91915101d3a56c7be01b04d6f627d62cfea39ec30e4fa5972b31d13",
       "bytes": 68106
     },
     "ru/resource/theories-book/index.html": {
-      "sha256": "9fb313672307ac5428c102577eb4f687b7ee9b29076d138636788f0acf8dc799",
+      "sha256": "338b97aae4bc6f57a43e0d8c1d655429eb8b5173f248b7f788b8e896bccf27e0",
       "bytes": 65431
     },
     "ru/resource/three-waves/index.html": {
-      "sha256": "8cfbcd544dbc7ac74b48e5113d790caaa123275d1b4a53a0985873b7a2119dfb",
+      "sha256": "52f364f52009cc72c037242f9e9da63e0a079f95d4f11a375682d91ab4d9a0d5",
       "bytes": 66932
     },
     "ru/resource/toad-directory/index.html": {
-      "sha256": "5471f4909f9c81a7daaf387acac156f0b592d84b9cabe3ec3bf5529f839c815f",
+      "sha256": "47c6b8f1995256089b59e269ab62ebcbb917482b1b1d95330280f88442577079",
       "bytes": 63936
     },
     "ru/resource/trauma-spirituality/index.html": {
-      "sha256": "60214d3ad562b8698f37d87454219b809e7229631889670a3498737ba97ad5ea",
+      "sha256": "1d30c875742f178993596ab024523a1c4dc6f2de435174b097eb41b8bc8fba49",
       "bytes": 67984
     },
     "ru/saved/index.html": {
-      "sha256": "d84b2414a52caaffc61570a8b90e6e02f475bf9fd5238c9c48f90c2641e6dd01",
+      "sha256": "d8e91ab27f53f11a25d9d64bdb39ff9bd3cef0aa38abcbda7fbcb88316cc4932",
       "bytes": 56926
     },
     "ru/search/index.html": {
-      "sha256": "c08d28f0e4bcc0e9b614b88e9db024d25ff1446f6667db30fb32d2001d9046e8",
+      "sha256": "492c215f0fc23d5ee17d616b78e8e656720170737e1cc6d4279ddae7af9106ce",
       "bytes": 119669
     },
     "search-core.js": {
@@ -2057,275 +2065,275 @@
       "bytes": 2844
     },
     "site.css": {
-      "sha256": "0445b8a2b8483890fedadbbf162478b4eca53cadb7caa9ca91424a2299413c92",
-      "bytes": 60099
+      "sha256": "255ab6f11efe26e56cdbca1c338d9021e9f233360e246f2bf82cc13c12ff4847",
+      "bytes": 62611
     },
     "tr/about/index.html": {
-      "sha256": "f2ca4262749c062d835404457ef3a10b45f83366a9c18c9886f3676b21880353",
+      "sha256": "19bab83fea134b9b58f0c08f21b866fca557bf28817589bdc377a9be829cc29e",
       "bytes": 45283
     },
     "tr/approaches/index.html": {
-      "sha256": "5fdbe65fc28521f4a6b4680fcc7046d0c466d3c192564038a40d967618cbf1e1",
+      "sha256": "b637cf36ff4496f3709e0348e65275abc2b4e9f6d9e0ce58616389f9e9f4c741",
       "bytes": 53424
     },
     "tr/books/index.html": {
-      "sha256": "4f3a9d3c5fceefcdaf06ff30997742dd0491681eb34920f8535c90eea08ad7e8",
+      "sha256": "bd66c82751b861092d0aad75ec695f9431da37f5edceacc0f20d12e8362ff8db",
       "bytes": 73169
     },
     "tr/collections/index.html": {
-      "sha256": "8e369ab1af89e0a0d4694a6fa860d6f58f650715b4f25666401476f96004eed4",
+      "sha256": "32f4ebbb4a39296dda27ee1923ce93f0509d4a3ae833ed6e4d1920b310551aa8",
       "bytes": 87043
     },
     "tr/compare/index.html": {
-      "sha256": "9bc4cd2dc2ccc6801b50d054247128740c89b579c40514d617f267e57b598beb",
+      "sha256": "fccc8512bb0366c9da8ffb977c4e7a54a3842c03006991b2fa47fea50d1699fb",
       "bytes": 89547
     },
     "tr/concepts/index.html": {
-      "sha256": "e36c26c374e0c89b57d205c205c835cfc78d3b1193f627651ef96c2ff072d167",
+      "sha256": "7c9fab16720f80ac75052a17b00b9930e6efb40937573ef4fddfca35ad8d0df2",
       "bytes": 55100
     },
     "tr/contribute/index.html": {
-      "sha256": "3a466e2fe56f3b6bb938fe579be1832526b3d2878892454992a49105ae569c4f",
+      "sha256": "482cfbbfbc2e41b054e2d52506739ca0135dd594f92d576f36839621ef1a3a3c",
       "bytes": 45821
     },
     "tr/data-access/index.html": {
-      "sha256": "f11c3189cb16b488884c7992e89aa005a4bc909ff3f210446de52a102c2e0b3c",
+      "sha256": "bb33bb87eaa9f55d036652fd5132969bbd56877bb5a76560307e3bd59d867bba",
       "bytes": 51766
     },
     "tr/dossier/assessment-and-permission/index.html": {
-      "sha256": "b5dd00e2bc4024f9d40a8a4627735836ca08a9d52dfc04c8a5bd9d87711baeb0",
+      "sha256": "3c6e7d6adec72fed96d790425fcbbff5c36879df2fb98e08a4fcb2abd532d82f",
       "bytes": 51583
     },
     "tr/dossier/culture-and-worldviews/index.html": {
-      "sha256": "40d9ed3706646a4d55443a900b96bb7326d5cb53bff3c47174e9a59be0af3635",
+      "sha256": "55b825ea08c8babed2a3e170be1808399b5583acc3b72d1f55a10ed230e32f7c",
       "bytes": 52190
     },
     "tr/dossier/digital-tools-and-responsibility/index.html": {
-      "sha256": "d112e3d3f376bfb751471f2d7688469b5860ea4e5780f7d6af13c87924c89bb5",
+      "sha256": "87c2c4ddcb0ff359be78f60ca729707a3413f9d7afe431e954f2dd3721fbea99",
       "bytes": 51977
     },
     "tr/dossier/preferences-and-boundaries/index.html": {
-      "sha256": "5ce8d10507139fea18b6f5c5c2a7de69639b8694f5caf82a91d90b124e340cfa",
+      "sha256": "b94d65897592c938359b0c744a6d726f7b8961a4a7d57ff97935fcc5d4e93aa7",
       "bytes": 52168
     },
     "tr/dossier/question-to-design/index.html": {
-      "sha256": "99a781e45922b0cb91fcf8b191741d29b28f65582c1d33452139f051207bb9c0",
+      "sha256": "4d8479cade8f2888cbefb705d1c151ce72beb73ff96e60e2237b2dfb00ede0de",
       "bytes": 51862
     },
     "tr/dossier/reading-evidence/index.html": {
-      "sha256": "0b6f7882503cd8b05f496fdcc5f8355c6b146949a40dc779ad65d6038510dc81",
+      "sha256": "fef30f9ff775b8f62b9cd7372ed884238c20c382a00677cd5f5633b165e82803",
       "bytes": 52032
     },
     "tr/dossier/theory-and-integration/index.html": {
-      "sha256": "ace1b0bd73cb2717ceb4d7477ca1c29724345b70f7be99f90404540c36c5e0dc",
+      "sha256": "df99888a78ecd16358a20474a69788a730b11f53ea5f0848a4961292f119be19",
       "bytes": 52242
     },
     "tr/dossier/understanding-spiritual-experience/index.html": {
-      "sha256": "d61de7aec60c5d191aef3ba4e98ebff6fef0dfcc0e406b4945929a80b4442f3f",
+      "sha256": "f42f4549d6ddd9155c5fde32aed0fcb120609d588e3d101e12879fb115f286cb",
       "bytes": 52304
     },
     "tr/editorial/index.html": {
-      "sha256": "da01c8e8d86ec970f821cf037ab0b7b1fec7a3dcda16714da41d754b05f44f21",
+      "sha256": "b05611c59a7aa88e0e671638689e286053f23d1008a8bff1478c2cb8c31ecd6b",
       "bytes": 45886
     },
     "tr/ethics/index.html": {
-      "sha256": "47df459da8cb664f938e7375d5bea046cbb073107c31d56c89e48e433bfa8592",
+      "sha256": "dac865732792a6f5fa9fa674acec0bc057644930808c70fe5ceb8c855f808e74",
       "bytes": 51423
     },
     "tr/events/index.html": {
-      "sha256": "0113066855ee4f641b56f0dad92330034d95bba2d7bc885355434298ad2c6730",
+      "sha256": "c3d3af801eb0ddd2d8e57027b1f11cb2ab60a2931fef4d1a518e684680c04a58",
       "bytes": 43607
     },
     "tr/governance/index.html": {
-      "sha256": "331b8a094d71d69ced0e24dba4bebce3e06bfd97775ccb5a9ee13daa0c9ef862",
+      "sha256": "33ddf05615a4ec37619ad9d154b69a440ac77f4be384ba5ba8d2e9083d04897c",
       "bytes": 45894
     },
     "tr/index.html": {
-      "sha256": "fd84a25df8f6e7f180902ff80ee53b9541778d6f4d435e9644078a941052404d",
+      "sha256": "c045e5659206e231fa0aa97045fd6f4cee9a9461efe8123591a14be8cc6f9a95",
       "bytes": 64262
     },
     "tr/learning/foundations/index.html": {
-      "sha256": "8a2a788fcfc61158daeee89d9784bd6d446e2f954e481f7dc53d7912ea09924e",
+      "sha256": "c75d66159c014263a5fdf0cfa4b45e4db9214d997daa12578bc47bc574c9c7b7",
       "bytes": 46612
     },
     "tr/learning/index.html": {
-      "sha256": "e2ddd1bffae5d6e5d4c135553094854ea4656961154b8a77fdf76dbbec5163ca",
+      "sha256": "6bb99957137b8571bf090e1ff8e8ae92f8b08a932179bbde44eaddbae4c2f06d",
       "bytes": 45301
     },
     "tr/learning/professional/index.html": {
-      "sha256": "eec812b9e74ee0dd04d411a3cb278066df1b806a9558e702fd01fbcb99433a98",
+      "sha256": "e2ddd074a6304ea42e51462f685728afed60e8937fc88b5bb572a4e13cc8a83b",
       "bytes": 46755
     },
     "tr/learning/research/index.html": {
-      "sha256": "9e9de579d1022d0d3e32e2dfcb99782e5f52d95d71a2b6d8f19d4596137db99a",
+      "sha256": "d20464952aebe355b76ff6c938ee992ee1ae946485427506f4f9a944f63119ae",
       "bytes": 46496
     },
     "tr/library/index.html": {
-      "sha256": "26067894bb5d76e1df62f9c3391e34ff0a2e6e9a8924b3e52fcc25c58abc3046",
+      "sha256": "2400efafdaebd6b529730ff18f48bb564c44d310bb53b308de5e513e47a724dd",
       "bytes": 101686
     },
     "tr/measurement-guide/index.html": {
-      "sha256": "943b254107959ffb3f7bd3c7e0d31ada057999129b4747b6ed4c2800bd94acba",
+      "sha256": "c5c989bf26e0293ce2c18c93b7e90f713233b58c4e4d55460d5b0cfa7834c70c",
       "bytes": 50528
     },
     "tr/measures/index.html": {
-      "sha256": "876279a4cd77d7625da06c931af7cd6980cc4df0aeff3681c56d341624d69daf",
+      "sha256": "9572ecaf9649cfde0fbb31fad2ac6e9fda56da972a28d2224044279449495a7f",
       "bytes": 59128
     },
     "tr/media/index.html": {
-      "sha256": "90df473c9db7eddc989e8ed4eeac327ebaca3ca819df4578ec59d662e57e9868",
+      "sha256": "d8c8734e1151d5e7589f0deaf2d0ee55be118ad5569a288796d9f0924237324b",
       "bytes": 43599
     },
     "tr/methods/index.html": {
-      "sha256": "b709b378955a7631294b60dac32021b2404c08e2d4a96a2f7f5bda4c70c08f05",
+      "sha256": "1c4ede2210172d570c0bbd94501913b39215fb38f4675efa84c32b1fecda9b39",
       "bytes": 58153
     },
     "tr/news/index.html": {
-      "sha256": "1ef6093ce8f17f347d3b6c7f2a7f2f18fc9c37b999cdf79212dbf362f5a361cd",
+      "sha256": "7cee331dd51269bf4d1cd44c0a7f0461a83d5ce229f93e1a752defcd199ae466",
       "bytes": 43285
     },
     "tr/participate/index.html": {
-      "sha256": "cdefc3850823ac33b13bb71087f9478a3ba038bb812260581e8617ccd6baa195",
+      "sha256": "29e05a0b706ff8924d678647c5166fc02b30421159592b8a772e9db5578e2249",
       "bytes": 45891
     },
     "tr/practice/index.html": {
-      "sha256": "e3d85233e855302b35a3675438ac1920f60fd69680c6a1ecae9bfe4bfbf34cf1",
+      "sha256": "d5b048c2925a9d44190ada50b2a6689a44b7b8e174f731dae25467f94403149e",
       "bytes": 62070
     },
     "tr/projects/index.html": {
-      "sha256": "339e414bc5fb592afc67b92e2c861cb52b805f2ab47708a5f24cd4d709956954",
+      "sha256": "67c3105bc8bc4938c3f9d7aa9b25fcd68573a49eadc3c3c21b66583374e24021",
       "bytes": 43745
     },
     "tr/publications/index.html": {
-      "sha256": "311d5848104e127431f6b2492f11459785218418cb4fc382bbb46c99da2a8002",
+      "sha256": "3054f54cc2be1bcac466c18b2292ba3f233be0b78cad281198fcff00e81e001e",
       "bytes": 77528
     },
     "tr/reproducible-lab/index.html": {
-      "sha256": "8e62ad7425f920b77dc267ad166318c6b0563a42b9f31c2c09a399cccd890ae0",
+      "sha256": "f398ee25a938245a91d1759dac115a82815cff60f3c14601e512430f42ecf75a",
       "bytes": 54733
     },
     "tr/research/index.html": {
-      "sha256": "b9b5b4fe9fdcf92f5960d6e58e4bfda0ce6c177a11c0a7538b52b6373364bfcd",
+      "sha256": "7b5406125997de56cd4441cadd439bd806c97c8e99ea84910df97baa203f3654",
       "bytes": 48039
     },
     "tr/research-guide/index.html": {
-      "sha256": "1e977c708f422b82bf4aafd39c4609671c33d2ab941dcdf8f177b6ab33bf3754",
+      "sha256": "101ae689bc568cd63ded2c1a536baf51495a60f53f4b6c063d4ed0fc2bf6f75a",
       "bytes": 50581
     },
     "tr/resource/ai-health-ethics/index.html": {
-      "sha256": "2386151207189c695382707db8fc4f3e73d310b005030f49fedcdc1688786fb0",
+      "sha256": "cda82756025491796f15c10af49710bd77a650a18d5bcac8ea09064351174c79",
       "bytes": 50653
     },
     "tr/resource/aservic-principles/index.html": {
-      "sha256": "ac7e3da62a72c99aef436c760070b05897b25c429fecd6a72244dfda2febf081",
+      "sha256": "7d0ed1f917d1e9cdd815bf2cd57fc0b6e3a7319d29f770eef81f384fc377fbb6",
       "bytes": 52194
     },
     "tr/resource/cbt-spiritual/index.html": {
-      "sha256": "d5dfb8673cc34b569421aa2982c5addc6939cdb41fc11eb020a711e6cc4b4fe6",
+      "sha256": "251532c0ea997663bc1f25537bbe6feaf8285e6364ea43ecbae1f0c38f69f9bc",
       "bytes": 52587
     },
     "tr/resource/client-preference/index.html": {
-      "sha256": "85113b01037354075bcf10c0380cf4956a80514b4ae4ae9499f83b5a15dbbee2",
+      "sha256": "270b5625b0f338f61f8eeb1e05f9bc6ab03695ad90a9b71bb604c9220dd6a803",
       "bytes": 50960
     },
     "tr/resource/discovering-spirituality/index.html": {
-      "sha256": "cb5b4a25708846da27a2051f2f9eb98ca4f0c3312e2a9c2780894b9e1dacbdc0",
+      "sha256": "9251c6a14d98f9ebe8ba5bcb94cc84a0bda7423723a6aa5f83fc6b2eae9c4114",
       "bytes": 52847
     },
     "tr/resource/family-spiritual/index.html": {
-      "sha256": "3ea0937162e2edb99bd51607b2959ef11fc57774c0f14b123e50c038b1ab4129",
+      "sha256": "9d47c6b9f8183546eaf0f43e5a3f1b4d34997ceaf80fdb8e28388c6cab515d6e",
       "bytes": 52440
     },
     "tr/resource/group-counselling/index.html": {
-      "sha256": "62ab9d97a60ba949e22e6cf9d5a66ec649bb60e2a675a9293939d97e4390aafe",
+      "sha256": "b20db2d708d3f95541465afa32788ed1772a40a45ec5c7074a38ad6d1fe501af",
       "bytes": 52940
     },
     "tr/resource/integration-meta-analysis/index.html": {
-      "sha256": "cdbd3735edb74fb3c41428e066662278b070b088a89b4fc5bd3976d5cd635b0f",
+      "sha256": "41c014446e37183ecff6abddf0e60e56dc569d024526bee9b4fdd877c44ebe89",
       "bytes": 49903
     },
     "tr/resource/loneliness-spirituality/index.html": {
-      "sha256": "00d4e28bde3446fce9de80633e1a016e51ff24e753ed6162e28630e082ff407d",
+      "sha256": "313ccc60789ff74d1fd4a744d72a9e526028051bd57acac7a42bb0833c758c38",
       "bytes": 53017
     },
     "tr/resource/malaysia-ukm-counselling/index.html": {
-      "sha256": "a0e855a701705d1e8469bd35112ed63558806c09bd78a9067e97db931e221eff",
+      "sha256": "cbc0c716c03f1078312fbb6ab75d17a6e60a6164f17505be61d4d075f5f31608",
       "bytes": 52472
     },
     "tr/resource/metaphysical-diversity/index.html": {
-      "sha256": "dfc9d6ca048c584b298f40335f9707984a712469725020d01b03ff64a0d7259b",
+      "sha256": "dc963517160e22d327ed81374f333799c6b95c0825560d3748a4ce1581b22ff6",
       "bytes": 51023
     },
     "tr/resource/prisma-guidance/index.html": {
-      "sha256": "287a8d0533de7156f43550a1c11d89e0b1451c5e27ce81b637096136715a9c5c",
+      "sha256": "b100089ed5e6315c0ace14d620d9a5319d4cc4908494ef3f1ccc340cd7fedca0",
       "bytes": 51751
     },
     "tr/resource/professional-training/index.html": {
-      "sha256": "7728be1d0f032a08fdb04d985435aeb08950c316f5a89173669f9756b92f387a",
+      "sha256": "db67ebfe40bd2f6edbf6e64a007d646b5f09f85e13a6d983ca01ec57ec96e9ce",
       "bytes": 53205
     },
     "tr/resource/sacred-tensions/index.html": {
-      "sha256": "acb0f6366627b54426554a27fb438bbe8f70e7240d28808adf1c7aa3e12d1321",
+      "sha256": "7953bb25cc1216837d41174269fe687afc2bdaa40dccff2c72fa211a155255fc",
       "bytes": 51702
     },
     "tr/resource/sipas/index.html": {
-      "sha256": "eb1f8acbf50a992ffb843e7bd122c1b5960a4a54a091ff72a3995e5182340ff2",
+      "sha256": "67ae25c072ed55009b1ced025cd29a359b95cb5fc7f5315773259aa40214ad22",
       "bytes": 52829
     },
     "tr/resource/spiritual-burnout/index.html": {
-      "sha256": "4e570f3bca21c394d0121eaf2a94236b043bb3da8fa3266e4780c8b2e8d06cda",
+      "sha256": "dc359394e7af08e9d4d770f767929cbb710e1b943e674d722b628215f8650d66",
       "bytes": 52791
     },
     "tr/resource/spiritual-competence/index.html": {
-      "sha256": "7e3b35658f64159c677f87ab24d95554da2e880c80c5a49e5816ec22b7ada8a7",
+      "sha256": "6f3187a72d0a1aae11c27cd5e735e31c52a2c695143bc15c9c65204a7609b290",
       "bytes": 52013
     },
     "tr/resource/spiritual-counselling-book/index.html": {
-      "sha256": "4ffcd6394c0395055bc66bbea2873d8a14c0d4ed7bb73bc49d783958cc5553e3",
+      "sha256": "7a08bdfd88ae8031b3af9f2b46241592a9e904f88873d49fcb4eec8086312607",
       "bytes": 53249
     },
     "tr/resource/spiritual-integrity/index.html": {
-      "sha256": "71d5a4736afea8f22577e7b908453cf99944579a33d35b4072ac853c6aaa285d",
+      "sha256": "bc4a494e4c4290b337fb4b7be9517d46c042948e8e70775b0ab1e9c2459f3d75",
       "bytes": 52902
     },
     "tr/resource/spiritual-practices/index.html": {
-      "sha256": "7412a6a450ea2b894c45143c97da3d89c658a21cf7f6daa8f61441120188a4ca",
+      "sha256": "05fbff1d7c0d2e528592eddc3eb85ed243f1b97447851fcf22adfb4af1999cca",
       "bytes": 52505
     },
     "tr/resource/spiritual-struggles/index.html": {
-      "sha256": "0d36bb00bff735338849f02b92cf78207538c4a9a9db95ce00ab288995acbef0",
+      "sha256": "7f756dd31d7967e3b95f2497965a68d9e4f0f2d3559cbfaabad8cf9aa331d3b4",
       "bytes": 52674
     },
     "tr/resource/spirituality-dimensions/index.html": {
-      "sha256": "c3e59c808fca38b64e176b4ae1939b02ea48fc31a0b0a90e9b3aa2a619a561cf",
+      "sha256": "951d539ec8f5372c81ac198f62a1f7e476ea3b5f752b670b16dc20c30656bd81",
       "bytes": 53130
     },
     "tr/resource/techniques-101/index.html": {
-      "sha256": "b95351ff1afd5ac67e7c982b9b2c1a0575e8bd296c4991bd831127acbd2e7fec",
+      "sha256": "6571374a2c4796802a9fb8fb264f695206bbd09dfd62aadd60ad67e281e5641f",
       "bytes": 52827
     },
     "tr/resource/theories-book/index.html": {
-      "sha256": "17913e113673fb917e957d5d0a47f4b76fc9830cb6852d189c325b4f274c245c",
+      "sha256": "613ffffccbb75ae502016290c1a936415b7ba074d3dd920944c41ca39909ef5c",
       "bytes": 50761
     },
     "tr/resource/three-waves/index.html": {
-      "sha256": "e8a090667795b783ab6d66492182b831ec63fad60a94025d3c5b3561ce87e9cf",
+      "sha256": "525ed950ba1ec43a8935da629a36f65dccb47888b678457e1679ee0f6529668f",
       "bytes": 51748
     },
     "tr/resource/toad-directory/index.html": {
-      "sha256": "dfb4f98d6cc2b0e3e701933fa31f80aac691228ad91a2eb0f9b4359e3dfda364",
+      "sha256": "a162b09859723756caa8fa47f204a9194883b4231a62e512ff9c1fe95b807108",
       "bytes": 49354
     },
     "tr/resource/trauma-spirituality/index.html": {
-      "sha256": "4d02929eaacf499a8e3ec6cfbbf51511fcc8f5f727a7ec18210922ef43f9f240",
+      "sha256": "54210fee92a280c49d38c7da4d9898b4b8e0f8905e9492bc0b720071c40740a2",
       "bytes": 52799
     },
     "tr/saved/index.html": {
-      "sha256": "9cb404bcebf45d5f7aec82d04ec355c8e5006295c44d8cf16840570b4efee64b",
+      "sha256": "0102c54a4f81937b1a4d40f1a64f939e0ddb19df65ed5c61a62a436c5e80b547",
       "bytes": 43923
     },
     "tr/search/index.html": {
-      "sha256": "f4ad63d9ce89a3af2a94e59b3345079b53bb32375908c1ac3091c1e5662bd76c",
+      "sha256": "2e5c9b8ceeb1445393fa2e667dc99afecec0482fef4991b4d274a11c9ab404a8",
       "bytes": 98784
     },
     "url-state.js": {
@@ -2333,271 +2341,271 @@
       "bytes": 575
     },
     "zh/about/index.html": {
-      "sha256": "1b7148a8a86bc24f7e0debdf943262d671b155f08d1f75f89a6c31e170f18345",
+      "sha256": "4efab6e5c62dda2c154ee22a43fa1e7da4e27edd41ee5bd4feaf6a39a574cd23",
       "bytes": 40653
     },
     "zh/approaches/index.html": {
-      "sha256": "adcd1ee2065ade6d34e7b2e9b4c4d725713966e92ac191f623ce8a4d5b849333",
+      "sha256": "7a570c69dca69fe37bd702aa7b722084fe130639c9c908a58ee85661e38197e5",
       "bytes": 48629
     },
     "zh/books/index.html": {
-      "sha256": "189f267b7953c781bda92e96950d0e40a2851fcd53e6d24754174b520f056baf",
+      "sha256": "d66393d5865e1a2c1d4d1255a83398675e205d55486c475c7dbe290ac88a4b11",
       "bytes": 68375
     },
     "zh/collections/index.html": {
-      "sha256": "42a34de9257bd7edb2ffdc61156625d616e30f27c6b10455a75b5d1a442b0d72",
+      "sha256": "1f2ef6c24735899466148ab096d90fead0266d566f8564f1a4b6b2dcb33c2d88",
       "bytes": 80198
     },
     "zh/compare/index.html": {
-      "sha256": "f735d38fe51e0f2067ad82335b70e4822f98933d6ae6ba1706416039e0688b70",
+      "sha256": "c9442efec4522b6d1f7717fddadf0cc6f07d1cc6c496b557f6de48ebd5c3a8ea",
       "bytes": 80065
     },
     "zh/concepts/index.html": {
-      "sha256": "16a518349930ddf560cc4931dc50f94e3d46d2458abbf9489409b2fc006adb4d",
+      "sha256": "5f5305a023fbfe7cd4580b4c9d372433334e20c440411597afc3c7fa9fe777fe",
       "bytes": 50494
     },
     "zh/contribute/index.html": {
-      "sha256": "e8ea38c5d8ae2abd8ce70ce1bb826b941f2b59638bc22857ab369e72e54c5e7d",
+      "sha256": "88f407abfd078cc400b46936fb8573ad215d410ad0af5b2190dfdf58faa192f5",
       "bytes": 41626
     },
     "zh/data-access/index.html": {
-      "sha256": "7eb2e14d0b8c5808c25aed4e77f54f2201f6c7e639e77c1875d7a78fb8de27c0",
+      "sha256": "c314da7f59a291ff0b142399a84d3604ccb6ad97f57acf8db77e7fed56d33d08",
       "bytes": 46802
     },
     "zh/dossier/assessment-and-permission/index.html": {
-      "sha256": "56d622c489847c929f9025f41a459e682114eb0614cd15ac225670dba48b6e41",
+      "sha256": "1c9124f71196e4b56b9c86de66ebc370fc7c1db6b809b16bde7d55642d5d0dc0",
       "bytes": 46617
     },
     "zh/dossier/culture-and-worldviews/index.html": {
-      "sha256": "623eff9561b58fb14fbd0c8da2c37a08df83b1ea1e91ae4f6577024a25091a86",
+      "sha256": "4bf7aa21eb44f4645264de900678b58e65b84bad9c38bc6034ccaebc85263132",
       "bytes": 47359
     },
     "zh/dossier/digital-tools-and-responsibility/index.html": {
-      "sha256": "d041cf7afcada91e44a691fdcc3f97dce9dbc68c0bc27a8cd2bbea240fc45da6",
+      "sha256": "deec2f79234a545a6f08903ab3ca9fb56895ce26f3b8836f2a2ebb48ba8f5d16",
       "bytes": 47207
     },
     "zh/dossier/preferences-and-boundaries/index.html": {
-      "sha256": "73fbff8a45fafb999f287911faee7420995deefeae7c3101f74bb911b3038ddc",
+      "sha256": "dda2328210d278cf8055af37bc0d36f62502af58565812013a06e186e697cd88",
       "bytes": 47199
     },
     "zh/dossier/question-to-design/index.html": {
-      "sha256": "7356d53563af0d59f1b3afbf5d21c83b2c8a4027539920420beb9faeaefcd912",
+      "sha256": "d4fa6f84773dee38da7e09031ff6da77faad2a802c155586057fab84bf518738",
       "bytes": 46990
     },
     "zh/dossier/reading-evidence/index.html": {
-      "sha256": "10852747401ff6186a8322983a95ef7bd62b1e2bac6c84c9e01f084634941c8c",
+      "sha256": "ad6251b50881cc556ee8a8f58f5932a870568e6d856ed844ec6ce2b70c9a85cd",
       "bytes": 47211
     },
     "zh/dossier/theory-and-integration/index.html": {
-      "sha256": "56a8042ac25be32ea625279728188fd98b4538faa1b3c228a1b50ed55b455c05",
+      "sha256": "c613fc0c8d77759ea7b84ea7a12425bcff7cdb98ae72479a1b751cd537b454e1",
       "bytes": 47289
     },
     "zh/dossier/understanding-spiritual-experience/index.html": {
-      "sha256": "bdeca906d7068ffcc01c9c3186f509f247392dcff043e6f698aef1255d5b426c",
+      "sha256": "2fff58c914dbe671dc515f568fc9c56edc379d158a6cd4dec111dfb3e4767fcf",
       "bytes": 47550
     },
     "zh/editorial/index.html": {
-      "sha256": "ef466a0e67a170a8598023fd8699401724f3d42adf76cbf7ced44d9ab0b4125a",
+      "sha256": "3db773d700e6e56f0fa6daa4976a36ccf3d837e3b0f92e604f8ae790a9f387d8",
       "bytes": 41264
     },
     "zh/ethics/index.html": {
-      "sha256": "daa8e70f82a221a3e014765d953abdc91c2edb196b14a2a9aab9b7d8eb05b21e",
+      "sha256": "3dba943ca71f529b8816a7e72c9461bbb471b13404d69548adbd03fd9635f695",
       "bytes": 47029
     },
     "zh/events/index.html": {
-      "sha256": "36d969cb4f60b06ddf226e6b9ee092b8d791798b37a28103d6ef11411edef337",
+      "sha256": "6100dddee5a1af72b3c3ce6479741cfe21f1f469cb04bd2abcb9525a97299f4a",
       "bytes": 39504
     },
     "zh/governance/index.html": {
-      "sha256": "b9efba951f1bc098e179361cf6deba57e5c1c89aa1118df78f630cea1f31c44a",
+      "sha256": "50e1695b34d52807046f36303ff3c71f0275d5e5d45f06a0c53b12a20cdf7780",
       "bytes": 41418
     },
     "zh/index.html": {
-      "sha256": "eeb7377c61991ed2ee5491942aba4994cf5ab380942b0c000a37e4902d481fda",
+      "sha256": "c2184939965f8ed19a3790d15c440a33a7bd5e62237e721c94dba48cc44c829c",
       "bytes": 59058
     },
     "zh/learning/foundations/index.html": {
-      "sha256": "2c51ced55ab35e9f449119eb7dbe30ed034f7e510068510dbdaf882ccb225a0f",
+      "sha256": "d4811b6dcce320dcd880d96da01cf2466bd89a96bf98a1d420ca12d81d9f17da",
       "bytes": 42312
     },
     "zh/learning/index.html": {
-      "sha256": "d571610a135887d728543470d2dc3408ee89e2e9e1951d1f52404debe1f21749",
+      "sha256": "8c2b4b9b9480541828ef26a92dcf721444ec78829da14786b24953e8b68192de",
       "bytes": 41097
     },
     "zh/learning/professional/index.html": {
-      "sha256": "5a9b59fdac7731192c659c324d1c4598aa70d7329ccdb26af1a22bbcbb00c5af",
+      "sha256": "c1fab85fed5e8434a9159a935aded2ca8f9b7b77d46c9d91354d9916879ba073",
       "bytes": 42409
     },
     "zh/learning/research/index.html": {
-      "sha256": "7f942b03e63b50b5c76b533dbdfe81bf3cdd9f8c223d4a06c7eace3d5bd77433",
+      "sha256": "7cba1064d7e16d02902c1742f51fb454ce1f64f8f9744a3256cf09293d0c31b3",
       "bytes": 42210
     },
     "zh/library/index.html": {
-      "sha256": "9a643c2fa5d7449883eb55a26b28d7f18ac88eb10439847f01b4dff671a5ca9e",
+      "sha256": "5f7528bcfae62c4ff2845abe9bcae3dbcd83885bc78948b9c1de32482f21c165",
       "bytes": 94157
     },
     "zh/measurement-guide/index.html": {
-      "sha256": "46304c90c00aa42bc9e4619cbd26caebb8274f07f2f7afaacb7fbe01231ad32f",
+      "sha256": "41a76eb1d88c77babdc6644d3013e7b1e4d215b990a2995b8948c024fe8409a6",
       "bytes": 45624
     },
     "zh/measures/index.html": {
-      "sha256": "ea593b5bc32bd04141ddfd9440146dbe59ef6ee380b816c317296d02665a189f",
+      "sha256": "0c13dca51575027200876435b603b3381860879d684b4581378921b73ba0f9df",
       "bytes": 54124
     },
     "zh/media/index.html": {
-      "sha256": "0c83b9958497de5d7e2f08fde17b3eba45e8751a79b1aacbbd9d145caca036e1",
+      "sha256": "4dc66ef4d2b18cc98057c6d2eb62c1a8d02fce66861c11e35a3970550984caac",
       "bytes": 39511
     },
     "zh/methods/index.html": {
-      "sha256": "ced41d5414b6f93b3fb7ea41e0dbaab6af2236414a262d92d859c03f42a874df",
+      "sha256": "592d74d326e866d13952f604c1d7e5d80e5ef15c196fc83691c1fd14e4cd0354",
       "bytes": 53231
     },
     "zh/news/index.html": {
-      "sha256": "52f0999d9d85944a3d75aff446ffeea42bb2092a4c8ae7ea08cbc43378cb4682",
+      "sha256": "ab1454abe852e3d46501ca41549a401e23f8df20b29b81702a77b33f8029a14c",
       "bytes": 39273
     },
     "zh/participate/index.html": {
-      "sha256": "07dfde101515717c4e981f574eec2df637cf95bda5b0babebb77cb5bd2dbf8f3",
+      "sha256": "4a9163146fe0d9e8bd392a4f5a2557f1f9016e01144d326ee35d1d8f128f3eaa",
       "bytes": 41697
     },
     "zh/practice/index.html": {
-      "sha256": "cf8ef5ed69948a24dc0dfe9470e84421dceaf1d9319e3867c97e889d4a8cf09c",
+      "sha256": "41747dff7986af947c2c8eb62e193d8e5c4c18c50389e04923d177f6f07b1bc8",
       "bytes": 56831
     },
     "zh/projects/index.html": {
-      "sha256": "a22441388a0e08f1f4c14b86ea0858b46225750a379cdfcd7319baaae35f8f05",
+      "sha256": "2ea2e6c99bad6a7b18bc357ed7052148bd493d604ad7609a961099145adaa529",
       "bytes": 39550
     },
     "zh/publications/index.html": {
-      "sha256": "93303e36a8753d8ed111ad60f5a6240ec3b2b720ee3102769c80e418dcf0f515",
+      "sha256": "20f8019a956332d8729ed472b90f7f38682365d91434e8c87ea38a8cda945fea",
       "bytes": 72507
     },
     "zh/reproducible-lab/index.html": {
-      "sha256": "a7759733aeb21dacd3f85036bea45374d6f1aee3484c6ee5fc3bcadeae8dd43d",
+      "sha256": "dbe9e93aec3526e9c3be464f5c02ab52a856a6fa45d62a440b5560e3cceaab1f",
       "bytes": 49751
     },
     "zh/research/index.html": {
-      "sha256": "fb15046ce1cd2ff7b3e4f35ee29bd7c515802f0c6f42e4c9cdab42014a95d5c2",
+      "sha256": "ae86531837966e02881521c44fe0e0e5aca41603ae341664589720584b3e40e5",
       "bytes": 43460
     },
     "zh/research-guide/index.html": {
-      "sha256": "e846539c167001af29b3883892bae4f78a8f49704cf437a5516f1d4978b00045",
+      "sha256": "a0061001513a041d6b6db03bca1443fe178d079abdfc3114ce864467498108ab",
       "bytes": 45665
     },
     "zh/resource/ai-health-ethics/index.html": {
-      "sha256": "97d906315cb57cdacf6826775119e3d31ecbf5d02b0d69f2e24af1263e0c5dd0",
+      "sha256": "98e7a69bc796e9c163837c9d73a1c5709653afb8e26862581b7d60a0e29735ca",
       "bytes": 46208
     },
     "zh/resource/aservic-principles/index.html": {
-      "sha256": "feeb6a06fc5bf697516f54b0630355249c5043b3cc1f188ab4a37501b9ccac54",
+      "sha256": "71f220d38674746875336bb6644d91b66066eb69d1ce765f93effe4257cecac7",
       "bytes": 47572
     },
     "zh/resource/cbt-spiritual/index.html": {
-      "sha256": "7e33debc0ee4f1585b31457e0fc429994c4ef412f1d9a4311c5c57830b8f4c0f",
+      "sha256": "4abf0d25825ff938a551ecf4e3f9b17dc0377e0431b70f98962cd3aa3f27c049",
       "bytes": 47960
     },
     "zh/resource/client-preference/index.html": {
-      "sha256": "5723adc923e593e499e6dfdcb68ef6d870b5ef31a45f4ad9571fef68d8b16b26",
+      "sha256": "601634d29d882b361f8fa433883d17c6aa26e9a2f12f0c15660e22b3534b2d2f",
       "bytes": 46380
     },
     "zh/resource/discovering-spirituality/index.html": {
-      "sha256": "1272a953426f4bb327156de75f21891d3ba858e1d8c7bdf55e7e83afdf39187a",
+      "sha256": "dec5fae0b2840650863ee6d074ce1edde3b1ee14260252d88a1662e67baf4c36",
       "bytes": 48247
     },
     "zh/resource/family-spiritual/index.html": {
-      "sha256": "24db870aa3565ff5e4bdfc505f6e0fcbdb4e744ce2ee3604dabed941dfd6e14e",
+      "sha256": "b119d8cc46e8cc38dc97d284d9cc9e84effa1fd612623b7346ff1a93c6ddbc82",
       "bytes": 47898
     },
     "zh/resource/group-counselling/index.html": {
-      "sha256": "2a0e73977268d12ae14454ad4a3d9fc29fd8cbcf12da60157e3ccd67a6bd0a8f",
+      "sha256": "1dd4a75c88189cc20c019c3fc4bae5a5a93c6ccaf8e0b442b109cdd608309adc",
       "bytes": 48269
     },
     "zh/resource/integration-meta-analysis/index.html": {
-      "sha256": "c9d94c62f30f6275914be6719b1935910794568fe3f4e86187e1909b0adf96b1",
+      "sha256": "6a95490464e6030af952e5df42187698f97280a0d264317464b385f93e9adf13",
       "bytes": 45369
     },
     "zh/resource/loneliness-spirituality/index.html": {
-      "sha256": "882fb063df35ca92ba96609ef0d2fc72c9004e7c6a95313d4997add846291a40",
+      "sha256": "4b06f479a51ec00486b04739ac2bd6160a9b929c32322686cb094ad86e982066",
       "bytes": 48223
     },
     "zh/resource/malaysia-ukm-counselling/index.html": {
-      "sha256": "0d58a7c8fdc374a327cd061f6ed2b965416edfaef7420c67c7ec85ddafddd79c",
+      "sha256": "ae3823aaf81bb57e772a8d66a45c104dbcf331f6b36e41952910f57e680c3c85",
       "bytes": 47701
     },
     "zh/resource/metaphysical-diversity/index.html": {
-      "sha256": "0b34789016049e9f0ba82a162fc207cbd6327685f25d3d7bfdf46a7f3bf44294",
+      "sha256": "e5b7755687dbb69881390da45891dd18f21fb63c2279016218809e8e1ba339cc",
       "bytes": 46506
     },
     "zh/resource/prisma-guidance/index.html": {
-      "sha256": "c17dc479b6b5f37072fcaa1ea9f65a8d2ddc30235873882eeae1e278cde40a24",
+      "sha256": "262d68d9f722e2e9ce01046890463d47eb298a9ed93cd3028384f0a3ccdeb94d",
       "bytes": 47088
     },
     "zh/resource/professional-training/index.html": {
-      "sha256": "43a4c5098ab7bad024e8898ad5cbeaf84df69719de913eec0ef00c2c9a4f7318",
+      "sha256": "61b6c591c4fc6824264dc1d72cc2da61a6b2898034b6fd630b2049509d7b8a83",
       "bytes": 48401
     },
     "zh/resource/sacred-tensions/index.html": {
-      "sha256": "414597c7daa26d6e1abebf778b9ba36f635e8109468238e9055c3a554a178939",
+      "sha256": "cb9b76e138e5b8953cae095fcdf8206d3faf74e12bbe52e34cb95948ccd8cf81",
       "bytes": 47094
     },
     "zh/resource/sipas/index.html": {
-      "sha256": "a4ed3e32b32713f3c4041d39f1c6f18f5b4f88ff917c56ed591f3f3c344cf7c7",
+      "sha256": "e3f95bf31a349b96554f777fe54adb94fe9545b7972ae6c8e1334753a9031fe6",
       "bytes": 47977
     },
     "zh/resource/spiritual-burnout/index.html": {
-      "sha256": "f8788b43b317b551b8146b0dd946536728c94a4fb3f52839ec00b0e833d46db9",
+      "sha256": "1c824fd94967cef0276b7d467525e17d001f74ddced96e0ec8b2979dfddd20e1",
       "bytes": 47983
     },
     "zh/resource/spiritual-competence/index.html": {
-      "sha256": "5e1a6185469a35666e07595830a2e5e8738d7e84ee50081182bd8883f5a153cf",
+      "sha256": "74ed12371a2089079e79e94c4e2e68aa7e2de4d0dfba509aede4bef20888a001",
       "bytes": 47377
     },
     "zh/resource/spiritual-counselling-book/index.html": {
-      "sha256": "b914e6de7f4dd846b0bace7b4edb6fbafc5c7ad3c0473f98677d9498d103a218",
+      "sha256": "e6417a626fd5910fe4c5d188f0ef52898611320d92ef652c0e8bc69e5e1a412b",
       "bytes": 48657
     },
     "zh/resource/spiritual-integrity/index.html": {
-      "sha256": "2cba8565bb23fa2f173af86bf19848bd49590cbe7768dbecbffc20357e987eb8",
+      "sha256": "2c97ed189958632cea692b876bd7d5f2fe5d244fc268addee1eee33d268ff830",
       "bytes": 48191
     },
     "zh/resource/spiritual-practices/index.html": {
-      "sha256": "585dd4ff42cf13b70caa16e5d687f60ec5be2b1bf03a73958902bfd17a91b4c2",
+      "sha256": "b0026863515968e1e214b03ee19b7c5642ce2c554542a4d3744b183705c8767d",
       "bytes": 47941
     },
     "zh/resource/spiritual-struggles/index.html": {
-      "sha256": "712b633a4bb3ee5cd29f6b453e48205016b5ec56e858a89a5c03be98b4f0b3e9",
+      "sha256": "db20bf6a94070b678dfb316d958bcb9bbc4fd0db9db55bde09763f842a962673",
       "bytes": 48059
     },
     "zh/resource/spirituality-dimensions/index.html": {
-      "sha256": "93fa45cc64770e914aa9f5fd8ee76293146788bc7449238203e5816030a2c30b",
+      "sha256": "62ea111b3c61759ff3d310c91c42ce8090f172b839098b05732069d632e0763f",
       "bytes": 48390
     },
     "zh/resource/techniques-101/index.html": {
-      "sha256": "3ab2e488340b47ff3bc0711d9e5106fa61c816c44fd5ed761578717dd51fd27a",
+      "sha256": "a031932e30c64d7d7a37b7f35da13e97036412db3c4396cd7dd97799137cba82",
       "bytes": 48242
     },
     "zh/resource/theories-book/index.html": {
-      "sha256": "0206c22fa9a8bd098d07dee440c9b2eda5e44b851bf3b64e0a399e0b3495b95c",
+      "sha256": "806ee708bcf0167ce988895860e75cd1b580cae1506d55d9340e5683fdd93744",
       "bytes": 46262
     },
     "zh/resource/three-waves/index.html": {
-      "sha256": "0c330266cff7c7f31dbcf10192917ea7d9d4b639ff9a18f8cebd5713b89c7b16",
+      "sha256": "19a1714fb56321b85e96aac60461ffd5d5fb34cd733c84bcd9cb43f211c06f51",
       "bytes": 47235
     },
     "zh/resource/toad-directory/index.html": {
-      "sha256": "499ace7e9fd8bd5b72ca623010bba23a22ae96735cdbc4f702fa5fea6ecedb90",
+      "sha256": "5163a0d8376ca73f8748c5302bc46177a493b3246af91da82d4b0c67e9a431ad",
       "bytes": 44895
     },
     "zh/resource/trauma-spirituality/index.html": {
-      "sha256": "2a7b73f67c069993e852e7f0addeb74e5af1be0d8885e4166381b22dc9a37e04",
+      "sha256": "dab8affa44bf9a148d390a89f773251203723a8f3b298e7f85d3f435c29c8c10",
       "bytes": 48269
     },
     "zh/saved/index.html": {
-      "sha256": "2afa974a5a959f9fceff35ed9788e4ce533507d6b2b88d28e5f2e9b5c1a90387",
+      "sha256": "aa025e302732b6cd1643e87757ac6d3c9aa92763f763aeb2052e862e4ae186ba",
       "bytes": 39826
     },
     "zh/search/index.html": {
-      "sha256": "116de210d449b7e1e594211c3e42a7c658c6ff4d5fea7b1fab99692f55cbb7ce",
+      "sha256": "7d7c1bdbfce9eded6bd7d4b285beb38675432b04211211654acdb081d79fca24",
       "bytes": 91504
     }
   }
