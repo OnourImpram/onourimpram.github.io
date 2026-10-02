@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "objectType": "catalogue-inventory-teaching-example",
+  "version": "0.8.0",
+  "sourceModule": "src/catalogue.mjs",
+  "sourceRecordHash": "caeea2a57e6e8bb5e79fea8a4be76c6e1e59d65fe89e4b304064aa76ec96c2cc",
+  "scope": "Selected catalogue only. Not a field census, systematic evidence map or clinical dataset.",
+  "dataFile": "catalogue.csv",
+  "dataSHA256": "a69cfc4226a3644a12e1cf59374dfe20a4abb01a9819fffb5c9cbca3197d21f9",
+  "codeSHA256": "f1467e30101864b90e6186b8f811acbcf6dc7f21fd2c7e65352b9fbde8ba3e8b",
+  "expectedResult": {
+    "records": 27,
+    "by_type": {
+      "book": 9,
+      "guide": 2,
+      "measure": 1,
+      "method": 1,
+      "study": 10,
+      "theory": 4
+    }
+  },
+  "participantData": false,
+  "scientificApproval": false,
+  "humanLanguageReview": false,
+  "rights": "No new licence is granted to underlying sources. Bibliographic export does not grant full-text, instrument or image reuse."
+}
