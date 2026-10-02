@@ -1,3 +1,19 @@
+# Elif Tasarım V25.2. Karar içeriği ve dengeli keşif
+
+2 Ekim 2026. Kullanıcının zenginleştirme planının mevcut arşivle desteklenebilir uygulaması.
+
+Ana sayfanın bölüm sırası ve beşli açılışı, genel seçkinin sekiz özgün fikri ile tek baza temsilcisi, bütün 26 arşiv fotoğrafı, 20 proje kimliği ve sekiz baza modeli korunur. Home.tsx ve bütün public varlıkları değişmedi. Öne çıkan gerçek iş kartları artık kategori adı yerine ayırt edici uygulama başlığı taşır.
+
+Pinterest ilk bakışta dört kompakt kart gösterir. Diğer kaynaklar yerel details ile açılır. Gruplar, kayıt kimlikleri ve derin bağlantılar korunur. Dış servis açıklaması ortaktır. Önizleme yalnız kullanıcının açık tercihiyle yüklenir.
+
+Gardırop, vestiyer, sehpa, pergola ve özel tasarım için mevcut rehber sistemine üçer özgün karar başlığı eklenmiştir. Sehpa örneği açıkça konsepttir. Fotoğrafın aşaması proje gruplamasından ayrılmış, kart, ayrıntı ve arama/saklanan kayıt gösterimleri ortaklaştırılmıştır. Malzeme sayfası gerçek numune kataloğu iddiası yerine dört karar başlığı sunar. Hakkımızda ve Atölye metinleri ayrıştırılmış, mevcut kısa görüşme yolunun açıklaması güçlendirilmiştir.
+
+Üç doğrulanmış müşteri hikâyesi, fiziksel numune fotoğrafları, ustaya atfedilen röportajlar ve ticari açılış bu sürümde tamamlandı sayılmaz. Bekleyen bilgiler docs/enrichment/STATUS.md içindedir. Yeni görüntü, sertifika, stok, fiyat, adres, müşteri veya garanti uydurulmamıştır.
+
+Etkin paket 0.25.2, kimlik v25.2-evidence-and-discovery. Derleyici tools/build-v25.cjs, manifest release-v25.json. release-v23.json tarihsel uyumluluk kopyasıdır. Noindex ve tek 3D Stüdyo korunur.
+
+## Önceki sürüm ve genel işletim kaydı
+
 # Elif Tasarım V25.1. Dengeli keşif düzeltmesi
 
 V25 üzerine kullanıcı geri bildirimi doğrultusunda düzenleme. Yeni marka dili veya yeni görsel üretimi değildir.

@@ -34,6 +34,27 @@ export const works:Work[]=[
  {"id": "ahsap-cizgili-tv-paneli", "title": "Ahşap çizgilerle sakin bir odak.", "category": "tv-unitesi", "images": ["r25"], "status": "work", "subtitle": "Ahşap görünümlü çizgili TV paneli", "description": "Dikey çizgili panel, yandaki gri raf alanı ve alttaki ışık çizgisi fotoğrafta birlikte görülüyor. Atölyenin paylaştığı tamamlanan işler arşivinden.", "features": ["Çizgili arka panel", "Yan raf yerleşimi", "Alt aydınlatma çizgisi"]},
  {"id": "isik-cerceveli-tv-unitesi", "title": "Işıkla çerçevelenen yaşam alanı.", "category": "tv-unitesi", "images": ["r26"], "status": "work", "subtitle": "Işık çerçeveli TV ünitesi", "description": "Gri ve ahşap görünümlü yüzeyler, raflar ve sıcak ışık hatlarıyla hazırlanmış TV duvarı. Atölyenin paylaştığı arşivden.", "features": ["Gri ve ahşap görünüm birlikteliği", "Çerçeveleyen aydınlatma", "Yan sergileme rafları"]},
 ];
+/** Photo labels describe the visible capture, not a newly asserted project completion date. */
+export type WorkPhotoEvidence={image:string;kind:'work'|'process';source:'workshop-archive';caption:string};
+const archivePhotoNotes:Record<string,{kind:'work'|'process';caption:string}>={
+ r07:{kind:'work',caption:'Kemerli açık orta bölüm, iki yanda cam vitrin ve altta çekmeceler aynı karede görülüyor.'},
+ r13:{kind:'work',caption:'L biçimindeki tezgâh, açık renkli dolaplar ve koyu cihaz yüzeyleri birlikte görülüyor.'},
+ r22:{kind:'work',caption:'Merkez TV paneli, yan raflar ve kapalı alt depolama aynı duvar üzerinde görülüyor.'},
+ r19:{kind:'process',caption:'Kamelyanın dış görünümü. Sahadaki uygulama fotoğrafı, teslim veya kullanım onayı değildir.'},
+ r16:{kind:'process',caption:'Kamelyanın köşesi, ahşap taşıyıcılar ve korkulukların sahadan görünümü.'},
+ r17:{kind:'process',caption:'Çatının altından ve yanından görünüm. Uygulama sahasındaki çalışma sürüyor.'},
+ r20:{kind:'process',caption:'Kamelyanın diğer dış görünümü. Bu kare saha uygulamasından paylaşılmıştır.'},
+ r23:{kind:'process',caption:'Çatı altı birleşimleri ve sahadaki çalışma gereçlerinin görüldüğü uygulama karesi.'},
+ r03:{kind:'process',caption:'Cam vitrin, raflar ve zemindeki kurulum gereçleri. Uygulama aşaması.'},
+ r11:{kind:'process',caption:'Mutfak dolaplarının yerleşimi ve koruyucu filmli yüzeyler. Son teslim fotoğrafı değildir.'},
+ r12:{kind:'process',caption:'Mutfak montajının diğer görünümü. Filmli kapaklardan nihai renk çıkarılamaz.'},
+ r15:{kind:'process',caption:'Mutfakta dolap, tezgâh ve cihaz yerlerinin kurulum sırasındaki görünümü.'}
+};
+export function workPhotoEvidence(work:Work,index=0):WorkPhotoEvidence{
+ const image=work.images[Number.isInteger(index)&&index>=0&&index<work.images.length?index:0];
+ const note=archivePhotoNotes[image];
+ return {image,source:'workshop-archive',kind:note?.kind||work.status,caption:note?.caption||work.subtitle+'. Paylaşılan atölye arşivinden.'};
+}
 export const featuredWorks=['sade-kose-mutfak','isikli-tv-unitesi','kemerli-kahve-kosesi','rafli-depolama','cam-kapak-giyinme','ahsap-bahce-kamelyasi'];
 export const concepts=[
  {id:'oval-orta-sehpa',title:'Bir araya gelmenin doğal hâli.',category:'sehpa',image:'concept-sehpa',subtitle:'Oval orta sehpa ve zigon fikri'},
@@ -68,6 +89,11 @@ export const pinterestReferences=[
  {id:'5i4CyJrkM',group:'shared',title:'Birlikte seçtiklerimiz 03',category:'ozel-tasarim'},
  {id:'1pLUfH5pe',group:'shared',title:'Birlikte seçtiklerimiz 04',category:'ozel-tasarim'},
 ] as const;
+/** The first four are an editorial window, never a destructive catalogue limit. */
+export function visiblePinterestReferences(group:string,expanded=false){
+ const entries=pinterestReferences.filter(p=>p.group===group);
+ return expanded?entries:entries.slice(0,4);
+}
 export const mainNavigation=[['/projeler','Çalışmalar'],['/kategoriler','Üretim Alanları'],['/ilham-modelleri','İlham Modelleri'],['/modelini-getir','Kendi Modeliniz'],['/tasarim-masasi','3D Stüdyo'],['/atolye','Atölye'],['/iletisim','İletişim']] as const;
 export function categoryName(id:string){return workCategories.find(c=>c.id===id)?.name||'Özel Tasarım'}
 export function modelHref(ref:string,category='ozel-tasarim',note='',sourceId=''){

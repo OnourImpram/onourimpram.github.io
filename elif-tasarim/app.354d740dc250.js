@@ -386,7 +386,7 @@ class App extends react_1.Component {
             (0, react_1.createElement)("a", { href: "#main-content", className: "skip-link", onClick: e => { e.preventDefault(); document.getElementById('main-content')?.focus(); } }, "\u0130\u00E7eri\u011Fe ge\u00E7"),
             (0, react_1.createElement)("div", { className: "preview-bar" },
                 (0, react_1.createElement)("span", null,
-                    "V25.1 / TASARIM \u00D6N\u0130ZLEMES\u0130 ",
+                    "V25.2 / TASARIM \u00D6N\u0130ZLEMES\u0130 ",
                     (0, react_1.createElement)("i", null),
                     (0, react_1.createElement)("span", { className: "v9-preview-detail" }, "Ger\u00E7ek i\u015F ar\u015Fivi, do\u011Frudan ileti\u015Fim")),
                 (0, react_1.createElement)("button", { onClick: () => this.setState({ info: true }) },
@@ -465,7 +465,7 @@ class App extends react_1.Component {
                         "elif tasar\u0131m",
                         (0, react_1.createElement)("span", null, "AT\u00D6LYE")),
                     (0, react_1.createElement)("div", { className: "footer-bottom" },
-                        (0, react_1.createElement)("span", null, "EL\u0130F TASARIM \u00B7 V25.1 / 2026"),
+                        (0, react_1.createElement)("span", null, "EL\u0130F TASARIM \u00B7 V25.2 / 2026"),
                         (0, react_1.createElement)("div", null,
                             nav('/gizlilik', 'Gizlilik ve dış servisler'),
                             (0, react_1.createElement)("button", { onClick: () => this.setState({ info: true }) }, "Cihaz kay\u0131tlar\u0131n\u0131 y\u00F6net")),
@@ -491,13 +491,13 @@ class App extends react_1.Component {
                             (0, react_1.createElement)("small", null,
                                 (0, portfolio_1.categoryName)(x.category),
                                 " \u00B7 ",
-                                x.kind === 'page' ? 'Stüdyo ve rehber' : x.kind === 'concept' ? 'Konsept model' : x.kind === 'reference' ? 'Pinterest referansı' : 'Atölye arşivi')),
+                                x.kind === 'page' ? 'Stüdyo ve rehber' : x.kind === 'concept' ? 'Konsept model' : x.kind === 'reference' ? 'Pinterest referansı' : x.photoKind === 'process' ? 'Uygulama aşaması' : 'Atölye arşivi')),
                         (0, react_1.createElement)(ui_1.Icon, { name: "diagonal" }))),
                     !results.length && (0, react_1.createElement)("p", { className: "empty-state" }, "Sonu\u00E7 bulunamad\u0131. Ba\u015Fka bir kelime deneyin.")),
                 (0, react_1.createElement)(ui_1.TextLink, { to: '/arama?q=' + encodeURIComponent(s.searchQuery.trim()), navigate: this.navigate }, "T\u00FCm sonu\u00E7lar\u0131 g\u00F6r")),
             s.info && (0, react_1.createElement)(ui_1.Dialog, { title: "Bilgi ve cihaz kay\u0131tlar\u0131", onClose: () => this.setState({ info: false }) },
                 (0, react_1.createElement)("div", { className: "info-dialog" },
-                    (0, react_1.createElement)(ui_1.Eyebrow, null, "V25.1 / \u015EEFFAF B\u0130R BA\u015ELANGI\u00C7"),
+                    (0, react_1.createElement)(ui_1.Eyebrow, null, "V25.2 / \u015EEFFAF B\u0130R BA\u015ELANGI\u00C7"),
                     (0, react_1.createElement)("p", null,
                         "Yunus Usta'n\u0131n kullan\u0131c\u0131 taraf\u0131ndan payla\u015F\u0131lan i\u015F telefonu ",
                         project_1.business.display,
@@ -1368,8 +1368,8 @@ class PinterestPreview extends react_1.Component {
             return null;
         const doc = '<!doctype html><html><head><meta name="referrer" content="no-referrer"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;background:#f6f1e8;display:flex;justify-content:center;padding:12px;font:14px/1.6 Arial;color:#50412e}a{color:inherit}</style></head><body><a href="' + pin.canonical + '" target="_blank" rel="noopener noreferrer" data-pin-do="embedPin" data-pin-width="large">Pinterest kaynağını aç</a><script async defer src="https://assets.pinterest.com/js/pinit.js"></script></body></html>';
         return (0, react_1.createElement)(react_1.Fragment, null,
-            (0, react_1.createElement)("p", { className: "v7-pin-disclosure" }, "Y\u00FCklemeyi se\u00E7erseniz Pinterest\u2019e ba\u011Flan\u0131l\u0131r. IP ve taray\u0131c\u0131 bilgileri aktar\u0131labilir, d\u0131\u015F servis \u00E7erez kullanabilir. Bu bir Elif uygulama foto\u011Fraf\u0131 de\u011Fildir."),
-            (0, react_1.createElement)("button", { className: "pin-preview-button", onClick: () => this.setState({ open: true }) },
+            !this.props.disclosureId && (0, react_1.createElement)("p", { className: "v7-pin-disclosure" }, "Y\u00FCklemeyi se\u00E7erseniz Pinterest\u2019e ba\u011Flan\u0131l\u0131r. IP ve taray\u0131c\u0131 bilgileri aktar\u0131labilir, d\u0131\u015F servis \u00E7erez kullanabilir. Bu bir Elif uygulama foto\u011Fraf\u0131 de\u011Fildir."),
+            (0, react_1.createElement)("button", { className: "pin-preview-button", "aria-describedby": this.props.disclosureId, onClick: () => this.setState({ open: true }) },
                 (0, react_1.createElement)(ui_1.Icon, { name: "plus", size: 17 }),
                 "Pinterest g\u00F6rselini y\u00FCkle"),
             this.state.open && (0, react_1.createElement)(ui_1.Dialog, { title: pin.label, onClose: () => this.setState({ open: false }) },
@@ -1411,7 +1411,7 @@ function WorkCard({ work: w, actions: a, featured = false, index = 0 }) {
     return (0, react_1.createElement)("article", { className: 'work-card' + (featured ? ' featured-work' : ''), "data-work": w.id },
         (0, react_1.createElement)(ui_1.Link, { to: '/proje/' + w.id, navigate: a.navigate, className: "work-photo" },
             (0, react_1.createElement)(VImage, { asset: w.images[0], alt: w.subtitle + ', atölyeden paylaşılan fotoğraf', sizes: "(max-width: 680px) 90vw, (max-width: 1024px) 45vw, 30vw" }),
-            (0, react_1.createElement)(SourceTag, { kind: w.id === 'ahsap-bahce-kamelyasi' ? 'process' : w.status }),
+            (0, react_1.createElement)(SourceTag, { kind: (0, portfolio_1.workPhotoEvidence)(w).kind }),
             (0, react_1.createElement)("span", { className: "work-open" },
                 (0, react_1.createElement)(ui_1.Icon, { name: "diagonal", size: 22 }))),
         (0, react_1.createElement)("div", { className: "work-caption" },
@@ -1419,8 +1419,8 @@ function WorkCard({ work: w, actions: a, featured = false, index = 0 }) {
             (0, react_1.createElement)("div", null,
                 (0, react_1.createElement)("span", { className: "work-category" }, (0, portfolio_1.categoryName)(w.category)),
                 (0, react_1.createElement)("h3", null,
-                    (0, react_1.createElement)(ui_1.Link, { to: '/proje/' + w.id, navigate: a.navigate }, featured ? (0, portfolio_1.categoryName)(w.category) : w.title)),
-                (0, react_1.createElement)("p", null, w.subtitle),
+                    (0, react_1.createElement)(ui_1.Link, { to: '/proje/' + w.id, navigate: a.navigate }, featured ? w.subtitle : w.title)),
+                (0, react_1.createElement)("p", null, featured ? w.title : w.subtitle),
                 (0, react_1.createElement)("p", { className: "work-gallery-count" },
                     w.images.length,
                     " foto\u011Fraf",
@@ -1536,38 +1536,54 @@ const service_content_1 = require("../lib/service-content");
 const portfolio_1 = require("../lib/portfolio");
 const ui_1 = require("./ui");
 const PortfolioUI_1 = require("./PortfolioUI");
-function ServiceGuide({ category, navigate }) { const x = service_content_1.serviceContent[category]; if (!x)
-    return null; const project = portfolio_1.works.find(p => p.id === x.project); return (0, react_1.createElement)("section", { className: "wrap seo-service-guide", "aria-label": "\u00D6zel \u00FCretim karar rehberi" },
-    (0, react_1.createElement)("header", null,
-        (0, react_1.createElement)(ui_1.Eyebrow, null, "ALANINIZA G\u00D6RE D\u00DC\u015E\u00DCNEL\u0130M"),
-        (0, react_1.createElement)("h2", null, x.title),
-        (0, react_1.createElement)("p", null, x.intro)),
-    (0, react_1.createElement)("div", { className: "seo-decisions" }, x.sections.map(([title, text], i) => (0, react_1.createElement)("article", { key: title },
-        (0, react_1.createElement)("span", { className: "eyebrow" },
-            "0",
-            i + 1),
-        (0, react_1.createElement)("h3", null, title),
-        (0, react_1.createElement)("p", null, text)))),
-    (0, react_1.createElement)("div", { className: "seo-real-example" },
-        (0, react_1.createElement)("div", null,
-            (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: project.images[0], alt: project.subtitle + '. ' + project.features.join(', ') + '. Atölyeden paylaşılan çalışma.', sizes: "(max-width: 800px) 90vw, 40vw" }),
-            (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: project.status })),
-        (0, react_1.createElement)("div", null,
-            (0, react_1.createElement)(ui_1.Eyebrow, null, "KEND\u0130 AR\u015E\u0130V\u0130M\u0130ZDEN"),
-            (0, react_1.createElement)("h3", null, project.subtitle),
-            (0, react_1.createElement)("p", null, project.description),
-            (0, react_1.createElement)(ui_1.TextLink, { to: '/proje/' + project.id, navigate: navigate }, "Ger\u00E7ek \u00E7al\u0131\u015Fmay\u0131 incele"),
-            (0, react_1.createElement)("p", { className: "field-hint" }, "Foto\u011Frafta g\u00F6r\u00FCnen d\u00FCzeni anlat\u0131yoruz. Bu i\u015Fin m\u00FC\u015Fteri hik\u00E2yesi, kesin \u00F6l\u00E7\u00FCs\u00FC ve teknik malzeme kayd\u0131 hen\u00FCz payla\u015F\u0131lmad\u0131."))),
-    (0, react_1.createElement)("div", { className: "seo-preparation" },
-        (0, react_1.createElement)("h3", null, "G\u00F6r\u00FC\u015Fme \u00F6ncesi k\u00FC\u00E7\u00FCk bir haz\u0131rl\u0131k."),
-        (0, react_1.createElement)("ul", null, x.preparation.map(v => (0, react_1.createElement)("li", { key: v }, v))),
-        (0, react_1.createElement)("p", null, "Hepsini haz\u0131rlaman\u0131z gerekmiyor. Bildiklerinizle ba\u015Flayabilirsiniz."),
-        (0, react_1.createElement)(ui_1.ButtonLink, { to: '/modelini-getir?kategori=' + category, navigate: navigate }, "Bu bilgilerle fikrimi haz\u0131rlayay\u0131m"),
-        (0, react_1.createElement)("p", { className: "field-hint" }, x.note),
-        (0, react_1.createElement)("div", { className: "seo-guide-links" },
-            (0, react_1.createElement)(ui_1.TextLink, { to: "/rehber/olcu-alma", navigate: navigate }, "\u00D6l\u00E7\u00FC haz\u0131rl\u0131\u011F\u0131"),
-            (0, react_1.createElement)(ui_1.TextLink, { to: "/rehber/malzeme-secimi", navigate: navigate }, "Malzeme karar\u0131"),
-            (0, react_1.createElement)(ui_1.TextLink, { to: "/hizmet-ve-teklif", navigate: navigate }, "Teklif kapsam\u0131")))); }
+function ServiceGuide({ category, navigate }) {
+    const x = service_content_1.serviceContent[category];
+    if (!x)
+        return null;
+    const project = x.project ? portfolio_1.works.find(p => p.id === x.project) : undefined;
+    const concept = x.concept ? portfolio_1.concepts.find(c => c.id === x.concept) : undefined;
+    const photo = project ? (0, portfolio_1.workPhotoEvidence)(project) : undefined;
+    return (0, react_1.createElement)("section", { className: "wrap seo-service-guide", "aria-label": "\u00D6zel \u00FCretim karar rehberi" },
+        (0, react_1.createElement)("header", null,
+            (0, react_1.createElement)(ui_1.Eyebrow, null, "ALANINIZA G\u00D6RE D\u00DC\u015E\u00DCNEL\u0130M"),
+            (0, react_1.createElement)("h2", null, x.title),
+            (0, react_1.createElement)("p", null, x.intro)),
+        (0, react_1.createElement)("div", { className: 'seo-decisions' + (x.sections.length === 3 ? ' three' : '') }, x.sections.map(([title, text], i) => (0, react_1.createElement)("article", { key: title },
+            (0, react_1.createElement)("span", { className: "eyebrow" },
+                "0",
+                i + 1),
+            (0, react_1.createElement)("h3", null, title),
+            (0, react_1.createElement)("p", null, text)))),
+        project && photo && (0, react_1.createElement)("div", { className: "seo-real-example" },
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: photo.image, alt: project.subtitle + '. ' + photo.caption, sizes: "(max-width: 800px) 90vw, 40vw" }),
+                (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: photo.kind })),
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)(ui_1.Eyebrow, null, "KEND\u0130 AR\u015E\u0130V\u0130M\u0130ZDEN"),
+                (0, react_1.createElement)("h3", null, project.subtitle),
+                (0, react_1.createElement)("p", null, project.description),
+                (0, react_1.createElement)(ui_1.TextLink, { to: '/proje/' + project.id, navigate: navigate }, "Ger\u00E7ek \u00E7al\u0131\u015Fmay\u0131 incele"),
+                (0, react_1.createElement)("p", { className: "field-hint" }, "Foto\u011Frafta g\u00F6r\u00FCnen d\u00FCzeni anlat\u0131yoruz. M\u00FC\u015Fteri hik\u00E2yesi, kesin \u00F6l\u00E7\u00FC ve teknik malzeme kayd\u0131 de\u011Fildir."))),
+        concept && (0, react_1.createElement)("div", { className: "seo-real-example seo-concept-example" },
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: concept.image, alt: concept.subtitle + '. Konsept model, tamamlanmış iş değildir.', sizes: "(max-width: 800px) 90vw, 40vw" }),
+                (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: "concept" })),
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)(ui_1.Eyebrow, null, "KONSEPTTEN B\u0130R F\u0130K\u0130R"),
+                (0, react_1.createElement)("h3", null, concept.subtitle),
+                (0, react_1.createElement)("p", null, "Birlikte ve ayr\u0131 kullan\u0131m d\u00FC\u015F\u00FCncesini bu temsili g\u00F6rselden ba\u015Flayarak konu\u015Fabiliriz. Bu, at\u00F6lyenin tamamlad\u0131\u011F\u0131 bir proje de\u011Fildir."),
+                (0, react_1.createElement)(ui_1.TextLink, { to: '/ilham-modelleri?hedef=' + encodeURIComponent('concept:' + concept.id), navigate: navigate }, "Bu fikri incele"))),
+        (0, react_1.createElement)("div", { className: "seo-preparation" },
+            (0, react_1.createElement)("h3", null, "G\u00F6r\u00FC\u015Fme \u00F6ncesi k\u00FC\u00E7\u00FCk bir haz\u0131rl\u0131k."),
+            (0, react_1.createElement)("ul", null, x.preparation.map(v => (0, react_1.createElement)("li", { key: v }, v))),
+            (0, react_1.createElement)("p", null, "Hepsini haz\u0131rlaman\u0131z gerekmiyor. Bildiklerinizle ba\u015Flayabilirsiniz."),
+            (0, react_1.createElement)(ui_1.ButtonLink, { to: '/modelini-getir?kategori=' + category, navigate: navigate }, "Bu bilgilerle fikrimi haz\u0131rlayay\u0131m"),
+            (0, react_1.createElement)("p", { className: "field-hint" }, x.note),
+            (0, react_1.createElement)("div", { className: "seo-guide-links" },
+                (0, react_1.createElement)(ui_1.TextLink, { to: "/rehber/olcu-alma", navigate: navigate }, "\u00D6l\u00E7\u00FC haz\u0131rl\u0131\u011F\u0131"),
+                (0, react_1.createElement)(ui_1.TextLink, { to: "/rehber/malzeme-secimi", navigate: navigate }, "Malzeme karar\u0131"),
+                (0, react_1.createElement)(ui_1.TextLink, { to: "/hizmet-ve-teklif", navigate: navigate }, "Teklif kapsam\u0131"))));
+}
 function PreparationHint({ category }) { const x = service_content_1.serviceContent[category]; return x ? (0, react_1.createElement)("details", { className: "seo-form-hint" },
     (0, react_1.createElement)("summary", null, "Bu \u00FCr\u00FCn i\u00E7in hangi bilgiyi payla\u015Fabilirim?"),
     (0, react_1.createElement)("ul", null, x.preparation.map(v => (0, react_1.createElement)("li", { key: v }, v))),
@@ -3920,7 +3936,9 @@ exports.pinLookup = { "3T8k8Pwyv": { "canonical": "https://www.pinterest.com/pin
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mainNavigation = exports.pinterestReferences = exports.homeConcepts = exports.concepts = exports.featuredWorks = exports.works = exports.workCategories = void 0;
+exports.workPhotoEvidence = workPhotoEvidence;
 exports.inspirationConcepts = inspirationConcepts;
+exports.visiblePinterestReferences = visiblePinterestReferences;
 exports.categoryName = categoryName;
 exports.modelHref = modelHref;
 const beds_1 = require("./beds");
@@ -3957,6 +3975,25 @@ exports.works = [
     { "id": "ahsap-cizgili-tv-paneli", "title": "Ahşap çizgilerle sakin bir odak.", "category": "tv-unitesi", "images": ["r25"], "status": "work", "subtitle": "Ahşap görünümlü çizgili TV paneli", "description": "Dikey çizgili panel, yandaki gri raf alanı ve alttaki ışık çizgisi fotoğrafta birlikte görülüyor. Atölyenin paylaştığı tamamlanan işler arşivinden.", "features": ["Çizgili arka panel", "Yan raf yerleşimi", "Alt aydınlatma çizgisi"] },
     { "id": "isik-cerceveli-tv-unitesi", "title": "Işıkla çerçevelenen yaşam alanı.", "category": "tv-unitesi", "images": ["r26"], "status": "work", "subtitle": "Işık çerçeveli TV ünitesi", "description": "Gri ve ahşap görünümlü yüzeyler, raflar ve sıcak ışık hatlarıyla hazırlanmış TV duvarı. Atölyenin paylaştığı arşivden.", "features": ["Gri ve ahşap görünüm birlikteliği", "Çerçeveleyen aydınlatma", "Yan sergileme rafları"] },
 ];
+const archivePhotoNotes = {
+    r07: { kind: 'work', caption: 'Kemerli açık orta bölüm, iki yanda cam vitrin ve altta çekmeceler aynı karede görülüyor.' },
+    r13: { kind: 'work', caption: 'L biçimindeki tezgâh, açık renkli dolaplar ve koyu cihaz yüzeyleri birlikte görülüyor.' },
+    r22: { kind: 'work', caption: 'Merkez TV paneli, yan raflar ve kapalı alt depolama aynı duvar üzerinde görülüyor.' },
+    r19: { kind: 'process', caption: 'Kamelyanın dış görünümü. Sahadaki uygulama fotoğrafı, teslim veya kullanım onayı değildir.' },
+    r16: { kind: 'process', caption: 'Kamelyanın köşesi, ahşap taşıyıcılar ve korkulukların sahadan görünümü.' },
+    r17: { kind: 'process', caption: 'Çatının altından ve yanından görünüm. Uygulama sahasındaki çalışma sürüyor.' },
+    r20: { kind: 'process', caption: 'Kamelyanın diğer dış görünümü. Bu kare saha uygulamasından paylaşılmıştır.' },
+    r23: { kind: 'process', caption: 'Çatı altı birleşimleri ve sahadaki çalışma gereçlerinin görüldüğü uygulama karesi.' },
+    r03: { kind: 'process', caption: 'Cam vitrin, raflar ve zemindeki kurulum gereçleri. Uygulama aşaması.' },
+    r11: { kind: 'process', caption: 'Mutfak dolaplarının yerleşimi ve koruyucu filmli yüzeyler. Son teslim fotoğrafı değildir.' },
+    r12: { kind: 'process', caption: 'Mutfak montajının diğer görünümü. Filmli kapaklardan nihai renk çıkarılamaz.' },
+    r15: { kind: 'process', caption: 'Mutfakta dolap, tezgâh ve cihaz yerlerinin kurulum sırasındaki görünümü.' }
+};
+function workPhotoEvidence(work, index = 0) {
+    const image = work.images[Number.isInteger(index) && index >= 0 && index < work.images.length ? index : 0];
+    const note = archivePhotoNotes[image];
+    return { image, source: 'workshop-archive', kind: note?.kind || work.status, caption: note?.caption || work.subtitle + '. Paylaşılan atölye arşivinden.' };
+}
 exports.featuredWorks = ['sade-kose-mutfak', 'isikli-tv-unitesi', 'kemerli-kahve-kosesi', 'rafli-depolama', 'cam-kapak-giyinme', 'ahsap-bahce-kamelyasi'];
 exports.concepts = [
     { id: 'oval-orta-sehpa', title: 'Bir araya gelmenin doğal hâli.', category: 'sehpa', image: 'concept-sehpa', subtitle: 'Oval orta sehpa ve zigon fikri' },
@@ -3992,6 +4029,10 @@ exports.pinterestReferences = [
     { id: '5i4CyJrkM', group: 'shared', title: 'Birlikte seçtiklerimiz 03', category: 'ozel-tasarim' },
     { id: '1pLUfH5pe', group: 'shared', title: 'Birlikte seçtiklerimiz 04', category: 'ozel-tasarim' },
 ];
+function visiblePinterestReferences(group, expanded = false) {
+    const entries = exports.pinterestReferences.filter(p => p.group === group);
+    return expanded ? entries : entries.slice(0, 4);
+}
 exports.mainNavigation = [['/projeler', 'Çalışmalar'], ['/kategoriler', 'Üretim Alanları'], ['/ilham-modelleri', 'İlham Modelleri'], ['/modelini-getir', 'Kendi Modeliniz'], ['/tasarim-masasi', '3D Stüdyo'], ['/atolye', 'Atölye'], ['/iletisim', 'İletişim']];
 function categoryName(id) { return exports.workCategories.find(c => c.id === id)?.name || 'Özel Tasarım'; }
 function modelHref(ref, category = 'ozel-tasarim', note = '', sourceId = '') {
@@ -4321,7 +4362,7 @@ const portfolio_1 = require("./portfolio");
 const pinterest_1 = require("./pinterest");
 const domain_1 = require("./domain");
 const target = (id) => '/ilham-modelleri?hedef=' + encodeURIComponent(id);
-exports.selectionEntries = [...portfolio_1.works.map(w => ({ id: 'work:' + w.id, title: w.subtitle, category: w.category, image: w.images[0], kind: 'work', path: '/proje/' + w.id })), ...portfolio_1.concepts.map(c => ({ id: 'concept:' + c.id, title: c.subtitle, category: c.category, image: c.image, kind: 'concept', path: target('concept:' + c.id) })), ...portfolio_1.pinterestReferences.map(p => ({ id: 'pin:' + p.id, title: pinterest_1.pinLookup[p.id]?.label || p.title, category: p.category, kind: 'reference', path: target('pin:' + p.id) }))];
+exports.selectionEntries = [...portfolio_1.works.map(w => ({ id: 'work:' + w.id, title: w.subtitle, category: w.category, image: w.images[0], photoKind: (0, portfolio_1.workPhotoEvidence)(w).kind, kind: 'work', path: '/proje/' + w.id })), ...portfolio_1.concepts.map(c => ({ id: 'concept:' + c.id, title: c.subtitle, category: c.category, image: c.image, kind: 'concept', path: target('concept:' + c.id) })), ...portfolio_1.pinterestReferences.map(p => ({ id: 'pin:' + p.id, title: pinterest_1.pinLookup[p.id]?.label || p.title, category: p.category, kind: 'reference', path: target('pin:' + p.id) }))];
 const pages = [
     { id: 'page:basic-contact', title: 'Kolay iletişim. Form olmadan başlayın', category: 'ozel-tasarim', kind: 'page', path: '/kolay-iletisim', keywords: 'e-posta mail email telefon SMS WhatsApp iletişim' },
     { id: 'page:service', title: 'Hizmet ve teklif rehberi', category: 'ozel-tasarim', kind: 'page', path: '/hizmet-ve-teklif', keywords: 'bütçe fiyat nakliye montaj keşif garanti kapora ödeme hizmet bölgesi' },
@@ -4365,7 +4406,32 @@ exports.serviceContent = {
             ['Kablolar gizlensin, erişim kaybolmasın.', 'Priz, anten ve veri noktalarının fotoğrafını paylaşın. Günlük kullanımda görünmeyen bir kablonun bakım veya cihaz değişiminde erişilebilir olması da önemlidir. Panel ve dolabın arkasına nasıl ulaşılacağını tasarım görüşmesinde sorun.'],
             ['Sergileme ile depolamayı ayırın.', 'Kitap, dekor ve kapalı tutulacak cihazlar için farklı alanlar gerekebilir. Açık raf, cam bölüm ve kapaklı alt dolap seçeneklerini neyi kullanacağınız üzerinden karşılaştırın. Aydınlatma ve elektrik bağlantıları ayrı iş kapsamlarıdır.'],
             ['Duvar ve geçiş alanı belirleyicidir.', 'Duvarın eni, kapı açılımı, süpürgelik ve yakın mobilyalar yerleşimi etkiler. Duvara sabitleme uygunluğu ve taşıma ihtiyacı yerinde kontrol edilmelidir. Bir arşiv fotoğrafı duvarınızın taşıma kapasitesini kanıtlamaz.']
-        ], preparation: ['TV marka/modeli, ayak veya askı tercihi.', 'Ses sistemi ve diğer cihazların listesi.', 'Duvarın tamamı ve bağlantı noktalarının fotoğrafı.', 'Saklanacak eşyalar ve açıkta sergilenecek parçalar.'], project: 'isikli-tv-unitesi', note: 'Üretim ölçüsü, duvar bağlantısı ve cihaz gereklilikleri ayrıca kontrol edilir. Görseldeki TV, dekor ve elektrik işleri kendiliğinden teklif kapsamına girmez.' }
+        ], preparation: ['TV marka/modeli, ayak veya askı tercihi.', 'Ses sistemi ve diğer cihazların listesi.', 'Duvarın tamamı ve bağlantı noktalarının fotoğrafı.', 'Saklanacak eşyalar ve açıkta sergilenecek parçalar.'], project: 'isikli-tv-unitesi', note: 'Üretim ölçüsü, duvar bağlantısı ve cihaz gereklilikleri ayrıca kontrol edilir. Görseldeki TV, dekor ve elektrik işleri kendiliğinden teklif kapsamına girmez.' },
+    'gardrop': { title: 'Gardırop. Önce içinde yaşayacak düzen.', intro: 'Askıdaki kıyafetler, katlanan parçalar ve küçük eşyalar aynı depolama ihtiyacı değildir. Dış görünümü seçmeden önce içeride neye yer ayıracağınızı konuşalım.', sections: [
+            ['Askı, raf ve çekmeceyi ayrı düşünün.', 'Uzun giysiler, katlanmış kıyafetler, çantalar ve küçük parçalar için önceliklerinizi sıralayın. Günlük kullandıklarınız ile mevsimlik sakladıklarınızın aynı yerde durması gerekmeyebilir. İç düzeni eşya listenizle değerlendirelim.'],
+            ['Kapak açıkken odanız nasıl kullanılıyor?', 'Dolabın karşısındaki yatak veya diğer mobilyalar, oda kapısı ve geçiş yönü birlikte ele alınır. Sürgülü veya menteşeli kapağı yalnız görünümüne göre değil, açıldığında ulaşmak istediğiniz bölmelere göre konuşun. Kesin açıklık ve donanım uygunluğu ayrıca teyit edilir.'],
+            ['Görünür olanla saklanacak olanı ayırın.', 'Açık raf, cam kapak ve kapalı bölmeler farklı tercihlerdir. Cam kapaklı köşe uygulamasında raf ve askı alanları görülüyor. İçerideki eşyalarınızın ne kadar görünmesini istediğinizi bu örnek üzerinden anlatabilirsiniz.']
+        ], preparation: ['Askıda, rafta ve çekmecede tutacağınız eşya grupları.', 'Dolap duvarını, oda kapısını ve karşı mobilyayı gösteren fotoğraf.', 'Varsa yaklaşık en, derinlik ve yükseklik.', 'Açık raf, cam veya kapalı kapak tercihiniz.'], project: 'cam-kapak-giyinme', note: 'Bu bir görüşme hazırlığıdır. Son ölçü, iç bölmeler, sabitleme ve donanım kapasitesi üretim öncesinde ayrıca değerlendirilir.' },
+    'vestiyer': { title: 'Antre. Evinize nasıl giriyorsunuz?', intro: 'Montu bırakmak, ayakkabıyı değiştirmek, anahtarı bulmak. Girişteki düzeni günlük hareketlerinizden başlayarak birlikte düşünelim.', sections: [
+            ['Günlük eşyaları ayrı bir gruba alın.', 'Sık kullanılan ayakkabı ve montlarla yedek ya da mevsimlik eşyaları ayırın. Açık askılık mı, kapalı depolama mı sizin için daha kullanışlı olacak? Çanta ve küçük eşyaların yerini de ilk konuşmaya katın.'],
+            ['Oturma ve servis yüzeyi ihtiyacını tarif edin.', 'Ayakkabı değiştirirken oturmak, kısa süreli çanta bırakmak veya ayna kullanmak isteyebilirsiniz. Bank, çekmece ve rafın birlikte çözülüp çözülemeyeceği alanla değerlendirilir. Bir fotoğraf oturma elemanının taşıma kapasitesini göstermez.'],
+            ['Kapı açılımını ve erişilecek noktaları gösterin.', 'Giriş kapısının hareketi, süpürgelik, priz ve erişimi korunacak pano gibi noktaları fotoğrafa dahil edin. Depolama eklerken geçişi ve günlük erişimi nasıl koruyacağınızı görüşelim.']
+        ], preparation: ['Giriş alanının ve kapının açık hâlinin fotoğrafı.', 'Günlük mont, ayakkabı ve çanta ihtiyacı.', 'Oturma, ayna ve küçük eşya yüzeyi tercihi.', 'Varsa yaklaşık duvar ölçüsü ve erişilecek noktalar.'], project: 'rafli-depolama', note: 'Arşiv örneği açık raflı depolamadır. Fotoğrafın özgün kullanım yerini varsaymıyoruz. Sizin antrenize uygunluk, ölçü ve uygulama koşullarıyla ayrıca belirlenir.' },
+    'sehpa': { title: 'Sehpa ve zigon. Bir arada mı, ayrı ayrı mı?', intro: 'Bir orta yüzey mi, koltuğun yanına taşınabilen küçük parçalar mı gerekiyor? Seçimi yalnız form üzerinden değil, kullanım senaryonuzla birlikte yapalım.', sections: [
+            ['Kullanacağınız anı anlatın.', 'Kitap bırakmak, içecek servis etmek veya misafir geldiğinde farklı noktalara yüzey açmak ayrı ihtiyaçlar. Tek orta sehpa, yan sehpa ve zigon seçeneklerini hangi anda kullanacağınızı düşünerek karşılaştırın.'],
+            ['Kapalı ve açılmış düzeni birlikte düşünün.', 'İç içe duran parçaların ayrıldığında nerede kullanılacağını ve kullanılmadığında nerede duracağını tarif edin. Oturma düzeni ile dolaşım alanı, yalnız bir sehpanın en ve boyundan daha fazla bilgi verir.'],
+            ['Kenar ve yüzey tercihinizi belirleyin.', 'Oval ya da köşeli form, açık veya koyu ton ve depolama isteği konuşulabilir. Kenar biçimi tek başına güvenlik garantisi değildir. Gerçek malzeme, yüzey işlemi ve bakım koşulları numune ve ürün bilgisiyle netleşir.']
+        ], preparation: ['Koltuk düzenini ve mevcut sehpayı gösteren fotoğraf.', 'Tek yüzey veya ayrı kullanılan parçalar tercihi.', 'Kullanılmadığında saklama veya iç içe toplama ihtiyacı.', 'Beğendiğiniz form ve değiştirmek istediğiniz ayrıntı.'], concept: 'oval-orta-sehpa', note: 'Bu kategorinin örneği bir konsept görseldir, tamamlanmış atölye işi değildir. Üretim ölçüsü, gerçek malzeme ve kullanılabilirlik ayrıca değerlendirilir.' },
+    'pergola': { title: 'Açık alan. Önce yeri ve koşulları tanıyalım.', intro: 'Bir bahçe fotoğrafı iyi bir başlangıçtır. Zemin, çevre ve kullanım koşullarını bilmeden taşıyıcı veya bağlantı çözümü belirlemeyelim.', sections: [
+            ['Alanı ve erişimi gösterin.', 'Çalışmanın düşünüldüğü yer, çevresindeki yapılar, zemin ve taşıma erişimini gösteren fotoğraflarla başlayın. İlk ölçüler saha değerlendirmesinin ve teknik projenin yerine geçmez.'],
+            ['Kullanım ve maruziyeti tarif edin.', 'Oturma, gölgelenme veya başka bir kullanım mı düşünüyorsunuz? Alanın yağış ve rüzgârla ilişkisi, çatı yaklaşımı ve drenaj gereksinimi yetkin teknik değerlendirmeyle ele alınmalıdır.'],
+            ['Kapsamı baştan ayırın.', 'Ahşap yapı, zemin hazırlığı, çatı, elektrik ve bakım farklı iş kalemleri olabilir. Gerekli izinler, taşıyıcı hesapları ve uygulama sorumlulukları netleşmeden bir görsel üretim onayı değildir.']
+        ], preparation: ['Alanı ve çevresini gösteren genel fotoğraflar.', 'Zemin hakkında bildikleriniz ve erişim koşulları.', 'Kullanım amacınız ve yaklaşık yerleşim düşünceniz.'], project: 'ahsap-bahce-kamelyasi', note: 'Açıklık, taşıma kapasitesi veya bağlantı hesabı burada verilmez. Güvenli uygulama için saha koşulları, teknik proje ve gerekli izinler ayrıca değerlendirilir.' },
+    'ozel-tasarim': { title: 'Özel tasarım. Fikrin hangi ayrıntısını koruyalım?', intro: 'Hazır bir çiziminiz olması gerekmiyor. Bir fotoğraf, bağlantı ya da birkaç cümleyle neyi sevdiğinizi anlatabilirsiniz.', sections: [
+            ['Beğendiğiniz özelliği seçin.', 'Form, doku, depolama düzeni veya hareketli bir parça. Referansta sizin için asıl önemli olan ayrıntıyı tarif edin. Görseldeki her şeyin aynı biçimde üretilmesini istemek zorunda değilsiniz.'],
+            ['Değişmesini istediğinizi ekleyin.', 'Daha küçük bir ölçü, farklı bir ton veya başka bir kullanım önceliğiniz olabilir. Sizin notunuz ile referansın açıklamasını ayrı tutarak başlayalım.'],
+            ['Uygunluğu birlikte değerlendirelim.', 'Mekân, malzeme, donanım ve mekanizma, atölye görüşmesinde netleşir. Bir referans veya 3D konsept, teknik çizim ya da kesin üretim taahhüdü değildir.']
+        ], preparation: ['Bir fotoğraf, çizim, bağlantı veya kısa fikir notu.', 'Korumak ve değiştirmek istediğiniz özellikler.', 'Kullanılacağı alan ve varsa yaklaşık ölçü.'], project: 'yatak-cevresi-depolama', note: 'İlk görüşme, tasarım onayı ve kesin teklif farklı adımlardır. Son ölçü ve kapsam üretimden önce ayrıca kararlaştırılır.' }
 };
 
 },
@@ -4891,7 +4957,7 @@ class BringModel extends react_1.Component {
                             "Kendi modelinizi getirin.",
                             (0, react_1.createElement)("br", null),
                             (0, react_1.createElement)("em", null, "Birlikte \u00FCretelim."))),
-                    (0, react_1.createElement)("p", null, "Pinterest'te g\u00F6rd\u00FC\u011F\u00FCn\u00FCz bir model, bir foto\u011Fraf veya kendi \u00E7iziminiz. Alan\u0131n\u0131za uygun olan\u0131 Yunus Usta ile birlikte d\u00FC\u015F\u00FCnelim."))),
+                    (0, react_1.createElement)("p", null, "Bir foto\u011Fraf, ba\u011Flant\u0131 veya birka\u00E7 c\u00FCmle yeterli. \u00D6l\u00E7\u00FCleri hen\u00FCz bilmiyorsan\u0131z ayr\u0131nt\u0131lar\u0131 atlay\u0131p g\u00F6r\u00FC\u015Fme \u00F6zetinize ge\u00E7ebilirsiniz."))),
             (0, react_1.createElement)("section", { className: "wrap model-request" },
                 (0, react_1.createElement)("aside", { className: "model-aside" },
                     (0, react_1.createElement)("div", null,
@@ -4970,9 +5036,9 @@ class BringModel extends react_1.Component {
                                     (0, react_1.createElement)("button", { type: "button", "aria-label": f.name + ' görselini kaldır', onClick: () => { project_1.attachmentStore.remove(f.id); this.setState({ files: project_1.attachmentStore.get() }); } },
                                         (0, react_1.createElement)(ui_1.Icon, { name: "close", size: 16 }))))),
                                 (0, react_1.createElement)("label", { className: "form-field spaced", htmlFor: "model-note" },
-                                    (0, react_1.createElement)("span", null, "Kendi notunuz. Modelde neyi sevdiniz?"),
+                                    (0, react_1.createElement)("span", null, "Kendi notunuz. Neyi koruyal\u0131m, neyi de\u011Fi\u015Ftirmek istersiniz?"),
                                     (0, react_1.createElement)("textarea", { id: "model-note", rows: 4, value: v.note, maxLength: 1600, "aria-invalid": errorField === 'model-note' || undefined, "aria-describedby": errorField === 'model-note' ? 'model-error' : 'note-help', onInput: e => this.set('note', e.currentTarget.value), placeholder: "Yuvarlak k\u00F6\u015Felerini sevdim. Daha k\u00FC\u00E7\u00FCk bir \u00F6l\u00E7\u00FC ve a\u00E7\u0131k ton istiyorum." })),
-                                (0, react_1.createElement)("p", { className: "field-hint", id: "note-help" }, "Hen\u00FCz g\u00F6rseliniz yoksa fikrinizi yazman\u0131z da yeterli."),
+                                (0, react_1.createElement)("p", { className: "field-hint", id: "note-help" }, "Be\u011Fendi\u011Finiz ayr\u0131nt\u0131y\u0131 ve de\u011Fi\u015Ftirmek istedi\u011Finizi ayr\u0131 c\u00FCmlelerle anlatabilirsiniz. Hen\u00FCz g\u00F6rseliniz yoksa yaln\u0131z fikrinizi yazman\u0131z da yeterli."),
                                 selection.length > 0 && (0, react_1.createElement)("div", { className: "v7-selected-note" },
                                     (0, react_1.createElement)("strong", null,
                                         "\u0130lham dosyan\u0131zdan ",
@@ -5611,12 +5677,12 @@ const projectStudies = {
     'kemerli-kahve-kosesi': { focus: 'Servis, sergileme ve saklama bir arada.', observations: ['Kemerli orta bölüm, açık rafları ve servis yüzeyini bir odak noktasında topluyor.', 'İki yandaki cam kapaklı bölümler, sergileme ile kapalı saklamayı aynı kompozisyonda birleştiriyor.', 'Raf aydınlatması ve alt depolama, fotoğraftaki kahve köşesinin belirgin ayrıntıları.'], questions: ['Makinenizin en, derinlik ve kapağı açıldığındaki yüksekliği nedir?', 'Fincanlar, kahve malzemeleri ve küçük cihazlar için ne kadar yer gerekiyor?', 'Priz, havalandırma veya su bağlantısı için özel ihtiyaç var mı?'] },
     'isikli-tv-unitesi': { focus: 'Ekran duvarını bir bütüne dönüştürmek.', observations: ['TV paneli, yan raflar ve alttaki depolama tek bir duvar düzeninde bir araya geliyor.', 'Açık raf ile kapalı hacimlerin birlikte kullanımı, görünen ve saklanan eşyalar arasında ayrım sağlıyor.', 'Dolaylı aydınlatma, panel ve rafların çevresinde ayrı bir ışık katmanı oluşturuyor.'], questions: ['Ekranın boyutu, ağırlığı ve duvarın yapısı nedir?', 'Prizler, kablolar ve kullanılacak cihazlar nerede duracak?', 'Kitap, oyun konsolu ve diğer eşyalar için açık veya kapalı alan mı gerekiyor?'] }
 };
-function ProjectStudy({ work: w }) { const c = projectStudies[w.id] || { focus: w.subtitle, observations: w.features, questions: ['Bu mobilya hangi alanda ve nasıl kullanılacak?', 'Mevcut alanın yaklaşık ölçüsü ve engelleri neler?', 'Açık raf, kapalı depolama ve yüzey seçimi için öncelikleriniz neler?'] }; return (0, react_1.createElement)("section", { className: "wrap v11-case-study" },
+function ProjectStudy({ work: w, navigate }) { const c = projectStudies[w.id] || { focus: w.subtitle, observations: w.features, questions: ['Bu mobilya hangi alanda ve nasıl kullanılacak?', 'Mevcut alanın yaklaşık ölçüsü ve engelleri neler?', 'Açık raf, kapalı depolama ve yüzey seçimi için öncelikleriniz neler?'] }; return (0, react_1.createElement)("section", { className: "wrap v11-case-study" },
     (0, react_1.createElement)("div", null,
         (0, react_1.createElement)(ui_1.Eyebrow, null, "FOTO\u011ERAFTAN KARARINIZA"),
         (0, react_1.createElement)("h2", null, c.focus),
         (0, react_1.createElement)("p", null, w.description),
-        (0, react_1.createElement)("p", { className: "field-hint" }, "A\u015Fa\u011F\u0131daki a\u00E7\u0131klamalar payla\u015F\u0131lan foto\u011Frafta g\u00F6r\u00FCnen d\u00FCzeni anlat\u0131r. \u00D6zg\u00FCn m\u00FC\u015Fterinin ihtiya\u00E7 belgesi veya do\u011Frulanm\u0131\u015F teknik \u00FCr\u00FCn \u015Fartnamesi de\u011Fildir.")),
+        (0, react_1.createElement)("p", { className: "field-hint" }, "Foto\u011Frafta g\u00F6r\u00FClen d\u00FCzen \u00FCzerinden d\u00FC\u015F\u00FCnelim. M\u00FC\u015Fteri r\u00F6portaj\u0131 veya teknik \u015Fartname de\u011Fildir.")),
     (0, react_1.createElement)("div", { className: "v11-case-columns" },
         (0, react_1.createElement)("article", null,
             (0, react_1.createElement)("span", { className: "eyebrow" }, "BU UYGULAMADA G\u00D6R\u00DCNENLER"),
@@ -5629,7 +5695,11 @@ function ProjectStudy({ work: w }) { const c = projectStudies[w.id] || { focus: 
             (0, react_1.createElement)("p", null, "Yakla\u015F\u0131k \u00F6l\u00E7\u00FC veya mek\u00E2n foto\u011Fraf\u0131yla ba\u015Flanabilir. \u00DCretim \u00F6l\u00E7\u00FCs\u00FC ayr\u0131ca teyit edilir."))),
     (0, react_1.createElement)("details", { className: "v11-case-verification" },
         (0, react_1.createElement)("summary", null, "Malzeme, kapsam ve foto\u011Fraf bilgisi"),
-        (0, react_1.createElement)("p", null, "G\u00F6rsel at\u00F6lyenin payla\u015F\u0131lan ar\u015Fivinden gelir. Bu \u00E7al\u0131\u015Fman\u0131n \u00F6zg\u00FCn \u00F6l\u00E7\u00FCs\u00FC, malzeme markas\u0131, donan\u0131m kodu, teslim tarihi ve m\u00FC\u015Fteri adresi do\u011Frulanm\u0131\u015F kay\u0131t olarak elimizde bulunmuyor. Foto\u011Fraftan t\u00FCretilerek yaz\u0131lmaz. Yeni i\u015F i\u00E7in mobilya, cihaz, tezg\u00E2h, ayd\u0131nlatma, nakliye ve montaj kapsamlar\u0131 teklifte ayr\u0131 g\u00F6r\u00FC\u015F\u00FCl\u00FCr."))); }
+        (0, react_1.createElement)("p", null, "G\u00F6rsel at\u00F6lyenin payla\u015F\u0131lan ar\u015Fivinden gelir. Bu \u00E7al\u0131\u015Fman\u0131n \u00F6zg\u00FCn \u00F6l\u00E7\u00FCs\u00FC, malzeme markas\u0131, donan\u0131m kodu, teslim tarihi ve m\u00FC\u015Fteri adresi do\u011Frulanm\u0131\u015F kay\u0131t olarak elimizde bulunmuyor. Foto\u011Fraftan t\u00FCretilerek yaz\u0131lmaz. Yeni i\u015F i\u00E7in mobilya, cihaz, tezg\u00E2h, ayd\u0131nlatma, nakliye ve montaj kapsamlar\u0131 teklifte ayr\u0131 g\u00F6r\u00FC\u015F\u00FCl\u00FCr.")),
+    (0, react_1.createElement)("nav", { className: "case-next-links", "aria-label": "Projeden sonraki ad\u0131m" },
+        (0, react_1.createElement)(ui_1.TextLink, { to: '/kategoriler/' + w.category, navigate: navigate }, "Bu alan\u0131 ke\u015Ffedin"),
+        (0, react_1.createElement)(ui_1.TextLink, { to: "/malzemeler", navigate: navigate }, "Malzeme kararlar\u0131"),
+        (0, react_1.createElement)(ui_1.TextLink, { to: (0, portfolio_1.modelHref)('', w.category, w.subtitle + ' benzeri bir çalışma istiyorum.'), navigate: navigate }, "Kendi alan\u0131m i\u00E7in konu\u015Fal\u0131m"))); }
 class Projects extends react_1.Component {
     constructor(p) {
         super(p);
@@ -5672,7 +5742,8 @@ class Projects extends react_1.Component {
                     (0, react_1.createElement)("button", { className: "button button-outline", onClick: () => this.setState({ category: 'all', search: '', stage: 'work' }, () => history.replaceState({ ...history.state }, '', (0, domain_1.publicHref)('/projeler'))) },
                         "Filtreleri temizle ",
                         (0, react_1.createElement)(ui_1.Icon, null)),
-                    (0, react_1.createElement)(ui_1.TextLink, { to: "/modelini-getir", navigate: a.navigate }, "Kendi modelimle ba\u015Flayay\u0131m"))),
+                    s.category !== 'all' && (0, react_1.createElement)(ui_1.TextLink, { to: '/kategoriler/' + s.category, navigate: a.navigate }, "Bu alan\u0131n ilham modellerini inceleyin"),
+                    (0, react_1.createElement)(ui_1.TextLink, { to: (0, portfolio_1.modelHref)('', s.category === 'all' ? 'ozel-tasarim' : s.category), navigate: a.navigate }, "Kendi modelimle ba\u015Flayay\u0131m"))),
             (0, react_1.createElement)(PortfolioUI_1.ModelCallout, { navigate: a.navigate, compact: true }));
     }
 }
@@ -5684,26 +5755,29 @@ class WorkDetail extends react_1.Component {
         this.move = (delta) => this.setState(s => ({ photo: (s.photo + delta + this.props.work.images.length) % this.props.work.images.length }));
     }
     render() {
-        const a = this.props, w = a.work, others = portfolio_1.works.filter(p => p.category === w.category && p.id !== w.id && p.status === 'work').slice(0, 3);
+        const a = this.props, w = a.work, photo = (0, portfolio_1.workPhotoEvidence)(w, this.state.photo), others = portfolio_1.works.filter(p => p.category === w.category && p.id !== w.id && p.status === 'work').slice(0, 3);
         return (0, react_1.createElement)(react_1.Fragment, null,
             (0, react_1.createElement)("div", { className: "wrap v6-crumb" },
-                (0, react_1.createElement)(ui_1.Link, { to: "/projeler", navigate: a.navigate }, "Bitirdi\u011Fimiz \u0130\u015Fler"),
+                (0, react_1.createElement)(ui_1.Link, { to: w.status === 'process' ? '/projeler?durum=process' : '/projeler', navigate: a.navigate }, w.status === 'process' ? 'Uygulama Aşamaları' : 'Çalışma arşivi'),
                 (0, react_1.createElement)("span", null, "/"),
                 (0, react_1.createElement)(ui_1.Link, { to: '/kategoriler/' + w.category, navigate: a.navigate }, (0, portfolio_1.categoryName)(w.category))),
             (0, react_1.createElement)("section", { className: "wrap work-detail" },
                 (0, react_1.createElement)("div", { className: "work-detail-media" },
                     (0, react_1.createElement)("button", { className: "work-main-photo", onClick: () => this.setState({ zoom: true }), "aria-label": "Proje foto\u011Fraf\u0131n\u0131 b\u00FCy\u00FCt" },
-                        (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: w.images[this.state.photo], alt: w.subtitle, eager: true, full: true }),
+                        (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: w.images[this.state.photo], alt: w.subtitle + '. ' + photo.caption, eager: true, full: true }),
                         (0, react_1.createElement)("span", null,
                             (0, react_1.createElement)(ui_1.Icon, { name: "plus" }),
                             "Foto\u011Fraf\u0131 incele")),
                     w.images.length > 1 && (0, react_1.createElement)("div", { className: "work-thumbnails" }, w.images.map((im, i) => (0, react_1.createElement)("button", { key: im, onClick: () => this.setState({ photo: i }), "aria-label": 'Fotoğraf ' + (i + 1), "aria-pressed": i === this.state.photo },
                         (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: im, alt: "", sizes: "100px" })))),
-                    (0, react_1.createElement)("p", { className: "photo-credit" },
+                    (0, react_1.createElement)("p", { className: "photo-credit", "aria-live": "polite" },
+                        this.state.photo + 1,
+                        " / ",
                         w.images.length,
-                        " ar\u015Fiv foto\u011Fraf\u0131. Payla\u015F\u0131lan kareler korunur, varsa ekran g\u00F6r\u00FCnt\u00FCs\u00FC i\u015Faretleri silinmez.")),
+                        ". ",
+                        photo.caption)),
                 (0, react_1.createElement)("div", { className: "work-detail-copy" },
-                    (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: w.status }),
+                    (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: photo.kind }),
                     (0, react_1.createElement)(ui_1.Eyebrow, null, (0, portfolio_1.categoryName)(w.category)),
                     (0, react_1.createElement)("h1", null, w.title),
                     (0, react_1.createElement)("p", { className: "work-lead" }, w.description),
@@ -5722,7 +5796,7 @@ class WorkDetail extends react_1.Component {
                         f))),
                     (0, react_1.createElement)(ui_1.ButtonLink, { to: (0, portfolio_1.modelHref)('', w.category, w.subtitle + ' benzeri bir çalışma istiyorum.'), navigate: a.navigate }, "Benzerini birlikte d\u00FC\u015F\u00FCnelim"),
                     (0, react_1.createElement)("p", { className: "fineprint" }, "Her mek\u00E2n farkl\u0131d\u0131r. Foto\u011Fraf, yeni projeniz i\u00E7in kesin \u00F6l\u00E7\u00FC, malzeme, fiyat veya ayn\u0131 sonucu elde etme taahh\u00FCd\u00FC de\u011Fildir."))),
-            (0, react_1.createElement)(ProjectStudy, { work: w }),
+            (0, react_1.createElement)(ProjectStudy, { work: w, navigate: a.navigate }),
             (0, react_1.createElement)("div", { className: "wrap" },
                 (0, react_1.createElement)(V7Pages_1.ScopeNotes, { category: w.category })),
             others.length > 0 && (0, react_1.createElement)("section", { className: "wrap v6-section" },
@@ -5751,7 +5825,8 @@ class WorkDetail extends react_1.Component {
                         (0, react_1.createElement)("button", { className: "icon-button", "aria-label": "Sonraki foto\u011Fraf", onClick: () => this.move(1) },
                             (0, react_1.createElement)(ui_1.Icon, null))),
                     (0, react_1.createElement)("p", null,
-                        "Payla\u015F\u0131lan at\u00F6lye ar\u015Fivi. ",
+                        photo.caption,
+                        " ",
                         this.state.photo + 1,
                         " / ",
                         w.images.length))));
@@ -5846,16 +5921,41 @@ function Categories(a) {
 class Inspiration extends react_1.Component {
     constructor() {
         super(...arguments);
-        this.state = { category: 'all', group: 'atelier' };
+        this.state = { category: 'all', group: 'atelier', expanded: false };
+        this.focusTarget = () => {
+            const target = (0, selections_1.inspirationTarget)(new URLSearchParams(this.props.query || '').get('hedef'));
+            if (!target)
+                return;
+            const pin = target.kind === 'reference' ? portfolio_1.pinterestReferences.find(p => 'pin:' + p.id === target.id) : null;
+            this.setState({ category: target.kind === 'concept' ? target.category : 'all', group: pin?.group || 'atelier', expanded: !!pin }, () => {
+                requestAnimationFrame(() => requestAnimationFrame(() => { const el = document.getElementById((0, selections_1.targetElementId)(target.id)); if (el) {
+                    el.classList.add('v11-target');
+                    el.focus({ preventScroll: true });
+                    el.scrollIntoView({ block: 'center', behavior: 'instant' });
+                } }));
+            });
+        };
+        this.pinCard = (p) => {
+            const a = this.props, title = pinterest_1.pinLookup[p.id]?.label || p.title;
+            return (0, react_1.createElement)("article", { className: "pin-card", key: p.id, id: (0, selections_1.targetElementId)('pin:' + p.id), tabIndex: -1, "data-pin": p.id },
+                (0, react_1.createElement)("span", { className: "eyebrow pin-source-label" }, "PINTEREST / DI\u015E REFERANS"),
+                (0, react_1.createElement)("h3", null, title),
+                (0, react_1.createElement)(PinterestPreview_1.PinterestPreview, { pin: p.id, disclosureId: "pinterest-disclosure" }),
+                (0, react_1.createElement)("button", { className: "v7-save-text", "aria-label": (a.favorites.includes('pin:' + p.id) ? 'İlham dosyanızda. Kaydı kaldır. ' : 'İlham dosyama ekle. ') + title, "aria-pressed": a.favorites.includes('pin:' + p.id), onClick: () => a.favorite('pin:' + p.id) },
+                    (0, react_1.createElement)(ui_1.Icon, { name: "heart", size: 18 }),
+                    a.favorites.includes('pin:' + p.id) ? 'İlham dosyanızda' : 'İlham dosyama ekle'),
+                (0, react_1.createElement)("div", { className: "pin-card-actions" },
+                    (0, react_1.createElement)("a", { href: 'https://pin.it/' + p.id, target: "_blank", rel: "noopener noreferrer", className: "text-link" },
+                        "Pinterest'te incele ",
+                        (0, react_1.createElement)(ui_1.Icon, { name: "diagonal", size: 17 })),
+                    (0, react_1.createElement)(ui_1.TextLink, { to: (0, portfolio_1.modelHref)('https://pin.it/' + p.id, p.category), navigate: a.navigate }, "Bu modelle ba\u015Flayal\u0131m")));
+        };
     }
-    componentDidMount() { const target = (0, selections_1.inspirationTarget)(new URLSearchParams(this.props.query || '').get('hedef')); if (!target)
-        return; const pin = target.kind === 'reference' ? portfolio_1.pinterestReferences.find(p => 'pin:' + p.id === target.id) : null; this.setState({ category: target.kind === 'concept' ? target.category : 'all', group: pin?.group || 'atelier' }, () => { requestAnimationFrame(() => requestAnimationFrame(() => { const el = document.getElementById((0, selections_1.targetElementId)(target.id)); if (el) {
-        el.classList.add('v11-target');
-        el.focus({ preventScroll: true });
-        el.scrollIntoView({ block: 'center', behavior: 'instant' });
-    } })); }); }
+    componentDidMount() { this.focusTarget(); }
+    componentDidUpdate(previous) { if (previous.query !== this.props.query)
+        this.focusTarget(); }
     render() {
-        const a = this.props, items = (0, portfolio_1.inspirationConcepts)(this.state.category);
+        const a = this.props, s = this.state, items = (0, portfolio_1.inspirationConcepts)(s.category), first = (0, portfolio_1.visiblePinterestReferences)(s.group), rest = (0, portfolio_1.visiblePinterestReferences)(s.group, true).slice(4), total = first.length + rest.length;
         return (0, react_1.createElement)(react_1.Fragment, null,
             (0, react_1.createElement)("header", { className: "v6-page-head wrap inspiration-heading" },
                 (0, react_1.createElement)(ui_1.Eyebrow, null, "EL\u0130F / \u0130LHAM DEFTER\u0130"),
@@ -5864,7 +5964,7 @@ class Inspiration extends react_1.Component {
                         "Bir yerde g\u00F6rd\u00FCn\u00FCz.",
                         (0, react_1.createElement)("br", null),
                         (0, react_1.createElement)("em", null, "Akl\u0131n\u0131zda kald\u0131.")),
-                    (0, react_1.createElement)("p", null, "Bir Pinterest kayd\u0131, bir eskiz, k\u00FC\u00E7\u00FCk bir ayr\u0131nt\u0131. O fikri mek\u00E2n\u0131n\u0131z\u0131n \u00F6l\u00E7\u00FCs\u00FCne ve sizin kullan\u0131m\u0131n\u0131za g\u00F6re birlikte d\u00FC\u015F\u00FCnelim.")),
+                    (0, react_1.createElement)("p", null, "Farkl\u0131 alanlardan fikir se\u00E7in. Be\u011Fendi\u011Finiz ayr\u0131nt\u0131y\u0131 kendi mek\u00E2n\u0131n\u0131za ve kullan\u0131m\u0131n\u0131za g\u00F6re birlikte d\u00FC\u015F\u00FCnelim.")),
                 (0, react_1.createElement)(ui_1.ButtonLink, { to: "/modelini-getir", navigate: a.navigate }, "Kendi modelimi getireyim"),
                 (0, react_1.createElement)("nav", { className: "inspiration-jump-links", "aria-label": "\u0130lham se\u00E7kileri" },
                     (0, react_1.createElement)("a", { href: "#konsept-seckisi" }, "Konsept se\u00E7kisi"),
@@ -5876,11 +5976,11 @@ class Inspiration extends react_1.Component {
                         (0, react_1.createElement)("h2", null,
                             "Biraz ",
                             (0, react_1.createElement)("em", null, "ilham."))),
-                    (0, react_1.createElement)("p", null, "Konsept modeller ve tasar\u0131m fikirleri. Bitmi\u015F proje veya teknik \u00FCretim onay\u0131 de\u011Fildir.")),
-                (0, react_1.createElement)("div", { className: "filter-chips", role: "group", "aria-label": "\u0130lham kategorisi" }, [{ id: 'all', name: 'Tüm alanlar' }, ...portfolio_1.workCategories].map(c => (0, react_1.createElement)("button", { key: c.id, "aria-pressed": c.id === this.state.category, onClick: () => this.setState({ category: c.id }) }, c.name))),
-                (0, react_1.createElement)("p", { className: "inspiration-result", role: "status", "aria-live": "polite" }, this.state.category === 'all' ? items.length + ' farklı alan için seçilmiş fikirler. Aynı alanın diğer modelleri kategori içinde yer alır.' : (0, portfolio_1.categoryName)(this.state.category) + ' için ' + items.length + ' konsept model.'),
+                    (0, react_1.createElement)("p", null, "Tasar\u0131m fikirleri. Bitmi\u015F proje veya teknik \u00FCretim onay\u0131 de\u011Fildir.")),
+                (0, react_1.createElement)("div", { className: "filter-chips", role: "group", "aria-label": "\u0130lham kategorisi" }, [{ id: 'all', name: 'Tüm alanlar' }, ...portfolio_1.workCategories].map(c => (0, react_1.createElement)("button", { key: c.id, "aria-pressed": c.id === s.category, onClick: () => this.setState({ category: c.id }) }, c.name))),
+                (0, react_1.createElement)("p", { className: "inspiration-result", role: "status", "aria-live": "polite" }, s.category === 'all' ? items.length + ' alan, ' + items.length + ' başlangıç fikri. Diğer modeller kategori içinde.' : (0, portfolio_1.categoryName)(s.category) + ' için ' + items.length + ' konsept model.'),
                 (0, react_1.createElement)("div", { className: "concept-grid" }, items.map(c => (0, react_1.createElement)(ConceptCard, { c: c, key: c.id, navigate: a.navigate, actions: a }))),
-                this.state.category === 'baza-yatak' && (0, react_1.createElement)("div", { className: "inspiration-category-link" },
+                s.category === 'baza-yatak' && (0, react_1.createElement)("div", { className: "inspiration-category-link" },
                     (0, react_1.createElement)(ui_1.TextLink, { to: "/kategoriler/baza-yatak", navigate: a.navigate }, "Baza koleksiyonunun a\u00E7\u0131k ve kapal\u0131 g\u00F6r\u00FCn\u00FCmlerini inceleyin"))),
             (0, react_1.createElement)("section", { className: "pinterest-section", id: "pinterest-seckileri" },
                 (0, react_1.createElement)("div", { className: "wrap" },
@@ -5891,32 +5991,40 @@ class Inspiration extends react_1.Component {
                                 "Pinterest'ten",
                                 (0, react_1.createElement)("br", null),
                                 (0, react_1.createElement)("em", null, "kaydetti\u011Fimiz fikirler."))),
-                        (0, react_1.createElement)("p", null, "Ustan\u0131n payla\u015Ft\u0131\u011F\u0131 modeller ve birlikte \u00F6nerilenler. Kayna\u011F\u0131 Pinterest'te a\u00E7abilir, be\u011Fendi\u011Finiz ba\u011Flant\u0131yla kendi projenize ba\u015Flayabilirsiniz.")),
-                    (0, react_1.createElement)("div", { className: "view-segments pin-segments", role: "group", "aria-label": "Pinterest se\u00E7kisi" },
-                        (0, react_1.createElement)("button", { "aria-pressed": this.state.group === 'atelier', onClick: () => this.setState({ group: 'atelier' }) }, "Ustan\u0131n se\u00E7tikleri"),
-                        (0, react_1.createElement)("button", { "aria-pressed": this.state.group === 'shared', onClick: () => this.setState({ group: 'shared' }) }, "Birlikte \u00F6nerilenler")),
-                    (0, react_1.createElement)("div", { className: "pin-grid" }, portfolio_1.pinterestReferences.filter(p => p.group === this.state.group).map(p => (0, react_1.createElement)("article", { className: "pin-card", key: p.id, id: (0, selections_1.targetElementId)('pin:' + p.id), tabIndex: -1 },
-                        (0, react_1.createElement)("div", { className: "pin-mark", "aria-hidden": "true" }, "P"),
-                        (0, react_1.createElement)("span", { className: "eyebrow" }, "DI\u015E KAYNAK \u0130LHAM BA\u011ELANTISI"),
-                        (0, react_1.createElement)("h3", null, pinterest_1.pinLookup[p.id]?.label || p.title),
-                        (0, react_1.createElement)("p", null, p.category === 'vestiyer' ? 'Vestiyer için paylaşılan model.' : 'Paylaşılan tasarım referansı.'),
-                        (0, react_1.createElement)(PinterestPreview_1.PinterestPreview, { pin: p.id }),
-                        (0, react_1.createElement)("button", { className: "v7-save-text", "aria-label": (a.favorites.includes('pin:' + p.id) ? 'İlham dosyanızda. Kaydı kaldır. ' : 'İlham dosyama ekle. ') + (pinterest_1.pinLookup[p.id]?.label || p.title), "aria-pressed": a.favorites.includes('pin:' + p.id), onClick: () => a.favorite('pin:' + p.id) },
-                            (0, react_1.createElement)(ui_1.Icon, { name: "heart", size: 18 }),
-                            a.favorites.includes('pin:' + p.id) ? 'İlham dosyanızda' : 'İlham dosyama ekle'),
-                        (0, react_1.createElement)("div", null,
-                            (0, react_1.createElement)("a", { href: 'https://pin.it/' + p.id, target: "_blank", rel: "noopener noreferrer", className: "text-link" },
-                                "Pinterest'te incele ",
-                                (0, react_1.createElement)(ui_1.Icon, { name: "diagonal", size: 17 })),
-                            (0, react_1.createElement)(ui_1.TextLink, { to: (0, portfolio_1.modelHref)('https://pin.it/' + p.id, p.category), navigate: a.navigate }, "Bu modelle ba\u015Flayal\u0131m"))))),
-                    (0, react_1.createElement)("p", { className: "pin-note" }, "Pinterest i\u00E7erikleri ilgili \u00FCreticilerine ve kaynaklar\u0131na aittir. Burada bitmi\u015F Elif projesi olarak g\u00F6sterilmez. G\u00F6rsel y\u00FCkleyicisi yaln\u0131z iste\u011Finizle Pinterest ba\u011Flant\u0131s\u0131 kurar. Model payla\u015F\u0131m formuna bilgi aktarmaz. Pinterest kayna\u011F\u0131 ayr\u0131 sekmede de a\u00E7\u0131labilir. Ba\u011Flant\u0131lar zaman i\u00E7inde de\u011Fi\u015Febilir veya giri\u015F gerektirebilir."))),
+                        (0, react_1.createElement)("p", null, "Kayna\u011F\u0131n\u0131 inceleyin, ilham dosyan\u0131za ekleyin veya be\u011Fendi\u011Finiz ba\u011Flant\u0131yla g\u00F6r\u00FC\u015Fmeye ba\u015Flay\u0131n.")),
+                    (0, react_1.createElement)("p", { className: "pin-consent-note", id: "pinterest-disclosure" },
+                        (0, react_1.createElement)("strong", null, "G\u00F6rseller yaln\u0131z siz y\u00FCklemeyi se\u00E7ti\u011Finizde a\u00E7\u0131l\u0131r."),
+                        " Pinterest'e ba\u011Flan\u0131ld\u0131\u011F\u0131nda IP ve taray\u0131c\u0131 bilgileri aktar\u0131labilir, d\u0131\u015F servis \u00E7erez kullanabilir. Bunlar tamamlanm\u0131\u015F Elif projeleri de\u011Fildir."),
+                    (0, react_1.createElement)("div", { className: "pin-toolbar" },
+                        (0, react_1.createElement)("div", { className: "view-segments pin-segments", role: "group", "aria-label": "Pinterest se\u00E7kisi" },
+                            (0, react_1.createElement)("button", { "aria-pressed": s.group === 'atelier', onClick: () => this.setState({ group: 'atelier', expanded: false }) }, "Ustan\u0131n se\u00E7tikleri"),
+                            (0, react_1.createElement)("button", { "aria-pressed": s.group === 'shared', onClick: () => this.setState({ group: 'shared', expanded: false }) }, "Birlikte \u00F6nerilenler")),
+                        (0, react_1.createElement)("span", { className: "pin-count", "aria-live": "polite" },
+                            s.expanded ? total : first.length,
+                            " / ",
+                            total,
+                            " referans")),
+                    (0, react_1.createElement)("div", { className: "pin-grid" }, first.map(this.pinCard)),
+                    rest.length > 0 && (0, react_1.createElement)("details", { className: "pin-more", key: s.group, open: s.expanded, onToggle: e => { if (e.currentTarget.open !== this.state.expanded)
+                            this.setState({ expanded: e.currentTarget.open }); } },
+                        (0, react_1.createElement)("summary", { "aria-controls": "pin-expanded-list" },
+                            s.expanded ? 'Ek referansları daralt' : 'Diğer ' + rest.length + ' referansı göster',
+                            " ",
+                            (0, react_1.createElement)(ui_1.Icon, { name: "plus", size: 18 })),
+                        (0, react_1.createElement)("div", { className: "pin-grid", id: "pin-expanded-list" }, rest.map(this.pinCard))),
+                    (0, react_1.createElement)("noscript", null,
+                        (0, react_1.createElement)("div", { className: "pin-noscript" },
+                            (0, react_1.createElement)("h3", null, "Birlikte \u00F6nerilenlerin kaynaklar\u0131"),
+                            portfolio_1.pinterestReferences.filter(p => p.group === 'shared').map(p => (0, react_1.createElement)("p", { key: p.id },
+                                (0, react_1.createElement)("a", { href: pinterest_1.pinLookup[p.id]?.canonical || 'https://pin.it/' + p.id, target: "_blank", rel: "noopener noreferrer" }, pinterest_1.pinLookup[p.id]?.label || p.title))))),
+                    (0, react_1.createElement)("p", { className: "pin-note" }, "Kaynaklar ilgili \u00FCreticilerine aittir. Ba\u011Flant\u0131lar de\u011Fi\u015Febilir veya giri\u015F gerektirebilir. \u00D6nizleme formunuza bilgi aktarmaz. G\u00F6rsel a\u00E7\u0131lmazsa Pinterest ba\u011Flant\u0131s\u0131n\u0131 kullanabilirsiniz."))),
             (0, react_1.createElement)(PortfolioUI_1.ModelCallout, { navigate: a.navigate }));
     }
 }
 exports.Inspiration = Inspiration;
 function AboutAtelier(a) {
     return (0, react_1.createElement)(react_1.Fragment, null,
-        (0, react_1.createElement)("header", { className: "v6-page-head wrap" },
+        (0, react_1.createElement)("header", { className: "v6-page-head wrap", "data-atelier-view": a.atelier ? 'process' : 'story' },
             (0, react_1.createElement)(ui_1.Eyebrow, null, a.atelier ? 'ELİF / TEZGÂHTAN MEKÂNA' : 'ELİF / AİLEDEN GELEN USTALIK'),
             (0, react_1.createElement)("div", null,
                 (0, react_1.createElement)("h1", null, a.atelier ? (0, react_1.createElement)(react_1.Fragment, null,
@@ -5926,42 +6034,52 @@ function AboutAtelier(a) {
                     "Bir meslekten fazlas\u0131.",
                     (0, react_1.createElement)("br", null),
                     (0, react_1.createElement)("em", null, "Bir aile miras\u0131."))),
-                (0, react_1.createElement)("p", null, "Yunus Usta'n\u0131n babas\u0131ndan \u00F6\u011Frendi\u011Fi marangozluk, bug\u00FCn farkl\u0131 ya\u015Fam alanlar\u0131nda devam ediyor. Haz\u0131r bir kal\u0131p de\u011Fil, ihtiyaca g\u00F6re d\u00FC\u015F\u00FCn\u00FClm\u00FC\u015F bir \u00E7al\u0131\u015Fma."))),
+                (0, react_1.createElement)("p", null, a.atelier ? 'Paylaşılan uygulama kareleri üzerinden, yerleşimden montaj ayrıntısına. İşin yalnız son görünümüne değil, oluşma aşamalarına da bakalım.' : "Yunus Usta'nın babasından öğrendiği marangozluk, bugün farklı yaşam alanlarında devam ediyor. Hazır bir kalıp değil, ihtiyaca göre düşünülmüş bir çalışma."))),
         (0, react_1.createElement)("section", { className: "atelier-documentary" },
             (0, react_1.createElement)("div", { className: "atelier-documentary-image" },
                 (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: "work-joinery", alt: "At\u00F6lyenin ah\u015Fap kamelya uygulamas\u0131ndaki \u00E7at\u0131 birle\u015Fimi ayr\u0131nt\u0131s\u0131", eager: true, sizes: "70vw" }),
                 (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: "process" })),
             (0, react_1.createElement)("div", null,
-                (0, react_1.createElement)(ui_1.Eyebrow, null, "YUNUS USTA'NIN EL\u0130NDEN \u00C7IKANLAR"),
-                (0, react_1.createElement)("h2", null,
+                (0, react_1.createElement)(ui_1.Eyebrow, null, a.atelier ? 'ARŞİVDEN BİR UYGULAMA AYRINTISI' : "YUNUS USTA'NIN ELİNDEN ÇIKANLAR"),
+                (0, react_1.createElement)("h2", null, a.atelier ? (0, react_1.createElement)(react_1.Fragment, null,
+                    "G\u00F6r\u00FCnen y\u00FCzeyin",
+                    (0, react_1.createElement)("br", null),
+                    (0, react_1.createElement)("em", null, "arkas\u0131ndaki d\u00FCzen.")) : (0, react_1.createElement)(react_1.Fragment, null,
                     "\u00D6l\u00E7\u00FCs\u00FCnde dikkat.",
                     (0, react_1.createElement)("br", null),
-                    (0, react_1.createElement)("em", null, "Ayr\u0131nt\u0131s\u0131nda emek.")),
-                (0, react_1.createElement)("p", null, "Bir dolab\u0131n nas\u0131l a\u00E7\u0131ld\u0131\u011F\u0131n\u0131, bir raf\u0131n ne ta\u015F\u0131yaca\u011F\u0131n\u0131, bir k\u00F6\u015Fenin g\u00FCnl\u00FCk ya\u015Famda nas\u0131l kullan\u0131laca\u011F\u0131n\u0131 birlikte konu\u015Farak ba\u015Flar\u0131z."),
-                (0, react_1.createElement)("p", null, "\u00DCretim ve uygulamay\u0131 ayn\u0131 hik\u00E2yenin par\u00E7alar\u0131 olarak g\u00F6r\u00FCr\u00FCz. Do\u011Fru \u00F6l\u00E7\u00FC, malzeme se\u00E7imi ve \u00F6zenli yerle\u015Fim, fikrin mek\u00E2na d\u00F6n\u00FC\u015Fmesini sa\u011Flar."),
-                (0, react_1.createElement)(ui_1.TextLink, { to: "/modelini-getir", navigate: a.navigate }, "Fikrinizi birlikte d\u00FC\u015F\u00FCnelim"))),
-        (0, react_1.createElement)("section", { className: "wrap atelier-values" },
-            (0, react_1.createElement)("div", null,
-                (0, react_1.createElement)("span", null, "01"),
-                (0, react_1.createElement)("h2", null, "Aile at\u00F6lyesi."),
-                (0, react_1.createElement)("p", null, "Nesilden nesile aktar\u0131lan meslek bilgisi. Do\u011Frudan ustayla konu\u015Farak ilerleyen bir s\u00FCre\u00E7.")),
-            (0, react_1.createElement)("div", null,
-                (0, react_1.createElement)("span", null, "02"),
-                (0, react_1.createElement)("h2", null, "\u00D6l\u00E7\u00FCye \u00F6zel."),
-                (0, react_1.createElement)("p", null, "Alan\u0131n\u0131z\u0131n ihtiyac\u0131ndan ba\u015Flar, kullan\u0131m bi\u00E7iminize g\u00F6re \u015Fekillendiririz.")),
-            (0, react_1.createElement)("div", null,
-                (0, react_1.createElement)("span", null, "03"),
-                (0, react_1.createElement)("h2", null, "\u00DCretim ve uygulama."),
-                (0, react_1.createElement)("p", null, "Tezg\u00E2hta verilen eme\u011Fi, yerinde uygulama ve montaj ayr\u0131nt\u0131lar\u0131yla tamamlar\u0131z."))),
+                    (0, react_1.createElement)("em", null, "Ayr\u0131nt\u0131s\u0131nda emek."))),
+                a.atelier ? (0, react_1.createElement)(react_1.Fragment, null,
+                    (0, react_1.createElement)("p", null, "Bu kare, ah\u015Fap kamelyan\u0131n \u00E7at\u0131 alt\u0131 birle\u015Fimlerini g\u00F6steriyor. Di\u011Fer uygulama foto\u011Fraflar\u0131nda dolap yerle\u015Fimi, koruyucu filmler ve kurulum ayr\u0131nt\u0131lar\u0131 g\u00F6r\u00FClebilir."),
+                    (0, react_1.createElement)("p", null, "Foto\u011Fraflar s\u00FCrecin belirli anlar\u0131d\u0131r. Tamamlanma tarihi, teknik uygunluk veya teslim onay\u0131 yerine ge\u00E7mez. Kendi projenizde \u00F6l\u00E7\u00FC, malzeme, ba\u011Flant\u0131 ve montaj kapsam\u0131n\u0131 ayr\u0131 ayr\u0131 konu\u015Fabiliriz."),
+                    (0, react_1.createElement)(ui_1.TextLink, { to: "/hakkimizda", navigate: a.navigate }, "Aile hik\u00E2yemizi ke\u015Ffedin")) : (0, react_1.createElement)(react_1.Fragment, null,
+                    (0, react_1.createElement)("p", null, "Bir dolab\u0131n nas\u0131l a\u00E7\u0131ld\u0131\u011F\u0131n\u0131, bir raf\u0131n ne ta\u015F\u0131yaca\u011F\u0131n\u0131, bir k\u00F6\u015Fenin g\u00FCnl\u00FCk ya\u015Famda nas\u0131l kullan\u0131laca\u011F\u0131n\u0131 birlikte konu\u015Farak ba\u015Flar\u0131z."),
+                    (0, react_1.createElement)("p", null, "Mesle\u011Fin aileden gelen bilgisini, sizin alan\u0131n\u0131z\u0131n ihtiyac\u0131yla bulu\u015Ftururuz. Bir \u00E7izim haz\u0131rlaman\u0131z \u015Fart de\u011Fil. Be\u011Fendi\u011Finiz ayr\u0131nt\u0131y\u0131 ve neyi de\u011Fi\u015Ftirmek istedi\u011Finizi do\u011Frudan Yunus Usta ile konu\u015Fabilirsiniz."),
+                    (0, react_1.createElement)(ui_1.TextLink, { to: "/atolye", navigate: a.navigate }, "At\u00F6lye s\u00FCrecini inceleyin")))),
+        (0, react_1.createElement)("section", { className: "wrap atelier-values" }, (a.atelier ? [
+            ['Ölçüyü konuşmak.', 'Yaklaşık ölçü ve mekân fotoğrafı başlangıçtır. İmalata esas ölçüler, uygulama öncesinde ayrıca netleştirilir.'],
+            ['Ayrıntıyı ayırmak.', 'Gövde, yüzey, kapak ve donanım farklı kararlardır. Görselde beğendiğiniz ayrıntının nasıl uygulanacağını görüşmede sorun.'],
+            ['Kapsamı netleştirmek.', 'Nakliye, yerinde montaj ve varsa diğer işler aynı şey değildir. Hangi işin kimin sorumluluğunda olduğu teklifte belirlenir.']
+        ] : [
+            ['Aile atölyesi.', 'Nesilden nesile aktarılan meslek bilgisi. Doğrudan ustayla konuşarak ilerleyen bir süreç.'],
+            ['Ölçüye özel.', 'Alanınızın ihtiyacından başlar, kullanım biçiminize göre şekillendiririz.'],
+            ['Birlikte karar.', 'Hazır bir modele bağlı kalmak yerine, neyi korumak ve neyi değiştirmek istediğinizi konuşuruz.']
+        ]).map(([title, text], i) => (0, react_1.createElement)("div", { key: title },
+            (0, react_1.createElement)("span", null,
+                "0",
+                i + 1),
+            (0, react_1.createElement)("h2", null, title),
+            (0, react_1.createElement)("p", null, text)))),
         a.atelier && (0, react_1.createElement)("section", { className: "wrap v6-section" },
             (0, react_1.createElement)("div", { className: "v6-heading" },
                 (0, react_1.createElement)("div", null,
                     (0, react_1.createElement)(ui_1.Eyebrow, null, "UYGULAMA AR\u015E\u0130V\u0130"),
                     (0, react_1.createElement)("h2", null,
-                        "\u0130\u015Fin ",
-                        (0, react_1.createElement)("em", null, "i\u00E7inden."))),
+                        "Uygulama foto\u011Fraflar\u0131.",
+                        (0, react_1.createElement)("br", null),
+                        (0, react_1.createElement)("em", null, "\u0130\u015Fin i\u00E7inden."))),
                 (0, react_1.createElement)("p", null, "Bu kareler uygulama a\u015Famas\u0131n\u0131 g\u00F6sterir. Bitmi\u015F projelerin tan\u0131t\u0131m \u00E7ekimleri olarak sunulmaz.")),
-            (0, react_1.createElement)("div", { className: "work-grid" }, portfolio_1.works.filter(w => w.status === 'process').map((w, i) => (0, react_1.createElement)(PortfolioUI_1.WorkCard, { key: w.id, work: w, actions: a, index: i })))),
+            (0, react_1.createElement)("div", { className: "work-grid" }, portfolio_1.works.filter(w => w.status === 'process').map((w, i) => (0, react_1.createElement)(PortfolioUI_1.WorkCard, { key: w.id, work: w, actions: a, index: i }))),
+            (0, react_1.createElement)(ui_1.TextLink, { to: "/projeler?durum=process", navigate: a.navigate }, "Uygulama ar\u015Fivini a\u00E7\u0131n")),
         (0, react_1.createElement)("div", { className: "wrap address-note" },
             (0, react_1.createElement)(ui_1.Icon, { name: "pin", size: 28 }),
             (0, react_1.createElement)("div", null,
@@ -6069,6 +6187,7 @@ exports.SavedBoard = SavedBoard;
 exports.ContactV7 = ContactV7;
 exports.PrivacyV7 = PrivacyV7;
 exports.MaterialsV7 = MaterialsV7;
+const service_content_1 = require("../lib/service-content");
 const react_1 = require("react");
 const ui_1 = require("../components/ui");
 const PortfolioUI_1 = require("../components/PortfolioUI");
@@ -6099,7 +6218,7 @@ function ScopeNotes({ category = 'ozel-tasarim' }) {
             (0, react_1.createElement)(ui_1.Accordion, { items: [
                     ['Fiyatı hangi kararlar değiştirir?', 'Ölçü, gövde ve kapak tercihi, yüzey, donanım, aydınlatma ve uygulama koşulları birlikte değerlendirilir. Burada doğrulanmamış başlangıç fiyatı veya sabit teslim süresi verilmez.'],
                     ['Fotoğrafta gördüğüm her şey dahil mi?', 'Beyaz eşya, kahve makinesi, TV, dekor, tezgâh ve elektrik işleri kendiliğinden teklife dahil sayılmaz. Mobilya, donanım, nakliye ve montaj kalemlerinin kapsamı yazılı teklifte ayrı netleştirilir.'],
-                    ['Önce hangi bilgileri paylaşmalıyım?', info ? info.questions.join(' ') : 'Ürünün kullanım amacı, yaklaşık alan veya ölçü, ilçe ve sizin için önemli ayrıntılarla başlayabilirsiniz. Kesin imalat ölçüsünü ilk mesajda bilmeniz gerekmiyor.'],
+                    ['Önce hangi bilgileri paylaşmalıyım?', service_content_1.serviceContent[category] ? service_content_1.serviceContent[category].preparation.join(' ') : info ? info.questions.join(' ') : 'Ürünün kullanım amacı, yaklaşık alan veya ölçü, ilçe ve sizin için önemli ayrıntılarla başlayabilirsiniz. Kesin imalat ölçüsünü ilk mesajda bilmeniz gerekmiyor.'],
                     ['Tasarım onayından sonra bir şey değişirse?', 'Ölçü, malzeme veya model değişikliğinin fiyat ve üretim planına etkisi yeniden görüşülür. Karşılıklı olarak netleşmeyen bir değişiklik üretim onayı sayılmaz.']
                 ] })));
 }
@@ -6151,7 +6270,7 @@ class SearchPage extends react_1.Component {
             (0, react_1.createElement)("div", { className: "v7-result-grid" }, list.map(x => (0, react_1.createElement)("article", { key: x.id },
                 x.image && (0, react_1.createElement)(ui_1.Link, { to: x.path, navigate: a.navigate },
                     (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: x.image, alt: x.title, sizes: "(max-width: 680px) 90vw, 30vw" })),
-                x.kind === 'page' ? (0, react_1.createElement)("span", { className: "source-tag" }, "St\u00FCdyo ve rehber") : (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: x.kind }),
+                x.kind === 'page' ? (0, react_1.createElement)("span", { className: "source-tag" }, "St\u00FCdyo ve rehber") : (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: x.photoKind || x.kind }),
                 (0, react_1.createElement)("h2", null,
                     (0, react_1.createElement)(ui_1.Link, { to: x.path, navigate: a.navigate }, x.title)),
                 (0, react_1.createElement)("p", null, (0, portfolio_1.categoryName)(x.category)),
@@ -6184,7 +6303,7 @@ function SavedBoard(a) { const entries = (0, selections_1.selectedEntries)(a.fav
             (0, react_1.createElement)("div", { className: "v7-result-grid" }, entries.map(x => (0, react_1.createElement)("article", { key: x.id },
                 x.image && (0, react_1.createElement)(ui_1.Link, { to: x.path, navigate: a.navigate },
                     (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: x.image, alt: x.title, sizes: "(max-width: 680px) 90vw, 30vw" })),
-                (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: x.kind }),
+                (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: x.photoKind || x.kind }),
                 (0, react_1.createElement)("h2", null, x.title),
                 (0, react_1.createElement)("p", null, (0, portfolio_1.categoryName)(x.category)),
                 (0, react_1.createElement)("button", { className: "text-link", "aria-label": x.title + ' seçimini kaldır', onClick: () => a.favorite(x.id) },
@@ -6299,24 +6418,63 @@ function PrivacyV7(a) { return (0, react_1.createElement)("section", { className
             "Cihaz kay\u0131tlar\u0131n\u0131 y\u00F6net ",
             (0, react_1.createElement)(ui_1.Icon, null)),
         (0, react_1.createElement)(ui_1.ButtonLink, { to: "/iletisim", navigate: a.navigate }, "\u0130leti\u015Fim"))); }
-function MaterialsV7(a) { return (0, react_1.createElement)(react_1.Fragment, null,
-    (0, react_1.createElement)("header", { className: "v6-page-head wrap" },
-        (0, react_1.createElement)(ui_1.Eyebrow, null, "EL\u0130F / MALZEMEY\u0130 B\u0130RL\u0130KTE SE\u00C7EL\u0130M"),
-        (0, react_1.createElement)("div", null,
-            (0, react_1.createElement)("h1", null,
-                "Sadece bir renk de\u011Fil.",
-                (0, react_1.createElement)("br", null),
-                (0, react_1.createElement)("em", null, "Bir kullan\u0131m karar\u0131.")),
-            (0, react_1.createElement)("p", null, "Foto\u011Fraftaki g\u00F6r\u00FCn\u00FCm tek ba\u015F\u0131na malzemenin t\u00FCr\u00FCn\u00FC s\u00F6ylemez. G\u00F6vde, kapak, y\u00FCzey ve donan\u0131m\u0131 ayr\u0131 ayr\u0131 netle\u015Ftirelim."))),
-    (0, react_1.createElement)("section", { className: "wrap v7-materials" }, [['01', 'Gövde', 'Depolama, taşıma ve yerleşim ihtiyacı. Levha esaslı çözümler veya masif ahşap, projenin koşullarına göre konuşulur.'], ['02', 'Kapak ve yüzey', 'Kaplama, boya veya lake görünümü. Son rengi ve dokuyu fotoğraf üzerinden kesinleştirmek yerine numuneyle teyit ederiz.'], ['03', 'Donanım', 'Menteşe, ray, kulp ve varsa mekanizma. Marka, model ve kapasite uygunluğu kesin teklifte belirtilir.'], ['04', 'Tezgâh ve uygulama', 'Tezgâh, elektrik, aydınlatma, taşıma ve montaj ayrı kapsam kalemleridir. Fotoğrafta görünmesi otomatik olarak dahil olduğu anlamına gelmez.']].map(([n, title, text]) => (0, react_1.createElement)("article", { key: n },
-        (0, react_1.createElement)(ui_1.Eyebrow, null,
-            n,
-            " / B\u0130RL\u0130KTE KARAR"),
-        (0, react_1.createElement)("h2", null, title),
-        (0, react_1.createElement)("p", null, text)))),
-    (0, react_1.createElement)("section", { className: "wrap v7-readable" },
-        (0, react_1.createElement)("h2", null, "Bak\u0131m, y\u00FCzeye g\u00F6re de\u011Fi\u015Fir."),
-        (0, react_1.createElement)("p", null, "Temizlik \u00FCr\u00FCn\u00FC veya ya\u011F uygulamadan \u00F6nce kullan\u0131lan y\u00FCzeyi ve \u00FCreticinin bak\u0131m y\u00F6nlendirmesini teyit edin. Her ah\u015Fap g\u00F6r\u00FCn\u00FCml\u00FC mobilyaya ayn\u0131 i\u015Flem uygun olmayabilir. Malzeme ve donan\u0131m bilgilerini teklif ve teslimde istemeniz, sonraki bak\u0131m\u0131 kolayla\u015Ft\u0131r\u0131r.")),
-    (0, react_1.createElement)(PortfolioUI_1.ModelCallout, { navigate: a.navigate, compact: true })); }
+function MaterialsV7(a) {
+    return (0, react_1.createElement)(react_1.Fragment, null,
+        (0, react_1.createElement)("header", { className: "v6-page-head wrap" },
+            (0, react_1.createElement)(ui_1.Eyebrow, null, "EL\u0130F / MALZEMEY\u0130 B\u0130RL\u0130KTE SE\u00C7EL\u0130M"),
+            (0, react_1.createElement)("div", null,
+                (0, react_1.createElement)("h1", null,
+                    "Sadece bir renk de\u011Fil.",
+                    (0, react_1.createElement)("br", null),
+                    (0, react_1.createElement)("em", null, "Bir kullan\u0131m karar\u0131.")),
+                (0, react_1.createElement)("p", null, "Foto\u011Fraftaki g\u00F6r\u00FCn\u00FCm tek ba\u015F\u0131na malzemenin t\u00FCr\u00FCn\u00FC s\u00F6ylemez. G\u00F6vde, kapak, y\u00FCzey ve donan\u0131m\u0131 ayr\u0131 ayr\u0131 netle\u015Ftirelim."))),
+        (0, react_1.createElement)("section", { className: "wrap v7-materials" }, [
+            ['01', 'Gövde', 'Depolama, taşıma ve yerleşim ihtiyacı. Levha esaslı çözümler veya masif ahşap, projenin koşullarına göre konuşulur.'],
+            ['02', 'Kapak ve yüzey', 'Kaplama, boya veya lake görünümü. Son rengi ve dokuyu fotoğraf üzerinden kesinleştirmek yerine numuneyle teyit ederiz.'],
+            ['03', 'Donanım', 'Menteşe, ray, kulp ve varsa mekanizma. Marka, model ve kapasite uygunluğu kesin teklifte belirtilir.'],
+            ['04', 'Tezgâh ve uygulama', 'Tezgâh, elektrik, aydınlatma, taşıma ve montaj ayrı kapsam kalemleridir. Fotoğrafta görünmesi otomatik olarak dahil olduğu anlamına gelmez.']
+        ].map(([n, title, text]) => (0, react_1.createElement)("article", { key: n },
+            (0, react_1.createElement)(ui_1.Eyebrow, null,
+                n,
+                " / B\u0130RL\u0130KTE KARAR"),
+            (0, react_1.createElement)("h2", null, title),
+            (0, react_1.createElement)("p", null, text)))),
+        (0, react_1.createElement)("section", { className: "wrap material-decisions", id: "malzeme-karari", "aria-labelledby": "material-decision-title" },
+            (0, react_1.createElement)("div", { className: "v6-heading" },
+                (0, react_1.createElement)("div", null,
+                    (0, react_1.createElement)(ui_1.Eyebrow, null, "G\u00D6R\u00DCN\u00DCMDEN GER\u00C7EK NUMUNEYE"),
+                    (0, react_1.createElement)("h2", { id: "material-decision-title" },
+                        "Ayn\u0131 renk,",
+                        (0, react_1.createElement)("br", null),
+                        (0, react_1.createElement)("em", null, "ayn\u0131 malzeme de\u011Fil."))),
+                (0, react_1.createElement)("p", null,
+                    (0, react_1.createElement)("strong", null, "Numune katalo\u011Fu de\u011Fil."),
+                    " A\u015Fa\u011F\u0131daki sorular g\u00F6r\u00FC\u015Fme haz\u0131rl\u0131\u011F\u0131d\u0131r. Fiziksel numune, stok veya belirli bir malzeme markas\u0131 vaadi i\u00E7ermez.")),
+            (0, react_1.createElement)("div", { className: "material-question-grid" }, [
+                ['Görünüm', 'Beğendiğim şey ağaç tonu mu, çizgili yüzey mi, matlık mı?', 'Gövde ile dış yüzeyin aynı malzeme olup olmadığını sorun. Ceviz görünümü, masif ceviz tanımı değildir.'],
+                ['Kullanım', 'Bu parça nerede duracak, ne taşıyacak, nasıl kullanılacak?', 'Islaklık, sıcak cihazlar, güneş veya günlük teması tarif edin. Uygunluk, gerçek ürün ve yüzey bilgisiyle değerlendirilir.'],
+                ['Bakım', 'Seçtiğim yüzeyin kendi bakım talimatı var mı?', 'Temizlik ve bakım bilgisini kullanılan kaplama veya yüzey ürünüyle birlikte isteyin. Her ahşap görünümlü yüzeye aynı işlem uygulanmaz.'],
+                ['Teklif', 'Gövde, kapak, donanım ve uygulama ayrı yazılmış mı?', 'Numune veya renk onayını, donanım kodlarını ve hangi işlerin dahil olduğunu karşılaştırın. Yalnız toplam tutar aynı kapsamı göstermez.']
+            ].map(([title, question, note]) => (0, react_1.createElement)("details", { key: title },
+                (0, react_1.createElement)("summary", null,
+                    title,
+                    " i\u00E7in neyi soray\u0131m? ",
+                    (0, react_1.createElement)(ui_1.Icon, { name: "plus", size: 18 })),
+                (0, react_1.createElement)("div", null,
+                    (0, react_1.createElement)("h3", null, question),
+                    (0, react_1.createElement)("p", null, note))))),
+            (0, react_1.createElement)("div", { className: "material-next" },
+                (0, react_1.createElement)(ui_1.ButtonLink, { to: "/modelini-getir", navigate: a.navigate }, "Malzeme g\u00F6r\u00FC\u015Fmesine haz\u0131rlan"),
+                (0, react_1.createElement)(ui_1.Link, { className: "text-link", to: "/rehber/malzeme-secimi", navigate: a.navigate },
+                    "Malzeme se\u00E7imi notunu oku ",
+                    (0, react_1.createElement)(ui_1.Icon, null)))),
+        (0, react_1.createElement)("section", { className: "wrap v7-readable" },
+            (0, react_1.createElement)("h2", null, "Bak\u0131m, y\u00FCzeye g\u00F6re de\u011Fi\u015Fir."),
+            (0, react_1.createElement)("p", null, "Temizlik \u00FCr\u00FCn\u00FC veya ya\u011F uygulamadan \u00F6nce kullan\u0131lan y\u00FCzeyi ve \u00FCreticinin bak\u0131m y\u00F6nlendirmesini teyit edin. Her ah\u015Fap g\u00F6r\u00FCn\u00FCml\u00FC mobilyaya ayn\u0131 i\u015Flem uygun olmayabilir. Malzeme ve donan\u0131m bilgilerini teklif ve teslimde istemeniz, sonraki bak\u0131m\u0131 kolayla\u015Ft\u0131r\u0131r."),
+            (0, react_1.createElement)(ui_1.Link, { className: "text-link", to: "/rehber/bakim", navigate: a.navigate },
+                "Bak\u0131m haz\u0131rl\u0131k notlar\u0131 ",
+                (0, react_1.createElement)(ui_1.Icon, null))),
+        (0, react_1.createElement)(PortfolioUI_1.ModelCallout, { navigate: a.navigate, compact: true }));
+}
 
 }};const cache={};function resolve(id,from){if(!id.startsWith("."))return id;const a=from.split("/");a.pop();for(const part of id.split("/")){if(part==="..")a.pop();else if(part!==".")a.push(part)}return a.join("/").replace(/\.tsx?$/,"")}function load(id,from=""){id=resolve(id,from);if(cache[id])return cache[id].exports;if(!modules[id])throw Error("Missing module "+id);const m={exports:{}};cache[id]=m;modules[id](m,m.exports,x=>load(x,id));return m.exports}load("src/main");})();

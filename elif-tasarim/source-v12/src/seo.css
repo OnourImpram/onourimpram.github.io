@@ -31,3 +31,6 @@
 
 /* Tablet CTA needs its own space above the larger navigation panel. */
 @media(min-width:701px) and (max-width:960px){.v232-carousel .v6-hero-inner{padding-bottom:225px}.v234-bottom .v6-hero-caption{display:none}}
+
+.seo-decisions.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){.seo-decisions.three{grid-template-columns:1fr}}
