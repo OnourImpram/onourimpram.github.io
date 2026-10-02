@@ -1,0 +1,3616 @@
+{
+  "schemaVersion": 2,
+  "scope": "Curated public catalogue, not a comprehensive field survey or institutional member roster.",
+  "identityPolicy": "Contributor mentions remain scoped to each source. Name equality does not establish person identity, supervision or membership.",
+  "scientificApproval": false,
+  "institutionalApproval": false,
+  "works": [
+    {
+      "id": "aservic-principles",
+      "sourceId": "s-aservic",
+      "originalTitle": "Spiritual and religious best practices",
+      "language": null,
+      "kind": "guide",
+      "identifiers": [],
+      "topic": "ethics",
+      "sections": [
+        "library",
+        "ethics",
+        "practice"
+      ],
+      "sourceRecordHash": "aa6829a870a8cdd17af117d876c05e3004cde223e54268fed67e4f4896a33aa6",
+      "versions": [
+        {
+          "id": "aservic-principles-record",
+          "edition": null,
+          "date": 2025,
+          "publisher": null,
+          "identifier": [],
+          "source": "https://aservic.org/wp-content/uploads/2026/02/ASERVIC.-2025.-Spiritual-and-Religious-Best-Practices-1.pdf"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://aservic.org/wp-content/uploads/2026/02/ASERVIC.-2025.-Spiritual-and-Religious-Best-Practices-1.pdf",
+          "type": "external-record",
+          "host": "aservic.org",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [],
+      "displayTitle": {
+        "tr": "Manevi ve dini konularda mesleki uygulama ilkeleri",
+        "en": "Professional principles for spirituality and religion",
+        "de": "Fachliche Prinzipien für Spiritualität und Religion",
+        "zh": "灵性与宗教领域的专业实践原则",
+        "ru": "Профессиональные принципы работы с духовностью и религией",
+        "ar": "المبادئ المهنية للتعامل مع الروحانية والدين",
+        "id": "Prinsip profesional tentang spiritualitas dan agama",
+        "ms": "Prinsip profesional bagi kerohanian dan agama"
+      },
+      "description": {
+        "tr": "ASERVIC’in 2025 mesleki rehberi. Belgenin onay bilgisi ve mesleki kapsamı kaydında ayrıca açıklanır.",
+        "en": "ASERVIC’s 2025 professional guidance. The record distinguishes the document’s approval wording and professional scope.",
+        "de": "Fachliche Orientierung von ASERVIC 2025. Freigabevermerk und fachlicher Geltungsbereich werden getrennt erläutert.",
+        "zh": "ASERVIC 2025 年专业指南，条目分别说明文件中的批准信息及适用范围。",
+        "ru": "Профессиональное руководство ASERVIC 2025 года. Формулировки одобрения и профессиональный охват указаны отдельно.",
+        "ar": "إرشادات ASERVIC المهنية لعام 2025. يميّز السجل بين صيغة الموافقة الواردة في الوثيقة ونطاقها المهني.",
+        "id": "Pedoman profesional ASERVIC tahun 2025. Catatan membedakan rumusan persetujuan dalam dokumen dan lingkup profesionalnya.",
+        "ms": "Panduan profesional ASERVIC tahun 2025. Rekod membezakan pernyataan kelulusan dokumen dan skop profesionalnya."
+      },
+      "review": {
+        "identity": {
+          "status": "partial",
+          "sources": [
+            "https://aservic.org/wp-content/uploads/2026/02/ASERVIC.-2025.-Spiritual-and-Religious-Best-Practices-1.pdf"
+          ]
+        },
+        "inspection": {
+          "status": "official",
+          "level": "V1",
+          "scope": "Official PDF and cover inspected. ASERVIC approval and pending ACA endorsement are recorded as wording of this document, not a claim about a separately checked current ACA decision.",
+          "limit": "No comprehensive current correction/retraction or permissions clearance audit. Inspection is limited to the identified material. Not scientific editorial approval.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "spiritual-competence",
+      "sourceId": "s-vieten",
+      "originalTitle": "Spiritual and religious competencies in psychology",
+      "language": null,
+      "kind": "theory",
+      "identifiers": [],
+      "topic": "practice",
+      "sections": [
+        "library",
+        "practice",
+        "learning",
+        "ethics"
+      ],
+      "sourceRecordHash": "a731d108c416da5f40760f5fe4a3b0f6dd28e1f70af598b3479eb567d09bf313",
+      "versions": [
+        {
+          "id": "spiritual-competence-record",
+          "edition": null,
+          "date": 2022,
+          "publisher": null,
+          "identifier": [],
+          "source": "https://pubmed.ncbi.nlm.nih.gov/34264695/"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34264695/",
+          "type": "external-record",
+          "host": "pubmed.ncbi.nlm.nih.gov",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [],
+      "displayTitle": {
+        "tr": "Manevi ve dini yeterlikler",
+        "en": "Spiritual and religious competence",
+        "de": "Spirituelle und religiöse Kompetenz",
+        "zh": "灵性与宗教胜任力",
+        "ru": "Духовная и религиозная компетентность",
+        "ar": "الكفاءة في القضايا الروحانية والدينية",
+        "id": "Kompetensi spiritual dan keagamaan",
+        "ms": "Kompetensi kerohanian dan keagamaan"
+      },
+      "description": {
+        "tr": "Değerlendirme, tedavi planlama ve mesleki yeterliği ele alan bir çerçeve. Tam metin incelemesi yerine özet kapsamıyla kullanılır.",
+        "en": "A framework addressing assessment, treatment planning and competence. Used within the accessible abstract’s scope.",
+        "de": "Ein Rahmen für Erfassung, Behandlungsplanung und Kompetenz. Nutzung im Umfang der zugänglichen Zusammenfassung.",
+        "zh": "讨论评估、治疗规划与胜任力的框架，使用范围限于可访问摘要。",
+        "ru": "Рамка оценки, планирования помощи и компетентности. Использована в пределах доступной аннотации.",
+        "ar": "إطار يتناول التقييم وتخطيط العلاج والكفاءة. يُستخدم ضمن نطاق الملخص المتاح.",
+        "id": "Kerangka yang membahas asesmen, perencanaan terapi, dan kompetensi. Digunakan sebatas cakupan abstrak yang dapat diakses.",
+        "ms": "Kerangka yang membincangkan penilaian, perancangan rawatan dan kompetensi. Digunakan dalam skop abstrak yang dapat diakses."
+      },
+      "review": {
+        "identity": {
+          "status": "partial",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/34264695/"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Authoritative bibliographic record and accessible abstract inspected.",
+          "limit": "No comprehensive current correction/retraction or permissions clearance audit. Inspection is limited to the identified material. Not scientific editorial approval.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "integration-meta-analysis",
+      "sourceId": "s-captari",
+      "originalTitle": "Integrating clients’ religion and spirituality within psychotherapy: A comprehensive meta-analysis",
+      "language": null,
+      "kind": "study",
+      "identifiers": [
+        "10.1002/jclp.22681"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "methods",
+        "practice"
+      ],
+      "sourceRecordHash": "52d88ff823b1019387e64bf72968bee05fe9d27b13478d3e37019fb97085b50b",
+      "versions": [
+        {
+          "id": "integration-meta-analysis-record",
+          "edition": null,
+          "date": 2018,
+          "publisher": null,
+          "identifier": [
+            "10.1002/jclp.22681"
+          ],
+          "source": "https://doi.org/10.1002/jclp.22681"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1002/jclp.22681",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [],
+      "displayTitle": {
+        "tr": "Manevi uyarlamalar için meta-analitik kanıt",
+        "en": "Meta-analytic evidence for spiritual adaptations",
+        "de": "Metaanalytische Evidenz zu spirituellen Anpassungen",
+        "zh": "灵性适配的元分析证据",
+        "ru": "Метааналитические данные о духовной адаптации терапии",
+        "ar": "أدلة التحليل التلوي على التكييفات الروحانية",
+        "id": "Bukti meta-analitik untuk adaptasi spiritual",
+        "ms": "Bukti meta-analitik bagi penyesuaian kerohanian"
+      },
+      "description": {
+        "tr": "Din ve maneviyatla uyarlanmış psikoterapileri farklı karşılaştırma koşulları ve sonuçlar üzerinden inceleyen meta analiz.",
+        "en": "A meta-analysis of religiously and spiritually adapted psychotherapy across comparison conditions and outcomes.",
+        "de": "Eine Metaanalyse religiös und spirituell angepasster Psychotherapie unter verschiedenen Vergleichsbedingungen und Ergebnismaßen.",
+        "zh": "针对宗教与灵性适配心理治疗的元分析，考察不同对照条件与结果。",
+        "ru": "Метаанализ религиозно и духовно адаптированной психотерапии с различными условиями сравнения и исходами.",
+        "ar": "تحليل تلوي للعلاج النفسي المكيف دينياً وروحياً عبر شروط مقارنة ونتائج مختلفة.",
+        "id": "Meta-analisis psikoterapi yang disesuaikan secara religius dan spiritual pada berbagai kondisi perbandingan dan hasil.",
+        "ms": "Meta-analisis psikoterapi yang disesuaikan secara agama dan kerohanian merentas syarat perbandingan dan hasil."
+      },
+      "review": {
+        "identity": {
+          "status": "partial",
+          "sources": [
+            "https://doi.org/10.1002/jclp.22681"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Authoritative bibliographic record and accessible abstract inspected.",
+          "limit": "No comprehensive current correction/retraction or permissions clearance audit. Inspection is limited to the identified material. Not scientific editorial approval.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "client-preference",
+      "sourceId": "s-swift",
+      "originalTitle": "Client preference accommodation for religious/spiritual integration and psychotherapy outcomes in naturalistic practice settings",
+      "language": null,
+      "kind": "study",
+      "identifiers": [],
+      "topic": "practice",
+      "sections": [
+        "library",
+        "practice",
+        "methods"
+      ],
+      "sourceRecordHash": "c42921fc109f528b02db9cad3aa59b4fa12e91cd5c7767e117c879e0acf9f6dc",
+      "versions": [
+        {
+          "id": "client-preference-record",
+          "edition": null,
+          "date": 2022,
+          "publisher": null,
+          "identifier": [],
+          "source": "https://pubmed.ncbi.nlm.nih.gov/34553982/"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34553982/",
+          "type": "external-record",
+          "host": "pubmed.ncbi.nlm.nih.gov",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [],
+      "displayTitle": {
+        "tr": "Danışanın manevi entegrasyon tercihi",
+        "en": "Client preferences for spiritual integration",
+        "de": "Präferenzen für spirituelle Integration",
+        "zh": "来访者对灵性整合的偏好",
+        "ru": "Предпочтения клиента относительно духовной интеграции",
+        "ar": "تفضيلات المسترشد بشأن الدمج الروحاني",
+        "id": "Preferensi klien untuk integrasi spiritual",
+        "ms": "Keutamaan klien bagi integrasi kerohanian"
+      },
+      "description": {
+        "tr": "Doğal uygulama ortamında tercih karşılanmasını inceleyen gözlemsel çalışma. İlişki, tek başına nedensellik göstermez.",
+        "en": "An observational study of preference accommodation in routine practice. Association alone does not establish causation.",
+        "de": "Beobachtungsstudie zur Berücksichtigung von Präferenzen in der Praxis. Ein Zusammenhang allein belegt keine Kausalität.",
+        "zh": "在实际实践中考察偏好满足的观察性研究。关联本身不能证明因果关系。",
+        "ru": "Наблюдательное исследование учёта предпочтений в обычной практике. Связь сама по себе не доказывает причинность.",
+        "ar": "دراسة رصدية لتلبية التفضيلات في الممارسة المعتادة. الارتباط وحده لا يثبت السببية.",
+        "id": "Studi observasional tentang pemenuhan preferensi dalam praktik rutin. Hubungan saja tidak membuktikan sebab-akibat.",
+        "ms": "Kajian pemerhatian tentang pemenuhan keutamaan dalam amalan biasa. Perkaitan sahaja tidak membuktikan sebab-akibat."
+      },
+      "review": {
+        "identity": {
+          "status": "partial",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/34553982/"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Authoritative bibliographic record and accessible abstract inspected.",
+          "limit": "No comprehensive current correction/retraction or permissions clearance audit. Inspection is limited to the identified material. Not scientific editorial approval.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "sacred-tensions",
+      "sourceId": "s-tunc",
+      "originalTitle": "Sacred Tensions: How Mental Health Professionals Navigate Spirituality, Ethics, and Professional Identity",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1007/s11089-025-01244-0"
+      ],
+      "topic": "ethics",
+      "sections": [
+        "library",
+        "publications",
+        "practice"
+      ],
+      "sourceRecordHash": "ba20f495e06d93a54e1b128f7b88a3ee630837303d861b04c96e538943ecb14e",
+      "versions": [
+        {
+          "id": "sacred-tensions-record",
+          "edition": null,
+          "date": "2025-08-21",
+          "publisher": null,
+          "identifier": [
+            "10.1007/s11089-025-01244-0"
+          ],
+          "source": "https://link.springer.com/article/10.1007/s11089-025-01244-0"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://link.springer.com/article/10.1007/s11089-025-01244-0",
+          "type": "external-record",
+          "host": "link.springer.com",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-tunc-authors-1",
+          "name": "M. Furkan Tunç",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-tunc"
+        },
+        {
+          "id": "s-tunc-authors-2",
+          "name": "Halil Ekşi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-tunc"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Maneviyat, etik ve mesleki kimlik",
+        "en": "Spirituality, ethics and professional identity",
+        "de": "Spiritualität, Ethik und berufliche Identität",
+        "zh": "灵性、伦理与专业身份",
+        "ru": "Духовность, этика и профессиональная идентичность",
+        "ar": "الروحانية والأخلاق والهوية المهنية",
+        "id": "Spiritualitas, etika, dan identitas profesional",
+        "ms": "Kerohanian, etika dan identiti profesional"
+      },
+      "description": {
+        "tr": "Sekiz uygulayıcının deneyimlerinden hareketle manevi değerler, mesleki sınırlar ve kültürel duyarlılığı inceleyen nitel araştırma.",
+        "en": "Qualitative research on spiritual values, professional boundaries and cultural sensitivity through eight practitioners’ experiences.",
+        "de": "Qualitative Forschung zu spirituellen Werten, beruflichen Grenzen und Kultursensibilität anhand der Erfahrungen von acht Praktizierenden.",
+        "zh": "通过八位实践者的经验考察灵性价值、专业边界与文化敏感性的质性研究。",
+        "ru": "Качественное исследование духовных ценностей, профессиональных границ и культурной чувствительности на опыте восьми практиков.",
+        "ar": "بحث نوعي عن القيم الروحية والحدود المهنية والحساسية الثقافية من تجارب ثمانية ممارسين.",
+        "id": "Penelitian kualitatif tentang nilai spiritual, batas profesional, dan kepekaan budaya melalui pengalaman delapan praktisi.",
+        "ms": "Penyelidikan kualitatif tentang nilai kerohanian, batas profesional dan kepekaan budaya melalui pengalaman lapan pengamal."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://link.springer.com/article/10.1007/s11089-025-01244-0"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Published article metadata and accessible abstract. No complete methods or findings review.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "metaphysical-diversity",
+      "sourceId": "s-hodge",
+      "originalTitle": "Metaphysical diversity in mental health discourse: The key to scientific progress in the helping professions",
+      "language": null,
+      "kind": "theory",
+      "identifiers": [
+        "10.37898/spc.2021.6.3.154"
+      ],
+      "topic": "culture",
+      "sections": [
+        "library",
+        "concepts",
+        "approaches"
+      ],
+      "sourceRecordHash": "6fb8dc3cabc3f56266f8307c95b855c3b9552d2d7c9f59008ab508b2931ed1be",
+      "versions": [
+        {
+          "id": "metaphysical-diversity-record",
+          "edition": null,
+          "date": 2021,
+          "publisher": null,
+          "identifier": [
+            "10.37898/spc.2021.6.3.154"
+          ],
+          "source": "https://doi.org/10.37898/spc.2021.6.3.154"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.37898/spc.2021.6.3.154",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [],
+      "displayTitle": {
+        "tr": "Metafizik çeşitlilik üzerine kuramsal tartışma",
+        "en": "A theoretical discussion of metaphysical diversity",
+        "de": "Theoretische Diskussion metaphysischer Vielfalt",
+        "zh": "关于形而上学多样性的理论讨论",
+        "ru": "Теоретическое обсуждение метафизического разнообразия",
+        "ar": "نقاش نظري حول التنوع الميتافيزيقي",
+        "id": "Pembahasan teoretis tentang keberagaman metafisis",
+        "ms": "Perbincangan teori tentang kepelbagaian metafizik"
+      },
+      "description": {
+        "tr": "Ruh sağlığı söylemindeki metafizik varsayımları tartışan kuramsal metin. Bir yaklaşımın üstün etkililiğini sınamaz.",
+        "en": "A theoretical examination of metaphysical assumptions in mental health discourse. It does not test treatment superiority.",
+        "de": "Theoretische Analyse metaphysischer Annahmen im Diskurs über psychische Gesundheit. Kein Überlegenheitsnachweis einer Behandlung.",
+        "zh": "讨论心理健康话语中的形而上学假设，未检验任何疗法的优越效果。",
+        "ru": "Теоретический анализ метафизических предпосылок. Работа не проверяет превосходство терапевтического подхода.",
+        "ar": "فحص نظري للافتراضات الميتافيزيقية في خطاب الصحة النفسية. لا يختبر تفوّق علاج على آخر.",
+        "id": "Telaah teoretis atas asumsi metafisis dalam wacana kesehatan mental. Tidak menguji keunggulan suatu terapi.",
+        "ms": "Penelitian teori terhadap andaian metafizik dalam wacana kesihatan mental. Tidak menguji kelebihan sesuatu rawatan."
+      },
+      "review": {
+        "identity": {
+          "status": "partial",
+          "sources": [
+            "https://doi.org/10.37898/spc.2021.6.3.154"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Authoritative bibliographic record and accessible abstract inspected.",
+          "limit": "No comprehensive current correction/retraction or permissions clearance audit. Inspection is limited to the identified material. Not scientific editorial approval.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "three-waves",
+      "sourceId": "s-pargament",
+      "originalTitle": "From research to practice: Three waves in the evolution of the psychology of religion and spirituality",
+      "language": null,
+      "kind": "theory",
+      "identifiers": [
+        "10.37898/spc.2023.8.3.191"
+      ],
+      "topic": "foundations",
+      "sections": [
+        "library",
+        "concepts",
+        "methods"
+      ],
+      "sourceRecordHash": "96a13352268363dc3a5d0fa2cc1df551190dbfbfba4f203657908dd0b155b0a8",
+      "versions": [
+        {
+          "id": "three-waves-record",
+          "edition": null,
+          "date": 2023,
+          "publisher": null,
+          "identifier": [
+            "10.37898/spc.2023.8.3.191"
+          ],
+          "source": "https://doi.org/10.37898/spc.2023.8.3.191"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.37898/spc.2023.8.3.191",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [],
+      "displayTitle": {
+        "tr": "Araştırmadan uygulamaya üç dalga",
+        "en": "Three waves from research to practice",
+        "de": "Drei Wellen von Forschung zur Praxis",
+        "zh": "从研究到实践的三次发展浪潮",
+        "ru": "Три волны от исследования к практике",
+        "ar": "ثلاث موجات من البحث إلى الممارسة",
+        "id": "Tiga gelombang dari riset ke praktik",
+        "ms": "Tiga gelombang daripada penyelidikan kepada amalan"
+      },
+      "description": {
+        "tr": "Din ve maneviyat psikolojisinde kuram, araştırma ve uygulama ilişkisini inceleyen alan değerlendirmesi.",
+        "en": "A field review of the relationship between theory, research and practice in the psychology of religion and spirituality.",
+        "de": "Ein Überblick zum Verhältnis von Theorie, Forschung und Praxis in der Religions- und Spiritualitätspsychologie.",
+        "zh": "回顾宗教与灵性心理学中理论、研究及实践之间的关系。",
+        "ru": "Обзор связей между теорией, исследованиями и практикой в психологии религии и духовности.",
+        "ar": "مراجعة للمجال تبحث علاقة النظرية والبحث والممارسة في علم نفس الدين والروحانية.",
+        "id": "Tinjauan bidang tentang hubungan teori, riset, dan praktik dalam psikologi agama dan spiritualitas.",
+        "ms": "Tinjauan bidang tentang hubungan teori, penyelidikan dan amalan dalam psikologi agama dan kerohanian."
+      },
+      "review": {
+        "identity": {
+          "status": "partial",
+          "sources": [
+            "https://doi.org/10.37898/spc.2023.8.3.191"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Authoritative bibliographic record and accessible abstract inspected.",
+          "limit": "No comprehensive current correction/retraction or permissions clearance audit. Inspection is limited to the identified material. Not scientific editorial approval.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "theories-book",
+      "sourceId": "s-eksi",
+      "originalTitle": "Psikoterapi ve Psikolojik Danışma Kuramları: Manevi Boyutlarıyla",
+      "language": "tr",
+      "kind": "book",
+      "identifiers": [
+        "978-975-256-715-3"
+      ],
+      "topic": "theory",
+      "sections": [
+        "library",
+        "books",
+        "learning"
+      ],
+      "sourceRecordHash": "e90236bb63248bef63868d70f4123de0e6a593e8ef516d319d7491b38415def1",
+      "versions": [
+        {
+          "id": "theories-book-edition-1",
+          "edition": "1",
+          "date": "2024",
+          "publisher": "Kaknüs Yayınları",
+          "identifier": [
+            "978-975-256-715-3"
+          ],
+          "source": "https://www.kaknus.com.tr/urun/psikoterapi-ve-psikolojik-danisma-kuramlari/"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://www.kaknus.com.tr/urun/psikoterapi-ve-psikolojik-danisma-kuramlari/",
+          "type": "external-record",
+          "host": "www.kaknus.com.tr",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-eksi-editors-1",
+          "name": "Halil Ekşi",
+          "role": "editors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-1",
+          "name": "Ayfer Summermatter",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-2",
+          "name": "Betül Gülcan Çakmak",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-3",
+          "name": "Bülent Dilmaç",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-4",
+          "name": "Büşra Ünverdi Demir",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-5",
+          "name": "Cem Boyalı",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-6",
+          "name": "Erdem Sevim",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-7",
+          "name": "Gökhan Özcan",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-8",
+          "name": "Gülşen Topal Özgen",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-9",
+          "name": "Hale Nur Kılıç Memur",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-10",
+          "name": "Halil Ekşi",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-11",
+          "name": "Hatice Hilal Saçar",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-12",
+          "name": "Hatun Sevgi Yalın",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-13",
+          "name": "Merve Baysal",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-14",
+          "name": "Merve Nur Çınar",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-15",
+          "name": "Nesrullah Okan",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-16",
+          "name": "Oğuzhan Yavuz",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-17",
+          "name": "Pınar Özdemir",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-18",
+          "name": "Selami Kardaş",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-19",
+          "name": "Tuğba Turgut",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-20",
+          "name": "Tuğba Türk Kurtça",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-21",
+          "name": "Vedat Bakır",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-22",
+          "name": "Yakup Özkapu",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        },
+        {
+          "id": "s-eksi-contributors-23",
+          "name": "Zeynep Şimşir Gökalp",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-eksi"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Psikoterapi ve Psikolojik Danışma Kuramları",
+        "en": "Psychotherapy and Counselling Theories",
+        "de": "Psychotherapie- und Beratungstheorien",
+        "zh": "心理治疗与咨询理论",
+        "ru": "Теории психотерапии и консультирования",
+        "ar": "نظريات العلاج النفسي والإرشاد",
+        "id": "Teori Psikoterapi dan Konseling",
+        "ms": "Teori Psikoterapi dan Kaunseling"
+      },
+      "description": {
+        "tr": "Farklı psikoterapi kuramlarının manevi boyutlarını inceleyen, Halil Ekşi editörlüğündeki çok yazarlı eser.",
+        "en": "An edited collection examining the spiritual dimensions of different psychotherapy theories.",
+        "de": "Ein Sammelband über die spirituellen Dimensionen unterschiedlicher Psychotherapietheorien.",
+        "zh": "探讨不同心理治疗理论之灵性维度的多作者编著。",
+        "ru": "Коллективная книга о духовных измерениях различных теорий психотерапии.",
+        "ar": "كتاب جماعي يستكشف الأبعاد الروحية لنظريات مختلفة في العلاج النفسي.",
+        "id": "Kumpulan tulisan yang mengkaji dimensi spiritual berbagai teori psikoterapi.",
+        "ms": "Himpunan tulisan yang meneliti dimensi kerohanian pelbagai teori psikoterapi."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://www.kaknus.com.tr/urun/psikoterapi-ve-psikolojik-danisma-kuramlari/"
+          ]
+        },
+        "inspection": {
+          "status": "metadata",
+          "level": "V1",
+          "scope": "Publisher catalogue and edition metadata. No book chapters republished.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "toad-directory",
+      "sourceId": "s-toad",
+      "originalTitle": "Türkiye Ölçme Araçları Dizini",
+      "language": null,
+      "kind": "measure",
+      "identifiers": [],
+      "topic": "assessment",
+      "sections": [
+        "library",
+        "measures"
+      ],
+      "sourceRecordHash": "e204fec82a3644dc187b6b1fa1f2b57f1d52fafa2681950c9f50ffc7dbae7814",
+      "versions": [
+        {
+          "id": "toad-directory-record",
+          "edition": null,
+          "date": null,
+          "publisher": null,
+          "identifier": [],
+          "source": "https://toad.halileksi.net/"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://toad.halileksi.net/",
+          "type": "external-record",
+          "host": "toad.halileksi.net",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [],
+      "displayTitle": {
+        "tr": "TOAD · Türkçe ölçme kaynağı aramak",
+        "en": "TOAD · Finding Turkish assessment resources",
+        "de": "TOAD · Türkischsprachige Instrumente finden",
+        "zh": "TOAD · 查找土耳其语测量资源",
+        "ru": "TOAD · Поиск инструментов на турецком языке",
+        "ar": "TOAD · البحث عن مصادر تقييم باللغة التركية",
+        "id": "TOAD · Menemukan sumber asesmen berbahasa Turki",
+        "ms": "TOAD · Mencari sumber penilaian bahasa Turki"
+      },
+      "description": {
+        "tr": "Türkçe ölçme kaynakları için dış dizin. MARSAM ile entegrasyon veya iş birliği varmış gibi sunulmaz.",
+        "en": "An external index for Turkish assessment resources. No MARSAM integration or partnership is implied.",
+        "de": "Externes Verzeichnis türkischsprachiger Instrumente. Keine behauptete Integration oder Partnerschaft mit MARSAM.",
+        "zh": "土耳其语测量资源的外部索引，不表示与 MARSAM 有系统整合或合作。",
+        "ru": "Внешний каталог инструментов на турецком языке. Интеграция или партнёрство с MARSAM не заявляются.",
+        "ar": "فهرس خارجي لمصادر التقييم باللغة التركية. لا يُفهم منه وجود تكامل تقني أو شراكة مع MARSAM.",
+        "id": "Indeks eksternal untuk sumber asesmen berbahasa Turki. Tidak menyiratkan integrasi atau kemitraan dengan MARSAM.",
+        "ms": "Indeks luar bagi sumber penilaian bahasa Turki. Tidak membayangkan integrasi atau perkongsian dengan MARSAM."
+      },
+      "review": {
+        "identity": {
+          "status": "partial",
+          "sources": [
+            "https://toad.halileksi.net/"
+          ]
+        },
+        "inspection": {
+          "status": "official",
+          "level": "V1",
+          "scope": "Relevant official public resource page inspected.",
+          "limit": "An index listing does not itself establish permission, suitability for a population or validity of a new translation. No API integration or partnership is claimed.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "prisma-guidance",
+      "sourceId": "s-prisma",
+      "originalTitle": "PRISMA statement",
+      "language": null,
+      "kind": "method",
+      "identifiers": [],
+      "topic": "methods",
+      "sections": [
+        "library",
+        "methods"
+      ],
+      "sourceRecordHash": "e07046193a13847d58e7a295c42ca11dceb1715be5d27b175a2b020dc514af21",
+      "versions": [
+        {
+          "id": "prisma-guidance-record",
+          "edition": null,
+          "date": null,
+          "publisher": null,
+          "identifier": [],
+          "source": "https://www.prisma-statement.org/"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://www.prisma-statement.org/",
+          "type": "external-record",
+          "host": "www.prisma-statement.org",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [],
+      "displayTitle": {
+        "tr": "PRISMA · Şeffaf derleme raporlaması",
+        "en": "PRISMA · Transparent review reporting",
+        "de": "PRISMA · Transparente Berichterstattung",
+        "zh": "PRISMA · 透明的综述报告",
+        "ru": "PRISMA · Прозрачная отчётность обзоров",
+        "ar": "PRISMA · الإبلاغ الشفاف عن المراجعات",
+        "id": "PRISMA · Pelaporan tinjauan yang transparan",
+        "ms": "PRISMA · Pelaporan tinjauan yang telus"
+      },
+      "description": {
+        "tr": "Resmî bildirim ve uzantılara başlangıç noktası. Raporlama kontrol listesi, araştırma tasarımını veya kanıt kalitesini kendiliğinden doğrulamaz.",
+        "en": "An entry point to the official statement and extensions. A reporting checklist does not itself validate design or evidence quality.",
+        "de": "Zugang zur offiziellen Erklärung und ihren Erweiterungen. Eine Checkliste bestätigt nicht automatisch Design oder Evidenzqualität.",
+        "zh": "官方声明与扩展指南的入口。报告清单本身不能验证研究设计或证据质量。",
+        "ru": "Вход к официальному заявлению и расширениям. Чек-лист сам по себе не подтверждает качество дизайна или доказательств.",
+        "ar": "مدخل إلى البيان الرسمي وامتداداته. قائمة فحص الإبلاغ لا تثبت بحد ذاتها جودة التصميم أو الأدلة.",
+        "id": "Pintu masuk ke pernyataan resmi dan ekstensinya. Daftar periksa pelaporan tidak dengan sendirinya memvalidasi desain atau mutu bukti.",
+        "ms": "Titik permulaan kepada pernyataan rasmi dan peluasannya. Senarai semak pelaporan tidak dengan sendirinya mengesahkan reka bentuk atau mutu bukti."
+      },
+      "review": {
+        "identity": {
+          "status": "partial",
+          "sources": [
+            "https://www.prisma-statement.org/"
+          ]
+        },
+        "inspection": {
+          "status": "official",
+          "level": "V1",
+          "scope": "Relevant official public resource page inspected.",
+          "limit": "No comprehensive current correction/retraction or permissions clearance audit. Inspection is limited to the identified material. Not scientific editorial approval.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "ai-health-ethics",
+      "sourceId": "s-who-ai",
+      "originalTitle": "Ethics and governance of artificial intelligence for health",
+      "language": null,
+      "kind": "guide",
+      "identifiers": [],
+      "topic": "digital",
+      "sections": [
+        "library",
+        "ethics",
+        "methods"
+      ],
+      "sourceRecordHash": "5cc65ad6c378b30d004f403726b9a1f3eff3bec31da56ff0cb469949e1006802",
+      "versions": [
+        {
+          "id": "ai-health-ethics-record",
+          "edition": null,
+          "date": 2021,
+          "publisher": null,
+          "identifier": [],
+          "source": "https://www.who.int/publications/i/item/9789240029200"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "type": "external-record",
+          "host": "www.who.int",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [],
+      "displayTitle": {
+        "tr": "Sağlıkta yapay zekâ, etik ve yönetişim",
+        "en": "AI for health, ethics and governance",
+        "de": "KI für Gesundheit, Ethik und Governance",
+        "zh": "健康领域人工智能的伦理与治理",
+        "ru": "ИИ в здравоохранении: этика и управление",
+        "ar": "الذكاء الاصطناعي للصحة، الأخلاقيات والحوكمة",
+        "id": "AI untuk kesehatan, etika, dan tata kelola",
+        "ms": "AI untuk kesihatan, etika dan tadbir urus"
+      },
+      "description": {
+        "tr": "WHO’nun 2021 rehberi. Teknik performans ile klinik yarar, insan denetimi ve sorumluluk ayrı değerlendirilmelidir.",
+        "en": "WHO’s 2021 guidance. Technical performance, clinical benefit, human oversight and responsibility require separate consideration.",
+        "de": "WHO-Leitlinie von 2021. Technische Leistung, klinischer Nutzen, menschliche Aufsicht und Verantwortung sind getrennt zu beurteilen.",
+        "zh": "WHO 2021 年指南。技术表现、临床获益、人工监督与责任应分别评估。",
+        "ru": "Руководство ВОЗ 2021 года. Технические показатели, клиническая польза, человеческий надзор и ответственность требуют отдельной оценки.",
+        "ar": "إرشادات منظمة الصحة العالمية لعام 2021. ينبغي النظر إلى الأداء التقني والمنفعة السريرية والإشراف البشري والمسؤولية كلّاً على حدة.",
+        "id": "Pedoman WHO tahun 2021. Kinerja teknis, manfaat klinis, pengawasan manusia, dan tanggung jawab perlu dipertimbangkan secara terpisah.",
+        "ms": "Panduan WHO tahun 2021. Prestasi teknikal, manfaat klinikal, pengawasan manusia dan tanggungjawab perlu dipertimbangkan secara berasingan."
+      },
+      "review": {
+        "identity": {
+          "status": "partial",
+          "sources": [
+            "https://www.who.int/publications/i/item/9789240029200"
+          ]
+        },
+        "inspection": {
+          "status": "official",
+          "level": "V1",
+          "scope": "Relevant official public resource page inspected.",
+          "limit": "No comprehensive current correction/retraction or permissions clearance audit. Inspection is limited to the identified material. Not scientific editorial approval.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "malaysia-ukm-counselling",
+      "sourceId": "s-ukm-counselling",
+      "originalTitle": "The Islamic counselling approach in addressing anxiety among adolescents in higher education institutions (HEIs)",
+      "language": "en",
+      "kind": "theory",
+      "identifiers": [],
+      "topic": "culture",
+      "sections": [
+        "library",
+        "approaches"
+      ],
+      "sourceRecordHash": "7650eff9c57927cd00721d2469e8cce4d29e19186174093b3da24d07bd5dadee",
+      "versions": [
+        {
+          "id": "malaysia-ukm-counselling-record",
+          "edition": null,
+          "date": 2024,
+          "publisher": null,
+          "identifier": [],
+          "source": "https://spaj.ukm.my/jalhikmah/index.php/jalhikmah/article/view/514"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://spaj.ukm.my/jalhikmah/index.php/jalhikmah/article/view/514",
+          "type": "external-record",
+          "host": "spaj.ukm.my",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [],
+      "displayTitle": {
+        "tr": "İslami danışma ve kaygı üzerine literatür incelemesi",
+        "en": "Islamic counselling and anxiety. A literature study",
+        "de": "Islamische Beratung und Angst. Eine Literaturstudie",
+        "zh": "伊斯兰咨询与焦虑文献研究",
+        "ru": "Исламское консультирование и тревога. Анализ литературы",
+        "ar": "الإرشاد الإسلامي والقلق. دراسة أدبية",
+        "id": "Konseling Islam dan kecemasan. Kajian literatur",
+        "ms": "Kaunseling Islam dan kebimbangan. Kajian literatur"
+      },
+      "description": {
+        "tr": "2024 tarihli, önceki yayınlara dayalı içerik analizi. Yeni bir klinik deney değildir. Kaygıyı azaltma konusunda bağımsız nedensel kanıt olarak yorumlanmaz.",
+        "en": "A 2024 content analysis of previous publications, not a new clinical trial. It is not treated as independent causal evidence for anxiety reduction.",
+        "de": "Inhaltsanalyse früherer Publikationen von 2024, keine neue klinische Studie. Kein unabhängiger Kausalnachweis einer Angstreduktion.",
+        "zh": "2024年对既有文献的内容分析，并非新的临床试验。不将其视为缓解焦虑的独立因果证据。",
+        "ru": "Контент-анализ предыдущих публикаций 2024 года, не новое клиническое испытание. Не рассматривается как независимое доказательство причинного снижения тревоги.",
+        "ar": "تحليل محتوى لمنشورات سابقة، نُشر عام 2024، وليس تجربة سريرية جديدة. لا يُعامل كدليل سببي مستقل على خفض القلق.",
+        "id": "Analisis isi publikasi sebelumnya tahun 2024, bukan uji klinis baru. Tidak dianggap sebagai bukti kausal independen tentang penurunan kecemasan.",
+        "ms": "Analisis kandungan penerbitan terdahulu pada tahun 2024, bukan percubaan klinikal baharu. Tidak dianggap bukti sebab-akibat bebas tentang pengurangan kebimbangan."
+      },
+      "review": {
+        "identity": {
+          "status": "partial",
+          "sources": [
+            "https://spaj.ukm.my/jalhikmah/index.php/jalhikmah/article/view/514"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Official UKM journal landing page, author names, bibliographic record and abstract inspected. The abstract identifies content analysis of previous studies, articles and scholarly works.",
+          "limit": "Literature-based content analysis, not a new clinical trial. Claims about reducing anxiety are not treated as independently established causal effects. Full text, all cited studies and exhaustive correction/retraction checks were not inspected.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "trauma-spirituality",
+      "sourceId": "s-trauma-spirituality",
+      "originalTitle": "Travmanın İzinde Maneviyat: Bütüncül Bir Psikoterapi Rehberi",
+      "language": "tr",
+      "kind": "book",
+      "identifiers": [
+        "978-625-8804-58-4"
+      ],
+      "topic": "theory",
+      "sections": [
+        "library",
+        "books",
+        "learning"
+      ],
+      "sourceRecordHash": "b00eaaa34b2a3c28a959b9384c9fa1337f693c93c43d0246b7edeab7989c728b",
+      "versions": [
+        {
+          "id": "trauma-spirituality-edition-1",
+          "edition": "1",
+          "date": "2026-09",
+          "publisher": "Nobel Akademik Yayıncılık",
+          "identifier": [
+            "978-625-8804-58-4"
+          ],
+          "source": "https://www.nobelyayin.com/travmanin-izinde-maneviyat-butuncul-bir-psikoterapi-rehberi-23386.html"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://www.nobelyayin.com/travmanin-izinde-maneviyat-butuncul-bir-psikoterapi-rehberi-23386.html",
+          "type": "external-record",
+          "host": "www.nobelyayin.com",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-trauma-spirituality-editors-1",
+          "name": "Halil Ekşi",
+          "role": "editors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-trauma-spirituality"
+        },
+        {
+          "id": "s-trauma-spirituality-contributors-1",
+          "name": "Cemile Edibe Okur",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-trauma-spirituality"
+        },
+        {
+          "id": "s-trauma-spirituality-contributors-2",
+          "name": "Fatma Sevim",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-trauma-spirituality"
+        },
+        {
+          "id": "s-trauma-spirituality-contributors-3",
+          "name": "Halil Ekşi",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-trauma-spirituality"
+        },
+        {
+          "id": "s-trauma-spirituality-contributors-4",
+          "name": "Hatice Selman",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-trauma-spirituality"
+        },
+        {
+          "id": "s-trauma-spirituality-contributors-5",
+          "name": "Okan Tiring",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-trauma-spirituality"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Travmanın İzinde Maneviyat",
+        "en": "Spirituality in the Wake of Trauma",
+        "de": "Spiritualität im Kontext von Trauma",
+        "zh": "创伤历程中的灵性",
+        "ru": "Духовность в контексте травмы",
+        "ar": "الروحانية في سياق الصدمة",
+        "id": "Spiritualitas dalam Jejak Trauma",
+        "ms": "Kerohanian dalam Jejak Trauma"
+      },
+      "description": {
+        "tr": "Travma ve maneviyatı psikoterapi bağlamında ele alan, Eylül 2026 tarihli derleme kitap.",
+        "en": "A September 2026 edited volume addressing trauma and spirituality in psychotherapy.",
+        "de": "Ein im September 2026 erschienener Sammelband über Trauma und Spiritualität in der Psychotherapie.",
+        "zh": "2026年9月出版的编著，在心理治疗情境中讨论创伤与灵性。",
+        "ru": "Коллективная книга сентября 2026 года о травме и духовности в психотерапии.",
+        "ar": "كتاب جماعي صدر في سبتمبر 2026 يتناول الصدمة والروحانية في العلاج النفسي.",
+        "id": "Buku suntingan September 2026 tentang trauma dan spiritualitas dalam psikoterapi.",
+        "ms": "Buku suntingan September 2026 tentang trauma dan kerohanian dalam psikoterapi."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://www.nobelyayin.com/travmanin-izinde-maneviyat-butuncul-bir-psikoterapi-rehberi-23386.html"
+          ]
+        },
+        "inspection": {
+          "status": "metadata",
+          "level": "V1",
+          "scope": "Publisher catalogue and edition metadata. No book chapters republished.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "spiritual-counselling-book",
+      "sourceId": "s-spiritual-counselling-book",
+      "originalTitle": "Manevi Yönelimli Psikolojik Danışma",
+      "language": "tr",
+      "kind": "book",
+      "identifiers": [
+        "978-605-033-256-8"
+      ],
+      "topic": "theory",
+      "sections": [
+        "library",
+        "books",
+        "learning"
+      ],
+      "sourceRecordHash": "2398b97aea4fcdc29a051e1a74feb83357940afde2a28f1b71d54cd8849901d0",
+      "versions": [
+        {
+          "id": "spiritual-counselling-book-edition-3",
+          "edition": "3",
+          "date": "2024-10",
+          "publisher": "Nobel Akademik Yayıncılık",
+          "identifier": [
+            "978-605-033-256-8"
+          ],
+          "source": "https://www.nobelyayin.com/manevi-yonelimli-psikolojik-danisma-15894.html"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://www.nobelyayin.com/manevi-yonelimli-psikolojik-danisma-15894.html",
+          "type": "external-record",
+          "host": "www.nobelyayin.com",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-spiritual-counselling-book-editors-1",
+          "name": "Halil Ekşi",
+          "role": "editors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-1",
+          "name": "Ayşenur Yabanigül",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-2",
+          "name": "Berra Keçeci",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-3",
+          "name": "Beyza Kırca",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-4",
+          "name": "Bilge Nuran Aydoğdu",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-5",
+          "name": "Çınar Kaya",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-6",
+          "name": "Çiğdem Demir Çelebi",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-7",
+          "name": "Dilek Akça Koca",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-8",
+          "name": "Figen Kasapoğlu",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-9",
+          "name": "Gökhan Özcan",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-10",
+          "name": "Gülşen Özgen",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-11",
+          "name": "Halil Ekşi",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-12",
+          "name": "Hatun Sevgi Yalin",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-13",
+          "name": "Kübra Kaplaner",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-14",
+          "name": "M. Şerif Keskinoğlu",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-15",
+          "name": "Neslihan Yaman",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-16",
+          "name": "Nesrullah Okan",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-17",
+          "name": "Özge Erduran Tekin",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-18",
+          "name": "Tuğba Türk",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-19",
+          "name": "Vildan Saruhan",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-20",
+          "name": "Yahya Şahin",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-21",
+          "name": "Yakup İme",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        },
+        {
+          "id": "s-spiritual-counselling-book-contributors-22",
+          "name": "Zehra Eminoğlu",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-counselling-book"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Manevi Yönelimli Psikolojik Danışma",
+        "en": "Spiritually Oriented Psychological Counselling",
+        "de": "Spirituell orientierte psychologische Beratung",
+        "zh": "灵性取向心理咨询",
+        "ru": "Духовно ориентированное психологическое консультирование",
+        "ar": "الإرشاد النفسي ذو التوجه الروحي",
+        "id": "Konseling Psikologis Berorientasi Spiritual",
+        "ms": "Kaunseling Psikologi Berorientasikan Kerohanian"
+      },
+      "description": {
+        "tr": "Kavramsal temeller, kültür, ölçme, uygulama ve etik. Güncellenmiş üçüncü baskı.",
+        "en": "Conceptual foundations, culture, assessment, practice and ethics. Updated third edition.",
+        "de": "Grundlagen, Kultur, Diagnostik, Praxis und Ethik. Aktualisierte dritte Auflage.",
+        "zh": "涵盖概念基础、文化、评估、实践与伦理。修订第三版。",
+        "ru": "Основы, культура, оценка, практика и этика. Обновлённое третье издание.",
+        "ar": "الأسس المفاهيمية والثقافة والتقييم والممارسة والأخلاق. الطبعة الثالثة المحدثة.",
+        "id": "Landasan konseptual, budaya, asesmen, praktik, dan etika. Edisi ketiga yang diperbarui.",
+        "ms": "Asas konsep, budaya, penilaian, amalan dan etika. Edisi ketiga yang dikemas kini."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://www.nobelyayin.com/manevi-yonelimli-psikolojik-danisma-15894.html"
+          ]
+        },
+        "inspection": {
+          "status": "metadata",
+          "level": "V1",
+          "scope": "Publisher catalogue and edition metadata. No book chapters republished.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "discovering-spirituality",
+      "sourceId": "s-discovering-spirituality",
+      "originalTitle": "Maneviyatın Keşfi: 21 Boyutta Kendi Kendine Yardım Kılavuzu",
+      "language": "tr",
+      "kind": "book",
+      "identifiers": [
+        "978-625-371-703-2"
+      ],
+      "topic": "theory",
+      "sections": [
+        "library",
+        "books",
+        "learning"
+      ],
+      "sourceRecordHash": "1acf247f59339ce5aa446d7e37da0cb2a903dbcd7e656e5ff49f0ea481711015",
+      "versions": [
+        {
+          "id": "discovering-spirituality-edition-1",
+          "edition": "1",
+          "date": "2024-10",
+          "publisher": "Nobel Akademik Yayıncılık",
+          "identifier": [
+            "978-625-371-703-2"
+          ],
+          "source": "https://www.nobelyayin.com/maneviyatin-kesfi-21-boyutta-kendi-kendine-yardim-kilavuzu-21519.html"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://www.nobelyayin.com/maneviyatin-kesfi-21-boyutta-kendi-kendine-yardim-kilavuzu-21519.html",
+          "type": "external-record",
+          "host": "www.nobelyayin.com",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-discovering-spirituality-authors-1",
+          "name": "Halil Ekşi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-discovering-spirituality"
+        },
+        {
+          "id": "s-discovering-spirituality-authors-2",
+          "name": "Dilek Günel",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-discovering-spirituality"
+        },
+        {
+          "id": "s-discovering-spirituality-authors-3",
+          "name": "Ece Yağcı Akgündüz",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-discovering-spirituality"
+        },
+        {
+          "id": "s-discovering-spirituality-authors-4",
+          "name": "Emre Gürkan",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-discovering-spirituality"
+        },
+        {
+          "id": "s-discovering-spirituality-authors-5",
+          "name": "Fadile Zeynep Çavuş",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-discovering-spirituality"
+        },
+        {
+          "id": "s-discovering-spirituality-authors-6",
+          "name": "Yasemin Altıntaş",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-discovering-spirituality"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Maneviyatın Keşfi",
+        "en": "Exploring Spirituality",
+        "de": "Spiritualität entdecken",
+        "zh": "探索灵性",
+        "ru": "Открывая духовность",
+        "ar": "اكتشاف الروحانية",
+        "id": "Menjelajahi Spiritualitas",
+        "ms": "Meneroka Kerohanian"
+      },
+      "description": {
+        "tr": "Maneviyatı 21 boyut üzerinden ele alan, kendi kendine yardım odaklı bir kitap.",
+        "en": "A self-help-oriented book exploring spirituality through 21 dimensions.",
+        "de": "Ein Selbsthilfebuch über 21 Dimensionen der Spiritualität.",
+        "zh": "从21个维度探索灵性的自助类书籍。",
+        "ru": "Книга самопомощи, рассматривающая 21 измерение духовности.",
+        "ar": "كتاب للمساعدة الذاتية يستكشف الروحانية عبر واحد وعشرين بُعداً.",
+        "id": "Buku bantuan diri yang membahas spiritualitas melalui 21 dimensi.",
+        "ms": "Buku bantuan kendiri yang membincangkan kerohanian melalui 21 dimensi."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://www.nobelyayin.com/maneviyatin-kesfi-21-boyutta-kendi-kendine-yardim-kilavuzu-21519.html"
+          ]
+        },
+        "inspection": {
+          "status": "metadata",
+          "level": "V1",
+          "scope": "Publisher catalogue and edition metadata. No book chapters republished.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "spiritual-practices",
+      "sourceId": "s-spiritual-practices",
+      "originalTitle": "Manevi Yaşam Pratikleri",
+      "language": "tr",
+      "kind": "book",
+      "identifiers": [
+        "978-625-371-699-8"
+      ],
+      "topic": "theory",
+      "sections": [
+        "library",
+        "books",
+        "learning"
+      ],
+      "sourceRecordHash": "dff5c21c7e373787d400766373aaeb4a6ed56c2d73d601011deb28bbb0f03c92",
+      "versions": [
+        {
+          "id": "spiritual-practices-edition-1",
+          "edition": "1",
+          "date": "2024-10",
+          "publisher": "Nobel Akademik Yayıncılık",
+          "identifier": [
+            "978-625-371-699-8"
+          ],
+          "source": "https://www.nobelyayin.com/manevi-yasam-pratikleri-21520.html"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://www.nobelyayin.com/manevi-yasam-pratikleri-21520.html",
+          "type": "external-record",
+          "host": "www.nobelyayin.com",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-spiritual-practices-editors-1",
+          "name": "Halil Ekşi",
+          "role": "editors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-practices"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Manevi Yaşam Pratikleri",
+        "en": "Practices for Spiritual Living",
+        "de": "Spirituelle Lebenspraxis",
+        "zh": "灵性生活实践",
+        "ru": "Практики духовной жизни",
+        "ar": "ممارسات الحياة الروحية",
+        "id": "Praktik Kehidupan Spiritual",
+        "ms": "Amalan Kehidupan Rohani"
+      },
+      "description": {
+        "tr": "Manevi yaşamı günlük pratikler ve kendi kendine yardım çerçevesinde ele alan kitap.",
+        "en": "A book on spiritual living through everyday practices and self-help.",
+        "de": "Ein Buch über spirituelles Leben, Alltagspraxis und Selbsthilfe.",
+        "zh": "以日常实践和自助为视角讨论灵性生活的书籍。",
+        "ru": "Книга о духовной жизни, повседневных практиках и самопомощи.",
+        "ar": "كتاب يتناول الحياة الروحية عبر الممارسات اليومية والمساعدة الذاتية.",
+        "id": "Buku tentang kehidupan spiritual melalui praktik sehari-hari dan bantuan diri.",
+        "ms": "Buku tentang kehidupan rohani melalui amalan harian dan bantuan kendiri."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://www.nobelyayin.com/manevi-yasam-pratikleri-21520.html",
+            "https://www.researchgate.net/publication/386370581_Manevi_Yasam_Pratikleri"
+          ]
+        },
+        "inspection": {
+          "status": "metadata",
+          "level": "V1",
+          "scope": "Publisher catalogue and edition metadata. No book chapters republished.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "techniques-101",
+      "sourceId": "s-techniques-101",
+      "originalTitle": "Psikoterapi ve Psikolojik Danışmada Manevi Yönelimli 101 Teknik",
+      "language": "tr",
+      "kind": "book",
+      "identifiers": [
+        "978-625-417-915-0"
+      ],
+      "topic": "theory",
+      "sections": [
+        "library",
+        "books",
+        "learning"
+      ],
+      "sourceRecordHash": "dc6d62a323025253952c4824ff9e5635f7c2997e25d1e31cbaf447657a36c095",
+      "versions": [
+        {
+          "id": "techniques-101-edition-2",
+          "edition": "2",
+          "date": "2024-01",
+          "publisher": "Nobel Akademik Yayıncılık",
+          "identifier": [
+            "978-625-417-915-0"
+          ],
+          "source": "https://www.nobelyayin.com/psikoterapi-ve-psikolojik-danismada-manevi-yonelimli-101-teknik-18476.html"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://www.nobelyayin.com/psikoterapi-ve-psikolojik-danismada-manevi-yonelimli-101-teknik-18476.html",
+          "type": "external-record",
+          "host": "www.nobelyayin.com",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-techniques-101-editors-1",
+          "name": "Halil Ekşi",
+          "role": "editors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-techniques-101"
+        },
+        {
+          "id": "s-techniques-101-contributors-1",
+          "name": "Betül Gülcan Çakmak",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-techniques-101"
+        },
+        {
+          "id": "s-techniques-101-contributors-2",
+          "name": "Büşra Ünverdi",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-techniques-101"
+        },
+        {
+          "id": "s-techniques-101-contributors-3",
+          "name": "Cem Boyalı",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-techniques-101"
+        },
+        {
+          "id": "s-techniques-101-contributors-4",
+          "name": "Halil Ekşi",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-techniques-101"
+        },
+        {
+          "id": "s-techniques-101-contributors-5",
+          "name": "Hatice Hilal Saçar",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-techniques-101"
+        },
+        {
+          "id": "s-techniques-101-contributors-6",
+          "name": "M. Şerif Keskinoğlu",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-techniques-101"
+        },
+        {
+          "id": "s-techniques-101-contributors-7",
+          "name": "Merve Emre",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-techniques-101"
+        },
+        {
+          "id": "s-techniques-101-contributors-8",
+          "name": "Merve Nur Çınar",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-techniques-101"
+        },
+        {
+          "id": "s-techniques-101-contributors-9",
+          "name": "Oğuzhan Yavuz",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-techniques-101"
+        },
+        {
+          "id": "s-techniques-101-contributors-10",
+          "name": "Yakup Özkapu",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-techniques-101"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Manevi Yönelimli 101 Teknik",
+        "en": "101 Spiritually Oriented Techniques",
+        "de": "101 spirituell orientierte Techniken",
+        "zh": "101种灵性取向技术",
+        "ru": "101 духовно ориентированная техника",
+        "ar": "101 تقنية ذات توجه روحي",
+        "id": "101 Teknik Berorientasi Spiritual",
+        "ms": "101 Teknik Berorientasikan Kerohanian"
+      },
+      "description": {
+        "tr": "Psikolojik danışma ve psikoterapide manevi yönelimli teknikleri bir araya getiren başvuru kitabı.",
+        "en": "A reference volume bringing together spiritually oriented techniques for counselling and psychotherapy.",
+        "de": "Ein Nachschlagewerk über spirituell orientierte Techniken in Beratung und Psychotherapie.",
+        "zh": "汇集心理咨询与心理治疗中灵性取向技术的参考书。",
+        "ru": "Справочное издание о духовно ориентированных техниках консультирования и психотерапии.",
+        "ar": "مرجع يجمع تقنيات ذات توجه روحي للإرشاد والعلاج النفسي.",
+        "id": "Buku referensi yang menghimpun teknik berorientasi spiritual untuk konseling dan psikoterapi.",
+        "ms": "Buku rujukan yang menghimpunkan teknik berorientasikan kerohanian untuk kaunseling dan psikoterapi."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://www.nobelyayin.com/psikoterapi-ve-psikolojik-danismada-manevi-yonelimli-101-teknik-18476.html"
+          ]
+        },
+        "inspection": {
+          "status": "metadata",
+          "level": "V1",
+          "scope": "Publisher catalogue and edition metadata. No book chapters republished.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "family-spiritual",
+      "sourceId": "s-family-spiritual",
+      "originalTitle": "Aile Terapisi: Manevi Yönelimli Bir Perspektif",
+      "language": "tr",
+      "kind": "book",
+      "identifiers": [
+        "978-625-406-392-3"
+      ],
+      "topic": "theory",
+      "sections": [
+        "library",
+        "books",
+        "learning"
+      ],
+      "sourceRecordHash": "f5d56dd13d129c4671ad5226bab9a5b7da2dfd009fe9c5583f465269a799508e",
+      "versions": [
+        {
+          "id": "family-spiritual-edition-2",
+          "edition": "2",
+          "date": "2023-05",
+          "publisher": "Nobel Akademik Yayıncılık",
+          "identifier": [
+            "978-625-406-392-3"
+          ],
+          "source": "https://www.nobelyayin.com/aile-terapisi-manevi-yonelimli-bir-perspektif-16429.html"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://www.nobelyayin.com/aile-terapisi-manevi-yonelimli-bir-perspektif-16429.html",
+          "type": "external-record",
+          "host": "www.nobelyayin.com",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-family-spiritual-editors-1",
+          "name": "Halil Ekşi",
+          "role": "editors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-family-spiritual"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Aile Terapisi",
+        "en": "Family Therapy",
+        "de": "Familientherapie",
+        "zh": "家庭治疗",
+        "ru": "Семейная терапия",
+        "ar": "العلاج الأسري",
+        "id": "Terapi Keluarga",
+        "ms": "Terapi Keluarga"
+      },
+      "description": {
+        "tr": "Aile terapisi ve maneviyat ilişkisini manevi yönelimli bir perspektifle ele alan derleme.",
+        "en": "An edited volume examining family therapy and spirituality from a spiritually oriented perspective.",
+        "de": "Ein Sammelband über Familientherapie und Spiritualität aus spirituell orientierter Perspektive.",
+        "zh": "从灵性取向视角探讨家庭治疗与灵性关系的编著。",
+        "ru": "Коллективная книга о семейной терапии и духовности с духовно ориентированной перспективы.",
+        "ar": "كتاب جماعي يدرس العلاقة بين العلاج الأسري والروحانية من منظور ذي توجه روحي.",
+        "id": "Buku suntingan tentang terapi keluarga dan spiritualitas dari perspektif berorientasi spiritual.",
+        "ms": "Buku suntingan tentang terapi keluarga dan kerohanian daripada perspektif berorientasikan kerohanian."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://www.nobelyayin.com/aile-terapisi-manevi-yonelimli-bir-perspektif-16429.html"
+          ]
+        },
+        "inspection": {
+          "status": "metadata",
+          "level": "V1",
+          "scope": "Publisher catalogue and edition metadata. No book chapters republished.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "group-counselling",
+      "sourceId": "s-group-counselling",
+      "originalTitle": "Grupla Psikolojik Danışma Uygulamaları: Psikospiritüel Gelişim Kılavuzu",
+      "language": "tr",
+      "kind": "book",
+      "identifiers": [
+        "978-625-417-005-8"
+      ],
+      "topic": "theory",
+      "sections": [
+        "library",
+        "books",
+        "learning"
+      ],
+      "sourceRecordHash": "a862c33b4c0d7c8cad349441c40fbea86f5533dea098d5e67255273c065dfd53",
+      "versions": [
+        {
+          "id": "group-counselling-edition-2",
+          "edition": "2",
+          "date": "2023-03",
+          "publisher": "Nobel Akademik Yayıncılık",
+          "identifier": [
+            "978-625-417-005-8"
+          ],
+          "source": "https://www.nobelyayin.com/grupla-psikolojik-danisma-uygulamalari-psikospirituel-gelisim-kilavuzu-17677.html"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://www.nobelyayin.com/grupla-psikolojik-danisma-uygulamalari-psikospirituel-gelisim-kilavuzu-17677.html",
+          "type": "external-record",
+          "host": "www.nobelyayin.com",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-group-counselling-editors-1",
+          "name": "Halil Ekşi",
+          "role": "editors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-group-counselling"
+        },
+        {
+          "id": "s-group-counselling-editors-2",
+          "name": "Osman Hatun",
+          "role": "editors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-group-counselling"
+        },
+        {
+          "id": "s-group-counselling-contributors-1",
+          "name": "Beyza Kırca",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-group-counselling"
+        },
+        {
+          "id": "s-group-counselling-contributors-2",
+          "name": "Halil Ekşi",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-group-counselling"
+        },
+        {
+          "id": "s-group-counselling-contributors-3",
+          "name": "Kübra Kaplaner",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-group-counselling"
+        },
+        {
+          "id": "s-group-counselling-contributors-4",
+          "name": "Osman Hatun",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-group-counselling"
+        },
+        {
+          "id": "s-group-counselling-contributors-5",
+          "name": "Serra Dinç",
+          "role": "contributors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-group-counselling"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Grupla Psikolojik Danışma Uygulamaları",
+        "en": "Group Counselling Practices",
+        "de": "Praxis der Gruppenberatung",
+        "zh": "团体心理咨询实践",
+        "ru": "Практика группового консультирования",
+        "ar": "ممارسات الإرشاد النفسي الجماعي",
+        "id": "Praktik Konseling Kelompok",
+        "ms": "Amalan Kaunseling Kelompok"
+      },
+      "description": {
+        "tr": "Ergenler ve yetişkinler için psikospiritüel gelişim temalarını grup çalışmalarıyla ele alan kılavuz.",
+        "en": "A guide addressing psychospiritual development through group work with adolescents and adults.",
+        "de": "Ein Leitfaden zur psychospirituellen Entwicklung in Gruppen mit Jugendlichen und Erwachsenen.",
+        "zh": "通过青少年与成人团体工作讨论心理灵性发展的指南。",
+        "ru": "Руководство по психодуховному развитию в групповой работе с подростками и взрослыми.",
+        "ar": "دليل للتطور النفسي الروحي عبر العمل الجماعي مع المراهقين والبالغين.",
+        "id": "Panduan perkembangan psikospiritual melalui kerja kelompok bersama remaja dan orang dewasa.",
+        "ms": "Panduan perkembangan psikokerohanian melalui kerja kelompok bersama remaja dan orang dewasa."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://www.nobelyayin.com/grupla-psikolojik-danisma-uygulamalari-psikospirituel-gelisim-kilavuzu-17677.html"
+          ]
+        },
+        "inspection": {
+          "status": "metadata",
+          "level": "V1",
+          "scope": "Publisher catalogue and edition metadata. No book chapters republished.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "cbt-spiritual",
+      "sourceId": "s-cbt-spiritual",
+      "originalTitle": "Bilişsel Davranışçı Terapi: Manevi Perspektifli Teori ve Uygulamalar",
+      "language": "tr",
+      "kind": "book",
+      "identifiers": [
+        "978-625-427-158-8"
+      ],
+      "topic": "theory",
+      "sections": [
+        "library",
+        "books",
+        "learning"
+      ],
+      "sourceRecordHash": "66e9d8f50830ce8eccc505372c1e3f5a3459ba3ab74d20476d97774a1350dff5",
+      "versions": [
+        {
+          "id": "cbt-spiritual-edition-1",
+          "edition": "1",
+          "date": "2022-09",
+          "publisher": "Nobel Akademik Yayıncılık",
+          "identifier": [
+            "978-625-427-158-8"
+          ],
+          "source": "https://www.nobelyayin.com/bilissel-davranisci-terapi-manevi-perspektifli-teori-ve-uygulamalar-18795.html"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://www.nobelyayin.com/bilissel-davranisci-terapi-manevi-perspektifli-teori-ve-uygulamalar-18795.html",
+          "type": "external-record",
+          "host": "www.nobelyayin.com",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-cbt-spiritual-authors-1",
+          "name": "Tuğba Turgut",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-cbt-spiritual"
+        },
+        {
+          "id": "s-cbt-spiritual-authors-2",
+          "name": "Halil Ekşi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-cbt-spiritual"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Bilişsel Davranışçı Terapi",
+        "en": "Cognitive Behavioural Therapy",
+        "de": "Kognitive Verhaltenstherapie",
+        "zh": "认知行为治疗",
+        "ru": "Когнитивно-поведенческая терапия",
+        "ar": "العلاج المعرفي السلوكي",
+        "id": "Terapi Kognitif Perilaku",
+        "ms": "Terapi Tingkah Laku Kognitif"
+      },
+      "description": {
+        "tr": "Bilişsel davranışçı terapinin teori ve uygulamalarını manevi perspektiften tartışan kitap.",
+        "en": "A book discussing cognitive behavioural theory and practice from a spiritual perspective.",
+        "de": "Ein Buch über Theorie und Praxis der kognitiven Verhaltenstherapie aus spiritueller Perspektive.",
+        "zh": "从灵性视角讨论认知行为治疗理论与实践的书籍。",
+        "ru": "Книга о теории и практике когнитивно-поведенческой терапии с духовной перспективы.",
+        "ar": "كتاب يناقش نظرية العلاج المعرفي السلوكي وممارسته من منظور روحي.",
+        "id": "Buku yang membahas teori dan praktik terapi kognitif perilaku dari perspektif spiritual.",
+        "ms": "Buku yang membincangkan teori dan amalan terapi tingkah laku kognitif daripada perspektif kerohanian."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://www.nobelyayin.com/bilissel-davranisci-terapi-manevi-perspektifli-teori-ve-uygulamalar-18795.html"
+          ]
+        },
+        "inspection": {
+          "status": "metadata",
+          "level": "V1",
+          "scope": "Publisher catalogue and edition metadata. No book chapters republished.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "spiritual-burnout",
+      "sourceId": "s-spiritual-burnout",
+      "originalTitle": "The Spiritual Burnout Scale: Development and Psychometric Validation of a Measure of Spiritual Resource Depletion in Türkiye",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1007/s10943-026-02801-4"
+      ],
+      "topic": "assessment",
+      "sections": [
+        "library",
+        "publications",
+        "measures"
+      ],
+      "sourceRecordHash": "5b3e518f224562d19b13b26b2ac9bd24c9ec7d4be93623faaddea478a7a48df6",
+      "versions": [
+        {
+          "id": "spiritual-burnout-record",
+          "edition": null,
+          "date": "2026-09-21",
+          "publisher": null,
+          "identifier": [
+            "10.1007/s10943-026-02801-4"
+          ],
+          "source": "https://pubmed.ncbi.nlm.nih.gov/42766252/"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42766252/",
+          "type": "external-record",
+          "host": "pubmed.ncbi.nlm.nih.gov",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-spiritual-burnout-authors-1",
+          "name": "Nesrullah Okan",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-burnout"
+        },
+        {
+          "id": "s-spiritual-burnout-authors-2",
+          "name": "Osman Hatun",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-burnout"
+        },
+        {
+          "id": "s-spiritual-burnout-authors-3",
+          "name": "Füsun Ekşi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-burnout"
+        },
+        {
+          "id": "s-spiritual-burnout-authors-4",
+          "name": "Halil Ekşi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-burnout"
+        },
+        {
+          "id": "s-spiritual-burnout-authors-5",
+          "name": "Nihat Köse",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-burnout"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Manevi tükenmişliğin ölçülmesi",
+        "en": "Measuring spiritual burnout",
+        "de": "Spirituelles Ausgebranntsein erfassen",
+        "zh": "测量灵性耗竭",
+        "ru": "Измерение духовного выгорания",
+        "ar": "قياس الاحتراق الروحي",
+        "id": "Mengukur kelelahan spiritual",
+        "ms": "Mengukur kelesuan rohani"
+      },
+      "description": {
+        "tr": "Türkiye’de üniversite öğrencileriyle manevi kaynak tükenmesini ölçmeye yönelik ölçek geliştirme ve ilk psikometrik değerlendirme.",
+        "en": "Scale development and initial psychometric evaluation of spiritual resource depletion among university students in Türkiye.",
+        "de": "Skalenentwicklung und erste psychometrische Prüfung spiritueller Erschöpfung bei Studierenden in der Türkei.",
+        "zh": "在土耳其大学生中开展灵性资源耗竭量表开发与初步心理测量评价。",
+        "ru": "Разработка и первичная психометрическая оценка шкалы истощения духовных ресурсов у студентов в Турции.",
+        "ar": "تطوير مقياس وتقييم سيكومتري أولي لاستنزاف الموارد الروحية لدى طلبة الجامعات في تركيا.",
+        "id": "Pengembangan skala dan evaluasi psikometrik awal penipisan sumber daya spiritual pada mahasiswa di Türkiye.",
+        "ms": "Pembangunan skala dan penilaian psikometrik awal penyusutan sumber kerohanian dalam kalangan mahasiswa di Türkiye."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/42766252/"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Published article metadata and accessible abstract. No complete methods or findings review.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "sipas",
+      "sourceId": "s-sipas",
+      "originalTitle": "Spiritually Integrated Process Assessment Scale (SIPAS): Validity and Reliability Study",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.37898/spiritualpc.1793082"
+      ],
+      "topic": "assessment",
+      "sections": [
+        "library",
+        "publications",
+        "measures"
+      ],
+      "sourceRecordHash": "f82f65f677d29def5360d743e78f584da36919c687a55bd6e7ffb4e5fcb823da",
+      "versions": [
+        {
+          "id": "sipas-record",
+          "edition": null,
+          "date": "2026-06-30",
+          "publisher": null,
+          "identifier": [
+            "10.37898/spiritualpc.1793082"
+          ],
+          "source": "https://dergipark.org.tr/en/pub/spiritualpc/article/1793082"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://dergipark.org.tr/en/pub/spiritualpc/article/1793082",
+          "type": "external-record",
+          "host": "dergipark.org.tr",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-sipas-authors-1",
+          "name": "Halil Eksi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sipas"
+        },
+        {
+          "id": "s-sipas-authors-2",
+          "name": "Havvanur Akyol",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sipas"
+        },
+        {
+          "id": "s-sipas-authors-3",
+          "name": "Neslihan Aydın",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sipas"
+        },
+        {
+          "id": "s-sipas-authors-4",
+          "name": "Fatma Betül Karalı",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sipas"
+        },
+        {
+          "id": "s-sipas-authors-5",
+          "name": "Mehmet Özalp",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sipas"
+        },
+        {
+          "id": "s-sipas-authors-6",
+          "name": "M. Furkan Tunç",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sipas"
+        },
+        {
+          "id": "s-sipas-authors-7",
+          "name": "Ebru Talibe Turgut",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sipas"
+        }
+      ],
+      "displayTitle": {
+        "tr": "SIPAS. Maneviyatın danışma sürecine bütünleştirilmesi",
+        "en": "SIPAS. Integrating spirituality into counselling",
+        "de": "SIPAS. Spiritualität in der Beratung",
+        "zh": "SIPAS. 咨询中的灵性整合",
+        "ru": "SIPAS. Интеграция духовности в консультирование",
+        "ar": "SIPAS. دمج الروحانية في الإرشاد",
+        "id": "SIPAS. Integrasi spiritualitas dalam konseling",
+        "ms": "SIPAS. Integrasi kerohanian dalam kaunseling"
+      },
+      "description": {
+        "tr": "Profesyonellerin manevi entegrasyon tutumlarını, öz yeterliklerini ve uygulamalarını değerlendiren Türkçe uyarlama çalışması.",
+        "en": "Turkish adaptation assessing professionals’ attitudes, self-efficacy and practice concerning spiritual integration.",
+        "de": "Türkische Adaptation zur Erfassung professioneller Einstellungen, Selbstwirksamkeit und spiritueller Integrationspraxis.",
+        "zh": "评估专业人员灵性整合态度、自我效能与实践的土耳其语适配研究。",
+        "ru": "Турецкая адаптация оценки установок, самоэффективности и практики специалистов в духовной интеграции.",
+        "ar": "دراسة تكييف تركي لتقييم اتجاهات المهنيين وكفاءتهم الذاتية وممارساتهم المتعلقة بالدمج الروحي.",
+        "id": "Adaptasi Turki untuk menilai sikap, efikasi diri, dan praktik profesional terkait integrasi spiritual.",
+        "ms": "Adaptasi Turki untuk menilai sikap, efikasi kendiri dan amalan profesional berkaitan integrasi kerohanian."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://dergipark.org.tr/en/pub/spiritualpc/article/1793082"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Published article metadata and accessible abstract. No complete methods or findings review.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "loneliness-spirituality",
+      "sourceId": "s-loneliness-spirituality",
+      "originalTitle": "The Mediating Role of Loneliness in the Relationship Between Spirituality and Anxiety Levels Among University Students in Turkiye",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.37898/spiritualpc.1603809"
+      ],
+      "topic": "practice",
+      "sections": [
+        "library",
+        "publications",
+        "practice"
+      ],
+      "sourceRecordHash": "9819a2bf547b3033c42c6b9b4926619ff1252115465b36f8055473e655414617",
+      "versions": [
+        {
+          "id": "loneliness-spirituality-record",
+          "edition": null,
+          "date": "2026-06-30",
+          "publisher": null,
+          "identifier": [
+            "10.37898/spiritualpc.1603809"
+          ],
+          "source": "https://dergipark.org.tr/en/pub/spiritualpc/article/1603809"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://dergipark.org.tr/en/pub/spiritualpc/article/1603809",
+          "type": "external-record",
+          "host": "dergipark.org.tr",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-loneliness-spirituality-authors-1",
+          "name": "Yasemin Ekici",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-loneliness-spirituality"
+        },
+        {
+          "id": "s-loneliness-spirituality-authors-2",
+          "name": "Figen Kasapoğlu",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-loneliness-spirituality"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Manevi iyi oluş, yalnızlık ve kaygı",
+        "en": "Spiritual well-being, loneliness and anxiety",
+        "de": "Spirituelles Wohlbefinden, Einsamkeit und Angst",
+        "zh": "灵性福祉、孤独与焦虑",
+        "ru": "Духовное благополучие, одиночество и тревога",
+        "ar": "الرفاه الروحي والوحدة والقلق",
+        "id": "Kesejahteraan spiritual, kesepian, dan kecemasan",
+        "ms": "Kesejahteraan rohani, kesunyian dan kebimbangan"
+      },
+      "description": {
+        "tr": "Türkiye’de üniversite öğrencilerinin manevi iyi oluş, yalnızlık ve kaygı düzeyleri arasındaki ilişkileri inceleyen araştırma.",
+        "en": "A study of associations between spiritual well-being, loneliness and anxiety among university students in Türkiye.",
+        "de": "Eine Studie zu Zusammenhängen zwischen spirituellem Wohlbefinden, Einsamkeit und Angst bei Studierenden in der Türkei.",
+        "zh": "考察土耳其大学生灵性福祉、孤独与焦虑之间关联的研究。",
+        "ru": "Исследование связей духовного благополучия, одиночества и тревоги у студентов в Турции.",
+        "ar": "دراسة للعلاقات بين الرفاه الروحي والوحدة والقلق لدى طلبة الجامعات في تركيا.",
+        "id": "Studi hubungan kesejahteraan spiritual, kesepian, dan kecemasan pada mahasiswa di Türkiye.",
+        "ms": "Kajian hubungan kesejahteraan rohani, kesunyian dan kebimbangan dalam kalangan mahasiswa di Türkiye."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://dergipark.org.tr/en/pub/spiritualpc/article/1603809"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Published article metadata and accessible abstract. No complete methods or findings review.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "professional-training",
+      "sourceId": "s-professional-training",
+      "originalTitle": "Addressing Spirituality in Counseling: Turkish Mental Health Professionals’ Views on a Training Program for Professional Competencies",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1007/s10943-025-02551-9"
+      ],
+      "topic": "ethics",
+      "sections": [
+        "library",
+        "publications",
+        "practice"
+      ],
+      "sourceRecordHash": "6cb6f4c465ab6743d2aded8265b82ac8b2799572a7cf13b2564ceba7d2bb5b33",
+      "versions": [
+        {
+          "id": "professional-training-record",
+          "edition": null,
+          "date": "2026-01-19",
+          "publisher": null,
+          "identifier": [
+            "10.1007/s10943-025-02551-9"
+          ],
+          "source": "https://link.springer.com/article/10.1007/s10943-025-02551-9"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://link.springer.com/article/10.1007/s10943-025-02551-9",
+          "type": "external-record",
+          "host": "link.springer.com",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-professional-training-authors-1",
+          "name": "Halil Ekşi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-professional-training"
+        },
+        {
+          "id": "s-professional-training-authors-2",
+          "name": "Ebru Talibe Turgut",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-professional-training"
+        },
+        {
+          "id": "s-professional-training-authors-3",
+          "name": "Fatma Betül Karalı",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-professional-training"
+        },
+        {
+          "id": "s-professional-training-authors-4",
+          "name": "Hale Şen",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-professional-training"
+        },
+        {
+          "id": "s-professional-training-authors-5",
+          "name": "Havvanur Akyol",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-professional-training"
+        },
+        {
+          "id": "s-professional-training-authors-6",
+          "name": "Neslihan Aydın",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-professional-training"
+        },
+        {
+          "id": "s-professional-training-authors-7",
+          "name": "Yusuf Ziya Koç",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-professional-training"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Maneviyatla çalışmak için mesleki eğitim",
+        "en": "Professional training for working with spirituality",
+        "de": "Professionelle Ausbildung im Umgang mit Spiritualität",
+        "zh": "灵性相关工作的专业培训",
+        "ru": "Профессиональное обучение работе с духовностью",
+        "ar": "التدريب المهني للعمل مع الروحانية",
+        "id": "Pelatihan profesional untuk bekerja dengan spiritualitas",
+        "ms": "Latihan profesional untuk bekerja dengan kerohanian"
+      },
+      "description": {
+        "tr": "Türkiye’de ruh sağlığı profesyonellerinin manevi danışmanlık yeterliklerine yönelik eğitim gereksinimlerini ele alan nitel çalışma.",
+        "en": "Qualitative research on Turkish mental health professionals’ training needs for spiritual counselling competencies.",
+        "de": "Qualitative Forschung zum Ausbildungsbedarf türkischer Fachkräfte für spirituelle Beratungskompetenzen.",
+        "zh": "关于土耳其心理健康专业人员灵性咨询胜任力培训需求的质性研究。",
+        "ru": "Качественное исследование потребностей специалистов Турции в обучении духовному консультированию.",
+        "ar": "بحث نوعي عن احتياجات تدريب مهنيي الصحة النفسية في تركيا على كفايات الإرشاد الروحي.",
+        "id": "Penelitian kualitatif tentang kebutuhan pelatihan profesional kesehatan mental Turki dalam kompetensi konseling spiritual.",
+        "ms": "Penyelidikan kualitatif tentang keperluan latihan profesional kesihatan mental Turki dalam kompetensi kaunseling rohani."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://link.springer.com/article/10.1007/s10943-025-02551-9"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Published article metadata and accessible abstract. No complete methods or findings review.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "spiritual-integrity",
+      "sourceId": "s-spiritual-integrity",
+      "originalTitle": "Measuring Spiritual Integrity in Turkish Culture: A Psychometric Approach to Understanding the Relationship Between Spirituality and Well-Being",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1007/s10943-025-02329-z"
+      ],
+      "topic": "assessment",
+      "sections": [
+        "library",
+        "publications",
+        "measures"
+      ],
+      "sourceRecordHash": "320d3a26057108b9017f5e099fd9ae6b9f413a85e765117d21101a5454b68c86",
+      "versions": [
+        {
+          "id": "spiritual-integrity-record",
+          "edition": null,
+          "date": "2025-05-23",
+          "publisher": null,
+          "identifier": [
+            "10.1007/s10943-025-02329-z"
+          ],
+          "source": "https://link.springer.com/article/10.1007/s10943-025-02329-z"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://link.springer.com/article/10.1007/s10943-025-02329-z",
+          "type": "external-record",
+          "host": "link.springer.com",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-spiritual-integrity-authors-1",
+          "name": "Nesrullah Okan",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-integrity"
+        },
+        {
+          "id": "s-spiritual-integrity-authors-2",
+          "name": "Füsun Ekşi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-integrity"
+        },
+        {
+          "id": "s-spiritual-integrity-authors-3",
+          "name": "Erdal Zengin",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-integrity"
+        },
+        {
+          "id": "s-spiritual-integrity-authors-4",
+          "name": "Halil Ekşi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-integrity"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Manevi bütünlük ve iyi oluş",
+        "en": "Spiritual integrity and well-being",
+        "de": "Spirituelle Integrität und Wohlbefinden",
+        "zh": "灵性整合与福祉",
+        "ru": "Духовная целостность и благополучие",
+        "ar": "التكامل الروحي والرفاه",
+        "id": "Integritas spiritual dan kesejahteraan",
+        "ms": "Integriti kerohanian dan kesejahteraan"
+      },
+      "description": {
+        "tr": "Türk kültüründe manevi bütünlüğün ölçülmesini ve iyi oluşla ilişkisini inceleyen psikometrik araştırma.",
+        "en": "Psychometric research on measuring spiritual integrity and its association with well-being in Turkish culture.",
+        "de": "Psychometrische Forschung zur spirituellen Integrität und ihrem Zusammenhang mit Wohlbefinden in der türkischen Kultur.",
+        "zh": "关于土耳其文化中灵性整合测量及其与福祉关联的心理测量研究。",
+        "ru": "Психометрическое исследование духовной целостности и её связи с благополучием в турецкой культуре.",
+        "ar": "بحث سيكومتري في قياس التكامل الروحي وعلاقته بالرفاه في الثقافة التركية.",
+        "id": "Penelitian psikometrik tentang pengukuran integritas spiritual dan hubungannya dengan kesejahteraan dalam budaya Turki.",
+        "ms": "Penyelidikan psikometrik tentang pengukuran integriti kerohanian dan hubungannya dengan kesejahteraan dalam budaya Turki."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://link.springer.com/article/10.1007/s10943-025-02329-z"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Published article metadata and accessible abstract. No complete methods or findings review.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "spirituality-dimensions",
+      "sourceId": "s-spirituality-dimensions",
+      "originalTitle": "Unveiling the Multifaceted Nature of Spirituality: Assessing the Dimensions of the Spirituality Inventory in the Turkish Context—A Preliminary Adaptation and Validity Reliability Study",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1007/s10943-025-02313-7"
+      ],
+      "topic": "assessment",
+      "sections": [
+        "library",
+        "publications",
+        "measures"
+      ],
+      "sourceRecordHash": "92fe16af7b81fc0e3d4e8de023e3887f178c9b334c9819a13091cb9ab786fdec",
+      "versions": [
+        {
+          "id": "spirituality-dimensions-record",
+          "edition": null,
+          "date": "2025-04-24",
+          "publisher": null,
+          "identifier": [
+            "10.1007/s10943-025-02313-7"
+          ],
+          "source": "https://pubmed.ncbi.nlm.nih.gov/40274690/"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40274690/",
+          "type": "external-record",
+          "host": "pubmed.ncbi.nlm.nih.gov",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-spirituality-dimensions-authors-1",
+          "name": "Halil Ekşi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spirituality-dimensions"
+        },
+        {
+          "id": "s-spirituality-dimensions-authors-2",
+          "name": "Dilek Günel",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spirituality-dimensions"
+        },
+        {
+          "id": "s-spirituality-dimensions-authors-3",
+          "name": "Ece Yağcı Akgündüz",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spirituality-dimensions"
+        },
+        {
+          "id": "s-spirituality-dimensions-authors-4",
+          "name": "Emre Gürkan",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spirituality-dimensions"
+        },
+        {
+          "id": "s-spirituality-dimensions-authors-5",
+          "name": "Fadile Zeynep Çavuş",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spirituality-dimensions"
+        },
+        {
+          "id": "s-spirituality-dimensions-authors-6",
+          "name": "Yasemin Altıntaş",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spirituality-dimensions"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Maneviyatın çok boyutlu yapısı",
+        "en": "The multidimensional nature of spirituality",
+        "de": "Die Mehrdimensionalität der Spiritualität",
+        "zh": "灵性的多维结构",
+        "ru": "Многомерная природа духовности",
+        "ar": "طبيعة الروحانية متعددة الأبعاد",
+        "id": "Sifat multidimensi spiritualitas",
+        "ms": "Sifat kerohanian yang multidimensi"
+      },
+      "description": {
+        "tr": "Maneviyatın Boyutları Envanteri için Türkçe uyarlama ve ön psikometrik değerlendirme çalışması.",
+        "en": "A Turkish adaptation and preliminary psychometric evaluation of the Dimensions of Spirituality Inventory.",
+        "de": "Türkische Adaptation und vorläufige psychometrische Prüfung des Dimensions of Spirituality Inventory.",
+        "zh": "灵性维度量表的土耳其语适配与初步心理测量评价。",
+        "ru": "Турецкая адаптация и предварительная психометрическая оценка опросника измерений духовности.",
+        "ar": "تكييف تركي وتقييم سيكومتري أولي لقائمة أبعاد الروحانية.",
+        "id": "Adaptasi Turki dan evaluasi psikometrik awal Inventori Dimensi Spiritualitas.",
+        "ms": "Adaptasi Turki dan penilaian psikometrik awal Inventori Dimensi Kerohanian."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/40274690/"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Published article metadata and accessible abstract. No complete methods or findings review.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "spiritual-struggles",
+      "sourceId": "s-spiritual-struggles",
+      "originalTitle": "Dini ve Manevi Mücadele Ölçeği’nin Türkçe Uyarlaması: Geçerlik ve Güvenirlik Çalışması",
+      "language": "tr",
+      "kind": "study",
+      "identifiers": [
+        "10.29288/ilted.1564927"
+      ],
+      "topic": "assessment",
+      "sections": [
+        "library",
+        "publications",
+        "measures"
+      ],
+      "sourceRecordHash": "1a5d833a048f352a9625001a7dce097e5091c9d427e7c85356b0e252c7164b4b",
+      "versions": [
+        {
+          "id": "spiritual-struggles-record",
+          "edition": null,
+          "date": "2025-04-30",
+          "publisher": null,
+          "identifier": [
+            "10.29288/ilted.1564927"
+          ],
+          "source": "https://dergipark.org.tr/tr/pub/ilted/article/1564927"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://dergipark.org.tr/tr/pub/ilted/article/1564927",
+          "type": "external-record",
+          "host": "dergipark.org.tr",
+          "checked": "2026-10-01",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-spiritual-struggles-authors-1",
+          "name": "Dilanur Rehber",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-struggles"
+        },
+        {
+          "id": "s-spiritual-struggles-authors-2",
+          "name": "Muhammet Enes Vural",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-struggles"
+        },
+        {
+          "id": "s-spiritual-struggles-authors-3",
+          "name": "Halil Ekşi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spiritual-struggles"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Dini ve manevi mücadele",
+        "en": "Religious and spiritual struggles",
+        "de": "Religiöse und spirituelle Konflikte",
+        "zh": "宗教与灵性挣扎",
+        "ru": "Религиозные и духовные трудности",
+        "ar": "الصراعات الدينية والروحية",
+        "id": "Pergumulan agama dan spiritual",
+        "ms": "Pergelutan agama dan kerohanian"
+      },
+      "description": {
+        "tr": "Dini ve manevi mücadeleyi ölçen RSS-14 formunun yetişkin örnekleminde Türkçeye uyarlanması.",
+        "en": "Turkish adaptation of the RSS-14 measure of religious and spiritual struggles in an adult sample.",
+        "de": "Türkische Adaptation der RSS-14 zu religiösen und spirituellen Konflikten in einer Erwachsenenstichprobe.",
+        "zh": "在成人样本中开展宗教与灵性挣扎测量工具RSS-14的土耳其语适配。",
+        "ru": "Турецкая адаптация RSS-14 для измерения религиозных и духовных трудностей у взрослых.",
+        "ar": "تكييف تركي لمقياس RSS-14 للصراعات الدينية والروحية لدى عينة من البالغين.",
+        "id": "Adaptasi Turki RSS-14 untuk mengukur pergumulan agama dan spiritual pada sampel dewasa.",
+        "ms": "Adaptasi Turki RSS-14 untuk mengukur pergelutan agama dan kerohanian dalam sampel dewasa."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://dergipark.org.tr/tr/pub/ilted/article/1564927"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Published article metadata and accessible abstract. No complete methods or findings review.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-01"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-01",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    }
+  ],
+  "relationships": [],
+  "collections": [
+    {
+      "id": "selected-catalogue",
+      "purpose": "Source-based research and learning selection",
+      "exhaustive": false,
+      "workIds": [
+        "aservic-principles",
+        "spiritual-competence",
+        "integration-meta-analysis",
+        "client-preference",
+        "sacred-tensions",
+        "metaphysical-diversity",
+        "three-waves",
+        "theories-book",
+        "toad-directory",
+        "prisma-guidance",
+        "ai-health-ethics",
+        "malaysia-ukm-counselling",
+        "trauma-spirituality",
+        "spiritual-counselling-book",
+        "discovering-spirituality",
+        "spiritual-practices",
+        "techniques-101",
+        "family-spiritual",
+        "group-counselling",
+        "cbt-spiritual",
+        "spiritual-burnout",
+        "sipas",
+        "loneliness-spirituality",
+        "professional-training",
+        "spiritual-integrity",
+        "spirituality-dimensions",
+        "spiritual-struggles"
+      ]
+    }
+  ]
+}
