@@ -2,14 +2,19 @@
   "institution": {
     "name": "Marmara University",
     "relationship": "planned-centre",
+    "faculty": "Atatürk Eğitim Fakültesi",
+    "department": "Eğitim Bilimleri Bölümü",
+    "division": "Rehberlik ve Psikolojik Danışmanlık Anabilim Dalı",
+    "plannedHomeSource": "project-owner clarification, 2026-10-02",
+    "unitNameSource": "https://aef.marmara.edu.tr/bolumler-programlar/egitim-bilimleri",
     "formalApprovalVerified": false
   },
   "previewDeploymentAuthorized": true,
-  "version": "0.7.0",
-  "release": "marsam-reading-room-0.7.0",
+  "version": "0.7.1",
+  "release": "marsam-heritage-restored-0.7.1",
   "base": "/MARSAM/",
   "mode": "preview",
-  "generatedAt": "2026-10-02T05:40:31.686Z",
+  "generatedAt": "2026-10-02T06:39:05.453Z",
   "locales": [
     "tr",
     "en",
@@ -576,5 +581,5 @@
       "direction": "ltr"
     }
   },
-  "deploymentCommit": "0e8a30477876b7b8e910348bbf46b50cf3df8934"
+  "deploymentCommit": "999e640f3f33a490087d5d774ceae3c94c217b84"
 }

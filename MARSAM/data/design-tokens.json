@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "name": "MARSAM reading room",
+  "name": "MARSAM heritage reading room",
   "brandStatus": "proposed, not an approved university brand specification",
   "color": {
     "surface-page": "#f8f5ee",
@@ -20,8 +20,26 @@
     "ornament": "#9e7c43",
     "footer": "#163c4b"
   },
-  "space": {"1":"0.25rem","2":"0.5rem","3":"0.75rem","4":"1rem","6":"1.5rem","8":"2rem","12":"3rem","16":"4rem"},
-  "layout": {"page":"76rem","reading":"45rem"},
-  "type": {"body":"1rem","reading":"1.125rem","small":"0.875rem"},
-  "motion": {"feedback":"140ms"}
+  "space": {
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "6": "1.5rem",
+    "8": "2rem",
+    "12": "3rem",
+    "16": "4rem"
+  },
+  "layout": {
+    "page": "82.5rem",
+    "reading": "45rem"
+  },
+  "type": {
+    "body": "1rem",
+    "reading": "1.125rem",
+    "small": "0.875rem"
+  },
+  "motion": {
+    "feedback": "140ms"
+  }
 }
