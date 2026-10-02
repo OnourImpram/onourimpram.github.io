@@ -5,5 +5,5 @@ test('active V23 package and generated publication manifest have the same versio
  const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));
  const manifest=JSON.parse(fs.readFileSync('dist/release-v23.json','utf8'));
  assert.equal(manifest.version,pkg.version);
- assert.equal(manifest.release,'v25.1-balanced-discovery');
+ assert.equal(manifest.release,'v25.2-evidence-and-discovery');
 });

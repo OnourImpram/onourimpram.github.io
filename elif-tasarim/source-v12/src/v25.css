@@ -33,3 +33,6 @@
 @media(max-width:1100px){.inspiration-concepts .concept-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.home-inspiration .concept-grid.three{grid-template-columns:1fr;gap:32px}.home-inspiration .concept-grid.three .concept-caption h3{font-size:28px}}
 @media(max-width:680px){.inspiration-concepts .concept-grid{grid-template-columns:1fr;gap:32px}.inspiration-concepts .concept-caption h3{font-size:28px}.inspiration-result{font-size:12px}.inspiration-jump-links{gap:6px 20px}.inspiration-jump-links a{font-size:12px}.category-index-more{align-items:flex-start;flex-direction:column}}
+
+.inspiration-heading{padding-bottom:24px}
+.inspiration-concepts{padding-top:28px}

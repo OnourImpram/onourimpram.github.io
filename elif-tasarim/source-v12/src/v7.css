@@ -7,3 +7,18 @@
 @media print{.v7-mobile-contact,.v7-header-phone,.v7-save-text{display:none!important}.v7-handoff{border:1px solid #aaa}.v7-readable{max-width:none}}
 /* Long Turkish words remain readable under 200% text enlargement. */
 .v6-home h1,.v6-home h2,.v6-home h3,.v6-home h1 em,.v6-home h2 em,.v6-home h3 em{overflow-wrap:anywhere;max-inline-size:100%}.v6-hero h1{max-width:100%}.v6-header-nav a:not([aria-current="page"])::after{transform:scaleX(0)}.v6-header-nav a:not([aria-current="page"]):hover::after{transform:scaleX(1)}
+
+/* Material decision support. These questions are not inventory or sample cards. */
+.material-decisions{padding-top:60px;border-top:1px solid var(--line);margin-top:40px}
+.material-question-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.material-question-grid details{border:1px solid var(--line);background:#f0eade;align-self:start}
+.material-question-grid summary{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;padding:20px 24px;min-height:64px;list-style:none;font-size:16px}
+.material-question-grid summary::-webkit-details-marker{display:none}
+.material-question-grid summary svg{flex:none}
+.material-question-grid details[open] summary svg{transform:rotate(45deg)}
+.material-question-grid details>div{padding:0 24px 24px}
+.material-question-grid h3{font:400 24px/1.3 Georgia,serif;margin:0 0 14px}
+.material-question-grid p{font-size:14px;line-height:1.85;margin:0}
+.material-question-grid summary:focus-visible{outline:2px solid #655039;outline-offset:3px}
+.material-next{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-top:28px}
+@media(max-width:680px){.material-question-grid{grid-template-columns:1fr}.material-decisions{padding-top:36px}.material-next{align-items:flex-start;flex-direction:column}}

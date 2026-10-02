@@ -1,9 +1,9 @@
-import {works,concepts,pinterestReferences,categoryName} from './portfolio';
+import {works,concepts,pinterestReferences,categoryName,workPhotoEvidence} from './portfolio';
 import {pinLookup} from './pinterest';
 import {searchKey} from './domain';
-export type Selection={id:string;title:string;category:string;image?:string;kind:'work'|'concept'|'reference';path:string};
+export type Selection={id:string;title:string;category:string;image?:string;photoKind?:'work'|'process';kind:'work'|'concept'|'reference';path:string};
 const target=(id:string)=>'/ilham-modelleri?hedef='+encodeURIComponent(id);
-export const selectionEntries:Selection[]=[...works.map(w=>({id:'work:'+w.id,title:w.subtitle,category:w.category,image:w.images[0],kind:'work' as const,path:'/proje/'+w.id})),...concepts.map(c=>({id:'concept:'+c.id,title:c.subtitle,category:c.category,image:c.image,kind:'concept' as const,path:target('concept:'+c.id)})),...pinterestReferences.map(p=>({id:'pin:'+p.id,title:pinLookup[p.id]?.label||p.title,category:p.category,kind:'reference' as const,path:target('pin:'+p.id)}))];
+export const selectionEntries:Selection[]=[...works.map(w=>({id:'work:'+w.id,title:w.subtitle,category:w.category,image:w.images[0],photoKind:workPhotoEvidence(w).kind,kind:'work' as const,path:'/proje/'+w.id})),...concepts.map(c=>({id:'concept:'+c.id,title:c.subtitle,category:c.category,image:c.image,kind:'concept' as const,path:target('concept:'+c.id)})),...pinterestReferences.map(p=>({id:'pin:'+p.id,title:pinLookup[p.id]?.label||p.title,category:p.category,kind:'reference' as const,path:target('pin:'+p.id)}))];
 export type SearchEntry=Omit<Selection,'kind'>&{kind:Selection['kind']|'page';keywords?:string};
 const pages:SearchEntry[]=[
  {id:'page:basic-contact',title:'Kolay iletişim. Form olmadan başlayın',category:'ozel-tasarim',kind:'page',path:'/kolay-iletisim',keywords:'e-posta mail email telefon SMS WhatsApp iletişim'},
