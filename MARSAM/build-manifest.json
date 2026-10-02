@@ -10,11 +10,11 @@
     "formalApprovalVerified": false
   },
   "previewDeploymentAuthorized": true,
-  "version": "0.7.1",
-  "release": "marsam-heritage-restored-0.7.1",
+  "version": "0.7.2",
+  "release": "marsam-bookplate-surface-0.7.2",
   "base": "/MARSAM/",
   "mode": "preview",
-  "generatedAt": "2026-10-02T06:39:05.453Z",
+  "generatedAt": "2026-10-02T07:20:03.159Z",
   "locales": [
     "tr",
     "en",
@@ -581,5 +581,5 @@
       "direction": "ltr"
     }
   },
-  "deploymentCommit": "999e640f3f33a490087d5d774ceae3c94c217b84"
+  "deploymentCommit": "5807ac46976daadd93285a6dd5355347dd3dfbcc"
 }
