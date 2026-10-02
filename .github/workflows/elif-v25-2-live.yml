@@ -1,0 +1,129 @@
+name: Elif V25.2 live verification
+on:
+  push:
+    branches: [elif-v25-2-enrichment-20261002]
+    paths: [.github/workflows/elif-v25-2-live.yml]
+permissions:
+  contents: read
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      BASE_URL: https://onourimpram.github.io/elif-tasarim/
+      EVIDENCE_ROOT: /tmp/elif-enrichment-live
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 3f1e685dcfa888a7ca15790e890e03d82ae9f256
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reproduce publication and prove sibling preservation
+        run: |
+          mkdir -p "$EVIDENCE_ROOT"
+          test -z "$(git diff --name-only HEAD^ HEAD | grep -v '^elif-tasarim/' || true)"
+          test "$(git rev-parse HEAD:MARSAM)" = f4f7e6f82af914779c66b74e5039db98b5ab4191
+          test "$(git rev-parse HEAD:index.html)" = 501229ef0c1d25dbc4554e27ca089b03e590c7e0
+          git ls-tree HEAD > "$EVIDENCE_ROOT/published-root-tree.txt"
+          cd elif-tasarim/source-v12
+          npm ci
+          npm run build
+          cmp dist/release-v25.json ../release-v25.json
+          pip install playwright==1.55.0 beautifulsoup4==4.13.5
+          python -m playwright install --with-deps chromium
+      - name: Verify every actual public file against the published manifest
+        run: |
+          python - <<'PY'
+          import pathlib,json,time,hashlib,urllib.request,urllib.error,concurrent.futures,os
+          root=pathlib.Path('elif-tasarim');expected=(root/'release-v25.json').read_bytes();m=json.loads(expected);base=os.environ['BASE_URL'];out=pathlib.Path(os.environ['EVIDENCE_ROOT']);retries=[]
+          assert m['release']=='v25.2-evidence-and-discovery' and m['version']=='0.25.2' and not m['indexable']
+          def get(path):
+              req=urllib.request.Request(base+path+'?verify=3f1e685dcfa888a7ca15790e890e03d82ae9f256',headers={'Cache-Control':'no-cache','User-Agent':'Elif-Enrichment-Verification/1.0'})
+              for attempt in range(4):
+                  try:
+                      with urllib.request.urlopen(req,timeout=30) as r:return r.status,r.read()
+                  except urllib.error.HTTPError as e:
+                      if e.code not in (429,500,502,503,504) or attempt==3:raise
+                      detail={'path':path,'attempt':attempt+1,'status':e.code}
+                  except (urllib.error.URLError,TimeoutError,ConnectionError) as e:
+                      if attempt==3:raise
+                      detail={'path':path,'attempt':attempt+1,'error':str(e)}
+                  retries.append(detail);print('TRANSIENT RETRY',detail,flush=True);time.sleep(2**attempt)
+              raise RuntimeError(path)
+          last=''
+          for attempt in range(40):
+              try:
+                  status,body=get('release-v25.json')
+                  if status==200 and body==expected:break
+                  last='manifest bytes not equal yet'
+              except Exception as e:last=str(e)
+              time.sleep(10)
+          else:raise RuntimeError(last)
+          def verify(item):
+              path,f=item
+              try:status,body=get(path)
+              except urllib.error.HTTPError as e:
+                  if path in ['.nojekyll','_headers'] and e.code==404:return {'path':path,'hostingControlNotPublic':True,'status':404}
+                  raise
+              assert status==200 and len(body)==f['bytes'] and hashlib.sha256(body).hexdigest()==f['sha256'],path
+              return {'path':path,'bytes':len(body),'sha256':f['sha256'],'pass':True}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:items=list(pool.map(verify,m['files'].items()))
+          result={'publication':'3f1e685dcfa888a7ca15790e890e03d82ae9f256','release':m['release'],'version':m['version'],'manifestMatched':True,'routes':len(m['routes']),'indexable':m['indexable'],'verifiedFiles':sum(x.get('pass',False) for x in items),'files':items,'transientRetries':retries,'pass':True}
+          (out/'http-integrity.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
+          print('LIVE PUBLIC FILES MATCH',result['verifiedFiles'])
+          PY
+      - name: Live enrichment, diversity, all beds, single studio and mobile gallery audit
+        run: |
+          cd elif-tasarim/source-v12
+          failed=0
+          for test in v25/enrichment-browser v25/balance-browser v25/browser v23-unified/browser v23/mobile-media; do
+            name="${test//\//-}"
+            mkdir -p "$EVIDENCE_ROOT/$name"
+            if EVIDENCE_DIR="$EVIDENCE_ROOT/$name" timeout 360 xvfb-run -a python "tests/$test.py" > "$EVIDENCE_ROOT/$name/run.log" 2>&1; then
+              echo "LIVE PASS $test"
+            else
+              echo "LIVE FAIL $test"
+              cat "$EVIDENCE_ROOT/$name/run.log"
+              failed=1
+            fi
+          done
+          exit "$failed"
+      - name: Actual decoded and scrolled live-page screenshots
+        run: |
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          from pathlib import Path
+          import os,json
+          out=Path(os.environ['EVIDENCE_ROOT'])/'screens';out.mkdir();records=[]
+          with sync_playwright() as pw:
+              b=pw.chromium.launch(headless=True,args=['--no-sandbox'])
+              for width in [1440,390]:
+                  p=b.new_page(viewport={'width':width,'height':960},reduced_motion='reduce')
+                  for route,name in [('', 'home'),('ilham-modelleri/','inspiration'),('kategoriler/gardrop/','wardrobe'),('malzemeler/','materials')]:
+                      p.goto(os.environ['BASE_URL']+route,wait_until='domcontentloaded');p.wait_for_selector('html[data-app-ready=true]')
+                      p.evaluate("document.querySelectorAll('img').forEach(i=>i.loading='eager')")
+                      p.evaluate("async()=>{const imgs=[...document.images].filter(i=>!i.closest('[aria-hidden=true]'));await Promise.all(imgs.map(i=>i.decode()))}")
+                      callout=p.locator('.model-callout')
+                      if callout.count():
+                          callout.scroll_into_view_if_needed();p.wait_for_timeout(150);callout.screenshot(path=str(out/f'{name}-callout-{width}.png'))
+                      p.evaluate('window.scrollTo(0,0)');p.wait_for_timeout(200)
+                      p.screenshot(path=str(out/f'{name}-{width}.png'),full_page=True)
+                      if name=='home':p.locator('.v6-hero').screenshot(path=str(out/f'hero-{width}.png'))
+                      assert p.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
+                      records.append({'page':name,'width':width,'height':p.evaluate('document.documentElement.scrollHeight'),'pass':True})
+                  p.close()
+              b.close()
+          (out/'results.json').write_text(json.dumps(records,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v25-2-live-evidence
+          path: /tmp/elif-enrichment-live/
+          retention-days: 14
