@@ -1,0 +1,130 @@
+name: Elif V25.1 balanced discovery verification
+on:
+  push:
+    branches: [elif-v25-1-balance-20261002]
+    paths: [.github/workflows/elif-v25-1-balance.yml]
+permissions:
+  contents: write
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+      EVIDENCE_ROOT: /tmp/elif-balance-evidence
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: elif-v25-1-balance-20261002
+      - name: Receive and verify reviewed source
+        env:
+          PAYLOAD_URL: 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-22a8-820a-ab7c-174175e77ce8/raw?se=2026-10-02T07%3A06%3A26Z&sp=r&sv=2026-02-06&sr=b&scid=5c41bfec-e0d2-50f4-9851-a67b0cebed29&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-02T06%3A00%3A44Z&ske=2026-10-03T06%3A00%3A44Z&sks=b&skv=2026-02-06&sig=/WryyIVe6JtLPVRgZo%2B1f7IZ3C4uWMI%2BLnk/e6SRpj0%3D'
+        run: |
+          echo "::add-mask::$PAYLOAD_URL"
+          test "$(git rev-parse HEAD:elif-tasarim)" = 7c4dd0a5c429897c497a8069c5f802c7c917ffec
+          mkdir -p /tmp/elif-balance-payload "$EVIDENCE_ROOT"
+          git ls-tree HEAD > "$EVIDENCE_ROOT/baseline-root-tree.txt"
+          curl --fail --silent --show-error --location "$PAYLOAD_URL" -o /tmp/elif-balance-source.zip
+          echo '0b190e7202fafb121942474c23aaf55aa0909ad892c97cd3822b819d16ab4eb8  /tmp/elif-balance-source.zip' | sha256sum --check
+          python - <<'PY'
+          import pathlib,zipfile,hashlib,json
+          with zipfile.ZipFile('/tmp/elif-balance-source.zip') as z:
+              for n in z.namelist():
+                  p=pathlib.PurePosixPath(n)
+                  assert not p.is_absolute() and '..' not in p.parts and p.parts[0]=='source',n
+              z.extractall('/tmp/elif-balance-payload')
+          before=pathlib.Path('elif-tasarim/source-v12');after=pathlib.Path('/tmp/elif-balance-payload/source')
+          for sub in ['public/assets','public/three']:
+              def hashes(root):return {str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (root/sub).rglob('*') if p.is_file()}
+              assert hashes(before)==hashes(after),sub
+              print('UNCHANGED',sub)
+          PY
+          rsync -a --delete /tmp/elif-balance-payload/source/ elif-tasarim/source-v12/
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned test tools
+        run: |
+          cd elif-tasarim/source-v12
+          npm ci
+          pip install playwright==1.55.0 beautifulsoup4==4.13.5
+          python -m playwright install --with-deps chromium
+      - name: Build and full unit, core type and static checks
+        run: |
+          set -o pipefail
+          cd elif-tasarim/source-v12
+          npm run build | tee "$EVIDENCE_ROOT/build.log"
+          npm run typecheck:core | tee "$EVIDENCE_ROOT/typecheck.log"
+          npm test | tee "$EVIDENCE_ROOT/unit.log"
+          npm run verify:dist | tee "$EVIDENCE_ROOT/integrity.log"
+          EVIDENCE_DIR="$EVIDENCE_ROOT/static" python tests/v25/site-audit.py
+      - name: Serve candidate and unchanged prior publication
+        run: |
+          nohup python -m http.server 8001 --directory "$GITHUB_WORKSPACE" > "$EVIDENCE_ROOT/before-server.log" 2>&1 &
+          cd elif-tasarim/source-v12
+          nohup node tools/serve-static.cjs dist 8000 > "$EVIDENCE_ROOT/server.log" 2>&1 &
+          for i in $(seq 1 30); do curl -fsS "$BASE_URL/release-v25.json" >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Matched before and after rendered pages
+        run: |
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          from pathlib import Path
+          import json,os
+          out=Path(os.environ['EVIDENCE_ROOT'])/'comparison';out.mkdir()
+          data=[]
+          with sync_playwright() as pw:
+              b=pw.chromium.launch(headless=True,args=['--no-sandbox'])
+              for label,port in [('v25-before',8001),('v25-1-after',8000)]:
+                  for width in [1440,390]:
+                      ctx=b.new_context(viewport={'width':width,'height':960},reduced_motion='reduce');p=ctx.new_page()
+                      for route,name in [('', 'home'),('ilham-modelleri/', 'inspiration')]:
+                          p.goto(f'http://127.0.0.1:{port}/elif-tasarim/'+route,wait_until='domcontentloaded')
+                          p.wait_for_selector('html[data-app-ready=true]')
+                          p.evaluate("async()=>{document.querySelectorAll('img').forEach(i=>i.loading='eager');await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})))}")
+                          p.evaluate('window.scrollTo(0,0)');p.wait_for_timeout(150)
+                          file=f'{label}-{name}-{width}.png';p.screenshot(path=str(out/file),full_page=True)
+                          metrics=p.evaluate("()=>({height:document.documentElement.scrollHeight,h1:document.querySelector('h1')?.innerText,headings:[...document.querySelectorAll('main h2,main h3')].map(e=>({text:e.innerText,y:e.getBoundingClientRect().top+scrollY}))})")
+                          data.append({'file':file,'width':width,**metrics})
+                      ctx.close()
+              b.close()
+          (out/'measurements.json').write_text(json.dumps(data,ensure_ascii=False,indent=2))
+          PY
+      - name: Visual hierarchy, retained bed galleries, all routes and existing regressions
+        run: |
+          cd elif-tasarim/source-v12
+          failed=0
+          for test in v25/balance-browser v25/browser seo/browser seo/hero-browser v22/acceptance v23-unified/browser v23-interaction/browser v23/mobile-media; do
+            name="${test//\//-}"
+            mkdir -p "$EVIDENCE_ROOT/$name"
+            if EVIDENCE_DIR="$EVIDENCE_ROOT/$name" timeout 360 xvfb-run -a python "tests/$test.py" > "$EVIDENCE_ROOT/$name/run.log" 2>&1; then
+              echo "PASS $test"
+            else
+              echo "FAIL $test"
+              cat "$EVIDENCE_ROOT/$name/run.log"
+              failed=1
+            fi
+          done
+          exit "$failed"
+      - name: Record verified candidate on staging only
+        run: |
+          rsync -a --delete --exclude=/source-v12/ elif-tasarim/source-v12/dist/ elif-tasarim/
+          git add -A -- elif-tasarim
+          test -z "$(git diff --cached --name-only | grep -v '^elif-tasarim/' || true)"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Elif V25.1 candidate: restore diverse home and inspiration without losing bed collection'
+          git push origin HEAD:elif-v25-1-balance-20261002
+          git rev-parse HEAD > "$EVIDENCE_ROOT/candidate-commit.txt"
+          git rev-parse HEAD:elif-tasarim > "$EVIDENCE_ROOT/candidate-elif-tree.txt"
+          git diff --stat HEAD~1 HEAD -- elif-tasarim > "$EVIDENCE_ROOT/change-stat.txt"
+          git archive HEAD elif-tasarim | gzip > "$EVIDENCE_ROOT/Elif_V25_1_Candidate.tar.gz"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v25-1-balance-evidence
+          path: /tmp/elif-balance-evidence/
+          retention-days: 14
