@@ -1,0 +1,133 @@
+name: Elif V25.2 evidence and discovery verification
+on:
+  push:
+    branches: [elif-v25-2-enrichment-20261002]
+    paths: [.github/workflows/elif-v25-2-enrichment.yml]
+permissions:
+  contents: write
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      BASE_URL: http://127.0.0.1:8000/elif-tasarim/
+      EVIDENCE_ROOT: /tmp/elif-enrichment-evidence
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: elif-v25-2-enrichment-20261002
+      - name: Receive exact source and enforce preservation boundaries
+        env:
+          PAYLOAD_URL: 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-b3ac-820a-804b-80d3df4cb5a3/raw?se=2026-10-02T09%3A47%3A20Z&sp=r&sv=2026-02-06&sr=b&scid=c4562824-413d-5cd3-9986-e0b8666f701c&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-02T06%3A00%3A44Z&ske=2026-10-03T06%3A00%3A44Z&sks=b&skv=2026-02-06&sig=zb4ZJDMy%2BJpWym3yGFqUqCJYO4dkqiNvfQiszlwiaeI%3D'
+        run: |
+          echo "::add-mask::$PAYLOAD_URL"
+          test "$(git rev-parse HEAD:elif-tasarim)" = 9f335f631c2d456706e6a9703973128a09d8a513
+          mkdir -p /tmp/elif-enrichment-payload "$EVIDENCE_ROOT"
+          git ls-tree HEAD > "$EVIDENCE_ROOT/baseline-root-tree.txt"
+          curl --fail --silent --show-error --location "$PAYLOAD_URL" -o /tmp/elif-enrichment-source.zip
+          echo '50d359df3001e4c4810e6c6103d00f349c354d630c7c5b46b8f695a30288b561  /tmp/elif-enrichment-source.zip' | sha256sum --check
+          python - <<'PY'
+          import pathlib,zipfile,hashlib,json,os
+          with zipfile.ZipFile('/tmp/elif-enrichment-source.zip') as z:
+              for n in z.namelist():
+                  p=pathlib.PurePosixPath(n)
+                  assert not p.is_absolute() and '..' not in p.parts and p.parts[0]=='source',n
+              z.extractall('/tmp/elif-enrichment-payload')
+          before=pathlib.Path('elif-tasarim/source-v12');after=pathlib.Path('/tmp/elif-enrichment-payload/source')
+          def hashes(root,sub):return {str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (root/sub).rglob('*') if p.is_file()}
+          assert hashes(before,'public')==hashes(after,'public'),'Public media or 3D files changed'
+          assert (before/'src/pages/Home.tsx').read_bytes()==(after/'src/pages/Home.tsx').read_bytes(),'Homepage structure changed'
+          result={'publicFilesUnchanged':True,'publicFileCount':len(hashes(before,'public')),'homeSourceUnchanged':True,'baseline':'1161a132093fb6d55cde8d65d7a754a87019b834'}
+          pathlib.Path(os.environ['EVIDENCE_ROOT'],'preservation.json').write_text(json.dumps(result,indent=2))
+          PY
+          rsync -a --delete /tmp/elif-enrichment-payload/source/ elif-tasarim/source-v12/
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned testing tools
+        run: |
+          cd elif-tasarim/source-v12
+          npm ci
+          pip install playwright==1.55.0 beautifulsoup4==4.13.5
+          python -m playwright install --with-deps chromium
+      - name: Build, full unit suite, strict core types and static audit
+        run: |
+          set -o pipefail
+          cd elif-tasarim/source-v12
+          npm run build | tee "$EVIDENCE_ROOT/build.log"
+          npm run typecheck:core | tee "$EVIDENCE_ROOT/typecheck.log"
+          npm test | tee "$EVIDENCE_ROOT/unit.log"
+          npm run verify:dist | tee "$EVIDENCE_ROOT/integrity.log"
+          EVIDENCE_DIR="$EVIDENCE_ROOT/static" python tests/v25/site-audit.py
+      - name: Serve candidate and unchanged preceding publication
+        run: |
+          nohup python -m http.server 8001 --directory "$GITHUB_WORKSPACE" > "$EVIDENCE_ROOT/before-server.log" 2>&1 &
+          cd elif-tasarim/source-v12
+          nohup node tools/serve-static.cjs dist 8000 > "$EVIDENCE_ROOT/server.log" 2>&1 &
+          for i in $(seq 1 30); do curl -fsS "$BASE_URL/release-v25.json" >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Matched before and after browser views
+        run: |
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          from pathlib import Path
+          import json,os
+          out=Path(os.environ['EVIDENCE_ROOT'])/'comparison';out.mkdir()
+          data=[]
+          with sync_playwright() as pw:
+              b=pw.chromium.launch(headless=True,args=['--no-sandbox'])
+              for label,port in [('v25-1-before',8001),('v25-2-after',8000)]:
+                  for width in [1440,390]:
+                      ctx=b.new_context(viewport={'width':width,'height':960},reduced_motion='reduce');p=ctx.new_page()
+                      for route,name in [('', 'home'),('ilham-modelleri/', 'inspiration'),('kategoriler/gardrop/','wardrobe'),('malzemeler/','materials')]:
+                          p.goto(f'http://127.0.0.1:{port}/elif-tasarim/'+route,wait_until='domcontentloaded')
+                          p.wait_for_selector('html[data-app-ready=true]')
+                          p.evaluate("document.querySelectorAll('img').forEach(i=>i.loading='eager')")
+                          p.wait_for_function("()=>[...document.images].filter(i=>i.getBoundingClientRect().width>0&&!i.closest('[aria-hidden=true]')).every(i=>i.complete&&i.naturalWidth>0)")
+                          p.evaluate('window.scrollTo(0,0)');p.wait_for_timeout(150)
+                          file=f'{label}-{name}-{width}.png';p.screenshot(path=str(out/file),full_page=True)
+                          if name=='home':p.locator('.v6-hero').screenshot(path=str(out/f'{label}-hero-{width}.png'))
+                          metrics=p.evaluate("()=>({height:document.documentElement.scrollHeight,width:document.documentElement.scrollWidth,h1:document.querySelector('h1')?.innerText,headings:[...document.querySelectorAll('main h2,main h3')].map(e=>({text:e.innerText,y:e.getBoundingClientRect().top+scrollY}))})")
+                          data.append({'file':file,'viewportWidth':width,**metrics})
+                      ctx.close()
+              b.close()
+          (out/'measurements.json').write_text(json.dumps(data,ensure_ascii=False,indent=2))
+          PY
+      - name: Enrichment, balance, beds, SEO, inquiry, 3D and mobile regressions
+        run: |
+          cd elif-tasarim/source-v12
+          failed=0
+          for test in v25/enrichment-browser v25/balance-browser v25/browser seo/browser seo/hero-browser v22/acceptance v23-unified/browser v23-interaction/browser v23/mobile-media; do
+            name="${test//\//-}"
+            mkdir -p "$EVIDENCE_ROOT/$name"
+            if EVIDENCE_DIR="$EVIDENCE_ROOT/$name" timeout 360 xvfb-run -a python "tests/$test.py" > "$EVIDENCE_ROOT/$name/run.log" 2>&1; then
+              echo "PASS $test"
+            else
+              echo "FAIL $test"
+              cat "$EVIDENCE_ROOT/$name/run.log"
+              failed=1
+            fi
+          done
+          exit "$failed"
+      - name: Record verified candidate on staging only
+        run: |
+          rsync -a --delete --exclude=/source-v12/ elif-tasarim/source-v12/dist/ elif-tasarim/
+          git add -A -- elif-tasarim
+          test -z "$(git diff --cached --name-only | grep -v '^elif-tasarim/' || true)"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Elif V25.2 candidate: evidence-led category content and compact discovery with unchanged homepage structure'
+          git push origin HEAD:elif-v25-2-enrichment-20261002
+          git rev-parse HEAD > "$EVIDENCE_ROOT/candidate-commit.txt"
+          git rev-parse HEAD:elif-tasarim > "$EVIDENCE_ROOT/candidate-elif-tree.txt"
+          git diff --stat HEAD~1 HEAD -- elif-tasarim > "$EVIDENCE_ROOT/change-stat.txt"
+          git archive HEAD elif-tasarim | gzip > "$EVIDENCE_ROOT/Elif_V25_2_Candidate.tar.gz"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: elif-v25-2-enrichment-evidence
+          path: /tmp/elif-enrichment-evidence/
+          retention-days: 14
