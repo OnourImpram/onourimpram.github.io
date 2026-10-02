@@ -1,0 +1,186 @@
+name: Publish and verify MARSAM reading room
+on:
+  push:
+    branches: [publish/marsam-reading-room-07]
+    paths: ['.github/workflows/marsam-reading-room-publish.yml']
+permissions:
+  contents: read
+env:
+  SOURCE_COMMIT: 0e8a30477876b7b8e910348bbf46b50cf3df8934
+  BASE_PATH: /MARSAM/
+  PAGES_PREVIEW: 'true'
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    outputs:
+      release_digest: ${{ steps.stage.outputs.release_digest }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: ${{ env.SOURCE_COMMIT }}
+          path: .marsam-source
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify the exact source and bind the generated files
+        working-directory: .marsam-source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$SOURCE_COMMIT"
+          mkdir -p verification
+          npm run check | tee verification/reading-room-release-check.log
+          node scripts/budget.mjs
+          node scripts/release-manifest.mjs
+      - name: Stage only MARSAM without changing the public branch
+        id: stage
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import os,json,shutil,hashlib
+          root=Path('.marsam-source/dist');m=json.loads((root/'release.json').read_text())
+          assert m['sourceCommit']==os.environ['SOURCE_COMMIT'] and m['version']=='0.7.0'
+          assert m['mode']=='institutional-review' and m['formalApproval'] is False and m['scientificApproval'] is False and m['humanLanguageReview'] is False
+          allowed={'.html','.css','.js','.json','.svg','.png','.webp','.txt','.ris','.bib'}
+          for f in root.rglob('*'):
+              if not f.is_file():continue
+              assert not f.is_symlink()
+              assert f.suffix in allowed or f.name=='.nojekyll',str(f)
+          digest=hashlib.sha256((root/'release.json').read_bytes()).hexdigest()
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('release_digest='+digest+'\n')
+          old=json.loads(Path('MARSAM/release.json').read_text());assert old['mode']=='institutional-review'
+          shutil.rmtree('MARSAM');shutil.copytree(root,'MARSAM')
+          Path('.marsam-source/verification/reading-room-staged-digest.txt').write_text(digest+'\n')
+          PY
+          git add -- MARSAM
+          python - <<'PY'
+          import subprocess
+          names=subprocess.check_output(['git','diff','--cached','--name-only','-z']).decode().split('\0')
+          assert all(n.startswith('MARSAM/')for n in names if n)
+          PY
+          git config user.name 'Onour Impram'
+          git config user.email '215815131+OnourImpram@users.noreply.github.com'
+          git commit -m 'build: stage verified MARSAM reading-room release, preserve other websites'
+          git push origin HEAD:publish/marsam-reading-room-07
+          git rev-parse HEAD > .marsam-source/verification/reading-room-host-candidate.txt
+          git rev-parse HEAD:MARSAM > .marsam-source/verification/reading-room-site-tree.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-reading-room-staged
+          path: .marsam-source/verification/reading-room-*
+          retention-days: 14
+  verify-public:
+    needs: stage
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright/python:v1.61.0-noble
+    timeout-minutes: 18
+    env:
+      BROWSERS: chromium,firefox,webkit
+      EXPECTED_RELEASE_DIGEST: ${{ needs.stage.outputs.release_digest }}
+      PREVIEW_ORIGIN: https://onourimpram.github.io
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: ${{ env.SOURCE_COMMIT }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare matching browsers and script coverage
+        timeout-minutes: 4
+        run: |
+          npm run build
+          python -m pip install --timeout 25 -q playwright==1.61.0
+          python scripts/test-fonts.py
+      - name: Wait for explicit promotion of the exact staged release
+        run: |
+          python - <<'PY'
+          from urllib.request import urlopen
+          from pathlib import Path
+          import os,time,hashlib,json
+          Path('verification').mkdir(exist_ok=True)
+          for attempt in range(100):
+              try:
+                  data=urlopen('https://onourimpram.github.io/MARSAM/release.json?source='+os.environ['SOURCE_COMMIT'],timeout=12).read()
+                  m=json.loads(data)
+                  if m.get('sourceCommit')==os.environ['SOURCE_COMMIT'] and hashlib.sha256(data).hexdigest()==os.environ['EXPECTED_RELEASE_DIGEST']:
+                      Path('verification/reading-room-live-release.json').write_bytes(data);break
+              except Exception:pass
+              time.sleep(5)
+          else:raise RuntimeError('The exact staged release is not public. Do not claim publication.')
+          PY
+      - name: Verify the actual public files and record host limitations
+        run: |
+          python - <<'PY'
+          from concurrent.futures import ThreadPoolExecutor
+          from urllib.request import urlopen,Request
+          from urllib.error import HTTPError
+          from pathlib import Path
+          import json,hashlib,time,os
+          m=json.loads(Path('verification/reading-room-live-release.json').read_text());root=m['url']
+          def verify(item):
+              name,meta=item
+              for attempt in range(4):
+                  try:
+                      with urlopen(Request(root+name+'?release=readingroom07',headers={'User-Agent':'MARSAM-release-verification'}),timeout=25) as r:data=r.read();assert r.status==200
+                      assert hashlib.sha256(data).hexdigest()==meta['sha256'],name
+                      return name
+                  except Exception:
+                      if attempt==3:raise
+                      time.sleep(2)
+          with ThreadPoolExecutor(max_workers=8)as pool:paths=list(pool.map(verify,[(p,v)for p,v in m['files'].items()if p!='.nojekyll']))
+          for name in ['site.css','app.js','search-core.js','campus.js','en/index.html','tr/index.html']:
+              for attempt in range(60):
+                  with urlopen(root+name,timeout=25)as r:data=r.read()
+                  if hashlib.sha256(data).hexdigest()==m['files'][name]['sha256']:break
+                  time.sleep(3)
+              assert hashlib.sha256(data).hexdigest()==m['files'][name]['sha256'],name
+          with urlopen(root+'en/',timeout=25)as r:headers=dict(r.headers.items());assert r.status==200
+          try:
+              with urlopen(root+'__missing_reading_room_probe__/',timeout=25)as r:status=r.status;body=r.read().decode(errors='replace')
+          except HTTPError as e:status=e.code;body=e.read().decode(errors='replace')
+          assert status==404,'An unknown path must not silently become a success page'
+          info={'sourceCommit':m['sourceCommit'],'passed':True,'verifiedFiles':len(paths),'unqueriedEntryAssetsMatch':True,'responseHeaders':headers,'missingRoute':{'status':status,'platformDefaultLikely':'File not found' in body or 'There isn’t a GitHub Pages site here' in body},'limits':['Meta CSP is not a response-header policy. No response-header framing protection is claimed unless measured.','The shared host default 404 and root robots were not modified. noindex is not access control.']}
+          Path('verification/reading-room-live-host.json').write_text(json.dumps(info,indent=2))
+          PY
+      - name: Exercise actual public core, scope and layout in three browser engines
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tests/browser_e2e.py & core=$!
+          python tests/scope_e2e.py & scope=$!
+          python tests/heritage_e2e.py & layout=$!
+          status=0
+          wait "$core" || status=1
+          wait "$scope" || status=1
+          wait "$layout" || status=1
+          exit "$status"
+      - name: Record one durable compact verification receipt
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json,os
+          reports={k:json.loads(Path('verification/reading-room-'+k+'.json').read_text())for k in ['core','scope','layout']}
+          assert all(r['success'] and r['passed']==r['total']for r in reports.values())
+          receipt={'version':'0.7.0','sourceCommit':os.environ['SOURCE_COMMIT'],'runId':int(os.environ['GITHUB_RUN_ID']),'url':'https://onourimpram.github.io/MARSAM/en/','passed':True,'engines':reports['core']['browsers'],'suites':{k:{'passed':v['passed'],'total':v['total'],'mode':v['mode'],'origin':v['origin'],'mockedIO':v['mockedIO']}for k,v in reports.items()},'host':json.loads(Path('verification/reading-room-live-host.json').read_text()),'limits':reports['core']['limits'],'formalApproval':False,'scientificApproval':False,'humanLanguageReview':False}
+          Path('verification/reading-room-live-receipt.json').write_text(json.dumps(receipt,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-reading-room-live-evidence
+          path: |
+            verification/reading-room-*
+            .browser-results/reading-room/
+          include-hidden-files: true
+          retention-days: 14
