@@ -10,11 +10,11 @@
     "formalApprovalVerified": false
   },
   "previewDeploymentAuthorized": true,
-  "version": "0.8.0",
-  "release": "marsam-matte-research-0.8.0",
+  "version": "0.8.1",
+  "release": "marsam-iznik-cini-0.8.1",
   "base": "/MARSAM/",
   "mode": "preview",
-  "generatedAt": "2026-10-02T12:14:48.616Z",
+  "generatedAt": "2026-10-02T19:25:51.940Z",
   "locales": [
     "tr",
     "en",
@@ -613,5 +613,5 @@
       "direction": "ltr"
     }
   },
-  "deploymentCommit": "91703cb6a91c03b67840965589f8c42bda477a73"
+  "deploymentCommit": "0bf0a06f122ffc808273d918ef77ebe9ef79ba5d"
 }
