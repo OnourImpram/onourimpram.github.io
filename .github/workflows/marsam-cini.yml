@@ -1,0 +1,172 @@
+name: Publish and verify MARSAM Iznik cini
+on:
+  push:
+    branches: [publish/marsam-cini-081]
+    paths: [.github/cini-source.txt]
+permissions:
+  contents: read
+env:
+  BASE_PATH: /MARSAM/
+  PAGES_PREVIEW: 'true'
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    permissions:
+      contents: write
+    outputs:
+      source: ${{ steps.pin.outputs.source }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require an exact source revision
+        id: pin
+        run: |
+          source=$(cat .github/cini-source.txt)
+          [[ "$source" =~ ^[0-9a-f]{40}$ ]]
+          echo "source=$source" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: ${{ steps.pin.outputs.source }}
+          path: .marsam-source
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build and verify the pinned source
+        working-directory: .marsam-source
+        env:
+          SOURCE_COMMIT: ${{ steps.pin.outputs.source }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$SOURCE_COMMIT"
+          mkdir -p verification
+          npm run check > verification/cini-host-check.log
+          node scripts/budget.mjs
+          node scripts/release-manifest.mjs
+      - name: Replace only the MARSAM candidate subtree
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json,subprocess,shutil
+          root=Path('.marsam-source/dist');r=json.loads((root/'release.json').read_text())
+          assert r['version']=='0.8.1' and r['formalApproval'] is False
+          assert r['scientificApproval'] is False and r['humanLanguageReview'] is False
+          assert all(not p.endswith(('.ttf','.otf','.woff','.woff2','.ttc'))for p in r['files'])
+          before=subprocess.check_output(['git','ls-tree','-z','HEAD']).decode().split('\0')
+          preserved={line.split('\t')[1]:line.split('\t')[0].split()[2] for line in before if line and line.split('\t')[1] not in ['MARSAM','.github']}
+          shutil.rmtree('MARSAM');shutil.copytree(root,'MARSAM')
+          Path('.marsam-source/verification/cini-preserved-roots.json').write_text(json.dumps(preserved,indent=2))
+          PY
+          git add -- MARSAM
+          python - <<'PY'
+          import subprocess
+          paths=subprocess.check_output(['git','diff','--cached','--name-only','-z']).decode().split('\0')
+          assert all(p.startswith('MARSAM/') for p in paths if p)
+          PY
+          git config user.name 'Onour Impram'
+          git config user.email '215815131+OnourImpram@users.noreply.github.com'
+          git commit -m 'build: publish original sparse Iznik cini for MARSAM only'
+          git push origin HEAD:publish/marsam-cini-081
+          git rev-parse HEAD > .marsam-source/verification/cini-host-candidate.txt
+          git rev-parse HEAD:MARSAM > .marsam-source/verification/cini-host-tree.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-cini-staged
+          path: .marsam-source/verification/cini-*
+          retention-days: 14
+  verify-live:
+    needs: stage
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright/python:v1.61.0-noble
+    timeout-minutes: 18
+    env:
+      SOURCE_COMMIT: ${{ needs.stage.outputs.source }}
+      BROWSERS: chromium,firefox,webkit
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: ${{ env.SOURCE_COMMIT }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare actual browsers and source manifest
+        run: |
+          npm run build
+          python -m pip install --timeout 25 -q playwright==1.61.0
+          python scripts/test-fonts.py
+          mkdir -p verification
+      - name: Wait for explicit promotion of the exact release
+        run: |
+          python - <<'PY'
+          from urllib.request import urlopen
+          from pathlib import Path
+          import json,os,time
+          url='https://onourimpram.github.io/MARSAM/release.json'
+          for attempt in range(100):
+              try:
+                  with urlopen(url+'?source='+os.environ['SOURCE_COMMIT'],timeout=15)as r:data=json.load(r)
+                  if data.get('sourceCommit')==os.environ['SOURCE_COMMIT']:
+                      Path('verification/cini-live-release.json').write_text(json.dumps(data,indent=2));break
+              except Exception:pass
+              time.sleep(5)
+          else:raise AssertionError('Exact release is not public. Do not announce completion.')
+          PY
+      - name: Verify the actual public file bytes and default cached paths
+        run: |
+          python - <<'PY'
+          from urllib.request import urlopen
+          from concurrent.futures import ThreadPoolExecutor
+          from pathlib import Path
+          import json,hashlib,time
+          r=json.loads(Path('verification/cini-live-release.json').read_text());root=r['url']
+          def check(item):
+              name,meta=item
+              for attempt in range(3):
+                  try:
+                      with urlopen(root+name+'?release=cini081',timeout=30)as response:data=response.read();assert response.status==200
+                      assert hashlib.sha256(data).hexdigest()==meta['sha256'],name
+                      return name
+                  except Exception:
+                      if attempt==2:raise
+                      time.sleep(2)
+          with ThreadPoolExecutor(max_workers=8)as pool:paths=list(pool.map(check,[(k,v)for k,v in r['files'].items()if k!='.nojekyll']))
+          for path in ['site.css','assets/cini/iznik-corner-a.svg','assets/cini/iznik-corner-b.svg']:
+              for attempt in range(60):
+                  with urlopen(root+path,timeout=20)as response:data=response.read()
+                  if hashlib.sha256(data).hexdigest()==r['files'][path]['sha256']:break
+                  time.sleep(2)
+              assert hashlib.sha256(data).hexdigest()==r['files'][path]['sha256'],path
+          Path('verification/cini-live-bytes.json').write_text(json.dumps({'passed':True,'files':len(paths),'sourceCommit':r['sourceCommit'],'unqueriedAssetsMatch':True},indent=2))
+          PY
+      - name: Test public cini composition and existing site functions
+        shell: bash
+        env:
+          PREVIEW_ORIGIN: https://onourimpram.github.io
+        run: |
+          set -euo pipefail
+          python -u tests/cini_e2e.py & cini=$!
+          python tests/browser_e2e.py & core=$!
+          python tests/scope_e2e.py & scope=$!
+          python tests/heritage_e2e.py & layout=$!
+          timeout 420 python -u tests/research_e2e.py & research=$!
+          status=0
+          wait "$cini" || status=1
+          wait "$core" || status=1
+          wait "$scope" || status=1
+          wait "$layout" || status=1
+          wait "$research" || status=1
+          exit "$status"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-cini-live
+          path: |
+            verification/cini-*
+            verification/reading-room-*.json
+            verification/research-*.json
+            .browser-results/cini/
+          include-hidden-files: true
+          retention-days: 14
