@@ -1,0 +1,28 @@
+name: Elif V25 staging and verification
+on:
+  push:
+    branches: [elif-v25-stage-20261002]
+    paths: [.github/workflows/elif-v25-stage.yml]
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 7a15cd6d9daec45a81a60b1669bbad24b81a789f
+          persist-credentials: false
+      - name: Verify and snapshot existing source
+        run: |
+          test "$(git rev-parse HEAD:elif-tasarim)" = "72082b4f9bb039a31d511a26bdb4fd3ad605b540"
+          mkdir -p /tmp/elif-v25-snapshot
+          git archive HEAD elif-tasarim/source-v12 | gzip > /tmp/elif-v25-snapshot/source.tar.gz
+          git ls-tree HEAD > /tmp/elif-v25-snapshot/root-tree.txt
+          git rev-parse HEAD > /tmp/elif-v25-snapshot/baseline.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elif-v25-current-source
+          path: /tmp/elif-v25-snapshot/
+          retention-days: 7
