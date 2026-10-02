@@ -10,11 +10,11 @@
     "formalApprovalVerified": false
   },
   "previewDeploymentAuthorized": true,
-  "version": "0.8.1",
-  "release": "marsam-iznik-cini-0.8.1",
+  "version": "0.8.2",
+  "release": "marsam-iznik-cini-0.8.2",
   "base": "/MARSAM/",
   "mode": "preview",
-  "generatedAt": "2026-10-02T19:25:51.940Z",
+  "generatedAt": "2026-10-02T20:27:29.455Z",
   "locales": [
     "tr",
     "en",
@@ -613,5 +613,5 @@
       "direction": "ltr"
     }
   },
-  "deploymentCommit": "0bf0a06f122ffc808273d918ef77ebe9ef79ba5d"
+  "deploymentCommit": "01d9ffa171f7c40f635a33f910a0891133933951"
 }
