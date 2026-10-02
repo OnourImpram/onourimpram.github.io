@@ -1,0 +1,172 @@
+name: Publish existing cini visibility refinement
+on:
+  push:
+    branches: [publish/marsam-cini-visibility-082]
+    paths: [.github/workflows/marsam-cini-visibility.yml]
+permissions:
+  contents: read
+env:
+  SOURCE_COMMIT: 01d9ffa171f7c40f635a33f910a0891133933951
+  BASE_PATH: /MARSAM/
+  PAGES_PREVIEW: 'true'
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: ${{ env.SOURCE_COMMIT }}
+          path: .source
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify and build the exact source
+        working-directory: .source
+        run: |
+          mkdir -p verification
+          test "$(git rev-parse HEAD)" = "$SOURCE_COMMIT"
+          npm run check > verification/visibility-publish-check.log
+          node scripts/budget.mjs
+          node scripts/release-manifest.mjs
+      - name: Require the same asset inventory and unchanged academic content
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json,hashlib,shutil,subprocess
+          root=Path('.source/dist');previous=json.loads(Path('MARSAM/release.json').read_text());current=json.loads((root/'release.json').read_text())
+          assert current['version']=='0.8.2' and current['formalApproval'] is False
+          assert previous['version']=='0.8.1'
+          assert set(current['files'])==set(previous['files']),'Public file inventory changed'
+          allowed={'site.css','build-manifest.json','research-downloads/lab-manifest.json','data/research-object-ledger.json'}
+          unchanged=[]
+          for name,meta in current['files'].items():
+              if name.endswith('.html'):
+                  old=(Path('MARSAM')/name).read_text();new=(root/name).read_text()
+                  assert old.replace('0.8.1','0.8.2')==new,name
+              elif name not in allowed:
+                  assert meta['sha256']==previous['files'][name]['sha256'],name
+                  unchanged.append(name)
+          for name in ['research-downloads/lab-manifest.json','data/research-object-ledger.json']:
+              old=json.loads((Path('MARSAM')/name).read_text());new=json.loads((root/name).read_text());old['version']='0.8.2';assert old==new,name
+          report={'newPublicFiles':0,'originalArtworkUnchanged':True,'paletteUnchanged':True,'htmlOnlyReleaseTagChanged':True,'unchangedPublicAssets':len(unchanged),'sourceCommit':current['sourceCommit']}
+          Path('.source/verification/visibility-preservation.json').write_text(json.dumps(report,indent=2))
+          shutil.rmtree('MARSAM');shutil.copytree(root,'MARSAM')
+          PY
+          git add -- MARSAM
+          python - <<'PY'
+          import subprocess
+          paths=subprocess.check_output(['git','diff','--cached','--name-only','-z']).decode().split('\0')
+          assert all(p.startswith('MARSAM/')for p in paths if p)
+          PY
+          git config user.name 'Onour Impram'
+          git config user.email '215815131+OnourImpram@users.noreply.github.com'
+          git commit -m 'build: reinforce existing MARSAM cini without new design or content changes'
+          git push origin HEAD:publish/marsam-cini-visibility-082
+          git rev-parse HEAD > .source/verification/visibility-host-candidate.txt
+          git rev-parse HEAD:MARSAM > .source/verification/visibility-host-tree.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-visibility-staged
+          path: .source/verification/visibility-*
+          retention-days: 14
+  verify-live:
+    needs: stage
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright/python:v1.61.0-noble
+    timeout-minutes: 16
+    env:
+      BROWSERS: chromium,firefox,webkit
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: ${{ env.SOURCE_COMMIT }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare actual browser and script coverage
+        run: |
+          npm run build
+          python -m pip install --timeout 25 -q playwright==1.61.0
+          python scripts/test-fonts.py
+          mkdir -p verification
+      - name: Require explicit promotion and exact live release
+        run: |
+          python - <<'PY'
+          from urllib.request import urlopen
+          from pathlib import Path
+          import json,os,time
+          for attempt in range(100):
+              try:
+                  with urlopen('https://onourimpram.github.io/MARSAM/release.json?source='+os.environ['SOURCE_COMMIT'],timeout=15)as r:m=json.load(r)
+                  if m.get('sourceCommit')==os.environ['SOURCE_COMMIT']:
+                      Path('verification/visibility-live-release.json').write_text(json.dumps(m,indent=2));break
+              except Exception:pass
+              time.sleep(5)
+          else:raise AssertionError('Expected release is not public')
+          PY
+      - name: Verify every served file and the unqueried stylesheet
+        run: |
+          python - <<'PY'
+          from concurrent.futures import ThreadPoolExecutor
+          from urllib.request import urlopen
+          from pathlib import Path
+          import json,hashlib,time
+          m=json.loads(Path('verification/visibility-live-release.json').read_text());root=m['url']
+          def check(item):
+              name,meta=item
+              for attempt in range(3):
+                  try:
+                      with urlopen(root+name+'?visibility=082',timeout=30)as r:data=r.read();assert r.status==200
+                      assert hashlib.sha256(data).hexdigest()==meta['sha256'],name
+                      return name
+                  except Exception:
+                      if attempt==2:raise
+                      time.sleep(2)
+          with ThreadPoolExecutor(max_workers=8)as pool:paths=list(pool.map(check,[(k,v)for k,v in m['files'].items()if k!='.nojekyll']))
+          for name in ['site.css','assets/cini/iznik-corner-a.svg','assets/cini/iznik-corner-b.svg']:
+              for attempt in range(60):
+                  with urlopen(root+name,timeout=25)as r:data=r.read()
+                  if hashlib.sha256(data).hexdigest()==m['files'][name]['sha256']:break
+                  time.sleep(3)
+              else:raise AssertionError('Unqueried asset has not settled '+name)
+          Path('verification/visibility-live-bytes.json').write_text(json.dumps({'passed':True,'checked':len(paths),'unqueriedAssetsMatch':True,'sourceCommit':m['sourceCommit']},indent=2))
+          PY
+      - name: Verify actual public cini, interactions and reading pages
+        shell: bash
+        env:
+          PREVIEW_ORIGIN: https://onourimpram.github.io
+        run: |
+          set -euo pipefail
+          python tests/browser_e2e.py & core=$!
+          python tests/scope_e2e.py & scope=$!
+          python tests/heritage_e2e.py & layout=$!
+          timeout 420 python -u tests/research_e2e.py & research=$!
+          python tests/cini_e2e.py & cini=$!
+          status=0
+          wait "$core" || status=1
+          wait "$scope" || status=1
+          wait "$layout" || status=1
+          wait "$research" || status=1
+          wait "$cini" || status=1
+          exit "$status"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-existing-cini-live
+          path: |
+            verification/visibility-live-*
+            verification/reading-room-*.json
+            verification/research-browser.json
+            verification/cini-browser.json
+            .browser-results/cini/
+          include-hidden-files: true
+          retention-days: 14
