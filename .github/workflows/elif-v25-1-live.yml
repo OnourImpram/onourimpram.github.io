@@ -41,11 +41,37 @@ jobs:
         run: |
           python - <<'PY'
           import pathlib,json,time,hashlib,urllib.request,urllib.error,concurrent.futures,os
+          from unittest.mock import Mock,MagicMock
           root=pathlib.Path('elif-tasarim');expected=(root/'release-v25.json').read_bytes();m=json.loads(expected);base=os.environ['BASE_URL'];out=pathlib.Path(os.environ['EVIDENCE_ROOT'])
           assert m['release']=='v25.1-balanced-discovery' and m['version']=='0.25.1'
-          def get(path):
+          retries=[]
+          def get(path,opener=urllib.request.urlopen,sleeper=time.sleep,events=retries):
               req=urllib.request.Request(base+path+'?verify=dc0e9f4aaa9925464ba947c4af90defd1e727c34',headers={'Cache-Control':'no-cache','User-Agent':'Elif-Visual-Balance-Verification/1.0'})
-              with urllib.request.urlopen(req,timeout=45) as r:return r.status,r.read()
+              for attempt in range(4):
+                  try:
+                      with opener(req,timeout=30) as r:return r.status,r.read()
+                  except urllib.error.HTTPError as e:
+                      if e.code not in (429,500,502,503,504) or attempt==3:raise
+                      detail={'path':path,'attempt':attempt+1,'status':e.code}
+                  except (urllib.error.URLError,TimeoutError,ConnectionError) as e:
+                      if attempt==3:raise
+                      detail={'path':path,'attempt':attempt+1,'error':str(e)}
+                  events.append(detail)
+                  print('TRANSIENT REQUEST RETRY',json.dumps(detail),flush=True)
+                  sleeper(2**attempt)
+              raise RuntimeError('Retry budget exhausted: '+path)
+          response=MagicMock();response.__enter__.return_value.status=200;response.__enter__.return_value.read.return_value=b'fixture'
+          test_events=[];fake=Mock(side_effect=[urllib.error.HTTPError('fixture',503,'temporary',{},None),response])
+          assert get('fixture',fake,lambda _:None,test_events)==(200,b'fixture') and fake.call_count==2 and len(test_events)==1
+          fake404=Mock(side_effect=urllib.error.HTTPError('fixture',404,'missing',{},None))
+          try:get('fixture',fake404,lambda _:None,[])
+          except urllib.error.HTTPError as e:assert e.code==404 and fake404.call_count==1
+          else:raise AssertionError('Permanent missing files must fail')
+          fake503=Mock(side_effect=urllib.error.HTTPError('fixture',503,'persistent',{},None))
+          try:get('fixture',fake503,lambda _:None,[])
+          except urllib.error.HTTPError as e:assert e.code==503 and fake503.call_count==4
+          else:raise AssertionError('Persistent transient errors must fail after bounded retries')
+          print('RETRY CONTRACTS PASS. Byte equality assertions are unchanged.')
           last=''
           for attempt in range(40):
               try:
@@ -63,8 +89,8 @@ jobs:
                   raise
               assert status==200 and len(body)==f['bytes'] and hashlib.sha256(body).hexdigest()==f['sha256'],path
               return {'path':path,'bytes':len(body),'sha256':f['sha256'],'pass':True}
-          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:items=list(pool.map(verify,m['files'].items()))
-          result={'publication':'dc0e9f4aaa9925464ba947c4af90defd1e727c34','release':m['release'],'version':m['version'],'manifestMatched':True,'routes':len(m['routes']),'indexable':m['indexable'],'verifiedFiles':sum(x.get('pass',False) for x in items),'files':items,'pass':True}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:items=list(pool.map(verify,m['files'].items()))
+          result={'publication':'dc0e9f4aaa9925464ba947c4af90defd1e727c34','release':m['release'],'version':m['version'],'manifestMatched':True,'routes':len(m['routes']),'indexable':m['indexable'],'verifiedFiles':sum(x.get('pass',False) for x in items),'files':items,'transientRetries':retries,'pass':True}
           (out/'http-integrity.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
           print('LIVE PUBLIC FILES MATCH',result['verifiedFiles'])
           PY
