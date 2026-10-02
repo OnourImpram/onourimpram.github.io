@@ -18,13 +18,13 @@ jobs:
           ref: elif-v25-stage-20261002
       - name: Receive exact reviewed public source
         env:
-          PAYLOAD_URL: 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-24b0-820a-9ee4-8bcc93e2b621/raw?se=2026-10-02T06%3A00%3A14Z&sp=r&sv=2026-02-06&sr=b&scid=353645fc-ba5d-5f05-8f4b-b6139fd3b85d&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-02T05%3A36%3A15Z&ske=2026-10-03T05%3A36%3A15Z&sks=b&skv=2026-02-06&sig=92kzHpL1ba6NpYKevLlMFU0iqml8kTPV4nLz0Ig6rlM%3D'
+          PAYLOAD_URL: 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-21e0-820a-a307-cd403009985e/raw?se=2026-10-02T06%3A12%3A08Z&sp=r&sv=2026-02-06&sr=b&scid=41e77d44-2d6e-53e4-bb64-15b9ec96c78f&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-02T05%3A36%3A37Z&ske=2026-10-03T05%3A36%3A37Z&sks=b&skv=2026-02-06&sig=Bkd24CE8%2BWBkqueOX3cR4bBEE5d9G67019oD0DsprZ4%3D'
         run: |
           echo "::add-mask::$PAYLOAD_URL"
           test "$(git rev-parse HEAD:elif-tasarim)" = 72082b4f9bb039a31d511a26bdb4fd3ad605b540
           mkdir -p /tmp/elif-v25-payload "$EVIDENCE_ROOT"
           curl --fail --silent --show-error --location "$PAYLOAD_URL" -o /tmp/elif-v25-payload.zip
-          echo '9f6738dab8f58102cdadf5fdfc3853157ff45e60f8dfb13e2eb9f2be5f7743a7  /tmp/elif-v25-payload.zip' | sha256sum --check
+          echo 'b1e3e1d06e57d33b6aeca9aa593265e9a288e116cbfb3d210e0f9db2f30259c3  /tmp/elif-v25-payload.zip' | sha256sum --check
           python - <<'PY'
           import zipfile,pathlib
           with zipfile.ZipFile('/tmp/elif-v25-payload.zip') as z:
@@ -85,7 +85,7 @@ jobs:
           test -z "$(git diff --cached --name-only | grep -v '^elif-tasarim/' || true)"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Elif V25 candidate: eight bed concepts, sixteen views, full regression checks'
+          git commit -m 'Elif V25 candidate: eight bed concepts, sixteen views, final layout and full regression checks'
           git push origin HEAD:elif-v25-stage-20261002
           git rev-parse HEAD > "$EVIDENCE_ROOT/candidate-commit.txt"
           git rev-parse HEAD:elif-tasarim > "$EVIDENCE_ROOT/candidate-elif-tree.txt"
