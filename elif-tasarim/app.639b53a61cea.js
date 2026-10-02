@@ -386,7 +386,7 @@ class App extends react_1.Component {
             (0, react_1.createElement)("a", { href: "#main-content", className: "skip-link", onClick: e => { e.preventDefault(); document.getElementById('main-content')?.focus(); } }, "\u0130\u00E7eri\u011Fe ge\u00E7"),
             (0, react_1.createElement)("div", { className: "preview-bar" },
                 (0, react_1.createElement)("span", null,
-                    "V23 / TASARIM \u00D6N\u0130ZLEMES\u0130 ",
+                    "V25 / TASARIM \u00D6N\u0130ZLEMES\u0130 ",
                     (0, react_1.createElement)("i", null),
                     (0, react_1.createElement)("span", { className: "v9-preview-detail" }, "Ger\u00E7ek i\u015F ar\u015Fivi, do\u011Frudan ileti\u015Fim")),
                 (0, react_1.createElement)("button", { onClick: () => this.setState({ info: true }) },
@@ -436,6 +436,7 @@ class App extends react_1.Component {
                             nav('/tasarim-masasi', '3D Stüdyo'),
                             nav('/projeler', 'Çalışma arşivi'),
                             nav('/kategoriler', 'Kategoriler'),
+                            nav('/kategoriler/baza-yatak', 'Baza ve yatak modelleri'),
                             nav('/ilham-modelleri', 'İlham modelleri'),
                             nav('/calisma-dosyam', 'İlham dosyanız'),
                             nav('/malzemeler', 'Malzeme ve bakım')),
@@ -465,7 +466,7 @@ class App extends react_1.Component {
                         "elif tasar\u0131m",
                         (0, react_1.createElement)("span", null, "AT\u00D6LYE")),
                     (0, react_1.createElement)("div", { className: "footer-bottom" },
-                        (0, react_1.createElement)("span", null, "EL\u0130F TASARIM \u00B7 V23 / 2026"),
+                        (0, react_1.createElement)("span", null, "EL\u0130F TASARIM \u00B7 V25 / 2026"),
                         (0, react_1.createElement)("div", null,
                             nav('/gizlilik', 'Gizlilik ve dış servisler'),
                             (0, react_1.createElement)("button", { onClick: () => this.setState({ info: true }) }, "Cihaz kay\u0131tlar\u0131n\u0131 y\u00F6net")),
@@ -1866,6 +1867,24 @@ class Dialog extends react_1.Component {
     }
 }
 exports.Dialog = Dialog;
+
+},
+"src/lib/beds":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.bedById = exports.beds = void 0;
+exports.beds = [
+    { id: 'ceviz-yalin', title: 'Ceviz Yalın', subtitle: 'Ceviz Yalın ahşap ağırlıklı baza konsepti', category: 'baza-yatak', image: 'bed-ceviz-yalin-closed', openImage: 'bed-ceviz-yalin-open', group: 'wood', material: 'Ceviz görünümü ve krem başlık', description: 'Ahşap dokusunu geniş yan yüzeyler ve sade bir ön panel boyunca devam ettiren sakin bir çizgi.', details: ['Ahşap görünümlü ön ve yan yüzeyler', 'Dikey kanallı, döşemeli başlık', 'İki bölümlü depolama fikri'] },
+    { id: 'mese-cizgi', title: 'Meşe Çizgi', subtitle: 'Meşe Çizgi ahşap ağırlıklı baza konsepti', category: 'baza-yatak', image: 'bed-mese-cizgi-closed', openImage: 'bed-mese-cizgi-open', group: 'wood', material: 'Açık meşe görünümü ve bej başlık', description: 'Açık ahşap tonu, başlığın iki yanında ince çizgilerle tamamlanır. Daha aydınlık bir yatak odası için.', details: ['Açık ahşap görünümlü gövde', 'Başlık kenarlarında çizgili ahşap detay', 'Yumuşatılmış köşe hatları'] },
+    { id: 'ceviz-cerceve', title: 'Ceviz Çerçeve', subtitle: 'Ceviz Çerçeve ahşap detaylı baza konsepti', category: 'baza-yatak', image: 'bed-ceviz-cerceve-closed', openImage: 'bed-ceviz-cerceve-open', group: 'wood', material: 'Ceviz çerçeve ve bej döşeme', description: 'Başlıktan ayaklara uzanan ahşap çerçeve, döşemeli yüzeyleri tek bir tasarım diliyle birleştirir.', details: ['Başlığı çevreleyen ahşap hat', 'Döşemeli ön ve yan paneller', 'İnce alt kayıt ve ayak birleşimi'] },
+    { id: 'ceviz-kusak', title: 'Ceviz Kuşak', subtitle: 'Ceviz Kuşak ahşap kuşaklı baza konsepti', category: 'baza-yatak', image: 'bed-ceviz-kusak-closed', openImage: 'bed-ceviz-kusak-open', group: 'wood', material: 'Geniş ceviz kuşak ve kum döşeme', description: 'Alt gövdedeki belirgin ahşap kuşak, kumaşın yumuşak dokusuyla dengelenir. Yuvarlatılmış köşelerle tamamlanır.', details: ['Geniş alt ahşap kuşak', 'Yuvarlatılmış ahşap köşe detayları', 'Kanallı ve çerçeveli başlık'] },
+    { id: 'keten-ceviz', title: 'Keten ve Ceviz', subtitle: 'Keten ve Ceviz döşemeli baza konsepti', category: 'baza-yatak', image: 'bed-keten-ceviz-closed', openImage: 'bed-keten-ceviz-open', group: 'upholstered', material: 'Krem döşeme ve ince ceviz detay', description: 'Döşemenin öne çıktığı, ahşabın ise başlık kenarında ve alt çerçevede ince bir eşlikçi olduğu yorum.', details: ['Açık renk, dokulu döşeme', 'İnce ahşap kenar ve ayaklar', 'Dikey başlık kanalları'] },
+    { id: 'yumusak-bukle', title: 'Yumuşak Bukle', subtitle: 'Yumuşak Bukle yuvarlatılmış baza konsepti', category: 'baza-yatak', image: 'bed-yumusak-bukle-closed', openImage: 'bed-yumusak-bukle-open', group: 'upholstered', material: 'Açık bukle görünümü', description: 'Yuvarlatılmış kenarlar ve başlıktan gövdeye uzanan dokulu yüzey. Daha yumuşak bir oda atmosferi için.', details: ['Bukle görünümlü döşeme', 'Alçak ayaklı gövde yorumu', 'Yumuşak köşeli başlık'] },
+    { id: 'antrasit-hat', title: 'Antrasit Hat', subtitle: 'Antrasit Hat döşemeli baza konsepti', category: 'baza-yatak', image: 'bed-antrasit-hat-closed', openImage: 'bed-antrasit-hat-open', group: 'upholstered', material: 'Antrasit döşeme ve ahşap ayak', description: 'Koyu döşeme, yalın bir başlık ve ahşap ayaklarla birleşir. Odada daha belirgin bir odak isteyenlere.', details: ['Antrasit dokulu yüzeyler', 'Yalın, dikey bölümlü başlık', 'Görünür ahşap ayaklar'] },
+    { id: 'kum-dokusu', title: 'Kum Dokusu', subtitle: 'Kum Dokusu döşemeli baza konsepti', category: 'baza-yatak', image: 'bed-kum-dokusu-closed', openImage: 'bed-kum-dokusu-open', group: 'upholstered', material: 'Kum rengi döşeme ve açık ahşap ayak', description: 'Sıcak nötr tonlar ve düzenli başlık kanallarıyla, farklı oda renklerine eşlik eden sade bir seçenek.', details: ['Kum rengi dokulu döşeme', 'Hafif yan kanatlı başlık', 'Açık ahşap görünümlü ayaklar'] }
+];
+const bedById = (id) => exports.beds.find(b => b.id === id);
+exports.bedById = bedById;
 
 },
 "src/lib/contact-options":function(module,exports,require){
@@ -3316,6 +3335,534 @@ exports.imageManifest = {
         "source": "WhatsApp Image 2026-09-22 at 16.08.33.jpeg",
         "sourceSha256": "03d0e5533779d04ebca07d69086a8d344d6212d0583f0dcb5183d223f1159690",
         "crop": null
+    },
+    "bed-ceviz-yalin-open": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-ceviz-yalin-open-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 14256
+            },
+            {
+                "file": "bed-ceviz-yalin-open-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 31514
+            },
+            {
+                "file": "bed-ceviz-yalin-open-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 51388
+            }
+        ],
+        "source": "i_kili_kaldırmalı_ceviz_depolama_yatağı.png",
+        "sourceSha256": "c31b0d3ab342262ed44d9a4660ee9037b3a02f10e232cc8f5bcb53190727c50f",
+        "crop": [
+            0,
+            0,
+            1122,
+            724
+        ]
+    },
+    "bed-ceviz-yalin-closed": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-ceviz-yalin-closed-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 7298
+            },
+            {
+                "file": "bed-ceviz-yalin-closed-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 23928
+            },
+            {
+                "file": "bed-ceviz-yalin-closed-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 51858
+            }
+        ],
+        "source": "i_kili_kaldırmalı_ceviz_depolama_yatağı.png",
+        "sourceSha256": "c31b0d3ab342262ed44d9a4660ee9037b3a02f10e232cc8f5bcb53190727c50f",
+        "crop": [
+            0,
+            724,
+            1122,
+            1402
+        ]
+    },
+    "bed-mese-cizgi-open": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-mese-cizgi-open-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 14280
+            },
+            {
+                "file": "bed-mese-cizgi-open-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 31282
+            },
+            {
+                "file": "bed-mese-cizgi-open-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 50994
+            }
+        ],
+        "source": "kaldırılabilir_depolama_özellikli_meşe_karyola.png",
+        "sourceSha256": "3dd7c15290a65ac4729d734897c4026e4afcc4cbbd00729bf3c3a136fb0e88ce",
+        "crop": [
+            0,
+            0,
+            1122,
+            724
+        ]
+    },
+    "bed-mese-cizgi-closed": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-mese-cizgi-closed-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 8080
+            },
+            {
+                "file": "bed-mese-cizgi-closed-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 24492
+            },
+            {
+                "file": "bed-mese-cizgi-closed-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 47680
+            }
+        ],
+        "source": "kaldırılabilir_depolama_özellikli_meşe_karyola.png",
+        "sourceSha256": "3dd7c15290a65ac4729d734897c4026e4afcc4cbbd00729bf3c3a136fb0e88ce",
+        "crop": [
+            0,
+            724,
+            1122,
+            1402
+        ]
+    },
+    "bed-ceviz-cerceve-open": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-ceviz-cerceve-open-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 13860
+            },
+            {
+                "file": "bed-ceviz-cerceve-open-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 31842
+            },
+            {
+                "file": "bed-ceviz-cerceve-open-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 56090
+            }
+        ],
+        "source": "modern_walnut_storage_bed_views.png",
+        "sourceSha256": "ba8af49e5181695974673db22e5e1548289eeeac9aa32014ea01029e05903a29",
+        "crop": [
+            0,
+            0,
+            1122,
+            724
+        ]
+    },
+    "bed-ceviz-cerceve-closed": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-ceviz-cerceve-closed-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 7504
+            },
+            {
+                "file": "bed-ceviz-cerceve-closed-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 26702
+            },
+            {
+                "file": "bed-ceviz-cerceve-closed-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 56840
+            }
+        ],
+        "source": "modern_walnut_storage_bed_views.png",
+        "sourceSha256": "ba8af49e5181695974673db22e5e1548289eeeac9aa32014ea01029e05903a29",
+        "crop": [
+            0,
+            724,
+            1122,
+            1402
+        ]
+    },
+    "bed-ceviz-kusak-open": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-ceviz-kusak-open-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 14644
+            },
+            {
+                "file": "bed-ceviz-kusak-open-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 34448
+            },
+            {
+                "file": "bed-ceviz-kusak-open-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 58794
+            }
+        ],
+        "source": "kaldırmalı_depolamalı_modern_ahşap_yatak.png",
+        "sourceSha256": "c92ac02ec1a80c1340b1c8f1d3eaec0fe48455216aa1fb1fe03da707e69ab30f",
+        "crop": [
+            0,
+            0,
+            1122,
+            724
+        ]
+    },
+    "bed-ceviz-kusak-closed": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-ceviz-kusak-closed-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 8336
+            },
+            {
+                "file": "bed-ceviz-kusak-closed-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 30064
+            },
+            {
+                "file": "bed-ceviz-kusak-closed-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 66256
+            }
+        ],
+        "source": "kaldırmalı_depolamalı_modern_ahşap_yatak.png",
+        "sourceSha256": "c92ac02ec1a80c1340b1c8f1d3eaec0fe48455216aa1fb1fe03da707e69ab30f",
+        "crop": [
+            0,
+            724,
+            1122,
+            1402
+        ]
+    },
+    "bed-keten-ceviz-open": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-keten-ceviz-open-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 13702
+            },
+            {
+                "file": "bed-keten-ceviz-open-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 29108
+            },
+            {
+                "file": "bed-keten-ceviz-open-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 50256
+            }
+        ],
+        "source": "bej_depolama_yatağı_i_ki_görünüm.png",
+        "sourceSha256": "f46a1da64d43513db90f0eb937daac77747debc8ae89848ab9140dfe9e0990a4",
+        "crop": [
+            0,
+            0,
+            1122,
+            724
+        ]
+    },
+    "bed-keten-ceviz-closed": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-keten-ceviz-closed-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 6774
+            },
+            {
+                "file": "bed-keten-ceviz-closed-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 20410
+            },
+            {
+                "file": "bed-keten-ceviz-closed-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 42908
+            }
+        ],
+        "source": "bej_depolama_yatağı_i_ki_görünüm.png",
+        "sourceSha256": "f46a1da64d43513db90f0eb937daac77747debc8ae89848ab9140dfe9e0990a4",
+        "crop": [
+            0,
+            724,
+            1122,
+            1402
+        ]
+    },
+    "bed-yumusak-bukle-open": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-yumusak-bukle-open-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 13870
+            },
+            {
+                "file": "bed-yumusak-bukle-open-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 39312
+            },
+            {
+                "file": "bed-yumusak-bukle-open-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 75146
+            }
+        ],
+        "source": "modern_greige_lift_up_storage_bed.png",
+        "sourceSha256": "3cb40769adeef4409a29628323634de73be520130ecaa63bfaa71f6a31a858c7",
+        "crop": [
+            0,
+            0,
+            1122,
+            724
+        ]
+    },
+    "bed-yumusak-bukle-closed": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-yumusak-bukle-closed-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 11252
+            },
+            {
+                "file": "bed-yumusak-bukle-closed-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 48912
+            },
+            {
+                "file": "bed-yumusak-bukle-closed-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 103390
+            }
+        ],
+        "source": "modern_greige_lift_up_storage_bed.png",
+        "sourceSha256": "3cb40769adeef4409a29628323634de73be520130ecaa63bfaa71f6a31a858c7",
+        "crop": [
+            0,
+            724,
+            1122,
+            1402
+        ]
+    },
+    "bed-antrasit-hat-open": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-antrasit-hat-open-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 12680
+            },
+            {
+                "file": "bed-antrasit-hat-open-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 29974
+            },
+            {
+                "file": "bed-antrasit-hat-open-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 53792
+            }
+        ],
+        "source": "modern_çift_mekanizmalı_depolama_karyolası.png",
+        "sourceSha256": "3a52a2a81270f58808f1de9b4633984034649adbcb4332e7a361544c9c22984b",
+        "crop": [
+            0,
+            0,
+            1122,
+            724
+        ]
+    },
+    "bed-antrasit-hat-closed": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-antrasit-hat-closed-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 7636
+            },
+            {
+                "file": "bed-antrasit-hat-closed-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 26796
+            },
+            {
+                "file": "bed-antrasit-hat-closed-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 54876
+            }
+        ],
+        "source": "modern_çift_mekanizmalı_depolama_karyolası.png",
+        "sourceSha256": "3a52a2a81270f58808f1de9b4633984034649adbcb4332e7a361544c9c22984b",
+        "crop": [
+            0,
+            724,
+            1122,
+            1402
+        ]
+    },
+    "bed-kum-dokusu-open": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-kum-dokusu-open-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 12970
+            },
+            {
+                "file": "bed-kum-dokusu-open-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 33530
+            },
+            {
+                "file": "bed-kum-dokusu-open-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 61002
+            }
+        ],
+        "source": "taupe_depolama_yatak_takımı.png",
+        "sourceSha256": "849a2c4188889000fff818916adf7a0031dc556732aed9824dfb6bdd1b858ebb",
+        "crop": [
+            0,
+            0,
+            1122,
+            724
+        ]
+    },
+    "bed-kum-dokusu-closed": {
+        "kind": "concept",
+        "width": 1122,
+        "height": 748,
+        "variants": [
+            {
+                "file": "bed-kum-dokusu-closed-480.webp",
+                "width": 480,
+                "height": 320,
+                "bytes": 7548
+            },
+            {
+                "file": "bed-kum-dokusu-closed-800.webp",
+                "width": 800,
+                "height": 533,
+                "bytes": 30906
+            },
+            {
+                "file": "bed-kum-dokusu-closed-full.webp",
+                "width": 1122,
+                "height": 748,
+                "bytes": 71336
+            }
+        ],
+        "source": "taupe_depolama_yatak_takımı.png",
+        "sourceSha256": "849a2c4188889000fff818916adf7a0031dc556732aed9824dfb6bdd1b858ebb",
+        "crop": [
+            0,
+            724,
+            1122,
+            1402
+        ]
     }
 };
 
@@ -3376,7 +3923,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.mainNavigation = exports.pinterestReferences = exports.concepts = exports.featuredWorks = exports.works = exports.workCategories = void 0;
 exports.categoryName = categoryName;
 exports.modelHref = modelHref;
+const beds_1 = require("./beds");
 exports.workCategories = [
+    { id: 'baza-yatak', name: 'Baza ve Yatak', short: 'Yatak odanız', image: 'bed-ceviz-yalin-closed', line: 'Ahşabın karakteri, döşemenin yumuşaklığı.', detail: 'Ahşap ağırlıklı ve döşemeli sekiz baza konsepti. Açık ve kapalı görünümlerle tasarım fikrini keşfedin. Ölçü, malzeme ve mekanizma uygunluğu ayrıca değerlendirilir.' },
     { id: 'mutfak', name: 'Mutfak', short: 'Mutfak', image: 'concept-mutfak', line: 'Günün başladığı, evin buluştuğu yer.', detail: 'Kapak düzeninden depolama alanlarına, ölçünüz ve kullanım alışkanlıklarınız etrafında tasarlanan mutfaklar.' },
     { id: 'tv-unitesi', name: 'TV Ünitesi', short: 'Yaşam alanı', image: 'concept-tv', line: 'Salonunuzun sakin odağı.', detail: 'Duvar panelleri, raflar ve kapalı depolamayı bir araya getiren, mekâna göre şekillenen TV üniteleri.' },
     { id: 'vestiyer', name: 'Vestiyer ve Depolama', short: 'Antre', image: 'concept-vestiyer', line: 'Evin ilk karşılaması.', detail: 'Giriş alanında askılık, ayakkabı ve günlük eşyalar için yer açan ölçüye özel çözümler.' },
@@ -3410,6 +3959,7 @@ exports.works = [
 ];
 exports.featuredWorks = ['sade-kose-mutfak', 'isikli-tv-unitesi', 'kemerli-kahve-kosesi', 'rafli-depolama', 'cam-kapak-giyinme', 'ahsap-bahce-kamelyasi'];
 exports.concepts = [
+    ...beds_1.beds,
     { id: 'oval-orta-sehpa', title: 'Bir araya gelmenin doğal hâli.', category: 'sehpa', image: 'concept-sehpa', subtitle: 'Oval orta sehpa ve zigon fikri' },
     { id: 'kahve-ritueli', title: 'Kendinize küçük bir köşe.', category: 'kahve-kosesi', image: 'concept-kahve', subtitle: 'Işıklı vitrin ve kahve köşesi fikri' },
     { id: 'sakin-antre', title: 'Eve ilk adım.', category: 'vestiyer', image: 'concept-vestiyer', subtitle: 'Banklı ve aynalı vestiyer fikri' },
@@ -3630,7 +4180,7 @@ exports.pageShareImage = pageShareImage;
 exports.indexableRoute = indexableRoute;
 exports.pageRobots = pageRobots;
 exports.pageSchema = pageSchema;
-exports.seoTitles = { "/": "İstanbul Özel Ölçü Mobilya Atölyesi | Elif Tasarım", "/kategoriler/kahve-kosesi": "Özel Ölçü Kahve Köşesi Dolabı | Elif Tasarım", "/kategoriler/mutfak": "İstanbul Özel Ölçü Mutfak Dolabı | Elif Tasarım", "/kategoriler/tv-unitesi": "Ölçüye Özel TV Ünitesi ve Depolama | Elif Tasarım", "/rehber/bakim": "Ahşap Mobilya Bakımı. Yüzeye Göre Temizlik | Elif Tasarım", "/rehber/olcu-alma": "Özel Mobilya İçin Ölçü Hazırlığı | Elif Tasarım", "/rehber/malzeme-secimi": "Mobilyada Gövde, Kapak ve Yüzey Seçimi | Elif Tasarım" };
+exports.seoTitles = { "/kategoriler/baza-yatak": "Ahşap ve Döşemeli Baza Modelleri | Elif Tasarım", "/": "İstanbul Özel Ölçü Mobilya Atölyesi | Elif Tasarım", "/kategoriler/kahve-kosesi": "Özel Ölçü Kahve Köşesi Dolabı | Elif Tasarım", "/kategoriler/mutfak": "İstanbul Özel Ölçü Mutfak Dolabı | Elif Tasarım", "/kategoriler/tv-unitesi": "Ölçüye Özel TV Ünitesi ve Depolama | Elif Tasarım", "/rehber/bakim": "Ahşap Mobilya Bakımı. Yüzeye Göre Temizlik | Elif Tasarım", "/rehber/olcu-alma": "Özel Mobilya İçin Ölçü Hazırlığı | Elif Tasarım", "/rehber/malzeme-secimi": "Mobilyada Gövde, Kapak ve Yüzey Seçimi | Elif Tasarım" };
 const portfolio_1 = require("./portfolio");
 const project_1 = require("./project");
 const site_profile_1 = require("./site-profile");
@@ -3658,7 +4208,7 @@ function pageDescription(path) {
         '/kolay-iletisim': 'Form kullanmadan Elif Tasarım ile iletişim kurun. Görünür e-posta, telefon, SMS ve ilk mesaj için başlangıç metni.',
         '/hizmet-ve-teklif': 'Özel üretim mobilyada bütçe, malzeme, donanım, keşif, nakliye ve montaj kapsamını birlikte netleştirmek için görüşme rehberi.',
         '/projeler': 'Atölyeden paylaşılan mutfak, kahve köşesi, TV ünitesi ve depolama çalışmalarını kaynak türü ve kullanım alanına göre inceleyin.',
-        '/kategoriler': 'Mutfak, TV ünitesi, vestiyer, gardırop, kahve köşesi, sehpa, pergola ve özel tasarım için üretim alanlarımızı keşfedin.',
+        '/kategoriler': 'Mutfak, TV ünitesi, vestiyer, gardırop, kahve köşesi, sehpa, pergola, baza ve özel tasarım için üretim alanlarımızı keşfedin.',
         '/ilham-modelleri': 'Konsept seçkileri ve kaynağı korunan Pinterest modelleri. Beğendiğiniz ayrıntıyı ilham dosyanıza ekleyin veya kendi fikrinize başlangıç yapın.',
         '/hakkimizda': 'Yunus Usta’nın aileden öğrendiği marangozluk ve ihtiyaca göre çalışma yaklaşımı. Elif Tasarım’ın atölye hikâyesi.',
         '/atolye': 'Üretim ve uygulama aşamalarından gerçek atölye arşivi. Montaj fotoğrafları bitmiş işlerden ayrı gösterilir.',
@@ -3764,6 +4314,7 @@ const domain_1 = require("./domain");
 const target = (id) => '/ilham-modelleri?hedef=' + encodeURIComponent(id);
 exports.selectionEntries = [...portfolio_1.works.map(w => ({ id: 'work:' + w.id, title: w.subtitle, category: w.category, image: w.images[0], kind: 'work', path: '/proje/' + w.id })), ...portfolio_1.concepts.map(c => ({ id: 'concept:' + c.id, title: c.subtitle, category: c.category, image: c.image, kind: 'concept', path: target('concept:' + c.id) })), ...portfolio_1.pinterestReferences.map(p => ({ id: 'pin:' + p.id, title: pinterest_1.pinLookup[p.id]?.label || p.title, category: p.category, kind: 'reference', path: target('pin:' + p.id) }))];
 const pages = [
+    { id: 'page:beds', title: 'Baza ve yatak modelleri', category: 'baza-yatak', image: 'bed-ceviz-yalin-closed', kind: 'page', path: '/kategoriler/baza-yatak', keywords: 'ahşap ceviz meşe döşemeli yatak odası depolama sandıklı baza' },
     { id: 'page:basic-contact', title: 'Kolay iletişim. Form olmadan başlayın', category: 'ozel-tasarim', kind: 'page', path: '/kolay-iletisim', keywords: 'e-posta mail email telefon SMS WhatsApp iletişim' },
     { id: 'page:service', title: 'Hizmet ve teklif rehberi', category: 'ozel-tasarim', kind: 'page', path: '/hizmet-ve-teklif', keywords: 'bütçe fiyat nakliye montaj keşif garanti kapora ödeme hizmet bölgesi' },
     { id: 'page:faq', title: 'Sıkça sorulan sorular', category: 'ozel-tasarim', kind: 'page', path: '/sikca-sorulan-sorular', keywords: 'soru cevap teslim süre ücret iptal saklama kurtarma taslak SMS e-posta' },
@@ -4060,6 +4611,158 @@ function BasicContact(a) {
                 (0, react_1.createElement)("p", null, "Foto\u011Fraflar\u0131 ve \u00E7izimleri mesaj\u0131n\u0131za ayr\u0131ca ekleyin. Adres ve ziyaret d\u00FCzenini yola \u00E7\u0131kmadan Yunus Usta ile teyit edin."),
                 (0, react_1.createElement)(ui_1.ButtonLink, { to: "/modelini-getir", navigate: a.navigate, secondary: true }, "Ayr\u0131nt\u0131l\u0131 proje \u00F6zeti haz\u0131rlayay\u0131m"))));
 }
+
+},
+"src/pages/BedCollection":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BedCollection = exports.BedCard = void 0;
+exports.BedTeaser = BedTeaser;
+const react_1 = require("react");
+const ui_1 = require("../components/ui");
+const PortfolioUI_1 = require("../components/PortfolioUI");
+const beds_1 = require("../lib/beds");
+const portfolio_1 = require("../lib/portfolio");
+const selections_1 = require("../lib/selections");
+const collectionPath = '/kategoriler/baza-yatak';
+const viewLabel = (open) => open ? 'Depolama görünümü' : 'Kapalı görünüm';
+class BedCard extends react_1.Component {
+    constructor() {
+        super(...arguments);
+        this.state = { open: false, zoom: false };
+    }
+    render() {
+        const { bed: b, actions: a, navigate } = this.props, s = this.state, id = 'concept:' + b.id, asset = s.open ? b.openImage : b.image;
+        const choices = (large = false) => (0, react_1.createElement)("div", { className: 'bed-view-controls' + (large ? ' bed-view-controls-large' : ''), role: "group", "aria-label": b.title + ' görünümü' }, [false, true].map(open => (0, react_1.createElement)("button", { key: String(open), type: "button", "aria-pressed": s.open === open, onClick: () => this.setState({ open }) }, viewLabel(open))));
+        return (0, react_1.createElement)("article", { className: "bed-card", id: (0, selections_1.targetElementId)(id), tabIndex: -1, "data-bed": b.id },
+            (0, react_1.createElement)("div", { className: "bed-card-image" },
+                (0, react_1.createElement)("button", { type: "button", className: "bed-zoom", "aria-haspopup": "dialog", "aria-label": b.title + ' görselini büyüt', onClick: () => this.setState({ zoom: true }) },
+                    (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: asset, alt: b.title + '. ' + viewLabel(s.open) + '. Yapay zekâ ile hazırlanmış baza konsepti.', sizes: "(max-width: 700px) 92vw, (max-width: 1100px) 46vw, 580px" }),
+                    (0, react_1.createElement)("span", { className: "bed-zoom-hint" },
+                        (0, react_1.createElement)(ui_1.Icon, { name: "search", size: 16 }),
+                        "B\u00FCy\u00FCt"))),
+            choices(),
+            (0, react_1.createElement)("div", { className: "bed-card-copy" },
+                (0, react_1.createElement)("div", { className: "bed-card-meta" },
+                    (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: "concept" }),
+                    (0, react_1.createElement)("span", null, b.group === 'wood' ? 'Ahşap ağırlıklı' : 'Döşemeli yorum')),
+                (0, react_1.createElement)("h3", null, b.title),
+                (0, react_1.createElement)("p", { className: "bed-material" }, b.material),
+                (0, react_1.createElement)("p", null, b.description),
+                (0, react_1.createElement)("details", { className: "bed-details" },
+                    (0, react_1.createElement)("summary", null, "Tasar\u0131m ayr\u0131nt\u0131lar\u0131"),
+                    (0, react_1.createElement)("ul", null, b.details.map(d => (0, react_1.createElement)("li", { key: d }, d))),
+                    (0, react_1.createElement)("p", null, "Ah\u015Fap t\u00FCr\u00FC, kaplama, kuma\u015F ve mekanizma se\u00E7imi numune ve teknik de\u011Ferlendirmeyle kesinle\u015Fir. G\u00F6rseldeki donan\u0131m bir g\u00FCvenlik veya ta\u015F\u0131ma kapasitesi beyan\u0131 de\u011Fildir."),
+                    (0, react_1.createElement)("p", { className: "bed-direct-views" },
+                        (0, react_1.createElement)("a", { href: (0, ui_1.image)(b.image + '-full.webp'), target: "_blank", rel: "noopener noreferrer" }, "Kapal\u0131 g\u00F6rseli a\u00E7"),
+                        (0, react_1.createElement)("a", { href: (0, ui_1.image)(b.openImage + '-full.webp'), target: "_blank", rel: "noopener noreferrer" }, "Depolama g\u00F6rselini a\u00E7"))),
+                (0, react_1.createElement)("div", { className: "bed-actions" },
+                    (0, react_1.createElement)(ui_1.TextLink, { to: (0, portfolio_1.modelHref)('', b.category, b.subtitle + ' üzerine konuşmak istiyorum.'), navigate: navigate }, "Bu modeli konu\u015Fal\u0131m"),
+                    a && (0, react_1.createElement)("button", { type: "button", className: "bed-save", "aria-label": (a.favorites.includes(id) ? 'İlham dosyasından çıkar. ' : 'İlham dosyama ekle. ') + b.title, "aria-pressed": a.favorites.includes(id), onClick: () => a.favorite(id) },
+                        (0, react_1.createElement)(ui_1.Icon, { name: "heart", size: 18 }),
+                        (0, react_1.createElement)("span", null, a.favorites.includes(id) ? 'Kaydedildi' : 'Kaydet')))),
+            s.zoom && (0, react_1.createElement)(ui_1.Dialog, { title: b.title + ' · Konsept model', onClose: () => this.setState({ zoom: false }) },
+                (0, react_1.createElement)("div", { className: "bed-gallery", onKeyDown: e => { if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        this.setState({ open: !s.open });
+                    } } },
+                    (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: asset, alt: b.title + '. ' + viewLabel(s.open) + '. Baza tasarım konsepti.', eager: true, full: true, sizes: "(max-width: 700px) 92vw, 1000px" }),
+                    choices(true),
+                    (0, react_1.createElement)("p", { className: "bed-gallery-note" },
+                        viewLabel(s.open),
+                        ". Yapay zek\u00E2 ile haz\u0131rlanm\u0131\u015F tasar\u0131m g\u00F6rselidir. Bitmi\u015F at\u00F6lye i\u015Fi veya teknik \u00FCretim \u00E7izimi de\u011Fildir."))));
+    }
+}
+exports.BedCard = BedCard;
+class BedCollection extends react_1.Component {
+    constructor() {
+        super(...arguments);
+        this.state = { group: 'all' };
+    }
+    render() {
+        const a = this.props, items = beds_1.beds.filter(b => this.state.group === 'all' || b.group === this.state.group);
+        return (0, react_1.createElement)(react_1.Fragment, null,
+            (0, react_1.createElement)("header", { className: "wrap bed-collection-hero" },
+                (0, react_1.createElement)("div", { className: "bed-hero-copy" },
+                    (0, react_1.createElement)(ui_1.Link, { to: "/kategoriler", navigate: a.navigate, className: "bed-back" },
+                        "\u00DCretim alanlar\u0131 ",
+                        (0, react_1.createElement)(ui_1.Icon, { size: 16 })),
+                    (0, react_1.createElement)(ui_1.Eyebrow, null, "EL\u0130F / BAZA VE YATAK"),
+                    (0, react_1.createElement)("h1", null,
+                        "G\u00FCn\u00FCn sonunda,",
+                        (0, react_1.createElement)("br", null),
+                        (0, react_1.createElement)("em", null, "size ait bir yer.")),
+                    (0, react_1.createElement)("p", null, "Ah\u015Fab\u0131n karakteri, d\u00F6\u015Femenin yumu\u015Fakl\u0131\u011F\u0131 ve saklamaya ayr\u0131lan alan. Yatak odan\u0131z i\u00E7in sekiz farkl\u0131 ba\u015Flang\u0131\u00E7 fikri."),
+                    (0, react_1.createElement)("a", { className: "button", href: "#baza-seckisi" },
+                        "Modelleri ke\u015Ffedin ",
+                        (0, react_1.createElement)(ui_1.Icon, null)),
+                    (0, react_1.createElement)("p", { className: "bed-hero-disclosure" }, "Bu se\u00E7ki, yapay zek\u00E2 ile haz\u0131rlanm\u0131\u015F tasar\u0131m konseptlerinden olu\u015Fur. Tamamlanm\u0131\u015F at\u00F6lye i\u015Fi, stok \u00FCr\u00FCn\u00FC veya \u00FCretim onay\u0131 de\u011Fildir.")),
+                (0, react_1.createElement)("figure", { className: "bed-hero-visual" },
+                    (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: "bed-ceviz-yalin-open", alt: "Ceviz Yal\u0131n baza konseptinin a\u00E7\u0131k depolama g\u00F6r\u00FCn\u00FCm\u00FC. Ah\u015Fap g\u00F6r\u00FCn\u00FCml\u00FC g\u00F6vde ve krem ba\u015Fl\u0131k.", eager: true, full: true, priority: "high", sizes: "(max-width: 800px) 100vw, 58vw" }),
+                    (0, react_1.createElement)("figcaption", null,
+                        (0, react_1.createElement)("span", null, "Ceviz Yal\u0131n"),
+                        (0, react_1.createElement)("span", null, "Ah\u015Fap a\u011F\u0131rl\u0131kl\u0131 konsept")))),
+            (0, react_1.createElement)("div", { className: "wrap bed-collection-summary" },
+                (0, react_1.createElement)("span", null,
+                    (0, react_1.createElement)("strong", null, "08"),
+                    " tasar\u0131m yorumu"),
+                (0, react_1.createElement)("span", null,
+                    (0, react_1.createElement)("strong", null, "04"),
+                    " ah\u015Fap a\u011F\u0131rl\u0131kl\u0131 model"),
+                (0, react_1.createElement)("span", null,
+                    (0, react_1.createElement)("strong", null, "02"),
+                    " g\u00F6r\u00FCn\u00FCm, her modelde")),
+            (0, react_1.createElement)("section", { className: "wrap bed-collection", id: "baza-seckisi" },
+                (0, react_1.createElement)("div", { className: "v6-heading" },
+                    (0, react_1.createElement)("div", null,
+                        (0, react_1.createElement)(ui_1.Eyebrow, null, "BA\u015ELIKTAN G\u00D6VDEYE B\u0130R B\u00DCT\u00DCN"),
+                        (0, react_1.createElement)("h2", null,
+                            "Dokusu farkl\u0131.",
+                            (0, react_1.createElement)("br", null),
+                            (0, react_1.createElement)("em", null, "\u0130htiyac\u0131 sizin."))),
+                    (0, react_1.createElement)("p", null, "Kapal\u0131 g\u00F6r\u00FCn\u00FCmde \u00E7izgisini, depolama g\u00F6r\u00FCn\u00FCm\u00FCnde i\u00E7 d\u00FCzen fikrini inceleyin. Be\u011Fendi\u011Finiz modeli kaydedin veya do\u011Frudan o fikirle g\u00F6r\u00FC\u015Fmeye ba\u015Flay\u0131n.")),
+                (0, react_1.createElement)("div", { className: "bed-filter-row" },
+                    (0, react_1.createElement)("div", { className: "filter-chips", role: "group", "aria-label": "Baza tasar\u0131m t\u00FCr\u00FC" }, [['all', 'Tüm modeller'], ['wood', 'Ahşap ağırlıklı'], ['upholstered', 'Döşemeli yorumlar']].map(([group, title]) => (0, react_1.createElement)("button", { type: "button", key: group, "aria-pressed": this.state.group === group, onClick: () => this.setState({ group: group }) }, title))),
+                    (0, react_1.createElement)("span", { className: "bed-result", role: "status", "aria-live": "polite" },
+                        items.length,
+                        " model")),
+                (0, react_1.createElement)("div", { className: "bed-grid" }, items.map(b => (0, react_1.createElement)(BedCard, { key: b.id, bed: b, navigate: a.navigate, actions: a })))),
+            (0, react_1.createElement)("section", { className: "bed-preparation" },
+                (0, react_1.createElement)("div", { className: "wrap bed-preparation-inner" },
+                    (0, react_1.createElement)("div", null,
+                        (0, react_1.createElement)(ui_1.Eyebrow, null, "G\u00D6RSELDEN S\u0130Z\u0130N ODANIZA"),
+                        (0, react_1.createElement)("h2", null,
+                            "\u00D6l\u00E7\u00FCy\u00FC de\u011Fil,",
+                            (0, react_1.createElement)("br", null),
+                            (0, react_1.createElement)("em", null, "\u00F6nce ihtiyac\u0131 konu\u015Fal\u0131m.")),
+                        (0, react_1.createElement)("p", null, "Buradaki modeller birer ba\u015Flang\u0131\u00E7 noktas\u0131. Se\u00E7ti\u011Finiz \u00E7izgi, odan\u0131z\u0131n ko\u015Fullar\u0131 ve kullan\u0131m\u0131n\u0131zla birlikte de\u011Ferlendirilir."),
+                        (0, react_1.createElement)(ui_1.TextLink, { to: "/rehber/malzeme-secimi", navigate: a.navigate }, "Malzeme se\u00E7imini tan\u0131y\u0131n")),
+                    (0, react_1.createElement)("div", null,
+                        (0, react_1.createElement)(ui_1.Accordion, { items: [
+                                ['Ölçü ve yerleşim için neler gerekli?', 'Mevcut yatağınızın eni ve boyu, odadaki geçişler, komodinler ve başlık için ayrılabilen alanla başlayabiliriz. Yaklaşık ölçüler görüşme içindir. Kesin üretim ölçüsü yerinde veya teknik değerlendirmeyle teyit edilir.'],
+                                ['Görseldeki ahşap ve kumaş birebir mi?', 'Görseller renk ve tasarım fikrini gösterir. Ceviz veya meşe görünümü, bütün gövdenin masif ahşap olduğu anlamına gelmez. Masif, kaplama, gövde malzemesi, kumaş ve yüzey işlemi ayrı seçilir. Son karar gerçek numuneyle verilir.'],
+                                ['Açılır mekanizma nasıl seçilir?', 'Yatak ölçüsü ve ağırlığı, taşıyıcı yapı, bağlantılar, açılma mesafesi ve emniyet donanımı birlikte değerlendirilir. Görselden gazlı amortisör kuvveti veya taşıma kapasitesi belirlenmez. Üretim öncesinde uygun mekanizma ve teknik ayrıntılar usta ve donanım sağlayıcısıyla doğrulanmalıdır.'],
+                                ['Fiyat ve teslim kapsamı nasıl netleşir?', 'Baza gövdesi, başlık, döşeme, mekanizma, yatak, komodin, nakliye ve montaj kapsamları teklif aşamasında ayrı konuşulur. Bir görseli seçmek sipariş veya üretim onayı oluşturmaz. Fiyat ve süre, kesinleşen kapsam üzerinden belirlenir.']
+                            ] })))),
+            (0, react_1.createElement)(PortfolioUI_1.ModelCallout, { navigate: a.navigate }));
+    }
+}
+exports.BedCollection = BedCollection;
+function BedTeaser({ actions: a }) { return (0, react_1.createElement)("section", { className: "wrap bed-home-teaser" },
+    (0, react_1.createElement)("div", null,
+        (0, react_1.createElement)(ui_1.Eyebrow, null, "YEN\u0130 SE\u00C7K\u0130 / BAZA VE YATAK"),
+        (0, react_1.createElement)("h2", null,
+            "Ah\u015Fab\u0131n s\u0131cakl\u0131\u011F\u0131.",
+            (0, react_1.createElement)("br", null),
+            (0, react_1.createElement)("em", null, "Odan\u0131z\u0131n yeni \u00E7izgisi.")),
+        (0, react_1.createElement)("p", null, "Ah\u015Fap a\u011F\u0131rl\u0131kl\u0131 d\u00F6rt yorum ve d\u00F6rt d\u00F6\u015Femeli alternatif. Sekiz baza konseptini a\u00E7\u0131k ve kapal\u0131 g\u00F6r\u00FCn\u00FCmleriyle ke\u015Ffedin."),
+        (0, react_1.createElement)(ui_1.ButtonLink, { to: collectionPath, navigate: a.navigate }, "Baza modellerini inceleyin"),
+        (0, react_1.createElement)("small", null, "Yapay zek\u00E2 ile haz\u0131rlanm\u0131\u015F konsept se\u00E7kisidir.")),
+    (0, react_1.createElement)(ui_1.Link, { to: collectionPath, navigate: a.navigate, className: "bed-home-visual" },
+        (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: "bed-mese-cizgi-closed", alt: "A\u00E7\u0131k ah\u015Fap g\u00F6r\u00FCn\u00FCml\u00FC Me\u015Fe \u00C7izgi baza konsepti, kapal\u0131 g\u00F6r\u00FCn\u00FCm", sizes: "(max-width: 800px) 100vw, 55vw" }),
+        (0, react_1.createElement)("span", null,
+            "Me\u015Fe \u00C7izgi ",
+            (0, react_1.createElement)(ui_1.Icon, { name: "diagonal", size: 18 })))); }
 
 },
 "src/pages/BringModel":function(module,exports,require){
@@ -4640,6 +5343,7 @@ function Privacy(a) { return (0, react_1.createElement)(react_1.Fragment, null,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Home = void 0;
 const react_1 = require("react");
+const BedCollection_1 = require("./BedCollection");
 const ui_1 = require("../components/ui");
 const PortfolioUI_1 = require("../components/PortfolioUI");
 const portfolio_1 = require("../lib/portfolio");
@@ -4823,6 +5527,7 @@ class Home extends react_1.Component {
                         (0, react_1.createElement)("span", null, "Aile at\u00F6lyesi"),
                         (0, react_1.createElement)("span", null, "\u00D6l\u00E7\u00FCye \u00F6zel"),
                         (0, react_1.createElement)("span", null, "\u00DCretim & uygulama")))),
+            (0, react_1.createElement)(BedCollection_1.BedTeaser, { actions: a }),
             (0, react_1.createElement)("section", { className: "v6-process" },
                 (0, react_1.createElement)("div", { className: "wrap" },
                     (0, react_1.createElement)("div", { className: "v6-heading" },
@@ -4878,6 +5583,8 @@ exports.Inspiration = exports.WorkDetail = exports.Projects = void 0;
 exports.ConceptCard = ConceptCard;
 exports.Categories = Categories;
 exports.AboutAtelier = AboutAtelier;
+const BedCollection_1 = require("./BedCollection");
+const beds_1 = require("../lib/beds");
 const ServiceGuide_1 = require("../components/ServiceGuide");
 const V7Pages_1 = require("./V7Pages");
 const PinterestPreview_1 = require("../components/PinterestPreview");
@@ -5040,7 +5747,8 @@ class WorkDetail extends react_1.Component {
     }
 }
 exports.WorkDetail = WorkDetail;
-function ConceptCard({ c, navigate, actions }) { return (0, react_1.createElement)("article", { className: "concept-card", id: (0, selections_1.targetElementId)('concept:' + c.id), tabIndex: -1 },
+function ConceptCard({ c, navigate, actions }) { const bed = (0, beds_1.bedById)(c.id); if (bed)
+    return (0, react_1.createElement)(BedCollection_1.BedCard, { bed: bed, navigate: navigate, actions: actions }); return (0, react_1.createElement)("article", { className: "concept-card", id: (0, selections_1.targetElementId)('concept:' + c.id), tabIndex: -1 },
     (0, react_1.createElement)(ui_1.Link, { to: (0, portfolio_1.modelHref)('', c.category, c.subtitle + ' üzerine konuşmak istiyorum.'), navigate: navigate, className: "concept-image" },
         (0, react_1.createElement)(PortfolioUI_1.VImage, { asset: c.image, alt: c.subtitle + ', konsept model', sizes: "(max-width: 680px) 90vw, 45vw" }),
         (0, react_1.createElement)(PortfolioUI_1.SourceTag, { kind: "concept" }),
@@ -5054,6 +5762,8 @@ function ConceptCard({ c, navigate, actions }) { return (0, react_1.createElemen
             (0, react_1.createElement)(ui_1.Icon, { name: "heart", size: 18 }),
             actions.favorites.includes('concept:' + c.id) ? 'İlham dosyanızda' : 'İlham dosyama ekle'))); }
 function Categories(a) {
+    if (a.slug === 'baza-yatak')
+        return (0, react_1.createElement)(BedCollection_1.BedCollection, { ...a });
     const cat = portfolio_1.workCategories.find(c => c.id === a.slug);
     if (cat) {
         const list = portfolio_1.works.filter(w => w.category === cat.id && w.status === 'work'), ideas = portfolio_1.concepts.filter(c => c.category === cat.id);
@@ -5116,7 +5826,7 @@ function Categories(a) {
                     (0, react_1.createElement)("p", null, c.line),
                     (0, react_1.createElement)(ui_1.Icon, { name: "diagonal" }))),
                 (0, react_1.createElement)(ui_1.Link, { to: "/ilham-modelleri", navigate: a.navigate, className: "category-tile category-inspiration" },
-                    (0, react_1.createElement)("span", { className: "category-number" }, "09"),
+                    (0, react_1.createElement)("span", { className: "category-number" }, String(portfolio_1.workCategories.length + 1).padStart(2, '0')),
                     (0, react_1.createElement)(ui_1.Eyebrow, null, "SE\u00C7K\u0130LER VE S\u0130Z\u0130N F\u0130K\u0130RLER\u0130N\u0130Z"),
                     (0, react_1.createElement)("h2", null,
                         "\u0130lham",

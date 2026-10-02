@@ -1,6 +1,8 @@
-export type WorkCategory='mutfak'|'tv-unitesi'|'vestiyer'|'gardrop'|'kahve-kosesi'|'sehpa'|'pergola'|'ozel-tasarim';
+import {beds} from './beds';
+export type WorkCategory='mutfak'|'tv-unitesi'|'vestiyer'|'gardrop'|'kahve-kosesi'|'sehpa'|'pergola'|'ozel-tasarim'|'baza-yatak';
 export type Work={id:string;title:string;category:WorkCategory;images:string[];status:'work'|'process';subtitle:string;description:string;features:string[]};
 export const workCategories=[
+ {id:'baza-yatak',name:'Baza ve Yatak',short:'Yatak odanız',image:'bed-ceviz-yalin-closed',line:'Ahşabın karakteri, döşemenin yumuşaklığı.',detail:'Ahşap ağırlıklı ve döşemeli sekiz baza konsepti. Açık ve kapalı görünümlerle tasarım fikrini keşfedin. Ölçü, malzeme ve mekanizma uygunluğu ayrıca değerlendirilir.'},
  {id:'mutfak',name:'Mutfak',short:'Mutfak',image:'concept-mutfak',line:'Günün başladığı, evin buluştuğu yer.',detail:'Kapak düzeninden depolama alanlarına, ölçünüz ve kullanım alışkanlıklarınız etrafında tasarlanan mutfaklar.'},
  {id:'tv-unitesi',name:'TV Ünitesi',short:'Yaşam alanı',image:'concept-tv',line:'Salonunuzun sakin odağı.',detail:'Duvar panelleri, raflar ve kapalı depolamayı bir araya getiren, mekâna göre şekillenen TV üniteleri.'},
  {id:'vestiyer',name:'Vestiyer ve Depolama',short:'Antre',image:'concept-vestiyer',line:'Evin ilk karşılaması.',detail:'Giriş alanında askılık, ayakkabı ve günlük eşyalar için yer açan ölçüye özel çözümler.'},
@@ -34,6 +36,7 @@ export const works:Work[]=[
 ];
 export const featuredWorks=['sade-kose-mutfak','isikli-tv-unitesi','kemerli-kahve-kosesi','rafli-depolama','cam-kapak-giyinme','ahsap-bahce-kamelyasi'];
 export const concepts=[
+ ...beds,
  {id:'oval-orta-sehpa',title:'Bir araya gelmenin doğal hâli.',category:'sehpa',image:'concept-sehpa',subtitle:'Oval orta sehpa ve zigon fikri'},
  {id:'kahve-ritueli',title:'Kendinize küçük bir köşe.',category:'kahve-kosesi',image:'concept-kahve',subtitle:'Işıklı vitrin ve kahve köşesi fikri'},
  {id:'sakin-antre',title:'Eve ilk adım.',category:'vestiyer',image:'concept-vestiyer',subtitle:'Banklı ve aynalı vestiyer fikri'},

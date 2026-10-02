@@ -26,7 +26,9 @@ with sync_playwright() as p:
    page.evaluate('scrollTo(0,document.body.scrollHeight)')
    page.wait_for_timeout(120)
    page.wait_for_function("""()=>[...document.querySelectorAll('main img')].filter(i=>{const r=i.getBoundingClientRect();return r.width>0&&r.height>0}).every(i=>i.complete&&i.naturalWidth>0)""",timeout=20000)
-   appearances=page.evaluate("""()=>[...document.querySelectorAll('main img')].map((x,i)=>{let opacity=1,hidden=false;for(let el=x;el;el=el.parentElement){const c=getComputedStyle(el);opacity*=Number(c.opacity);if(c.visibility==='hidden'||c.display==='none'){hidden=true;break}}const r=x.getBoundingClientRect();return {i,src:x.currentSrc||x.src,boxVisible:r.width>0&&r.height>0,hidden,opacity,complete:x.complete,naturalWidth:x.naturalWidth}})""")
+   # Inactive, explicitly aria-hidden carousel frames are prepared off-screen by design.
+   # Only that exact inactive frame is excluded. Visible active imagery remains mandatory.
+   appearances=page.evaluate("""()=>[...document.querySelectorAll('main img')].map((x,i)=>{let opacity=1,hidden=false;for(let el=x;el;el=el.parentElement){const c=getComputedStyle(el);opacity*=Number(c.opacity);if(c.visibility==='hidden'||c.display==='none'||el.matches('.v232-scene[aria-hidden="true"]:not(.is-active)')){hidden=true;break}}const r=x.getBoundingClientRect();return {i,src:x.currentSrc||x.src,boxVisible:r.width>0&&r.height>0,hidden,opacity,complete:x.complete,naturalWidth:x.naturalWidth}})""")
    for appearance in appearances:
     if appearance['boxVisible'] and not appearance['hidden']:
      assert appearance['opacity']>0.01 and appearance['complete'] and appearance['naturalWidth']>0,(route,appearance)
