@@ -37,7 +37,7 @@ if(configNode){
       const table=element('table',undefined,'comparison-table');table.append(element('caption',c.selected));
       const head=element('thead');const header=element('tr');const corner=element('th',c.compare);corner.scope='col';header.append(corner);
       selected.forEach(id=>{const r=byId.get(id);const cell=element('th');cell.scope='col';const a=element('a',r.title);a.href=`${base}${locale}/resource/${id}/`;cell.append(a);header.append(cell);});head.append(header);table.append(head);
-      const body=element('tbody');cells.forEach(([field,label])=>{const tr=element('tr');const th=element('th',label);th.scope='row';tr.append(th);selected.forEach(id=>{const td=element('td',byId.get(id)[field]);if(['citation','review','checked'].includes(field)){td.dir='ltr';if(field==='citation')td.lang='en';}tr.append(td);});body.append(tr);});table.append(body);wrapper.append(table);container.append(wrapper);
+      const body=element('tbody');cells.forEach(([field,label])=>{const tr=element('tr');const th=element('th',label);th.scope='row';tr.append(th);selected.forEach(id=>{const td=element('td',byId.get(id)[field]);if(['citation','review','checked'].includes(field)){td.dir='ltr';if(field==='citation'&&byId.get(id).language)td.lang=byId.get(id).language;}tr.append(td);});body.append(tr);});table.append(body);wrapper.append(table);container.append(wrapper);
     }
     document.querySelectorAll('.language-panel a').forEach(a=>{const u=new URL(a.href,location.href);if(selected.length)u.searchParams.set('ids',selected.join(','));else u.searchParams.delete('ids');a.href=u.href;});
     updateButtons();
