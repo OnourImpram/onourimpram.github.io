@@ -1,0 +1,134 @@
+name: Stage and verify MARSAM scholarly release 0.9.0
+on:
+  push:
+    branches: [publish/marsam-scholarly-0.9.0-orchestrator]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright/python:v1.61.0-noble
+    timeout-minutes: 20
+    env:
+      SOURCE_COMMIT: 05963f0512cab78e599945448d4365a6a705b835
+      BASE_PATH: /MARSAM/
+      PAGES_PREVIEW: 'true'
+      BROWSERS: chromium,firefox,webkit
+      PREVIEW_ORIGIN: https://onourimpram.github.io
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: 05963f0512cab78e599945448d4365a6a705b835
+          path: .marsam-source
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build the exact source-bound review release
+        working-directory: .marsam-source
+        run: |
+          npm run check
+          node scripts/budget.mjs
+          node scripts/release-manifest.mjs
+      - name: Stage only the generated MARSAM subtree
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import pathlib,shutil
+          root=pathlib.Path.cwd()
+          destination=root/'MARSAM'
+          shutil.rmtree(destination)
+          shutil.copytree(root/'.marsam-source/dist',destination)
+          PY
+          git add -A -- MARSAM
+          python - <<'PY'
+          import subprocess
+          paths=subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines()
+          assert paths and all(p.startswith('MARSAM/') for p in paths),paths
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Publish source-bound MARSAM scholarly review 0.9.0'
+          git push origin HEAD:refs/heads/publish/marsam-scholarly-0.9.0-artifact
+          git rev-parse HEAD
+      - name: Prepare matching browser engines and script coverage
+        working-directory: .marsam-source
+        run: |
+          python -m pip install --timeout 25 -q playwright==1.61.0
+          python scripts/test-fonts.py
+      - name: Wait for public promotion and compare every published byte
+        working-directory: .marsam-source
+        run: |
+          python - <<'PY'
+          import json,pathlib,urllib.request,hashlib,concurrent.futures,time,os
+          origin='https://onourimpram.github.io/MARSAM/'
+          expected=json.loads(pathlib.Path('dist/release.json').read_text())
+          actual=None
+          for attempt in range(90):
+              try:
+                  actual=json.load(urllib.request.urlopen(origin+'release.json',timeout=15))
+                  if actual.get('sourceCommit')==os.environ['SOURCE_COMMIT']:break
+              except Exception:pass
+              time.sleep(5)
+          assert actual and actual['sourceCommit']==expected['sourceCommit'],actual
+          assert actual['version']==expected['version'] and actual['files']==expected['files']
+          def verify(item):
+              path,entry=item
+              for attempt in range(3):
+                  try:
+                      response=urllib.request.urlopen(origin+path,timeout=30)
+                      body=response.read()
+                      assert response.status==200 and len(body)==entry['bytes'] and hashlib.sha256(body).hexdigest()==entry['sha256'],path
+                      return path
+                  except Exception:
+                      if attempt==2:raise
+                      time.sleep(1)
+          with concurrent.futures.ThreadPoolExecutor(max_workers=12) as pool:
+              verified=list(pool.map(verify,expected['files'].items()))
+          removed=[]
+          for locale in ['tr','en','de','zh','ru','ar','id','ms']:
+              for name in ['discovering-spirituality','spiritual-practices']:
+                  url=origin+locale+'/resource/'+name+'/'
+                  try:
+                      response=urllib.request.urlopen(url,timeout=20)
+                      raise AssertionError('Archived route still public '+url)
+                  except urllib.error.HTTPError as error:
+                      assert error.code==404,(url,error.code)
+                      removed.append(url)
+          result={'success':True,'sourceCommit':expected['sourceCommit'],'version':expected['version'],'filesVerified':len(verified),'archivedRoutes404':removed,'scientificApproval':False,'humanLanguageApproval':False,'formalInstitutionalApproval':False}
+          pathlib.Path('verification/live-byte-review.json').write_text(json.dumps(result,indent=2))
+          print(json.dumps(result))
+          PY
+      - name: Verify real public journeys in all three engines
+        working-directory: .marsam-source
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tests/browser_e2e.py & core=$!
+          python tests/scope_e2e.py & scope=$!
+          python tests/heritage_e2e.py & layout=$!
+          timeout 420 python -u tests/research_e2e.py & research=$!
+          python tests/cini_e2e.py & cini=$!
+          python tests/scholarship_e2e.py & scholarship=$!
+          status=0
+          wait "$core" || status=1
+          wait "$scope" || status=1
+          wait "$layout" || status=1
+          wait "$research" || status=1
+          wait "$cini" || status=1
+          wait "$scholarship" || status=1
+          exit "$status"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-0.9.0-live-verification
+          path: |
+            .marsam-source/verification/
+            .marsam-source/.browser-results/
+          include-hidden-files: true
+          retention-days: 14
