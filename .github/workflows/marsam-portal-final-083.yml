@@ -1,0 +1,84 @@
+name: Stage verified MARSAM 0.8.3 portal
+on:
+  push:
+    branches: [publish/marsam-portal-final-083]
+    paths: [.github/workflows/marsam-portal-final-083.yml]
+permissions:
+  contents: write
+env:
+  SOURCE_COMMIT: 4ecce9f3f3be90e532890f1f071e4301bd035bd3
+  BASE_PATH: /MARSAM/
+  PAGES_PREVIEW: 'true'
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: ${{ env.SOURCE_COMMIT }}
+          path: .marsam-source
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact approved source
+        working-directory: .marsam-source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$SOURCE_COMMIT"
+          npm run check
+          node scripts/budget.mjs
+          node scripts/release-manifest.mjs
+          test -f dist/release.json
+          node - <<'NODE'
+          const fs=require('fs')
+          const r=JSON.parse(fs.readFileSync('dist/release.json','utf8'))
+          if(r.version!=='0.8.3') throw new Error('unexpected version '+r.version)
+          if(r.formalApproval!==false) throw new Error('formal approval must remain false')
+          NODE
+      - name: Replace only MARSAM subtree
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import shutil, subprocess, json
+          before={}
+          for line in subprocess.check_output(['git','ls-tree','-z','HEAD']).decode().split('\0'):
+              if not line:
+                  continue
+              meta,path=line.split('\t',1)
+              if path not in {'MARSAM','.github'}:
+                  before[path]=meta.split()[2]
+          Path('.marsam-source/verification').mkdir(exist_ok=True)
+          Path('.marsam-source/verification/host-preserved-before.json').write_text(json.dumps(before,indent=2)+'\n')
+          shutil.rmtree('MARSAM')
+          shutil.copytree('.marsam-source/dist','MARSAM')
+          PY
+          git add -- MARSAM
+          python - <<'PY'
+          import subprocess
+          paths=subprocess.check_output(['git','diff','--cached','--name-only','-z']).decode().split('\0')
+          changed=[p for p in paths if p]
+          assert changed and all(p.startswith('MARSAM/') for p in changed), changed[:20]
+          PY
+      - name: Commit staged public tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'Onour Impram'
+          git config user.email '215815131+OnourImpram@users.noreply.github.com'
+          git commit -m 'build: stage owner-approved layered MARSAM portal 0.8.3'
+          git push origin HEAD:publish/marsam-portal-final-083
+          git rev-parse HEAD > .marsam-source/verification/host-candidate-sha.txt
+          git rev-parse HEAD:MARSAM > .marsam-source/verification/host-candidate-marsam-tree.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-083-host-stage
+          path: .marsam-source/verification/
+          retention-days: 14
