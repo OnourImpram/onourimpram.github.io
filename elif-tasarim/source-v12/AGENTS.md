@@ -2,7 +2,7 @@
 
 Kullanıcının onayladığı amblemi, Zamana değer katan mobilyalar başlığını, gerçek proje ile konsept ayrımını ve Yunus Usta iletişimini koru. Telefon +90 530 879 71 69. Kullanıcının sağladığı işletme e-postası iletisim.eliftasarimatolyesi@gmail.com. Posta kutusuna erişim veya teslim testi yapılmış sayılmaz.
 
-Tek etkin build `npm run build` ile `tools/build-v25.cjs` üzerinden üretilir. Paket 0.26.1, kimlik v26.1-clear-discovery, etkin manifest release-v25.json. release-v23.json aynı manifestin tarihsel araçlar için uyumluluk kopyasıdır. Tarihsel source-v12 klasör adı etkin sürüm değildir. Eski yayın HTML'ine kod ekleme. `dist` test edilmeden yayınlama. Three.js yerel modüllerini ve lisansını koru.
+Tek etkin build `npm run build` ile `tools/build-v25.cjs` üzerinden üretilir. Paket 0.27.0, kimlik v27-visible-inspiration, etkin manifest release-v25.json. release-v23.json aynı manifestin tarihsel araçlar için uyumluluk kopyasıdır. Tarihsel source-v12 klasör adı etkin sürüm değildir. Eski yayın HTML'ine kod ekleme. `dist` test edilmeden yayınlama. Three.js yerel modüllerini ve lisansını koru.
 
 GitHub yayını yalnız `elif-tasarim/` alt dizinini değiştirebilir. Kök index dosyasına dokunma. Uzak main tabanı değişmişse eski paketi körlemesine ezme. Force push yok.
 
@@ -31,3 +31,7 @@ Pinterest ilk dört referansı gösterir, fazlası doğal details ile açılır.
 
 ## V26.1 kullanıcının son düzenlemesi
 Ana keşif ikiye ayrılır: Bitirdiğimiz İşler ve İlham Alın. Üretim alanları bu bölümlerde filtre olarak kalır, üçüncü ana menü girişi değildir. Gerçek işler ile konsept/Pinterest referansları birbirine karıştırılmaz. Yalnız kurulum fotoğrafı bulunan kayıtlar, özgün proje status alanı değiştirilmeden Uygulama Aşamaları seçkisinde gösterilir. Kendi Modelinizi Getirin çağrısı görünür kalır. Yunus Usta'nın her işe kendi evinde kullanacakmış gibi özenle yaklaşması kullanıcı tarafından doğrulanmıştır; doğrudan söylenmiş bir alıntı gibi yazılmaz. Altı yeni Pinterest referansı 3 Ekim 2026'da görselleriyle incelenmiştir. Dört ilk kart, devamında eski kayıtları da koruyan açılır bölüm vardır. Harici görseller kullanıcı seçmeden yüklenmez. Kaynakta görülen yapay zekâ etiketi korunur.
+
+## V27 kullanıcının açık güncellemesi
+3 Ekim 2026 talimatı önceki Pinterest yükleme tercihini değiştirir. Pinterest görselleri ek yükleme düğmesi olmadan otomatik gösterilir. Native lazy loading ve no-referrer korunur. Gömülü Pinterest betiği yerine doğrulanmış pinimg görseli ve kaynak bağlantısı kullanılır. Konsept fikirler önce, ustanın Pinterest seçkisi hemen altında gelir. On sekiz ustanın seçimi ana grupta, eski diğer seçimler ayrı açılır gruptadır. Kaydedilmiş kimlikleri koru.
+Kullanıcının image(2).png görseli Yunus Usta'nın kendi evinde kullanacakmış gibi özen ve babasından öğrenme sözünü doğrudan içerir. Bu söz artık kaynaklı alıntı olarak kullanılabilir. Yeni garanti, fiyat, malzeme veya teslim iddiası türetme.

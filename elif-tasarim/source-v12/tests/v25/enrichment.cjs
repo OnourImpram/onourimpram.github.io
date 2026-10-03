@@ -26,11 +26,11 @@ test('three added service guides contain different decisions, preparations and v
 test('a service concept cannot be labelled as a real workshop application',()=>{
  const s=read('src/components/ServiceGuide.tsx');assert.match(s,/x.concept/);assert.match(s,/KONSEPTTEN BİR FİKİR/);assert.doesNotMatch(s,/works.find\(.*!;/);
 });
-test('Pinterest overview defaults to 4, adds six curated models and retains the original 12',()=>{
+test('Pinterest catalogue retains earlier models and adds all eighteen master selections',()=>{
  const p=load('src/lib/portfolio.ts');assert.equal(typeof p.visiblePinterestReferences,'function');
- assert.equal(p.visiblePinterestReferences('atelier').length,4);assert.equal(p.visiblePinterestReferences('atelier',true).length,8);assert.equal(p.visiblePinterestReferences('shared').length,4);assert.equal(p.visiblePinterestReferences('invalid').length,0);assert.equal(p.visiblePinterestReferences('curated').length,4);assert.equal(p.visiblePinterestReferences('curated',true).length,6);assert.equal(p.pinterestReferences.length,18);
+ assert.equal(p.visiblePinterestReferences('atelier').length,4);assert.equal(p.visiblePinterestReferences('atelier',true).length,18);assert.equal(p.visiblePinterestReferences('shared').length,4);assert.equal(p.visiblePinterestReferences('invalid').length,0);assert.equal(p.visiblePinterestReferences('curated').length,4);assert.equal(p.visiblePinterestReferences('curated',true).length,6);assert.equal(p.pinterestReferences.length,28);
 });
-test('Pinterest common opt-in notice is linked from compact previews and targets can reveal hidden records',()=>{
+test('Pinterest automatic image disclosure and saved target navigation remain available',()=>{
  const p=read('src/pages/Portfolio.tsx'),c=read('src/components/PinterestPreview.tsx');
  assert.match(p,/pin-expanded-list/);assert.match(p,/pinterest-disclosure/);assert.match(p,/expanded:.*pin/);assert.match(c,/disclosureId/);assert.match(c,/aria-describedby/);assert.match(c,/sandbox="allow-scripts allow-popups"/);
 });

@@ -1,0 +1,42 @@
+{
+  "release": "v27-visible-inspiration",
+  "nodeTests": {
+    "total": 236,
+    "passed": 236,
+    "failed": 0
+  },
+  "build": {
+    "routes": 51,
+    "files": 252
+  },
+  "coreTypecheck": "passed",
+  "staticIntegrity": "passed",
+  "manualBrowser": {
+    "widths": [
+      320,
+      390,
+      768,
+      1280
+    ],
+    "horizontalOverflow": false,
+    "atelierPins": 18,
+    "otherPins": 10,
+    "conceptsBeforePins": true,
+    "nativeLazyImagesLoad": true,
+    "mobilePortraitPreview": {
+      "width": 355,
+      "height": 534.58
+    },
+    "fullSizeImageLink": true,
+    "sourceToForm": "pin:3T8k8Pwyv / mutfak"
+  },
+  "reviewFixes": [
+    "Inset image-button keyboard outline",
+    "Dedicated mobile Pinterest image preview and full-size access",
+    "Wrapped narrow-screen model count"
+  ],
+  "limits": [
+    "No real message sent",
+    "No comparative conversion or performance claim"
+  ]
+}

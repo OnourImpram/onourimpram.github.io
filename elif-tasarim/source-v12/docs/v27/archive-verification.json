@@ -1,0 +1,109 @@
+{
+  "imageEntries": 32,
+  "uniqueSha256Count": 26,
+  "nestedImageEntries": 4,
+  "existingAssetCount": 26,
+  "manifestAssetCount": 26,
+  "counts": {
+    "outer_image_entries": 28,
+    "nested_zip_files": 1,
+    "nested_image_entries": 4,
+    "total_image_entries": 32,
+    "unique_images_by_sha256": 26,
+    "duplicate_entries_beyond_unique": 6,
+    "active_r_assets": 26,
+    "active_r_variants": 60,
+    "portfolio_projects": 20,
+    "photos_with_process_evidence": 9,
+    "photos_with_work_evidence": 17,
+    "projects_in_completed_selection": 16,
+    "projects_in_process_selection": 4,
+    "new_unique_images_missing_from_active_site": 0,
+    "historical_docs_manifest_r_assets": 17
+  },
+  "exact_sha256_match_assets": {
+    "u01": [
+      "r01"
+    ],
+    "u02": [
+      "r02"
+    ],
+    "u03": [
+      "r03"
+    ],
+    "u04": [
+      "r04"
+    ],
+    "u05": [
+      "r05"
+    ],
+    "u06": [
+      "r06"
+    ],
+    "u07": [
+      "r07"
+    ],
+    "u08": [
+      "r08"
+    ],
+    "u09": [
+      "r09"
+    ],
+    "u10": [
+      "r10"
+    ],
+    "u11": [
+      "r11"
+    ],
+    "u12": [
+      "r12"
+    ],
+    "u13": [
+      "r13"
+    ],
+    "u14": [
+      "r14"
+    ],
+    "u15": [
+      "r15"
+    ],
+    "u16": [
+      "r16"
+    ],
+    "u17": [
+      "r17"
+    ],
+    "u18": [
+      "r18"
+    ],
+    "u19": [
+      "r19"
+    ],
+    "u20": [
+      "r20"
+    ],
+    "u21": [
+      "r21"
+    ],
+    "u22": [
+      "r22"
+    ],
+    "u23": [
+      "r23",
+      "work-joinery"
+    ],
+    "u24": [
+      "r24"
+    ],
+    "u25": [
+      "r25"
+    ],
+    "u26": [
+      "r26"
+    ]
+  },
+  "missing_assets": [],
+  "variant_metadata_mismatches": [],
+  "nested_zip_adds_unique_photos": false,
+  "source_zip_sha256": "3d74348b27ff24a36da824722d15cb8b44fa3c6fd4bbc1db1b7eea2932fe31c6"
+}
