@@ -13,7 +13,7 @@ for n in range(36):
   if get('release-v23.json')==expected:break
  except Exception:pass
  time.sleep(10)
-else:raise SystemExit('Expected V11 manifest did not appear. No success claimed.')
+else:raise SystemExit('Expected release manifest did not appear. No success claimed.')
 def verify(item):
  name,entry=item
  if name=='.nojekyll':return {'path':name,'build_only':True}
@@ -23,8 +23,10 @@ with ThreadPoolExecutor(max_workers=4)as pool:results=list(pool.map(verify,m['fi
 pages=[];descs=[]
 for path in m['routes']:
  data=get(path.strip('/')+'/' if path!='/' else '').decode();description=re.search(r'<meta name="description" content="([^"]+)"',data).group(1);descs.append(description)
- pages.append({'path':path,'v11':'v23.3-seo-content'in data,'noindex':'noindex,nofollow'in data,'legacyName':bool(re.search('Yusuf',data)),'description':description})
-assert all(x['v11']and x['noindex']and not x['legacyName']for x in pages);assert len(set(descs))==len(descs)
+ release=re.search(r'<meta name="elif-release" content="([^"]+)"',data)
+ pages.append({'path':path,'releaseMatches':bool(release and release.group(1)==m['release']),'noindex':'noindex,nofollow'in data,'legacyName':bool(re.search('Yusuf',data)),'description':description})
+assert all(x['releaseMatches']and x['noindex']and not x['legacyName']for x in pages),pages
+assert len(set(descs))==len(descs)
 missing=None
 try:get('v11-this-page-does-not-exist/')
 except HTTPError as e:missing=e.code

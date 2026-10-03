@@ -1,5 +1,6 @@
 {
   "release": "v26.0-considered-discovery",
+  "verificationProfile": "manifest-release-v1",
   "version": "0.26.0",
   "baseline": "6b47990c0c343bdaa365b5e7d3737b173e463ea9",
   "basePath": "/elif-tasarim",
