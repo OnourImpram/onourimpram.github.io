@@ -31,25 +31,117 @@ export const works:Work[]=[
  {id:'klasik-mutfak-kurulumu',title:'Bir mutfağın şekillendiği an.',category:'mutfak',images:['r15'],status:'process',subtitle:'Klasik mutfak kurulum görüntüsü',description:'Dolaplar yerleşmiş, tezgâh ve cihaz alanlarında hazırlığın sürdüğü bir arşiv görüntüsü. Tamamlanmış teslim fotoğrafı olarak sunulmaz.',features:['Cam detaylı üst dolap','Alt dolap yerleşimi','Kurulum hazırlığı']},
  {"id": "cam-vitrin-uygulamasi", "title": "Bir vitrinin yerini bulduğu an.", "category": "gardrop", "images": ["r03"], "status": "process", "subtitle": "Cam vitrin ve raf uygulaması", "description": "Koyu çerçeveli cam kapaklar, yan raflar ve çizgili alt depolama. Zemindeki aletler ve kurulum ayrıntıları görünen bu kare, uygulama sürecinden paylaşılmıştır.", "features": ["Cam kapaklı düşey bölüm", "Açık raf düzeni", "Dikey çizgili alt kapaklar"]},
  {"id": "dikey-cizgili-tv-duvari", "title": "İnce çizgiler, bütün bir duvar.", "category": "tv-unitesi", "images": ["r21"], "status": "work", "subtitle": "Dikey çizgili TV duvarı", "description": "Açık renkli çizgili arkalık, sağdaki raflı bölüm ve alt depolama bir arada. Paylaşılan arşivdeki ekran görüntüsü, üzerindeki mevcut işaretler korunarak gösterilmiştir.", "features": ["Dikey çizgili duvar yüzeyi", "Yan sergileme alanı", "Alçak depolama düzeni"]},
- {"id": "gri-tv-depolama-unitesi", "title": "Ekranın yanında, düzen için yer.", "category": "tv-unitesi", "images": ["r24"], "status": "work", "subtitle": "Gri TV ve depolama ünitesi", "description": "TV alanına eşlik eden raflar ve kapalı depolama. Paylaşılan ekran görüntüsündeki ilan filigranı korunmuştur. Bu iş için teknik ölçü veya malzeme belgesi paylaşılmamıştır.", "features": ["TV için orta bölüm", "Açık ve kapalı depolama", "Gri tonlu yüzeyler"]},
+ {"id": "gri-tv-depolama-unitesi", "title": "Ekranın yanında, düzen için yer.", "category": "tv-unitesi", "images": ["r24"], "status": "work", "subtitle": "Gri TV ve depolama ünitesi", "description": "TV alanına eşlik eden raflar ve kapalı depolama. Çizgili panel ve açık raflar, ekran çevresinde farklı kullanım alanları oluşturuyor. Fotoğraftaki ilan filigranı korunmuştur.", "features": ["TV için orta bölüm", "Açık ve kapalı depolama", "Gri tonlu yüzeyler"]},
  {"id": "ahsap-cizgili-tv-paneli", "title": "Ahşap çizgilerle sakin bir odak.", "category": "tv-unitesi", "images": ["r25"], "status": "work", "subtitle": "Ahşap görünümlü çizgili TV paneli", "description": "Dikey çizgili panel, yandaki gri raf alanı ve alttaki ışık çizgisi fotoğrafta birlikte görülüyor. Atölyenin paylaştığı tamamlanan işler arşivinden.", "features": ["Çizgili arka panel", "Yan raf yerleşimi", "Alt aydınlatma çizgisi"]},
  {"id": "isik-cerceveli-tv-unitesi", "title": "Işıkla çerçevelenen yaşam alanı.", "category": "tv-unitesi", "images": ["r26"], "status": "work", "subtitle": "Işık çerçeveli TV ünitesi", "description": "Gri ve ahşap görünümlü yüzeyler, raflar ve sıcak ışık hatlarıyla hazırlanmış TV duvarı. Atölyenin paylaştığı arşivden.", "features": ["Gri ve ahşap görünüm birlikteliği", "Çerçeveleyen aydınlatma", "Yan sergileme rafları"]},
 ];
 /** Photo labels describe the visible capture, not a newly asserted project completion date. */
 export type WorkPhotoEvidence={image:string;kind:'work'|'process';source:'workshop-archive';caption:string};
 const archivePhotoNotes:Record<string,{kind:'work'|'process';caption:string}>={
- r07:{kind:'work',caption:'Kemerli açık orta bölüm, iki yanda cam vitrin ve altta çekmeceler aynı karede görülüyor.'},
- r13:{kind:'work',caption:'L biçimindeki tezgâh, açık renkli dolaplar ve koyu cihaz yüzeyleri birlikte görülüyor.'},
- r22:{kind:'work',caption:'Merkez TV paneli, yan raflar ve kapalı alt depolama aynı duvar üzerinde görülüyor.'},
- r19:{kind:'process',caption:'Kamelyanın dış görünümü. Sahadaki uygulama fotoğrafı, teslim veya kullanım onayı değildir.'},
- r16:{kind:'process',caption:'Kamelyanın köşesi, ahşap taşıyıcılar ve korkulukların sahadan görünümü.'},
- r17:{kind:'process',caption:'Çatının altından ve yanından görünüm. Uygulama sahasındaki çalışma sürüyor.'},
- r20:{kind:'process',caption:'Kamelyanın diğer dış görünümü. Bu kare saha uygulamasından paylaşılmıştır.'},
- r23:{kind:'process',caption:'Çatı altı birleşimleri ve sahadaki çalışma gereçlerinin görüldüğü uygulama karesi.'},
- r03:{kind:'process',caption:'Cam vitrin, raflar ve zemindeki kurulum gereçleri. Uygulama aşaması.'},
- r11:{kind:'process',caption:'Mutfak dolaplarının yerleşimi ve koruyucu filmli yüzeyler. Son teslim fotoğrafı değildir.'},
- r12:{kind:'process',caption:'Mutfak montajının diğer görünümü. Filmli kapaklardan nihai renk çıkarılamaz.'},
- r15:{kind:'process',caption:'Mutfakta dolap, tezgâh ve cihaz yerlerinin kurulum sırasındaki görünümü.'}
+ "r01": {
+  "kind": "work",
+  "caption": "Çerçeve kapaklı gardırop, koyu renk kulplar ve alttaki iki çekmece birlikte görülüyor."
+ },
+ "r02": {
+  "kind": "work",
+  "caption": "Dikey çizgili kapaklar, ortadaki açık raflar ve yandaki çalışma yüzeyi aynı dolap düzeninde görülüyor."
+ },
+ "r03": {
+  "kind": "process",
+  "caption": "Koyu çerçeveli cam kapaklar, açık raflar ve zemindeki kurulum gereçleri. Uygulama aşamasından bir kare."
+ },
+ "r04": {
+  "kind": "work",
+  "caption": "Köşeyi çevreleyen koyu çerçeveli cam kapakların ardında raf ve askı bölmeleri görülüyor."
+ },
+ "r05": {
+  "kind": "work",
+  "caption": "Üst dolaplar, açık raflar, çekmeceler ve yandaki askı bölmesi aynı depolama düzeninde birleşiyor."
+ },
+ "r06": {
+  "kind": "work",
+  "caption": "Sıcak ışıklı cam vitrinler, kahve ekipmanlarının yer aldığı servis yüzeyi ve kapalı alt dolaplar görülüyor."
+ },
+ "r07": {
+  "kind": "work",
+  "caption": "Kemerli açık orta bölüm, iki yanda cam vitrin ve altta çekmeceler aynı karede görülüyor."
+ },
+ "r08": {
+  "kind": "work",
+  "caption": "Işıklı cam üst dolaplar, dikey çizgili arkalık ve çekmeceli alt dolaplar görülüyor."
+ },
+ "r09": {
+  "kind": "work",
+  "caption": "Yatağın iki yanındaki dolaplar, yan çekmeceler ve yatağın üzerindeki yatay depolama bölümü görülüyor."
+ },
+ "r10": {
+  "kind": "work",
+  "caption": "Çerçeve kapaklı üst ve alt dolaplar boyunca ocak, fırın, evye ve aydınlatmalı çalışma yüzeyi sıralanıyor."
+ },
+ "r11": {
+  "kind": "process",
+  "caption": "Koruyucu filmli mutfak dolapları, boş cihaz alanları ve tavandan sarkan kablo kurulum aşamasını gösteriyor."
+ },
+ "r12": {
+  "kind": "process",
+  "caption": "Koruyucu filmli dolaplar ve tamamlanmamış cihaz alanları, mutfak kurulumunun başka bir açıdan görünümünü sunuyor."
+ },
+ "r13": {
+  "kind": "work",
+  "caption": "L biçimindeki tezgâh, açık renkli dolaplar ve koyu renk cihaz yüzeyleri birlikte görülüyor."
+ },
+ "r14": {
+  "kind": "work",
+  "caption": "Koyu çerçeveli cam vitrinler, ışıklı ve dikey çizgili arkalık ile çekmeceli alt depolama görülüyor."
+ },
+ "r15": {
+  "kind": "process",
+  "caption": "Cam detaylı üst dolaplar, çerçeve kapaklar ve boş tezgâh açıklıkları mutfak kurulum aşamasında görülüyor."
+ },
+ "r16": {
+  "kind": "process",
+  "caption": "Kamelyanın köşesindeki ahşap taşıyıcılar, çatı altı ve çapraz korkuluklar sahadan görülüyor."
+ },
+ "r17": {
+  "kind": "process",
+  "caption": "Kamelyanın çatı altı, köşe dikmesi ve çapraz korkulukları yandan görülüyor. Sahadaki uygulama arşivinden."
+ },
+ "r18": {
+  "kind": "work",
+  "caption": "Açık üst kapaklar, yeşil tonlu alt kapaklar ve koyu renk kulplar aynı mutfak düzeninde görülüyor."
+ },
+ "r19": {
+  "kind": "process",
+  "caption": "Kamelyanın ahşap taşıyıcıları, eğimli çatısı ve çevresindeki çapraz korkuluklar dışarıdan görülüyor."
+ },
+ "r20": {
+  "kind": "process",
+  "caption": "Kamelyanın çatı ve korkuluk düzeni başka bir açıdan görülüyor. Sahadaki uygulama arşivinden."
+ },
+ "r21": {
+  "kind": "work",
+  "caption": "Açık renkli çizgili TV duvarı, sağdaki kitaplık ve alçak kapaklı depolama görülüyor. ekran görüntüsündeki işaretler korunuyor."
+ },
+ "r22": {
+  "kind": "work",
+  "caption": "Merkezde TV paneli, iki yanda aydınlatmalı raflar ve altta açık ve kapalı depolama görülüyor."
+ },
+ "r23": {
+  "kind": "process",
+  "caption": "Kamelyanın çatı altı kirişleri, çapraz bağlantıları ve zemindeki çalışma gereçleri görülüyor."
+ },
+ "r24": {
+  "kind": "work",
+  "caption": "TV çevresindeki ışık çizgisi, soldaki dikey çizgili panel, sağdaki raflar ve alçak dolap görülüyor. mevcut filigran korunuyor."
+ },
+ "r25": {
+  "kind": "work",
+  "caption": "Ahşap görünümlü dikey çizgili panel, sağdaki gri raf bölümü ve alttaki aydınlatmalı depolama görülüyor."
+ },
+ "r26": {
+  "kind": "work",
+  "caption": "Çizgili TV duvarı, iki duvar lambası, sağdaki ışıklı cam bölüm ve alttaki beyaz kapaklar birlikte görülüyor."
+ }
 };
 export function workPhotoEvidence(work:Work,index=0):WorkPhotoEvidence{
  const image=work.images[Number.isInteger(index)&&index>=0&&index<work.images.length?index:0];
@@ -78,24 +170,174 @@ export function inspirationConcepts(category='all') {
 const homeConceptIds=['oval-orta-sehpa','kahve-ritueli','sakin-antre'];
 export const homeConcepts=homeConceptIds.map(id=>concepts.find(c=>c.id===id)!);
 export const pinterestReferences=[
- {id:'3T8k8Pwyv',group:'atelier',title:'Ustanın seçkisi 01',category:'ozel-tasarim'},
- {id:'2lc0S9lQO',group:'atelier',title:'Ustanın seçkisi 02',category:'ozel-tasarim'},
- {id:'41JsOJFNf',group:'atelier',title:'Ustanın seçkisi 03',category:'ozel-tasarim'},
- {id:'46g1kWzDY',group:'atelier',title:'Vestiyer seçkisi 01',category:'vestiyer'},
- {id:'5Wc0LnUYw',group:'atelier',title:'Vestiyer seçkisi 02',category:'vestiyer'},
- {id:'1CZAqZl4m',group:'atelier',title:'Vestiyer seçkisi 03',category:'vestiyer'},
- {id:'601hk2fV2',group:'atelier',title:'Vestiyer seçkisi 04',category:'vestiyer'},
- {id:'80Ac59zMm',group:'atelier',title:'Ustanın seçkisi 04',category:'ozel-tasarim'},
- {id:'484Ae4eNQ',group:'shared',title:'Birlikte seçtiklerimiz 01',category:'ozel-tasarim'},
- {id:'5mqOqX5LH',group:'shared',title:'Birlikte seçtiklerimiz 02',category:'ozel-tasarim'},
- {id:'5i4CyJrkM',group:'shared',title:'Birlikte seçtiklerimiz 03',category:'ozel-tasarim'},
- {id:'1pLUfH5pe',group:'shared',title:'Birlikte seçtiklerimiz 04',category:'ozel-tasarim'},
- {"id": "885027764302674185", "group": "curated", "title": "Cam kapaklı kompakt kahve dolabı", "category": "kahve-kosesi"},
- {"id": "364580532351649400", "group": "curated", "title": "Kavis boyunca kayan çıtalı kapak", "category": "vestiyer"},
- {"id": "748653138104147118", "group": "curated", "title": "Pencere önünde bank ve kitaplık", "category": "ozel-tasarim"},
- {"id": "362610207521373861", "group": "curated", "title": "İçinde saklama alanı olan ahşap bank", "category": "vestiyer"},
- {"id": "799037158930919259", "group": "curated", "title": "Üst çekmeceli kompakt çalışma masası", "category": "ozel-tasarim"},
- {"id": "4595501306841470848", "group": "curated", "title": "Kitaplıkla bütünleşen okuma köşesi", "category": "ozel-tasarim"},
+ {
+  "id": "3T8k8Pwyv",
+  "group": "atelier",
+  "title": "Ahşap tezgâhlı klasik mutfak",
+  "category": "mutfak"
+ },
+ {
+  "id": "2lc0S9lQO",
+  "group": "atelier",
+  "title": "Ahşap adalı beyaz klasik mutfak",
+  "category": "mutfak"
+ },
+ {
+  "id": "41JsOJFNf",
+  "group": "atelier",
+  "title": "Cam kapaklı ve açık raflı beyaz mutfak",
+  "category": "mutfak"
+ },
+ {
+  "id": "46g1kWzDY",
+  "group": "atelier",
+  "title": "Kemer detaylı banklı antre dolabı",
+  "category": "vestiyer"
+ },
+ {
+  "id": "5Wc0LnUYw",
+  "group": "atelier",
+  "title": "Aydınlatmalı aynalı antre dolabı",
+  "category": "vestiyer"
+ },
+ {
+  "id": "1CZAqZl4m",
+  "group": "atelier",
+  "title": "Tavana uzanan beyaz gardırop",
+  "category": "gardrop"
+ },
+ {
+  "id": "601hk2fV2",
+  "group": "atelier",
+  "title": "Kapı üstünü değerlendiren antre dolabı",
+  "category": "vestiyer"
+ },
+ {
+  "id": "80Ac59zMm",
+  "group": "atelier",
+  "title": "Açık bölmeli aydınlatmalı gardırop",
+  "category": "gardrop"
+ },
+ {
+  "id": "mcIHdiZgI",
+  "group": "atelier",
+  "title": "Ortası çekmeceli panel kapaklı gardırop",
+  "category": "gardrop"
+ },
+ {
+  "id": "3fg3tRGhV",
+  "group": "atelier",
+  "title": "Üst dolaplı lacivert gardırop",
+  "category": "gardrop"
+ },
+ {
+  "id": "2UTN7Jm1P",
+  "group": "atelier",
+  "title": "Açık raflı mavi gardırop",
+  "category": "gardrop"
+ },
+ {
+  "id": "7jlvhY3if",
+  "group": "atelier",
+  "title": "Tavana uzanan koyu mavi gardırop",
+  "category": "gardrop"
+ },
+ {
+  "id": "TpIJNC2gw",
+  "group": "atelier",
+  "title": "Vitrinli ve aydınlatmalı kahve köşesi",
+  "category": "kahve-kosesi"
+ },
+ {
+  "id": "6OmBhyFBu",
+  "group": "atelier",
+  "title": "Ahşap raflı beyaz kahve dolabı",
+  "category": "kahve-kosesi"
+ },
+ {
+  "id": "4EvTLig9u",
+  "group": "atelier",
+  "title": "Cam vitrinli kompakt kahve köşesi",
+  "category": "kahve-kosesi"
+ },
+ {
+  "id": "tMopkttll",
+  "group": "atelier",
+  "title": "İki yanı vitrinli kahve ünitesi",
+  "category": "kahve-kosesi"
+ },
+ {
+  "id": "2TH1Ug3IX",
+  "group": "atelier",
+  "title": "Kemer nişli ve vitrinli kahve ünitesi",
+  "category": "kahve-kosesi"
+ },
+ {
+  "id": "2lVJ2LCpT",
+  "group": "atelier",
+  "title": "Ahşap gövdeli dar kahve ünitesi",
+  "category": "kahve-kosesi"
+ },
+ {
+  "id": "484Ae4eNQ",
+  "group": "shared",
+  "title": "Cam kapaklı ahşap plak konsolu",
+  "category": "ozel-tasarim"
+ },
+ {
+  "id": "5mqOqX5LH",
+  "group": "shared",
+  "title": "Çekmeceli yuvarlak yan sehpa",
+  "category": "sehpa"
+ },
+ {
+  "id": "5i4CyJrkM",
+  "group": "shared",
+  "title": "Boy aynalı ahşap depolama ünitesi",
+  "category": "ozel-tasarim"
+ },
+ {
+  "id": "1pLUfH5pe",
+  "group": "shared",
+  "title": "Kademeli çekmeceli dekoratif konsol",
+  "category": "ozel-tasarim"
+ },
+ {
+  "id": "885027764302674185",
+  "group": "curated",
+  "title": "Cam kapaklı kompakt kahve dolabı",
+  "category": "kahve-kosesi"
+ },
+ {
+  "id": "364580532351649400",
+  "group": "curated",
+  "title": "Kavis boyunca kayan çıtalı kapak",
+  "category": "ozel-tasarim"
+ },
+ {
+  "id": "748653138104147118",
+  "group": "curated",
+  "title": "Pencere önünde bank ve kitaplık",
+  "category": "ozel-tasarim"
+ },
+ {
+  "id": "362610207521373861",
+  "group": "curated",
+  "title": "İçinde saklama alanı olan ahşap bank",
+  "category": "vestiyer"
+ },
+ {
+  "id": "799037158930919259",
+  "group": "curated",
+  "title": "Üst çekmeceli kompakt çalışma masası",
+  "category": "ozel-tasarim"
+ },
+ {
+  "id": "4595501306841470848",
+  "group": "curated",
+  "title": "Kitaplıkla bütünleşen okuma köşesi",
+  "category": "ozel-tasarim"
+ }
 ] as const;
 /** The first four are an editorial window, never a destructive catalogue limit. */
 export function visiblePinterestReferences(group:string,expanded=false){
