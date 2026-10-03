@@ -130,7 +130,11 @@ with sync_playwright() as p:
   page.set_viewport_size({'width':1440,'height':1000})
   for route in manifest['routes']:
    visit(route.strip('/')+('/' if route.strip('/') else ''))
-   for y in range(0,min(25000,page.evaluate('document.body.scrollHeight'))+1,600):
+   # A closed details can retain nonzero child boxes while native lazy images stay unloaded.
+   # Open the actual gallery so the sweep verifies every reference, including the extra ten.
+   more=page.locator('details.pin-more:not([open]) > summary')
+   if more.count(): more.click()
+   for y in range(0,page.evaluate('document.body.scrollHeight')+1,600):
     page.evaluate('(y)=>scrollTo(0,y)',y);page.wait_for_timeout(65)
    page.evaluate('scrollTo(0,document.body.scrollHeight)')
    page.wait_for_function("()=>[...document.querySelectorAll('main img')].filter(i=>{const r=i.getBoundingClientRect();return r.width>0&&r.height>0}).every(i=>i.complete&&i.naturalWidth>0)",timeout=20000)

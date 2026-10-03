@@ -16,11 +16,14 @@ with sync_playwright() as p:
   for route in manifest['routes']:
    page.goto(BASE+route.strip('/')+('/' if route.strip('/') else ''),wait_until='domcontentloaded',timeout=60000)
    page.wait_for_selector('html[data-app-ready="true"]',timeout=20000)
+   # Exercise the expandable gallery before validating its naturally loaded images.
+   more=page.locator('details.pin-more:not([open]) > summary')
+   if more.count(): more.click()
    images=page.locator('main img')
    # Hydration can replace image elements while scrolling. Traverse the page, then
    # inspect the current DOM rather than holding stale element handles.
    height=page.evaluate('document.body.scrollHeight')
-   for y in range(0,min(20000,height)+1,560):
+   for y in range(0,height+1,560):
     page.evaluate('(y)=>scrollTo(0,y)',y)
     page.wait_for_timeout(70)
    page.evaluate('scrollTo(0,document.body.scrollHeight)')

@@ -1,0 +1,7 @@
+{
+  "observedFailure": "Closed Pinterest details children can report nonzero geometry while native lazy images correctly remain unloaded.",
+  "evidence": "Live DOM showed unloaded images inside details.open=false. All 18 primary Pinterest images were present in the workflow failure screenshot.",
+  "correction": "Desktop and mobile sweeps open the extra Pinterest gallery and scroll the full page before checking all image decodes.",
+  "coverage": "28 Pinterest references, without excluding hidden images from the check.",
+  "siteContentChanged": false
+}
