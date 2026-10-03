@@ -1,0 +1,60 @@
+[
+  {
+    "asset": "ig-DCpBtfwIRMY",
+    "title": "İki kapaklı, örgü dokulu dolap",
+    "originalSourceSha256": "e2ae8710d9a6a96d558b336b28ba3d9fd334ab70ae81729936157304147e2bd0",
+    "editedSourceSha256": "055a4f45abf80ffde8b81267042d8a23e9e05a89975bf5c1da97f87cb2d90d24",
+    "tool": "built-in image_gen",
+    "edit": "Atölye dağınıklığı sade duvar ve zeminle değiştirildi; mobilyanın biçimi, kapakları ve dokusu referans alındı.",
+    "files": [
+      {
+        "file": "ig-DCpBtfwIRMY-clean-v29-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 83008
+      },
+      {
+        "file": "ig-DCpBtfwIRMY-clean-v29-800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 216404
+      },
+      {
+        "file": "ig-DCpBtfwIRMY-clean-v29-full.webp",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 456586
+      }
+    ],
+    "prompt": "Change only the surrounding background. Remove scrap wood, machines, cables, tools, buckets, stacked planks, rubbish and dirt. Replace surroundings with plain warm off-white wall and clean pale stone floor. Preserve furniture design, proportions, handles, camera view and woven texture; no props, text or logos."
+  },
+  {
+    "asset": "ig-DCpBIeCokMJ",
+    "title": "Örgü dokulu servis dolabı",
+    "originalSourceSha256": "fab34010c353948374eb8ac43091fa95799d3853394b75bd2777dcdd5862b73b",
+    "editedSourceSha256": "9876f29bf1e861225a61df3bf01c693126b985c39019bd761e8c9430372f4352",
+    "tool": "built-in image_gen",
+    "edit": "Atölye dağınıklığı sade duvar ve zeminle değiştirildi; mobilyanın biçimi, kapakları ve dokusu referans alındı.",
+    "files": [
+      {
+        "file": "ig-DCpBIeCokMJ-clean-v29-480.webp",
+        "width": 480,
+        "height": 600,
+        "bytes": 59684
+      },
+      {
+        "file": "ig-DCpBIeCokMJ-clean-v29-800.webp",
+        "width": 800,
+        "height": 1000,
+        "bytes": 164270
+      },
+      {
+        "file": "ig-DCpBIeCokMJ-clean-v29-full.webp",
+        "width": 1122,
+        "height": 1402,
+        "bytes": 296864
+      }
+    ],
+    "prompt": "Change only the surrounding background. Remove scrap wood, machines, cables, tools, buckets, stacked planks, rubbish and dirt. Replace surroundings with plain warm off-white wall and clean pale stone floor. Preserve furniture design, proportions, handles, camera view and woven texture; no props, text or logos."
+  }
+]

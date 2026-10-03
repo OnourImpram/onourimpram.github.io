@@ -139,10 +139,10 @@ export const completedWorkAdditions:Work[]=[
       "ig-DCpBIeCokMJ"
     ],
     "status": "work",
-    "description": "Ayaklar üzerinde yükselen, üstte açık raf ve altta kapalı depolama sunan bir dolap.",
+    "description": "Örgü dokulu iki üst kapak, altta geniş bir çekmece ve ahşap ayaklarla yükselen servis dolabı.",
     "features": [
-      "Açık üst raflar",
-      "Kapalı alt depolama",
+      "İki örgü dokulu kapak",
+      "Geniş alt çekmece",
       "Yükseltilmiş ayaklar"
     ]
   },
@@ -203,7 +203,7 @@ export const completedWorkAdditions:Work[]=[
       "ig-DCpBtfwIRMY"
     ],
     "status": "work",
-    "description": "Ahşap tonlu çerçeve içinde iki örgü dokulu kapak ve yükseltilmiş ayaklar.",
+    "description": "Ahşap tonlu çerçeve içinde iki örgü dokulu kapak ve ortada birleşen yuvarlak ahşap kulplar.",
     "features": [
       "İki kapaklı düzen",
       "Örgü dokulu yüzey",
@@ -298,7 +298,7 @@ export const completedPhotoNotes:Record<string,{kind:'work';caption:string}>={
   },
   "ig-DCpBIeCokMJ": {
     "kind": "work",
-    "caption": "Örgü dokulu servis dolabı. Yunus Usta’nın tamamladığı işlerden."
+    "caption": "Örgü dokulu servis dolabı. Yunus Usta’nın tamamladığı işlerden. Arka planı düzenlenmiştir."
   },
   "ig-DCo7rgloA-y": {
     "kind": "work",
@@ -314,7 +314,7 @@ export const completedPhotoNotes:Record<string,{kind:'work';caption:string}>={
   },
   "ig-DCpBtfwIRMY": {
     "kind": "work",
-    "caption": "İki kapaklı, örgü dokulu dolap. Yunus Usta’nın tamamladığı işlerden."
+    "caption": "İki kapaklı, örgü dokulu dolap. Yunus Usta’nın tamamladığı işlerden. Arka planı düzenlenmiştir."
   },
   "ig-DCo8QpboePG": {
     "kind": "work",

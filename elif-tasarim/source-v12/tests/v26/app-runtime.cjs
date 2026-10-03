@@ -2,17 +2,17 @@ const {test}=require('node:test'),assert=require('node:assert/strict'),fs=requir
 
 // Exercise actual component handlers with isolated globals; no browser or network is required.
 function harness({base='/elif-tasarim',pathname='/elif-tasarim/',search='',blocked=false,storageUnavailable=false}={}){
- const data=new Map(),scripts=[],messages=[];
+ const data=new Map(),scripts=[],messages=[],locations=[];
  const storage=new Proxy({getItem:key=>data.get(key)??null,setItem:(key,value)=>{if(blocked)throw Error('Storage blocked');data.set(key,value)},removeItem:key=>{if(blocked)throw Error('Storage blocked');data.delete(key)}},{ownKeys:()=>[...data.keys()],getOwnPropertyDescriptor:()=>({enumerable:true,configurable:true})});
  class Component{constructor(props){this.props=props;this.state={}}setState(update,done){Object.assign(this.state,typeof update==='function'?update(this.state,this.props):update);done?.()}}
  const react={Component,Fragment:'fragment',createElement:(type,props,...children)=>({type,props:{...props,children:children.length===1?children[0]:children}})};
  const window={__ELIF_BASE__:base,__ELIF_SITE_URL__:'https://example.com'+base,location:{pathname,search,hash:''},confirm:()=>true};
- const context=vm.createContext({window,URL,URLSearchParams,TextEncoder,TextDecoder,Blob,setTimeout,clearTimeout,console:{error:()=>{},log:()=>{}},document:{documentElement:{dataset:{}},createElement:()=>({remove(){this.removed=true}}),head:{appendChild:script=>scripts.push(script)}}});
+ const context=vm.createContext({window,URL,URLSearchParams,TextEncoder,TextDecoder,Blob,setTimeout,clearTimeout,history:{state:{},replaceState:(_state,_title,url)=>locations.push(url)},console:{error:()=>{},log:()=>{}},document:{documentElement:{dataset:{}},createElement:()=>({remove(){this.removed=true}}),head:{appendChild:script=>scripts.push(script)}}});
  Object.defineProperty(window,'localStorage',{get(){if(storageUnavailable)throw Error('Storage unavailable');return storage}});
  Object.defineProperty(context,'localStorage',{get(){if(storageUnavailable)throw Error('Storage unavailable');return storage}});
  const cache=new Map();function load(file){const resolved=path.resolve(file);if(cache.has(resolved))return cache.get(resolved).exports;const module={exports:{}};cache.set(resolved,module);const output=ts.transpileModule(fs.readFileSync(resolved,'utf8'),{fileName:resolved,compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020,jsx:ts.JsxEmit.React,jsxFactory:'createElement',jsxFragmentFactory:'Fragment',esModuleInterop:true}}).outputText;const fn=vm.runInContext('(function(module,exports,require){'+output+'\n})',context);fn(module,module.exports,id=>{if(id==='react')return react;const dest=path.resolve(path.dirname(resolved),id);return load(['.ts','.tsx'].map(ext=>dest+ext).find(fs.existsSync))});return module.exports}
  const App=load('src/App.tsx').default,app=new App({initialPath:'/'});app.navigate=to=>app.setState({path:to});app.notify=message=>{messages.push(message);app.setState({toast:message})};
- return {app,load,data,scripts,window,messages};
+ return {app,load,data,scripts,window,messages,locations};
 }
 function text(node){if(Array.isArray(node))return node.map(text).join(' ');if(!node||typeof node!=='object')return node||'';return text(node.props?.children)}
 function find(node,predicate){if(Array.isArray(node)){for(const item of node){const found=find(item,predicate);if(found)return found}}else if(node&&typeof node==='object'){if(predicate(node))return node;return find(node.props?.children,predicate)}}
@@ -51,4 +51,25 @@ test('3D retry creates a new script after either load failure branch',async()=>{
 });
 test('the fallback identifies the static poster and does not imply it previews changed options',()=>{
  const h=harness(),desk=studio(h);for(const status of ['poster','loading','unavailable','lost']){desk.state.status=status;const rendered=text(desk.render());assert.match(rendered,/Sabit tanıtım görseli/);assert.match(rendered,/ölçü ve malzeme seçimleriniz bu görsele yansımaz/);assert.doesNotMatch(rendered,/Three\.js \/ WebGL/)}
+});
+
+
+test('changing portfolio stage clears only an unavailable category and keeps valid category choices',()=>{
+ const h=harness(),{Projects}=h.load('src/pages/Portfolio.tsx');
+ const coffee=new Projects({...h.app.actions(),query:'alan=kahve-kosesi'});coffee.update('stage','process');
+ assert.equal(coffee.state.category,'all');assert.equal(coffee.state.stage,'process');assert.equal(h.locations.at(-1),'/elif-tasarim/projeler/?durum=process');
+ const kitchen=new Projects({...h.app.actions(),query:'alan=mutfak'});kitchen.update('stage','process');
+ assert.equal(kitchen.state.category,'mutfak');assert.match(h.locations.at(-1),/alan=mutfak/);kitchen.update('stage','work');assert.equal(kitchen.state.category,'mutfak');
+ const pergola=new Projects({...h.app.actions(),query:'alan=pergola&durum=process'});pergola.update('stage','work');assert.equal(pergola.state.category,'all');
+});
+test('a completed work can be saved and removed directly from its detail page',()=>{
+ const h=harness(),{WorkDetail}=h.load('src/pages/Portfolio.tsx'),work=h.load('src/lib/portfolio.ts').works.find(w=>w.id==='cam-vitrin-kahve');
+ const button=()=>find(new WorkDetail({...h.app.actions(),work}).render(),node=>node.type==='button'&&node.props.className==='v7-save-text');
+ assert.equal(button().props['aria-pressed'],false);button().props.onClick();assert.ok(h.app.state.favorites.includes('work:cam-vitrin-kahve'));assert.equal(button().props['aria-pressed'],true);
+ button().props.onClick();assert.equal(h.app.state.favorites.includes('work:cam-vitrin-kahve'),false);
+});
+test('table project guidance follows seating and surface needs rather than cabinet storage questions',()=>{
+ const h=harness(),{WorkDetail}=h.load('src/pages/Portfolio.tsx'),work=h.load('src/lib/portfolio.ts').works.find(w=>w.id==='yuvarlak-zigon');
+ const study=find(new WorkDetail({...h.app.actions(),work}).render(),node=>node.type?.name==='ProjectStudy'),copy=text(study.type(study.props));
+ assert.match(copy,/Koltuk düzenini/);assert.match(copy,/Tek yüzey veya ayrı kullanılan parçalar/);assert.doesNotMatch(copy,/Açık raf, kapalı depolama ve yüzey seçimi için öncelikleriniz/);
 });

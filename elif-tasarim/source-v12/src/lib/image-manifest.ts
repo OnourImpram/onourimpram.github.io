@@ -1691,30 +1691,30 @@ export const imageManifest = {
   },
   "ig-DCpBIeCokMJ": {
     "kind": "work",
-    "width": 864,
-    "height": 1080,
+    "width": 1122,
+    "height": 1402,
     "variants": [
       {
-        "file": "ig-DCpBIeCokMJ-480.webp",
+        "file": "ig-DCpBIeCokMJ-clean-v29-480.webp",
         "width": 480,
         "height": 600,
-        "bytes": 64230
+        "bytes": 59684
       },
       {
-        "file": "ig-DCpBIeCokMJ-800.webp",
+        "file": "ig-DCpBIeCokMJ-clean-v29-800.webp",
         "width": 800,
         "height": 1000,
-        "bytes": 140754
+        "bytes": 164270
       },
       {
-        "file": "ig-DCpBIeCokMJ-full.webp",
-        "width": 864,
-        "height": 1080,
-        "bytes": 155592
+        "file": "ig-DCpBIeCokMJ-clean-v29-full.webp",
+        "width": 1122,
+        "height": 1402,
+        "bytes": 296864
       }
     ],
-    "source": "Yunus Usta’nın doğrulanmış tamamlanmış iş arşivi",
-    "sourceSha256": "fab34010c353948374eb8ac43091fa95799d3853394b75bd2777dcdd5862b73b",
+    "source": "Yunus Usta’nın tamamlanmış işi; arka planı düzenlenmiş fotoğraf",
+    "sourceSha256": "9876f29bf1e861225a61df3bf01c693126b985c39019bd761e8c9430372f4352",
     "crop": null
   },
   "ig-DCo7rgloA-y": {
@@ -1803,30 +1803,30 @@ export const imageManifest = {
   },
   "ig-DCpBtfwIRMY": {
     "kind": "work",
-    "width": 1080,
-    "height": 1080,
+    "width": 1254,
+    "height": 1254,
     "variants": [
       {
-        "file": "ig-DCpBtfwIRMY-480.webp",
+        "file": "ig-DCpBtfwIRMY-clean-v29-480.webp",
         "width": 480,
         "height": 480,
-        "bytes": 72256
+        "bytes": 83008
       },
       {
-        "file": "ig-DCpBtfwIRMY-800.webp",
+        "file": "ig-DCpBtfwIRMY-clean-v29-800.webp",
         "width": 800,
         "height": 800,
-        "bytes": 148740
+        "bytes": 216404
       },
       {
-        "file": "ig-DCpBtfwIRMY-full.webp",
-        "width": 1080,
-        "height": 1080,
-        "bytes": 228170
+        "file": "ig-DCpBtfwIRMY-clean-v29-full.webp",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 456586
       }
     ],
-    "source": "Yunus Usta’nın doğrulanmış tamamlanmış iş arşivi",
-    "sourceSha256": "e2ae8710d9a6a96d558b336b28ba3d9fd334ab70ae81729936157304147e2bd0",
+    "source": "Yunus Usta’nın tamamlanmış işi; arka planı düzenlenmiş fotoğraf",
+    "sourceSha256": "055a4f45abf80ffde8b81267042d8a23e9e05a89975bf5c1da97f87cb2d90d24",
     "crop": null
   },
   "ig-DCo8QpboePG": {

@@ -21,7 +21,7 @@ test('three added service guides contain different decisions, preparations and v
  const p=load('src/lib/portfolio.ts'),d=load('src/lib/service-content.ts').serviceContent;
  for(const key of ['gardrop','vestiyer','sehpa']){assert.ok(d[key],key);assert.equal(d[key].sections.length,3);assert.ok(d[key].preparation.length>=3);assert.ok(d[key].note)}
  for(const [key,v] of Object.entries(d)){assert.ok(!(v.project&&v.concept),key);if(v.project)assert.ok(p.works.some(w=>w.id===v.project),key);if(v.concept)assert.ok(p.concepts.some(w=>w.id===v.concept),key)}
- assert.equal(d.sehpa.project,undefined);assert.equal(d.sehpa.concept,'oval-orta-sehpa');assert.match(d.gardrop.sections.flat().join(' '),/askı/i);
+ assert.equal(d.sehpa.project,'yuvarlak-zigon');assert.equal(d.sehpa.concept,undefined);assert.equal(d.vestiyer.project,'kemerli-ayna-antre');assert.match(d.gardrop.sections.flat().join(' '),/askı/i);
 });
 test('a service concept cannot be labelled as a real workshop application',()=>{
  const s=read('src/components/ServiceGuide.tsx');assert.match(s,/x.concept/);assert.match(s,/KONSEPTTEN BİR FİKİR/);assert.doesNotMatch(s,/works.find\(.*!;/);

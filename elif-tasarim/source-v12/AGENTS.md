@@ -41,3 +41,6 @@ Kullanıcı, trabzon6161341 hesabından model seçimini ve siteye yerleştirmeyi
 
 ## V28.1 kullanıcının kesin düzeltmesi
 Kullanıcı, seçilen 16 modelin Yunus Usta’nın tamamladığı işler olduğunu açıkça doğruladı. 16 kayıt / 17 fotoğraf Bitirdiğimiz İşler içinde ve kendi proje sayfalarında gösterilir. Ana sayfa bitmiş işler seçkisi bu işlerden üçüyle başlar. Instagram başlığı, bağlantısı, seçkisi ve dış referans sınıflandırması müşteri arayüzünden kaldırılır. Önceki ig: kayıtları work: kimliklerine taşınır. Etkin sürüm 0.28.1 / v28-completed-works.
+
+## V29 kullanıcının görsel temizliği ve rakip kıyası
+Kullanıcının işaretlediği örgü kapaklı dolap ve servis dolabı fotoğraflarında arka plan temizlendi. Sade duvar/zemin yalnız sunum düzenlemesidir; yeni mekân veya müşteri uygulaması iddiası türetilmez. Gerçek iş sınıflandırması korunur, fotoğraf açıklaması arka plan düzenlemesini belirtir. Instagram adı arayüzde yoktur. Rakip karşılaştırması somut ölçütlere dayanır; fiyat, garanti, adres, müşteri yorumu ve teslimat verisi uydurulmaz. Etkin sürüm 0.29.0 / v29-refined-portfolio.

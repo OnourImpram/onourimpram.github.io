@@ -759,5 +759,61 @@
       2048,
       876
     ]
+  },
+  "ig-DCpBtfwIRMY": {
+    "kind": "work",
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "file": "ig-DCpBtfwIRMY-clean-v29-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 83008
+      },
+      {
+        "file": "ig-DCpBtfwIRMY-clean-v29-800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 216404
+      },
+      {
+        "file": "ig-DCpBtfwIRMY-clean-v29-full.webp",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 456586
+      }
+    ],
+    "source": "Yunus Usta’nın tamamlanmış işi; arka planı düzenlenmiş fotoğraf",
+    "sourceSha256": "055a4f45abf80ffde8b81267042d8a23e9e05a89975bf5c1da97f87cb2d90d24",
+    "crop": null
+  },
+  "ig-DCpBIeCokMJ": {
+    "kind": "work",
+    "width": 1122,
+    "height": 1402,
+    "variants": [
+      {
+        "file": "ig-DCpBIeCokMJ-clean-v29-480.webp",
+        "width": 480,
+        "height": 600,
+        "bytes": 59684
+      },
+      {
+        "file": "ig-DCpBIeCokMJ-clean-v29-800.webp",
+        "width": 800,
+        "height": 1000,
+        "bytes": 164270
+      },
+      {
+        "file": "ig-DCpBIeCokMJ-clean-v29-full.webp",
+        "width": 1122,
+        "height": 1402,
+        "bytes": 296864
+      }
+    ],
+    "source": "Yunus Usta’nın tamamlanmış işi; arka planı düzenlenmiş fotoğraf",
+    "sourceSha256": "9876f29bf1e861225a61df3bf01c693126b985c39019bd761e8c9430372f4352",
+    "crop": null
   }
 }
