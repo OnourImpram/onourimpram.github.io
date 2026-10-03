@@ -50,3 +50,6 @@ Kullanıcı, ustadan yeni bilgi istemeden tamamlanabilecek düzeltmelerin yayın
 
 ## V30 kullanıcının ana sayfa seçki düzeltmesi
 Kullanıcının image(6) görselindeki L plan mutfak, aydınlatmalı TV ve kemerli kahve köşesi ana sayfada ilk üç kalır. Gönderilen dikey çizgili TV, siyah çizgili beyaz mutfak, ranza, ışıklı köşe mutfak ve gri TV işleri ardından öne çıkarılır. Dokuzuncu kart kemerli antre ile alan çeşitliliğini korur. Tüm eski işler arşivde kalır. featuredWorks sırası ana sayfa, proje listesi, kategori iş kartları ve ilgili işler için ortak editoryal sıradır; teknik kalite puanı değildir.
+
+## V30.1 açılış etiketi düzeltmesi
+Kullanıcı image(20261003-131300) görselinde ana sayfa açılış görselinin sağ altındaki Konsept Model yazısını kaldırmayı açıkça istedi. Yalnız bu hero-source etiketi kaldırılır. Görselin alternatif metni ve ilham seçkilerinin kaynak açıklamaları korunur. Etkin sürüm 0.30.1 / v30-customer-final.

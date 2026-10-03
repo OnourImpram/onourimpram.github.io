@@ -18,3 +18,5 @@
 Kullanıcının 3 Ekim eklediği ekran görüntülerine göre ilk üç: L plan mutfak, aydınlatmalı TV/raf ve kemerli kahve köşesi. Sonraki sıra: dikey çizgili TV duvarı, siyah çizgili beyaz mutfak, basamaklı ranza, ışıklı köşe mutfak, gri TV/depolama ve kemerli antre. Arşiv kayıtları ve fotoğrafları silinmez; liste/kategori/ilgili işler aynı editoryal önceliği kullanır. Görseldeki filigranlar korunur.
 
 Müşteri akışı incelemesinde Baza ve Yatak sayfasındaki gerçek işlere ulaşım güçlüğü giderildi: açılışa doğrudan gerçek iş bağlantısı eklendi, ranza sıralaması ortak editoryal sıraya bağlandı ve bu alt seçki tamamlanmış fotoğraf kuralıyla filtrelendi.
+
+V30.1: Kullanıcının son görsel düzeltmesiyle ana sayfa açılışındaki sağ alt Konsept Model etiketi kaldırıldı.

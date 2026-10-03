@@ -1,5 +1,5 @@
 {
-  "release": "v30-complete-experience",
+  "release": "v30-customer-final",
   "tests": {
     "pass": 256,
     "fail": 0
@@ -20,7 +20,8 @@
     "Nine user-selected homepage works in confirmed order",
     "Two saved works and note reach the complete contact summary",
     "First six visible Pinterest images loaded automatically",
-    "3D controls preserve state; cloud GPU disabled, fallback truthfully displays static image; full 3D gate runs in the public workflow after publication"
+    "3D controls preserve state; cloud GPU disabled, fallback truthfully displays static image; full 3D gate runs in the public workflow after publication",
+    "User-requested homepage hero-source badge removed"
   ],
   "businessFactsAdded": false,
   "noindex": true
