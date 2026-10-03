@@ -28,7 +28,7 @@ with sync_playwright() as pw:
  try:
   visit('kategoriler/baza-yatak/');assert p.locator('[data-bed]').count()==8
   assert p.locator('h1').count()==1 and 'size ait bir yer' in p.locator('h1').inner_text()
-  assert p.locator('meta[name=elif-release]').get_attribute('content')=='v28-instagram-selection'
+  assert p.locator('meta[name=elif-release]').get_attribute('content')=='v28-completed-works'
   assert p.locator('meta[name=robots]').get_attribute('content')=='noindex,nofollow'
   assert 'yapay zekâ' in p.locator('.bed-hero-disclosure').inner_text()
   ok('01. Eight approved concepts have one dedicated V25 route and truthful metadata')

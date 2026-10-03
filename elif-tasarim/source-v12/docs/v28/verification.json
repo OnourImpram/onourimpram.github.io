@@ -1,19 +1,21 @@
 {
-  "release": "v28-instagram-selection",
-  "unitTests": {
+  "release": "v28-completed-works",
+  "version": "0.28.1",
+  "tests": {
     "passed": 239,
     "failed": 0
   },
-  "typecheck": "passed",
-  "manifestFiles": 303,
+  "projectRecords": 36,
+  "completedWorks": 32,
+  "newCompletedWorks": 16,
+  "newPhotos": 17,
+  "routes": 67,
   "browserChecks": [
-    "Desktop Instagram section renders16cards with automatic local images",
-    "Open/closed wardrobe tabs change to the matchingphoto andsource",
-    "Saved selection retains Instagram label",
-    "Project summary retains model title, stableid andsourceurl",
-    "Saved model return focuses matchingcard",
-    "Desktop and320px category filter returns2wardrobe models",
-    "320px layout hasnohorizontaloverflow"
+    "Newworksarefirstinthecompletedgallery",
+    "NoInstagrammentionincompletedgalleryandprojectform",
+    "Two-photowardrobegalleryswitchestotheopenview",
+    "Modelbriefusesownprojectidentityandnoexternallink",
+    "320pxcompletedgalleryhasnohorizontaloverflow"
   ],
-  "review": "Approved after case-safe draft image recovery fix; all16models file/device backup roundtrip tested"
+  "review": "NoCriticalorImportantfindings; legacyBacknavigationminorfixhandled by normalizingtheoldroute before navigation"
 }

@@ -1,7 +1,9 @@
 import {selectionEntries} from './selections';
+import {canonicalWorkSelectionId} from './completed-work-additions';
 /** A portable list of public catalog identifiers. Never a private project backup. */
 export const MAX_SELECTION_FILE_BYTES=65536;
 function validate(ids:unknown):string[]{
+ if(Array.isArray(ids))ids=ids.map(id=>typeof id==='string'?canonicalWorkSelectionId(id):id);
  if(!Array.isArray(ids)||ids.length>24||ids.some(id=>typeof id!=='string'||!selectionEntries.some(entry=>entry.id===id)))throw Error('Dosyada geçersiz veya bu katalogda bulunmayan bir model var. İlham dosyanız değiştirilmedi.');
  return [...new Set(ids)] as string[];
 }

@@ -38,3 +38,6 @@ Kullanıcının image(2).png görseli Yunus Usta'nın kendi evinde kullanacakmı
 
 ## V28 kullanıcının Instagram güncellemesi
 Kullanıcı, trabzon6161341 hesabından model seçimini ve siteye yerleştirmeyi açıkça istedi; yayın onayı devam eder. 16 model / 17 fotoğraf, Pinterest bölümünün ardından ayrı Instagram seçkisinde ve ilgili kategori sayfalarında gösterilir. Bu kaynakta katalog modelleri de bulunduğu için yeni tamamlanmış proje iddiası yapılmaz. Dosyalar yerel ve duyarlı WebP, her fotoğrafın kaynak bağlantısı korunur. İlham dosyası, arama ve proje özeti ig: kimliklerini korur. Etkin sürüm 0.28.0 / v28-instagram-selection.
+
+## V28.1 kullanıcının kesin düzeltmesi
+Kullanıcı, seçilen 16 modelin Yunus Usta’nın tamamladığı işler olduğunu açıkça doğruladı. 16 kayıt / 17 fotoğraf Bitirdiğimiz İşler içinde ve kendi proje sayfalarında gösterilir. Ana sayfa bitmiş işler seçkisi bu işlerden üçüyle başlar. Instagram başlığı, bağlantısı, seçkisi ve dış referans sınıflandırması müşteri arayüzünden kaldırılır. Önceki ig: kayıtları work: kimliklerine taşınır. Etkin sürüm 0.28.1 / v28-completed-works.

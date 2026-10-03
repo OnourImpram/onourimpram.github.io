@@ -1,3 +1,4 @@
+import {completedWorkAdditions,completedPhotoNotes} from './completed-work-additions';
 import {beds} from './beds';
 import {pinReferenceUrl,pinLookup} from './pinterest';
 export type WorkCategory='mutfak'|'tv-unitesi'|'vestiyer'|'gardrop'|'kahve-kosesi'|'sehpa'|'pergola'|'ozel-tasarim'|'baza-yatak';
@@ -14,6 +15,7 @@ export const workCategories=[
  {id:'baza-yatak',name:'Baza ve Yatak',short:'Yatak odanız',image:'bed-ceviz-yalin-closed',line:'Ahşabın karakteri, döşemenin yumuşaklığı.',detail:'Ahşap ağırlıklı ve döşemeli sekiz baza konsepti. Açık ve kapalı görünümlerle tasarım fikrini keşfedin. Ölçü, malzeme ve mekanizma uygunluğu ayrıca değerlendirilir.'},
 ] as const;
 export const works:Work[]=[
+ ...completedWorkAdditions,
  {id:'sade-kose-mutfak',title:'Sade çizgiler, sıcak bir mutfak.',category:'mutfak',images:['r13'],status:'work',subtitle:'L plan mutfak uygulaması',description:'Açık tonlu kapaklar, koyu renk cihazlar ve tezgâh altı depolama aynı düzende buluşuyor. Atölyenin paylaşılan iş arşivinden.',features:['L biçiminde yerleşim','Üst ve alt dolap bütünlüğü','Tezgâh arası aydınlatma']},
  {id:'cerceve-kapak-mutfak',title:'Klasik çizginin yalın hâli.',category:'mutfak',images:['r10'],status:'work',subtitle:'Çerçeve kapaklı mutfak',description:'Çerçeveli kapak düzeni ve uzun çalışma yüzeyiyle hazırlanmış mutfak uygulaması. Fotoğraf atölye tarafından paylaşılan arşivden.',features:['Çerçeve kapak düzeni','Boydan boya çalışma yüzeyi','Üst dolap depolaması']},
  {id:'iki-ton-mutfak',title:'İki ton, tek bir bütün.',category:'mutfak',images:['r18'],status:'work',subtitle:'İki renkli mutfak uygulaması',description:'Açık üst dolaplar ile yeşil tonlu alt kapakların bir araya geldiği mutfak. Fotoğrafta görünen tasarım dili, yeni ölçülere göre değerlendirilir.',features:['İki renkli kapak yaklaşımı','Cam detaylı üst dolaplar','Siyah kulp vurguları']},
@@ -145,11 +147,11 @@ const archivePhotoNotes:Record<string,{kind:'work'|'process';caption:string}>={
 };
 export function workPhotoEvidence(work:Work,index=0):WorkPhotoEvidence{
  const image=work.images[Number.isInteger(index)&&index>=0&&index<work.images.length?index:0];
- const note=archivePhotoNotes[image];
+ const note=archivePhotoNotes[image]||completedPhotoNotes[image];
  return {image,source:'workshop-archive',kind:note?.kind||work.status,caption:note?.caption||work.subtitle+'. Paylaşılan atölye arşivinden.'};
 }
 export function workDisplayStage(work:Work):'work'|'process'{return work.images.some((_,i)=>workPhotoEvidence(work,i).kind==='work')?'work':'process';}
-export const featuredWorks=['sade-kose-mutfak','isikli-tv-unitesi','kemerli-kahve-kosesi','rafli-depolama','cam-kapak-giyinme','yatak-cevresi-depolama'];
+export const featuredWorks=['kemerli-ayna-antre','cam-vitrin-kahve','uc-modul-kitaplik','sade-kose-mutfak','isikli-tv-unitesi','kemerli-kahve-kosesi','rafli-depolama','cam-kapak-giyinme','yatak-cevresi-depolama'];
 export const concepts=[
  {id:'oval-orta-sehpa',title:'Bir araya gelmenin doğal hâli.',category:'sehpa',image:'concept-sehpa',subtitle:'Oval orta sehpa ve zigon fikri'},
  {id:'kahve-ritueli',title:'Kendinize küçük bir köşe.',category:'kahve-kosesi',image:'concept-kahve',subtitle:'Işıklı vitrin ve kahve köşesi fikri'},

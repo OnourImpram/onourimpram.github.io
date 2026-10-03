@@ -1,11 +1,11 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),cp=require('node:child_process'),crypto=require('node:crypto');
 test('V11 has one active reproducible build and pinned engine/compiler',()=>{
- const p=JSON.parse(fs.readFileSync('package.json'));assert.equal(p.version,'0.28.0');assert.equal(p.scripts.build,'node tools/build-v25.cjs');assert.equal(p.devDependencies.typescript,'5.8.3');
+ const p=JSON.parse(fs.readFileSync('package.json'));assert.equal(p.version,'0.28.1');assert.equal(p.scripts.build,'node tools/build-v25.cjs');assert.equal(p.devDependencies.typescript,'5.8.3');
  const v=JSON.parse(fs.readFileSync('public/three/vendor/package.json'));assert.equal(v.version,'0.185.1');
 });
 test('clean V11 builds reproduce every publication byte and include local room/engine',()=>{
  cp.execFileSync(process.execPath,['tools/build-v25.cjs']);const a=fs.readFileSync('dist/release-v23.json','utf8'),m=JSON.parse(a);
- assert.equal(m.release,'v28-instagram-selection');assert.equal(m.routes.length,51);assert.equal(m.indexable,false);
+ assert.equal(m.release,'v28-completed-works');assert.equal(m.routes.length,67);assert.equal(m.indexable,false);
  for(const n of ['three/atelier-room.mjs','three/desk-scene.mjs','three/vendor/three.module.min.js','three/vendor/THREE_LICENSE.txt'])assert.ok(m.files[n],n);
  cp.execFileSync(process.execPath,['tools/build-v25.cjs']);assert.equal(fs.readFileSync('dist/release-v23.json','utf8'),a);
  for(const [n,v]of Object.entries(m.files)){const b=fs.readFileSync('dist/'+n);assert.equal(b.length,v.bytes);assert.equal(crypto.createHash('sha256').update(b).digest('hex'),v.sha256,n)}

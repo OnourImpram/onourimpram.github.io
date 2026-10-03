@@ -1,7 +1,8 @@
 import {emptyProject,type ProjectDraft,type SourceRef} from './project';
 import {normalizeReference} from './model-request';
 import {normalizeStudio,type StudioConfig} from './desk-v8';
-import {workCategories} from './portfolio';
+import {workCategories,works} from './portfolio';
+import {canonicalWorkSelectionId} from './completed-work-additions';
 export const BACKUP_KEY='elif-v21:project-recovery';
 export const BACKUP_TTL_MS=7*24*60*60*1000;
 export const MAX_BACKUP_BYTES=96*1024;
@@ -18,7 +19,7 @@ function safeDraft(raw:unknown):ProjectDraft{
  if(typeof raw.unknown!=='boolean')throw Error('Ölçü durumu geçersiz.');d.unknown=raw.unknown;
  if(d.url&&!normalizeReference(d.url))throw Error('Taslakta güvenli olmayan model bağlantısı var.');
  d.url=normalizeReference(d.url)||'';d.customerNote=d.note=d.customerNote||d.note;
- if(raw.sourceRef!==null&&raw.sourceRef!==undefined){const x=raw.sourceRef;if(!object(x)||!['work','concept','reference','studio','idea'].includes(x.kind))throw Error('Model kaynağı geçersiz.');const url=text(x.url,2000);if(url&&!normalizeReference(url))throw Error('Model kaynağı bağlantısı geçersiz.');const ref:SourceRef={id:text(x.id,150),kind:x.kind,title:text(x.title,300),url:normalizeReference(url)||''};if(x.image!==undefined){const image=text(x.image,120);if(!/^[a-zA-Z0-9][a-zA-Z0-9_-]*(?:\.webp)?$/.test(image))throw Error('Model görsel anahtarı geçersiz.');ref.image=image;}d.sourceRef=ref;}
+ if(raw.sourceRef!==null&&raw.sourceRef!==undefined){const x=raw.sourceRef;if(!object(x)||!['work','concept','reference','studio','idea'].includes(x.kind))throw Error('Model kaynağı geçersiz.');const url=text(x.url,2000);if(url&&!normalizeReference(url))throw Error('Model kaynağı bağlantısı geçersiz.');const ref:SourceRef={id:text(x.id,150),kind:x.kind,title:text(x.title,300),url:normalizeReference(url)||''};if(x.image!==undefined){const image=text(x.image,120);if(!/^[a-zA-Z0-9][a-zA-Z0-9_-]*(?:\.webp)?$/.test(image))throw Error('Model görsel anahtarı geçersiz.');ref.image=image;}const canonicalId=canonicalWorkSelectionId(ref.id);if(canonicalId!==ref.id){const work=works.find(w=>'work:'+w.id===canonicalId);if(work){ref.id=canonicalId;ref.kind='work';ref.title=work.subtitle;ref.url='https://onourimpram.github.io/elif-tasarim/proje/'+work.id+'/';ref.image=work.images[0];d.url='';}}d.sourceRef=ref;}
  if(raw.studioConfig!==null&&raw.studioConfig!==undefined){if(!object(raw.studioConfig))throw Error('3D seçenekleri geçersiz.');const normalized=normalizeStudio(raw.studioConfig as StudioConfig);for(const key of Object.keys(normalized)){if(raw.studioConfig[key]!==normalized[key as keyof StudioConfig])throw Error('3D seçenekleri desteklenen aralığın dışında.');}d.studioConfig=normalized;}
  // Public favourites and photos have their own explicit flows, never import arbitrary blobs.
  d.selections=[];return d;

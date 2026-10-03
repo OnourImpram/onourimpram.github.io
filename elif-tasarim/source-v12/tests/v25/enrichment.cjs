@@ -49,5 +49,5 @@ test('search and saved results preserve kind=work identities but render the phot
 });
 
 test('enrichment keeps 51 routes, nine overview ideas, 26 archive photos and all 8 beds',()=>{
- const p=load('src/lib/portfolio.ts'),m=JSON.parse(read('dist/release-v25.json'));assert.equal(m.routes.length,51);assert.equal(m.indexable,false);assert.equal(p.inspirationConcepts().length,9);assert.equal(p.works.length,20);assert.equal(new Set(p.works.flatMap(w=>w.images)).size,26);assert.equal(p.concepts.filter(x=>x.category==='baza-yatak').length,8);
+ const p=load('src/lib/portfolio.ts'),m=JSON.parse(read('dist/release-v25.json'));assert.equal(m.routes.length,67);assert.equal(m.indexable,false);assert.equal(p.inspirationConcepts().length,9);assert.equal(p.works.length,36);assert.equal(new Set(p.works.flatMap(w=>w.images)).size,43);assert.equal(p.concepts.filter(x=>x.category==='baza-yatak').length,8);
 });

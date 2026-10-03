@@ -32,7 +32,7 @@ with sync_playwright() as pw:
  def cards():return p.locator('.inspiration-concepts [data-concept]')
  try:
   visit('');assert p.locator('.bed-home-teaser').count()==0
-  assert p.locator('.home-works .work-card').count()==6
+  assert p.locator('.home-works .work-card').count()==9
   assert p.locator('.home-inspiration [data-concept]').evaluate_all('es=>es.map(e=>e.dataset.concept)')==original[:3]
   assert p.locator('.home-yunus').evaluate('e=>e.compareDocumentPosition(document.querySelector(".home-inspiration"))&Node.DOCUMENT_POSITION_FOLLOWING')
   assert p.locator('.home-inspiration').evaluate('e=>e.compareDocumentPosition(document.querySelector(".v6-process"))&Node.DOCUMENT_POSITION_FOLLOWING')

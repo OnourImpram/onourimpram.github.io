@@ -9,7 +9,7 @@ test('a project with only installation photographs stays outside the completed s
  assert.equal(work.status,'work','Preserve the original archive record');assert.equal(p.workDisplayStage(work),'process');
  assert.equal(p.workDisplayStage(p.works[0]),'work');assert.equal(p.workDisplayStage(p.works.find(w=>w.id==='mutfak-kurulum-asamasi')),'process');
  assert.ok(p.featuredWorks.every(id=>p.workDisplayStage(p.works.find(w=>w.id===id))==='work'));
- assert.equal(p.works.length,20);assert.equal(new Set(p.works.flatMap(w=>w.images)).size,26);
+ assert.equal(p.works.length,36);assert.equal(new Set(p.works.flatMap(w=>w.images)).size,43);
 });
 test('curated canonical Pinterest sources survive selection and project handoff',()=>{
  const p=load('src/lib/portfolio.ts'),pins=load('src/lib/pinterest.ts'),ctx=load('src/lib/source-context.ts'),selections=load('src/lib/selections.ts');

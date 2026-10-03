@@ -25,6 +25,6 @@ test('static inspiration overview is balanced, all original room ideas remain vi
  assert.ok(s.indexOf('ilham-concept-oval-orta-sehpa')<s.indexOf('ilham-concept-ceviz-yalin'));assert.match(s,/href="#pinterest-seckileri"/);
 });
 test('dedicated bed gallery and real archive are unaffected by the overview repair',()=>{
- const p=load('src/lib/portfolio.ts'),b=load('src/lib/beds.ts');assert.equal(p.works.length,20);assert.equal(new Set(p.works.flatMap(x=>x.images)).size,26);assert.equal(b.beds.length,8);
+ const p=load('src/lib/portfolio.ts'),b=load('src/lib/beds.ts');assert.equal(p.works.length,36);assert.equal(new Set(p.works.flatMap(x=>x.images)).size,43);assert.equal(b.beds.length,8);
  const s=fs.readFileSync('dist/kategoriler/baza-yatak/index.html','utf8');assert.equal((s.match(/data-bed=/g)||[]).length,8);assert.equal((s.match(/class="bed-direct-views"/g)||[]).length,8);
 });

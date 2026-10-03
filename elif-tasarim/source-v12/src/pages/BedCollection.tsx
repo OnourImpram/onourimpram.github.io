@@ -1,5 +1,6 @@
 import {createElement,Fragment,Component} from 'react';
-import {InstagramSelection} from '../components/InstagramSelection';
+import {WorkCard} from '../components/PortfolioUI';
+import {works} from '../lib/portfolio';
 import {image,Link,Icon,TextLink,Eyebrow,Dialog,Accordion,type PageProps} from '../components/ui';
 import {VImage,SourceTag,ModelCallout} from '../components/PortfolioUI';
 import {beds,type BedConcept} from '../lib/beds';
@@ -38,6 +39,6 @@ export class BedCollection extends Component<PageProps&{query?:string},{group:'a
  ['Görseldeki ahşap ve kumaş birebir mi?','Görseller renk ve tasarım fikrini gösterir. Ceviz veya meşe görünümü, bütün gövdenin masif ahşap olduğu anlamına gelmez. Masif, kaplama, gövde malzemesi, kumaş ve yüzey işlemi ayrı seçilir. Son karar gerçek numuneyle verilir.'],
  ['Açılır mekanizma nasıl seçilir?','Yatak ölçüsü ve ağırlığı, taşıyıcı yapı, bağlantılar, açılma mesafesi ve emniyet donanımı birlikte değerlendirilir. Görselden gazlı amortisör kuvveti veya taşıma kapasitesi belirlenmez. Üretim öncesinde uygun mekanizma ve teknik ayrıntılar usta ve donanım sağlayıcısıyla doğrulanmalıdır.'],
  ['Fiyat ve teslim kapsamı nasıl netleşir?','Baza gövdesi, başlık, döşeme, mekanizma, yatak, komodin, nakliye ve montaj kapsamları teklif aşamasında ayrı konuşulur. Bir görseli seçmek sipariş veya üretim onayı oluşturmaz. Fiyat ve süre, kesinleşen kapsam üzerinden belirlenir.']
- ]}/></div></div></section><InstagramSelection {...a} category="baza-yatak"/><ModelCallout navigate={a.navigate}/>
+ ]}/></div></div></section><section className="wrap v6-section"><div className="v6-heading"><div><Eyebrow>ATÖLYEDEN</Eyebrow><h2>Bitirdiğimiz işlerden<br/><em>seçkiler.</em></h2></div></div><div className="work-grid">{works.filter(w=>w.category==='baza-yatak').map((w,i)=><WorkCard key={w.id} work={w} actions={a} index={i}/>)}</div></section><ModelCallout navigate={a.navigate}/>
  </>;}
 }

@@ -93,14 +93,14 @@ with sync_playwright() as p:
   for route in project_routes:
    visit(route.strip('/')+'/')
    ids=page.locator('.work-detail-media img').evaluate_all("els=>els.map(i=>(i.getAttribute('src')||'').split('/').pop().split('-')[0])")
-   all_ids.update(i for i in ids if i)
+   all_ids.update(i for i in ids if i.startswith('r') and i[1:].isdigit())
    assert page.locator('.v11-case-study').count()==1,route
-  assert len(project_routes)==20,len(project_routes)
-  # All twenty actual galleries must expose the full unique source set.
+  assert len(project_routes)==36,len(project_routes)
+  # All thirty-six actual galleries must expose the full unique source set.
   assert all_ids=={'r%02d'%i for i in range(1,27)}, sorted(all_ids)
   for name in ['r03','r11','r16','r17','r20','r21','r24','r25','r26']:
    response=ctx.request.get(BASE+'assets/'+name+'-full.webp');assert response.ok and len(response.body())>25000,name
-  passed('07. All twenty project dossiers exist and every unique archive photo is represented without inventing technical specifications',{'uniqueArchivePhotos':26,'newPhotoFiles':9,'projectDossiers':20})
+  passed('07. All thirty-six project dossiers exist and every unique archive photo is represented without inventing technical specifications',{'uniqueArchivePhotos':26,'newPhotoFiles':9,'projectDossiers':36})
   visit('modelini-getir/')
   page.locator('#model-note').fill('Mevcut alanım için sade bir vestiyer düşünüyorum.')
   page.get_by_role('button',name='Ayrıntı eklemeden özeti gör',exact=True).click()
