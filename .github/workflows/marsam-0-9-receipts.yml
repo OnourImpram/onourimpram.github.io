@@ -8,35 +8,37 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    container: mcr.microsoft.com/playwright/python:v1.61.0-noble
+    timeout-minutes: 15
+    env:
+      SOURCE_COMMIT: 05963f0512cab78e599945448d4365a6a705b835
+      BASE_PATH: /MARSAM/
+      PAGES_PREVIEW: 'true'
+      PREVIEW_ORIGIN: https://onourimpram.github.io
+      BROWSERS: chromium,firefox,webkit
     steps:
       - uses: actions/github-script@v7
         with:
           script: |
-            for (let attempt=0;attempt<90;attempt++) {
-              const {data}=await github.rest.actions.getWorkflowRun({...context.repo,run_id:37145692432});
-              if(data.status==='completed') {
-                if(data.conclusion!=='success') throw new Error('Live verification did not pass: '+data.conclusion);
-                return;
-              }
-              await new Promise(resolve=>setTimeout(resolve,5000));
-            }
-            throw new Error('Live verification still running');
+            const {data}=await github.rest.actions.getWorkflowRun({...context.repo,run_id:37145692432});
+            if(data.status!=='completed') throw new Error('Original live run is still active');
+            core.info(JSON.stringify({run:data.id,status:data.status,conclusion:data.conclusion}));
       - uses: actions/download-artifact@v4
         with:
           name: marsam-0.9.0-live-verification
           run-id: 37145692432
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path: full
-      - name: Preserve JSON receipts without large browser images
+      - name: Preserve original JSON receipts and failure screenshots
         run: |
           python - <<'PY'
           from pathlib import Path
           import shutil,json,hashlib
-          root=Path('receipts');root.mkdir()
+          root=Path('receipts/initial');root.mkdir(parents=True)
           result=[]
-          for p in Path('full').rglob('*.json'):
-              if p.parent.name!='verification':continue
+          for p in Path('full').rglob('*'):
+              if not p.is_file():continue
+              if not (p.parent.name=='verification' and p.suffix=='.json') and not (p.parent.name=='core' and p.name.endswith('last-state.png')):continue
               destination=root/p.name
               shutil.copyfile(p,destination)
               result.append({'name':p.name,'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()})
@@ -44,7 +46,59 @@ jobs:
           (root/'receipt-index.json').write_text(json.dumps(result,indent=2))
           print(json.dumps(result))
           PY
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: 05963f0512cab78e599945448d4365a6a705b835
+          path: audited
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Rebuild the identical source and prepare the exact engines
+        working-directory: audited
+        run: |
+          npm run build
+          python -m pip install --timeout 25 -q playwright==1.61.0
+          python scripts/test-fonts.py
+      - name: Recheck the unchanged complete core suite with HTTP diagnostics
+        working-directory: audited
+        run: |
+          python -u - <<'PY'
+          import sys,json
+          from pathlib import Path
+          sys.path.insert(0,str(Path('tests').resolve()))
+          from browser_suite import Review
+          original=Review.context
+          responses=[]
+          def context(self,browser,**kwargs):
+              ctx=original(self,browser,**kwargs)
+              def response(r):
+                  if r.request.is_navigation_request():
+                      item={'url':r.url,'status':r.status}
+                      responses.append(item)
+                      print(json.dumps(item),flush=True)
+              ctx.on('response',response)
+              return ctx
+          Review.context=context
+          try:
+              Review('core').run()
+          finally:
+              Path('verification/core-http-diagnostics.json').write_text(json.dumps(responses,indent=2))
+          PY
+      - name: Preserve the new full core receipt
+        if: always()
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import shutil
+          root=Path('receipts/recheck');root.mkdir(parents=True)
+          for name in ['reading-room-core.json','core-http-diagnostics.json']:
+              p=Path('audited/verification')/name
+              if p.is_file():shutil.copyfile(p,root/name)
+          PY
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: marsam-0.9.0-compact-live-receipts
           path: receipts/
