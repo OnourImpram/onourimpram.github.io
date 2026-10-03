@@ -94,6 +94,7 @@ export function Accordion({ items }: {
 export class Dialog extends Component<{
     title: string;
     onClose: () => void;
+    onKeyDown?: (event: KeyboardEvent) => void;
     children: ReactNode;
 }, {}> {
     private el: HTMLDialogElement | null = null;
@@ -105,6 +106,7 @@ export class Dialog extends Component<{
         e.preventDefault();
         e.stopPropagation();
         this.props.onClose();
-    } }} onClick={(e) => { if (e.target === e.currentTarget)
+        return;
+    } this.props.onKeyDown?.(e); }} onClick={(e) => { if (e.target === e.currentTarget)
         this.props.onClose(); }} aria-label={this.props.title}><div className="dialog-inner"><div className="dialog-head"><h2>{this.props.title}</h2><button className="icon-button" onClick={this.props.onClose} aria-label="Pencereyi kapat"><Icon name="close"/></button></div>{this.props.children}</div></dialog>; }
 }

@@ -1,0 +1,27 @@
+{
+  "release": "v30-complete-experience",
+  "tests": {
+    "pass": 256,
+    "fail": 0
+  },
+  "coreTypecheck": "passed",
+  "dist": {
+    "files": 328,
+    "routes": 67,
+    "verified": true
+  },
+  "browser": [
+    "Desktop and 320 px real category covers",
+    "Search Enter navigates to encoded query",
+    "Work gallery arrow key at initial close-button focus; Escape restores trigger",
+    "Bed gallery arrow key and exact concept source",
+    "Home concept save and board empty-removal focus",
+    "320 px home/gardrop no horizontal overflow",
+    "Nine user-selected homepage works in confirmed order",
+    "Two saved works and note reach the complete contact summary",
+    "First six visible Pinterest images loaded automatically",
+    "3D controls preserve state; cloud GPU disabled, fallback truthfully displays static image; full 3D gate runs in the public workflow after publication"
+  ],
+  "businessFactsAdded": false,
+  "noindex": true
+}

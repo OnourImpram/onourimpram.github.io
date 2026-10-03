@@ -1,0 +1,1 @@
+window.__ELIF_PREVIEW__=false;window.__ELIF_BASE__="/elif-tasarim";window.__ELIF_SITE_URL__="https://onourimpram.github.io/elif-tasarim";window.__ELIF_INITIAL__=document.documentElement.dataset.route||"/";

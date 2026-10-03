@@ -1,8 +1,8 @@
 import {createElement,Fragment} from 'react';
 import {Eyebrow,ButtonLink,TextLink,Icon,type PageProps} from '../components/ui';
 import {VImage,SourceTag} from '../components/PortfolioUI';
-import {works} from '../lib/portfolio';
-export function ServiceGuide(a:PageProps){const completed=works.filter(w=>w.status==='work'),categories=new Set(completed.map(w=>w.category)).size;return <>
+import {works,workDisplayStage} from '../lib/portfolio';
+export function ServiceGuide(a:PageProps){const completed=works.filter(w=>workDisplayStage(w)==='work'),categories=new Set(completed.map(w=>w.category)).size;return <>
  <header className="v6-page-head wrap"><Eyebrow>ELİF / HİZMET VE TEKLİF REHBERİ</Eyebrow><div><h1>Güzel bir iş,<br/><em>açık bir anlaşmayla başlar.</em></h1><p>Bir modelin fotoğrafından, size ait bir mobilyaya. Ölçüyü, malzemeyi ve kapsamı aynı açıklıkla konuşalım.</p></div></header>
  <section className="wrap v21-guide-hero"><div><VImage asset="r13" alt="Elif Tasarım atölye arşivindeki mutfak uygulaması" eager sizes="(max-width: 800px) 92vw, 52vw"/><SourceTag kind="work"/></div><div><Eyebrow>ÖNCE NEYE İHTİYACINIZ VAR?</Eyebrow><h2>Bir bütçeden önce,<br/><em>bir öncelik.</em></h2><p>Daha fazla depolama, rahat bir çalışma alanı veya evinize uyan bir ölçü. Önceliğinizi ve varsa bütçe beklentinizi ilk görüşmede paylaşın.</p><p>Burada doğrulanmış fiyat listesi bulunmuyor. Aynı görünüm, farklı gövde, kapak, donanım ve uygulama kararlarıyla farklı bir kapsama dönüşebilir.</p><ButtonLink to="/modelini-getir" navigate={a.navigate}>Fikrimi ve önceliklerimi hazırlayayım</ButtonLink></div></section>
  <section className="wrap v21-guide-section"><Eyebrow>TEKLİFLERİ AYNI KAPSAMDA KARŞILAŞTIRIN</Eyebrow><h2>Fiyatın arkasındaki<br/><em>altı karar.</em></h2><div className="v21-scope-grid">{[

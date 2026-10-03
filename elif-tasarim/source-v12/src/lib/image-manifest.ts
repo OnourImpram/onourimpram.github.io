@@ -1551,30 +1551,30 @@ export const imageManifest = {
   },
   "ig-DGRKQdDsqDw": {
     "kind": "work",
-    "width": 1152,
-    "height": 1440,
+    "width": 1122,
+    "height": 1402,
     "variants": [
       {
-        "file": "ig-DGRKQdDsqDw-480.webp",
+        "file": "ig-DGRKQdDsqDw-clean-v30-480.webp",
         "width": 480,
         "height": 600,
-        "bytes": 11966
+        "bytes": 16254
       },
       {
-        "file": "ig-DGRKQdDsqDw-800.webp",
+        "file": "ig-DGRKQdDsqDw-clean-v30-800.webp",
         "width": 800,
         "height": 1000,
-        "bytes": 22306
+        "bytes": 31796
       },
       {
-        "file": "ig-DGRKQdDsqDw-full.webp",
-        "width": 1152,
-        "height": 1440,
-        "bytes": 35844
+        "file": "ig-DGRKQdDsqDw-clean-v30-full.webp",
+        "width": 1122,
+        "height": 1402,
+        "bytes": 49518
       }
     ],
-    "source": "Yunus Usta’nın doğrulanmış tamamlanmış iş arşivi",
-    "sourceSha256": "e8bc26af14d35514d3cc7a7cea685d6fd03e1dc3807152890b68c9d0eeaaddf4",
+    "source": "Yunus Usta’nın tamamlanmış işi; tarih etiketi temizlenmiş fotoğraf",
+    "sourceSha256": "f3f247df22a9c6a6aba9d45e0582e818189670edfdca237a63bbf2683a26680f",
     "crop": null
   },
   "ig-DGRKK9vsTxb": {

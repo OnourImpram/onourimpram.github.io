@@ -151,7 +151,9 @@ export function workPhotoEvidence(work:Work,index=0):WorkPhotoEvidence{
  return {image,source:'workshop-archive',kind:note?.kind||work.status,caption:note?.caption||work.subtitle+'. Paylaşılan atölye arşivinden.'};
 }
 export function workDisplayStage(work:Work):'work'|'process'{return work.images.some((_,i)=>workPhotoEvidence(work,i).kind==='work')?'work':'process';}
-export const featuredWorks=['kemerli-ayna-antre','cam-vitrin-kahve','uc-modul-kitaplik','sade-kose-mutfak','isikli-tv-unitesi','kemerli-kahve-kosesi','rafli-depolama','cam-kapak-giyinme','yatak-cevresi-depolama'];
+// User-selected presentation order; this is not a technical workmanship rating.
+export const featuredWorks=['sade-kose-mutfak','isikli-tv-unitesi','kemerli-kahve-kosesi','dikey-cizgili-tv-duvari','beyaz-duz-mutfak','merdivenli-ranza','isikli-kose-mutfak','gri-tv-depolama-unitesi','kemerli-ayna-antre'];
+export function prioritizeWorks(list:Work[]):Work[]{const rank=new Map(featuredWorks.map((id,i)=>[id,i]));return [...list].sort((a,b)=>(rank.get(a.id)??featuredWorks.length)-(rank.get(b.id)??featuredWorks.length));}
 export const concepts=[
  {id:'oval-orta-sehpa',title:'Bir araya gelmenin doğal hâli.',category:'sehpa',image:'concept-sehpa',subtitle:'Oval orta sehpa ve zigon fikri'},
  {id:'kahve-ritueli',title:'Kendinize küçük bir köşe.',category:'kahve-kosesi',image:'concept-kahve',subtitle:'Işıklı vitrin ve kahve köşesi fikri'},

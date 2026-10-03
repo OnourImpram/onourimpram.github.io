@@ -11,7 +11,7 @@ test('all16 user-confirmed works have local photos, completed labels and their o
 test('finished works appear in the completed gallery and homepage, never below Pinterest',()=>{
  const {completedWorkAdditions}=load('src/lib/completed-work-additions.ts'),projects=fs.readFileSync('dist/projeler/index.html','utf8'),home=fs.readFileSync('dist/index.html','utf8'),inspiration=fs.readFileSync('dist/ilham-modelleri/index.html','utf8');
  for(const w of completedWorkAdditions){assert.ok(projects.includes('data-work="'+w.id+'"'));assert.ok(!inspiration.includes('data-work="'+w.id+'"'));}
- assert.equal((home.match(/data-work=/g)||[]).length,9);for(const w of completedWorkAdditions.slice(0,3))assert.ok(home.includes('data-work="'+w.id+'"'));
+ assert.equal((home.match(/data-work=/g)||[]).length,9);for(const id of load('src/lib/portfolio.ts').featuredWorks)assert.ok(home.includes('data-work="'+id+'"'));
  for(const html of [projects,home,inspiration])assert.doesNotMatch(html,/Instagram|instagram\.com|data-instagram|id="instagram-seckisi"/);
 });
 test('old saved selections and project drafts migrate into completed works without losing notes',()=>{

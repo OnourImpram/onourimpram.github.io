@@ -44,3 +44,9 @@ Kullanıcı, seçilen 16 modelin Yunus Usta’nın tamamladığı işler olduğu
 
 ## V29 kullanıcının görsel temizliği ve rakip kıyası
 Kullanıcının işaretlediği örgü kapaklı dolap ve servis dolabı fotoğraflarında arka plan temizlendi. Sade duvar/zemin yalnız sunum düzenlemesidir; yeni mekân veya müşteri uygulaması iddiası türetilmez. Gerçek iş sınıflandırması korunur, fotoğraf açıklaması arka plan düzenlemesini belirtir. Instagram adı arayüzde yoktur. Rakip karşılaştırması somut ölçütlere dayanır; fiyat, garanti, adres, müşteri yorumu ve teslimat verisi uydurulmaz. Etkin sürüm 0.29.0 / v29-refined-portfolio.
+
+## V30 onaylı tamamlama
+Kullanıcı, ustadan yeni bilgi istemeden tamamlanabilecek düzeltmelerin yayınını onayladı. Gerçek kategori kapakları, arama/galeri klavye desteği, ana sayfa konsept kaydı ve seçim kaldırmada odak korunur. Gardırop fotoğrafının tarih etiketi sunum için temizlenmiştir; ürün değiştirilmez. Paylaşım görselleri güncel manifestten gelir. Etkin sürüm 0.30.0 / v30-complete-experience. Eksik ticari bilgiler docs/v30/awaiting-facts.json içinde null olarak bekler; doğrulanmadan yayımlanmaz.
+
+## V30 kullanıcının ana sayfa seçki düzeltmesi
+Kullanıcının image(6) görselindeki L plan mutfak, aydınlatmalı TV ve kemerli kahve köşesi ana sayfada ilk üç kalır. Gönderilen dikey çizgili TV, siyah çizgili beyaz mutfak, ranza, ışıklı köşe mutfak ve gri TV işleri ardından öne çıkarılır. Dokuzuncu kart kemerli antre ile alan çeşitliliğini korur. Tüm eski işler arşivde kalır. featuredWorks sırası ana sayfa, proje listesi, kategori iş kartları ve ilgili işler için ortak editoryal sıradır; teknik kalite puanı değildir.

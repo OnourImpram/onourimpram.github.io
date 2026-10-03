@@ -73,3 +73,44 @@ test('table project guidance follows seating and surface needs rather than cabin
  const study=find(new WorkDetail({...h.app.actions(),work}).render(),node=>node.type?.name==='ProjectStudy'),copy=text(study.type(study.props));
  assert.match(copy,/Koltuk düzenini/);assert.match(copy,/Tek yüzey veya ayrı kullanılan parçalar/);assert.doesNotMatch(copy,/Açık raf, kapalı depolama ve yüzey seçimi için öncelikleriniz/);
 });
+
+test('header search submits the trimmed query as an encoded results route',()=>{
+ const {app}=harness();app.state.search=true;app.state.searchQuery='  kahve & dolap  ';
+ const form=find(app.render(),node=>node.type==='form'&&node.props.role==='search');assert.ok(form,'Header search needs a submit action for Enter and mobile Search');
+ let prevented=false;form.props.onSubmit({preventDefault(){prevented=true}});
+ assert.equal(prevented,true);assert.equal(app.state.path,'/arama?q=kahve%20%26%20dolap');
+});
+
+function dialogKey(dialog,key){let prevented=false,stopped=false;dialog.render().props.onKeyDown({key,preventDefault(){prevented=true},stopPropagation(){stopped=true}});return {prevented,stopped}}
+test('work gallery arrows work at the dialog root and Escape still closes it',()=>{
+ const h=harness(),{WorkDetail}=h.load('src/pages/Portfolio.tsx'),{Dialog}=h.load('src/components/ui.tsx'),work=h.load('src/lib/portfolio.ts').works.find(w=>w.id==='vitrinli-servis-unitesi');
+ const detail=new WorkDetail({...h.app.actions(),work});detail.state.zoom=true;
+ const dialog=()=>new Dialog(find(detail.render(),node=>node.type===Dialog).props);
+ assert.equal(dialogKey(dialog(),'ArrowRight').prevented,true);assert.equal(detail.state.photo,1);
+ assert.equal(dialogKey(dialog(),'ArrowRight').prevented,true);assert.equal(detail.state.photo,0);
+ assert.equal(dialogKey(dialog(),'ArrowLeft').prevented,true);assert.equal(detail.state.photo,1);
+ assert.equal(dialogKey(dialog(),'Tab').prevented,false);assert.equal(detail.state.photo,1);
+ assert.deepEqual(dialogKey(dialog(),'Escape'),{prevented:true,stopped:true});assert.equal(detail.state.zoom,false);
+});
+test('bed gallery arrows switch views from the dialog root without changing other dialogs',()=>{
+ const h=harness(),{BedCard}=h.load('src/pages/BedCollection.tsx'),{Dialog}=h.load('src/components/ui.tsx'),bed=h.load('src/lib/beds.ts').beds[0];
+ const card=new BedCard({bed,navigate:()=>{}});card.state.zoom=true;
+ const dialog=()=>new Dialog(find(card.render(),node=>node.type===Dialog).props);
+ assert.equal(dialogKey(dialog(),'ArrowRight').prevented,true);assert.equal(card.state.open,true);
+ assert.equal(dialogKey(dialog(),'ArrowLeft').prevented,true);assert.equal(card.state.open,false);
+ assert.equal(dialogKey(new Dialog({title:'Bilgi',children:null,onClose:()=>{}}),'ArrowRight').prevented,false);
+});
+test('completed category and related-work lists exclude process-only archive photos',()=>{
+ const h=harness(),{Categories,WorkDetail}=h.load('src/pages/Portfolio.tsx'),works=h.load('src/lib/portfolio.ts').works,process=works.find(w=>w.id==='ahsap-bahce-kamelyasi');
+ const containsProcess=tree=>!!find(tree,node=>node.type?.name==='WorkCard'&&node.props.work.id==='ahsap-bahce-kamelyasi');
+ assert.equal(containsProcess(Categories({...h.app.actions(),slug:'pergola'})),false);
+ assert.equal(containsProcess(new WorkDetail({...h.app.actions(),work:{...process,id:'another-pergola'}}).render()),false);
+ assert.ok(find(Categories({...h.app.actions(),slug:'mutfak'}),node=>node.type?.name==='WorkCard'&&node.props.work.id==='sade-kose-mutfak'));
+ assert.equal(process.status,'work','The archive status itself must remain unchanged');
+});
+test('bed inquiry retains its concept source when a work has a matching subtitle',()=>{
+ const h=harness(),{BedCard}=h.load('src/pages/BedCollection.tsx'),bed=h.load('src/lib/beds.ts').beds[0],works=h.load('src/lib/portfolio.ts').works;
+ works.push({...works[0],id:'matching-subtitle',subtitle:bed.subtitle});
+ const inquiry=find(new BedCard({bed,navigate:()=>{}}).render(),node=>node.type?.name==='TextLink'&&text(node)==='Bu modeli konuşalım');
+ assert.equal(new URLSearchParams(inquiry.props.to.split('?')[1]).get('kaynak'),'concept:'+bed.id);
+});

@@ -815,5 +815,33 @@
     "source": "Yunus Usta’nın tamamlanmış işi; arka planı düzenlenmiş fotoğraf",
     "sourceSha256": "9876f29bf1e861225a61df3bf01c693126b985c39019bd761e8c9430372f4352",
     "crop": null
+  },
+  "ig-DGRKQdDsqDw": {
+    "kind": "work",
+    "width": 1122,
+    "height": 1402,
+    "variants": [
+      {
+        "file": "ig-DGRKQdDsqDw-clean-v30-480.webp",
+        "width": 480,
+        "height": 600,
+        "bytes": 16254
+      },
+      {
+        "file": "ig-DGRKQdDsqDw-clean-v30-800.webp",
+        "width": 800,
+        "height": 1000,
+        "bytes": 31796
+      },
+      {
+        "file": "ig-DGRKQdDsqDw-clean-v30-full.webp",
+        "width": 1122,
+        "height": 1402,
+        "bytes": 49518
+      }
+    ],
+    "source": "Yunus Usta’nın tamamlanmış işi; tarih etiketi temizlenmiş fotoğraf",
+    "sourceSha256": "f3f247df22a9c6a6aba9d45e0582e818189670edfdca237a63bbf2683a26680f",
+    "crop": null
   }
 }

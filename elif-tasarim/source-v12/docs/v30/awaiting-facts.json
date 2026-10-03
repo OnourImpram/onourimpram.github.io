@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "purpose": "Yalnız doğrulanmış atölye ve ürün bilgileri için ekleme listesi. Bu dosya müşteri arayüzünde kullanılmaz.",
+  "business": {
+    "address": null,
+    "hours": null,
+    "visitPolicy": null,
+    "serviceArea": null,
+    "deliveryPolicy": null,
+    "installationPolicy": null,
+    "warranty": null,
+    "paymentTerms": null,
+    "evidence": null,
+    "approvedAt": null
+  },
+  "productRecordTemplate": {
+    "workId": null,
+    "price": null,
+    "dimensions": null,
+    "bodyMaterial": null,
+    "frontMaterial": null,
+    "surface": null,
+    "hardware": null,
+    "deliveryScope": null,
+    "productionTime": null,
+    "warranty": null,
+    "paymentTerms": null,
+    "evidence": null,
+    "approvedAt": null
+  },
+  "customerStoryTemplate": {
+    "workId": null,
+    "text": null,
+    "publicationConsent": null,
+    "evidence": null,
+    "approvedAt": null
+  },
+  "updatePaths": {
+    "business": "src/lib/site-profile.ts; src/pages/V7Pages.tsx; src/pages/ServiceGuide.tsx",
+    "products": "src/lib/portfolio.ts; src/lib/service-content.ts",
+    "story": "src/pages/Home.tsx; src/pages/Editorial.tsx"
+  },
+  "rules": [
+    "Fotoğraftan ölçü, malzeme türü, fiyat veya garanti çıkarılmaz.",
+    "Müşteri yorumu ve hikâyesi ancak içerik ile yayın izni birlikte doğrulanınca eklenir.",
+    "Özel müşteri adresi, notu ve ev fotoğrafı depoya konmaz.",
+    "Yeni ticari içerik doğrulanana kadar önizleme noindex kalır."
+  ]
+}
