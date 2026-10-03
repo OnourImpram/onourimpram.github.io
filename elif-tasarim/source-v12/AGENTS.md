@@ -1,8 +1,8 @@
-# Elif Tasarım V25 çalışma sınırları
+# Elif Tasarım V26 çalışma sınırları
 
 Kullanıcının onayladığı amblemi, Zamana değer katan mobilyalar başlığını, gerçek proje ile konsept ayrımını ve Yunus Usta iletişimini koru. Telefon +90 530 879 71 69. Kullanıcının sağladığı işletme e-postası iletisim.eliftasarimatolyesi@gmail.com. Posta kutusuna erişim veya teslim testi yapılmış sayılmaz.
 
-Tek etkin build `npm run build` ile `tools/build-v25.cjs` üzerinden üretilir. Paket 0.25.1, kimlik v25.2-evidence-and-discovery, etkin manifest release-v25.json. release-v23.json aynı manifestin tarihsel araçlar için uyumluluk kopyasıdır. Tarihsel source-v12 klasör adı etkin sürüm değildir. Eski yayın HTML'ine kod ekleme. `dist` test edilmeden yayınlama. Three.js yerel modüllerini ve lisansını koru.
+Tek etkin build `npm run build` ile `tools/build-v25.cjs` üzerinden üretilir. Paket 0.26.0, kimlik v26.0-considered-discovery, etkin manifest release-v25.json. release-v23.json aynı manifestin tarihsel araçlar için uyumluluk kopyasıdır. Tarihsel source-v12 klasör adı etkin sürüm değildir. Eski yayın HTML'ine kod ekleme. `dist` test edilmeden yayınlama. Three.js yerel modüllerini ve lisansını koru.
 
 GitHub yayını yalnız `elif-tasarim/` alt dizinini değiştirebilir. Kök index dosyasına dokunma. Uzak main tabanı değişmişse eski paketi körlemesine ezme. Force push yok.
 

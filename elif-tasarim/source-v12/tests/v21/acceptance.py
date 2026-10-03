@@ -25,7 +25,7 @@ with sync_playwright() as pw:
  def no(dialog):dialog.dismiss()
  try:
   page.goto(BASE+'hizmet-ve-teklif/',wait_until='domcontentloaded',timeout=60000)
-  assert page.locator('.preview-bar').inner_text().startswith('V25')
+  assert page.locator('.preview-bar').inner_text().startswith('V26')
   assert page.locator('.v21-scope-grid article').count()==6
   assert page.locator('meta[name=robots]').get_attribute('content')=='noindex,nofollow'
   terms=page.locator('.v21-guide-terms').inner_text()

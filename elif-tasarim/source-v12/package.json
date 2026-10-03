@@ -1,19 +1,22 @@
 {
   "name": "elif-tasarim-v25",
-  "version": "0.25.2",
+  "version": "0.26.0",
   "private": true,
-  "description": "Elif Tasarım. Unified 3D studio and complete user-supplied portfolio.",
+  "description": "Elif Tasar\u0131m. Unified 3D studio and complete user-supplied portfolio.",
   "scripts": {
     "build": "node tools/build-v25.cjs",
-    "test": "node tools/compile-domain.cjs && node --test --test-concurrency=1 tests/domain.test.cjs tests/v7/unit.cjs tests/v8/unit.cjs tests/v7/server.test.cjs tests/v9/state.cjs tests/v9/*.mjs tests/v10/*.cjs tests/v10/*.mjs tests/v11/*.cjs tests/v12/*.mjs tests/v13/*.cjs tests/v20/*.cjs tests/v21/*.cjs tests/v22/*.cjs tests/v23/*.cjs tests/v23-unified/*.cjs tests/v23-interaction/*.cjs tests/seo/*.cjs tests/v25/*.cjs",
+    "test": "node tools/compile-domain.cjs && node --test --test-concurrency=1 tests/domain.test.cjs tests/v7/unit.cjs tests/v8/unit.cjs tests/v7/server.test.cjs tests/v9/state.cjs tests/v9/*.mjs tests/v10/*.cjs tests/v10/*.mjs tests/v11/*.cjs tests/v12/*.mjs tests/v13/*.cjs tests/v20/*.cjs tests/v21/*.cjs tests/v22/*.cjs tests/v23/*.cjs tests/v23-unified/*.cjs tests/v23-interaction/*.cjs tests/seo/*.cjs tests/v25/*.cjs tests/v26/*.cjs",
     "typecheck:core": "tsc --strict --noEmit --target ES2020 --module commonjs --lib ES2020,DOM src/lib/project.ts src/lib/upload.ts src/lib/zip.ts src/lib/selections.ts src/lib/desk-v8.ts src/lib/source-context.ts src/lib/room-fit.ts src/lib/design-board.ts src/lib/design-sheet.ts src/lib/draft-recovery.ts src/lib/draft-session.ts src/lib/contact-options.ts src/lib/site-profile.ts src/lib/selection-backup.ts src/lib/studio-presets.ts src/lib/project-readiness.ts src/lib/service-content.ts src/lib/beds.ts",
     "serve": "node tools/serve-static.cjs dist 8000",
     "test:browser": "python tests/v11/acceptance.py",
     "verify:dist": "node tools/verify-v25.cjs",
-    "launch:check": "node tools/launch-check.cjs"
+    "launch:check": "node tools/launch-check.cjs",
+    "dev": "vite preview --config tools/vite-preview.mjs"
   },
   "devDependencies": {
-    "typescript": "5.8.3"
+    "esbuild": "0.28.2",
+    "typescript": "5.8.3",
+    "vite": "8.3.2"
   },
   "engines": {
     "node": ">=22"

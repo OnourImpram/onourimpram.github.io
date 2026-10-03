@@ -24,7 +24,7 @@ with sync_playwright() as p:
   page.screenshot(path=str(O/name),full_page=full)
  try:
   visit('iletisim')
-  assert page.locator('.preview-bar').inner_text().startswith('V25')
+  assert page.locator('.preview-bar').inner_text().startswith('V26')
   email=page.locator('.v7-contact-main a.v22-visible-email');assert email.inner_text()==EMAIL and email.get_attribute('href')=='mailto:'+EMAIL
   assert page.locator('.v22-footer-email').inner_text()==EMAIL
   schema=json.loads(page.locator('script[type="application/ld+json"]').text_content());assert schema['publisher']['email']==EMAIL and schema['publisher']['@type']=='Organization' and 'address' not in schema['publisher']
@@ -68,11 +68,11 @@ with sync_playwright() as p:
   assert len(href)<5000 and urlparse(href).path==EMAIL and 'ayrıntılı proje özeti' in parse_qs(urlparse(href).query)['body'][0]
   assert len(full)>1500 and page.locator('.v21-email-note').is_visible()
   rec('08. Long email uses a disclosed short introduction while full project summary remains intact')
-  visit('projeler');page.locator('.v7-save-text').first.click();nav('/calisma-dosyam')
+  visit('projeler');page.locator('.v7-save-text').first.click();nav('/calisma-dosyam');page.get_by_text('Saklama ve dosya seçenekleri',exact=True).click()
   with page.expect_download() as dl:page.get_by_role('button',name='İlham dosyamı indir',exact=True).click()
   data=json.loads(Path(dl.value.path()).read_text());assert sorted(data)==['format','ids','version'] and len(data['ids'])==1
   (O/'public-inspiration.json').write_text(json.dumps(data,ensure_ascii=False))
-  nav('/projeler');page.locator('.v7-save-text').nth(1).click();nav('/calisma-dosyam');assert page.locator('.v7-result-grid article').count()==2
+  nav('/projeler');page.locator('.v7-save-text').nth(1).click();nav('/calisma-dosyam');page.get_by_text('Saklama ve dosya seçenekleri',exact=True).click();assert page.locator('.v7-result-grid article').count()==2
   payload=json.dumps(data).encode();file={'name':'inspiration.json','mimeType':'application/json','buffer':payload}
   page.get_by_label('Elif ilham dosyasını aç',exact=True).set_input_files(file);page.wait_for_selector('.v22-import-choice');assert page.locator('.v7-result-grid article').count()==2
   page.once('dialog',lambda d:d.dismiss());page.get_by_role('button',name='Mevcut seçkiyi değiştir',exact=True).click();assert page.locator('.v7-result-grid article').count()==2

@@ -17,7 +17,7 @@ test('homepage has diverse inspiration after the atelier story and no dedicated 
  const p=load('src/lib/portfolio.ts');assert.deepEqual(p.homeConcepts.map(x=>x.id),originalIds.slice(0,3));assert.equal(new Set(p.homeConcepts.map(x=>x.category)).size,3);
 });
 test('general concept cards cannot expand into full bed product cards',()=>{
- const s=fs.readFileSync('src/pages/Portfolio.tsx','utf8');const card=s.slice(s.indexOf('export function ConceptCard'),s.indexOf('export function Categories'));assert.doesNotMatch(card,/<BedCard/);assert.match(card,/concept-card/);assert.match(s,/pinterest-seckileri/);
+ const s=fs.readFileSync('src/pages/Portfolio.tsx','utf8');const card=s.slice(s.indexOf('export class ConceptCard'),s.indexOf('export function Categories'));assert.doesNotMatch(card,/<BedCard/);assert.match(card,/concept-card/);assert.match(s,/pinterest-seckileri/);
 });
 test('static inspiration overview is balanced, all original room ideas remain visible',()=>{
  const s=fs.readFileSync('dist/ilham-modelleri/index.html','utf8');assert.equal((s.match(/class="concept-card(?: concept-card-bed)?"/g)||[]).length,9);assert.equal((s.match(/data-bed=/g)||[]).length,0);

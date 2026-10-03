@@ -36,7 +36,7 @@ with sync_playwright() as p:
  def open_details():
   if not page.locator('#project-optional-details').is_visible():page.get_by_role('button',name='Ölçü ve malzeme ayrıntılarını ekle',exact=True).click()
  try:
-  fresh();assert page.locator('.preview-bar').inner_text().startswith('V25');assert 'Zamana değer' in page.locator('h1').inner_text();assert 'Yusuf' not in page.locator('body').inner_text();assert page.locator('.v9-category-ribbon').count()==1;assert page.locator('.home-categories').count()==0;assert page.locator('canvas').count()==0
+  fresh();assert page.locator('.preview-bar').inner_text().startswith('V26');assert 'Zamana değer' in page.locator('h1').inner_text();assert 'Yusuf' not in page.locator('body').inner_text();assert page.locator('.v9-category-ribbon').count()==1;assert page.locator('.home-categories').count()==0;assert page.locator('canvas').count()==0
   record('D03. Simplified homepage preserves brand, real work and one category path, no eager 3D')
   for id,cat in [('sade-kose-mutfak','Mutfak'),('isikli-tv-unitesi','TV Ünitesi'),('sade-kose-mutfak','Mutfak')]:
    startwork(id);text=summary();assert 'İhtiyaç, '+cat in text,text
