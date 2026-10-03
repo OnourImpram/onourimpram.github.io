@@ -1,6 +1,6 @@
 {
   "release": "v28-instagram-selection",
-  "verificationProfile": "manifest-release-v2-expanded-galleries",
+  "verificationProfile": "manifest-release-v3-current-browser-gates",
   "version": "0.28.0",
   "baseline": "6b47990c0c343bdaa365b5e7d3737b173e463ea9",
   "basePath": "/elif-tasarim",
