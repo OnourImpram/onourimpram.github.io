@@ -1436,5 +1436,481 @@ export const imageManifest = {
       1122,
       1402
     ]
+  },
+  "ig-DOcDccujDiB": {
+    "kind": "reference",
+    "width": 1440,
+    "height": 1440,
+    "variants": [
+      {
+        "file": "ig-DOcDccujDiB-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 12022
+      },
+      {
+        "file": "ig-DOcDccujDiB-800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 23748
+      },
+      {
+        "file": "ig-DOcDccujDiB-full.webp",
+        "width": 1440,
+        "height": 1440,
+        "bytes": 49890
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DOcDccujDiBdT7WSD2qMQjLwjN0FZxr2FA936c0/",
+    "sourceSha256": "c2627a3e78eae1ef92de9d10a1a4bd9c0878a4a4301ff2fb070709f54c790179",
+    "crop": null
+  },
+  "ig-DOWh8n4DIfj": {
+    "kind": "reference",
+    "width": 1440,
+    "height": 1440,
+    "variants": [
+      {
+        "file": "ig-DOWh8n4DIfj-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 12598
+      },
+      {
+        "file": "ig-DOWh8n4DIfj-800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 25326
+      },
+      {
+        "file": "ig-DOWh8n4DIfj-full.webp",
+        "width": 1440,
+        "height": 1440,
+        "bytes": 54662
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DOWh8n4DIfj7g74pzIJS7WjA4_ZlC6UMmdFqIM0/",
+    "sourceSha256": "34ee40600279b505af14cf665d8ee43f2ebf5a142603bee622810a62ad8d5f5b",
+    "crop": null
+  },
+  "ig-DCo86PooMOM": {
+    "kind": "reference",
+    "width": 1080,
+    "height": 1080,
+    "variants": [
+      {
+        "file": "ig-DCo86PooMOM-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 18858
+      },
+      {
+        "file": "ig-DCo86PooMOM-800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 33950
+      },
+      {
+        "file": "ig-DCo86PooMOM-full.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 50650
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DCo86PooMOMQ_0qP7LfyCvsuEtAUocZYvlmGfQ0/",
+    "sourceSha256": "561aa681ae3367952459ab7cd5159b6fd11e957acddcfc356de26930611e5893",
+    "crop": null
+  },
+  "ig-DCpBeVkIopf": {
+    "kind": "reference",
+    "width": 1080,
+    "height": 1078,
+    "variants": [
+      {
+        "file": "ig-DCpBeVkIopf-480.webp",
+        "width": 480,
+        "height": 479,
+        "bytes": 14230
+      },
+      {
+        "file": "ig-DCpBeVkIopf-800.webp",
+        "width": 800,
+        "height": 799,
+        "bytes": 25792
+      },
+      {
+        "file": "ig-DCpBeVkIopf-full.webp",
+        "width": 1080,
+        "height": 1078,
+        "bytes": 38946
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DCpBeVkIopfQhy7SdutZmP7JpIQENYiLlvYF1U0/",
+    "sourceSha256": "1fa6e04c6e29090a1d48782c250f23d0404c79741aa35064a02c73b134ded1f1",
+    "crop": null
+  },
+  "ig-DGRKQdDsqDw": {
+    "kind": "reference",
+    "width": 1152,
+    "height": 1440,
+    "variants": [
+      {
+        "file": "ig-DGRKQdDsqDw-480.webp",
+        "width": 480,
+        "height": 600,
+        "bytes": 11966
+      },
+      {
+        "file": "ig-DGRKQdDsqDw-800.webp",
+        "width": 800,
+        "height": 1000,
+        "bytes": 22306
+      },
+      {
+        "file": "ig-DGRKQdDsqDw-full.webp",
+        "width": 1152,
+        "height": 1440,
+        "bytes": 35844
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DGRKQdDsqDw1j4tLjnVFNDdBHOgk726LQwfyFE0/",
+    "sourceSha256": "e8bc26af14d35514d3cc7a7cea685d6fd03e1dc3807152890b68c9d0eeaaddf4",
+    "crop": null
+  },
+  "ig-DGRKK9vsTxb": {
+    "kind": "reference",
+    "width": 1181,
+    "height": 1440,
+    "variants": [
+      {
+        "file": "ig-DGRKK9vsTxb-480.webp",
+        "width": 480,
+        "height": 585,
+        "bytes": 12348
+      },
+      {
+        "file": "ig-DGRKK9vsTxb-800.webp",
+        "width": 800,
+        "height": 975,
+        "bytes": 23570
+      },
+      {
+        "file": "ig-DGRKK9vsTxb-full.webp",
+        "width": 1181,
+        "height": 1440,
+        "bytes": 38132
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DGRKK9vsTxbHBoOi0WgsWxnGL6KBqQORRewueg0/",
+    "sourceSha256": "5332c618cdd4d76e4b95fa80625870f96dd0018c87c2778a2e25fc951ba2213b",
+    "crop": null
+  },
+  "ig-DCo8vO-oeih": {
+    "kind": "reference",
+    "width": 1080,
+    "height": 1080,
+    "variants": [
+      {
+        "file": "ig-DCo8vO-oeih-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 15162
+      },
+      {
+        "file": "ig-DCo8vO-oeih-800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 28812
+      },
+      {
+        "file": "ig-DCo8vO-oeih-full.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 44634
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DCo8vO-oeihrQA-io4rby5qyFMTWJmUHYml8mU0/",
+    "sourceSha256": "ac000232d9d4c90a984d9401c2279490b612bca0cdc3bc3d35bb8527e16e66a5",
+    "crop": null
+  },
+  "ig-DJkMNXnscq7": {
+    "kind": "reference",
+    "width": 1440,
+    "height": 1440,
+    "variants": [
+      {
+        "file": "ig-DJkMNXnscq7-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 13028
+      },
+      {
+        "file": "ig-DJkMNXnscq7-800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 27338
+      },
+      {
+        "file": "ig-DJkMNXnscq7-full.webp",
+        "width": 1440,
+        "height": 1440,
+        "bytes": 111934
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DJkMNXnscq7gUYuhiZm9z0TGpBvv6aogNADCWw0/",
+    "sourceSha256": "d569358502e2ac7f764c81fefc19f9cadd3f36f9f0a16789a333abb4ecb1ff01",
+    "crop": null
+  },
+  "ig-DGRIdwPsz6x": {
+    "kind": "reference",
+    "width": 1152,
+    "height": 1440,
+    "variants": [
+      {
+        "file": "ig-DGRIdwPsz6x-480.webp",
+        "width": 480,
+        "height": 600,
+        "bytes": 45158
+      },
+      {
+        "file": "ig-DGRIdwPsz6x-800.webp",
+        "width": 800,
+        "height": 1000,
+        "bytes": 90866
+      },
+      {
+        "file": "ig-DGRIdwPsz6x-full.webp",
+        "width": 1152,
+        "height": 1440,
+        "bytes": 140028
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DGRIdwPsz6xMswGUT4lL1YsL5UEWFG5n3A4r_E0/",
+    "sourceSha256": "b488506ebeb4cbecea0f6b656704e92293a98a2dc2ac0e1b50610ea74a10e322",
+    "crop": null
+  },
+  "ig-DCpBIeCokMJ": {
+    "kind": "reference",
+    "width": 864,
+    "height": 1080,
+    "variants": [
+      {
+        "file": "ig-DCpBIeCokMJ-480.webp",
+        "width": 480,
+        "height": 600,
+        "bytes": 64230
+      },
+      {
+        "file": "ig-DCpBIeCokMJ-800.webp",
+        "width": 800,
+        "height": 1000,
+        "bytes": 140754
+      },
+      {
+        "file": "ig-DCpBIeCokMJ-full.webp",
+        "width": 864,
+        "height": 1080,
+        "bytes": 155592
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DCpBIeCokMJzy3RaIegncSx1kDvwN3-acy5dno0/",
+    "sourceSha256": "fab34010c353948374eb8ac43091fa95799d3853394b75bd2777dcdd5862b73b",
+    "crop": null
+  },
+  "ig-DCo7rgloA-y": {
+    "kind": "reference",
+    "width": 1080,
+    "height": 1080,
+    "variants": [
+      {
+        "file": "ig-DCo7rgloA-y-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 14584
+      },
+      {
+        "file": "ig-DCo7rgloA-y-800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 26820
+      },
+      {
+        "file": "ig-DCo7rgloA-y-full.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 40368
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DCo7rgloA-y06qyMmmVV504o-auLg75EqP9Afw0/",
+    "sourceSha256": "4808a4aefeff35ddfc950206911f122dbd7d512411a08544160b22887f299e56",
+    "crop": null
+  },
+  "ig-DCo7eilILTe": {
+    "kind": "reference",
+    "width": 1080,
+    "height": 1080,
+    "variants": [
+      {
+        "file": "ig-DCo7eilILTe-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 14860
+      },
+      {
+        "file": "ig-DCo7eilILTe-800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 27444
+      },
+      {
+        "file": "ig-DCo7eilILTe-full.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 41450
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DCo7eilILTeLX5Jc8fxLEgnD1j3MJH-ok1txC00/",
+    "sourceSha256": "bccd2428acfba0d0e8eb8f709a9271bba1943b874173b39ff86837845011d0dc",
+    "crop": null
+  },
+  "ig-DCo8UYMIp57": {
+    "kind": "reference",
+    "width": 1080,
+    "height": 1080,
+    "variants": [
+      {
+        "file": "ig-DCo8UYMIp57-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 15736
+      },
+      {
+        "file": "ig-DCo8UYMIp57-800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 29700
+      },
+      {
+        "file": "ig-DCo8UYMIp57-full.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 45364
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DCo8UYMIp57hyAw9QKm2DvxvnxwhYgCgn-Kwdc0/",
+    "sourceSha256": "3b553ff19ad3c5ad3ddca08218f3276e850ab91cc21aaab359ad343b126fc81d",
+    "crop": null
+  },
+  "ig-DCpBtfwIRMY": {
+    "kind": "reference",
+    "width": 1080,
+    "height": 1080,
+    "variants": [
+      {
+        "file": "ig-DCpBtfwIRMY-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 72256
+      },
+      {
+        "file": "ig-DCpBtfwIRMY-800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 148740
+      },
+      {
+        "file": "ig-DCpBtfwIRMY-full.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 228170
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DCpBtfwIRMYpiLQqETL2rRxai3YsLbesqQd8NQ0/",
+    "sourceSha256": "e2ae8710d9a6a96d558b336b28ba3d9fd334ab70ae81729936157304147e2bd0",
+    "crop": null
+  },
+  "ig-DCo8QpboePG": {
+    "kind": "reference",
+    "width": 1080,
+    "height": 1080,
+    "variants": [
+      {
+        "file": "ig-DCo8QpboePG-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 8136
+      },
+      {
+        "file": "ig-DCo8QpboePG-800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 14578
+      },
+      {
+        "file": "ig-DCo8QpboePG-full.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 22102
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DCo8QpboePGxK4MSwB8TRACbix_OxrT0TktWPQ0/",
+    "sourceSha256": "e3ee342989ef2b60fc25c852891650474d7177fb640c81a052681c1a05ada734",
+    "crop": null
+  },
+  "ig-DCo8NoSoMvs": {
+    "kind": "reference",
+    "width": 1080,
+    "height": 1080,
+    "variants": [
+      {
+        "file": "ig-DCo8NoSoMvs-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 23752
+      },
+      {
+        "file": "ig-DCo8NoSoMvs-800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 41780
+      },
+      {
+        "file": "ig-DCo8NoSoMvs-full.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 61708
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/DCo8NoSoMvssUGXCkcLFfI-2ZNYTS2HFlPtwP80/",
+    "sourceSha256": "cb512735e5ad3b25a88e7d9dbcb76ae26619b94faa92922ba5e5e23ec5cecbb9",
+    "crop": null
+  },
+  "ig-CUsx3UHogPj": {
+    "kind": "reference",
+    "width": 719,
+    "height": 719,
+    "variants": [
+      {
+        "file": "ig-CUsx3UHogPj-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 54146
+      },
+      {
+        "file": "ig-CUsx3UHogPj-800.webp",
+        "width": 719,
+        "height": 719,
+        "bytes": 132634
+      },
+      {
+        "file": "ig-CUsx3UHogPj-full.webp",
+        "width": 719,
+        "height": 719,
+        "bytes": 132634
+      }
+    ],
+    "source": "https://www.instagram.com/trabzon6161341/p/CUsx3UHogPj-oJ2Kaq8C_0Qv3ZEyIGr8rCGg_Q0/",
+    "sourceSha256": "5a8ce83cfc96491cdaf2f9a94d81a8fdb17c74ed172d5b424e756917551ab3d1",
+    "crop": null
   }
 } as const;

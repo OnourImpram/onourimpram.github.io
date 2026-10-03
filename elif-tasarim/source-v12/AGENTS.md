@@ -35,3 +35,6 @@ Ana keşif ikiye ayrılır: Bitirdiğimiz İşler ve İlham Alın. Üretim alanl
 ## V27 kullanıcının açık güncellemesi
 3 Ekim 2026 talimatı önceki Pinterest yükleme tercihini değiştirir. Pinterest görselleri ek yükleme düğmesi olmadan otomatik gösterilir. Native lazy loading ve no-referrer korunur. Gömülü Pinterest betiği yerine doğrulanmış pinimg görseli ve kaynak bağlantısı kullanılır. Konsept fikirler önce, ustanın Pinterest seçkisi hemen altında gelir. On sekiz ustanın seçimi ana grupta, eski diğer seçimler ayrı açılır gruptadır. Kaydedilmiş kimlikleri koru.
 Kullanıcının image(2).png görseli Yunus Usta'nın kendi evinde kullanacakmış gibi özen ve babasından öğrenme sözünü doğrudan içerir. Bu söz artık kaynaklı alıntı olarak kullanılabilir. Yeni garanti, fiyat, malzeme veya teslim iddiası türetme.
+
+## V28 kullanıcının Instagram güncellemesi
+Kullanıcı, trabzon6161341 hesabından model seçimini ve siteye yerleştirmeyi açıkça istedi; yayın onayı devam eder. 16 model / 17 fotoğraf, Pinterest bölümünün ardından ayrı Instagram seçkisinde ve ilgili kategori sayfalarında gösterilir. Bu kaynakta katalog modelleri de bulunduğu için yeni tamamlanmış proje iddiası yapılmaz. Dosyalar yerel ve duyarlı WebP, her fotoğrafın kaynak bağlantısı korunur. İlham dosyası, arama ve proje özeti ig: kimliklerini korur. Etkin sürüm 0.28.0 / v28-instagram-selection.

@@ -1,0 +1,19 @@
+{
+  "release": "v28-instagram-selection",
+  "unitTests": {
+    "passed": 239,
+    "failed": 0
+  },
+  "typecheck": "passed",
+  "manifestFiles": 303,
+  "browserChecks": [
+    "Desktop Instagram section renders16cards with automatic local images",
+    "Open/closed wardrobe tabs change to the matchingphoto andsource",
+    "Saved selection retains Instagram label",
+    "Project summary retains model title, stableid andsourceurl",
+    "Saved model return focuses matchingcard",
+    "Desktop and320px category filter returns2wardrobe models",
+    "320px layout hasnohorizontaloverflow"
+  ],
+  "review": "Approved after case-safe draft image recovery fix; all16models file/device backup roundtrip tested"
+}

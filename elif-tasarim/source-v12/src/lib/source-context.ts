@@ -1,4 +1,5 @@
 import {works,concepts,pinterestReferences,workCategories,categoryName} from './portfolio';
+import {instagramModels} from './instagram';
 import {pinLookup,pinReferenceUrl} from './pinterest';
 import {normalizeReference} from './model-request';
 import type {ProjectDraft} from './project';
@@ -9,6 +10,8 @@ export function sourceContext(query:string):{key:string;seed:Partial<ProjectDraf
  if(w)return {key:id,seed:{category:w.category,url:'',systemPrefill:w.subtitle+' benzeri bir çalışmayı alanıma göre değerlendirmek istiyorum.',sourceRef:{id,kind:'work',title:w.subtitle,url:site+'/proje/'+w.id+'/',image:w.images[0]}}};
  if(c)return {key:id,seed:{category:c.category,url:'',systemPrefill:c.subtitle+' üzerinden kendi modelimi konuşmak istiyorum.',sourceRef:{id,kind:'concept',title:c.subtitle,url:site+'/ilham-modelleri/',image:c.image}}};
  if(p){const url=pinReferenceUrl(p.id);return {key:id,seed:{category:p.category,url,systemPrefill:'Bu dış kaynak modelinden ilhamla bir çalışma istiyorum.',sourceRef:{id,kind:'reference',title:pinLookup[p.id]?.label||p.title,url}}};}
+ const ig=instagramModels.find(m=>id==='ig:'+m.id);
+ if(ig){const url=ig.photos[0].url;return {key:id,seed:{category:ig.category,url,systemPrefill:ig.title+' modelini kendi alanıma göre değerlendirmek istiyorum.',sourceRef:{id,kind:'reference',title:ig.title,url,image:ig.photos[0].asset}}};}
  if(!q.has('ref')&&!q.has('fikir')&&!q.has('kategori'))return null;
  const url=normalizeReference(q.get('ref')||'')||'',note=(q.get('fikir')||'').slice(0,1600);
  return {key:new URLSearchParams({category,url,note}).toString(),seed:{category,url,systemPrefill:note,sourceRef:{id:'input',kind:url?'reference':'idea',title:url?'Paylaştığınız model':categoryName(category)+' fikri',url}}};

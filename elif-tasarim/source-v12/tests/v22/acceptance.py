@@ -24,7 +24,8 @@ with sync_playwright() as p:
   page.screenshot(path=str(O/name),full_page=full)
  try:
   visit('iletisim')
-  assert page.locator('.preview-bar').inner_text().startswith('V26')
+  release_banner=json.loads((R/'dist/release-v23.json').read_text())['release'].split('-')[0].upper()
+  assert page.locator('.preview-bar').inner_text().startswith(release_banner)
   email=page.locator('.v7-contact-main a.v22-visible-email');assert email.inner_text()==EMAIL and email.get_attribute('href')=='mailto:'+EMAIL
   assert page.locator('.v22-footer-email').inner_text()==EMAIL
   schema=json.loads(page.locator('script[type="application/ld+json"]').text_content());assert schema['publisher']['email']==EMAIL and schema['publisher']['@type']=='Organization' and 'address' not in schema['publisher']

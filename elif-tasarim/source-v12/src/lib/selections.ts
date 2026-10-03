@@ -1,9 +1,10 @@
 import {works,concepts,pinterestReferences,categoryName,workPhotoEvidence} from './portfolio';
+import {instagramModels,instagramLookup} from './instagram';
 import {pinLookup} from './pinterest';
 import {searchKey} from './domain';
 export type Selection={id:string;title:string;category:string;image?:string;photoKind?:'work'|'process';kind:'work'|'concept'|'reference';path:string};
 const target=(id:string)=>'/ilham-modelleri?hedef='+encodeURIComponent(id);
-export const selectionEntries:Selection[]=[...works.map(w=>({id:'work:'+w.id,title:w.subtitle,category:w.category,image:w.images[0],photoKind:workPhotoEvidence(w).kind,kind:'work' as const,path:'/proje/'+w.id})),...concepts.map(c=>({id:'concept:'+c.id,title:c.subtitle,category:c.category,image:c.image,kind:'concept' as const,path:target('concept:'+c.id)})),...pinterestReferences.map(p=>({id:'pin:'+p.id,title:pinLookup[p.id]?.label||p.title,category:p.category,kind:'reference' as const,path:target('pin:'+p.id)}))];
+export const selectionEntries:Selection[]=[...works.map(w=>({id:'work:'+w.id,title:w.subtitle,category:w.category,image:w.images[0],photoKind:workPhotoEvidence(w).kind,kind:'work' as const,path:'/proje/'+w.id})),...concepts.map(c=>({id:'concept:'+c.id,title:c.subtitle,category:c.category,image:c.image,kind:'concept' as const,path:target('concept:'+c.id)})),...pinterestReferences.map(p=>({id:'pin:'+p.id,title:pinLookup[p.id]?.label||p.title,category:p.category,kind:'reference' as const,path:target('pin:'+p.id)})),...instagramModels.map(m=>({id:'ig:'+m.id,title:m.title,category:m.category,image:m.photos[0].asset,kind:'reference' as const,path:target('ig:'+m.id)}))];
 export type SearchEntry=Omit<Selection,'kind'>&{kind:Selection['kind']|'page';keywords?:string};
 const pages:SearchEntry[]=[
  {id:'page:basic-contact',title:'Kolay iletişim. Form olmadan başlayın',category:'ozel-tasarim',kind:'page',path:'/kolay-iletisim',keywords:'e-posta mail email telefon SMS WhatsApp iletişim'},
@@ -20,6 +21,6 @@ export const searchTerms=(s:string)=>searchKey(s).replace(/gardrop/g,'gardirop')
 export function searchEntries(query:string):SearchEntry[]{const terms=searchTerms(query).split(' ').filter(Boolean);return [...pages,...selectionEntries].filter(x=>{const text=searchTerms(x.title+' '+categoryName(x.category)+' '+('keywords' in x?x.keywords||'':''));return terms.every(t=>text.includes(t))})}
 export function validSelectionIds(value:unknown):string[]{return Array.isArray(value)?[...new Set(value.filter((id):id is string=>typeof id==='string'&&selectionEntries.some(x=>x.id===id)))].slice(0,24):[]}
 export function selectedEntries(ids:string[]):Selection[]{return validSelectionIds(ids).map(id=>selectionEntries.find(x=>x.id===id)!)}
-export function selectionSummary(ids:string[]):string[]{return selectedEntries(ids).map(x=>x.title+' ['+x.id+']'+(x.kind==='reference'?'\nKaynak, '+(pinLookup[x.id.slice(4)]?.canonical||'https://pin.it/'+x.id.slice(4)):''))}
+export function selectionSummary(ids:string[]):string[]{return selectedEntries(ids).map(x=>x.title+' ['+x.id+']'+(x.kind==='reference'?'\nKaynak, '+(x.id.startsWith('ig:')?instagramLookup[x.id.slice(3)]?.photos[0].url:(pinLookup[x.id.slice(4)]?.canonical||'https://pin.it/'+x.id.slice(4))):''))}
 export function inspirationTarget(id:string|null):Selection|null{return id?selectionEntries.find(x=>x.id===id&&['concept','reference'].includes(x.kind))||null:null}
 export function targetElementId(id:string):string{return 'ilham-'+id.replace(/[^a-zA-Z0-9_-]/g,'-')}
