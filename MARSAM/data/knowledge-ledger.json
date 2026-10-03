@@ -1792,261 +1792,6 @@
       }
     },
     {
-      "id": "discovering-spirituality",
-      "sourceId": "s-discovering-spirituality",
-      "originalTitle": "Maneviyatın Keşfi: 21 Boyutta Kendi Kendine Yardım Kılavuzu",
-      "language": "tr",
-      "kind": "book",
-      "identifiers": [
-        "978-625-371-703-2"
-      ],
-      "topic": "theory",
-      "sections": [
-        "library",
-        "books",
-        "learning"
-      ],
-      "sourceRecordHash": "1acf247f59339ce5aa446d7e37da0cb2a903dbcd7e656e5ff49f0ea481711015",
-      "versions": [
-        {
-          "id": "discovering-spirituality-edition-1",
-          "edition": "1",
-          "date": "2024-10",
-          "publisher": "Nobel Akademik Yayıncılık",
-          "identifier": [
-            "978-625-371-703-2"
-          ],
-          "source": "https://www.nobelyayin.com/maneviyatin-kesfi-21-boyutta-kendi-kendine-yardim-kilavuzu-21519.html"
-        }
-      ],
-      "accessLocations": [
-        {
-          "url": "https://www.nobelyayin.com/maneviyatin-kesfi-21-boyutta-kendi-kendine-yardim-kilavuzu-21519.html",
-          "type": "external-record",
-          "host": "www.nobelyayin.com",
-          "checked": "2026-10-01",
-          "rights": "link-only",
-          "fullTextPermission": false
-        }
-      ],
-      "contributorMentions": [
-        {
-          "id": "s-discovering-spirituality-authors-1",
-          "name": "Halil Ekşi",
-          "role": "authors",
-          "identityResolution": "source-scoped-mention",
-          "externalPersonId": null,
-          "sourceId": "s-discovering-spirituality"
-        },
-        {
-          "id": "s-discovering-spirituality-authors-2",
-          "name": "Dilek Günel",
-          "role": "authors",
-          "identityResolution": "source-scoped-mention",
-          "externalPersonId": null,
-          "sourceId": "s-discovering-spirituality"
-        },
-        {
-          "id": "s-discovering-spirituality-authors-3",
-          "name": "Ece Yağcı Akgündüz",
-          "role": "authors",
-          "identityResolution": "source-scoped-mention",
-          "externalPersonId": null,
-          "sourceId": "s-discovering-spirituality"
-        },
-        {
-          "id": "s-discovering-spirituality-authors-4",
-          "name": "Emre Gürkan",
-          "role": "authors",
-          "identityResolution": "source-scoped-mention",
-          "externalPersonId": null,
-          "sourceId": "s-discovering-spirituality"
-        },
-        {
-          "id": "s-discovering-spirituality-authors-5",
-          "name": "Fadile Zeynep Çavuş",
-          "role": "authors",
-          "identityResolution": "source-scoped-mention",
-          "externalPersonId": null,
-          "sourceId": "s-discovering-spirituality"
-        },
-        {
-          "id": "s-discovering-spirituality-authors-6",
-          "name": "Yasemin Altıntaş",
-          "role": "authors",
-          "identityResolution": "source-scoped-mention",
-          "externalPersonId": null,
-          "sourceId": "s-discovering-spirituality"
-        }
-      ],
-      "displayTitle": {
-        "tr": "Maneviyatın Keşfi",
-        "en": "Exploring Spirituality",
-        "de": "Spiritualität entdecken",
-        "zh": "探索灵性",
-        "ru": "Открывая духовность",
-        "ar": "اكتشاف الروحانية",
-        "id": "Menjelajahi Spiritualitas",
-        "ms": "Meneroka Kerohanian"
-      },
-      "description": {
-        "tr": "Maneviyatı 21 boyut üzerinden ele alan, kendi kendine yardım odaklı bir kitap.",
-        "en": "A self-help-oriented book exploring spirituality through 21 dimensions.",
-        "de": "Ein Selbsthilfebuch über 21 Dimensionen der Spiritualität.",
-        "zh": "从21个维度探索灵性的自助类书籍。",
-        "ru": "Книга самопомощи, рассматривающая 21 измерение духовности.",
-        "ar": "كتاب للمساعدة الذاتية يستكشف الروحانية عبر واحد وعشرين بُعداً.",
-        "id": "Buku bantuan diri yang membahas spiritualitas melalui 21 dimensi.",
-        "ms": "Buku bantuan kendiri yang membincangkan kerohanian melalui 21 dimensi."
-      },
-      "review": {
-        "identity": {
-          "status": "matched",
-          "sources": [
-            "https://www.nobelyayin.com/maneviyatin-kesfi-21-boyutta-kendi-kendine-yardim-kilavuzu-21519.html"
-          ]
-        },
-        "inspection": {
-          "status": "metadata",
-          "level": "V1",
-          "scope": "Publisher catalogue and edition metadata. No book chapters republished.",
-          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
-          "checked": "2026-10-01"
-        },
-        "scientific": {
-          "status": "draft",
-          "approved": false,
-          "reviewedBy": null
-        },
-        "currency": {
-          "status": "not-comprehensive",
-          "recordInspected": "2026-10-01",
-          "retractionReviewComplete": false
-        },
-        "translation": {
-          "status": "draft",
-          "humanReviewed": false
-        },
-        "rights": {
-          "status": "link-only",
-          "fullTextHosted": false,
-          "reusePermissionGranted": false
-        },
-        "institutional": {
-          "status": "proposed",
-          "formalApprovalVerified": false
-        }
-      }
-    },
-    {
-      "id": "spiritual-practices",
-      "sourceId": "s-spiritual-practices",
-      "originalTitle": "Manevi Yaşam Pratikleri",
-      "language": "tr",
-      "kind": "book",
-      "identifiers": [
-        "978-625-371-699-8"
-      ],
-      "topic": "theory",
-      "sections": [
-        "library",
-        "books",
-        "learning"
-      ],
-      "sourceRecordHash": "dff5c21c7e373787d400766373aaeb4a6ed56c2d73d601011deb28bbb0f03c92",
-      "versions": [
-        {
-          "id": "spiritual-practices-edition-1",
-          "edition": "1",
-          "date": "2024-10",
-          "publisher": "Nobel Akademik Yayıncılık",
-          "identifier": [
-            "978-625-371-699-8"
-          ],
-          "source": "https://www.nobelyayin.com/manevi-yasam-pratikleri-21520.html"
-        }
-      ],
-      "accessLocations": [
-        {
-          "url": "https://www.nobelyayin.com/manevi-yasam-pratikleri-21520.html",
-          "type": "external-record",
-          "host": "www.nobelyayin.com",
-          "checked": "2026-10-01",
-          "rights": "link-only",
-          "fullTextPermission": false
-        }
-      ],
-      "contributorMentions": [
-        {
-          "id": "s-spiritual-practices-editors-1",
-          "name": "Halil Ekşi",
-          "role": "editors",
-          "identityResolution": "source-scoped-mention",
-          "externalPersonId": null,
-          "sourceId": "s-spiritual-practices"
-        }
-      ],
-      "displayTitle": {
-        "tr": "Manevi Yaşam Pratikleri",
-        "en": "Practices for Spiritual Living",
-        "de": "Spirituelle Lebenspraxis",
-        "zh": "灵性生活实践",
-        "ru": "Практики духовной жизни",
-        "ar": "ممارسات الحياة الروحية",
-        "id": "Praktik Kehidupan Spiritual",
-        "ms": "Amalan Kehidupan Rohani"
-      },
-      "description": {
-        "tr": "Manevi yaşamı günlük pratikler ve kendi kendine yardım çerçevesinde ele alan kitap.",
-        "en": "A book on spiritual living through everyday practices and self-help.",
-        "de": "Ein Buch über spirituelles Leben, Alltagspraxis und Selbsthilfe.",
-        "zh": "以日常实践和自助为视角讨论灵性生活的书籍。",
-        "ru": "Книга о духовной жизни, повседневных практиках и самопомощи.",
-        "ar": "كتاب يتناول الحياة الروحية عبر الممارسات اليومية والمساعدة الذاتية.",
-        "id": "Buku tentang kehidupan spiritual melalui praktik sehari-hari dan bantuan diri.",
-        "ms": "Buku tentang kehidupan rohani melalui amalan harian dan bantuan kendiri."
-      },
-      "review": {
-        "identity": {
-          "status": "matched",
-          "sources": [
-            "https://www.nobelyayin.com/manevi-yasam-pratikleri-21520.html",
-            "https://www.researchgate.net/publication/386370581_Manevi_Yasam_Pratikleri"
-          ]
-        },
-        "inspection": {
-          "status": "metadata",
-          "level": "V1",
-          "scope": "Publisher catalogue and edition metadata. No book chapters republished.",
-          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
-          "checked": "2026-10-01"
-        },
-        "scientific": {
-          "status": "draft",
-          "approved": false,
-          "reviewedBy": null
-        },
-        "currency": {
-          "status": "not-comprehensive",
-          "recordInspected": "2026-10-01",
-          "retractionReviewComplete": false
-        },
-        "translation": {
-          "status": "draft",
-          "humanReviewed": false
-        },
-        "rights": {
-          "status": "link-only",
-          "fullTextHosted": false,
-          "reusePermissionGranted": false
-        },
-        "institutional": {
-          "status": "proposed",
-          "formalApprovalVerified": false
-        }
-      }
-    },
-    {
       "id": "techniques-101",
       "sourceId": "s-techniques-101",
       "originalTitle": "Psikoterapi ve Psikolojik Danışmada Manevi Yönelimli 101 Teknik",
@@ -3574,6 +3319,1500 @@
           "formalApprovalVerified": false
         }
       }
+    },
+    {
+      "id": "german-meta",
+      "sourceId": "s-german-meta",
+      "originalTitle": "Religiosity, Spirituality and Mental Health: Meta-analysis of Studies from the German-Speaking Area",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1007/s10943-025-02406-3"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence"
+      ],
+      "sourceRecordHash": "0007c7dc8ecc1e23fbae800db924924235a285ddd7d4116dea68e89833d9d3e3",
+      "versions": [
+        {
+          "id": "german-meta-record",
+          "edition": null,
+          "date": "2026-02",
+          "publisher": null,
+          "identifier": [
+            "10.1007/s10943-025-02406-3"
+          ],
+          "source": "https://doi.org/10.1007/s10943-025-02406-3"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1007/s10943-025-02406-3",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-03",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-german-meta-authors-1",
+          "name": "Christian Zwingmann",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-german-meta"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Almanca konuşulan ülkelerde maneviyat ve ruh sağlığı",
+        "en": "Spirituality and mental health in German-speaking settings",
+        "de": "Spiritualität und psychische Gesundheit im deutschsprachigen Raum",
+        "zh": "德语地区的灵性与心理健康",
+        "ru": "Духовность и психическое здоровье в немецкоязычных странах",
+        "ar": "الروحانية والصحة النفسية في البيئات الناطقة بالألمانية",
+        "id": "Spiritualitas dan kesehatan mental di wilayah berbahasa Jerman",
+        "ms": "Kerohanian dan kesihatan mental di wilayah berbahasa Jerman"
+      },
+      "description": {
+        "tr": "39 çalışmada küçük ilişki: r = 0,083. Korelasyon nedensellik göstermez. Kültür ve ölçüm önemlidir.",
+        "en": "39 studies: a small association, r = 0.083. Correlation does not establish causation. Culture and measurement matter.",
+        "de": "39 Studien: kleiner Zusammenhang, r = 0,083. Korrelation belegt keine Kausalität. Kultur und Messung sind relevant.",
+        "zh": "39项研究：相关较弱，r = 0.083。 相关不等于因果，文化与测量方式会影响解释。",
+        "ru": "39 исследований: слабая связь, r = 0,083. Корреляция не доказывает причинность. Важны культура и измерение.",
+        "ar": "39 دراسة: ارتباط ضعيف، r = 0.083. الارتباط لا يثبت السببية. للسياق الثقافي والقياس أهمية.",
+        "id": "39 studi: hubungan kecil, r = 0,083. Korelasi bukan bukti sebab akibat. Budaya dan pengukuran penting.",
+        "ms": "39 kajian: perkaitan kecil, r = 0.083. Korelasi tidak membuktikan sebab akibat. Budaya dan pengukuran penting."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1007/s10943-025-02406-3"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "abstract-and-metadata. https://doi.org/10.1007/s10943-025-02406-3. No comprehensive full-text appraisal.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-03"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-03",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "adolescent-contexts",
+      "sourceId": "s-adolescent-contexts",
+      "originalTitle": "Unpacking the Complex Relationship Between Religiosity and Adolescent Mental Health: A Cross-Cultural Systematic Literature Review",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1007/s10943-026-02736-w"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence"
+      ],
+      "sourceRecordHash": "fa31f86fae130ac0f1ab5b848c2e53009b9f3731f3705c5652dbec4be320aad5",
+      "versions": [
+        {
+          "id": "adolescent-contexts-record",
+          "edition": null,
+          "date": "2026-07-11",
+          "publisher": null,
+          "identifier": [
+            "10.1007/s10943-026-02736-w"
+          ],
+          "source": "https://doi.org/10.1007/s10943-026-02736-w"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1007/s10943-026-02736-w",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-03",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-adolescent-contexts-authors-1",
+          "name": "Lydia Mannion",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-adolescent-contexts"
+        },
+        {
+          "id": "s-adolescent-contexts-authors-2",
+          "name": "Maurice Harmon",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-adolescent-contexts"
+        },
+        {
+          "id": "s-adolescent-contexts-authors-3",
+          "name": "Trevor O’Brien",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-adolescent-contexts"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Ergenlikte din ve ruh sağlığı: kültürler arası bulgular",
+        "en": "Religion and adolescent mental health across cultures",
+        "de": "Religion und psychische Gesundheit Jugendlicher im Kulturvergleich",
+        "zh": "跨文化视角下青少年的宗教与心理健康",
+        "ru": "Религия и психическое здоровье подростков в разных культурах",
+        "ar": "الدين والصحة النفسية للمراهقين عبر الثقافات",
+        "id": "Agama dan kesehatan mental remaja lintas budaya",
+        "ms": "Agama dan kesihatan mental remaja merentas budaya"
+      },
+      "description": {
+        "tr": "10 çalışma, yararlı ilişkilerin yanında nötr ve olumsuz bulgular içeriyor. Bağlamlar farklıdır. Evrensel koruyuculuk çıkarılamaz.",
+        "en": "10 studies include beneficial, neutral and adverse associations. Contexts differ. Universal protection cannot be inferred.",
+        "de": "10 Studien berichten förderliche, neutrale und ungünstige Zusammenhänge. Unterschiedliche Kontexte erlauben keine universelle Schutzannahme.",
+        "zh": "10项研究呈现有益、中性及不利关联。 情境不同，不能推断普遍的保护作用。",
+        "ru": "10 исследований выявляют благоприятные, нейтральные и неблагоприятные связи. Контексты различаются. Универсальная защита не доказана.",
+        "ar": "10 دراسات تتضمن ارتباطات مفيدة ومحايدة وسلبية. تختلف السياقات، ولا يمكن استنتاج حماية شاملة.",
+        "id": "10 studi mencakup hubungan menguntungkan, netral, dan merugikan. Konteks berbeda. Perlindungan universal tidak dapat disimpulkan.",
+        "ms": "10 kajian merangkumi perkaitan bermanfaat, neutral dan memudaratkan. Konteks berbeza. Perlindungan sejagat tidak dapat disimpulkan."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1007/s10943-026-02736-w"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "abstract-and-metadata. https://doi.org/10.1007/s10943-026-02736-w. No comprehensive full-text appraisal.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-03"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-03",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "youth-evidence",
+      "sourceId": "s-youth-evidence",
+      "originalTitle": "Religiosity and spirituality in the prevention and management of depression and anxiety in young people: a systematic review and meta-analysis",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1186/s12888-023-05091-2"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence"
+      ],
+      "sourceRecordHash": "0ca079c40df906334abfe3d2eac71963edf24b9170213b14a4253edd9aed7473",
+      "versions": [
+        {
+          "id": "youth-evidence-record",
+          "edition": null,
+          "date": "2023-10-10",
+          "publisher": null,
+          "identifier": [
+            "10.1186/s12888-023-05091-2"
+          ],
+          "source": "https://doi.org/10.1186/s12888-023-05091-2"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1186/s12888-023-05091-2",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-03",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-youth-evidence-authors-1",
+          "name": "Shilpa Aggarwal",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-youth-evidence"
+        },
+        {
+          "id": "s-youth-evidence-authors-2",
+          "name": "Judith Wright",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-youth-evidence"
+        },
+        {
+          "id": "s-youth-evidence-authors-3",
+          "name": "Amy Morgan",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-youth-evidence"
+        },
+        {
+          "id": "s-youth-evidence-authors-4",
+          "name": "George Patton",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-youth-evidence"
+        },
+        {
+          "id": "s-youth-evidence-authors-5",
+          "name": "Nicola Reavley",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-youth-evidence"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Gençlerde depresyon ve kaygı: farklı maneviyat boyutları",
+        "en": "Depression and anxiety in young people: distinct spiritual dimensions",
+        "de": "Depression und Angst bei jungen Menschen: unterschiedliche spirituelle Dimensionen",
+        "zh": "青年抑郁与焦虑：不同的灵性维度",
+        "ru": "Депрессия и тревога у молодёжи: разные аспекты духовности",
+        "ar": "الاكتئاب والقلق لدى الشباب: أبعاد روحانية متمايزة",
+        "id": "Depresi dan kecemasan pada kaum muda: dimensi spiritual yang berbeda",
+        "ms": "Kemurungan dan kebimbangan golongan muda: dimensi kerohanian yang berbeza"
+      },
+      "description": {
+        "tr": "Manevi iyi oluş depresyonla ters ilişkiliydi. Dinin kişisel önemi için genel ilişki saptanmadı. Çalışma kalitesi ve müdahale çeşitliliği çıkarımları sınırlar.",
+        "en": "Spiritual wellbeing correlated inversely with depression. Religious importance showed no overall association. Study quality and intervention heterogeneity constrain conclusions.",
+        "de": "Spirituelles Wohlbefinden korrelierte negativ mit Depression. Religiöse Wichtigkeit zeigte keinen Gesamtzusammenhang. Studienqualität und heterogene Interventionen begrenzen Schlussfolgerungen.",
+        "zh": "灵性福祉与抑郁负相关，宗教的重要性未显示总体关联。 研究质量与干预差异限制结论。",
+        "ru": "Духовное благополучие обратно связано с депрессией. Общая связь значимости религии не выявлена. Качество исследований и неоднородность вмешательств ограничивают выводы.",
+        "ar": "ارتبط الرفاه الروحاني عكسياً بالاكتئاب. لم تظهر أهمية الدين ارتباطاً إجمالياً. تحد جودة الدراسات وتباين التدخلات من الاستنتاجات.",
+        "id": "Kesejahteraan spiritual berkorelasi terbalik dengan depresi. Pentingnya agama tidak menunjukkan hubungan keseluruhan. Kualitas studi dan keragaman intervensi membatasi kesimpulan.",
+        "ms": "Kesejahteraan rohani berkorelasi songsang dengan kemurungan. Kepentingan agama tiada perkaitan keseluruhan. Kualiti kajian dan kepelbagaian intervensi mengehadkan kesimpulan."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1186/s12888-023-05091-2"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "abstract-and-metadata. https://doi.org/10.1186/s12888-023-05091-2. No comprehensive full-text appraisal.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-03"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-03",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "older-adults",
+      "sourceId": "s-older-adults",
+      "originalTitle": "Religiosity/Spirituality and Mental Health in Older Adults: A Systematic Review and Meta-Analysis of Observational Studies",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.3389/fmed.2022.877213"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence"
+      ],
+      "sourceRecordHash": "0ca71b47ea07a76dfaa060d428643575285043fee0fe75207fe6f0fcc7927b40",
+      "versions": [
+        {
+          "id": "older-adults-record",
+          "edition": null,
+          "date": "2022-05-12",
+          "publisher": null,
+          "identifier": [
+            "10.3389/fmed.2022.877213"
+          ],
+          "source": "https://doi.org/10.3389/fmed.2022.877213"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.3389/fmed.2022.877213",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-03",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-older-adults-authors-1",
+          "name": "Hélio José Coelho-Júnior",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-older-adults"
+        },
+        {
+          "id": "s-older-adults-authors-2",
+          "name": "Riccardo Calvani",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-older-adults"
+        },
+        {
+          "id": "s-older-adults-authors-3",
+          "name": "Francesco Panza",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-older-adults"
+        },
+        {
+          "id": "s-older-adults-authors-4",
+          "name": "Riccardo F. Allegri",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-older-adults"
+        },
+        {
+          "id": "s-older-adults-authors-5",
+          "name": "Anna Picca",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-older-adults"
+        },
+        {
+          "id": "s-older-adults-authors-6",
+          "name": "Emanuele Marzetti",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-older-adults"
+        },
+        {
+          "id": "s-older-adults-authors-7",
+          "name": "Vicente Paulo Alves",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-older-adults"
+        }
+      ],
+      "displayTitle": {
+        "tr": "İleri yaşta maneviyat ve ruh sağlığı",
+        "en": "Spirituality and mental health in later life",
+        "de": "Spiritualität und psychische Gesundheit im Alter",
+        "zh": "老年人的灵性与心理健康",
+        "ru": "Духовность и психическое здоровье в пожилом возрасте",
+        "ar": "الروحانية والصحة النفسية في سن متقدمة",
+        "id": "Spiritualitas dan kesehatan mental pada usia lanjut",
+        "ms": "Kerohanian dan kesihatan mental pada usia lanjut"
+      },
+      "description": {
+        "tr": "Derleme, çoğunlukla daha iyi ruh sağlığıyla ilişkiler bildirdi. Gözlemsel bulgular tedavi etkisini göstermez. Özet ve tam metin farklı çalışma sayıları verdiğinden burada toplam sayı aktarılmadı.",
+        "en": "The review generally reported associations with better mental health. Observational findings do not establish treatment effects. Abstract and body report different study counts, so no total is reproduced here.",
+        "de": "Die Übersicht berichtete überwiegend Zusammenhänge mit besserer psychischer Gesundheit. Beobachtungsbefunde belegen keine Behandlungseffekte. Abstract und Haupttext nennen unterschiedliche Studienzahlen, deshalb wird hier keine Gesamtzahl angegeben.",
+        "zh": "综述总体报告与较佳心理健康的关联。 观察性发现不能确立治疗效果。摘要与正文报告的研究数不同，因此此处不列总数。",
+        "ru": "Обзор преимущественно выявлял связи с лучшим психическим здоровьем. Наблюдения не доказывают эффект лечения. Число исследований в аннотации и основном тексте различается, поэтому общее число здесь не приводится.",
+        "ar": "أبلغت المراجعة عموماً عن ارتباطات بصحة نفسية أفضل. لا تثبت النتائج الرصدية آثار العلاج. يختلف عدد الدراسات بين الملخص والمتن، لذا لا يُذكر مجموع هنا.",
+        "id": "Tinjauan umumnya melaporkan hubungan dengan kesehatan mental yang lebih baik. Temuan observasional tidak membuktikan efek terapi. Jumlah studi dalam abstrak dan isi berbeda, sehingga total tidak dicantumkan di sini.",
+        "ms": "Ulasan umumnya melaporkan perkaitan dengan kesihatan mental lebih baik. Dapatan pemerhatian tidak membuktikan kesan rawatan. Bilangan kajian dalam abstrak dan teks berbeza, maka jumlah tidak dinyatakan di sini."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.3389/fmed.2022.877213"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "abstract-and-metadata. https://doi.org/10.3389/fmed.2022.877213. No comprehensive full-text appraisal.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-03"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-03",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "attendance-cohorts",
+      "sourceId": "s-attendance-cohorts",
+      "originalTitle": "Religious-service attendance and subsequent health and well-being throughout adulthood: evidence from three prospective cohorts",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1093/ije/dyaa120"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence"
+      ],
+      "sourceRecordHash": "6d380597e5a46f5a140885957c3aadccb50579f710464ac01e0007a4d733201d",
+      "versions": [
+        {
+          "id": "attendance-cohorts-record",
+          "edition": null,
+          "date": "2020-08-13",
+          "publisher": null,
+          "identifier": [
+            "10.1093/ije/dyaa120"
+          ],
+          "source": "https://doi.org/10.1093/ije/dyaa120"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1093/ije/dyaa120",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-03",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-attendance-cohorts-authors-1",
+          "name": "Ying Chen",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-attendance-cohorts"
+        },
+        {
+          "id": "s-attendance-cohorts-authors-2",
+          "name": "Eric S Kim",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-attendance-cohorts"
+        },
+        {
+          "id": "s-attendance-cohorts-authors-3",
+          "name": "Tyler J VanderWeele",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-attendance-cohorts"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Dini katılım: üç ileriye dönük kohort",
+        "en": "Religious attendance: three prospective cohorts",
+        "de": "Religiöse Teilnahme: drei prospektive Kohorten",
+        "zh": "宗教活动参与：三项前瞻性队列",
+        "ru": "Участие в религиозных службах: три проспективные когорты",
+        "ar": "المشاركة الدينية: ثلاث مجموعات أترابية مستقبلية",
+        "id": "Kehadiran kegiatan agama: tiga kohort prospektif",
+        "ms": "Kehadiran kegiatan agama: tiga kohort prospektif"
+      },
+      "description": {
+        "tr": "Katılım, bazı sonraki ruh sağlığı sonuçlarıyla olumlu ilişkiliydi. ABD örneklemleri. Artık karıştırıcılık olasıdır. Katılım, maneviyatın bütünü değildir.",
+        "en": "Attendance was favourably associated with some subsequent mental health outcomes. US samples. Residual confounding remains possible. Attendance is not spirituality as a whole.",
+        "de": "Teilnahme war mit einigen späteren psychischen Gesundheitsmaßen günstig assoziiert. US-Stichproben. Restkonfundierung bleibt möglich. Teilnahme erfasst nicht die gesamte Spiritualität.",
+        "zh": "参与程度与部分后续心理健康指标存在有益关联。 样本来自美国，仍可能存在残余混杂。参与活动不等同于全部灵性。",
+        "ru": "Участие благоприятно связано с некоторыми последующими показателями психического здоровья. Выборки из США. Возможно остаточное смешение. Участие не охватывает всю духовность.",
+        "ar": "ارتبطت المشاركة ببعض النتائج النفسية اللاحقة بصورة إيجابية. عينات أمريكية. قد تبقى عوامل مربكة. المشاركة لا تشمل الروحانية كلها.",
+        "id": "Kehadiran berkaitan positif dengan beberapa hasil kesehatan mental berikutnya. Sampel AS. Perancu residual mungkin ada. Kehadiran bukan keseluruhan spiritualitas.",
+        "ms": "Kehadiran berkait secara positif dengan beberapa hasil kesihatan mental kemudian. Sampel AS. Faktor pengeliru baki mungkin wujud. Kehadiran bukan keseluruhan kerohanian."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1093/ije/dyaa120"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "abstract-and-metadata. https://doi.org/10.1093/ije/dyaa120. No comprehensive full-text appraisal.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-03"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-03",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "atheist-struggles",
+      "sourceId": "s-atheist-struggles",
+      "originalTitle": "Spiritual Struggles among Atheists: Links to Psychological Distress and Well-Being",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.3390/rel9080242"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence"
+      ],
+      "sourceRecordHash": "62a6d7b20bb4a006e2ee9d6164894527dfa39b383555bc5388c56635752947b6",
+      "versions": [
+        {
+          "id": "atheist-struggles-record",
+          "edition": null,
+          "date": "2018-08-09",
+          "publisher": null,
+          "identifier": [
+            "10.3390/rel9080242"
+          ],
+          "source": "https://doi.org/10.3390/rel9080242"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.3390/rel9080242",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-03",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-atheist-struggles-authors-1",
+          "name": "Aaron E. Sedlar",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-atheist-struggles"
+        },
+        {
+          "id": "s-atheist-struggles-authors-2",
+          "name": "Nick Stauner",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-atheist-struggles"
+        },
+        {
+          "id": "s-atheist-struggles-authors-3",
+          "name": "Kenneth I. Pargament",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-atheist-struggles"
+        },
+        {
+          "id": "s-atheist-struggles-authors-4",
+          "name": "Julie J. Exline",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-atheist-struggles"
+        },
+        {
+          "id": "s-atheist-struggles-authors-5",
+          "name": "Joshua B. Grubbs",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-atheist-struggles"
+        },
+        {
+          "id": "s-atheist-struggles-authors-6",
+          "name": "David F. Bradley",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-atheist-struggles"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Ateist örneklemlerde anlam ve manevi mücadele",
+        "en": "Meaning and spiritual struggles in atheist samples",
+        "de": "Sinnfragen und spirituelle Konflikte in atheistischen Stichproben",
+        "zh": "无神论者样本中的意义与灵性挣扎",
+        "ru": "Смысл и духовные трудности в выборках атеистов",
+        "ar": "المعنى والصراعات الروحانية في عينات ملحدة",
+        "id": "Makna dan pergumulan spiritual pada sampel ateis",
+        "ms": "Makna dan pergolakan kerohanian dalam sampel ateis"
+      },
+      "description": {
+        "tr": "Anlamla ilgili mücadele, ateist katılımcılarda da sıkıntıyla ilişkiliydi. Kesitsel örneklemler tüm inançsız insanları temsil etmez.",
+        "en": "Meaning-related struggles were associated with distress among atheist participants too. Cross-sectional samples do not represent all nonreligious people.",
+        "de": "Sinnbezogene Konflikte gingen auch bei atheistischen Teilnehmenden mit Belastung einher. Querschnittsstichproben repräsentieren nicht alle nichtreligiösen Menschen.",
+        "zh": "意义相关的挣扎在无神论参与者中也与痛苦相关。 横断面样本不能代表所有无宗教信仰者。",
+        "ru": "Трудности поиска смысла связаны с дистрессом и у атеистов. Поперечные выборки не представляют всех нерелигиозных людей.",
+        "ar": "ارتبطت صراعات المعنى بالضيق لدى المشاركين الملحدين أيضاً. العينات المقطعية لا تمثل جميع غير المتدينين.",
+        "id": "Pergumulan terkait makna juga berkaitan dengan distres pada peserta ateis. Sampel potong lintang tidak mewakili semua orang nonreligius.",
+        "ms": "Pergolakan berkaitan makna turut berkait dengan distres dalam kalangan peserta ateis. Sampel keratan rentas tidak mewakili semua orang tanpa pegangan agama."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.3390/rel9080242"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "abstract-and-metadata. https://doi.org/10.3390/rel9080242. No comprehensive full-text appraisal.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-03"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-03",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "religious-cbt",
+      "sourceId": "s-religious-cbt",
+      "originalTitle": "Religious vs. Conventional Cognitive Behavioral Therapy for Major Depression in Persons With Chronic Medical Illness",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1097/NMD.0000000000000273"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence"
+      ],
+      "sourceRecordHash": "4dd82ea27d6b5279f3e2e933da34166412c385d5f31e56b41f2f8d134fd2527d",
+      "versions": [
+        {
+          "id": "religious-cbt-record",
+          "edition": null,
+          "date": "2015-04",
+          "publisher": null,
+          "identifier": [
+            "10.1097/NMD.0000000000000273"
+          ],
+          "source": "https://doi.org/10.1097/NMD.0000000000000273"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1097/NMD.0000000000000273",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-03",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-religious-cbt-authors-1",
+          "name": "Harold G. Koenig",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        },
+        {
+          "id": "s-religious-cbt-authors-2",
+          "name": "Michelle J. Pearce",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        },
+        {
+          "id": "s-religious-cbt-authors-3",
+          "name": "Bruce Nelson",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        },
+        {
+          "id": "s-religious-cbt-authors-4",
+          "name": "Sally F. Shaw",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        },
+        {
+          "id": "s-religious-cbt-authors-5",
+          "name": "Clive J. Robins",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        },
+        {
+          "id": "s-religious-cbt-authors-6",
+          "name": "Noha S. Daher",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        },
+        {
+          "id": "s-religious-cbt-authors-7",
+          "name": "Harvey Jay Cohen",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        },
+        {
+          "id": "s-religious-cbt-authors-8",
+          "name": "Lee S. Berk",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        },
+        {
+          "id": "s-religious-cbt-authors-9",
+          "name": "Denise L. Bellinger",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        },
+        {
+          "id": "s-religious-cbt-authors-10",
+          "name": "Kenneth I. Pargament",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        },
+        {
+          "id": "s-religious-cbt-authors-11",
+          "name": "David H. Rosmarin",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        },
+        {
+          "id": "s-religious-cbt-authors-12",
+          "name": "Sasan Vasegh",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        },
+        {
+          "id": "s-religious-cbt-authors-13",
+          "name": "Jean Kristeller",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        },
+        {
+          "id": "s-religious-cbt-authors-14",
+          "name": "Nalini Juthani",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        },
+        {
+          "id": "s-religious-cbt-authors-15",
+          "name": "Douglas Nies",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        },
+        {
+          "id": "s-religious-cbt-authors-16",
+          "name": "Michael B. King",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-cbt"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Dini uyarlamalı BDT ve standart BDT",
+        "en": "Religiously integrated versus conventional CBT",
+        "de": "Religiös integrierte und konventionelle Verhaltenstherapie",
+        "zh": "宗教整合式与常规认知行为疗法",
+        "ru": "Религиозно интегрированная и обычная КПТ",
+        "ar": "العلاج المعرفي السلوكي المدمج دينياً مقابل التقليدي",
+        "id": "CBT terintegrasi agama dibandingkan CBT konvensional",
+        "ms": "CBT berintegrasikan agama berbanding CBT konvensional"
+      },
+      "description": {
+        "tr": "132 kişilik pilot denemede genel grup farkı anlamlı değildi. Anlamsız fark, eşdeğerlik kanıtı değildir.",
+        "en": "The 132-person pilot trial found no significant overall group difference. A nonsignificant difference does not prove equivalence.",
+        "de": "Die Pilotstudie mit 132 Personen fand keinen signifikanten Gesamtunterschied. Ein nichtsignifikanter Unterschied belegt keine Gleichwertigkeit.",
+        "zh": "132人参与的试点试验未发现总体组间显著差异。 差异不显著并不证明等效。",
+        "ru": "Пилотное испытание с 132 участниками не выявило значимого общего различия. Незначимое различие не доказывает эквивалентность.",
+        "ar": "لم تجد التجربة الاستطلاعية على 132 شخصاً فرقاً إجمالياً دالاً. غياب فرق دال لا يثبت التكافؤ.",
+        "id": "Uji coba perintis pada 132 orang tidak menemukan perbedaan keseluruhan yang signifikan. Perbedaan tidak signifikan bukan bukti kesetaraan.",
+        "ms": "Percubaan rintis 132 peserta tidak menemukan perbezaan keseluruhan yang signifikan. Perbezaan tidak signifikan bukan bukti kesetaraan."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1097/NMD.0000000000000273"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "abstract-and-metadata. https://europepmc.org/article/MED/25816046. No comprehensive full-text appraisal.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-03"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-03",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "disaster-needs",
+      "sourceId": "s-disaster-needs",
+      "originalTitle": "Deprem Sonrası Manevi Danışmanlık ve Rehberlik İhtiyaçları: Psiko-Sosyal Destek Uzmanlarının Görüşlerine Dayalı Nitel Bir Araştırma",
+      "language": "tr",
+      "kind": "study",
+      "identifiers": [
+        "10.56432/tmdrd.1645518"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence"
+      ],
+      "sourceRecordHash": "e75de53725235cd47a903ec50df185447c3c1c3485a61dc2e5dcfea474949192",
+      "versions": [
+        {
+          "id": "disaster-needs-record",
+          "edition": null,
+          "date": "2025-06-30",
+          "publisher": null,
+          "identifier": [
+            "10.56432/tmdrd.1645518"
+          ],
+          "source": "https://doi.org/10.56432/tmdrd.1645518"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.56432/tmdrd.1645518",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-03",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-disaster-needs-authors-1",
+          "name": "İclal Öztürk",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-disaster-needs"
+        },
+        {
+          "id": "s-disaster-needs-authors-2",
+          "name": "Ümit Horozcu",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-disaster-needs"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Deprem sonrasında manevi destek gereksinimleri",
+        "en": "Spiritual support needs after earthquakes",
+        "de": "Spiritueller Unterstützungsbedarf nach Erdbeben",
+        "zh": "地震后的灵性支持需求",
+        "ru": "Потребности в духовной поддержке после землетрясений",
+        "ar": "احتياجات الدعم الروحاني بعد الزلازل",
+        "id": "Kebutuhan dukungan spiritual setelah gempa",
+        "ms": "Keperluan sokongan rohani selepas gempa bumi"
+      },
+      "description": {
+        "tr": "Uzman görüşmeleri, deprem sonrası manevi destek gereksinimlerini ele alıyor. Görüşmeler müdahale etkililiğini kanıtlamaz.",
+        "en": "Professional interviews explore spiritual support needs after earthquakes. Interviews do not establish intervention efficacy.",
+        "de": "Fachinterviews untersuchen spirituellen Unterstützungsbedarf nach Erdbeben. Interviews belegen keine Wirksamkeit von Interventionen.",
+        "zh": "专业人员访谈探讨地震后的灵性支持需求。 访谈不能确立干预效果。",
+        "ru": "Интервью со специалистами раскрывают потребности в духовной поддержке после землетрясений. Интервью не доказывают эффективность вмешательства.",
+        "ar": "تستكشف مقابلات المختصين احتياجات الدعم الروحاني بعد الزلازل. المقابلات لا تثبت فعالية التدخل.",
+        "id": "Wawancara profesional menggali kebutuhan dukungan spiritual setelah gempa. Wawancara tidak membuktikan efektivitas intervensi.",
+        "ms": "Temu bual profesional meneroka keperluan sokongan rohani selepas gempa. Temu bual tidak membuktikan keberkesanan intervensi."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.56432/tmdrd.1645518"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "abstract-and-metadata. https://dergipark.org.tr/tr/pub/tmdrd/article/1645518. No comprehensive full-text appraisal.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-03"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-03",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "brief-rcope",
+      "sourceId": "s-brief-rcope",
+      "originalTitle": "The Brief RCOPE: Current Psychometric Status of a Short Measure of Religious Coping",
+      "language": "en",
+      "kind": "measure",
+      "identifiers": [
+        "10.3390/rel2010051"
+      ],
+      "topic": "assessment",
+      "sections": [
+        "library",
+        "measures"
+      ],
+      "sourceRecordHash": "54013bd924728c1b35aac451c3857634f1292faa8845b8648617b10232d83fa2",
+      "versions": [
+        {
+          "id": "brief-rcope-record",
+          "edition": null,
+          "date": "2011-02-22",
+          "publisher": null,
+          "identifier": [
+            "10.3390/rel2010051"
+          ],
+          "source": "https://doi.org/10.3390/rel2010051"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.3390/rel2010051",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-03",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-brief-rcope-authors-1",
+          "name": "Kenneth Pargament",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-brief-rcope"
+        },
+        {
+          "id": "s-brief-rcope-authors-2",
+          "name": "Margaret Feuille",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-brief-rcope"
+        },
+        {
+          "id": "s-brief-rcope-authors-3",
+          "name": "Donna Burdzy",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-brief-rcope"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Brief RCOPE: dini başa çıkmanın iki boyutu",
+        "en": "Brief RCOPE: two dimensions of religious coping",
+        "de": "Brief RCOPE: zwei Dimensionen religiöser Bewältigung",
+        "zh": "Brief RCOPE：宗教应对的两个维度",
+        "ru": "Brief RCOPE: два аспекта религиозного совладания",
+        "ar": "Brief RCOPE: بُعدا التكيف الديني",
+        "id": "Brief RCOPE: dua dimensi koping religius",
+        "ms": "Brief RCOPE: dua dimensi daya tindak beragama"
+      },
+      "description": {
+        "tr": "14 madde, olumlu ve olumsuz dini başa çıkmayı ayırır. Dil ve kültür için geçerlik ayrıca değerlendirilmelidir.",
+        "en": "14 items distinguish positive and negative religious coping. Validity needs separate assessment in each language and culture.",
+        "de": "14 Items unterscheiden positive und negative religiöse Bewältigung. Validität ist je Sprache und Kultur gesondert zu prüfen.",
+        "zh": "14个条目区分积极与消极宗教应对。 各语言与文化中的效度须分别检验。",
+        "ru": "14 пунктов различают позитивное и негативное религиозное совладание. Валидность требует отдельной оценки для каждого языка и культуры.",
+        "ar": "تميّز 14 فقرة بين التكيف الديني الإيجابي والسلبي. تحتاج الصلاحية إلى تقييم مستقل لكل لغة وثقافة.",
+        "id": "14 butir membedakan koping religius positif dan negatif. Validitas perlu dinilai untuk tiap bahasa dan budaya.",
+        "ms": "14 item membezakan daya tindak beragama positif dan negatif. Kesahan perlu dinilai bagi setiap bahasa dan budaya."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.3390/rel2010051"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "abstract-and-metadata. https://doi.org/10.3390/rel2010051. No comprehensive full-text appraisal.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-03"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-03",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "meaning-questionnaire",
+      "sourceId": "s-meaning-questionnaire",
+      "originalTitle": "The meaning in life questionnaire: Assessing the presence of and search for meaning in life.",
+      "language": "en",
+      "kind": "measure",
+      "identifiers": [
+        "10.1037/0022-0167.53.1.80"
+      ],
+      "topic": "assessment",
+      "sections": [
+        "library",
+        "measures"
+      ],
+      "sourceRecordHash": "6c3e011ac854f597dfd97017c25cbceb312cadf48c727e3983db580d3e5edc14",
+      "versions": [
+        {
+          "id": "meaning-questionnaire-record",
+          "edition": null,
+          "date": "2006-01",
+          "publisher": null,
+          "identifier": [
+            "10.1037/0022-0167.53.1.80"
+          ],
+          "source": "https://doi.org/10.1037/0022-0167.53.1.80"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1037/0022-0167.53.1.80",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-03",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-meaning-questionnaire-authors-1",
+          "name": "Michael F. Steger",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-meaning-questionnaire"
+        },
+        {
+          "id": "s-meaning-questionnaire-authors-2",
+          "name": "Patricia Frazier",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-meaning-questionnaire"
+        },
+        {
+          "id": "s-meaning-questionnaire-authors-3",
+          "name": "Shigehiro Oishi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-meaning-questionnaire"
+        },
+        {
+          "id": "s-meaning-questionnaire-authors-4",
+          "name": "Matthew Kaler",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-meaning-questionnaire"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Yaşamın Anlamı Ölçeği: anlamın varlığı ve aranması",
+        "en": "Meaning in Life Questionnaire: presence and search",
+        "de": "Meaning in Life Questionnaire: Sinnerleben und Sinnsuche",
+        "zh": "生命意义问卷：意义感与意义追寻",
+        "ru": "Опросник смысла жизни: наличие и поиск",
+        "ar": "استبيان معنى الحياة: وجود المعنى والبحث عنه",
+        "id": "Kuesioner Makna Hidup: keberadaan dan pencarian",
+        "ms": "Soal Selidik Makna Hidup: kewujudan dan pencarian"
+      },
+      "description": {
+        "tr": "10 madde, anlamın varlığını ve anlam arayışını ayrı ölçer. Anlam, dindarlıkla veya ruhsal bozukluk tanısıyla özdeş değildir.",
+        "en": "10 items measure presence of meaning and search for meaning separately. Meaning is not identical to religiosity or psychiatric diagnosis.",
+        "de": "10 Items erfassen Sinnerleben und Sinnsuche getrennt. Sinn ist weder mit Religiosität noch mit psychiatrischer Diagnose gleichzusetzen.",
+        "zh": "10个条目分别测量意义感与意义追寻。 意义不等同于宗教性或精神障碍诊断。",
+        "ru": "10 пунктов отдельно измеряют наличие смысла и его поиск. Смысл не тождествен религиозности или психиатрическому диагнозу.",
+        "ar": "تقيس 10 فقرات وجود المعنى والبحث عنه بصورة منفصلة. المعنى ليس مرادفاً للتدين أو التشخيص النفسي.",
+        "id": "10 butir mengukur keberadaan dan pencarian makna secara terpisah. Makna tidak identik dengan religiositas atau diagnosis psikiatri.",
+        "ms": "10 item mengukur kewujudan dan pencarian makna secara berasingan. Makna tidak sama dengan religiositi atau diagnosis psikiatri."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1037/0022-0167.53.1.80"
+          ]
+        },
+        "inspection": {
+          "status": "official",
+          "level": "V1",
+          "scope": "official-measure-description-and-metadata. https://ppc.sas.upenn.edu/node/213. No comprehensive full-text appraisal.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-03"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-03",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "durel",
+      "sourceId": "s-durel",
+      "originalTitle": "The Duke University Religion Index (DUREL): A Five-Item Measure for Use in Epidemological Studies",
+      "language": "en",
+      "kind": "measure",
+      "identifiers": [
+        "10.3390/rel1010078"
+      ],
+      "topic": "assessment",
+      "sections": [
+        "library",
+        "measures"
+      ],
+      "sourceRecordHash": "52f2e0b51ef1e54f49582712f4ffc503e8110a8273a48c468137f310457b7ad4",
+      "versions": [
+        {
+          "id": "durel-record",
+          "edition": null,
+          "date": "2010-12-01",
+          "publisher": null,
+          "identifier": [
+            "10.3390/rel1010078"
+          ],
+          "source": "https://doi.org/10.3390/rel1010078"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.3390/rel1010078",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-03",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-durel-authors-1",
+          "name": "Harold G. Koenig",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-durel"
+        },
+        {
+          "id": "s-durel-authors-2",
+          "name": "Arndt Büssing",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-durel"
+        }
+      ],
+      "displayTitle": {
+        "tr": "DUREL: dini katılım ve içsel dindarlık",
+        "en": "DUREL: religious involvement and intrinsic religiosity",
+        "de": "DUREL: religiöse Beteiligung und intrinsische Religiosität",
+        "zh": "DUREL：宗教参与与内在宗教性",
+        "ru": "DUREL: религиозная вовлечённость и внутренняя религиозность",
+        "ar": "DUREL: المشاركة الدينية والتدين الداخلي",
+        "id": "DUREL: keterlibatan agama dan religiositas intrinsik",
+        "ms": "DUREL: penglibatan agama dan religiositi intrinsik"
+      },
+      "description": {
+        "tr": "Beş madde, dindarlığın üç boyutunu ele alır. Maneviyatın tümünü veya klinik gereksinimi ölçmez.",
+        "en": "Five items address three dimensions of religiosity. It does not measure all spirituality or clinical need.",
+        "de": "Fünf Items erfassen drei Dimensionen der Religiosität. Es misst weder die gesamte Spiritualität noch klinischen Bedarf.",
+        "zh": "五个条目涉及宗教性的三个维度。 不能测量全部灵性或临床需求。",
+        "ru": "Пять пунктов охватывают три аспекта религиозности. Не измеряет духовность во всей полноте или клиническую потребность.",
+        "ar": "تتناول خمس فقرات ثلاثة أبعاد للتدين. لا يقيس الروحانية بكاملها أو الحاجة السريرية.",
+        "id": "Lima butir mencakup tiga dimensi religiositas. Tidak mengukur seluruh spiritualitas atau kebutuhan klinis.",
+        "ms": "Lima item merangkumi tiga dimensi religiositi. Tidak mengukur keseluruhan kerohanian atau keperluan klinikal."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.3390/rel1010078"
+          ]
+        },
+        "inspection": {
+          "status": "official",
+          "level": "V1",
+          "scope": "official-measure-description-and-metadata. https://scholars.duke.edu/publication/960636. No comprehensive full-text appraisal.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-03"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-03",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
     }
   ],
   "relationships": [],
@@ -3597,8 +4836,6 @@
         "malaysia-ukm-counselling",
         "trauma-spirituality",
         "spiritual-counselling-book",
-        "discovering-spirituality",
-        "spiritual-practices",
         "techniques-101",
         "family-spiritual",
         "group-counselling",
@@ -3609,7 +4846,18 @@
         "professional-training",
         "spiritual-integrity",
         "spirituality-dimensions",
-        "spiritual-struggles"
+        "spiritual-struggles",
+        "german-meta",
+        "adolescent-contexts",
+        "youth-evidence",
+        "older-adults",
+        "attendance-cohorts",
+        "atheist-struggles",
+        "religious-cbt",
+        "disaster-needs",
+        "brief-rcope",
+        "meaning-questionnaire",
+        "durel"
       ]
     }
   ]

@@ -13,7 +13,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "aservic-principles",
@@ -25,7 +27,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "aservic-principles",
@@ -37,7 +41,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "aservic-principles",
@@ -49,7 +55,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "aservic-principles",
@@ -61,7 +69,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "aservic-principles",
@@ -73,7 +83,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "aservic-principles",
@@ -85,7 +97,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "aservic-principles",
@@ -97,7 +111,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-competence",
@@ -109,7 +125,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-competence",
@@ -121,7 +139,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-competence",
@@ -133,7 +153,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-competence",
@@ -145,7 +167,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-competence",
@@ -157,7 +181,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-competence",
@@ -169,7 +195,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-competence",
@@ -181,7 +209,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-competence",
@@ -193,7 +223,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "integration-meta-analysis",
@@ -205,7 +237,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "integration-meta-analysis",
@@ -217,7 +251,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "integration-meta-analysis",
@@ -229,7 +265,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "integration-meta-analysis",
@@ -241,7 +279,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "integration-meta-analysis",
@@ -253,7 +293,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "integration-meta-analysis",
@@ -265,7 +307,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "integration-meta-analysis",
@@ -277,7 +321,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "integration-meta-analysis",
@@ -289,7 +335,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "client-preference",
@@ -301,7 +349,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "client-preference",
@@ -313,7 +363,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "client-preference",
@@ -325,7 +377,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "client-preference",
@@ -337,7 +391,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "client-preference",
@@ -349,7 +405,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "client-preference",
@@ -361,7 +419,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "client-preference",
@@ -373,7 +433,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "client-preference",
@@ -385,7 +447,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sacred-tensions",
@@ -397,7 +461,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sacred-tensions",
@@ -409,7 +475,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sacred-tensions",
@@ -421,7 +489,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sacred-tensions",
@@ -433,7 +503,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sacred-tensions",
@@ -445,7 +517,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sacred-tensions",
@@ -457,7 +531,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sacred-tensions",
@@ -469,7 +545,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sacred-tensions",
@@ -481,7 +559,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "metaphysical-diversity",
@@ -493,7 +573,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "metaphysical-diversity",
@@ -505,7 +587,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "metaphysical-diversity",
@@ -517,7 +601,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "metaphysical-diversity",
@@ -529,7 +615,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "metaphysical-diversity",
@@ -541,7 +629,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "metaphysical-diversity",
@@ -553,7 +643,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "metaphysical-diversity",
@@ -565,7 +657,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "metaphysical-diversity",
@@ -577,7 +671,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "three-waves",
@@ -589,7 +685,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "three-waves",
@@ -601,7 +699,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "three-waves",
@@ -613,7 +713,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "three-waves",
@@ -625,7 +727,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "three-waves",
@@ -637,7 +741,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "three-waves",
@@ -649,7 +755,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "three-waves",
@@ -661,7 +769,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "three-waves",
@@ -673,7 +783,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theories-book",
@@ -685,7 +797,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theories-book",
@@ -697,7 +811,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theories-book",
@@ -709,7 +825,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theories-book",
@@ -721,7 +839,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theories-book",
@@ -733,7 +853,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theories-book",
@@ -745,7 +867,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theories-book",
@@ -757,7 +881,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theories-book",
@@ -769,7 +895,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "toad-directory",
@@ -781,7 +909,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "toad-directory",
@@ -793,7 +923,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "toad-directory",
@@ -805,7 +937,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "toad-directory",
@@ -817,7 +951,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "toad-directory",
@@ -829,7 +965,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "toad-directory",
@@ -841,7 +979,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "toad-directory",
@@ -853,7 +993,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "toad-directory",
@@ -865,7 +1007,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "prisma-guidance",
@@ -877,7 +1021,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "prisma-guidance",
@@ -889,7 +1035,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "prisma-guidance",
@@ -901,7 +1049,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "prisma-guidance",
@@ -913,7 +1063,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "prisma-guidance",
@@ -925,7 +1077,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "prisma-guidance",
@@ -937,7 +1091,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "prisma-guidance",
@@ -949,7 +1105,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "prisma-guidance",
@@ -961,7 +1119,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "ai-health-ethics",
@@ -973,7 +1133,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "ai-health-ethics",
@@ -985,7 +1147,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "ai-health-ethics",
@@ -997,7 +1161,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "ai-health-ethics",
@@ -1009,7 +1175,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "ai-health-ethics",
@@ -1021,7 +1189,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "ai-health-ethics",
@@ -1033,7 +1203,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "ai-health-ethics",
@@ -1045,7 +1217,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "ai-health-ethics",
@@ -1057,7 +1231,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "malaysia-ukm-counselling",
@@ -1069,7 +1245,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "malaysia-ukm-counselling",
@@ -1081,7 +1259,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "malaysia-ukm-counselling",
@@ -1093,7 +1273,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "malaysia-ukm-counselling",
@@ -1105,7 +1287,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "malaysia-ukm-counselling",
@@ -1117,7 +1301,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "malaysia-ukm-counselling",
@@ -1129,7 +1315,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "malaysia-ukm-counselling",
@@ -1141,7 +1329,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "malaysia-ukm-counselling",
@@ -1153,7 +1343,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "trauma-spirituality",
@@ -1165,7 +1357,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "trauma-spirituality",
@@ -1177,7 +1371,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "trauma-spirituality",
@@ -1189,7 +1385,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "trauma-spirituality",
@@ -1201,7 +1399,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "trauma-spirituality",
@@ -1213,7 +1413,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "trauma-spirituality",
@@ -1225,7 +1427,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "trauma-spirituality",
@@ -1237,7 +1441,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "trauma-spirituality",
@@ -1249,7 +1455,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-counselling-book",
@@ -1261,7 +1469,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-counselling-book",
@@ -1273,7 +1483,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-counselling-book",
@@ -1285,7 +1497,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-counselling-book",
@@ -1297,7 +1511,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-counselling-book",
@@ -1309,7 +1525,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-counselling-book",
@@ -1321,7 +1539,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-counselling-book",
@@ -1333,7 +1553,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-counselling-book",
@@ -1345,199 +1567,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
-    },
-    {
-      "id": "discovering-spirituality",
-      "locale": "tr",
-      "sourceHash": "f0ca685c77775fc5ba74ae0371112d66b5690d53ab9420226d61464e15362b56",
-      "targetHash": "f0ca685c77775fc5ba74ae0371112d66b5690d53ab9420226d61464e15362b56",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
-    },
-    {
-      "id": "discovering-spirituality",
-      "locale": "en",
-      "sourceHash": "f0ca685c77775fc5ba74ae0371112d66b5690d53ab9420226d61464e15362b56",
-      "targetHash": "5d7997247a504b07bfbe22d65081aa2be1bd0e3f08903b0f48ba8c9812721751",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
-    },
-    {
-      "id": "discovering-spirituality",
-      "locale": "de",
-      "sourceHash": "f0ca685c77775fc5ba74ae0371112d66b5690d53ab9420226d61464e15362b56",
-      "targetHash": "fcbf8de01778b620c3a7e77361edc66918ce3bf3784e2559c3b3962bfa9fae35",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
-    },
-    {
-      "id": "discovering-spirituality",
-      "locale": "zh",
-      "sourceHash": "f0ca685c77775fc5ba74ae0371112d66b5690d53ab9420226d61464e15362b56",
-      "targetHash": "a751c8c2d6792d3daf9f62b844994f3381cdd35c63d80fe0eca040b73b47c22d",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
-    },
-    {
-      "id": "discovering-spirituality",
-      "locale": "ru",
-      "sourceHash": "f0ca685c77775fc5ba74ae0371112d66b5690d53ab9420226d61464e15362b56",
-      "targetHash": "aa91f4a161f4f362a474a5c4b7d0cfbe08977e7bcf92e83d9dca3d113103c4d6",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
-    },
-    {
-      "id": "discovering-spirituality",
-      "locale": "ar",
-      "sourceHash": "f0ca685c77775fc5ba74ae0371112d66b5690d53ab9420226d61464e15362b56",
-      "targetHash": "cf1a39f0ba3aff9deebdf0701e199e621d125d92465eea2c62df45de7bce13f0",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
-    },
-    {
-      "id": "discovering-spirituality",
-      "locale": "id",
-      "sourceHash": "f0ca685c77775fc5ba74ae0371112d66b5690d53ab9420226d61464e15362b56",
-      "targetHash": "06de57dc6ab13f75c1d82db820568f64ef5fe8ee82149a801adbca2d0743b5c9",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
-    },
-    {
-      "id": "discovering-spirituality",
-      "locale": "ms",
-      "sourceHash": "f0ca685c77775fc5ba74ae0371112d66b5690d53ab9420226d61464e15362b56",
-      "targetHash": "07ba859e02a1c1d9ac9190d5cd8a83b8aef3f3fe3a051dd7508486d532c1db78",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
-    },
-    {
-      "id": "spiritual-practices",
-      "locale": "tr",
-      "sourceHash": "2b5bc2a059e56057d3af778d6ea54ec74fea3b7b0cc9e7cad4e47cbac4c94d1c",
-      "targetHash": "2b5bc2a059e56057d3af778d6ea54ec74fea3b7b0cc9e7cad4e47cbac4c94d1c",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
-    },
-    {
-      "id": "spiritual-practices",
-      "locale": "en",
-      "sourceHash": "2b5bc2a059e56057d3af778d6ea54ec74fea3b7b0cc9e7cad4e47cbac4c94d1c",
-      "targetHash": "19a7fcf134268a82095e6e22c37d7fb6c13fce36179155722897bb1058f99712",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
-    },
-    {
-      "id": "spiritual-practices",
-      "locale": "de",
-      "sourceHash": "2b5bc2a059e56057d3af778d6ea54ec74fea3b7b0cc9e7cad4e47cbac4c94d1c",
-      "targetHash": "2defdcf49d2d9173a0b7571eb6cb1ba763f7785a5ccf134cf9d5dbf8f45c91d2",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
-    },
-    {
-      "id": "spiritual-practices",
-      "locale": "zh",
-      "sourceHash": "2b5bc2a059e56057d3af778d6ea54ec74fea3b7b0cc9e7cad4e47cbac4c94d1c",
-      "targetHash": "7d1fdd848da4688da9351fb0b419a4bb81339e998615f0735d490df073455079",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
-    },
-    {
-      "id": "spiritual-practices",
-      "locale": "ru",
-      "sourceHash": "2b5bc2a059e56057d3af778d6ea54ec74fea3b7b0cc9e7cad4e47cbac4c94d1c",
-      "targetHash": "cd2a93b62c5284d9266b88dd764324d2a4587e09dc1dc122a6378650380f3f13",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
-    },
-    {
-      "id": "spiritual-practices",
-      "locale": "ar",
-      "sourceHash": "2b5bc2a059e56057d3af778d6ea54ec74fea3b7b0cc9e7cad4e47cbac4c94d1c",
-      "targetHash": "561d2a0c47af6708deb939ac1a819e5498f6c5caee038201ff88b93063fd5d98",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
-    },
-    {
-      "id": "spiritual-practices",
-      "locale": "id",
-      "sourceHash": "2b5bc2a059e56057d3af778d6ea54ec74fea3b7b0cc9e7cad4e47cbac4c94d1c",
-      "targetHash": "e55b0ab876a1527d0df22a4f6f548b1a79f7773c71ffd751be82ec4e11bef2b7",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
-    },
-    {
-      "id": "spiritual-practices",
-      "locale": "ms",
-      "sourceHash": "2b5bc2a059e56057d3af778d6ea54ec74fea3b7b0cc9e7cad4e47cbac4c94d1c",
-      "targetHash": "1f4247741d3e8e83890cd274d2d33928a32de40c15077cd2ff175451dce1fa91",
-      "status": "draft",
-      "humanReviewed": false,
-      "reviewedBy": null,
-      "reviewedAt": null,
-      "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "techniques-101",
@@ -1549,7 +1581,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "techniques-101",
@@ -1561,7 +1595,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "techniques-101",
@@ -1573,7 +1609,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "techniques-101",
@@ -1585,7 +1623,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "techniques-101",
@@ -1597,7 +1637,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "techniques-101",
@@ -1609,7 +1651,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "techniques-101",
@@ -1621,7 +1665,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "techniques-101",
@@ -1633,7 +1679,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "family-spiritual",
@@ -1645,7 +1693,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "family-spiritual",
@@ -1657,7 +1707,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "family-spiritual",
@@ -1669,7 +1721,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "family-spiritual",
@@ -1681,7 +1735,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "family-spiritual",
@@ -1693,7 +1749,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "family-spiritual",
@@ -1705,7 +1763,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "family-spiritual",
@@ -1717,7 +1777,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "family-spiritual",
@@ -1729,7 +1791,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "group-counselling",
@@ -1741,7 +1805,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "group-counselling",
@@ -1753,7 +1819,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "group-counselling",
@@ -1765,7 +1833,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "group-counselling",
@@ -1777,7 +1847,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "group-counselling",
@@ -1789,7 +1861,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "group-counselling",
@@ -1801,7 +1875,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "group-counselling",
@@ -1813,7 +1889,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "group-counselling",
@@ -1825,7 +1903,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "cbt-spiritual",
@@ -1837,7 +1917,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "cbt-spiritual",
@@ -1849,7 +1931,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "cbt-spiritual",
@@ -1861,7 +1945,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "cbt-spiritual",
@@ -1873,7 +1959,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "cbt-spiritual",
@@ -1885,7 +1973,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "cbt-spiritual",
@@ -1897,7 +1987,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "cbt-spiritual",
@@ -1909,7 +2001,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "cbt-spiritual",
@@ -1921,7 +2015,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-burnout",
@@ -1933,7 +2029,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-burnout",
@@ -1945,7 +2043,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-burnout",
@@ -1957,7 +2057,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-burnout",
@@ -1969,7 +2071,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-burnout",
@@ -1981,7 +2085,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-burnout",
@@ -1993,7 +2099,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-burnout",
@@ -2005,7 +2113,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-burnout",
@@ -2017,7 +2127,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sipas",
@@ -2029,7 +2141,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sipas",
@@ -2041,7 +2155,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sipas",
@@ -2053,7 +2169,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sipas",
@@ -2065,7 +2183,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sipas",
@@ -2077,7 +2197,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sipas",
@@ -2089,7 +2211,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sipas",
@@ -2101,7 +2225,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "sipas",
@@ -2113,7 +2239,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "loneliness-spirituality",
@@ -2125,7 +2253,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "loneliness-spirituality",
@@ -2137,7 +2267,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "loneliness-spirituality",
@@ -2149,7 +2281,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "loneliness-spirituality",
@@ -2161,7 +2295,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "loneliness-spirituality",
@@ -2173,7 +2309,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "loneliness-spirituality",
@@ -2185,7 +2323,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "loneliness-spirituality",
@@ -2197,7 +2337,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "loneliness-spirituality",
@@ -2209,7 +2351,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional-training",
@@ -2221,7 +2365,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional-training",
@@ -2233,7 +2379,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional-training",
@@ -2245,7 +2393,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional-training",
@@ -2257,7 +2407,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional-training",
@@ -2269,7 +2421,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional-training",
@@ -2281,7 +2435,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional-training",
@@ -2293,7 +2449,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional-training",
@@ -2305,7 +2463,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-integrity",
@@ -2317,7 +2477,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-integrity",
@@ -2329,7 +2491,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-integrity",
@@ -2341,7 +2505,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-integrity",
@@ -2353,7 +2519,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-integrity",
@@ -2365,7 +2533,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-integrity",
@@ -2377,7 +2547,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-integrity",
@@ -2389,7 +2561,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-integrity",
@@ -2401,7 +2575,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spirituality-dimensions",
@@ -2413,7 +2589,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spirituality-dimensions",
@@ -2425,7 +2603,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spirituality-dimensions",
@@ -2437,7 +2617,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spirituality-dimensions",
@@ -2449,7 +2631,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spirituality-dimensions",
@@ -2461,7 +2645,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spirituality-dimensions",
@@ -2473,7 +2659,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spirituality-dimensions",
@@ -2485,7 +2673,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spirituality-dimensions",
@@ -2497,7 +2687,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-struggles",
@@ -2509,7 +2701,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-struggles",
@@ -2521,7 +2715,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-struggles",
@@ -2533,7 +2729,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-struggles",
@@ -2545,7 +2743,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-struggles",
@@ -2557,7 +2757,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-struggles",
@@ -2569,7 +2771,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-struggles",
@@ -2581,7 +2785,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "spiritual-struggles",
@@ -2593,7 +2799,1241 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
+    },
+    {
+      "id": "german-meta",
+      "locale": "tr",
+      "sourceHash": "853b813c2df56f13f5f1ba6052b14bd58273e76ed1546f31e954f6507b8f2dc0",
+      "targetHash": "c7a7651b5c7b9406938d6552b98e5ccbfb5ab7105d35aede09e6eab05bea7b41",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "german-meta",
+      "locale": "en",
+      "sourceHash": "853b813c2df56f13f5f1ba6052b14bd58273e76ed1546f31e954f6507b8f2dc0",
+      "targetHash": "185731f1b9e9f9d2930a8729144349807c8c763a0ae7962027529b8bd0dc53c1",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "german-meta",
+      "locale": "de",
+      "sourceHash": "853b813c2df56f13f5f1ba6052b14bd58273e76ed1546f31e954f6507b8f2dc0",
+      "targetHash": "26080faa10e91253a05c51fbd7812c1351801fdc2d1de0018d1d624200863a8c",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "german-meta",
+      "locale": "zh",
+      "sourceHash": "853b813c2df56f13f5f1ba6052b14bd58273e76ed1546f31e954f6507b8f2dc0",
+      "targetHash": "145362f4ed87a7783c3f8e9918567d9d1c5d3c3c9c01f78aba02f7ba3a75ca6e",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "german-meta",
+      "locale": "ru",
+      "sourceHash": "853b813c2df56f13f5f1ba6052b14bd58273e76ed1546f31e954f6507b8f2dc0",
+      "targetHash": "92d87cbeb4ce32efebc03c861c6c7ccb2e6611672fa711f9f451f2827660c1be",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "german-meta",
+      "locale": "ar",
+      "sourceHash": "853b813c2df56f13f5f1ba6052b14bd58273e76ed1546f31e954f6507b8f2dc0",
+      "targetHash": "9a8038bf4baf74ddb767a81a31de1bbc865c12e9196c2d7208848014b942fa6b",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "rtl",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "german-meta",
+      "locale": "id",
+      "sourceHash": "853b813c2df56f13f5f1ba6052b14bd58273e76ed1546f31e954f6507b8f2dc0",
+      "targetHash": "03dfd41ba9de05e84f528ff7306bb7844b29e330a197ef53e879bae29a8590e4",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "german-meta",
+      "locale": "ms",
+      "sourceHash": "853b813c2df56f13f5f1ba6052b14bd58273e76ed1546f31e954f6507b8f2dc0",
+      "targetHash": "90e30809a3a4c599480d52cb716c614af6882f0145f255bc6073b76292776ee6",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "adolescent-contexts",
+      "locale": "tr",
+      "sourceHash": "76ff9599e07b76e8f747ec4c5dee18276a4f3735105ae9bc95c911c9e67e1c76",
+      "targetHash": "b60943f0c2d87e9214ff58624c069b492d72a6e48c5da5842009d950f22d82e4",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "adolescent-contexts",
+      "locale": "en",
+      "sourceHash": "76ff9599e07b76e8f747ec4c5dee18276a4f3735105ae9bc95c911c9e67e1c76",
+      "targetHash": "12cb54ac91a1f50bbd4839b04c842c1f97bdfb0553f0ccf21cff31ae5adb5d40",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "adolescent-contexts",
+      "locale": "de",
+      "sourceHash": "76ff9599e07b76e8f747ec4c5dee18276a4f3735105ae9bc95c911c9e67e1c76",
+      "targetHash": "34381f7bf5e145011f9765d555cf69f49118045b2b8964c618de5d0a387ba44e",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "adolescent-contexts",
+      "locale": "zh",
+      "sourceHash": "76ff9599e07b76e8f747ec4c5dee18276a4f3735105ae9bc95c911c9e67e1c76",
+      "targetHash": "2c7af104d15040b248edbf5ce26a260540e396fa0448202d896bf414831e0df4",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "adolescent-contexts",
+      "locale": "ru",
+      "sourceHash": "76ff9599e07b76e8f747ec4c5dee18276a4f3735105ae9bc95c911c9e67e1c76",
+      "targetHash": "3ae539d8851a5a7991ab79a6e6bf564ce9abcbb94e6802453c95b23c2b03ba1f",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "adolescent-contexts",
+      "locale": "ar",
+      "sourceHash": "76ff9599e07b76e8f747ec4c5dee18276a4f3735105ae9bc95c911c9e67e1c76",
+      "targetHash": "85182a961a7a7b6dc8217289c8a385ee2c087560669278bcdb232d3ec0191f5a",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "rtl",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "adolescent-contexts",
+      "locale": "id",
+      "sourceHash": "76ff9599e07b76e8f747ec4c5dee18276a4f3735105ae9bc95c911c9e67e1c76",
+      "targetHash": "762c096229ea80e399c2f211c2d02993443e6ef737229fd4434451535343591e",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "adolescent-contexts",
+      "locale": "ms",
+      "sourceHash": "76ff9599e07b76e8f747ec4c5dee18276a4f3735105ae9bc95c911c9e67e1c76",
+      "targetHash": "37e51d983501de2c81d836518b038df23c71173ddfbac2705f588db45b50a636",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "youth-evidence",
+      "locale": "tr",
+      "sourceHash": "d8719888820f469bdc2459b88d9bbced20022b51b20f81c7427ce33bc46737d2",
+      "targetHash": "bbe3ba46c66c6700252d3c627820551351f46315da33c2f73bd8e394fa99dfd3",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "youth-evidence",
+      "locale": "en",
+      "sourceHash": "d8719888820f469bdc2459b88d9bbced20022b51b20f81c7427ce33bc46737d2",
+      "targetHash": "cc23fade27a9a22807327568cc69cea8a4a203ea3102598aa82bd1a826a2bb27",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "youth-evidence",
+      "locale": "de",
+      "sourceHash": "d8719888820f469bdc2459b88d9bbced20022b51b20f81c7427ce33bc46737d2",
+      "targetHash": "e1d1754f1277b8a003199a011f0ab55a19da495b1787fb8a1316a6198d89a253",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "youth-evidence",
+      "locale": "zh",
+      "sourceHash": "d8719888820f469bdc2459b88d9bbced20022b51b20f81c7427ce33bc46737d2",
+      "targetHash": "d9e828976c123acc0949accceb795499b51002d62e8c1438860a7afd0633c19f",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "youth-evidence",
+      "locale": "ru",
+      "sourceHash": "d8719888820f469bdc2459b88d9bbced20022b51b20f81c7427ce33bc46737d2",
+      "targetHash": "32bcdc8fc392e69ea3e7628bb25935772edf7cd444978a275d923e4a0f434f17",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "youth-evidence",
+      "locale": "ar",
+      "sourceHash": "d8719888820f469bdc2459b88d9bbced20022b51b20f81c7427ce33bc46737d2",
+      "targetHash": "08bfe0abb53cabf5c77ad4412809e6754f2aea1054789a35924ec670db5d66f9",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "rtl",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "youth-evidence",
+      "locale": "id",
+      "sourceHash": "d8719888820f469bdc2459b88d9bbced20022b51b20f81c7427ce33bc46737d2",
+      "targetHash": "5cae3d485787dcb7f3741c8f30a78566471f9188b205e213c9d7c1b6b891ac66",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "youth-evidence",
+      "locale": "ms",
+      "sourceHash": "d8719888820f469bdc2459b88d9bbced20022b51b20f81c7427ce33bc46737d2",
+      "targetHash": "414698c1cd23391b48386886bcc93b788952491a0d8bfd842e0834d0935d1037",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "older-adults",
+      "locale": "tr",
+      "sourceHash": "1a138e9bde7d0d84a3f19d7a02d2ea269950b9fe5befc94f58d12d5bec658b76",
+      "targetHash": "a186e690a9c196f252d53fd00700ebbed5884617a07850de46e6b9cb9056c778",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "older-adults",
+      "locale": "en",
+      "sourceHash": "1a138e9bde7d0d84a3f19d7a02d2ea269950b9fe5befc94f58d12d5bec658b76",
+      "targetHash": "9c6bf23585a749a0d850e43b0e13e078bfe4fd770e6fff7eea566de46f98b371",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "older-adults",
+      "locale": "de",
+      "sourceHash": "1a138e9bde7d0d84a3f19d7a02d2ea269950b9fe5befc94f58d12d5bec658b76",
+      "targetHash": "40d9b3711adca574d3d0e0fd4205eab8141f06dd6d860365827b0cb0e205d984",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "older-adults",
+      "locale": "zh",
+      "sourceHash": "1a138e9bde7d0d84a3f19d7a02d2ea269950b9fe5befc94f58d12d5bec658b76",
+      "targetHash": "8c897a27133163e414779878defbe18fe8163fbad8524685cda6d48c3fdeba68",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "older-adults",
+      "locale": "ru",
+      "sourceHash": "1a138e9bde7d0d84a3f19d7a02d2ea269950b9fe5befc94f58d12d5bec658b76",
+      "targetHash": "bbf1ae1e00669bfd562a40f8aef979b6f9bac40631854c05c0c1fae6740b5bac",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "older-adults",
+      "locale": "ar",
+      "sourceHash": "1a138e9bde7d0d84a3f19d7a02d2ea269950b9fe5befc94f58d12d5bec658b76",
+      "targetHash": "b5e304b11aa98afb2b7475ce28a67c51d95a5a2d44efbaba5227562de8939257",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "rtl",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "older-adults",
+      "locale": "id",
+      "sourceHash": "1a138e9bde7d0d84a3f19d7a02d2ea269950b9fe5befc94f58d12d5bec658b76",
+      "targetHash": "221f93397c0b1ba379aa2647453b60628795d9bbbb467e33daa1d42303991a44",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "older-adults",
+      "locale": "ms",
+      "sourceHash": "1a138e9bde7d0d84a3f19d7a02d2ea269950b9fe5befc94f58d12d5bec658b76",
+      "targetHash": "b3a88442bb74e762667e04ceb7ee0bece76d35c642f24d988b4d742834d114bd",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "attendance-cohorts",
+      "locale": "tr",
+      "sourceHash": "fa66640007d72703ea902d0e0e77e734bd7af873e74b64d8b362674b1ed16a16",
+      "targetHash": "9050fe5716409de94906114addec71b6eb21ca9b38e025ec9e001fc6265b2673",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "attendance-cohorts",
+      "locale": "en",
+      "sourceHash": "fa66640007d72703ea902d0e0e77e734bd7af873e74b64d8b362674b1ed16a16",
+      "targetHash": "0d3d1495c3d74362b784491762780a5126475e537bfe80796feee1916176a9a3",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "attendance-cohorts",
+      "locale": "de",
+      "sourceHash": "fa66640007d72703ea902d0e0e77e734bd7af873e74b64d8b362674b1ed16a16",
+      "targetHash": "fe9f5b761111f5abbcd7f6746bfb643a2ebd1a13f616e66454ebac45abd8e849",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "attendance-cohorts",
+      "locale": "zh",
+      "sourceHash": "fa66640007d72703ea902d0e0e77e734bd7af873e74b64d8b362674b1ed16a16",
+      "targetHash": "227a17e5b32d90f5399fc422a165fa8c64e51fd00c1f1fa3f903566e45829b7a",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "attendance-cohorts",
+      "locale": "ru",
+      "sourceHash": "fa66640007d72703ea902d0e0e77e734bd7af873e74b64d8b362674b1ed16a16",
+      "targetHash": "c9dedf385170d94802ffc546e36a29fc41a54938b025bfa0e6a618ad6e95ab96",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "attendance-cohorts",
+      "locale": "ar",
+      "sourceHash": "fa66640007d72703ea902d0e0e77e734bd7af873e74b64d8b362674b1ed16a16",
+      "targetHash": "25b9c44eb4f4d2d8cd724b0df00e94ecbdaca3eecd49d7c3e0e7921f40184b84",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "rtl",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "attendance-cohorts",
+      "locale": "id",
+      "sourceHash": "fa66640007d72703ea902d0e0e77e734bd7af873e74b64d8b362674b1ed16a16",
+      "targetHash": "6dadf370c2c5288f8915eb36579f1ede00884500d49d274f66b98d13575018fc",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "attendance-cohorts",
+      "locale": "ms",
+      "sourceHash": "fa66640007d72703ea902d0e0e77e734bd7af873e74b64d8b362674b1ed16a16",
+      "targetHash": "9c46e3e00759bf5d992f6e7313e18e8d3445ca57dd8f45914de4ab02c832457b",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "atheist-struggles",
+      "locale": "tr",
+      "sourceHash": "7baad6fc6048caf2e7d3225bfd08cbe980dadacdf0c8cf8cc46ae868287353df",
+      "targetHash": "d1e024d5f3c04fed99488a64f73e3c5e60bad37ef74861766e3fc89f5917c40b",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "atheist-struggles",
+      "locale": "en",
+      "sourceHash": "7baad6fc6048caf2e7d3225bfd08cbe980dadacdf0c8cf8cc46ae868287353df",
+      "targetHash": "2efbdf2380619fa9d58c10e719336613c918850901263ce26015fdbfdeb0c29b",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "atheist-struggles",
+      "locale": "de",
+      "sourceHash": "7baad6fc6048caf2e7d3225bfd08cbe980dadacdf0c8cf8cc46ae868287353df",
+      "targetHash": "a1985f04d6e733fef32bb43185b5d451da36842f1d2531842028a078a9ac8fb3",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "atheist-struggles",
+      "locale": "zh",
+      "sourceHash": "7baad6fc6048caf2e7d3225bfd08cbe980dadacdf0c8cf8cc46ae868287353df",
+      "targetHash": "7d901207e0b7ae53bbe0103a26daec24cef1b73c9da7df9af4624099d831f8c1",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "atheist-struggles",
+      "locale": "ru",
+      "sourceHash": "7baad6fc6048caf2e7d3225bfd08cbe980dadacdf0c8cf8cc46ae868287353df",
+      "targetHash": "adc2bf6df99dc3b0d011b24d2780ddb685ec1961a3a2504ec748b955205102dd",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "atheist-struggles",
+      "locale": "ar",
+      "sourceHash": "7baad6fc6048caf2e7d3225bfd08cbe980dadacdf0c8cf8cc46ae868287353df",
+      "targetHash": "f2ddcebf2c8ea80e81cc907ddd41a4bda2306fad27d7cb49c477f74c9b1f0955",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "rtl",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "atheist-struggles",
+      "locale": "id",
+      "sourceHash": "7baad6fc6048caf2e7d3225bfd08cbe980dadacdf0c8cf8cc46ae868287353df",
+      "targetHash": "c4099cd4a9e34032475344259dff6d82d0cf32dfa37ec036e5ab0f37e4380ea4",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "atheist-struggles",
+      "locale": "ms",
+      "sourceHash": "7baad6fc6048caf2e7d3225bfd08cbe980dadacdf0c8cf8cc46ae868287353df",
+      "targetHash": "d821160ea7ea91693f5a3c215e2bd41558d5c0795a0b90ce34788faac4226943",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "religious-cbt",
+      "locale": "tr",
+      "sourceHash": "d50d6d95c726a8638b3ffa3abd4ae625d3efc89da27a13ebb9d5931b12e1350c",
+      "targetHash": "64180c2b484e25d1d3a50280ff09e818b5932866bc322116465f659fe366ffc3",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "religious-cbt",
+      "locale": "en",
+      "sourceHash": "d50d6d95c726a8638b3ffa3abd4ae625d3efc89da27a13ebb9d5931b12e1350c",
+      "targetHash": "43b8e85c8656e11b0a800f331dfd36748ad1e2328e62a25dab140b68204ede73",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "religious-cbt",
+      "locale": "de",
+      "sourceHash": "d50d6d95c726a8638b3ffa3abd4ae625d3efc89da27a13ebb9d5931b12e1350c",
+      "targetHash": "24c24ef54d33e94fc0ea295f59cb98d7d0385dd684784b41fb0569e7e1ffca17",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "religious-cbt",
+      "locale": "zh",
+      "sourceHash": "d50d6d95c726a8638b3ffa3abd4ae625d3efc89da27a13ebb9d5931b12e1350c",
+      "targetHash": "623180ec7441202fa1e99beeb250c227b43958b12163e04712d0f5cc7ff14ffd",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "religious-cbt",
+      "locale": "ru",
+      "sourceHash": "d50d6d95c726a8638b3ffa3abd4ae625d3efc89da27a13ebb9d5931b12e1350c",
+      "targetHash": "cd63c5a475212de535b336695777bee5576023d8b0c90b59fe18299b52c38af6",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "religious-cbt",
+      "locale": "ar",
+      "sourceHash": "d50d6d95c726a8638b3ffa3abd4ae625d3efc89da27a13ebb9d5931b12e1350c",
+      "targetHash": "5f75b7729f89360cb456558dbeae95acc6f8a32f106781f35b3db233d2e57c1a",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "rtl",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "religious-cbt",
+      "locale": "id",
+      "sourceHash": "d50d6d95c726a8638b3ffa3abd4ae625d3efc89da27a13ebb9d5931b12e1350c",
+      "targetHash": "1941feae789e3b6027250173891f31f35b762bf2e5cfb6056b427f824e56532c",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "religious-cbt",
+      "locale": "ms",
+      "sourceHash": "d50d6d95c726a8638b3ffa3abd4ae625d3efc89da27a13ebb9d5931b12e1350c",
+      "targetHash": "f955f141ca48de23c8d02b121852cc6fd8cb8ba1d5170a0de4f786f5ba52a2c1",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "disaster-needs",
+      "locale": "tr",
+      "sourceHash": "60a4538f6da937c287527435cd5647fa1e4f736e965f02f172918a119c9cf20b",
+      "targetHash": "4e4e671caafaf85e09560691ddabbd34c56b81502ef17c41e1e2175986b8fe30",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "disaster-needs",
+      "locale": "en",
+      "sourceHash": "60a4538f6da937c287527435cd5647fa1e4f736e965f02f172918a119c9cf20b",
+      "targetHash": "e265b6f596ffb5cfc535c6c5ea032e54ac033841b7810da82de44f0e4589d23c",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "disaster-needs",
+      "locale": "de",
+      "sourceHash": "60a4538f6da937c287527435cd5647fa1e4f736e965f02f172918a119c9cf20b",
+      "targetHash": "b141b7ae094a1e871af892df5cd92e36e008be5e4c139802be097c741bb37889",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "disaster-needs",
+      "locale": "zh",
+      "sourceHash": "60a4538f6da937c287527435cd5647fa1e4f736e965f02f172918a119c9cf20b",
+      "targetHash": "4919d5e5445b89e513c30b4ed13baf375351ce493193795a04f8de6cbbc57a2f",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "disaster-needs",
+      "locale": "ru",
+      "sourceHash": "60a4538f6da937c287527435cd5647fa1e4f736e965f02f172918a119c9cf20b",
+      "targetHash": "b4841cf6ae65b3de3d4f6b70c4552a4700179d3e602b0dd1daf71d6856f60109",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "disaster-needs",
+      "locale": "ar",
+      "sourceHash": "60a4538f6da937c287527435cd5647fa1e4f736e965f02f172918a119c9cf20b",
+      "targetHash": "8ad99ffbc236eaebd449cec58c5e124e101e181705e7fa3d70d73a586c72fb39",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "rtl",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "disaster-needs",
+      "locale": "id",
+      "sourceHash": "60a4538f6da937c287527435cd5647fa1e4f736e965f02f172918a119c9cf20b",
+      "targetHash": "2138ba506daddfd96e5e6b08ba9eba540dfb597eb663e88f7d91aa384d164629",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "disaster-needs",
+      "locale": "ms",
+      "sourceHash": "60a4538f6da937c287527435cd5647fa1e4f736e965f02f172918a119c9cf20b",
+      "targetHash": "d3b84ba8d5c49980aef26a55497c5b1705c9dcc1df78765ee9b4145b3936498c",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "brief-rcope",
+      "locale": "tr",
+      "sourceHash": "8a843ae41cd740c6feb4731379621d4dfbe4f8ca91d89dbffcf31b71bb15fb42",
+      "targetHash": "7fc1325254c33360f2f7953e49105975afdc226992b027eccf468947b324f2a3",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "brief-rcope",
+      "locale": "en",
+      "sourceHash": "8a843ae41cd740c6feb4731379621d4dfbe4f8ca91d89dbffcf31b71bb15fb42",
+      "targetHash": "f9d3ad8fb1eb0b133b8019867b3757aa81935cbe5fbf0844e9974f5c1bff947a",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "brief-rcope",
+      "locale": "de",
+      "sourceHash": "8a843ae41cd740c6feb4731379621d4dfbe4f8ca91d89dbffcf31b71bb15fb42",
+      "targetHash": "c5e2efc554d3592d5c469cd5c93305dd527bf8d101bc6822d19a8caa8464b529",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "brief-rcope",
+      "locale": "zh",
+      "sourceHash": "8a843ae41cd740c6feb4731379621d4dfbe4f8ca91d89dbffcf31b71bb15fb42",
+      "targetHash": "3e2fd816654276d19a586a8281e6f91faa7200e12c8fdce2da7e02305729d72e",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "brief-rcope",
+      "locale": "ru",
+      "sourceHash": "8a843ae41cd740c6feb4731379621d4dfbe4f8ca91d89dbffcf31b71bb15fb42",
+      "targetHash": "328da7c590b6b6a2b8a1a0907852882d89682ee9e80b6964d1957494c445f3bd",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "brief-rcope",
+      "locale": "ar",
+      "sourceHash": "8a843ae41cd740c6feb4731379621d4dfbe4f8ca91d89dbffcf31b71bb15fb42",
+      "targetHash": "963dee7dd440a4e8c1b6876f86ae938346f99ea193fa82064688e49d3dc11c3c",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "rtl",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "brief-rcope",
+      "locale": "id",
+      "sourceHash": "8a843ae41cd740c6feb4731379621d4dfbe4f8ca91d89dbffcf31b71bb15fb42",
+      "targetHash": "fb5c34a6c7cc577b717433186a00153ffe8ae2d6f22b826250eae96c13d6fca5",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "brief-rcope",
+      "locale": "ms",
+      "sourceHash": "8a843ae41cd740c6feb4731379621d4dfbe4f8ca91d89dbffcf31b71bb15fb42",
+      "targetHash": "5af5bc4cca1ad87ebc6372dc77f67abb7a72680913246fa427baf035fac53391",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "meaning-questionnaire",
+      "locale": "tr",
+      "sourceHash": "b8a94e89384f162916a6fc73271668491501305ac39d9b3a13043f6ef5480def",
+      "targetHash": "41053d276467d04d85a9c7983a6fe6c81faac112d83c50d76380b3b5e6d6fccb",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "meaning-questionnaire",
+      "locale": "en",
+      "sourceHash": "b8a94e89384f162916a6fc73271668491501305ac39d9b3a13043f6ef5480def",
+      "targetHash": "91532e58acb44deb50e2bee52fa4808a35c75e8fae7e239e76c98669251494b6",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "meaning-questionnaire",
+      "locale": "de",
+      "sourceHash": "b8a94e89384f162916a6fc73271668491501305ac39d9b3a13043f6ef5480def",
+      "targetHash": "b7dbae417cd93ae37d04f152717fdac1eca7e661c2346d69616b9e10fd86de51",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "meaning-questionnaire",
+      "locale": "zh",
+      "sourceHash": "b8a94e89384f162916a6fc73271668491501305ac39d9b3a13043f6ef5480def",
+      "targetHash": "d4416898740808f723799972caad072d271a3747fb5cdcf550b6477a0eae60fc",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "meaning-questionnaire",
+      "locale": "ru",
+      "sourceHash": "b8a94e89384f162916a6fc73271668491501305ac39d9b3a13043f6ef5480def",
+      "targetHash": "54f047e383e2ff9e95e993f371bf19ed43916fdc91f183783413122fab5bc182",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "meaning-questionnaire",
+      "locale": "ar",
+      "sourceHash": "b8a94e89384f162916a6fc73271668491501305ac39d9b3a13043f6ef5480def",
+      "targetHash": "6b5830904d7cbd70121f38cfcd4a8790a61f40be17353296c4aea53395b40acc",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "rtl",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "meaning-questionnaire",
+      "locale": "id",
+      "sourceHash": "b8a94e89384f162916a6fc73271668491501305ac39d9b3a13043f6ef5480def",
+      "targetHash": "dfc5fa5d3eb9af114f24d58777e9c9fba4af59f3431400821a18f39d97b688d6",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "meaning-questionnaire",
+      "locale": "ms",
+      "sourceHash": "b8a94e89384f162916a6fc73271668491501305ac39d9b3a13043f6ef5480def",
+      "targetHash": "f30155f593a6e1d95310f74e88ed038c2139962f1f3dd136deac94c080fa22e9",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "durel",
+      "locale": "tr",
+      "sourceHash": "9ee0c81f6d7bd6e7790248de1fe0715a7cd7464b02582bd5cdff6e01bb2b5578",
+      "targetHash": "d6314f06d8a04ec642f18b2b2565331f7707d107566260e2f7db72cdd5c2657a",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "durel",
+      "locale": "en",
+      "sourceHash": "9ee0c81f6d7bd6e7790248de1fe0715a7cd7464b02582bd5cdff6e01bb2b5578",
+      "targetHash": "a68407bcfd7ca64adaaa8d39d31545a5553a8f590bd9f341b284f99d07c5cee5",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "durel",
+      "locale": "de",
+      "sourceHash": "9ee0c81f6d7bd6e7790248de1fe0715a7cd7464b02582bd5cdff6e01bb2b5578",
+      "targetHash": "f3bbecd52b3cf1cd1b2adfc8d8ff4be231596c3248a2a08d426f25e74db09f47",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "durel",
+      "locale": "zh",
+      "sourceHash": "9ee0c81f6d7bd6e7790248de1fe0715a7cd7464b02582bd5cdff6e01bb2b5578",
+      "targetHash": "ccc957d1eaf457933eefe6d6490b921295497e8750b2213c47cc83d58a6efe6b",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "durel",
+      "locale": "ru",
+      "sourceHash": "9ee0c81f6d7bd6e7790248de1fe0715a7cd7464b02582bd5cdff6e01bb2b5578",
+      "targetHash": "3585adcd6d9fb5ac1de744c98afcbd1b1236e5366d55a388fdc03751306a9ce7",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "durel",
+      "locale": "ar",
+      "sourceHash": "9ee0c81f6d7bd6e7790248de1fe0715a7cd7464b02582bd5cdff6e01bb2b5578",
+      "targetHash": "5928c4a3236a9dfe816ad20eed028b395ba5f24a3ac8e2c3b765c4a88e05f206",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "rtl",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "durel",
+      "locale": "id",
+      "sourceHash": "9ee0c81f6d7bd6e7790248de1fe0715a7cd7464b02582bd5cdff6e01bb2b5578",
+      "targetHash": "a4e6fbd8abf4a425b06230f9a7881979bfcfe735d06292c43dfe29c1c056a61c",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
+    },
+    {
+      "id": "durel",
+      "locale": "ms",
+      "sourceHash": "9ee0c81f6d7bd6e7790248de1fe0715a7cd7464b02582bd5cdff6e01bb2b5578",
+      "targetHash": "60cc57ac88e34342f3f99d6b6762557345771f8731aca6023477460aa9d2a06f",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": null,
+      "bindingModel": "shared-factual-brief"
     },
     {
       "id": "understanding-spiritual-experience",
@@ -2605,7 +4045,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "understanding-spiritual-experience",
@@ -2617,7 +4059,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "understanding-spiritual-experience",
@@ -2629,7 +4073,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "understanding-spiritual-experience",
@@ -2641,7 +4087,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "understanding-spiritual-experience",
@@ -2653,7 +4101,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "understanding-spiritual-experience",
@@ -2665,7 +4115,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "understanding-spiritual-experience",
@@ -2677,7 +4129,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "understanding-spiritual-experience",
@@ -2689,7 +4143,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "reading-evidence",
@@ -2701,7 +4157,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "reading-evidence",
@@ -2713,7 +4171,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "reading-evidence",
@@ -2725,7 +4185,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "reading-evidence",
@@ -2737,7 +4199,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "reading-evidence",
@@ -2749,7 +4213,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "reading-evidence",
@@ -2761,7 +4227,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "reading-evidence",
@@ -2773,7 +4241,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "reading-evidence",
@@ -2785,7 +4255,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "preferences-and-boundaries",
@@ -2797,7 +4269,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "preferences-and-boundaries",
@@ -2809,7 +4283,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "preferences-and-boundaries",
@@ -2821,7 +4297,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "preferences-and-boundaries",
@@ -2833,7 +4311,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "preferences-and-boundaries",
@@ -2845,7 +4325,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "preferences-and-boundaries",
@@ -2857,7 +4339,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "preferences-and-boundaries",
@@ -2869,7 +4353,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "preferences-and-boundaries",
@@ -2881,7 +4367,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "culture-and-worldviews",
@@ -2893,7 +4381,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "culture-and-worldviews",
@@ -2905,7 +4395,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "culture-and-worldviews",
@@ -2917,7 +4409,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "culture-and-worldviews",
@@ -2929,7 +4423,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "culture-and-worldviews",
@@ -2941,7 +4437,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "culture-and-worldviews",
@@ -2953,7 +4451,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "culture-and-worldviews",
@@ -2965,7 +4465,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "culture-and-worldviews",
@@ -2977,7 +4479,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "assessment-and-permission",
@@ -2989,7 +4493,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "assessment-and-permission",
@@ -3001,7 +4507,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "assessment-and-permission",
@@ -3013,7 +4521,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "assessment-and-permission",
@@ -3025,7 +4535,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "assessment-and-permission",
@@ -3037,7 +4549,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "assessment-and-permission",
@@ -3049,7 +4563,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "assessment-and-permission",
@@ -3061,7 +4577,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "assessment-and-permission",
@@ -3073,7 +4591,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "question-to-design",
@@ -3085,7 +4605,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "question-to-design",
@@ -3097,7 +4619,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "question-to-design",
@@ -3109,7 +4633,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "question-to-design",
@@ -3121,7 +4647,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "question-to-design",
@@ -3133,7 +4661,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "question-to-design",
@@ -3145,7 +4675,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "question-to-design",
@@ -3157,7 +4689,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "question-to-design",
@@ -3169,7 +4703,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theory-and-integration",
@@ -3181,7 +4717,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theory-and-integration",
@@ -3193,7 +4731,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theory-and-integration",
@@ -3205,7 +4745,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theory-and-integration",
@@ -3217,7 +4759,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theory-and-integration",
@@ -3229,7 +4773,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theory-and-integration",
@@ -3241,7 +4787,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theory-and-integration",
@@ -3253,7 +4801,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "theory-and-integration",
@@ -3265,7 +4815,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "digital-tools-and-responsibility",
@@ -3277,7 +4829,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "digital-tools-and-responsibility",
@@ -3289,7 +4843,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "digital-tools-and-responsibility",
@@ -3301,7 +4857,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "digital-tools-and-responsibility",
@@ -3313,7 +4871,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "digital-tools-and-responsibility",
@@ -3325,7 +4885,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "digital-tools-and-responsibility",
@@ -3337,7 +4899,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "digital-tools-and-responsibility",
@@ -3349,7 +4913,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "digital-tools-and-responsibility",
@@ -3361,7 +4927,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "foundations",
@@ -3373,7 +4941,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "foundations",
@@ -3385,7 +4955,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "foundations",
@@ -3397,7 +4969,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "foundations",
@@ -3409,7 +4983,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "foundations",
@@ -3421,7 +4997,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "foundations",
@@ -3433,7 +5011,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "foundations",
@@ -3445,7 +5025,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "foundations",
@@ -3457,7 +5039,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional",
@@ -3469,7 +5053,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional",
@@ -3481,7 +5067,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional",
@@ -3493,7 +5081,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional",
@@ -3505,7 +5095,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional",
@@ -3517,7 +5109,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional",
@@ -3529,7 +5123,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional",
@@ -3541,7 +5137,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "professional",
@@ -3553,7 +5151,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "research",
@@ -3565,7 +5165,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "research",
@@ -3577,7 +5179,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "research",
@@ -3589,7 +5193,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "research",
@@ -3601,7 +5207,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "research",
@@ -3613,7 +5221,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "research",
@@ -3625,7 +5235,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "rtl"
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "research",
@@ -3637,7 +5249,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     },
     {
       "id": "research",
@@ -3649,7 +5263,9 @@
       "reviewedBy": null,
       "reviewedAt": null,
       "method": "AI_ASSISTED_DRAFT",
-      "direction": "ltr"
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
     }
   ]
 }
