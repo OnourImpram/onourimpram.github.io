@@ -1,0 +1,51 @@
+name: Collect compact MARSAM 0.9.0 live receipts
+on:
+  push:
+    branches: [publish/marsam-scholarly-0.9.0-receipts]
+permissions:
+  actions: read
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            for (let attempt=0;attempt<90;attempt++) {
+              const {data}=await github.rest.actions.getWorkflowRun({...context.repo,run_id:37145692432});
+              if(data.status==='completed') {
+                if(data.conclusion!=='success') throw new Error('Live verification did not pass: '+data.conclusion);
+                return;
+              }
+              await new Promise(resolve=>setTimeout(resolve,5000));
+            }
+            throw new Error('Live verification still running');
+      - uses: actions/download-artifact@v4
+        with:
+          name: marsam-0.9.0-live-verification
+          run-id: 37145692432
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: full
+      - name: Preserve JSON receipts without large browser images
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import shutil,json,hashlib
+          root=Path('receipts');root.mkdir()
+          result=[]
+          for p in Path('full').rglob('*.json'):
+              if p.parent.name!='verification':continue
+              destination=root/p.name
+              shutil.copyfile(p,destination)
+              result.append({'name':p.name,'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()})
+          assert any(r['name']=='live-byte-review.json' for r in result)
+          (root/'receipt-index.json').write_text(json.dumps(result,indent=2))
+          print(json.dumps(result))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: marsam-0.9.0-compact-live-receipts
+          path: receipts/
+          retention-days: 14
