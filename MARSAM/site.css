@@ -118,3 +118,17 @@ body::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none
 .manuscript-frame.approved-portal::before,.manuscript-frame.approved-portal::after{display:none}
 .approved-portal-picture{display:block;width:100%;line-height:0;pointer-events:none}
 .approved-portal-image{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;pointer-events:none}
+/* Scholarly reading extends the existing palette and respects logical direction. */
+.scholarly-gateway,.founder-section{border-block-start:1px solid var(--border)}
+.founder-section{padding-block:3rem}.founder-section .prose{max-width:76ch}
+.scholar-review{font-size:.88rem;color:var(--text-secondary);max-width:78ch}
+.scholar-theme-grid,.scholar-evidence-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;margin-block:2rem 3rem}
+.scholar-theme,.scholar-evidence-list article{min-width:0;border-block-start:1px solid var(--border);padding-block:1.5rem}
+.scholar-theme h2{font-size:1.65rem}.scholar-sources{font-size:.9rem;line-height:1.6}.scholar-sources li{margin-block:.6rem}
+.evidence-panel{margin-block:2rem;padding:1.5rem;border-inline-start:3px solid var(--action);background:var(--surface-muted)}
+.evidence-panel dt{font-weight:600;margin-block-start:1rem}.evidence-panel dd{margin-inline:0;max-width:72ch}
+.measure-overview{margin-block-end:3rem}.measure-profile{max-width:78ch}
+@media(max-width:700px){.scholar-theme-grid,.scholar-evidence-list{grid-template-columns:minmax(0,1fr);gap:1rem}.evidence-panel{padding:1rem}}
+@media print{.scholar-theme-grid,.scholar-evidence-list{display:block}.scholar-theme,.scholar-evidence-list article{break-inside:avoid}.evidence-panel{background:transparent}}
+/* Native select text needs a full row at narrow widths and enlarged text sizes. */
+@media(max-width:480px){.bibliography-filters{grid-template-columns:minmax(0,1fr)}.bibliography-filters>.field,.bibliography-filters>button{grid-column:1}}

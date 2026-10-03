@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "id": "german-meta",
+      "sourceId": "s-german-meta",
+      "brief": {
+        "design": "meta-analysis",
+        "population": "39 studies from German-speaking settings",
+        "findingDirection": "small-positive",
+        "doi": "10.1007/s10943-025-02406-3",
+        "inspection": "abstract-and-metadata",
+        "checked": "2026-10-03",
+        "effect": {
+          "r": 0.083,
+          "CI95": [
+            0.055,
+            0.111
+          ]
+        },
+        "onlineDate": "2025-08-12",
+        "issueYear": 2026,
+        "limitationCodes": [
+          "association-not-causation",
+          "cultural-transfer-uncertain",
+          "construct-overlap"
+        ]
+      }
+    },
+    {
+      "id": "adolescent-contexts",
+      "sourceId": "s-adolescent-contexts",
+      "brief": {
+        "design": "systematic-review",
+        "population": "10 studies, adolescents, multiple countries",
+        "findingDirection": "mixed",
+        "doi": "10.1007/s10943-026-02736-w",
+        "inspection": "abstract-and-metadata",
+        "checked": "2026-10-03",
+        "limitationCodes": [
+          "heterogeneous-contexts",
+          "no-universal-protection"
+        ]
+      }
+    },
+    {
+      "id": "youth-evidence",
+      "sourceId": "s-youth-evidence",
+      "brief": {
+        "design": "meta-analysis",
+        "population": "45 longitudinal and 29 intervention studies, ages 10–24",
+        "findingDirection": "mixed",
+        "doi": "10.1186/s12888-023-05091-2",
+        "inspection": "abstract-and-metadata",
+        "checked": "2026-10-03",
+        "effects": {
+          "wellbeingDepression": {
+            "r": -0.153,
+            "CI95": [
+              -0.187,
+              -0.118
+            ]
+          },
+          "importanceDepression": {
+            "r": -0.024,
+            "CI95": [
+              -0.053,
+              0.004
+            ]
+          },
+          "negativeCopingDepression": {
+            "r": 0.09,
+            "CI95": [
+              -0.009,
+              0.188
+            ]
+          }
+        },
+        "limitationCodes": [
+          "mostly-low-moderate-quality",
+          "intervention-heterogeneity",
+          "high-income-predominance"
+        ]
+      }
+    },
+    {
+      "id": "older-adults",
+      "sourceId": "s-older-adults",
+      "brief": {
+        "design": "meta-analysis",
+        "population": "Observational studies of adults aged 60+. Total study count is unresolved between abstract and body.",
+        "findingDirection": "generally-positive",
+        "doi": "10.3389/fmed.2022.877213",
+        "inspection": "abstract-and-metadata",
+        "checked": "2026-10-03",
+        "limitationCodes": [
+          "observational-not-treatment-effect",
+          "heterogeneous-measures",
+          "study-count-discrepancy"
+        ],
+        "countStatus": "abstract-fulltext-counts-unreconciled"
+      }
+    },
+    {
+      "id": "attendance-cohorts",
+      "sourceId": "s-attendance-cohorts",
+      "brief": {
+        "design": "prospective-cohort",
+        "population": "Three US cohorts across adulthood",
+        "findingDirection": "mixed",
+        "doi": "10.1093/ije/dyaa120",
+        "inspection": "abstract-and-metadata",
+        "checked": "2026-10-03",
+        "limitationCodes": [
+          "residual-confounding",
+          "us-context",
+          "attendance-not-total-spirituality"
+        ]
+      }
+    },
+    {
+      "id": "atheist-struggles",
+      "sourceId": "s-atheist-struggles",
+      "brief": {
+        "design": "cross-sectional",
+        "population": "3978 undergraduates and 1048 internet workers, atheist/theist comparisons",
+        "findingDirection": "adverse-associations",
+        "doi": "10.3390/rel9080242",
+        "inspection": "abstract-and-metadata",
+        "checked": "2026-10-03",
+        "limitationCodes": [
+          "cross-sectional",
+          "sampling-not-all-nonreligious"
+        ]
+      }
+    },
+    {
+      "id": "religious-cbt",
+      "sourceId": "s-religious-cbt",
+      "brief": {
+        "design": "pilot-rct",
+        "population": "132 people with major depression and chronic medical illness, 12 weeks",
+        "findingDirection": "no-overall-difference",
+        "doi": "10.1097/NMD.0000000000000273",
+        "inspection": "abstract-and-metadata",
+        "checked": "2026-10-03",
+        "outcome": {
+          "p": 0.86
+        },
+        "inspectionURL": "https://europepmc.org/article/MED/25816046",
+        "limitationCodes": [
+          "pilot-sample",
+          "nonsignificance-not-equivalence",
+          "subgroup-exploratory"
+        ]
+      }
+    },
+    {
+      "id": "disaster-needs",
+      "sourceId": "s-disaster-needs",
+      "brief": {
+        "design": "qualitative",
+        "population": "Interviews with psychosocial support professionals after the 2023 Türkiye earthquakes",
+        "findingDirection": "needs-and-experiences",
+        "doi": "10.56432/tmdrd.1645518",
+        "inspection": "abstract-and-metadata",
+        "checked": "2026-10-03",
+        "inspectionURL": "https://dergipark.org.tr/tr/pub/tmdrd/article/1645518",
+        "limitationCodes": [
+          "professional-perspectives",
+          "no-efficacy-test"
+        ]
+      }
+    },
+    {
+      "id": "brief-rcope",
+      "sourceId": "s-brief-rcope",
+      "brief": {
+        "design": "psychometric-review",
+        "population": "14 items, positive and negative religious coping subscales",
+        "findingDirection": "measurement",
+        "doi": "10.3390/rel2010051",
+        "inspection": "abstract-and-metadata",
+        "checked": "2026-10-03",
+        "limitationCodes": [
+          "context-specific-validity",
+          "not-universal-translation-validation"
+        ]
+      }
+    },
+    {
+      "id": "meaning-questionnaire",
+      "sourceId": "s-meaning-questionnaire",
+      "brief": {
+        "design": "scale-development",
+        "population": "10 items, presence of meaning and search for meaning",
+        "findingDirection": "measurement",
+        "doi": "10.1037/0022-0167.53.1.80",
+        "inspection": "official-measure-description-and-metadata",
+        "checked": "2026-10-03",
+        "inspectionURL": "https://ppc.sas.upenn.edu/node/213",
+        "limitationCodes": [
+          "institutional-description-not-full-validation-appraisal",
+          "meaning-not-diagnosis"
+        ]
+      }
+    },
+    {
+      "id": "durel",
+      "sourceId": "s-durel",
+      "brief": {
+        "design": "measurement-overview",
+        "population": "5 items, organizational, non-organizational and intrinsic religiosity",
+        "findingDirection": "measurement",
+        "doi": "10.3390/rel1010078",
+        "inspection": "official-measure-description-and-metadata",
+        "checked": "2026-10-03",
+        "inspectionURL": "https://scholars.duke.edu/publication/960636",
+        "limitationCodes": [
+          "religiosity-not-all-spirituality",
+          "not-clinical-need-assessment"
+        ]
+      }
+    }
+  ],
+  "themes": [
+    {
+      "id": "constructs",
+      "sourceIds": [
+        "s-meaning-questionnaire",
+        "s-durel",
+        "s-brief-rcope"
+      ]
+    },
+    {
+      "id": "causality",
+      "sourceIds": [
+        "s-attendance-cohorts",
+        "s-religious-cbt",
+        "s-captari"
+      ]
+    },
+    {
+      "id": "struggles",
+      "sourceIds": [
+        "s-youth-evidence",
+        "s-atheist-struggles",
+        "s-spiritual-struggles"
+      ]
+    },
+    {
+      "id": "context",
+      "sourceIds": [
+        "s-german-meta",
+        "s-adolescent-contexts",
+        "s-older-adults"
+      ]
+    },
+    {
+      "id": "disaster",
+      "sourceIds": [
+        "s-disaster-needs",
+        "s-trauma-spirituality"
+      ]
+    },
+    {
+      "id": "practice",
+      "sourceIds": [
+        "s-aservic",
+        "s-vieten",
+        "s-swift"
+      ]
+    }
+  ]
+}

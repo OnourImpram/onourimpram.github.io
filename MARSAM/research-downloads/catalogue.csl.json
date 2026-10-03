@@ -222,67 +222,6 @@
     ]
   },
   {
-    "id": "s-discovering-spirituality",
-    "type": "book",
-    "title": "Maneviyatın Keşfi: 21 Boyutta Kendi Kendine Yardım Kılavuzu",
-    "URL": "https://www.nobelyayin.com/maneviyatin-kesfi-21-boyutta-kendi-kendine-yardim-kilavuzu-21519.html",
-    "note": "Halil Ekşi, Dilek Günel, Ece Yağcı Akgündüz, Emre Gürkan, Fadile Zeynep Çavuş, Yasemin Altıntaş. (2024). Maneviyatın Keşfi: 21 Boyutta Kendi Kendine Yardım Kılavuzu. Nobel Akademik Yayıncılık. ISBN 978-625-371-703-2.",
-    "issued": {
-      "date-parts": [
-        [
-          2024
-        ]
-      ]
-    },
-    "ISBN": "978-625-371-703-2",
-    "publisher": "Nobel Akademik Yayıncılık",
-    "page": "374",
-    "edition": "1",
-    "author": [
-      {
-        "literal": "Halil Ekşi"
-      },
-      {
-        "literal": "Dilek Günel"
-      },
-      {
-        "literal": "Ece Yağcı Akgündüz"
-      },
-      {
-        "literal": "Emre Gürkan"
-      },
-      {
-        "literal": "Fadile Zeynep Çavuş"
-      },
-      {
-        "literal": "Yasemin Altıntaş"
-      }
-    ]
-  },
-  {
-    "id": "s-spiritual-practices",
-    "type": "book",
-    "title": "Manevi Yaşam Pratikleri",
-    "URL": "https://www.nobelyayin.com/manevi-yasam-pratikleri-21520.html",
-    "note": "Halil Ekşi (Ed.). (2024). Manevi Yaşam Pratikleri. Nobel Akademik Yayıncılık. ISBN 978-625-371-699-8.",
-    "issued": {
-      "date-parts": [
-        [
-          2024
-        ]
-      ]
-    },
-    "ISBN": "978-625-371-699-8",
-    "publisher": "Nobel Akademik Yayıncılık",
-    "page": "184",
-    "edition": "1",
-    "editor": [
-      {
-        "literal": "Halil Ekşi"
-      }
-    ]
-  },
-  {
     "id": "s-techniques-101",
     "type": "book",
     "title": "Psikoterapi ve Psikolojik Danışmada Manevi Yönelimli 101 Teknik",
@@ -622,6 +561,388 @@
       },
       {
         "literal": "Halil Ekşi"
+      }
+    ]
+  },
+  {
+    "id": "s-german-meta",
+    "type": "article-journal",
+    "title": "Religiosity, Spirituality and Mental Health: Meta-analysis of Studies from the German-Speaking Area",
+    "URL": "https://doi.org/10.1007/s10943-025-02406-3",
+    "note": "Christian Zwingmann (2026). Religiosity, Spirituality and Mental Health: Meta-analysis of Studies from the German-Speaking Area. Journal of Religion and Health. https://doi.org/10.1007/s10943-025-02406-3",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10943-025-02406-3",
+    "container-title": "Journal of Religion and Health",
+    "volume": "65",
+    "issue": "1",
+    "page": "132-157",
+    "author": [
+      {
+        "literal": "Christian Zwingmann"
+      }
+    ]
+  },
+  {
+    "id": "s-adolescent-contexts",
+    "type": "article-journal",
+    "title": "Unpacking the Complex Relationship Between Religiosity and Adolescent Mental Health: A Cross-Cultural Systematic Literature Review",
+    "URL": "https://doi.org/10.1007/s10943-026-02736-w",
+    "note": "Lydia Mannion, Maurice Harmon, Trevor O’Brien (2026). Unpacking the Complex Relationship Between Religiosity and Adolescent Mental Health: A Cross-Cultural Systematic Literature Review. Journal of Religion and Health. https://doi.org/10.1007/s10943-026-02736-w",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10943-026-02736-w",
+    "container-title": "Journal of Religion and Health",
+    "author": [
+      {
+        "literal": "Lydia Mannion"
+      },
+      {
+        "literal": "Maurice Harmon"
+      },
+      {
+        "literal": "Trevor O’Brien"
+      }
+    ]
+  },
+  {
+    "id": "s-youth-evidence",
+    "type": "article-journal",
+    "title": "Religiosity and spirituality in the prevention and management of depression and anxiety in young people: a systematic review and meta-analysis",
+    "URL": "https://doi.org/10.1186/s12888-023-05091-2",
+    "note": "Shilpa Aggarwal, Judith Wright, Amy Morgan, George Patton, Nicola Reavley (2023). Religiosity and spirituality in the prevention and management of depression and anxiety in young people: a systematic review and meta-analysis. BMC Psychiatry. https://doi.org/10.1186/s12888-023-05091-2",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "DOI": "10.1186/s12888-023-05091-2",
+    "container-title": "BMC Psychiatry",
+    "volume": "23",
+    "issue": "1",
+    "page": "729",
+    "author": [
+      {
+        "literal": "Shilpa Aggarwal"
+      },
+      {
+        "literal": "Judith Wright"
+      },
+      {
+        "literal": "Amy Morgan"
+      },
+      {
+        "literal": "George Patton"
+      },
+      {
+        "literal": "Nicola Reavley"
+      }
+    ]
+  },
+  {
+    "id": "s-older-adults",
+    "type": "article-journal",
+    "title": "Religiosity/Spirituality and Mental Health in Older Adults: A Systematic Review and Meta-Analysis of Observational Studies",
+    "URL": "https://doi.org/10.3389/fmed.2022.877213",
+    "note": "Hélio José Coelho-Júnior, Riccardo Calvani, Francesco Panza, Riccardo F. Allegri, Anna Picca, Emanuele Marzetti, Vicente Paulo Alves (2022). Religiosity/Spirituality and Mental Health in Older Adults: A Systematic Review and Meta-Analysis of Observational Studies. Frontiers in Medicine. https://doi.org/10.3389/fmed.2022.877213",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.3389/fmed.2022.877213",
+    "container-title": "Frontiers in Medicine",
+    "volume": "9",
+    "page": "877213",
+    "author": [
+      {
+        "literal": "Hélio José Coelho-Júnior"
+      },
+      {
+        "literal": "Riccardo Calvani"
+      },
+      {
+        "literal": "Francesco Panza"
+      },
+      {
+        "literal": "Riccardo F. Allegri"
+      },
+      {
+        "literal": "Anna Picca"
+      },
+      {
+        "literal": "Emanuele Marzetti"
+      },
+      {
+        "literal": "Vicente Paulo Alves"
+      }
+    ]
+  },
+  {
+    "id": "s-attendance-cohorts",
+    "type": "article-journal",
+    "title": "Religious-service attendance and subsequent health and well-being throughout adulthood: evidence from three prospective cohorts",
+    "URL": "https://doi.org/10.1093/ije/dyaa120",
+    "note": "Ying Chen, Eric S Kim, Tyler J VanderWeele (2020). Religious-service attendance and subsequent health and well-being throughout adulthood: evidence from three prospective cohorts. International Journal of Epidemiology. https://doi.org/10.1093/ije/dyaa120",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "DOI": "10.1093/ije/dyaa120",
+    "container-title": "International Journal of Epidemiology",
+    "volume": "49",
+    "issue": "6",
+    "page": "2030-2040",
+    "author": [
+      {
+        "literal": "Ying Chen"
+      },
+      {
+        "literal": "Eric S Kim"
+      },
+      {
+        "literal": "Tyler J VanderWeele"
+      }
+    ]
+  },
+  {
+    "id": "s-atheist-struggles",
+    "type": "article-journal",
+    "title": "Spiritual Struggles among Atheists: Links to Psychological Distress and Well-Being",
+    "URL": "https://doi.org/10.3390/rel9080242",
+    "note": "Aaron E. Sedlar, Nick Stauner, Kenneth I. Pargament, Julie J. Exline, Joshua B. Grubbs, David F. Bradley (2018). Spiritual Struggles among Atheists: Links to Psychological Distress and Well-Being. Religions. https://doi.org/10.3390/rel9080242",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "DOI": "10.3390/rel9080242",
+    "container-title": "Religions",
+    "volume": "9",
+    "issue": "8",
+    "page": "242",
+    "author": [
+      {
+        "literal": "Aaron E. Sedlar"
+      },
+      {
+        "literal": "Nick Stauner"
+      },
+      {
+        "literal": "Kenneth I. Pargament"
+      },
+      {
+        "literal": "Julie J. Exline"
+      },
+      {
+        "literal": "Joshua B. Grubbs"
+      },
+      {
+        "literal": "David F. Bradley"
+      }
+    ]
+  },
+  {
+    "id": "s-religious-cbt",
+    "type": "article-journal",
+    "title": "Religious vs. Conventional Cognitive Behavioral Therapy for Major Depression in Persons With Chronic Medical Illness",
+    "URL": "https://doi.org/10.1097/NMD.0000000000000273",
+    "note": "Harold G. Koenig, Michelle J. Pearce, Bruce Nelson, Sally F. Shaw, Clive J. Robins, Noha S. Daher, Harvey Jay Cohen, Lee S. Berk, Denise L. Bellinger, Kenneth I. Pargament, David H. Rosmarin, Sasan Vasegh, Jean Kristeller, Nalini Juthani, Douglas Nies, Michael B. King (2015). Religious vs. Conventional Cognitive Behavioral Therapy for Major Depression in Persons With Chronic Medical Illness. Journal of Nervous & Mental Disease. https://doi.org/10.1097/NMD.0000000000000273",
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "DOI": "10.1097/NMD.0000000000000273",
+    "container-title": "Journal of Nervous & Mental Disease",
+    "volume": "203",
+    "issue": "4",
+    "page": "243-251",
+    "author": [
+      {
+        "literal": "Harold G. Koenig"
+      },
+      {
+        "literal": "Michelle J. Pearce"
+      },
+      {
+        "literal": "Bruce Nelson"
+      },
+      {
+        "literal": "Sally F. Shaw"
+      },
+      {
+        "literal": "Clive J. Robins"
+      },
+      {
+        "literal": "Noha S. Daher"
+      },
+      {
+        "literal": "Harvey Jay Cohen"
+      },
+      {
+        "literal": "Lee S. Berk"
+      },
+      {
+        "literal": "Denise L. Bellinger"
+      },
+      {
+        "literal": "Kenneth I. Pargament"
+      },
+      {
+        "literal": "David H. Rosmarin"
+      },
+      {
+        "literal": "Sasan Vasegh"
+      },
+      {
+        "literal": "Jean Kristeller"
+      },
+      {
+        "literal": "Nalini Juthani"
+      },
+      {
+        "literal": "Douglas Nies"
+      },
+      {
+        "literal": "Michael B. King"
+      }
+    ]
+  },
+  {
+    "id": "s-disaster-needs",
+    "type": "article-journal",
+    "title": "Deprem Sonrası Manevi Danışmanlık ve Rehberlik İhtiyaçları: Psiko-Sosyal Destek Uzmanlarının Görüşlerine Dayalı Nitel Bir Araştırma",
+    "URL": "https://doi.org/10.56432/tmdrd.1645518",
+    "note": "İclal Öztürk, Ümit Horozcu (2025). Deprem Sonrası Manevi Danışmanlık ve Rehberlik İhtiyaçları: Psiko-Sosyal Destek Uzmanlarının Görüşlerine Dayalı Nitel Bir Araştırma. Türk Manevi Danışmanlık ve Rehberlik Dergisi. https://doi.org/10.56432/tmdrd.1645518",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.56432/tmdrd.1645518",
+    "container-title": "Türk Manevi Danışmanlık ve Rehberlik Dergisi",
+    "issue": "11",
+    "page": "85-118",
+    "author": [
+      {
+        "literal": "İclal Öztürk"
+      },
+      {
+        "literal": "Ümit Horozcu"
+      }
+    ]
+  },
+  {
+    "id": "s-brief-rcope",
+    "type": "article-journal",
+    "title": "The Brief RCOPE: Current Psychometric Status of a Short Measure of Religious Coping",
+    "URL": "https://doi.org/10.3390/rel2010051",
+    "note": "Kenneth Pargament, Margaret Feuille, Donna Burdzy (2011). The Brief RCOPE: Current Psychometric Status of a Short Measure of Religious Coping. Religions. https://doi.org/10.3390/rel2010051",
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "DOI": "10.3390/rel2010051",
+    "container-title": "Religions",
+    "volume": "2",
+    "issue": "1",
+    "page": "51-76",
+    "author": [
+      {
+        "literal": "Kenneth Pargament"
+      },
+      {
+        "literal": "Margaret Feuille"
+      },
+      {
+        "literal": "Donna Burdzy"
+      }
+    ]
+  },
+  {
+    "id": "s-meaning-questionnaire",
+    "type": "article-journal",
+    "title": "The meaning in life questionnaire: Assessing the presence of and search for meaning in life.",
+    "URL": "https://doi.org/10.1037/0022-0167.53.1.80",
+    "note": "Michael F. Steger, Patricia Frazier, Shigehiro Oishi, Matthew Kaler (2006). The meaning in life questionnaire: Assessing the presence of and search for meaning in life.. Journal of Counseling Psychology. https://doi.org/10.1037/0022-0167.53.1.80",
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "DOI": "10.1037/0022-0167.53.1.80",
+    "container-title": "Journal of Counseling Psychology",
+    "volume": "53",
+    "issue": "1",
+    "page": "80-93",
+    "author": [
+      {
+        "literal": "Michael F. Steger"
+      },
+      {
+        "literal": "Patricia Frazier"
+      },
+      {
+        "literal": "Shigehiro Oishi"
+      },
+      {
+        "literal": "Matthew Kaler"
+      }
+    ]
+  },
+  {
+    "id": "s-durel",
+    "type": "article-journal",
+    "title": "The Duke University Religion Index (DUREL): A Five-Item Measure for Use in Epidemological Studies",
+    "URL": "https://doi.org/10.3390/rel1010078",
+    "note": "Harold G. Koenig, Arndt Büssing (2010). The Duke University Religion Index (DUREL): A Five-Item Measure for Use in Epidemological Studies. Religions. https://doi.org/10.3390/rel1010078",
+    "issued": {
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
+    },
+    "DOI": "10.3390/rel1010078",
+    "container-title": "Religions",
+    "volume": "1",
+    "issue": "1",
+    "page": "78-85",
+    "author": [
+      {
+        "literal": "Harold G. Koenig"
+      },
+      {
+        "literal": "Arndt Büssing"
       }
     ]
   }
