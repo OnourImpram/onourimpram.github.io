@@ -1,9 +1,17 @@
 import {createElement, Component} from 'react';
 type Props = {src: string; alt: string; srcSet?: string; sizes?: string; className?: string; fallbackSrc?: string; [key: string]: any};
 type State = {retried: boolean; failed: boolean};
+const staticFailures = new Set<string>();
+/** Carry an already failed HTML request into the client, instead of repeating it. */
+export function rememberStaticImageFailures(root: ParentNode | null) {
+ root?.querySelectorAll<HTMLImageElement>('img').forEach(img => {
+  const src = img.getAttribute('src');
+  if (src && img.complete && !img.naturalWidth) staticFailures.add(src);
+ });
+}
 /** Keep a real img in successful layouts. One retry only, then an explicit accessible state. */
 export class ResilientImage extends Component<Props, State> {
- state: State = {retried: false, failed: false};
+ state: State = {retried: staticFailures.has(this.props.src), failed: false};
  private element: HTMLImageElement | null = null;
  onError = () => {
   if (this.state.failed) return;

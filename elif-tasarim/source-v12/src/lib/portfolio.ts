@@ -1,4 +1,5 @@
 import {beds} from './beds';
+import {pinReferenceUrl,pinLookup} from './pinterest';
 export type WorkCategory='mutfak'|'tv-unitesi'|'vestiyer'|'gardrop'|'kahve-kosesi'|'sehpa'|'pergola'|'ozel-tasarim'|'baza-yatak';
 export type Work={id:string;title:string;category:WorkCategory;images:string[];status:'work'|'process';subtitle:string;description:string;features:string[]};
 export const workCategories=[
@@ -55,7 +56,8 @@ export function workPhotoEvidence(work:Work,index=0):WorkPhotoEvidence{
  const note=archivePhotoNotes[image];
  return {image,source:'workshop-archive',kind:note?.kind||work.status,caption:note?.caption||work.subtitle+'. Paylaşılan atölye arşivinden.'};
 }
-export const featuredWorks=['sade-kose-mutfak','isikli-tv-unitesi','kemerli-kahve-kosesi','rafli-depolama','cam-kapak-giyinme','ahsap-bahce-kamelyasi'];
+export function workDisplayStage(work:Work):'work'|'process'{return work.images.some((_,i)=>workPhotoEvidence(work,i).kind==='work')?'work':'process';}
+export const featuredWorks=['sade-kose-mutfak','isikli-tv-unitesi','kemerli-kahve-kosesi','rafli-depolama','cam-kapak-giyinme','yatak-cevresi-depolama'];
 export const concepts=[
  {id:'oval-orta-sehpa',title:'Bir araya gelmenin doğal hâli.',category:'sehpa',image:'concept-sehpa',subtitle:'Oval orta sehpa ve zigon fikri'},
  {id:'kahve-ritueli',title:'Kendinize küçük bir köşe.',category:'kahve-kosesi',image:'concept-kahve',subtitle:'Işıklı vitrin ve kahve köşesi fikri'},
@@ -88,17 +90,23 @@ export const pinterestReferences=[
  {id:'5mqOqX5LH',group:'shared',title:'Birlikte seçtiklerimiz 02',category:'ozel-tasarim'},
  {id:'5i4CyJrkM',group:'shared',title:'Birlikte seçtiklerimiz 03',category:'ozel-tasarim'},
  {id:'1pLUfH5pe',group:'shared',title:'Birlikte seçtiklerimiz 04',category:'ozel-tasarim'},
+ {"id": "885027764302674185", "group": "curated", "title": "Cam kapaklı kompakt kahve dolabı", "category": "kahve-kosesi"},
+ {"id": "364580532351649400", "group": "curated", "title": "Kavis boyunca kayan çıtalı kapak", "category": "vestiyer"},
+ {"id": "748653138104147118", "group": "curated", "title": "Pencere önünde bank ve kitaplık", "category": "ozel-tasarim"},
+ {"id": "362610207521373861", "group": "curated", "title": "İçinde saklama alanı olan ahşap bank", "category": "vestiyer"},
+ {"id": "799037158930919259", "group": "curated", "title": "Üst çekmeceli kompakt çalışma masası", "category": "ozel-tasarim"},
+ {"id": "4595501306841470848", "group": "curated", "title": "Kitaplıkla bütünleşen okuma köşesi", "category": "ozel-tasarim"},
 ] as const;
 /** The first four are an editorial window, never a destructive catalogue limit. */
 export function visiblePinterestReferences(group:string,expanded=false){
  const entries=pinterestReferences.filter(p=>p.group===group);
  return expanded?entries:entries.slice(0,4);
 }
-export const mainNavigation=[['/projeler','Çalışmalar'],['/kategoriler','Üretim Alanları'],['/ilham-modelleri','İlham Modelleri'],['/modelini-getir','Kendi Modeliniz'],['/tasarim-masasi','3D Stüdyo'],['/atolye','Atölye'],['/iletisim','İletişim']] as const;
+export const mainNavigation=[['/projeler','Bitirdiğimiz İşler'],['/ilham-modelleri','İlham Alın'],['/modelini-getir','Kendi Modelinizi Getirin'],['/tasarim-masasi','3D Stüdyo'],['/atolye','Atölye'],['/iletisim','İletişim']] as const;
 export function categoryName(id:string){return workCategories.find(c=>c.id===id)?.name||'Özel Tasarım'}
 export function modelHref(ref:string,category='ozel-tasarim',note='',sourceId=''){
  const work=works.find(w=>note.startsWith(w.subtitle)),concept=concepts.find(c=>note.startsWith(c.subtitle));
- const pin=pinterestReferences.find(p=>ref==='https://pin.it/'+p.id);
+ const pin=pinterestReferences.find(p=>ref===pinReferenceUrl(p.id)||ref===pinLookup[p.id]?.canonical);
  const source=sourceId||(ref&&pin?'pin:'+pin.id:!ref&&work?'work:'+work.id:!ref&&concept?'concept:'+concept.id:'');
  const q=new URLSearchParams({ref,kategori:category,fikir:note});if(source)q.set('kaynak',source);
  return '/modelini-getir?'+q.toString();

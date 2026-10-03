@@ -1,4 +1,4 @@
-/* Focused discovery and brief layouts. Keep the home composition unchanged. */
+/* Two discovery destinations, source-aware references and a direct model brief. */
 .discovery-head.v6-page-head {padding-top:44px;padding-bottom:28px}
 .discovery-head.v6-page-head>div {align-items:center}
 .discovery-head.v6-page-head h1 {font-size:clamp(38px,4.5vw,66px);line-height:1.06}
@@ -58,3 +58,48 @@ header.inspiration-heading>div.inspiration-entry-actions {display:flex;align-ite
  .model-request .model-form {order:1;min-width:0}
 }
 @media(prefers-reduced-motion:reduce){.concept-image img {transition:none}}
+
+.pin-selection-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.pin-card.pin-curated-card {padding:0;overflow:hidden;gap:0}
+.pin-curated-card .pin-visual {width:100%;background:#e8dfd1;aspect-ratio:5/4;display:grid;place-items:center}
+.pin-visual>img {width:100%;height:100%;max-height:430px;object-fit:contain;display:block}
+.pin-visual>.image-unavailable {min-height:220px;padding:20px;display:grid;gap:10px;align-content:center}
+.pin-load-tile {border:0;background:transparent;width:100%;height:100%;min-height:220px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;padding:24px;color:#604832;cursor:pointer}
+.pin-load-tile>span {font:italic 48px Georgia,serif;line-height:1}
+.pin-load-tile strong {font-size:14px;font-weight:500;line-height:1.6}
+.pin-load-tile small {font-size:12px;line-height:1.6;color:#79624e}
+.pin-card .pin-card-copy {width:100%;min-width:0;display:flex;flex-direction:column;gap:10px;margin:0}
+.pin-curated-card .pin-card-copy {padding:24px}
+.pin-card .pin-card-copy h3 {font-size:25px;line-height:1.25;margin:0}
+.pin-card .pin-design-note {font-size:13px;line-height:1.8;margin:0;color:#604d3b}
+.pin-card .pin-credit,.pin-card .pin-ai-note {font-size:11px;line-height:1.65;margin:0;color:#75614d}
+.pin-card .pin-card-copy .v7-save-text {margin-top:8px;min-height:44px;white-space:normal;font-size:12px}
+.pin-card .pin-card-actions {display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;margin-top:auto}
+.pin-card .pin-card-actions .text-link {font-size:12px;min-height:44px;line-height:1.6}
+.pin-toolbar .button {white-space:normal;text-align:left;min-height:44px}
+.pin-more #pin-expanded-list {grid-template-columns:repeat(3,minmax(0,1fr))}
+.pin-more .pin-curated-card .pin-visual {aspect-ratio:4/3}
+.portfolio-section .filter-chips {margin-top:20px}
+.home-yunus-copy .eyebrow {line-height:1.8}
+.v6-final-cta p {max-width:610px;margin-inline:auto;line-height:1.8}
+.model-callout-copy .eyebrow {line-height:1.8}
+@media(min-width:1200px){
+ .pin-selection-grid .pin-curated-card {display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:stretch}
+ .pin-selection-grid .pin-visual {aspect-ratio:auto;min-height:320px;height:100%}
+ .pin-selection-grid .pin-visual>img {height:100%;max-height:420px;object-fit:contain}
+ .pin-selection-grid .pin-card-copy {padding:24px 22px}
+}
+@media(max-width:800px){
+ .pin-more #pin-expanded-list {grid-template-columns:repeat(2,minmax(0,1fr))}
+ .pin-card .pin-card-copy h3 {font-size:24px}
+ .pin-card .pin-credit,.pin-card .pin-ai-note {font-size:12px}
+ .portfolio-section .filter-chips {flex-wrap:nowrap;overflow-x:auto;padding-bottom:10px;scrollbar-width:thin}
+ .portfolio-section .filter-chips button {flex:0 0 auto;white-space:nowrap}
+}
+@media(max-width:600px){
+ .pin-selection-grid,.pin-more #pin-expanded-list {grid-template-columns:1fr}
+ .pin-visual {max-height:360px}
+ .pin-curated-card .pin-card-copy {padding:22px}
+ .pin-card .pin-card-actions {display:grid;gap:4px}
+ .pin-card .pin-card-actions .text-link {font-size:13px}
+}

@@ -15,7 +15,7 @@ test('featured card title is the specific application, not a repeated category',
  const s=read('src/components/PortfolioUI.tsx');assert.match(s,/featured\?w.subtitle:w.title/);assert.doesNotMatch(s,/featured\?categoryName/);
 });
 test('process detail and empty project filter offer context-specific navigation',()=>{
- const s=read('src/pages/Portfolio.tsx');assert.match(s,/w.status==='process'\?'\/projeler\?durum=process'/);assert.match(s,/Bu alanın ilham modellerini inceleyin/);assert.match(s,/'\/kategoriler\/'.*s.category/);
+ const s=read('src/pages/Portfolio.tsx');assert.match(s,/workDisplayStage\(w\)==='process'\?'\/projeler\?durum=process'/);assert.match(s,/Bu alanın ilham modellerini inceleyin/);assert.match(s,/'\/ilham-modelleri\?alan='.*s.category/);
 });
 test('three added service guides contain different decisions, preparations and valid evidence',()=>{
  const p=load('src/lib/portfolio.ts'),d=load('src/lib/service-content.ts').serviceContent;
@@ -26,9 +26,9 @@ test('three added service guides contain different decisions, preparations and v
 test('a service concept cannot be labelled as a real workshop application',()=>{
  const s=read('src/components/ServiceGuide.tsx');assert.match(s,/x.concept/);assert.match(s,/KONSEPTTEN BİR FİKİR/);assert.doesNotMatch(s,/works.find\(.*!;/);
 });
-test('Pinterest overview defaults to 4 and expansion retains all 12 records',()=>{
+test('Pinterest overview defaults to 4, adds six curated models and retains the original 12',()=>{
  const p=load('src/lib/portfolio.ts');assert.equal(typeof p.visiblePinterestReferences,'function');
- assert.equal(p.visiblePinterestReferences('atelier').length,4);assert.equal(p.visiblePinterestReferences('atelier',true).length,8);assert.equal(p.visiblePinterestReferences('shared').length,4);assert.equal(p.visiblePinterestReferences('invalid').length,0);assert.equal(p.pinterestReferences.length,12);
+ assert.equal(p.visiblePinterestReferences('atelier').length,4);assert.equal(p.visiblePinterestReferences('atelier',true).length,8);assert.equal(p.visiblePinterestReferences('shared').length,4);assert.equal(p.visiblePinterestReferences('invalid').length,0);assert.equal(p.visiblePinterestReferences('curated').length,4);assert.equal(p.visiblePinterestReferences('curated',true).length,6);assert.equal(p.pinterestReferences.length,18);
 });
 test('Pinterest common opt-in notice is linked from compact previews and targets can reveal hidden records',()=>{
  const p=read('src/pages/Portfolio.tsx'),c=read('src/components/PinterestPreview.tsx');

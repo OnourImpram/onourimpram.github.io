@@ -2,7 +2,7 @@
 
 Kullanıcının onayladığı amblemi, Zamana değer katan mobilyalar başlığını, gerçek proje ile konsept ayrımını ve Yunus Usta iletişimini koru. Telefon +90 530 879 71 69. Kullanıcının sağladığı işletme e-postası iletisim.eliftasarimatolyesi@gmail.com. Posta kutusuna erişim veya teslim testi yapılmış sayılmaz.
 
-Tek etkin build `npm run build` ile `tools/build-v25.cjs` üzerinden üretilir. Paket 0.26.0, kimlik v26.0-considered-discovery, etkin manifest release-v25.json. release-v23.json aynı manifestin tarihsel araçlar için uyumluluk kopyasıdır. Tarihsel source-v12 klasör adı etkin sürüm değildir. Eski yayın HTML'ine kod ekleme. `dist` test edilmeden yayınlama. Three.js yerel modüllerini ve lisansını koru.
+Tek etkin build `npm run build` ile `tools/build-v25.cjs` üzerinden üretilir. Paket 0.26.1, kimlik v26.1-clear-discovery, etkin manifest release-v25.json. release-v23.json aynı manifestin tarihsel araçlar için uyumluluk kopyasıdır. Tarihsel source-v12 klasör adı etkin sürüm değildir. Eski yayın HTML'ine kod ekleme. `dist` test edilmeden yayınlama. Three.js yerel modüllerini ve lisansını koru.
 
 GitHub yayını yalnız `elif-tasarim/` alt dizinini değiştirebilir. Kök index dosyasına dokunma. Uzak main tabanı değişmişse eski paketi körlemesine ezme. Force push yok.
 
@@ -28,3 +28,6 @@ Ana sayfada yalnız bazaları öne çıkaran ayrı vitrin yok. Gerçek işler ve
 
 ## V25.2 onaylı zenginleştirme
 Pinterest ilk dört referansı gösterir, fazlası doğal details ile açılır. Genel seçkiyi büyütme. Malzeme soruları fiziksel numune değildir. Fotoğraf aşamasını workPhotoEvidence yönetir, proje status alanını otomatik değiştirme. Yeni rehberler mevcut serviceContent içinde kalır. Fotoğraf örneği yoksa konsepti gerçek çalışma gibi etiketleme. Üç özgün müşteri hikâyesi ve numune fotoğrafları hâlâ gerçek girdi bekler.
+
+## V26.1 kullanıcının son düzenlemesi
+Ana keşif ikiye ayrılır: Bitirdiğimiz İşler ve İlham Alın. Üretim alanları bu bölümlerde filtre olarak kalır, üçüncü ana menü girişi değildir. Gerçek işler ile konsept/Pinterest referansları birbirine karıştırılmaz. Yalnız kurulum fotoğrafı bulunan kayıtlar, özgün proje status alanı değiştirilmeden Uygulama Aşamaları seçkisinde gösterilir. Kendi Modelinizi Getirin çağrısı görünür kalır. Yunus Usta'nın her işe kendi evinde kullanacakmış gibi özenle yaklaşması kullanıcı tarafından doğrulanmıştır; doğrudan söylenmiş bir alıntı gibi yazılmaz. Altı yeni Pinterest referansı 3 Ekim 2026'da görselleriyle incelenmiştir. Dört ilk kart, devamında eski kayıtları da koruyan açılır bölüm vardır. Harici görseller kullanıcı seçmeden yüklenmez. Kaynakta görülen yapay zekâ etiketi korunur.
