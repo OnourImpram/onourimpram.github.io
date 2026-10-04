@@ -221,6 +221,139 @@
           "not-clinical-need-assessment"
         ]
       }
+    },
+    {
+      "id": "swbs-eksi-kardas",
+      "sourceId": "s-swbs-eksi-kardas",
+      "brief": {
+        "design": "scale-development",
+        "population": "865 participants in Türkiye, age range 16–54 in Methods although described as adults",
+        "inspection": "targeted-fulltext",
+        "inspectionURL": "https://dergipark.org.tr/tr/download/article-file/317808",
+        "inspectionDetail": "Targeted full-text inspection of abstract, Methods and Tables 4 and 6, especially printed pages 76–84. Table 6 visually inspected. This is not a comprehensive psychometric appraisal or correction/retraction search.",
+        "limitationCodes": [
+          "same-sample-efa-cfa",
+          "abstract-table-srmr-discrepancy-unresolved",
+          "adult-label-includes-age16",
+          "measurement-invariance-not-verified",
+          "no-diagnostic-cutoffs"
+        ],
+        "instrument": {
+          "name": "Spiritual Well-Being Scale",
+          "authors": [
+            "Halil Ekşi",
+            "Selami Kardaş"
+          ],
+          "items": 29,
+          "responseCategories": 5,
+          "dimensions": [
+            "transcendence",
+            "harmony with nature",
+            "anomie"
+          ],
+          "validationSample": {
+            "n": 865,
+            "ageRange": "16–54",
+            "sameDataEFAandCFA": true
+          },
+          "totalAlphaReported": ".886",
+          "scoreEquivalenceEstablished": false,
+          "itemReusePermissionVerified": false
+        },
+        "reportedDiscrepancies": {
+          "srmr": {
+            "abstract": ".50",
+            "table6": ".050",
+            "tablePage": 84,
+            "resolved": false
+          }
+        },
+        "primaryDocuments": [
+          {
+            "url": "https://dergipark.org.tr/en/pub/spiritualpc/article/323508",
+            "role": "metadata-and-abstract",
+            "labelKey": "docArticle"
+          },
+          {
+            "url": "https://dergipark.org.tr/tr/download/article-file/317808",
+            "role": "targeted-fulltext",
+            "pages": "76–84, Table 6 p84",
+            "labelKey": "docFullText"
+          }
+        ],
+        "doi": "10.12738/spc.2017.1.0022",
+        "checked": "2026-10-04",
+        "findingDirection": "measurement"
+      }
+    },
+    {
+      "id": "swbs-paloutzian-ellison",
+      "sourceId": "s-swbs-paloutzian-ellison",
+      "brief": {
+        "design": "measurement-overview",
+        "population": "Original English measure, 1982. Article abstract plus author-hosted manual and Turkish form, not one validation sample.",
+        "inspection": "official-author-manual-form-and-article-abstract",
+        "inspectionURL": "https://www.westmont.edu/psychology/raymond-paloutzian-spiritual-wellbeing-scale",
+        "inspectionDetail": "Sage article identity and abstract, author-hosted SWBS Manual version 2.02, 2022 Turkish form and its copyright/use statement. Full 1983 article methods and all adaptation evidence not appraised.",
+        "limitationCodes": [
+          "turkish-form-not-validation-study",
+          "measurement-invariance-not-verified",
+          "different-instrument-same-name",
+          "no-score-equating",
+          "reuse-conditions-not-open-license"
+        ],
+        "instrument": {
+          "name": "Spiritual Well-Being Scale",
+          "authors": [
+            "Raymond F. Paloutzian",
+            "Craig W. Ellison"
+          ],
+          "originalYear": 1982,
+          "originalLanguage": "en",
+          "items": 20,
+          "responseCategories": 6,
+          "dimensions": [
+            "religious wellbeing",
+            "existential wellbeing"
+          ],
+          "itemsPerDimension": 10,
+          "turkishFormYear": 2022,
+          "turkishPsychometricValidationVerified": false,
+          "scoreEquivalenceEstablished": false,
+          "rights": {
+            "noCostUseAuthorStated": true,
+            "retainCopyrightByline": true,
+            "properCitationRequired": true,
+            "openLicenseClaimed": false,
+            "itemsHostedByMARSAM": false
+          }
+        },
+        "primaryDocuments": [
+          {
+            "url": "https://journals.sagepub.com/doi/10.1177/009164718301100406",
+            "role": "article-metadata-and-abstract",
+            "labelKey": "docArticle"
+          },
+          {
+            "url": "https://www.westmont.edu/psychology/raymond-paloutzian-spiritual-wellbeing-scale",
+            "role": "author-information-and-language-availability",
+            "labelKey": "docAuthor"
+          },
+          {
+            "url": "https://www.westmont.edu/sites/default/files/users/user401/SWBS%20Manual%202.0_0.pdf",
+            "role": "author-manual-v2.02",
+            "labelKey": "docManual"
+          },
+          {
+            "url": "https://www.westmont.edu/sites/default/files/users/user401/Turkish%20SWBS%202022.pdf",
+            "role": "turkish-form-and-use-conditions",
+            "labelKey": "docTurkishForm"
+          }
+        ],
+        "doi": "10.1177/009164718301100406",
+        "checked": "2026-10-04",
+        "findingDirection": "measurement"
+      }
     }
   ],
   "themes": [

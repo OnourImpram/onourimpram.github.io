@@ -1587,6 +1587,294 @@
       "status": "AI_ASSISTED_DRAFT",
       "humanReviewed": false,
       "scientificApproval": false
+    },
+    {
+      "id": "swbs-eksi-kardas",
+      "locale": "tr",
+      "sourceLanguage": null,
+      "briefHash": "50b3f9f55f0d96ee532a8b0bfd650186f06c0564d7164a9f0c5d99c4538531d3",
+      "editionHash": "0b397c7290583b6156865815b2708bc876276088bf822579c04a45c0a48f21ea",
+      "claimIds": [
+        "swbs-eksi-kardas:population",
+        "swbs-eksi-kardas:finding",
+        "swbs-eksi-kardas:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-eksi-kardas"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "swbs-eksi-kardas",
+      "locale": "en",
+      "sourceLanguage": null,
+      "briefHash": "50b3f9f55f0d96ee532a8b0bfd650186f06c0564d7164a9f0c5d99c4538531d3",
+      "editionHash": "05ac6ef55424b87ce610243ccf25b74acf42e2b9de67cdf29c34ffba7c78dc2b",
+      "claimIds": [
+        "swbs-eksi-kardas:population",
+        "swbs-eksi-kardas:finding",
+        "swbs-eksi-kardas:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-eksi-kardas"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "swbs-eksi-kardas",
+      "locale": "de",
+      "sourceLanguage": null,
+      "briefHash": "50b3f9f55f0d96ee532a8b0bfd650186f06c0564d7164a9f0c5d99c4538531d3",
+      "editionHash": "77fff2015a185050c2bce4b4ce565b6890ad0cf656cc0913c1869bb086bbe2c0",
+      "claimIds": [
+        "swbs-eksi-kardas:population",
+        "swbs-eksi-kardas:finding",
+        "swbs-eksi-kardas:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-eksi-kardas"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "swbs-eksi-kardas",
+      "locale": "zh",
+      "sourceLanguage": null,
+      "briefHash": "50b3f9f55f0d96ee532a8b0bfd650186f06c0564d7164a9f0c5d99c4538531d3",
+      "editionHash": "18af1b9dca9b26967b8da14b7c3a06cd43bc843d80971e8e2a5c2be018bdf6e0",
+      "claimIds": [
+        "swbs-eksi-kardas:population",
+        "swbs-eksi-kardas:finding",
+        "swbs-eksi-kardas:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-eksi-kardas"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "swbs-eksi-kardas",
+      "locale": "ru",
+      "sourceLanguage": null,
+      "briefHash": "50b3f9f55f0d96ee532a8b0bfd650186f06c0564d7164a9f0c5d99c4538531d3",
+      "editionHash": "7bb7dd1b5dd77d4ebc5904fa5328afadf4cf7a87170549c378dd9f1dee004653",
+      "claimIds": [
+        "swbs-eksi-kardas:population",
+        "swbs-eksi-kardas:finding",
+        "swbs-eksi-kardas:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-eksi-kardas"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "swbs-eksi-kardas",
+      "locale": "ar",
+      "sourceLanguage": null,
+      "briefHash": "50b3f9f55f0d96ee532a8b0bfd650186f06c0564d7164a9f0c5d99c4538531d3",
+      "editionHash": "516a90124b3bcd4c3ce046f890992a202f9f13820473b658fb3e39493c66842c",
+      "claimIds": [
+        "swbs-eksi-kardas:population",
+        "swbs-eksi-kardas:finding",
+        "swbs-eksi-kardas:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-eksi-kardas"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "swbs-eksi-kardas",
+      "locale": "id",
+      "sourceLanguage": null,
+      "briefHash": "50b3f9f55f0d96ee532a8b0bfd650186f06c0564d7164a9f0c5d99c4538531d3",
+      "editionHash": "346df17996e00e14e43caf64927ac5a46c7ce78cda967ccd9c3da5f845c1934f",
+      "claimIds": [
+        "swbs-eksi-kardas:population",
+        "swbs-eksi-kardas:finding",
+        "swbs-eksi-kardas:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-eksi-kardas"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "swbs-eksi-kardas",
+      "locale": "ms",
+      "sourceLanguage": null,
+      "briefHash": "50b3f9f55f0d96ee532a8b0bfd650186f06c0564d7164a9f0c5d99c4538531d3",
+      "editionHash": "30c20b787c1a7dbb079370fe6846b7da1217dba1feedeeeaf833b9435f20b2e5",
+      "claimIds": [
+        "swbs-eksi-kardas:population",
+        "swbs-eksi-kardas:finding",
+        "swbs-eksi-kardas:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-eksi-kardas"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "swbs-paloutzian-ellison",
+      "locale": "tr",
+      "sourceLanguage": null,
+      "briefHash": "eba8530a3a7e31e801191c765181b820d66d94603557a9995ded27d1fdf8c1fb",
+      "editionHash": "fb0ca95e61befade0b303525c270b26f2142e08cfe1d385c4ad1682b746b67f5",
+      "claimIds": [
+        "swbs-paloutzian-ellison:population",
+        "swbs-paloutzian-ellison:finding",
+        "swbs-paloutzian-ellison:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-paloutzian-ellison"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "swbs-paloutzian-ellison",
+      "locale": "en",
+      "sourceLanguage": null,
+      "briefHash": "eba8530a3a7e31e801191c765181b820d66d94603557a9995ded27d1fdf8c1fb",
+      "editionHash": "6df26c024dc544489c8ee239099e679b5a2fc4059707c5cfe1ef338ea01cd0fe",
+      "claimIds": [
+        "swbs-paloutzian-ellison:population",
+        "swbs-paloutzian-ellison:finding",
+        "swbs-paloutzian-ellison:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-paloutzian-ellison"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "swbs-paloutzian-ellison",
+      "locale": "de",
+      "sourceLanguage": null,
+      "briefHash": "eba8530a3a7e31e801191c765181b820d66d94603557a9995ded27d1fdf8c1fb",
+      "editionHash": "8f29edd0d1a670565a191d4d14e12068ceda7c8ee1363a6c2675abd041e8e899",
+      "claimIds": [
+        "swbs-paloutzian-ellison:population",
+        "swbs-paloutzian-ellison:finding",
+        "swbs-paloutzian-ellison:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-paloutzian-ellison"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "swbs-paloutzian-ellison",
+      "locale": "zh",
+      "sourceLanguage": null,
+      "briefHash": "eba8530a3a7e31e801191c765181b820d66d94603557a9995ded27d1fdf8c1fb",
+      "editionHash": "419f7e12539fac0247e2ef0a16ade5119991c23653e905a3de7f11c31b11be07",
+      "claimIds": [
+        "swbs-paloutzian-ellison:population",
+        "swbs-paloutzian-ellison:finding",
+        "swbs-paloutzian-ellison:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-paloutzian-ellison"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "swbs-paloutzian-ellison",
+      "locale": "ru",
+      "sourceLanguage": null,
+      "briefHash": "eba8530a3a7e31e801191c765181b820d66d94603557a9995ded27d1fdf8c1fb",
+      "editionHash": "b428fd8f5bd0652b3464c384ecd8498ff17c94049a63ce711757a9ee14f4eede",
+      "claimIds": [
+        "swbs-paloutzian-ellison:population",
+        "swbs-paloutzian-ellison:finding",
+        "swbs-paloutzian-ellison:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-paloutzian-ellison"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "swbs-paloutzian-ellison",
+      "locale": "ar",
+      "sourceLanguage": null,
+      "briefHash": "eba8530a3a7e31e801191c765181b820d66d94603557a9995ded27d1fdf8c1fb",
+      "editionHash": "05f8076d02e0e083fb33cc427f3687328d235116e7a841e64ce766a0c123ccbb",
+      "claimIds": [
+        "swbs-paloutzian-ellison:population",
+        "swbs-paloutzian-ellison:finding",
+        "swbs-paloutzian-ellison:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-paloutzian-ellison"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "swbs-paloutzian-ellison",
+      "locale": "id",
+      "sourceLanguage": null,
+      "briefHash": "eba8530a3a7e31e801191c765181b820d66d94603557a9995ded27d1fdf8c1fb",
+      "editionHash": "1001ee3f25f8a75825eb603b7911027fecb67829cb43bc3f503f1e0719731b45",
+      "claimIds": [
+        "swbs-paloutzian-ellison:population",
+        "swbs-paloutzian-ellison:finding",
+        "swbs-paloutzian-ellison:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-paloutzian-ellison"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "swbs-paloutzian-ellison",
+      "locale": "ms",
+      "sourceLanguage": null,
+      "briefHash": "eba8530a3a7e31e801191c765181b820d66d94603557a9995ded27d1fdf8c1fb",
+      "editionHash": "04c39179dd84aa12a3c3b7cc717e7501df71337af056a7d34a28011081aeda6a",
+      "claimIds": [
+        "swbs-paloutzian-ellison:population",
+        "swbs-paloutzian-ellison:finding",
+        "swbs-paloutzian-ellison:limit"
+      ],
+      "sourceIds": [
+        "s-swbs-paloutzian-ellison"
+      ],
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
     }
   ]
 }

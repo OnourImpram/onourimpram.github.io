@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
-  "checked": "2026-10-01",
+  "checked": null,
+  "recordDatesAreAuthoritative": true,
   "editorialState": "preview",
   "review": "SEQUENTIAL_ROLE_REVIEW",
   "note": "Source identity and inspection scope are separate. Technical validation is not scientific approval. Audit fields below use English; interface and reading texts are localized.",
@@ -1379,6 +1380,87 @@
           "ar": "لا يقيس الروحانية بكاملها أو الحاجة السريرية.",
           "id": "Tidak mengukur seluruh spiritualitas atau kebutuhan klinis.",
           "ms": "Tidak mengukur keseluruhan kerohanian atau keperluan klinikal."
+        },
+        "identityVerified": true,
+        "collection": "foundational-research"
+      }
+    },
+    {
+      "id": "s-swbs-eksi-kardas",
+      "title": "Spiritual Well-Being: Scale Development and Validation",
+      "year": 2017,
+      "url": "https://doi.org/10.12738/spc.2017.1.0022",
+      "citation": "Halil Ekşi, Selami Kardaş (2017). Spiritual Well-Being: Scale Development and Validation. Spiritual Psychology and Counseling, 2(1), 73-88. https://doi.org/10.12738/spc.2017.1.0022",
+      "kind": "measure",
+      "language": "en",
+      "inspection": "fulltext",
+      "checked": "2026-10-04",
+      "level": "V1",
+      "status": "PARTIALLY_VERIFIED",
+      "access": "Targeted full-text inspection of abstract, Methods and Tables 4 and 6, especially printed pages 76–84. Table 6 visually inspected. This is not a comprehensive psychometric appraisal or correction/retraction search.",
+      "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+      "bibliography": {
+        "type": "article",
+        "authors": [
+          "Halil Ekşi",
+          "Selami Kardaş"
+        ],
+        "editors": [],
+        "date": "2017",
+        "journal": "Spiritual Psychology and Counseling",
+        "volume": "2",
+        "issue": "1",
+        "pages": "73-88",
+        "doi": "10.12738/spc.2017.1.0022",
+        "note": {
+          "tr": "Özette SRMR .50, Tablo 6’da .050 yazmaktadır, sayfa 84. MARSAM bu kaynak içi uyuşmazlığı çözülmüş kabul etmez. Açımlayıcı ve doğrulayıcı analizler aynı veri setindedir. Bu kayıt bağımsız doğrulamayı, gruplar arası ölçme değişmezliğini veya klinik kesme puanını doğrulamaz.",
+          "en": "The abstract reports SRMR .50, while Table 6 gives .050 on page 84. MARSAM records this unresolved source discrepancy rather than silently correcting it. Exploratory and confirmatory analyses use the same data. Independent validation, cross-group measurement invariance and clinical cut-offs are not established by this record.",
+          "de": "Im Abstract steht SRMR .50, in Tabelle 6 auf Seite 84 dagegen .050. Dieser Widerspruch bleibt ausdrücklich ungeklärt. Explorative und konfirmatorische Analysen beruhen auf demselben Datensatz. Unabhängige Validierung, Messinvarianz zwischen Gruppen und klinische Grenzwerte sind durch diesen Eintrag nicht belegt.",
+          "zh": "摘要将SRMR列为.50，第84页表6却列为.050。MARSAM保留这项尚未解决的原文差异，不擅自改正数值。探索性与验证性分析使用同一数据集。本记录未确立独立验证、跨群体测量不变性或临床界值。",
+          "ru": "В аннотации указано SRMR .50, а в таблице 6 на странице 84 стоит .050. Расхождение в источнике сохраняется как неразрешённое. Эксплораторный и конфирматорный анализы выполнены на одном наборе данных. Запись не подтверждает независимую валидацию, межгрупповую инвариантность или клинические пороги.",
+          "ar": "يرد SRMR بقيمة .50 في الملخص، مقابل .050 في الجدول 6 بالصفحة 84. يسجل MARSAM هذا التعارض بوصفه غير محسوم ولا يصحح المصدر بصمت. أُجري التحليل الاستكشافي والتوكيدي على البيانات نفسها. لا تثبت هذه البطاقة تحققاً مستقلاً أو ثبات القياس بين المجموعات أو حدوداً فاصلة سريرية.",
+          "id": "Abstrak mencantumkan SRMR .50, sedangkan Tabel 6 pada halaman 84 mencantumkan .050. Perbedaan dalam sumber ini belum terselesaikan dan tidak dikoreksi diam-diam. Analisis eksploratori dan konfirmatori memakai data yang sama. Rekaman ini tidak membuktikan validasi independen, invariansi antarkelompok atau ambang klinis.",
+          "ms": "Abstrak menyatakan SRMR .50, manakala Jadual 6 pada halaman 84 menyatakan .050. Percanggahan sumber ini belum diselesaikan dan tidak dibetulkan secara senyap. Analisis penerokaan dan pengesahan menggunakan data yang sama. Rekod ini tidak membuktikan pengesahan bebas, invarians antara kumpulan atau ambang klinikal."
+        },
+        "identityVerified": true,
+        "collection": "foundational-research"
+      }
+    },
+    {
+      "id": "s-swbs-paloutzian-ellison",
+      "title": "Spiritual Well-Being: Conceptualization and Measurement",
+      "year": 1983,
+      "url": "https://doi.org/10.1177/009164718301100406",
+      "citation": "Craig W. Ellison (1983). Spiritual Well-Being: Conceptualization and Measurement. Journal of Psychology and Theology, 11(4), 330-338. https://doi.org/10.1177/009164718301100406",
+      "kind": "measure",
+      "language": "en",
+      "inspection": "official",
+      "checked": "2026-10-04",
+      "level": "V1",
+      "status": "PARTIALLY_VERIFIED",
+      "access": "Sage article identity and abstract, author-hosted SWBS Manual version 2.02, 2022 Turkish form and its copyright/use statement. Full 1983 article methods and all adaptation evidence not appraised.",
+      "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+      "bibliography": {
+        "type": "article",
+        "authors": [
+          "Craig W. Ellison"
+        ],
+        "editors": [],
+        "date": "1983",
+        "journal": "Journal of Psychology and Theology",
+        "volume": "11",
+        "issue": "4",
+        "pages": "330-338",
+        "doi": "10.1177/009164718301100406",
+        "note": {
+          "tr": "Yazarın sayfasında 2022 tarihli Türkçe form vardır. Formun bulunması Türkçe psikometrik geçerlik veya ölçme değişmezliği kanıtı değildir, bu kayıtta böyle bir doğrulama yapılmamıştır. Ücretsiz kullanım, atıf ve telif satırını koruma koşuluna bağlıdır. MARSAM maddeleri veya puanlama formunu yeniden yayımlamaz. İki SWBS’nin puanları eşdeğer varsayılamaz.",
+          "en": "The author hosts a Turkish form dated 2022. Availability of a translation does not establish Turkish psychometric validity or measurement invariance, neither of which is verified here. No-cost use requires proper citation and retention of the copyright byline. MARSAM does not republish items or the scoring form. The two SWBS scores must not be assumed equivalent.",
+          "de": "Der Autor stellt eine türkische Fassung von 2022 bereit. Eine verfügbare Übersetzung belegt weder psychometrische Validität auf Türkisch noch Messinvarianz. Beides wurde hier nicht bestätigt. Kostenfreie Nutzung setzt korrekte Zitation und Erhalt des Urheberrechtsvermerks voraus. MARSAM veröffentlicht keine Items oder Auswertungsformulare. Die Werte beider SWBS sind nicht als gleichwertig anzusehen.",
+          "zh": "作者网站提供标注2022年的土耳其语表单。译本可获取不等于土耳其语心理测量效度或测量不变性已获得验证，本记录未确认此类证据。免费使用仍须正确引用并保留版权说明。MARSAM不转载条目或计分表，也不将两种SWBS的分数视为等值。",
+          "ru": "На сайте автора размещена турецкая форма 2022 года. Наличие перевода не доказывает психометрическую валидность на турецком языке или инвариантность измерения, эти свойства здесь не подтверждены. Бесплатное использование требует корректного цитирования и сохранения строки об авторских правах. MARSAM не перепечатывает пункты и бланк подсчёта. Эквивалентность баллов двух SWBS не предполагается.",
+          "ar": "يتيح موقع المؤلف صيغة تركية مؤرخة في 2022. إتاحة الترجمة لا تثبت صلاحيتها السيكومترية بالتركية أو ثبات القياس، ولم يُتحقق منهما هنا. يشترط الاستخدام المجاني التوثيق الصحيح والإبقاء على بيان حقوق النشر. لا يعيد MARSAM نشر الفقرات أو نموذج التصحيح. ولا تُفترض مكافأة درجات أداتي SWBS.",
+          "id": "Situs penulis menyediakan formulir bahasa Turki bertanggal 2022. Tersedianya terjemahan bukan bukti validitas psikometrik bahasa Turki atau invariansi pengukuran, keduanya belum diverifikasi di sini. Penggunaan tanpa biaya mensyaratkan sitasi yang benar dan pencantuman hak cipta. MARSAM tidak menerbitkan ulang butir atau formulir penskoran. Skor kedua SWBS tidak boleh dianggap setara.",
+          "ms": "Laman pengarang menyediakan borang bahasa Turki bertarikh 2022. Ketersediaan terjemahan bukan bukti kesahan psikometrik bahasa Turki atau invarians pengukuran, kedua-duanya belum disahkan di sini. Penggunaan tanpa bayaran mensyaratkan sitasi yang betul dan pengekalan pernyataan hak cipta. MARSAM tidak menerbitkan semula item atau borang pemarkahan. Skor kedua-dua SWBS tidak boleh dianggap setara."
         },
         "identityVerified": true,
         "collection": "foundational-research"
