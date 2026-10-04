@@ -1,0 +1,77 @@
+name: Publish MARSAM 0.9.2 symmetry repair
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/marsam-publish-0_9_2.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: marsam-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SOURCE_SHA: aeddf3f175f0ea4a799d683cc18a2d05ecc557cb
+    steps:
+      - name: Check out publishing repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Capture host revision
+        run: echo "HOST_START=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Fetch exact tested MARSAM source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git init source
+          git -C source remote add origin https://github.com/OnourImpram/MARSAM.git
+          git -C source fetch --depth=1 origin "$SOURCE_SHA"
+          git -C source checkout --detach FETCH_HEAD
+          test "$(git -C source rev-parse HEAD)" = "$SOURCE_SHA"
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Rebuild and verify exact source
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd source
+          BASE_PATH=/MARSAM/ PAGES_PREVIEW=true npm run check
+          BASE_PATH=/MARSAM/ PAGES_PREVIEW=true node scripts/budget.mjs
+          BASE_PATH=/MARSAM/ PAGES_PREVIEW=true SOURCE_COMMIT="$SOURCE_SHA" node scripts/release-manifest.mjs
+          node -e "const r=require('./dist/release.json'); if(r.sourceCommit!==process.env.SOURCE_SHA||r.version!=='0.9.2') process.exit(1)"
+          grep -F 'clip-path:polygon(84.5% 32.5%,86.5% 33%,86.2% 86.5%,84.6% 83.5%)' dist/site.css
+      - name: Stage only the MARSAM subtree
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf MARSAM
+          mkdir -p MARSAM
+          cp -a source/dist/. MARSAM/
+          test -f MARSAM/release.json
+          test -f MARSAM/tr/index.html
+          test -f MARSAM/site.css
+      - name: Refuse concurrent host changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = "$HOST_START"
+      - name: Publish and remove one-shot workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/marsam-publish-0_9_2.yml
+          git config user.name "Onour Impram"
+          git config user.email "onuribram@outlook.com"
+          git add -A MARSAM .github/workflows/marsam-publish-0_9_2.yml
+          git diff --cached --quiet && { echo "No publication changes"; exit 1; }
+          git commit -m "Publish MARSAM portal symmetry repair 0.9.2 from tested source aeddf3f"
+          git push origin HEAD:main
