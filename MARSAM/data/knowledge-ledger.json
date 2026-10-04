@@ -5033,6 +5033,775 @@
           "formalApprovalVerified": false
         }
       }
+    },
+    {
+      "id": "within-person-attendance",
+      "sourceId": "s-within-person-attendance",
+      "originalTitle": "Does Religious-Service Attendance Increase Mental Health? A Random-Intercept Cross-Lagged Panel Analysis Across 18 Years",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1177/09567976251325449"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence"
+      ],
+      "sourceRecordHash": "d4ed4c38edb03cf7f35553d5c249fa1af140beb2da955dfb396ff4e2f95995e8",
+      "versions": [
+        {
+          "id": "within-person-attendance-record",
+          "edition": null,
+          "date": "2025-03",
+          "publisher": null,
+          "identifier": [
+            "10.1177/09567976251325449"
+          ],
+          "source": "https://doi.org/10.1177/09567976251325449"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1177/09567976251325449",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-04",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-within-person-attendance-authors-1",
+          "name": "Gabriele Prati",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-within-person-attendance"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Dini etkinliklere katılım ve kişi içi değişim",
+        "en": "Religious attendance and change within individuals",
+        "de": "Religiöse Teilnahme und Veränderungen innerhalb einer Person",
+        "zh": "宗教活动参与与个体内变化",
+        "ru": "Участие в религиозных службах и изменения у одного человека",
+        "ar": "المشاركة الدينية والتغير لدى الفرد",
+        "id": "Kehadiran dalam kegiatan keagamaan dan perubahan dalam diri individu",
+        "ms": "Kehadiran dalam kegiatan agama dan perubahan dalam individu"
+      },
+      "description": {
+        "tr": "Kişi içi analizlerde katılım ile sonraki ruh sağlığı arasındaki ilişkilerin çoğu istatistiksel olarak anlamlı değildi. Az sayıdaki anlamlı ilişki iki yönde de görüldü. Gözlemsel analiz bir müdahale deneyi değildir. Anlamlı olmayan sonuçlar etkinin yokluğunu kanıtlamaz. Kişi içi değişim ile kişiler arası farklar aynı soruyu yanıtlamaz.",
+        "en": "Most within-person associations between attendance and subsequent mental health were nonsignificant. The few significant associations ran in both directions. This is observational analysis, not an intervention trial. Nonsignificance does not prove absence of an effect. Within-person change and between-person differences answer different questions.",
+        "de": "Die meisten Zusammenhänge innerhalb einer Person zwischen Teilnahme und späterer psychischer Gesundheit waren nicht signifikant. Einzelne signifikante Befunde wiesen in beide Richtungen. Die Beobachtungsanalyse ist kein Interventionsversuch. Fehlende Signifikanz belegt keine Wirkungslosigkeit. Veränderungen innerhalb einer Person sind von Unterschieden zwischen Personen zu trennen.",
+        "zh": "个体内分析中，宗教活动参与与随后心理健康的多数关联未达统计显著。少数显著关联既有正向，也有负向。 这是观察性分析，而非干预试验。不显著并不证明没有效应，个体内变化与个体间差异回答的研究问题不同。",
+        "ru": "Большинство внутриличностных связей посещаемости с последующим психическим здоровьем были статистически незначимы. Немногие значимые связи имели оба направления. Наблюдательный анализ не является испытанием вмешательства. Незначимость не доказывает отсутствие эффекта. Изменения у одного человека и различия между людьми отвечают на разные вопросы.",
+        "ar": "لم تكن معظم الارتباطات داخل الفرد بين المشاركة الدينية والصحة النفسية اللاحقة دالة إحصائياً. أما الارتباطات القليلة الدالة فظهرت في الاتجاهين. التحليل رصدي وليس تجربة تدخل. عدم الدلالة لا يثبت غياب الأثر. والتغير لدى الفرد يختلف عن الفروق بين الأفراد من حيث السؤال البحثي.",
+        "id": "Sebagian besar hubungan dalam diri individu antara kehadiran dan kesehatan mental berikutnya tidak signifikan. Beberapa hubungan yang signifikan muncul dalam kedua arah. Analisis observasional ini bukan uji intervensi. Hasil tidak signifikan bukan bukti ketiadaan efek. Perubahan dalam diri individu berbeda dari perbedaan antarindividu.",
+        "ms": "Kebanyakan perkaitan dalam individu antara kehadiran dan kesihatan mental berikutnya tidak signifikan. Beberapa perkaitan yang signifikan menunjukkan kedua-dua arah. Analisis pemerhatian ini bukan percubaan intervensi. Ketiadaan kesignifikanan tidak membuktikan ketiadaan kesan. Perubahan dalam individu dan perbezaan antara individu menjawab soalan yang berlainan."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/40112215/",
+            "https://journals.sagepub.com/doi/10.1177/09567976251325449"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Publisher abstract, open-practices statement and PubMed bibliographic record inspected. Full model specification and all sensitivity analyses were not independently appraised or reproduced.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-04"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-04",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "bidirectional-alspac",
+      "sourceId": "s-bidirectional-alspac",
+      "originalTitle": "Exploring bidirectional causality between religion and mental health: A longitudinal study using data from the parent generation of a UK birth cohort",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1371/journal.pone.0319796"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence"
+      ],
+      "sourceRecordHash": "4dd9be06a8f8913bbed1b07d4bd6490a996d1b294a622aa82ef39097c0cad9db",
+      "versions": [
+        {
+          "id": "bidirectional-alspac-record",
+          "edition": null,
+          "date": "2025-03-18",
+          "publisher": null,
+          "identifier": [
+            "10.1371/journal.pone.0319796"
+          ],
+          "source": "https://doi.org/10.1371/journal.pone.0319796"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1371/journal.pone.0319796",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-04",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-bidirectional-alspac-authors-1",
+          "name": "Daniel Major-Smith",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-bidirectional-alspac"
+        },
+        {
+          "id": "s-bidirectional-alspac-authors-2",
+          "name": "Jimmy Morgan",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-bidirectional-alspac"
+        },
+        {
+          "id": "s-bidirectional-alspac-authors-3",
+          "name": "Isaac Halstead",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-bidirectional-alspac"
+        },
+        {
+          "id": "s-bidirectional-alspac-authors-4",
+          "name": "Jean Golding",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-bidirectional-alspac"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Dindarlık ve ruh sağlığında çift yönlü ilişkiler",
+        "en": "Bidirectional associations between religiosity and mental health",
+        "de": "Wechselseitige Beziehungen zwischen Religiosität und psychischer Gesundheit",
+        "zh": "宗教性与心理健康的双向关联",
+        "ru": "Двунаправленные связи религиозности и психического здоровья",
+        "ar": "الارتباطات المتبادلة بين التدين والصحة النفسية",
+        "id": "Hubungan dua arah antara religiositas dan kesehatan mental",
+        "ms": "Perkaitan dua hala antara religiositi dan kesihatan mental"
+      },
+      "description": {
+        "tr": "Ön kayıtlı analizlerde dindarlık ile sonraki depresyon ve kaygı arasındaki çift yönlü ilişkiler çoğunlukla küçük veya sıfırla uyumluydu. Cinsiyet farklılıkları kesin değildi. Gözlemsel tasarım, kalan karıştırıcıları dışlamaz. Geniş belirsizlik aralıkları ve tarihsel ebeveyn örneklemi genellemeyi sınırlar. Sonuçlar nedenselliğin varlığını ya da yokluğunu kesinleştirmez.",
+        "en": "Preregistered analyses found mostly small or null-compatible bidirectional associations involving religiosity, depression and anxiety. Gender differences remained inconclusive. Residual confounding is possible in this observational design. Wide uncertainty and a historical parent cohort limit generalisation. Neither causal effects nor their absence are established.",
+        "de": "Präregistrierte Analysen ergaben überwiegend kleine oder mit Null vereinbare wechselseitige Zusammenhänge von Religiosität, Depression und Angst. Geschlechtsunterschiede blieben unklar. Restkonfundierung lässt sich nicht ausschließen. Große Unsicherheit und die historische Elternkohorte begrenzen die Übertragbarkeit. Weder kausale Wirkungen noch deren Abwesenheit sind belegt.",
+        "zh": "预注册分析中，宗教性、抑郁和焦虑的双向关联多数较小，或与零效应相容。性别差异仍无定论。 观察性设计不能排除残余混杂。估计的不确定性及历史父母队列限制了推广性，结果既未确立因果效应，也未证明因果效应不存在。",
+        "ru": "В пререгистрированных анализах двунаправленные связи религиозности с депрессией и тревогой были преимущественно малыми или совместимыми с нулём. Гендерные различия остались неубедительными. В наблюдательном дизайне возможно остаточное смешение. Большая неопределённость и историческая выборка родителей ограничивают обобщение. Наличие или отсутствие причинных эффектов не установлено.",
+        "ar": "أظهرت التحليلات المسجلة مسبقاً ارتباطات متبادلة صغيرة غالباً أو متوافقة مع الصفر بين التدين والاكتئاب والقلق. ولم تكن الفروق بين الجنسين حاسمة. قد تبقى عوامل مربكة في هذا التصميم الرصدي. يحد اتساع عدم اليقين والسياق التاريخي لعينة الآباء من التعميم. لا تثبت النتائج الأثر السببي ولا تنفيه.",
+        "id": "Analisis yang dipraregistrasikan menemukan hubungan dua arah religiositas, depresi, dan kecemasan yang umumnya kecil atau sesuai dengan efek nol. Perbedaan gender belum meyakinkan. Perancu residual masih mungkin dalam desain observasional. Ketidakpastian dan konteks historis kohort orang tua membatasi generalisasi. Efek kausal maupun ketiadaannya belum terbukti.",
+        "ms": "Analisis yang dipradaftarkan menemukan perkaitan dua hala religiositi, kemurungan dan kebimbangan yang kebanyakannya kecil atau selaras dengan kesan sifar. Perbezaan gender belum muktamad. Pengeliruan baki masih mungkin dalam reka bentuk pemerhatian. Ketidakpastian dan konteks sejarah kohort ibu bapa mengehadkan generalisasi. Kesan sebab akibat mahupun ketiadaannya belum dibuktikan."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0319796",
+            "https://pubmed.ncbi.nlm.nih.gov/40100890/"
+          ]
+        },
+        "inspection": {
+          "status": "fulltext",
+          "level": "V1",
+          "scope": "Publisher HTML abstract, design description, main results, limitations and bibliographic metadata inspected. Supplementary models, preregistration deviations and all numerical estimates were not independently audited.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-04"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-04",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "brazil-medical-students",
+      "sourceId": "s-brazil-medical-students",
+      "originalTitle": "Religiosity, Mental Health and Quality of Life of Brazilian Medical Students: A 2-Year Follow-Up Study",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1007/s10943-025-02461-w"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence"
+      ],
+      "sourceRecordHash": "9b0e6c30d88d1d356292f61e451bf8f80c30ba795124fe5d310b124340f6fa7f",
+      "versions": [
+        {
+          "id": "brazil-medical-students-record",
+          "edition": null,
+          "date": "2026-06",
+          "publisher": null,
+          "identifier": [
+            "10.1007/s10943-025-02461-w"
+          ],
+          "source": "https://doi.org/10.1007/s10943-025-02461-w"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1007/s10943-025-02461-w",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-04",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-brazil-medical-students-authors-1",
+          "name": "Rocío de Diego-Cordero",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-brazil-medical-students"
+        },
+        {
+          "id": "s-brazil-medical-students-authors-2",
+          "name": "Alessandra Lamas Granero Lucchetti",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-brazil-medical-students"
+        },
+        {
+          "id": "s-brazil-medical-students-authors-3",
+          "name": "Giancarlo Lucchetti",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-brazil-medical-students"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Brezilyalı tıp öğrencilerinde iki yıllık izlem",
+        "en": "A two-year follow-up of Brazilian medical students",
+        "de": "Brasilianische Medizinstudierende im Zweijahresverlauf",
+        "zh": "巴西医学生的两年随访",
+        "ru": "Двухлетнее наблюдение за бразильскими студентами-медиками",
+        "ar": "متابعة طلاب الطب في البرازيل لمدة عامين",
+        "id": "Pemantauan dua tahun pada mahasiswa kedokteran di Brasil",
+        "ms": "Susulan dua tahun dalam kalangan pelajar perubatan Brazil"
+      },
+      "description": {
+        "tr": "Örgütlü dini etkinliklere katılımdaki artış, düzeltme yapılmış analizlerde depresif belirtilerde azalma ve fiziksel yaşam kalitesinde artışla ilişkiliydi. Dindarlık DUREL ile ölçüldü. Bu gözlemsel ilişki, katılımı artırmanın tedavi etkisi olduğunu göstermez. Öğrenci örneklemi genellemeyi sınırlar. Bir çalışmada DUREL kullanılması, ölçeğin bütün dil sürümlerini doğrulamaz.",
+        "en": "In adjusted analyses, increased organisational religiosity was associated with fewer depressive symptoms and better physical quality of life. Religiosity was measured with DUREL. This observational association is not a treatment effect of increasing attendance. The student sample limits generalisation. Use of DUREL does not validate all its language versions.",
+        "de": "Zunehmende organisationale Religiosität war in adjustierten Analysen mit weniger depressiven Symptomen und höherer körperlicher Lebensqualität verbunden. Religiosität wurde mit DUREL erfasst. Der beobachtete Zusammenhang belegt keinen Behandlungseffekt verstärkter Teilnahme. Die Studierendenstichprobe begrenzt die Übertragbarkeit. Die Anwendung von DUREL validiert nicht sämtliche Sprachfassungen.",
+        "zh": "调整后的分析发现，组织性宗教活动增加与抑郁症状减少及生理领域生活质量提高相关。宗教性采用DUREL测量。 观察到的关联不等于增加参与具有治疗效果。医学生样本限制了推广范围，使用DUREL也不意味着验证了该量表的所有语言版本。",
+        "ru": "В скорректированных анализах рост организационной религиозности был связан с уменьшением депрессивных симптомов и улучшением физического качества жизни. Религиозность измерялась DUREL. Эта наблюдаемая связь не доказывает лечебный эффект увеличения посещаемости. Студенческая выборка ограничивает обобщение. Применение DUREL не валидирует все языковые версии шкалы.",
+        "ar": "ارتبط ارتفاع المشاركة في الأنشطة الدينية المنظمة بانخفاض الأعراض الاكتئابية وتحسن جودة الحياة الجسدية في التحليلات المعدلة. قيس التدين بأداة DUREL. هذا الارتباط الرصدي لا يثبت أثراً علاجياً لزيادة المشاركة. تحد عينة الطلاب من التعميم. واستخدام DUREL لا يثبت صلاحية جميع نسخه اللغوية.",
+        "id": "Dalam analisis yang disesuaikan, peningkatan religiositas organisasional berkaitan dengan berkurangnya gejala depresi dan membaiknya kualitas hidup fisik. Religiositas diukur menggunakan DUREL. Hubungan observasional ini bukan bukti efek pengobatan dari peningkatan kehadiran. Sampel mahasiswa membatasi generalisasi. Penggunaan DUREL tidak memvalidasi seluruh versi bahasanya.",
+        "ms": "Dalam analisis terlaras, peningkatan religiositi organisasi dikaitkan dengan pengurangan gejala kemurungan dan peningkatan kualiti hidup fizikal. Religiositi diukur menggunakan DUREL. Perkaitan pemerhatian ini bukan bukti kesan rawatan daripada peningkatan kehadiran. Sampel pelajar mengehadkan generalisasi. Penggunaan DUREL tidak mengesahkan semua versi bahasanya."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/41046488/",
+            "https://doi.org/10.1007/s10943-025-02461-w"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "PubMed metadata and publisher-supplied abstract inspected. Full methods, attrition, model specification and correction history were not comprehensively appraised.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-04"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-04",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "turkish-bereavement",
+      "sourceId": "s-turkish-bereavement",
+      "originalTitle": "The mediating role of spiritual well-being, meaning in life, and religiosity in the relationship between loneliness and mental well-being among Turkish older adults experiencing spousal loss",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1080/13607863.2025.2606354"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence"
+      ],
+      "sourceRecordHash": "2749b97f9de75d9cf57d1d7a83a85b122a8dc8b73cf1435efa9f2b12a5f88b98",
+      "versions": [
+        {
+          "id": "turkish-bereavement-record",
+          "edition": null,
+          "date": "2026-05",
+          "publisher": null,
+          "identifier": [
+            "10.1080/13607863.2025.2606354"
+          ],
+          "source": "https://doi.org/10.1080/13607863.2025.2606354"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1080/13607863.2025.2606354",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-04",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-turkish-bereavement-authors-1",
+          "name": "Olcan Aslan",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-turkish-bereavement"
+        },
+        {
+          "id": "s-turkish-bereavement-authors-2",
+          "name": "İrem Topuz",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-turkish-bereavement"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Türkiye’de eş kaybı, anlam ve manevi iyi oluş",
+        "en": "Spousal loss, meaning and spiritual wellbeing in Türkiye",
+        "de": "Partnerverlust, Lebenssinn und spirituelles Wohlbefinden in der Türkei",
+        "zh": "土耳其丧偶老年人的意义感与灵性福祉",
+        "ru": "Утрата супруга, смысл жизни и духовное благополучие в Турции",
+        "ar": "فقدان الزوج ومعنى الحياة والرفاه الروحاني في تركيا",
+        "id": "Kehilangan pasangan, makna hidup, dan kesejahteraan spiritual di Turki",
+        "ms": "Kehilangan pasangan, makna hidup dan kesejahteraan rohani di Turki"
+      },
+      "description": {
+        "tr": "Manevi iyi oluş, yaşamda anlam ve dindarlık, daha düşük yalnızlık ve daha yüksek ruhsal iyi oluşla ilişkili olarak bildirildi. Çalışma aracılık analizleri içeriyor. İncelenen özette ölçümlerin zaman sırası açıklanmıyor. Aracılık analizi nedensel mekanizma veya müdahale etkililiği göstermiyor. Bulgular eş kaybı yaşamış ileri yaştaki örneklemle sınırlı okunmalı.",
+        "en": "Spiritual wellbeing, meaning in life and religiosity were reported alongside lower loneliness and higher mental wellbeing. The study reports mediation analyses. The inspected abstract does not specify temporal ordering. Mediation does not establish a causal pathway or intervention efficacy. Interpret findings within this older, bereaved sample.",
+        "de": "Spirituelles Wohlbefinden, Lebenssinn und Religiosität wurden mit geringerer Einsamkeit und höherem psychischem Wohlbefinden in Verbindung gebracht. Die Studie berichtet Mediationsanalysen. Der geprüfte Abstract erläutert die zeitliche Reihenfolge nicht. Mediation belegt weder einen kausalen Mechanismus noch Interventionswirksamkeit. Die Befunde beziehen sich auf diese ältere, verwitwete Stichprobe.",
+        "zh": "研究报告灵性福祉、生命意义和宗教性与较低的孤独感及较高的心理福祉相关，并进行了中介分析。 已查阅的摘要未说明测量时间顺序。中介分析不能确立因果机制或干预疗效，应在这一丧偶老年样本的范围内解释结果。",
+        "ru": "Духовное благополучие, смысл жизни и религиозность были связаны с меньшим одиночеством и более высоким психическим благополучием. Представлены медиаторные анализы. В изученном резюме не указана временная последовательность измерений. Медиаторный анализ не устанавливает причинный механизм или эффективность вмешательства. Выводы ограничены этой пожилой выборкой после утраты супруга.",
+        "ar": "ارتبط الرفاه الروحاني ومعنى الحياة والتدين بانخفاض الوحدة وارتفاع الرفاه النفسي بحسب النتائج المعلنة. وتضمنت الدراسة تحليلات للوساطة. لا يوضح الملخص الذي فُحص التسلسل الزمني للقياسات. تحليل الوساطة لا يثبت آلية سببية أو فعالية تدخل. تُفسر النتائج ضمن عينة كبار السن الذين فقدوا أزواجهم.",
+        "id": "Kesejahteraan spiritual, makna hidup, dan religiositas dilaporkan berkaitan dengan kesepian yang lebih rendah dan kesejahteraan mental yang lebih tinggi. Studi melaporkan analisis mediasi. Abstrak yang diperiksa tidak menjelaskan urutan waktu pengukuran. Mediasi tidak membuktikan mekanisme kausal atau efektivitas intervensi. Temuan perlu dibaca dalam konteks sampel lanjut usia yang berduka ini.",
+        "ms": "Kesejahteraan rohani, makna hidup dan religiositi dilaporkan berkait dengan kesunyian yang lebih rendah dan kesejahteraan mental yang lebih tinggi. Kajian melaporkan analisis pengantaraan. Abstrak yang diperiksa tidak menjelaskan turutan masa pengukuran. Pengantaraan tidak membuktikan mekanisme sebab akibat atau keberkesanan intervensi. Dapatan terbatas pada konteks sampel warga tua yang kehilangan pasangan ini."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://www.tandfonline.com/doi/full/10.1080/13607863.2025.2606354",
+            "https://pubmed.ncbi.nlm.nih.gov/41447499/"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Publisher abstract, PubMed metadata and Bursa Uludag institutional publication record inspected. The inspected abstract does not specify temporal ordering, so the catalogue does not assert a cross-sectional or longitudinal design.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-04"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-04",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "psychosis-spirituality",
+      "sourceId": "s-psychosis-spirituality",
+      "originalTitle": "The Role of Spirituality and Religiosity in the Maintenance and Recovery of Psychosis: A Systematic Review",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1111/eip.70061"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence"
+      ],
+      "sourceRecordHash": "91c9e3fc11a4b7b37353f80963ae9d46ea14d58dc2ac4c1b99efef7433686aef",
+      "versions": [
+        {
+          "id": "psychosis-spirituality-record",
+          "edition": null,
+          "date": "2025-07-03",
+          "publisher": null,
+          "identifier": [
+            "10.1111/eip.70061"
+          ],
+          "source": "https://doi.org/10.1111/eip.70061"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1111/eip.70061",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-04",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-psychosis-spirituality-authors-1",
+          "name": "Megan Westhead",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-psychosis-spirituality"
+        },
+        {
+          "id": "s-psychosis-spirituality-authors-2",
+          "name": "Anna Georgiades",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-psychosis-spirituality"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Psikoz araştırmalarında maneviyat ve dini başa çıkma",
+        "en": "Spirituality and religious coping in psychosis research",
+        "de": "Spiritualität und religiöse Bewältigung in der Psychoseforschung",
+        "zh": "精神病性障碍研究中的灵性与宗教应对",
+        "ru": "Духовность и религиозное совладание в исследованиях психоза",
+        "ar": "الروحانية والتكيف الديني في بحوث الذهان",
+        "id": "Spiritualitas dan koping religius dalam penelitian psikosis",
+        "ms": "Kerohanian dan daya tindak beragama dalam penyelidikan psikosis"
+      },
+      "description": {
+        "tr": "Olumlu dini başa çıkma daha yüksek iyi oluş ve yaşam kalitesiyle, olumsuz dini başa çıkma ise daha olumsuz klinik sonuçlarla ilişkili olarak bildirildi. Bulgular bağlama göre değişiyor. İlişkiler, dini başa çıkmayı değiştirmenin tedavi etkisini kanıtlamaz. Dini inanç tek başına tanısal gösterge değildir. Derlemede önerilen klinik modeller doğrulanmış tedavi protokolleri sayılmamalıdır.",
+        "en": "Positive religious coping was associated with better wellbeing and quality of life, while negative coping was linked to poorer clinical outcomes. Findings varied with context. Associations do not prove that changing religious coping is therapeutic. Religious belief alone is not a diagnostic indicator. Proposed clinical models are not validated treatment protocols.",
+        "de": "Positive religiöse Bewältigung war mit höherem Wohlbefinden und besserer Lebensqualität verbunden, negative Bewältigung mit ungünstigeren klinischen Ergebnissen. Die Befunde waren kontextabhängig. Zusammenhänge belegen keinen therapeutischen Effekt veränderter religiöser Bewältigung. Religiöser Glaube allein ist kein diagnostischer Hinweis. Vorgeschlagene klinische Modelle sind keine validierten Behandlungsprotokolle.",
+        "zh": "积极宗教应对与较好的福祉和生活质量相关，消极宗教应对与较差的临床结局相关。具体发现因情境而异。 关联不能证明改变宗教应对具有治疗效果。宗教信仰本身不是诊断指标，综述提出的临床模型也不等于经过验证的治疗方案。",
+        "ru": "Позитивное религиозное совладание было связано с лучшим благополучием и качеством жизни, негативное совладание с менее благоприятными клиническими исходами. Результаты зависели от контекста. Связи не доказывают лечебный эффект изменения религиозного совладания. Религиозная вера сама по себе не является диагностическим признаком. Предложенные клинические модели не равнозначны валидированным протоколам лечения.",
+        "ar": "ارتبط التكيف الديني الإيجابي برفاه وجودة حياة أفضل، بينما ارتبط التكيف السلبي بنتائج سريرية أقل ملاءمة. واختلفت النتائج بحسب السياق. الارتباط لا يثبت أن تغيير التكيف الديني له أثر علاجي. الاعتقاد الديني وحده ليس مؤشراً تشخيصياً. والنماذج السريرية المقترحة ليست بروتوكولات علاجية مثبتة.",
+        "id": "Koping religius positif berkaitan dengan kesejahteraan dan kualitas hidup yang lebih baik, sedangkan koping negatif berkaitan dengan hasil klinis yang lebih buruk. Temuan berbeda menurut konteks. Hubungan ini tidak membuktikan bahwa perubahan koping religius bersifat terapeutik. Keyakinan agama saja bukan indikator diagnosis. Model klinis yang diusulkan bukan protokol pengobatan tervalidasi.",
+        "ms": "Daya tindak beragama yang positif dikaitkan dengan kesejahteraan dan kualiti hidup lebih baik, manakala daya tindak negatif dikaitkan dengan hasil klinikal kurang baik. Dapatan berbeza mengikut konteks. Perkaitan ini tidak membuktikan bahawa perubahan daya tindak beragama mempunyai kesan rawatan. Kepercayaan agama sahaja bukan petunjuk diagnosis. Model klinikal yang dicadangkan bukan protokol rawatan yang disahkan."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://pubmed.ncbi.nlm.nih.gov/40605616/",
+            "https://onlinelibrary.wiley.com/doi/10.1111/eip.70061"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Publisher-supplied abstract, bibliographic record and indexed methods excerpts inspected. The full study-level quality table and proposed clinical models were not independently evaluated. Association language is retained rather than adopting causal wording from the abstract.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-04"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-04",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "clergy-abuse-harm",
+      "sourceId": "s-clergy-abuse-harm",
+      "originalTitle": "The impact of clergy sexual abuse on spirituality and health: A systematic scoping review of the literature",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1371/journal.pone.0317821"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence"
+      ],
+      "sourceRecordHash": "6888cc7dee046a546b3492a1c0e836db9b5156d18b82ee68987b1607233c04e4",
+      "versions": [
+        {
+          "id": "clergy-abuse-harm-record",
+          "edition": null,
+          "date": "2025-04-16",
+          "publisher": null,
+          "identifier": [
+            "10.1371/journal.pone.0317821"
+          ],
+          "source": "https://doi.org/10.1371/journal.pone.0317821"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1371/journal.pone.0317821",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-04",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-clergy-abuse-harm-authors-1",
+          "name": "Joanne Durkin",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-clergy-abuse-harm"
+        },
+        {
+          "id": "s-clergy-abuse-harm-authors-2",
+          "name": "Rachel Zordan",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-clergy-abuse-harm"
+        },
+        {
+          "id": "s-clergy-abuse-harm-authors-3",
+          "name": "Matthew Bullen",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-clergy-abuse-harm"
+        },
+        {
+          "id": "s-clergy-abuse-harm-authors-4",
+          "name": "Nadia Pavich",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-clergy-abuse-harm"
+        },
+        {
+          "id": "s-clergy-abuse-harm-authors-5",
+          "name": "Patricia Therese Benedict Thomas",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-clergy-abuse-harm"
+        },
+        {
+          "id": "s-clergy-abuse-harm-authors-6",
+          "name": "Carolyn Lethborg",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-clergy-abuse-harm"
+        },
+        {
+          "id": "s-clergy-abuse-harm-authors-7",
+          "name": "Wendy Holder",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-clergy-abuse-harm"
+        },
+        {
+          "id": "s-clergy-abuse-harm-authors-8",
+          "name": "Melinda Jolly",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-clergy-abuse-harm"
+        },
+        {
+          "id": "s-clergy-abuse-harm-authors-9",
+          "name": "Darlene Dreise",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-clergy-abuse-harm"
+        },
+        {
+          "id": "s-clergy-abuse-harm-authors-10",
+          "name": "Daniel Fleming",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-clergy-abuse-harm"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Din görevlilerinin cinsel istismarı sonrasında manevi zarar",
+        "en": "Spiritual harm following clergy sexual abuse",
+        "de": "Spirituelle Schädigung nach sexuellem Missbrauch durch Geistliche",
+        "zh": "神职人员性侵害后的灵性伤害",
+        "ru": "Духовный вред после сексуального насилия со стороны духовенства",
+        "ar": "الأذى الروحاني بعد الاعتداء الجنسي من رجال الدين",
+        "id": "Luka spiritual setelah kekerasan seksual oleh rohaniwan",
+        "ms": "Kemudaratan rohani selepas penderaan seksual oleh pemimpin agama"
+      },
+      "description": {
+        "tr": "Kapsam derlemesi, manevi zararın nasıl tanımlandığını ve ruh sağlığıyla ilişkisini ele alıyor. Kavramın tanımları değişken ve kanıt tabanı sınırlı. Bu yayınlar 12 tedavi deneyi değildir. Derlemede kalite değerlendirmesi yapılmamıştır. Katolik bağlamındaki bulgular bütün dinlere genellenemez, yeni bir klinik tanı veya tedavi etkililiği de doğrulamaz.",
+        "en": "The scoping review examines how spiritual harm is defined and connected with health. Definitions vary and the evidence base is limited. These are not 12 treatment trials. No quality appraisal was conducted. The Catholic context cannot represent all religions, and the review validates neither a new diagnosis nor treatment efficacy.",
+        "de": "Die Scoping-Übersicht untersucht Definitionen spiritueller Schädigung und Bezüge zur Gesundheit. Begriffe variieren, die Evidenzbasis ist begrenzt. Es handelt sich nicht um 12 Behandlungsstudien. Eine Qualitätsbewertung fehlt. Der katholische Kontext steht nicht für alle Religionen. Weder eine neue Diagnose noch Behandlungswirksamkeit wird validiert.",
+        "zh": "范围综述考察灵性伤害的定义及其与健康的联系。相关定义并不统一，证据基础有限。 这些文献并非12项治疗试验，综述未进行质量评价。天主教情境不能代表所有宗教，也不能据此确立新诊断或治疗疗效。",
+        "ru": "Обзор охвата рассматривает определения духовного вреда и его связи со здоровьем. Определения различаются, доказательная база ограничена. Это не 12 испытаний лечения. Оценка качества не проводилась. Католический контекст не представляет все религии. Обзор не валидирует новый диагноз или эффективность лечения.",
+        "ar": "تتناول المراجعة النطاقية تعريف الأذى الروحاني وصلته بالصحة. تتباين التعريفات وتبقى قاعدة الأدلة محدودة. ليست هذه 12 تجربة علاجية. لم يُجر تقييم للجودة. لا يمثل السياق الكاثوليكي جميع الأديان، ولا تثبت المراجعة تشخيصاً جديداً أو فعالية علاج.",
+        "id": "Tinjauan cakupan membahas definisi luka spiritual dan kaitannya dengan kesehatan. Definisi beragam dan dasar buktinya terbatas. Publikasi tersebut bukan 12 uji pengobatan. Penilaian kualitas tidak dilakukan. Konteks Katolik tidak mewakili semua agama, dan tinjauan ini tidak memvalidasi diagnosis baru atau efektivitas pengobatan.",
+        "ms": "Ulasan skop meneliti takrif kemudaratan rohani dan kaitannya dengan kesihatan. Takrif berbeza dan asas buktinya terhad. Penerbitan ini bukan 12 percubaan rawatan. Penilaian kualiti tidak dilakukan. Konteks Katolik tidak mewakili semua agama, dan ulasan ini tidak mengesahkan diagnosis baharu atau keberkesanan rawatan."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0317821"
+          ]
+        },
+        "inspection": {
+          "status": "fulltext",
+          "level": "V1",
+          "scope": "Publisher HTML abstract, scope, methods, results and limitations inspected. Quality appraisal was not undertaken by the review. No figures, tables or survivor narratives are republished.",
+          "limit": "Identity verified against the linked record. Full text, comprehensive correction/retraction surveillance, clinical applicability and reuse rights are not cleared.",
+          "checked": "2026-10-04"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-04",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
     }
   ],
   "relationships": [],
@@ -5079,7 +5848,13 @@
         "meaning-questionnaire",
         "durel",
         "swbs-eksi-kardas",
-        "swbs-paloutzian-ellison"
+        "swbs-paloutzian-ellison",
+        "within-person-attendance",
+        "bidirectional-alspac",
+        "brazil-medical-students",
+        "turkish-bereavement",
+        "psychosis-spirituality",
+        "clergy-abuse-harm"
       ]
     }
   ]
