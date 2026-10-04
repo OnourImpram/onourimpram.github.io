@@ -1,0 +1,72 @@
+name: Stage MARSAM scholarly 0.9.1
+on:
+  push:
+    branches: [publish/marsam-scholarly-091]
+    paths: [.github/workflows/marsam-scholarly-091.yml]
+permissions:
+  contents: write
+env:
+  SOURCE_COMMIT: b0f1ddb59b97b480fb994226a196e2d40d184d9c
+  BASE_PATH: /MARSAM/
+  PAGES_PREVIEW: 'true'
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: OnourImpram/MARSAM
+          ref: ${{ env.SOURCE_COMMIT }}
+          path: .marsam-source
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify and build exact source
+        working-directory: .marsam-source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$SOURCE_COMMIT"
+          npm run check
+          node scripts/budget.mjs
+          python tests/research_artifacts.py
+          node scripts/release-manifest.mjs
+          node - <<'NODE'
+          const fs=require('fs')
+          const r=JSON.parse(fs.readFileSync('dist/release.json','utf8'))
+          if(r.version!=='0.9.1') throw new Error('Unexpected release '+r.version)
+          if(r.formalApproval!==false) throw new Error('Formal approval must remain false')
+          NODE
+      - name: Replace only MARSAM subtree
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .marsam-source/verification
+          git ls-tree HEAD > .marsam-source/verification/host-root-before.txt
+          rm -rf MARSAM
+          cp -a .marsam-source/dist MARSAM
+          git add -- MARSAM
+          python - <<'PY'
+          import subprocess
+          changed=[p for p in subprocess.check_output(['git','diff','--cached','--name-only']).decode().splitlines() if p]
+          assert changed and all(p.startswith('MARSAM/') for p in changed), changed[:30]
+          PY
+      - name: Commit verified staged tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'Onour Impram'
+          git config user.email '215815131+OnourImpram@users.noreply.github.com'
+          git commit -m 'build: stage MARSAM scholarly evidence 0.9.1'
+          git push origin HEAD:publish/marsam-scholarly-091
+          git rev-parse HEAD > .marsam-source/verification/host-candidate-sha.txt
+          git rev-parse HEAD:MARSAM > .marsam-source/verification/host-candidate-marsam-tree.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-scholarly-091-stage
+          path: .marsam-source/verification/
+          retention-days: 14
