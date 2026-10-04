@@ -10,11 +10,11 @@
     "formalApprovalVerified": false
   },
   "previewDeploymentAuthorized": true,
-  "version": "0.9.3",
-  "release": "marsam-first-layer-symmetry-0.9.3",
+  "version": "0.9.4",
+  "release": "marsam-portal-seam-closure-0.9.4",
   "base": "/MARSAM/",
   "mode": "preview",
-  "generatedAt": "2026-10-04T14:13:06.554Z",
+  "generatedAt": "2026-10-04T14:46:51.406Z",
   "locales": [
     "tr",
     "en",
@@ -757,5 +757,5 @@
       "direction": "ltr"
     }
   },
-  "deploymentCommit": "733ac30e0b71c9703a51a9dcc229cbf5b0d0fea1"
+  "deploymentCommit": "58bf9f82c18c95f76f9a11bc84423acf94546679"
 }
