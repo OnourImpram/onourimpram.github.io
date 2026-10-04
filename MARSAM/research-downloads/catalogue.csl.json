@@ -945,5 +945,56 @@
         "literal": "Arndt Büssing"
       }
     ]
+  },
+  {
+    "id": "s-swbs-eksi-kardas",
+    "type": "article-journal",
+    "title": "Spiritual Well-Being: Scale Development and Validation",
+    "URL": "https://doi.org/10.12738/spc.2017.1.0022",
+    "note": "Halil Ekşi, Selami Kardaş (2017). Spiritual Well-Being: Scale Development and Validation. Spiritual Psychology and Counseling, 2(1), 73-88. https://doi.org/10.12738/spc.2017.1.0022",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "DOI": "10.12738/spc.2017.1.0022",
+    "container-title": "Spiritual Psychology and Counseling",
+    "volume": "2",
+    "issue": "1",
+    "page": "73-88",
+    "author": [
+      {
+        "literal": "Halil Ekşi"
+      },
+      {
+        "literal": "Selami Kardaş"
+      }
+    ]
+  },
+  {
+    "id": "s-swbs-paloutzian-ellison",
+    "type": "article-journal",
+    "title": "Spiritual Well-Being: Conceptualization and Measurement",
+    "URL": "https://doi.org/10.1177/009164718301100406",
+    "note": "Craig W. Ellison (1983). Spiritual Well-Being: Conceptualization and Measurement. Journal of Psychology and Theology, 11(4), 330-338. https://doi.org/10.1177/009164718301100406",
+    "issued": {
+      "date-parts": [
+        [
+          1983
+        ]
+      ]
+    },
+    "DOI": "10.1177/009164718301100406",
+    "container-title": "Journal of Psychology and Theology",
+    "volume": "11",
+    "issue": "4",
+    "page": "330-338",
+    "author": [
+      {
+        "literal": "Craig W. Ellison"
+      }
+    ]
   }
 ]
