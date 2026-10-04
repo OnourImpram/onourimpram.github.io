@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "objectType": "catalogue-inventory-teaching-example",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "sourceModule": "src/catalogue.mjs",
   "sourceRecordHash": "19b9464f8fe2abf6d934b7d10dcb442f9e1ce82d9e26ad5f5f529211937e17b7",
   "scope": "Selected catalogue only. Not a field census, systematic evidence map or clinical dataset.",
