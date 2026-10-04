@@ -1,0 +1,115 @@
+name: Stage and accept MARSAM notices 0.10.2
+on:
+  push:
+    branches: [stage/notices-0102]
+    paths: [.github/workflows/notices-0102-stage-live.yml]
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright/python:v1.61.0-noble
+    timeout-minutes: 12
+    env:
+      SOURCE_SHA: 15885a42b21d082401c63406f1e433e064f15768
+      BROWSERS: chromium,firefox,webkit
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build exact tested source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git init source
+          git -C source remote add origin https://github.com/OnourImpram/MARSAM.git
+          git -C source fetch --depth=1 origin "$SOURCE_SHA"
+          git -C source checkout --detach FETCH_HEAD
+          test "$(git -C source rev-parse HEAD)" = "$SOURCE_SHA"
+          mkdir -p receipts
+          cd source
+          BASE_PATH=/MARSAM/ PAGES_PREVIEW=true npm run check > ../receipts/source-check.log 2>&1
+          BASE_PATH=/MARSAM/ PAGES_PREVIEW=true SOURCE_COMMIT="$SOURCE_SHA" node scripts/release-manifest.mjs
+          node -e "const r=require('./dist/release.json');if(r.version!=='0.10.2'||r.sourceCommit!==process.env.SOURCE_SHA)process.exit(1)"
+      - name: Stage only generated MARSAM files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf MARSAM
+          mkdir MARSAM
+          cp -a source/dist/. MARSAM/
+          git config user.name 'Onour Impram'
+          git config user.email 'onuribram@outlook.com'
+          git add -A MARSAM
+          git commit -m 'stage: MARSAM 0.10.2 from exact verified source 15885a4'
+          git push origin HEAD:stage/notices-0102
+          git rev-parse HEAD > receipts/stage-sha.txt
+      - name: Prepare browsers while public deployment is promoted
+        shell: bash
+        run: |
+          python -m pip install --timeout 25 -q playwright==1.61.0
+          cd source
+          python scripts/test-fonts.py
+      - name: Verify actual public manifest and every published file
+        shell: bash
+        run: |
+          python - <<'PY'
+          import os,json,time,hashlib,urllib.request,concurrent.futures,datetime
+          from pathlib import Path
+          origin='https://onourimpram.github.io/MARSAM/'
+          def read(path):
+              req=urllib.request.Request(origin+path,headers={'User-Agent':'MARSAM-owner-authorized-acceptance','Cache-Control':'no-cache'})
+              with urllib.request.urlopen(req,timeout=30) as r:return r.status,r.read()
+          for attempt in range(60):
+              try:
+                  status,data=read('release.json');release=json.loads(data)
+                  if release['version']=='0.10.2' and release['sourceCommit']==os.environ['SOURCE_SHA']:break
+              except Exception as ex:print(str(ex),flush=True)
+              time.sleep(5)
+          else:raise RuntimeError('Intended canonical public release not deployed')
+          def inspect(item):
+              path,expected=item
+              try:
+                  status,data=read(path)
+                  result={'path':path,'status':status,'matched':len(data)==expected['bytes'] and hashlib.sha256(data).hexdigest()==expected['sha256']}
+                  if path.endswith('.html'):
+                      s=data.decode('utf-8')
+                      result['cleanNotices']=all(t not in s for t in ['class="footer-notice"','class="review-notice"','"notClinical":','"noProgram":'])
+                  return result
+              except Exception as ex:return {'path':path,'error':str(ex)}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:results=list(pool.map(inspect,release['files'].items()))
+          failures=[r for r in results if r.get('error') or not r.get('matched') or r.get('cleanNotices') is False]
+          receipt={'version':release['version'],'sourceCommit':release['sourceCommit'],'origin':origin,'checkedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'files':len(results),'htmlFiles':sum(r['path'].endswith('.html') for r in results),'failures':failures,'results':results}
+          Path('receipts/live-files.json').write_text(json.dumps(receipt,indent=2))
+          print(json.dumps({k:v for k,v in receipt.items() if k!='results'}),flush=True)
+          assert not failures,failures
+          PY
+      - name: Actual live footer, reading surfaces and preserved portal
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd source
+          export PREVIEW_ORIGIN=https://onourimpram.github.io
+          python tests/notice_cleanup_e2e.py > ../receipts/live-notices.log 2>&1 & notices=$!
+          python tests/portal_pixels.py > ../receipts/live-portal.log 2>&1 & portal=$!
+          python tests/browser_e2e.py > ../receipts/live-core.log 2>&1 & core=$!
+          status=0
+          wait "$notices" || status=1
+          wait "$portal" || status=1
+          wait "$core" || status=1
+          tail -3 ../receipts/live-notices.log ../receipts/live-portal.log ../receipts/live-core.log
+          exit "$status"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: MARSAM-0102-public-acceptance
+          path: |
+            receipts/
+            source/verification/notice-cleanup/
+            source/verification/portal-continuity/receipt.json
+            source/verification/reading-room-*.json
+          retention-days: 14
