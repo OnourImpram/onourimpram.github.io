@@ -1,0 +1,56 @@
+name: Stage continuous MARSAM portal 0.10.1
+on:
+  push:
+    branches: [stage/portal-0101]
+    paths: [.github/workflows/stage-portal-0101.yml]
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      SOURCE_SHA: f0572eb27dcd9324e07746ea89e192cbda47af23
+      BASE_PATH: /MARSAM/
+      PAGES_PREVIEW: 'true'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build exact tested source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git init source
+          git -C source remote add origin https://github.com/OnourImpram/MARSAM.git
+          git -C source fetch --depth=1 origin "$SOURCE_SHA"
+          git -C source checkout --detach FETCH_HEAD
+          test "$(git -C source rev-parse HEAD)" = "$SOURCE_SHA"
+          cd source
+          npm run check
+          node scripts/budget.mjs
+          SOURCE_COMMIT="$SOURCE_SHA" node scripts/release-manifest.mjs
+          node --input-type=module <<'JS'
+          import {readFileSync} from 'node:fs';
+          import {createHash} from 'node:crypto';
+          const r=JSON.parse(readFileSync('dist/release.json'));
+          if(r.version!=='0.10.1'||r.sourceCommit!==process.env.SOURCE_SHA)throw Error('Wrong release identity');
+          const svg=readFileSync('dist/assets/heritage/portal-continuous-v1.svg');
+          if(createHash('sha256').update(svg).digest('hex')!=='2321afc7d91b5a66e435a4a252ac143b194c2168628fc13dee8ddd00ade7c0d7')throw Error('Unexpected portal');
+          JS
+      - name: Stage only generated MARSAM files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf MARSAM
+          mkdir MARSAM
+          cp -a source/dist/. MARSAM/
+          git config user.name 'Onour Impram'
+          git config user.email 'onuribram@outlook.com'
+          git add -A MARSAM
+          git commit -m 'Stage MARSAM 0.10.1 from verified source f0572eb'
+          git push origin HEAD:stage/portal-0101
+          git rev-parse HEAD:MARSAM
