@@ -10,11 +10,11 @@
     "formalApprovalVerified": false
   },
   "previewDeploymentAuthorized": true,
-  "version": "0.10.1",
-  "release": "marsam-continuous-portal-0.10.1",
+  "version": "0.10.2",
+  "release": "marsam-continuous-portal-0.10.2",
   "base": "/MARSAM/",
   "mode": "preview",
-  "generatedAt": "2026-10-04T19:02:52.446Z",
+  "generatedAt": "2026-10-04T19:48:34.093Z",
   "locales": [
     "tr",
     "en",
@@ -805,5 +805,5 @@
       "direction": "ltr"
     }
   },
-  "deploymentCommit": "f0572eb27dcd9324e07746ea89e192cbda47af23"
+  "deploymentCommit": "15885a42b21d082401c63406f1e433e064f15768"
 }
