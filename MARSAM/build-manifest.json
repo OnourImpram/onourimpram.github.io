@@ -10,11 +10,11 @@
     "formalApprovalVerified": false
   },
   "previewDeploymentAuthorized": true,
-  "version": "0.9.1",
-  "release": "marsam-scholarly-evidence-0.9.1",
+  "version": "0.9.2",
+  "release": "marsam-portal-symmetry-repair-0.9.2",
   "base": "/MARSAM/",
   "mode": "preview",
-  "generatedAt": "2026-10-04T12:23:21.689Z",
+  "generatedAt": "2026-10-04T13:04:04.199Z",
   "locales": [
     "tr",
     "en",
@@ -757,5 +757,5 @@
       "direction": "ltr"
     }
   },
-  "deploymentCommit": "b0f1ddb59b97b480fb994226a196e2d40d184d9c"
+  "deploymentCommit": "aeddf3f175f0ea4a799d683cc18a2d05ecc557cb"
 }
