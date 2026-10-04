@@ -1,0 +1,88 @@
+name: Stage verified MARSAM 0.10.0
+on:
+  push:
+    branches: [stage/marsam-evidence-0100]
+    paths: [.github/workflows/marsam-evidence-0100-stage.yml]
+permissions:
+  contents: write
+concurrency:
+  group: marsam-evidence-stage
+  cancel-in-progress: false
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      SOURCE_SHA: 79e1204c9f6fe117afac5e6e9d5e4f90ce17cc68
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build exact tested source
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts source
+          git init source
+          git -C source remote add origin https://github.com/OnourImpram/MARSAM.git
+          git -C source fetch --depth=1 origin "$SOURCE_SHA"
+          git -C source checkout --detach FETCH_HEAD
+          test "$(git -C source rev-parse HEAD)" = "$SOURCE_SHA"
+          git rev-parse HEAD > receipts/host-start.txt
+          git ls-tree HEAD > receipts/host-root-before.txt
+          cd source
+          mkdir -p verification
+          BASE_PATH=/MARSAM/ PAGES_PREVIEW=true npm run check > ../receipts/source-check.log 2>&1
+          node scripts/budget.mjs > ../receipts/budget.json
+          SOURCE_COMMIT="$SOURCE_SHA" node scripts/release-manifest.mjs > ../receipts/release-summary.json
+          python - <<'PY'
+          import json,hashlib,pathlib,os
+          root=pathlib.Path('dist');r=json.loads((root/'release.json').read_text())
+          assert r['version']=='0.10.0' and r['sourceCommit']==os.environ['SOURCE_SHA']
+          assert not any(r[k] for k in ['formalApproval','scientificApproval','humanLanguageReview'])
+          for p,meta in r['files'].items():
+              data=(root/p).read_bytes()
+              assert len(data)==meta['bytes'] and hashlib.sha256(data).hexdigest()==meta['sha256'],p
+          assert len(json.loads((root/'data/locale-parity.json').read_text())['records'])==152
+          assert len(json.loads((root/'data/source-ledger.json').read_text())['sources'])==44
+          for p,h in json.loads(pathlib.Path('docs/cycles/2026-10-04/PRESERVED_VISUALS.json').read_text()).items():
+              assert hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()==h,p
+          print('All generated hashes, counts, approval boundaries and visuals verified')
+          PY
+      - name: Stage only generated MARSAM files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf MARSAM
+          mkdir MARSAM
+          cp -a source/dist/. MARSAM/
+          git add -A MARSAM
+          python - <<'PY'
+          import subprocess
+          paths=subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines()
+          assert paths and all(p.startswith('MARSAM/') for p in paths),paths
+          PY
+          git config user.name 'Onour Impram'
+          git config user.email 'onuribram@outlook.com'
+          git commit -m "stage: MARSAM 0.10.0 from verified source $SOURCE_SHA"
+          git rev-parse HEAD > receipts/stage-commit.txt
+          git rev-parse HEAD:MARSAM > receipts/marsam-tree.txt
+          git ls-tree HEAD > receipts/host-root-after.txt
+          python - <<'PY'
+          import pathlib,json
+          root=pathlib.Path('receipts')
+          before=[s for s in (root/'host-root-before.txt').read_text().splitlines() if not s.endswith('\tMARSAM')]
+          after=[s for s in (root/'host-root-after.txt').read_text().splitlines() if not s.endswith('\tMARSAM')]
+          assert before==after,'Unrelated host root changed'
+          (root/'host-preservation.json').write_text(json.dumps({'unrelatedRootEntriesUnchanged':True,'entries':len(before)},indent=2))
+          PY
+          git push origin HEAD:stage/marsam-evidence-0100
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marsam-0100-stage
+          path: receipts
+          retention-days: 14
