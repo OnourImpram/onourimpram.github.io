@@ -10,11 +10,11 @@
     "formalApprovalVerified": false
   },
   "previewDeploymentAuthorized": true,
-  "version": "0.10.0",
-  "release": "marsam-evidence-continuity-0.10.0",
+  "version": "0.10.1",
+  "release": "marsam-continuous-portal-0.10.1",
   "base": "/MARSAM/",
   "mode": "preview",
-  "generatedAt": "2026-10-04T16:21:23.015Z",
+  "generatedAt": "2026-10-04T19:02:52.446Z",
   "locales": [
     "tr",
     "en",
@@ -805,5 +805,5 @@
       "direction": "ltr"
     }
   },
-  "deploymentCommit": "79e1204c9f6fe117afac5e6e9d5e4f90ce17cc68"
+  "deploymentCommit": "f0572eb27dcd9324e07746ea89e192cbda47af23"
 }
