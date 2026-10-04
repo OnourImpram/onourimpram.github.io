@@ -941,6 +941,254 @@
       "status": "AI_ASSISTED_DRAFT",
       "humanReviewed": false,
       "scientificApproval": false
+    },
+    {
+      "id": "theme-longitudinal-questions",
+      "locale": "tr",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-attendance-cohorts",
+        "s-within-person-attendance",
+        "s-bidirectional-alspac",
+        "s-brazil-medical-students"
+      ],
+      "briefHash": "1f8ce586f735226507a3a18300f74aebbfc511ced0ee90b9d0fe3b903c48f154",
+      "editionHash": "2ddbc28690eeab66bdd09ab471ac7dbffabbed427334d6c5d3ff0ddf5dfb8c92",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "theme-longitudinal-questions",
+      "locale": "en",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-attendance-cohorts",
+        "s-within-person-attendance",
+        "s-bidirectional-alspac",
+        "s-brazil-medical-students"
+      ],
+      "briefHash": "1f8ce586f735226507a3a18300f74aebbfc511ced0ee90b9d0fe3b903c48f154",
+      "editionHash": "7b5804d7b4629e90722a9af33a976e437bfc63c6f94fa491c6b2a982bb003ac7",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "theme-longitudinal-questions",
+      "locale": "de",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-attendance-cohorts",
+        "s-within-person-attendance",
+        "s-bidirectional-alspac",
+        "s-brazil-medical-students"
+      ],
+      "briefHash": "1f8ce586f735226507a3a18300f74aebbfc511ced0ee90b9d0fe3b903c48f154",
+      "editionHash": "057698086721ae89354f1a45c420211d6926b828d29fd6af6dfdb79ed2b2a748",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "theme-longitudinal-questions",
+      "locale": "zh",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-attendance-cohorts",
+        "s-within-person-attendance",
+        "s-bidirectional-alspac",
+        "s-brazil-medical-students"
+      ],
+      "briefHash": "1f8ce586f735226507a3a18300f74aebbfc511ced0ee90b9d0fe3b903c48f154",
+      "editionHash": "e3542dd19c935a92ed08de2194ec52d7a98592af41ae5fb871d9ea2827539f4c",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "theme-longitudinal-questions",
+      "locale": "ru",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-attendance-cohorts",
+        "s-within-person-attendance",
+        "s-bidirectional-alspac",
+        "s-brazil-medical-students"
+      ],
+      "briefHash": "1f8ce586f735226507a3a18300f74aebbfc511ced0ee90b9d0fe3b903c48f154",
+      "editionHash": "28e96563ea6b5ec0cf7cba6e78032a3b4319d9d466546f63b34bc99de902ba3a",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "theme-longitudinal-questions",
+      "locale": "ar",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-attendance-cohorts",
+        "s-within-person-attendance",
+        "s-bidirectional-alspac",
+        "s-brazil-medical-students"
+      ],
+      "briefHash": "1f8ce586f735226507a3a18300f74aebbfc511ced0ee90b9d0fe3b903c48f154",
+      "editionHash": "5fd57184280b11fb7ed1301700a824a6ad005df3ecee23a012334e1cb95cbd3c",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "theme-longitudinal-questions",
+      "locale": "id",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-attendance-cohorts",
+        "s-within-person-attendance",
+        "s-bidirectional-alspac",
+        "s-brazil-medical-students"
+      ],
+      "briefHash": "1f8ce586f735226507a3a18300f74aebbfc511ced0ee90b9d0fe3b903c48f154",
+      "editionHash": "4d074268c748df9a9b9baf2e8cb646aeac38d001be31590ffaf1dc35c73a8416",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "theme-longitudinal-questions",
+      "locale": "ms",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-attendance-cohorts",
+        "s-within-person-attendance",
+        "s-bidirectional-alspac",
+        "s-brazil-medical-students"
+      ],
+      "briefHash": "1f8ce586f735226507a3a18300f74aebbfc511ced0ee90b9d0fe3b903c48f154",
+      "editionHash": "fac3d5ac6117b38eb43a1a8be7edff5f08fcf7affb41b73f3dd1fa49d27e179c",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "theme-harm-and-clinical-context",
+      "locale": "tr",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-clergy-abuse-harm",
+        "s-psychosis-spirituality",
+        "s-aservic"
+      ],
+      "briefHash": "3568be02e650a0bf9353c688def15b160b6c53568d83045e271e7dea4bac4892",
+      "editionHash": "66a1c56e07af37a46ab0fc42318a104e43f38ea5fc9538e4eaea07ae2bb43503",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "theme-harm-and-clinical-context",
+      "locale": "en",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-clergy-abuse-harm",
+        "s-psychosis-spirituality",
+        "s-aservic"
+      ],
+      "briefHash": "3568be02e650a0bf9353c688def15b160b6c53568d83045e271e7dea4bac4892",
+      "editionHash": "f690ca2a304d16bc82e1e03a4db2dcdbb1231353eb87931a0c737595f5ac0fbd",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "theme-harm-and-clinical-context",
+      "locale": "de",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-clergy-abuse-harm",
+        "s-psychosis-spirituality",
+        "s-aservic"
+      ],
+      "briefHash": "3568be02e650a0bf9353c688def15b160b6c53568d83045e271e7dea4bac4892",
+      "editionHash": "4de705846efc04c17fdaae8e96c76e001eec4266dc9fbdc048eeb273c4ae7eed",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "theme-harm-and-clinical-context",
+      "locale": "zh",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-clergy-abuse-harm",
+        "s-psychosis-spirituality",
+        "s-aservic"
+      ],
+      "briefHash": "3568be02e650a0bf9353c688def15b160b6c53568d83045e271e7dea4bac4892",
+      "editionHash": "f3b779b5a6d6c48d4e69eba7c54f6d7925b6651340b7d31b9a84747b383dde86",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "theme-harm-and-clinical-context",
+      "locale": "ru",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-clergy-abuse-harm",
+        "s-psychosis-spirituality",
+        "s-aservic"
+      ],
+      "briefHash": "3568be02e650a0bf9353c688def15b160b6c53568d83045e271e7dea4bac4892",
+      "editionHash": "6810caaa0f39e7087d73512ae017d5b592799c1f6490fd20723375aec6128ee3",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "theme-harm-and-clinical-context",
+      "locale": "ar",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-clergy-abuse-harm",
+        "s-psychosis-spirituality",
+        "s-aservic"
+      ],
+      "briefHash": "3568be02e650a0bf9353c688def15b160b6c53568d83045e271e7dea4bac4892",
+      "editionHash": "97474b5047307c94490cb36ca9a10e2d5738ba58f517b01af11894d92ae81d8e",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "theme-harm-and-clinical-context",
+      "locale": "id",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-clergy-abuse-harm",
+        "s-psychosis-spirituality",
+        "s-aservic"
+      ],
+      "briefHash": "3568be02e650a0bf9353c688def15b160b6c53568d83045e271e7dea4bac4892",
+      "editionHash": "0db47f93e751b0df382857ef5c88edf09493fa80d44960609aa45bea65e875ef",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
+    },
+    {
+      "id": "theme-harm-and-clinical-context",
+      "locale": "ms",
+      "sourceLanguage": null,
+      "sourceIds": [
+        "s-clergy-abuse-harm",
+        "s-psychosis-spirituality",
+        "s-aservic"
+      ],
+      "briefHash": "3568be02e650a0bf9353c688def15b160b6c53568d83045e271e7dea4bac4892",
+      "editionHash": "23e9dedced89909a4e38ff162302b5cd431f723c623e47616cd34e2ba71aa38b",
+      "status": "AI_ASSISTED_DRAFT",
+      "humanReviewed": false,
+      "scientificApproval": false
     }
   ]
 }

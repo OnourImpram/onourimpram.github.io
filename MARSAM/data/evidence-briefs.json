@@ -354,6 +354,159 @@
         "checked": "2026-10-04",
         "findingDirection": "measurement"
       }
+    },
+    {
+      "id": "within-person-attendance",
+      "sourceId": "s-within-person-attendance",
+      "brief": {
+        "design": "longitudinal-panel-analysis",
+        "population": "29,298 British Household Panel Survey participants, 10 waves from 1991 to 2009.",
+        "findingDirection": "mostly-null-within-person",
+        "inspection": "abstract-and-metadata",
+        "inspectionURL": "https://journals.sagepub.com/doi/10.1177/09567976251325449",
+        "inspectionDetail": "Publisher abstract, open-practices statement and PubMed bibliographic record inspected. Full model specification and all sensitivity analyses were not independently appraised or reproduced.",
+        "question": "Does a change in attendance within a person precede a change in mental health?",
+        "estimand": "Within-person lagged associations, distinct from between-person differences.",
+        "preregistered": false,
+        "relatedRecords": [
+          "attendance-cohorts",
+          "bidirectional-alspac"
+        ],
+        "limitationCodes": [
+          "observational-not-intervention",
+          "within-between-person-distinction",
+          "null-not-equivalence",
+          "historical-uk-context"
+        ],
+        "doi": "10.1177/09567976251325449",
+        "checked": "2026-10-04"
+      }
+    },
+    {
+      "id": "bidirectional-alspac",
+      "sourceId": "s-bidirectional-alspac",
+      "brief": {
+        "design": "prospective-cohort",
+        "population": "Parents in the UK Avon Longitudinal Study of Parents and Children. Analytic sample sizes vary by model.",
+        "findingDirection": "small-or-null-bidirectional",
+        "inspection": "targeted-fulltext",
+        "inspectionURL": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0319796",
+        "inspectionDetail": "Publisher HTML abstract, design description, main results, limitations and bibliographic metadata inspected. Supplementary models, preregistration deviations and all numerical estimates were not independently audited.",
+        "preregistered": true,
+        "relatedRecords": [
+          "within-person-attendance",
+          "attendance-cohorts"
+        ],
+        "limitationCodes": [
+          "residual-confounding",
+          "wide-uncertainty",
+          "historical-parent-cohort",
+          "gender-findings-inconclusive",
+          "null-not-equivalence"
+        ],
+        "doi": "10.1371/journal.pone.0319796",
+        "checked": "2026-10-04"
+      }
+    },
+    {
+      "id": "brazil-medical-students",
+      "sourceId": "s-brazil-medical-students",
+      "brief": {
+        "design": "prospective-cohort",
+        "population": "277 medical students in Brazil followed for two years.",
+        "findingDirection": "favourable-organizational-association",
+        "inspection": "abstract-and-metadata",
+        "inspectionURL": "https://pubmed.ncbi.nlm.nih.gov/41046488/",
+        "inspectionDetail": "PubMed metadata and publisher-supplied abstract inspected. Full methods, attrition, model specification and correction history were not comprehensively appraised.",
+        "usesMeasure": "durel",
+        "relatedRecords": [
+          "within-person-attendance"
+        ],
+        "measures": [
+          "DUREL",
+          "DASS-21",
+          "WHOQOL-BREF"
+        ],
+        "limitationCodes": [
+          "association-not-causation",
+          "residual-confounding",
+          "medical-student-context",
+          "measure-use-not-validation"
+        ],
+        "doi": "10.1007/s10943-025-02461-w",
+        "checked": "2026-10-04"
+      }
+    },
+    {
+      "id": "turkish-bereavement",
+      "sourceId": "s-turkish-bereavement",
+      "brief": {
+        "design": "reported-mediation",
+        "population": "403 bereaved older adults in Türkiye, aged 65 to 84, all having experienced spousal loss.",
+        "findingDirection": "favourable-associations",
+        "inspection": "abstract-and-metadata",
+        "inspectionURL": "https://www.tandfonline.com/doi/full/10.1080/13607863.2025.2606354",
+        "inspectionDetail": "Publisher abstract, PubMed metadata and Bursa Uludag institutional publication record inspected. The inspected abstract does not specify temporal ordering, so the catalogue does not assert a cross-sectional or longitudinal design.",
+        "country": "Türkiye",
+        "temporalDesignVerified": false,
+        "relatedRecords": [
+          "older-adults",
+          "meaning-questionnaire"
+        ],
+        "limitationCodes": [
+          "temporal-order-not-specified-in-inspected-abstract",
+          "mediation-not-causal-mechanism",
+          "intervention-efficacy-not-tested-in-inspected-material",
+          "bereaved-older-adult-context"
+        ],
+        "doi": "10.1080/13607863.2025.2606354",
+        "checked": "2026-10-04"
+      }
+    },
+    {
+      "id": "psychosis-spirituality",
+      "sourceId": "s-psychosis-spirituality",
+      "brief": {
+        "design": "systematic-review",
+        "population": "35 studies concerning spirituality, religiosity and psychosis.",
+        "findingDirection": "mixed-by-coping-and-context",
+        "inspection": "abstract-and-metadata",
+        "inspectionURL": "https://pubmed.ncbi.nlm.nih.gov/40605616/",
+        "inspectionDetail": "Publisher-supplied abstract, bibliographic record and indexed methods excerpts inspected. The full study-level quality table and proposed clinical models were not independently evaluated. Association language is retained rather than adopting causal wording from the abstract.",
+        "relatedRecords": [
+          "brief-rcope"
+        ],
+        "limitationCodes": [
+          "heterogeneous-studies",
+          "associations-not-intervention-effect",
+          "religious-belief-not-diagnostic-criterion",
+          "clinical-model-not-validated-treatment"
+        ],
+        "doi": "10.1111/eip.70061",
+        "checked": "2026-10-04"
+      }
+    },
+    {
+      "id": "clergy-abuse-harm",
+      "sourceId": "s-clergy-abuse-harm",
+      "brief": {
+        "design": "scoping-review",
+        "population": "12 publications on spiritual harm after sexual abuse involving Roman Catholic clergy. Includes empirical and discursive work, not 12 treatment trials.",
+        "findingDirection": "adverse-experiences-and-conceptual-gaps",
+        "inspection": "targeted-fulltext",
+        "inspectionURL": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0317821",
+        "inspectionDetail": "Publisher HTML abstract, scope, methods, results and limitations inspected. Quality appraisal was not undertaken by the review. No figures, tables or survivor narratives are republished.",
+        "qualityAppraisalPerformed": false,
+        "limitationCodes": [
+          "scoping-not-efficacy-review",
+          "no-quality-appraisal",
+          "catholic-clergy-context",
+          "heterogeneous-harm-definitions",
+          "not-a-diagnostic-validation"
+        ],
+        "doi": "10.1371/journal.pone.0317821",
+        "checked": "2026-10-04"
+      }
     }
   ],
   "themes": [
@@ -402,6 +555,23 @@
         "s-aservic",
         "s-vieten",
         "s-swift"
+      ]
+    },
+    {
+      "id": "longitudinal-questions",
+      "sourceIds": [
+        "s-attendance-cohorts",
+        "s-within-person-attendance",
+        "s-bidirectional-alspac",
+        "s-brazil-medical-students"
+      ]
+    },
+    {
+      "id": "harm-and-clinical-context",
+      "sourceIds": [
+        "s-clergy-abuse-harm",
+        "s-psychosis-spirituality",
+        "s-aservic"
       ]
     }
   ]
