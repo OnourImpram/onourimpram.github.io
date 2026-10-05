@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      SOURCE_SHA: 946e746db291d61228f05e26c8396989d7f3db37
+      SOURCE_SHA: 70f1405c564eb23cfae3fc3023b3ef3a38444274
     steps:
       - name: Check out publishing repository
         uses: actions/checkout@v4
@@ -72,5 +72,5 @@ jobs:
           git config user.email "onuribram@outlook.com"
           git add -A MARSAM .github/workflows/marsam-publish-0_11_0.yml
           git diff --cached --quiet && { echo "No publication changes"; exit 1; }
-          git commit -m "Publish MARSAM research infrastructure 0.11.0 from tested source 946e746"
+          git commit -m "Publish MARSAM research infrastructure 0.11.0 from tested source 70f1405"
           git push origin HEAD:main
