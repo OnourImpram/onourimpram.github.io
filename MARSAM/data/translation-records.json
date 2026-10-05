@@ -118,8 +118,8 @@
     {
       "id": "spiritual-competence",
       "locale": "tr",
-      "sourceHash": "08418eb2001de9a9013137c7326b84f70e4d7863d26de1c15618459d77e9d813",
-      "targetHash": "08418eb2001de9a9013137c7326b84f70e4d7863d26de1c15618459d77e9d813",
+      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
+      "targetHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -132,7 +132,7 @@
     {
       "id": "spiritual-competence",
       "locale": "en",
-      "sourceHash": "08418eb2001de9a9013137c7326b84f70e4d7863d26de1c15618459d77e9d813",
+      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
       "targetHash": "ae3e08373b0aae039f14707863414e7062d6eb937c970b1e536cb2259fb91280",
       "status": "draft",
       "humanReviewed": false,
@@ -146,7 +146,7 @@
     {
       "id": "spiritual-competence",
       "locale": "de",
-      "sourceHash": "08418eb2001de9a9013137c7326b84f70e4d7863d26de1c15618459d77e9d813",
+      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
       "targetHash": "ba6e8c4ee7e3ca94f70e5c3164c71d1293b73d41307b9e08359cf8c1033227cd",
       "status": "draft",
       "humanReviewed": false,
@@ -160,7 +160,7 @@
     {
       "id": "spiritual-competence",
       "locale": "zh",
-      "sourceHash": "08418eb2001de9a9013137c7326b84f70e4d7863d26de1c15618459d77e9d813",
+      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
       "targetHash": "9216ef272ebc264f005f66cb31ba5d44b0703a2df0be24f9a3b667f5c4bf5b04",
       "status": "draft",
       "humanReviewed": false,
@@ -174,7 +174,7 @@
     {
       "id": "spiritual-competence",
       "locale": "ru",
-      "sourceHash": "08418eb2001de9a9013137c7326b84f70e4d7863d26de1c15618459d77e9d813",
+      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
       "targetHash": "7f85e01134e8523584da7f4e4aec87a45a43f5acfcff486286ade68954124538",
       "status": "draft",
       "humanReviewed": false,
@@ -188,7 +188,7 @@
     {
       "id": "spiritual-competence",
       "locale": "ar",
-      "sourceHash": "08418eb2001de9a9013137c7326b84f70e4d7863d26de1c15618459d77e9d813",
+      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
       "targetHash": "fe10032756befd20053ee44304dc216ab1ddb800971294b34a8d374cf7455615",
       "status": "draft",
       "humanReviewed": false,
@@ -202,7 +202,7 @@
     {
       "id": "spiritual-competence",
       "locale": "id",
-      "sourceHash": "08418eb2001de9a9013137c7326b84f70e4d7863d26de1c15618459d77e9d813",
+      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
       "targetHash": "cb2ded1a97410751db6004bb7d36b5272598e3a29bc35875daf83f6d9d943146",
       "status": "draft",
       "humanReviewed": false,
@@ -216,7 +216,7 @@
     {
       "id": "spiritual-competence",
       "locale": "ms",
-      "sourceHash": "08418eb2001de9a9013137c7326b84f70e4d7863d26de1c15618459d77e9d813",
+      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
       "targetHash": "58f6e839701f06289a4628f86ab6a693f7a26157a8cfe3e25a0b61c1794f7ab0",
       "status": "draft",
       "humanReviewed": false,
@@ -230,8 +230,8 @@
     {
       "id": "integration-meta-analysis",
       "locale": "tr",
-      "sourceHash": "ee986164c07f7eac2b39c7023891f35a9c490e98c6e811d600850e17b05e4a6e",
-      "targetHash": "ee986164c07f7eac2b39c7023891f35a9c490e98c6e811d600850e17b05e4a6e",
+      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
+      "targetHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -244,7 +244,7 @@
     {
       "id": "integration-meta-analysis",
       "locale": "en",
-      "sourceHash": "ee986164c07f7eac2b39c7023891f35a9c490e98c6e811d600850e17b05e4a6e",
+      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
       "targetHash": "5c267d35a506343553f07ffd9f0a4311ff2bd7cc551ecd24af6a2cec8811a548",
       "status": "draft",
       "humanReviewed": false,
@@ -258,7 +258,7 @@
     {
       "id": "integration-meta-analysis",
       "locale": "de",
-      "sourceHash": "ee986164c07f7eac2b39c7023891f35a9c490e98c6e811d600850e17b05e4a6e",
+      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
       "targetHash": "7e50b78a33e9fe9cefad2a899e2da635a3e66caeed1a67d19329f65d35db51f3",
       "status": "draft",
       "humanReviewed": false,
@@ -272,7 +272,7 @@
     {
       "id": "integration-meta-analysis",
       "locale": "zh",
-      "sourceHash": "ee986164c07f7eac2b39c7023891f35a9c490e98c6e811d600850e17b05e4a6e",
+      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
       "targetHash": "c7ea30613ba53fb6cd4d5a310b098f28b6db82e89a0753509046ee7a514f2889",
       "status": "draft",
       "humanReviewed": false,
@@ -286,7 +286,7 @@
     {
       "id": "integration-meta-analysis",
       "locale": "ru",
-      "sourceHash": "ee986164c07f7eac2b39c7023891f35a9c490e98c6e811d600850e17b05e4a6e",
+      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
       "targetHash": "4d1d71251211f1e75cd71dc83c4d0e209748aadcdd11e5b2d84c6a0ef355b0d6",
       "status": "draft",
       "humanReviewed": false,
@@ -300,7 +300,7 @@
     {
       "id": "integration-meta-analysis",
       "locale": "ar",
-      "sourceHash": "ee986164c07f7eac2b39c7023891f35a9c490e98c6e811d600850e17b05e4a6e",
+      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
       "targetHash": "00a9cd1f107753ff36c9181746af98ad5256ba6c7848b7f5687f80b1d7359cea",
       "status": "draft",
       "humanReviewed": false,
@@ -314,7 +314,7 @@
     {
       "id": "integration-meta-analysis",
       "locale": "id",
-      "sourceHash": "ee986164c07f7eac2b39c7023891f35a9c490e98c6e811d600850e17b05e4a6e",
+      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
       "targetHash": "7e9827a983a130ba4c49325eb5863947085a52540416696434b0b0cff2b1e7c3",
       "status": "draft",
       "humanReviewed": false,
@@ -328,7 +328,7 @@
     {
       "id": "integration-meta-analysis",
       "locale": "ms",
-      "sourceHash": "ee986164c07f7eac2b39c7023891f35a9c490e98c6e811d600850e17b05e4a6e",
+      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
       "targetHash": "4fb34d7466d78614c6ec2b5c1931a897e104a11b7c9c7567e004b532187b9468",
       "status": "draft",
       "humanReviewed": false,
@@ -342,8 +342,8 @@
     {
       "id": "client-preference",
       "locale": "tr",
-      "sourceHash": "fa99d03c570a4c37502f7767b16473ea7d2bff265b6b844ee6625f0889160b3f",
-      "targetHash": "fa99d03c570a4c37502f7767b16473ea7d2bff265b6b844ee6625f0889160b3f",
+      "sourceHash": "6d7ec3427fd1c6e5b55ec2d37e717e2e2956961e589237803d106ebaa76614a0",
+      "targetHash": "6d7ec3427fd1c6e5b55ec2d37e717e2e2956961e589237803d106ebaa76614a0",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -356,7 +356,7 @@
     {
       "id": "client-preference",
       "locale": "en",
-      "sourceHash": "fa99d03c570a4c37502f7767b16473ea7d2bff265b6b844ee6625f0889160b3f",
+      "sourceHash": "6d7ec3427fd1c6e5b55ec2d37e717e2e2956961e589237803d106ebaa76614a0",
       "targetHash": "cc911ac86f53a8261934e703efaae6c625b0afe9e8b12828f4a476c3ba894500",
       "status": "draft",
       "humanReviewed": false,
@@ -370,7 +370,7 @@
     {
       "id": "client-preference",
       "locale": "de",
-      "sourceHash": "fa99d03c570a4c37502f7767b16473ea7d2bff265b6b844ee6625f0889160b3f",
+      "sourceHash": "6d7ec3427fd1c6e5b55ec2d37e717e2e2956961e589237803d106ebaa76614a0",
       "targetHash": "8ca71255d2622d699c4dd3a3ad0a5e93aaeadd9b194b9e2e45e749bac30c73a0",
       "status": "draft",
       "humanReviewed": false,
@@ -384,7 +384,7 @@
     {
       "id": "client-preference",
       "locale": "zh",
-      "sourceHash": "fa99d03c570a4c37502f7767b16473ea7d2bff265b6b844ee6625f0889160b3f",
+      "sourceHash": "6d7ec3427fd1c6e5b55ec2d37e717e2e2956961e589237803d106ebaa76614a0",
       "targetHash": "735cb233f1314b3daafa9802ec3f25fcf1fe597d08471433feb609d748317426",
       "status": "draft",
       "humanReviewed": false,
@@ -398,7 +398,7 @@
     {
       "id": "client-preference",
       "locale": "ru",
-      "sourceHash": "fa99d03c570a4c37502f7767b16473ea7d2bff265b6b844ee6625f0889160b3f",
+      "sourceHash": "6d7ec3427fd1c6e5b55ec2d37e717e2e2956961e589237803d106ebaa76614a0",
       "targetHash": "329646fa9885a102643cfc48a8c4dfd8332deaed65262f47d176e13e299afbfb",
       "status": "draft",
       "humanReviewed": false,
@@ -412,7 +412,7 @@
     {
       "id": "client-preference",
       "locale": "ar",
-      "sourceHash": "fa99d03c570a4c37502f7767b16473ea7d2bff265b6b844ee6625f0889160b3f",
+      "sourceHash": "6d7ec3427fd1c6e5b55ec2d37e717e2e2956961e589237803d106ebaa76614a0",
       "targetHash": "a6e30e35cfc308c0224f560809e587af2ad9221f68b8fab7ba6c6ab7c09e3923",
       "status": "draft",
       "humanReviewed": false,
@@ -426,7 +426,7 @@
     {
       "id": "client-preference",
       "locale": "id",
-      "sourceHash": "fa99d03c570a4c37502f7767b16473ea7d2bff265b6b844ee6625f0889160b3f",
+      "sourceHash": "6d7ec3427fd1c6e5b55ec2d37e717e2e2956961e589237803d106ebaa76614a0",
       "targetHash": "41320d39f48e7be570abd409b6d5bf56c12bc05288968a4751aaf5efcd0a4978",
       "status": "draft",
       "humanReviewed": false,
@@ -440,7 +440,7 @@
     {
       "id": "client-preference",
       "locale": "ms",
-      "sourceHash": "fa99d03c570a4c37502f7767b16473ea7d2bff265b6b844ee6625f0889160b3f",
+      "sourceHash": "6d7ec3427fd1c6e5b55ec2d37e717e2e2956961e589237803d106ebaa76614a0",
       "targetHash": "ebabe3c23a8879bc32bc296c6158d77b7d1bd8e10201f0652204eb877aaa0a9b",
       "status": "draft",
       "humanReviewed": false,
@@ -1126,8 +1126,8 @@
     {
       "id": "ai-health-ethics",
       "locale": "tr",
-      "sourceHash": "239892bfadfa33ee4238e7bbfa99c08fdf111034f47fe84adccaa901091ec128",
-      "targetHash": "239892bfadfa33ee4238e7bbfa99c08fdf111034f47fe84adccaa901091ec128",
+      "sourceHash": "36d4e4086883fd6fbd01ae191d3db3397a77a3fa9c5774a731db4ea93734fea4",
+      "targetHash": "36d4e4086883fd6fbd01ae191d3db3397a77a3fa9c5774a731db4ea93734fea4",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -1140,7 +1140,7 @@
     {
       "id": "ai-health-ethics",
       "locale": "en",
-      "sourceHash": "239892bfadfa33ee4238e7bbfa99c08fdf111034f47fe84adccaa901091ec128",
+      "sourceHash": "36d4e4086883fd6fbd01ae191d3db3397a77a3fa9c5774a731db4ea93734fea4",
       "targetHash": "67ede164dc6c123825730062a023f284ba3f77852324910f5f74a8810764024f",
       "status": "draft",
       "humanReviewed": false,
@@ -1154,7 +1154,7 @@
     {
       "id": "ai-health-ethics",
       "locale": "de",
-      "sourceHash": "239892bfadfa33ee4238e7bbfa99c08fdf111034f47fe84adccaa901091ec128",
+      "sourceHash": "36d4e4086883fd6fbd01ae191d3db3397a77a3fa9c5774a731db4ea93734fea4",
       "targetHash": "fec8b2ba25cb6cdabb4f06e72ceb75b5869fbaf6ab96f2fd230b1a693e6273f1",
       "status": "draft",
       "humanReviewed": false,
@@ -1168,7 +1168,7 @@
     {
       "id": "ai-health-ethics",
       "locale": "zh",
-      "sourceHash": "239892bfadfa33ee4238e7bbfa99c08fdf111034f47fe84adccaa901091ec128",
+      "sourceHash": "36d4e4086883fd6fbd01ae191d3db3397a77a3fa9c5774a731db4ea93734fea4",
       "targetHash": "6072abefdcbd4ff7abab95a6c4402d55c1a6caa3271cb1976a0f3dfe2129f8b9",
       "status": "draft",
       "humanReviewed": false,
@@ -1182,7 +1182,7 @@
     {
       "id": "ai-health-ethics",
       "locale": "ru",
-      "sourceHash": "239892bfadfa33ee4238e7bbfa99c08fdf111034f47fe84adccaa901091ec128",
+      "sourceHash": "36d4e4086883fd6fbd01ae191d3db3397a77a3fa9c5774a731db4ea93734fea4",
       "targetHash": "fa32f8510e6c00e95f0133d81f13e1011b89bc324e32e6eb1536471b8dadfc90",
       "status": "draft",
       "humanReviewed": false,
@@ -1196,7 +1196,7 @@
     {
       "id": "ai-health-ethics",
       "locale": "ar",
-      "sourceHash": "239892bfadfa33ee4238e7bbfa99c08fdf111034f47fe84adccaa901091ec128",
+      "sourceHash": "36d4e4086883fd6fbd01ae191d3db3397a77a3fa9c5774a731db4ea93734fea4",
       "targetHash": "94027f195a70b0d2c5aaa29f81a3a9a07b46d75e44d31b403536418d7c9c1512",
       "status": "draft",
       "humanReviewed": false,
@@ -1210,7 +1210,7 @@
     {
       "id": "ai-health-ethics",
       "locale": "id",
-      "sourceHash": "239892bfadfa33ee4238e7bbfa99c08fdf111034f47fe84adccaa901091ec128",
+      "sourceHash": "36d4e4086883fd6fbd01ae191d3db3397a77a3fa9c5774a731db4ea93734fea4",
       "targetHash": "05effbfcb1dc1561c12919762e6cf156cebe2625389acc26396932c9d0417ccc",
       "status": "draft",
       "humanReviewed": false,
@@ -1224,7 +1224,7 @@
     {
       "id": "ai-health-ethics",
       "locale": "ms",
-      "sourceHash": "239892bfadfa33ee4238e7bbfa99c08fdf111034f47fe84adccaa901091ec128",
+      "sourceHash": "36d4e4086883fd6fbd01ae191d3db3397a77a3fa9c5774a731db4ea93734fea4",
       "targetHash": "015cbb1fc54bb9c214c45e32c3b4e4562a3aa74c817a7346ccd364cd9064e111",
       "status": "draft",
       "humanReviewed": false,
@@ -1238,8 +1238,8 @@
     {
       "id": "malaysia-ukm-counselling",
       "locale": "tr",
-      "sourceHash": "933cc17bbc6bcfbc55d2a17d149da5bc5c77e373fca765b2aebfdbb1a942a194",
-      "targetHash": "933cc17bbc6bcfbc55d2a17d149da5bc5c77e373fca765b2aebfdbb1a942a194",
+      "sourceHash": "251c24b068f0ede35e01773de46b48de0e44ecb42f76330b54b12c288a164f60",
+      "targetHash": "251c24b068f0ede35e01773de46b48de0e44ecb42f76330b54b12c288a164f60",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -1252,7 +1252,7 @@
     {
       "id": "malaysia-ukm-counselling",
       "locale": "en",
-      "sourceHash": "933cc17bbc6bcfbc55d2a17d149da5bc5c77e373fca765b2aebfdbb1a942a194",
+      "sourceHash": "251c24b068f0ede35e01773de46b48de0e44ecb42f76330b54b12c288a164f60",
       "targetHash": "83c6dfc727ee1fd765077daa71b7ed6e3683818b13f86c3fb3fc2feb8943484b",
       "status": "draft",
       "humanReviewed": false,
@@ -1266,7 +1266,7 @@
     {
       "id": "malaysia-ukm-counselling",
       "locale": "de",
-      "sourceHash": "933cc17bbc6bcfbc55d2a17d149da5bc5c77e373fca765b2aebfdbb1a942a194",
+      "sourceHash": "251c24b068f0ede35e01773de46b48de0e44ecb42f76330b54b12c288a164f60",
       "targetHash": "6a4102e153d98190e630fb6d7af92aec7c2f1d89226e591bb928680da9b70f9b",
       "status": "draft",
       "humanReviewed": false,
@@ -1280,7 +1280,7 @@
     {
       "id": "malaysia-ukm-counselling",
       "locale": "zh",
-      "sourceHash": "933cc17bbc6bcfbc55d2a17d149da5bc5c77e373fca765b2aebfdbb1a942a194",
+      "sourceHash": "251c24b068f0ede35e01773de46b48de0e44ecb42f76330b54b12c288a164f60",
       "targetHash": "7dba7bd87763b74132c801753bd443473c33495cc4090f384f34aca5a2498cc9",
       "status": "draft",
       "humanReviewed": false,
@@ -1294,7 +1294,7 @@
     {
       "id": "malaysia-ukm-counselling",
       "locale": "ru",
-      "sourceHash": "933cc17bbc6bcfbc55d2a17d149da5bc5c77e373fca765b2aebfdbb1a942a194",
+      "sourceHash": "251c24b068f0ede35e01773de46b48de0e44ecb42f76330b54b12c288a164f60",
       "targetHash": "e83d2de62e647515f79663c4c069ec40832cbbe8ba307e9e4810b9656f37acef",
       "status": "draft",
       "humanReviewed": false,
@@ -1308,7 +1308,7 @@
     {
       "id": "malaysia-ukm-counselling",
       "locale": "ar",
-      "sourceHash": "933cc17bbc6bcfbc55d2a17d149da5bc5c77e373fca765b2aebfdbb1a942a194",
+      "sourceHash": "251c24b068f0ede35e01773de46b48de0e44ecb42f76330b54b12c288a164f60",
       "targetHash": "daa4022330d711d865c21ce2729025e2f5dbac281f69e242d65bd34927fd9f9c",
       "status": "draft",
       "humanReviewed": false,
@@ -1322,7 +1322,7 @@
     {
       "id": "malaysia-ukm-counselling",
       "locale": "id",
-      "sourceHash": "933cc17bbc6bcfbc55d2a17d149da5bc5c77e373fca765b2aebfdbb1a942a194",
+      "sourceHash": "251c24b068f0ede35e01773de46b48de0e44ecb42f76330b54b12c288a164f60",
       "targetHash": "4539ec08e3e54d0943bf708e48806e00aca7e34547054b961c2afb559dd9c1af",
       "status": "draft",
       "humanReviewed": false,
@@ -1336,7 +1336,7 @@
     {
       "id": "malaysia-ukm-counselling",
       "locale": "ms",
-      "sourceHash": "933cc17bbc6bcfbc55d2a17d149da5bc5c77e373fca765b2aebfdbb1a942a194",
+      "sourceHash": "251c24b068f0ede35e01773de46b48de0e44ecb42f76330b54b12c288a164f60",
       "targetHash": "83dfc6599b64a9ff06205cfccbc7884182ab114e32a0c52e652eb3ddf3b71dad",
       "status": "draft",
       "humanReviewed": false,
@@ -1910,8 +1910,8 @@
     {
       "id": "cbt-spiritual",
       "locale": "tr",
-      "sourceHash": "0e031d8f4e9d25f74971c1e4630c28eb6b6b13ecafc500758036b3b43ea711c7",
-      "targetHash": "0e031d8f4e9d25f74971c1e4630c28eb6b6b13ecafc500758036b3b43ea711c7",
+      "sourceHash": "7e7b05d91100e50ce91eecff24f5ec9823be55668abfdd0d78382b74e40a3745",
+      "targetHash": "7e7b05d91100e50ce91eecff24f5ec9823be55668abfdd0d78382b74e40a3745",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -1924,7 +1924,7 @@
     {
       "id": "cbt-spiritual",
       "locale": "en",
-      "sourceHash": "0e031d8f4e9d25f74971c1e4630c28eb6b6b13ecafc500758036b3b43ea711c7",
+      "sourceHash": "7e7b05d91100e50ce91eecff24f5ec9823be55668abfdd0d78382b74e40a3745",
       "targetHash": "60a6a67cd706169e7c639da64cd928be2b1e7db89658e63019958f140bc2663b",
       "status": "draft",
       "humanReviewed": false,
@@ -1938,7 +1938,7 @@
     {
       "id": "cbt-spiritual",
       "locale": "de",
-      "sourceHash": "0e031d8f4e9d25f74971c1e4630c28eb6b6b13ecafc500758036b3b43ea711c7",
+      "sourceHash": "7e7b05d91100e50ce91eecff24f5ec9823be55668abfdd0d78382b74e40a3745",
       "targetHash": "336f4851aea57e222635912b12cbce8f4b36431d3b01dbd315b2df218f24386c",
       "status": "draft",
       "humanReviewed": false,
@@ -1952,7 +1952,7 @@
     {
       "id": "cbt-spiritual",
       "locale": "zh",
-      "sourceHash": "0e031d8f4e9d25f74971c1e4630c28eb6b6b13ecafc500758036b3b43ea711c7",
+      "sourceHash": "7e7b05d91100e50ce91eecff24f5ec9823be55668abfdd0d78382b74e40a3745",
       "targetHash": "5a175b69dd80d8ce3f54301ccdaed9f97f1212c2058fd43e924eca4d304037e0",
       "status": "draft",
       "humanReviewed": false,
@@ -1966,7 +1966,7 @@
     {
       "id": "cbt-spiritual",
       "locale": "ru",
-      "sourceHash": "0e031d8f4e9d25f74971c1e4630c28eb6b6b13ecafc500758036b3b43ea711c7",
+      "sourceHash": "7e7b05d91100e50ce91eecff24f5ec9823be55668abfdd0d78382b74e40a3745",
       "targetHash": "239b1dbc0d47a36f30edf7999d807e7b23cee180f32aa143729f2edcd3ae6425",
       "status": "draft",
       "humanReviewed": false,
@@ -1980,7 +1980,7 @@
     {
       "id": "cbt-spiritual",
       "locale": "ar",
-      "sourceHash": "0e031d8f4e9d25f74971c1e4630c28eb6b6b13ecafc500758036b3b43ea711c7",
+      "sourceHash": "7e7b05d91100e50ce91eecff24f5ec9823be55668abfdd0d78382b74e40a3745",
       "targetHash": "cc8c24304028dc9ff19c57861450e76ea88a1de82d10d04aa9db437e515f2a0d",
       "status": "draft",
       "humanReviewed": false,
@@ -1994,7 +1994,7 @@
     {
       "id": "cbt-spiritual",
       "locale": "id",
-      "sourceHash": "0e031d8f4e9d25f74971c1e4630c28eb6b6b13ecafc500758036b3b43ea711c7",
+      "sourceHash": "7e7b05d91100e50ce91eecff24f5ec9823be55668abfdd0d78382b74e40a3745",
       "targetHash": "bdb74a90ed0a29c75a1f776a0eb67bd964ef4088a9775a35548a98dbef41bb22",
       "status": "draft",
       "humanReviewed": false,
@@ -2008,7 +2008,7 @@
     {
       "id": "cbt-spiritual",
       "locale": "ms",
-      "sourceHash": "0e031d8f4e9d25f74971c1e4630c28eb6b6b13ecafc500758036b3b43ea711c7",
+      "sourceHash": "7e7b05d91100e50ce91eecff24f5ec9823be55668abfdd0d78382b74e40a3745",
       "targetHash": "ad1e95683ea206d17a6749f705066b9e3105ea87caa2174b79ded11717e1d0b1",
       "status": "draft",
       "humanReviewed": false,
@@ -3030,8 +3030,8 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "tr",
-      "sourceHash": "ba558df4c84763be3822169ad80b507417c1cb1419e4c8ebb426e16cdf480710",
-      "targetHash": "ba558df4c84763be3822169ad80b507417c1cb1419e4c8ebb426e16cdf480710",
+      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
+      "targetHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -3044,7 +3044,7 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "en",
-      "sourceHash": "ba558df4c84763be3822169ad80b507417c1cb1419e4c8ebb426e16cdf480710",
+      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
       "targetHash": "0f3856c0547c3a8375681a41dbb8850a36e648b3634a9d23ef7012c5ba4af75d",
       "status": "draft",
       "humanReviewed": false,
@@ -3058,7 +3058,7 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "de",
-      "sourceHash": "ba558df4c84763be3822169ad80b507417c1cb1419e4c8ebb426e16cdf480710",
+      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
       "targetHash": "0ee1ea62cfd556f721677e978558258d6a1b7cd3028f96f5fbdae2c38471a346",
       "status": "draft",
       "humanReviewed": false,
@@ -3072,7 +3072,7 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "zh",
-      "sourceHash": "ba558df4c84763be3822169ad80b507417c1cb1419e4c8ebb426e16cdf480710",
+      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
       "targetHash": "641c4690b9e31eb997b60d06c0a9d79848e99c5f3816d5793bad6f579d6dc9a8",
       "status": "draft",
       "humanReviewed": false,
@@ -3086,7 +3086,7 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "ru",
-      "sourceHash": "ba558df4c84763be3822169ad80b507417c1cb1419e4c8ebb426e16cdf480710",
+      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
       "targetHash": "8f8f66ef763d64310087c875f39176cb688ba3e90394e90b9caba177ec4e4fe7",
       "status": "draft",
       "humanReviewed": false,
@@ -3100,7 +3100,7 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "ar",
-      "sourceHash": "ba558df4c84763be3822169ad80b507417c1cb1419e4c8ebb426e16cdf480710",
+      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
       "targetHash": "982199579ffb6bcfe2e3b122f6f8c3736a863b9e79baa9e103ec67f114d46701",
       "status": "draft",
       "humanReviewed": false,
@@ -3114,7 +3114,7 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "id",
-      "sourceHash": "ba558df4c84763be3822169ad80b507417c1cb1419e4c8ebb426e16cdf480710",
+      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
       "targetHash": "92361ea08bebae24cbf654309aa7202e72b6e4cf6696aa159aeb4a3bca4de55f",
       "status": "draft",
       "humanReviewed": false,
@@ -3128,7 +3128,7 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "ms",
-      "sourceHash": "ba558df4c84763be3822169ad80b507417c1cb1419e4c8ebb426e16cdf480710",
+      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
       "targetHash": "331c9945a7e77e05cd7d566c57f5cb567448d291f0ffa696184e3791114aaa96",
       "status": "draft",
       "humanReviewed": false,
@@ -5271,7 +5271,7 @@
       "id": "attendance-cohorts",
       "locale": "tr",
       "sourceHash": "fa66640007d72703ea902d0e0e77e734bd7af873e74b64d8b362674b1ed16a16",
-      "targetHash": "9050fe5716409de94906114addec71b6eb21ca9b38e025ec9e001fc6265b2673",
+      "targetHash": "3c60f60f4a1a94bd9994c83d936d0f47e3e7907994973f21113e258013995ada",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -6391,7 +6391,7 @@
       "id": "bidirectional-alspac",
       "locale": "tr",
       "sourceHash": "d2ddb083a3c400d5d271e6933c0a7e01b10bb7089c71a0b2fa1b8dfcbffdf086",
-      "targetHash": "4fe6a7cc93d628b8231e133e17735f94a0ae0b5ba9d5e631a21236e851977e3b",
+      "targetHash": "2054ca48f7dcb0029a9028d396331ce99405259761b523b5ab5e6ef3a8b66ca3",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -6615,7 +6615,7 @@
       "id": "turkish-bereavement",
       "locale": "tr",
       "sourceHash": "66170ff885fc293c463f742ca49dee2a928cd4410bc781fc49cded808d0fd45f",
-      "targetHash": "05a54ab80b3c7dd915c2942574df6cacf4e261e65759dd20ade4e604e2aff256",
+      "targetHash": "d8c48815b36e96d0f812487979898eca9d9dfa84e5175bb0457f94232288c620",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -7398,8 +7398,8 @@
     {
       "id": "hemodialysis-spiritual-care",
       "locale": "tr",
-      "sourceHash": "4a343e2da93e5e7f90dee6717ba6d8a2bc56a2d2c029bd5e79868372332f6f68",
-      "targetHash": "4a343e2da93e5e7f90dee6717ba6d8a2bc56a2d2c029bd5e79868372332f6f68",
+      "sourceHash": "391c0da85df4a110fd3ad23d8643079d95e79b1f5bee435ff22faeebbe39e826",
+      "targetHash": "391c0da85df4a110fd3ad23d8643079d95e79b1f5bee435ff22faeebbe39e826",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -7412,7 +7412,7 @@
     {
       "id": "hemodialysis-spiritual-care",
       "locale": "en",
-      "sourceHash": "4a343e2da93e5e7f90dee6717ba6d8a2bc56a2d2c029bd5e79868372332f6f68",
+      "sourceHash": "391c0da85df4a110fd3ad23d8643079d95e79b1f5bee435ff22faeebbe39e826",
       "targetHash": "6fb2003500ef02031b5211683259f1c179d38ef11ac0ea5941739ffee4725e5b",
       "status": "draft",
       "humanReviewed": false,
@@ -7426,7 +7426,7 @@
     {
       "id": "hemodialysis-spiritual-care",
       "locale": "de",
-      "sourceHash": "4a343e2da93e5e7f90dee6717ba6d8a2bc56a2d2c029bd5e79868372332f6f68",
+      "sourceHash": "391c0da85df4a110fd3ad23d8643079d95e79b1f5bee435ff22faeebbe39e826",
       "targetHash": "d3764c14f14286d8e33d5a5dd977c2760b967f055fc7a288b1233abee05c4ca6",
       "status": "draft",
       "humanReviewed": false,
@@ -7440,7 +7440,7 @@
     {
       "id": "hemodialysis-spiritual-care",
       "locale": "zh",
-      "sourceHash": "4a343e2da93e5e7f90dee6717ba6d8a2bc56a2d2c029bd5e79868372332f6f68",
+      "sourceHash": "391c0da85df4a110fd3ad23d8643079d95e79b1f5bee435ff22faeebbe39e826",
       "targetHash": "fd8d9ae0433d3f13a80d34a5bd79b976f959828eae13fef6dcbce7421d100e3c",
       "status": "draft",
       "humanReviewed": false,
@@ -7454,7 +7454,7 @@
     {
       "id": "hemodialysis-spiritual-care",
       "locale": "ru",
-      "sourceHash": "4a343e2da93e5e7f90dee6717ba6d8a2bc56a2d2c029bd5e79868372332f6f68",
+      "sourceHash": "391c0da85df4a110fd3ad23d8643079d95e79b1f5bee435ff22faeebbe39e826",
       "targetHash": "6328e1a8a57357395ad57fad4a43ab50df8e3a40e49ca202518c80ad75eb423f",
       "status": "draft",
       "humanReviewed": false,
@@ -7468,7 +7468,7 @@
     {
       "id": "hemodialysis-spiritual-care",
       "locale": "ar",
-      "sourceHash": "4a343e2da93e5e7f90dee6717ba6d8a2bc56a2d2c029bd5e79868372332f6f68",
+      "sourceHash": "391c0da85df4a110fd3ad23d8643079d95e79b1f5bee435ff22faeebbe39e826",
       "targetHash": "99990d0c38d100569c757445df727474e8bdf5a1a3cec944650efb77bb705385",
       "status": "draft",
       "humanReviewed": false,
@@ -7482,7 +7482,7 @@
     {
       "id": "hemodialysis-spiritual-care",
       "locale": "id",
-      "sourceHash": "4a343e2da93e5e7f90dee6717ba6d8a2bc56a2d2c029bd5e79868372332f6f68",
+      "sourceHash": "391c0da85df4a110fd3ad23d8643079d95e79b1f5bee435ff22faeebbe39e826",
       "targetHash": "c9ed9e260cc4fa97c26d5c7aed9591d06881a6290975f807af5bf8ba4faa81ce",
       "status": "draft",
       "humanReviewed": false,
@@ -7496,7 +7496,7 @@
     {
       "id": "hemodialysis-spiritual-care",
       "locale": "ms",
-      "sourceHash": "4a343e2da93e5e7f90dee6717ba6d8a2bc56a2d2c029bd5e79868372332f6f68",
+      "sourceHash": "391c0da85df4a110fd3ad23d8643079d95e79b1f5bee435ff22faeebbe39e826",
       "targetHash": "3bd05812b83e59240b2f8ba7c6e85adfac4a446389656cea0493b38280924510",
       "status": "draft",
       "humanReviewed": false,
@@ -8854,8 +8854,8 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "tr",
-      "sourceHash": "5bb5cd86019276980ab7acae76697bbd2f8e536152ed25b94ef90ebc0b5c78a5",
-      "targetHash": "5bb5cd86019276980ab7acae76697bbd2f8e536152ed25b94ef90ebc0b5c78a5",
+      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
+      "targetHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -8868,7 +8868,7 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "en",
-      "sourceHash": "5bb5cd86019276980ab7acae76697bbd2f8e536152ed25b94ef90ebc0b5c78a5",
+      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
       "targetHash": "d2ece4286f2f2b89c902efa1869a79b80f20a05ae712a5e91d0cb4a089fd4431",
       "status": "draft",
       "humanReviewed": false,
@@ -8882,7 +8882,7 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "de",
-      "sourceHash": "5bb5cd86019276980ab7acae76697bbd2f8e536152ed25b94ef90ebc0b5c78a5",
+      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
       "targetHash": "a91186eb226fbf0e11f40f19f89f172fcab9e96a7a66d2da3306079e93080106",
       "status": "draft",
       "humanReviewed": false,
@@ -8896,7 +8896,7 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "zh",
-      "sourceHash": "5bb5cd86019276980ab7acae76697bbd2f8e536152ed25b94ef90ebc0b5c78a5",
+      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
       "targetHash": "7a6a7a28f3dc77a2e1002a1024b734af97feece2432698b9a0219959fd634adf",
       "status": "draft",
       "humanReviewed": false,
@@ -8910,7 +8910,7 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "ru",
-      "sourceHash": "5bb5cd86019276980ab7acae76697bbd2f8e536152ed25b94ef90ebc0b5c78a5",
+      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
       "targetHash": "ddf021f537c6e39da694cd0b078c2320752d7aa8359b511c3181139872f2ea59",
       "status": "draft",
       "humanReviewed": false,
@@ -8924,7 +8924,7 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "ar",
-      "sourceHash": "5bb5cd86019276980ab7acae76697bbd2f8e536152ed25b94ef90ebc0b5c78a5",
+      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
       "targetHash": "bf4477af99b39a15691d0ceec7ee0ba667fcde222adc74b06b1c956754c87a29",
       "status": "draft",
       "humanReviewed": false,
@@ -8938,7 +8938,7 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "id",
-      "sourceHash": "5bb5cd86019276980ab7acae76697bbd2f8e536152ed25b94ef90ebc0b5c78a5",
+      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
       "targetHash": "5bec36d817b0d8547b3b4cb4befef9c00a10b6b97b24f6b409c0ddf8b2f71a98",
       "status": "draft",
       "humanReviewed": false,
@@ -8952,7 +8952,7 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "ms",
-      "sourceHash": "5bb5cd86019276980ab7acae76697bbd2f8e536152ed25b94ef90ebc0b5c78a5",
+      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
       "targetHash": "95d542a08ee9749d4a2d6b793ab3e24de8c7246f73054d4d6f1a5680beb807b7",
       "status": "draft",
       "humanReviewed": false,
@@ -9178,6 +9178,118 @@
       "locale": "ms",
       "sourceHash": "3a47a4c1f753bbe3647f58a99363ffeb54443ecc808723eccca548c6dfa86b7c",
       "targetHash": "71af6a6586f70010b84503e76435bb318aa1a7326408e2f5ee15fd41b6cf1b10",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
+    },
+    {
+      "id": "aservic-2025-practices",
+      "locale": "tr",
+      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "targetHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
+    },
+    {
+      "id": "aservic-2025-practices",
+      "locale": "en",
+      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "targetHash": "9199e347af357415412cc1ea5e0e0d58d90abc750b5880e51922503ac919a1b7",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
+    },
+    {
+      "id": "aservic-2025-practices",
+      "locale": "de",
+      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "targetHash": "c06ef038db0d502f95166ad59f6fb5a2eae2266e8b82d8688964ac9f5160486b",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
+    },
+    {
+      "id": "aservic-2025-practices",
+      "locale": "zh",
+      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "targetHash": "841b83232eb3a6fb87a33e08f70f5c38855627e384ece83a42a70bd336ffeb66",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
+    },
+    {
+      "id": "aservic-2025-practices",
+      "locale": "ru",
+      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "targetHash": "96e5685252d3dff5fb825fefe6334ed0e992deba844ebcd63b73936ad116e1a4",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
+    },
+    {
+      "id": "aservic-2025-practices",
+      "locale": "ar",
+      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "targetHash": "7c23545a858d16213dcc4ec3f8743052b1cf4c81adf725021741305ce32171d2",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "rtl",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
+    },
+    {
+      "id": "aservic-2025-practices",
+      "locale": "id",
+      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "targetHash": "94016d1ffad41b276f2a0378049c8c1b7fc208bf3dd5439ab65962ef18c48a18",
+      "status": "draft",
+      "humanReviewed": false,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "method": "AI_ASSISTED_DRAFT",
+      "direction": "ltr",
+      "sourceLanguage": "tr",
+      "bindingModel": "legacy-seed"
+    },
+    {
+      "id": "aservic-2025-practices",
+      "locale": "ms",
+      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "targetHash": "bc91c79540c1ffe2d78523fdb114eb2987aa4ba8efcf2e295eb99483fac91277",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
