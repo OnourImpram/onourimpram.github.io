@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "release": "marsam-scholarly-infrastructure-0.11.0",
   "version": "0.11.0",
-  "generatedAt": "2026-10-05T11:45:33.372Z",
+  "generatedAt": "2026-10-05T12:14:58.858Z",
   "publicationState": "institutional-review",
   "reviewStatus": "AI_ASSISTED_DRAFT",
   "humanReviewed": false,
@@ -24,7 +24,46 @@
         "convergent/divergent validity"
       ],
       "invariance": "not reported in inspected abstract",
-      "rights": "link-only; item text not republished"
+      "rights": "link-only; item text not republished",
+      "form": "five-factor-22-item",
+      "itemCount": 22,
+      "measurementProperties": [
+        {
+          "property": "CFA",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-rss-ff-tr",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "internal consistency",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-rss-ff-tr",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "convergent/divergent validity",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-rss-ff-tr",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        }
+      ],
+      "rightsDetail": {
+        "itemReproduction": "NOT_CLEARED",
+        "scoringInstructions": "NOT_CLEARED",
+        "translationReuse": "NOT_CLEARED"
+      }
     },
     {
       "id": "sprs",
@@ -41,7 +80,56 @@
         "criterion validity"
       ],
       "invariance": "cross-cultural invariance not established",
-      "rights": "link-only; item text not republished"
+      "rights": "link-only; item text not republished",
+      "form": null,
+      "itemCount": null,
+      "measurementProperties": [
+        {
+          "property": "EFA",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-sprs",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "CFA",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-sprs",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "internal consistency",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-sprs",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "criterion validity",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-sprs",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        }
+      ],
+      "rightsDetail": {
+        "itemReproduction": "NOT_CLEARED",
+        "scoringInstructions": "NOT_CLEARED",
+        "translationReuse": "NOT_CLEARED"
+      }
     },
     {
       "id": "sefc",
@@ -58,7 +146,56 @@
         "test-retest"
       ],
       "invariance": "not established",
-      "rights": "link-only; item text not republished"
+      "rights": "link-only; item text not republished",
+      "form": null,
+      "itemCount": null,
+      "measurementProperties": [
+        {
+          "property": "EFA",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-sefc",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "CFA",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-sefc",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "internal consistency",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-sefc",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "test-retest",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-sefc",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        }
+      ],
+      "rightsDetail": {
+        "itemReproduction": "NOT_CLEARED",
+        "scoringInstructions": "NOT_CLEARED",
+        "translationReuse": "NOT_CLEARED"
+      }
     },
     {
       "id": "swbs-eksi-kardas",
@@ -73,7 +210,36 @@
         "internal consistency"
       ],
       "invariance": "see source record",
-      "rights": "permission must be checked before item reproduction"
+      "rights": "permission must be checked before item reproduction",
+      "form": "eksi-kardas-29-item",
+      "itemCount": 29,
+      "measurementProperties": [
+        {
+          "property": "factor structure",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-swbs-eksi-kardas",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "internal consistency",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-swbs-eksi-kardas",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        }
+      ],
+      "rightsDetail": {
+        "itemReproduction": "NOT_CLEARED",
+        "scoringInstructions": "NOT_CLEARED",
+        "translationReuse": "NOT_CLEARED"
+      }
     },
     {
       "id": "swbs-paloutzian-ellison",
@@ -87,7 +253,26 @@
         "original conceptualization and measurement"
       ],
       "invariance": "language and population specific evidence required",
-      "rights": "permission must be checked before item reproduction"
+      "rights": "permission must be checked before item reproduction",
+      "form": "paloutzian-ellison-20-item",
+      "itemCount": 20,
+      "measurementProperties": [
+        {
+          "property": "original conceptualization and measurement",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-swbs-paloutzian-ellison",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        }
+      ],
+      "rightsDetail": {
+        "itemReproduction": "NOT_CLEARED",
+        "scoringInstructions": "NOT_CLEARED",
+        "translationReuse": "NOT_CLEARED"
+      }
     },
     {
       "id": "icsg-2",
@@ -103,7 +288,46 @@
         "incremental validity"
       ],
       "invariance": "cross-language invariance not established by this record",
-      "rights": "link-only; item text not republished"
+      "rights": "link-only; item text not republished",
+      "form": "2.0",
+      "itemCount": 28,
+      "measurementProperties": [
+        {
+          "property": "factor structure",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-icsg-2",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "convergent validity",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-icsg-2",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "incremental validity",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-icsg-2",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        }
+      ],
+      "rightsDetail": {
+        "itemReproduction": "NOT_CLEARED",
+        "scoringInstructions": "NOT_CLEARED",
+        "translationReuse": "NOT_CLEARED"
+      }
     },
     {
       "id": "icsg-2-fa",
@@ -120,7 +344,56 @@
         "convergent/divergent validity"
       ],
       "invariance": "adaptation evidence does not establish cross-language invariance",
-      "rights": "link-only; item text not republished"
+      "rights": "link-only; item text not republished",
+      "form": "2.0-persian",
+      "itemCount": 28,
+      "measurementProperties": [
+        {
+          "property": "CFA",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-icsg-2-fa",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "internal consistency",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-icsg-2-fa",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "test-retest",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-icsg-2-fa",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "convergent/divergent validity",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-icsg-2-fa",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        }
+      ],
+      "rightsDetail": {
+        "itemReproduction": "NOT_CLEARED",
+        "scoringInstructions": "NOT_CLEARED",
+        "translationReuse": "NOT_CLEARED"
+      }
     },
     {
       "id": "p-sds",
@@ -138,7 +411,66 @@
         "concurrent validity"
       ],
       "invariance": "cross-language invariance not established by this record",
-      "rights": "link-only; item text not republished"
+      "rights": "link-only; item text not republished",
+      "form": "persian-adaptation",
+      "itemCount": null,
+      "measurementProperties": [
+        {
+          "property": "content validity",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-p-sds",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "CFA",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-p-sds",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "internal consistency",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-p-sds",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "test-retest",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-p-sds",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        },
+        {
+          "property": "concurrent validity",
+          "method": null,
+          "resultSummary": null,
+          "sourceId": "s-p-sds",
+          "appraisal": {
+            "framework": "COSMIN",
+            "status": "NOT_YET_APPRAISED"
+          }
+        }
+      ],
+      "rightsDetail": {
+        "itemReproduction": "NOT_CLEARED",
+        "scoringInstructions": "NOT_CLEARED",
+        "translationReuse": "NOT_CLEARED"
+      }
     }
   ]
 }

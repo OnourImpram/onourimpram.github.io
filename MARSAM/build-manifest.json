@@ -14,7 +14,7 @@
   "release": "marsam-scholarly-infrastructure-0.11.0",
   "base": "/MARSAM/",
   "mode": "preview",
-  "generatedAt": "2026-10-05T11:45:33.462Z",
+  "generatedAt": "2026-10-05T12:14:59.000Z",
   "locales": [
     "tr",
     "en",
@@ -972,6 +972,5 @@
       "humanReviewed": false,
       "direction": "ltr"
     }
-  },
-  "deploymentCommit": "70f1405c564eb23cfae3fc3023b3ef3a38444274"
+  }
 }
