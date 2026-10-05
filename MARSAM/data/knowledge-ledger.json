@@ -5802,6 +5802,2120 @@
           "formalApprovalVerified": false
         }
       }
+    },
+    {
+      "id": "spirituality-ptsd-review",
+      "sourceId": "s-spirituality-ptsd-review",
+      "originalTitle": "The Effects of Spirituality on Depression, Anxiety, and Post-Traumatic Stress Disorder: A Systematic Review",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1007/s10943-026-02671-w"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence-bridges"
+      ],
+      "sourceRecordHash": "45ab57fd93c58ad3c9be7cd99ff007186a5ab96f65fdabbcd8bdfbd303ede8ea",
+      "versions": [
+        {
+          "id": "spirituality-ptsd-review-record",
+          "edition": null,
+          "date": "2026",
+          "publisher": null,
+          "identifier": [
+            "10.1007/s10943-026-02671-w"
+          ],
+          "source": "https://doi.org/10.1007/s10943-026-02671-w"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1007/s10943-026-02671-w",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-spirituality-ptsd-review-authors-1",
+          "name": "Nesrullah Okan",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spirituality-ptsd-review"
+        },
+        {
+          "id": "s-spirituality-ptsd-review-authors-2",
+          "name": "Yahya Şahin",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-spirituality-ptsd-review"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Depresyon, anksiyete ve PTSD için güncel sistematik derleme",
+        "en": "The Effects of Spirituality on Depression, Anxiety, and Post-Traumatic Stress Disorder: A Systematic Review",
+        "de": "The Effects of Spirituality on Depression, Anxiety, and Post-Traumatic Stress Disorder: A Systematic Review",
+        "zh": "The Effects of Spirituality on Depression, Anxiety, and Post-Traumatic Stress Disorder: A Systematic Review",
+        "ru": "The Effects of Spirituality on Depression, Anxiety, and Post-Traumatic Stress Disorder: A Systematic Review",
+        "ar": "The Effects of Spirituality on Depression, Anxiety, and Post-Traumatic Stress Disorder: A Systematic Review",
+        "id": "The Effects of Spirituality on Depression, Anxiety, and Post-Traumatic Stress Disorder: A Systematic Review",
+        "ms": "The Effects of Spirituality on Depression, Anxiety, and Post-Traumatic Stress Disorder: A Systematic Review"
+      },
+      "description": {
+        "tr": "17 çalışmalık anlatısal sentez, olası yararlı ilişkilerin yanında manevi çatışma ve karşılanmamış manevi ihtiyaçlarla ilişkili sıkıntıyı da ayırır.",
+        "en": "A 17-study narrative synthesis separates potentially beneficial associations from distress linked to spiritual conflict and unmet spiritual needs.",
+        "de": "A 17-study narrative synthesis separates potentially beneficial associations from distress linked to spiritual conflict and unmet spiritual needs.",
+        "zh": "A 17-study narrative synthesis separates potentially beneficial associations from distress linked to spiritual conflict and unmet spiritual needs.",
+        "ru": "A 17-study narrative synthesis separates potentially beneficial associations from distress linked to spiritual conflict and unmet spiritual needs.",
+        "ar": "A 17-study narrative synthesis separates potentially beneficial associations from distress linked to spiritual conflict and unmet spiritual needs.",
+        "id": "A 17-study narrative synthesis separates potentially beneficial associations from distress linked to spiritual conflict and unmet spiritual needs.",
+        "ms": "A 17-study narrative synthesis separates potentially beneficial associations from distress linked to spiritual conflict and unmet spiritual needs."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1007/s10943-026-02671-w"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "PubMed bibliographic record and publisher abstract inspected. The review reports 17 included studies and narrative synthesis; study-level risk-of-bias tables were not independently reproduced.",
+          "limit": "Bibliographic identity and the stated inspection scope were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "rss-ff-tr",
+      "sourceId": "s-rss-ff-tr",
+      "originalTitle": "Adaptation of the Five-Factor Religious and Spiritual Struggles Scale and its Psychometric Properties in Türkiye",
+      "language": "en",
+      "kind": "measure",
+      "identifiers": [
+        "10.1007/s10943-026-02728-w"
+      ],
+      "topic": "assessment",
+      "sections": [
+        "library",
+        "measurement-observatory"
+      ],
+      "sourceRecordHash": "52df48710982a8486667522f2b417a0304c11c41cfb3863ecb7e517ba8310f5d",
+      "versions": [
+        {
+          "id": "rss-ff-tr-record",
+          "edition": null,
+          "date": "2026",
+          "publisher": null,
+          "identifier": [
+            "10.1007/s10943-026-02728-w"
+          ],
+          "source": "https://doi.org/10.1007/s10943-026-02728-w"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1007/s10943-026-02728-w",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-rss-ff-tr-authors-1",
+          "name": "Betül Şahin",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-rss-ff-tr"
+        },
+        {
+          "id": "s-rss-ff-tr-authors-2",
+          "name": "Yıldız Bilge",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-rss-ff-tr"
+        }
+      ],
+      "displayTitle": {
+        "tr": "RSS-FF Türkiye uyarlaması · 22 madde",
+        "en": "Adaptation of the Five-Factor Religious and Spiritual Struggles Scale and its Psychometric Properties in Türkiye",
+        "de": "Adaptation of the Five-Factor Religious and Spiritual Struggles Scale and its Psychometric Properties in Türkiye",
+        "zh": "Adaptation of the Five-Factor Religious and Spiritual Struggles Scale and its Psychometric Properties in Türkiye",
+        "ru": "Adaptation of the Five-Factor Religious and Spiritual Struggles Scale and its Psychometric Properties in Türkiye",
+        "ar": "Adaptation of the Five-Factor Religious and Spiritual Struggles Scale and its Psychometric Properties in Türkiye",
+        "id": "Adaptation of the Five-Factor Religious and Spiritual Struggles Scale and its Psychometric Properties in Türkiye",
+        "ms": "Adaptation of the Five-Factor Religious and Spiritual Struggles Scale and its Psychometric Properties in Türkiye"
+      },
+      "description": {
+        "tr": "Beş faktörlü Türkçe form, mevcut RSS-14 kaydından ayrı bir araç sürümüdür.",
+        "en": "The five-factor Turkish form is a distinct instrument version from the existing RSS-14 record.",
+        "de": "The five-factor Turkish form is a distinct instrument version from the existing RSS-14 record.",
+        "zh": "The five-factor Turkish form is a distinct instrument version from the existing RSS-14 record.",
+        "ru": "The five-factor Turkish form is a distinct instrument version from the existing RSS-14 record.",
+        "ar": "The five-factor Turkish form is a distinct instrument version from the existing RSS-14 record.",
+        "id": "The five-factor Turkish form is a distinct instrument version from the existing RSS-14 record.",
+        "ms": "The five-factor Turkish form is a distinct instrument version from the existing RSS-14 record."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1007/s10943-026-02728-w"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "PubMed bibliographic record and abstract inspected. This is the 22-item five-factor Turkish adaptation with the Demonic subscale omitted; it is not the RSS-14 record already in MARSAM.",
+          "limit": "Bibliographic identity and the stated inspection scope were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "sprs",
+      "sourceId": "s-sprs",
+      "originalTitle": "The Spiritual Psychological Robustness Scale (SPRS): A New Measure for Assessing Spiritual and Psychological Strength in the Context of Turkish Culture",
+      "language": "en",
+      "kind": "measure",
+      "identifiers": [
+        "10.1007/s10943-024-02175-5"
+      ],
+      "topic": "assessment",
+      "sections": [
+        "library",
+        "measurement-observatory"
+      ],
+      "sourceRecordHash": "abe34df1d3750f9ed2fc5a8382d0ca16c65af76dfc3c0bf4e2fd92b1970a0bef",
+      "versions": [
+        {
+          "id": "sprs-record",
+          "edition": null,
+          "date": "2025",
+          "publisher": null,
+          "identifier": [
+            "10.1007/s10943-024-02175-5"
+          ],
+          "source": "https://doi.org/10.1007/s10943-024-02175-5"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1007/s10943-024-02175-5",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-sprs-authors-1",
+          "name": "Nesrullah Okan",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sprs"
+        },
+        {
+          "id": "s-sprs-authors-2",
+          "name": "Füsun Ekşi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sprs"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Manevi Psikolojik Sağlamlık Ölçeği",
+        "en": "The Spiritual Psychological Robustness Scale (SPRS): A New Measure for Assessing Spiritual and Psychological Strength in the Context of Turkish Culture",
+        "de": "The Spiritual Psychological Robustness Scale (SPRS): A New Measure for Assessing Spiritual and Psychological Strength in the Context of Turkish Culture",
+        "zh": "The Spiritual Psychological Robustness Scale (SPRS): A New Measure for Assessing Spiritual and Psychological Strength in the Context of Turkish Culture",
+        "ru": "The Spiritual Psychological Robustness Scale (SPRS): A New Measure for Assessing Spiritual and Psychological Strength in the Context of Turkish Culture",
+        "ar": "The Spiritual Psychological Robustness Scale (SPRS): A New Measure for Assessing Spiritual and Psychological Strength in the Context of Turkish Culture",
+        "id": "The Spiritual Psychological Robustness Scale (SPRS): A New Measure for Assessing Spiritual and Psychological Strength in the Context of Turkish Culture",
+        "ms": "The Spiritual Psychological Robustness Scale (SPRS): A New Measure for Assessing Spiritual and Psychological Strength in the Context of Turkish Culture"
+      },
+      "description": {
+        "tr": "Türkiye bağlamında geliştirme çalışmasıdır. Kültürler arası değişmezlik için ayrı kanıt gerekir.",
+        "en": "A development study in the Turkish context. Cross-cultural invariance requires separate evidence.",
+        "de": "A development study in the Turkish context. Cross-cultural invariance requires separate evidence.",
+        "zh": "A development study in the Turkish context. Cross-cultural invariance requires separate evidence.",
+        "ru": "A development study in the Turkish context. Cross-cultural invariance requires separate evidence.",
+        "ar": "A development study in the Turkish context. Cross-cultural invariance requires separate evidence.",
+        "id": "A development study in the Turkish context. Cross-cultural invariance requires separate evidence.",
+        "ms": "A development study in the Turkish context. Cross-cultural invariance requires separate evidence."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1007/s10943-024-02175-5"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "PubMed bibliographic record and abstract inspected. Development evidence is Turkish-context psychometrics; cross-cultural invariance is not established by this record.",
+          "limit": "Bibliographic identity and the stated inspection scope were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "sefc",
+      "sourceId": "s-sefc",
+      "originalTitle": "Development and Validation of the Spiritual Empathy Fatigue Scale (SEFC): A Psychometric Study Among Faith-Based Care Providers in Turkey",
+      "language": "en",
+      "kind": "measure",
+      "identifiers": [
+        "10.1007/s10943-025-02523-z"
+      ],
+      "topic": "assessment",
+      "sections": [
+        "library",
+        "measurement-observatory"
+      ],
+      "sourceRecordHash": "233ef3251fd0c9a7120152dde582138d7bf169d6d2aece253642d96452828de6",
+      "versions": [
+        {
+          "id": "sefc-record",
+          "edition": null,
+          "date": "2026",
+          "publisher": null,
+          "identifier": [
+            "10.1007/s10943-025-02523-z"
+          ],
+          "source": "https://doi.org/10.1007/s10943-025-02523-z"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1007/s10943-025-02523-z",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-sefc-authors-1",
+          "name": "Nesrullah Okan",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sefc"
+        },
+        {
+          "id": "s-sefc-authors-2",
+          "name": "Muhammed Kızılgeçit",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sefc"
+        },
+        {
+          "id": "s-sefc-authors-3",
+          "name": "Hanifi Şahin",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sefc"
+        },
+        {
+          "id": "s-sefc-authors-4",
+          "name": "Fatih Kurt",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sefc"
+        },
+        {
+          "id": "s-sefc-authors-5",
+          "name": "Reyhan Keleş",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sefc"
+        },
+        {
+          "id": "s-sefc-authors-6",
+          "name": "Aytaç Ören",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sefc"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Manevi Empati Yorgunluğu Ölçeği",
+        "en": "Development and Validation of the Spiritual Empathy Fatigue Scale (SEFC): A Psychometric Study Among Faith-Based Care Providers in Turkey",
+        "de": "Development and Validation of the Spiritual Empathy Fatigue Scale (SEFC): A Psychometric Study Among Faith-Based Care Providers in Turkey",
+        "zh": "Development and Validation of the Spiritual Empathy Fatigue Scale (SEFC): A Psychometric Study Among Faith-Based Care Providers in Turkey",
+        "ru": "Development and Validation of the Spiritual Empathy Fatigue Scale (SEFC): A Psychometric Study Among Faith-Based Care Providers in Turkey",
+        "ar": "Development and Validation of the Spiritual Empathy Fatigue Scale (SEFC): A Psychometric Study Among Faith-Based Care Providers in Turkey",
+        "id": "Development and Validation of the Spiritual Empathy Fatigue Scale (SEFC): A Psychometric Study Among Faith-Based Care Providers in Turkey",
+        "ms": "Development and Validation of the Spiritual Empathy Fatigue Scale (SEFC): A Psychometric Study Among Faith-Based Care Providers in Turkey"
+      },
+      "description": {
+        "tr": "İnanç temelli yardım sunan profesyoneller için geliştirilen dört boyutlu ölçme aracıdır. Bağımsız tekrar çalışmaları gerekir.",
+        "en": "A four-dimensional measure developed for faith-based care providers. Independent replication remains needed.",
+        "de": "A four-dimensional measure developed for faith-based care providers. Independent replication remains needed.",
+        "zh": "A four-dimensional measure developed for faith-based care providers. Independent replication remains needed.",
+        "ru": "A four-dimensional measure developed for faith-based care providers. Independent replication remains needed.",
+        "ar": "A four-dimensional measure developed for faith-based care providers. Independent replication remains needed.",
+        "id": "A four-dimensional measure developed for faith-based care providers. Independent replication remains needed.",
+        "ms": "A four-dimensional measure developed for faith-based care providers. Independent replication remains needed."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1007/s10943-025-02523-z"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "PubMed bibliographic record and abstract inspected. EFA, CFA, internal consistency and a small test-retest subsample are reported; independent replication is not established.",
+          "limit": "Bibliographic identity and the stated inspection scope were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "hemodialysis-spiritual-care",
+      "sourceId": "s-hemodialysis-spiritual-care",
+      "originalTitle": "The Effect of Spiritual Care on Anxiety and Depression Level in Patients Receiving Hemodialysis Treatment: a Randomized Controlled Trial",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1007/s10943-021-01386-4"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence-bridges"
+      ],
+      "sourceRecordHash": "690d9fef924221ceb7b1151e11ddb502995837e61e0e451ce63ee527f4f80f25",
+      "versions": [
+        {
+          "id": "hemodialysis-spiritual-care-record",
+          "edition": null,
+          "date": "2022",
+          "publisher": null,
+          "identifier": [
+            "10.1007/s10943-021-01386-4"
+          ],
+          "source": "https://doi.org/10.1007/s10943-021-01386-4"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1007/s10943-021-01386-4",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-hemodialysis-spiritual-care-authors-1",
+          "name": "Mustafa Durmuş",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-hemodialysis-spiritual-care"
+        },
+        {
+          "id": "s-hemodialysis-spiritual-care-authors-2",
+          "name": "Mine Ekinci",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-hemodialysis-spiritual-care"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Hemodiyalizde manevi bakım · randomize kontrollü çalışma",
+        "en": "The Effect of Spiritual Care on Anxiety and Depression Level in Patients Receiving Hemodialysis Treatment: a Randomized Controlled Trial",
+        "de": "The Effect of Spiritual Care on Anxiety and Depression Level in Patients Receiving Hemodialysis Treatment: a Randomized Controlled Trial",
+        "zh": "The Effect of Spiritual Care on Anxiety and Depression Level in Patients Receiving Hemodialysis Treatment: a Randomized Controlled Trial",
+        "ru": "The Effect of Spiritual Care on Anxiety and Depression Level in Patients Receiving Hemodialysis Treatment: a Randomized Controlled Trial",
+        "ar": "The Effect of Spiritual Care on Anxiety and Depression Level in Patients Receiving Hemodialysis Treatment: a Randomized Controlled Trial",
+        "id": "The Effect of Spiritual Care on Anxiety and Depression Level in Patients Receiving Hemodialysis Treatment: a Randomized Controlled Trial",
+        "ms": "The Effect of Spiritual Care on Anxiety and Depression Level in Patients Receiving Hemodialysis Treatment: a Randomized Controlled Trial"
+      },
+      "description": {
+        "tr": "Türkiye’de 71 hemodiyaliz hastasıyla yürütülen randomize çalışma müdahale kanıtı ekler, fakat tek çalışma geniş klinik genelleme için yeterli değildir.",
+        "en": "A Turkish randomized trial with 71 haemodialysis patients adds intervention evidence, but one study is insufficient for broad clinical generalisation.",
+        "de": "A Turkish randomized trial with 71 haemodialysis patients adds intervention evidence, but one study is insufficient for broad clinical generalisation.",
+        "zh": "A Turkish randomized trial with 71 haemodialysis patients adds intervention evidence, but one study is insufficient for broad clinical generalisation.",
+        "ru": "A Turkish randomized trial with 71 haemodialysis patients adds intervention evidence, but one study is insufficient for broad clinical generalisation.",
+        "ar": "A Turkish randomized trial with 71 haemodialysis patients adds intervention evidence, but one study is insufficient for broad clinical generalisation.",
+        "id": "A Turkish randomized trial with 71 haemodialysis patients adds intervention evidence, but one study is insufficient for broad clinical generalisation.",
+        "ms": "A Turkish randomized trial with 71 haemodialysis patients adds intervention evidence, but one study is insufficient for broad clinical generalisation."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1007/s10943-021-01386-4"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "PubMed bibliographic record and abstract inspected. The trial included 71 haemodialysis patients. The abstract alone is insufficient for a full risk-of-bias judgment or broad clinical generalisation.",
+          "limit": "Bibliographic identity and the stated inspection scope were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "muslim-coping-multinational",
+      "sourceId": "s-muslim-coping-multinational",
+      "originalTitle": "On the links between positive religious coping, satisfaction with life and depressive symptoms among a multinational sample of Muslims",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1002/ijop.12521"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence-bridges"
+      ],
+      "sourceRecordHash": "f6e83d0ecab439d7609259a5633e8c58bf5314e5c02c8a7cfd544c1bd7e23896",
+      "versions": [
+        {
+          "id": "muslim-coping-multinational-record",
+          "edition": null,
+          "date": "2019",
+          "publisher": null,
+          "identifier": [
+            "10.1002/ijop.12521"
+          ],
+          "source": "https://doi.org/10.1002/ijop.12521"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1002/ijop.12521",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-muslim-coping-multinational-authors-1",
+          "name": "Hisham Abu-Raiya",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-muslim-coping-multinational"
+        },
+        {
+          "id": "s-muslim-coping-multinational-authors-2",
+          "name": "Ali Ayten",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-muslim-coping-multinational"
+        },
+        {
+          "id": "s-muslim-coping-multinational-authors-3",
+          "name": "Mustafa Tekke",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-muslim-coping-multinational"
+        },
+        {
+          "id": "s-muslim-coping-multinational-authors-4",
+          "name": "Qutaiba Agbaria",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-muslim-coping-multinational"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Üç Müslüman bağlamda olumlu dini başa çıkma",
+        "en": "On the links between positive religious coping, satisfaction with life and depressive symptoms among a multinational sample of Muslims",
+        "de": "On the links between positive religious coping, satisfaction with life and depressive symptoms among a multinational sample of Muslims",
+        "zh": "On the links between positive religious coping, satisfaction with life and depressive symptoms among a multinational sample of Muslims",
+        "ru": "On the links between positive religious coping, satisfaction with life and depressive symptoms among a multinational sample of Muslims",
+        "ar": "On the links between positive religious coping, satisfaction with life and depressive symptoms among a multinational sample of Muslims",
+        "id": "On the links between positive religious coping, satisfaction with life and depressive symptoms among a multinational sample of Muslims",
+        "ms": "On the links between positive religious coping, satisfaction with life and depressive symptoms among a multinational sample of Muslims"
+      },
+      "description": {
+        "tr": "706 üniversite öğrencisinde olumlu dini başa çıkma yaşam doyumuyla ilişkiliydi, depresif belirtilerle ilişkili değildi.",
+        "en": "Among 706 university students in Türkiye, Malaysia and Israel/Palestine, positive religious coping related to life satisfaction but not depressive symptoms.",
+        "de": "Among 706 university students in Türkiye, Malaysia and Israel/Palestine, positive religious coping related to life satisfaction but not depressive symptoms.",
+        "zh": "Among 706 university students in Türkiye, Malaysia and Israel/Palestine, positive religious coping related to life satisfaction but not depressive symptoms.",
+        "ru": "Among 706 university students in Türkiye, Malaysia and Israel/Palestine, positive religious coping related to life satisfaction but not depressive symptoms.",
+        "ar": "Among 706 university students in Türkiye, Malaysia and Israel/Palestine, positive religious coping related to life satisfaction but not depressive symptoms.",
+        "id": "Among 706 university students in Türkiye, Malaysia and Israel/Palestine, positive religious coping related to life satisfaction but not depressive symptoms.",
+        "ms": "Among 706 university students in Türkiye, Malaysia and Israel/Palestine, positive religious coping related to life satisfaction but not depressive symptoms."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1002/ijop.12521"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "Publisher abstract and PubMed record inspected. Cross-sectional comparison of 706 university students in Israel/Palestine, Türkiye and Malaysia; association does not establish causal benefit.",
+          "limit": "Bibliographic identity and the stated inspection scope were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "refugee-faith-coping",
+      "sourceId": "s-refugee-faith-coping",
+      "originalTitle": "Faith-Based Coping Among Arabic-Speaking Refugees Seeking Mental Health Services in Berlin, Germany: An Exploratory Qualitative Study",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.3389/fpsyt.2021.595979"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence-bridges"
+      ],
+      "sourceRecordHash": "56ca5080c00eb68bc148792cc86cbe237dc7d523d0dd000010c5de3666ce6452",
+      "versions": [
+        {
+          "id": "refugee-faith-coping-record",
+          "edition": null,
+          "date": "2021",
+          "publisher": null,
+          "identifier": [
+            "10.3389/fpsyt.2021.595979"
+          ],
+          "source": "https://doi.org/10.3389/fpsyt.2021.595979"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.3389/fpsyt.2021.595979",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-refugee-faith-coping-authors-1",
+          "name": "Diana Rayes",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-refugee-faith-coping"
+        },
+        {
+          "id": "s-refugee-faith-coping-authors-2",
+          "name": "Carine Karnouk",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-refugee-faith-coping"
+        },
+        {
+          "id": "s-refugee-faith-coping-authors-3",
+          "name": "Dana Churbaji",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-refugee-faith-coping"
+        },
+        {
+          "id": "s-refugee-faith-coping-authors-4",
+          "name": "Lena Walther",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-refugee-faith-coping"
+        },
+        {
+          "id": "s-refugee-faith-coping-authors-5",
+          "name": "Malek Bajbouj",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-refugee-faith-coping"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Berlin’de Arapça konuşan mültecilerde inanç temelli başa çıkma",
+        "en": "Faith-Based Coping Among Arabic-Speaking Refugees Seeking Mental Health Services in Berlin, Germany: An Exploratory Qualitative Study",
+        "de": "Faith-Based Coping Among Arabic-Speaking Refugees Seeking Mental Health Services in Berlin, Germany: An Exploratory Qualitative Study",
+        "zh": "Faith-Based Coping Among Arabic-Speaking Refugees Seeking Mental Health Services in Berlin, Germany: An Exploratory Qualitative Study",
+        "ru": "Faith-Based Coping Among Arabic-Speaking Refugees Seeking Mental Health Services in Berlin, Germany: An Exploratory Qualitative Study",
+        "ar": "Faith-Based Coping Among Arabic-Speaking Refugees Seeking Mental Health Services in Berlin, Germany: An Exploratory Qualitative Study",
+        "id": "Faith-Based Coping Among Arabic-Speaking Refugees Seeking Mental Health Services in Berlin, Germany: An Exploratory Qualitative Study",
+        "ms": "Faith-Based Coping Among Arabic-Speaking Refugees Seeking Mental Health Services in Berlin, Germany: An Exploratory Qualitative Study"
+      },
+      "description": {
+        "tr": "Ruh sağlığı hizmeti arayan 17 mülteciyle nitel çalışma, inanç temelli başa çıkmayı göç ve hizmet erişimi bağlamında inceler.",
+        "en": "A qualitative study with 17 refugees seeking mental-health services examines faith-based coping in migration and service-access contexts.",
+        "de": "A qualitative study with 17 refugees seeking mental-health services examines faith-based coping in migration and service-access contexts.",
+        "zh": "A qualitative study with 17 refugees seeking mental-health services examines faith-based coping in migration and service-access contexts.",
+        "ru": "A qualitative study with 17 refugees seeking mental-health services examines faith-based coping in migration and service-access contexts.",
+        "ar": "A qualitative study with 17 refugees seeking mental-health services examines faith-based coping in migration and service-access contexts.",
+        "id": "A qualitative study with 17 refugees seeking mental-health services examines faith-based coping in migration and service-access contexts.",
+        "ms": "A qualitative study with 17 refugees seeking mental-health services examines faith-based coping in migration and service-access contexts."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.3389/fpsyt.2021.595979"
+          ]
+        },
+        "inspection": {
+          "status": "fulltext",
+          "level": "V1",
+          "scope": "Open full text inspected for abstract, methods, themes and limitations. Seventeen Arabic-speaking refugees seeking mental-health services in Berlin were interviewed; qualitative transferability is contextual.",
+          "limit": "Bibliographic identity and the stated inspection scope were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "nonreligious-turkiye",
+      "sourceId": "s-nonreligious-turkiye",
+      "originalTitle": "Healthcare Experiences and Expectations of Atheists, Deists and Agnostics in Türkiye: A Qualitative Study of Mental Well-Being",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1111/jpm.70148"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence-bridges"
+      ],
+      "sourceRecordHash": "ec16ac53412813df53729a21ba0e3d1a7016ac329be2147855efe1b431982b63",
+      "versions": [
+        {
+          "id": "nonreligious-turkiye-record",
+          "edition": null,
+          "date": "2026",
+          "publisher": null,
+          "identifier": [
+            "10.1111/jpm.70148"
+          ],
+          "source": "https://doi.org/10.1111/jpm.70148"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1111/jpm.70148",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-nonreligious-turkiye-authors-1",
+          "name": "Güven Soner",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-nonreligious-turkiye"
+        },
+        {
+          "id": "s-nonreligious-turkiye-authors-2",
+          "name": "Emel Güven",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-nonreligious-turkiye"
+        },
+        {
+          "id": "s-nonreligious-turkiye-authors-3",
+          "name": "Ercan Tunç",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-nonreligious-turkiye"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Türkiye’de ateist, deist ve agnostik bireylerin sağlık hizmeti deneyimleri",
+        "en": "Healthcare Experiences and Expectations of Atheists, Deists and Agnostics in Türkiye: A Qualitative Study of Mental Well-Being",
+        "de": "Healthcare Experiences and Expectations of Atheists, Deists and Agnostics in Türkiye: A Qualitative Study of Mental Well-Being",
+        "zh": "Healthcare Experiences and Expectations of Atheists, Deists and Agnostics in Türkiye: A Qualitative Study of Mental Well-Being",
+        "ru": "Healthcare Experiences and Expectations of Atheists, Deists and Agnostics in Türkiye: A Qualitative Study of Mental Well-Being",
+        "ar": "Healthcare Experiences and Expectations of Atheists, Deists and Agnostics in Türkiye: A Qualitative Study of Mental Well-Being",
+        "id": "Healthcare Experiences and Expectations of Atheists, Deists and Agnostics in Türkiye: A Qualitative Study of Mental Well-Being",
+        "ms": "Healthcare Experiences and Expectations of Atheists, Deists and Agnostics in Türkiye: A Qualitative Study of Mental Well-Being"
+      },
+      "description": {
+        "tr": "Samsun’da 17 katılımcıyla çalışma, dinsiz kimlik, görünmezlik, yargılanma ve profesyonel tarafsızlık beklentilerini inceler.",
+        "en": "A phenomenological study with 17 participants in Samsun examines nonreligious identity, invisibility, judgement and expectations of professional neutrality.",
+        "de": "A phenomenological study with 17 participants in Samsun examines nonreligious identity, invisibility, judgement and expectations of professional neutrality.",
+        "zh": "A phenomenological study with 17 participants in Samsun examines nonreligious identity, invisibility, judgement and expectations of professional neutrality.",
+        "ru": "A phenomenological study with 17 participants in Samsun examines nonreligious identity, invisibility, judgement and expectations of professional neutrality.",
+        "ar": "A phenomenological study with 17 participants in Samsun examines nonreligious identity, invisibility, judgement and expectations of professional neutrality.",
+        "id": "A phenomenological study with 17 participants in Samsun examines nonreligious identity, invisibility, judgement and expectations of professional neutrality.",
+        "ms": "A phenomenological study with 17 participants in Samsun examines nonreligious identity, invisibility, judgement and expectations of professional neutrality."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1111/jpm.70148"
+          ]
+        },
+        "inspection": {
+          "status": "fulltext",
+          "level": "V1",
+          "scope": "Open full text and PubMed record inspected. Descriptive phenomenology with 17 participants in Samsun; findings concern reported healthcare experiences and should not be generalised to all nonreligious people in Türkiye.",
+          "limit": "Bibliographic identity and the stated inspection scope were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "religious-sexual-stigma",
+      "sourceId": "s-religious-sexual-stigma",
+      "originalTitle": "Religious-Based Sexual Stigma and Psychological Health: Roles of Internalization, Religious Struggle, and Religiosity",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1080/00918369.2019.1601439"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence-bridges"
+      ],
+      "sourceRecordHash": "421651328325c342578fcb7c3d23203028a888eff45540ddddcf63277f46e036",
+      "versions": [
+        {
+          "id": "religious-sexual-stigma-record",
+          "edition": null,
+          "date": "2020",
+          "publisher": null,
+          "identifier": [
+            "10.1080/00918369.2019.1601439"
+          ],
+          "source": "https://doi.org/10.1080/00918369.2019.1601439"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1080/00918369.2019.1601439",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-religious-sexual-stigma-authors-1",
+          "name": "Dawn M. Szymanski",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-sexual-stigma"
+        },
+        {
+          "id": "s-religious-sexual-stigma-authors-2",
+          "name": "Rachel F. Carretta",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-sexual-stigma"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Dinsel temelli cinsel stigma, dini mücadele ve psikolojik sağlık",
+        "en": "Religious-Based Sexual Stigma and Psychological Health: Roles of Internalization, Religious Struggle, and Religiosity",
+        "de": "Religious-Based Sexual Stigma and Psychological Health: Roles of Internalization, Religious Struggle, and Religiosity",
+        "zh": "Religious-Based Sexual Stigma and Psychological Health: Roles of Internalization, Religious Struggle, and Religiosity",
+        "ru": "Religious-Based Sexual Stigma and Psychological Health: Roles of Internalization, Religious Struggle, and Religiosity",
+        "ar": "Religious-Based Sexual Stigma and Psychological Health: Roles of Internalization, Religious Struggle, and Religiosity",
+        "id": "Religious-Based Sexual Stigma and Psychological Health: Roles of Internalization, Religious Struggle, and Religiosity",
+        "ms": "Religious-Based Sexual Stigma and Psychological Health: Roles of Internalization, Religious Struggle, and Religiosity"
+      },
+      "description": {
+        "tr": "Dinsel stigma, içselleştirme ve dini mücadeleyi birlikte ele alarak maneviyatın her bağlamda koruyucu olduğu varsayımını sınar.",
+        "en": "The study links religious-based sexual stigma, internalization and religious struggle, challenging any assumption of universal spiritual protection.",
+        "de": "The study links religious-based sexual stigma, internalization and religious struggle, challenging any assumption of universal spiritual protection.",
+        "zh": "The study links religious-based sexual stigma, internalization and religious struggle, challenging any assumption of universal spiritual protection.",
+        "ru": "The study links religious-based sexual stigma, internalization and religious struggle, challenging any assumption of universal spiritual protection.",
+        "ar": "The study links religious-based sexual stigma, internalization and religious struggle, challenging any assumption of universal spiritual protection.",
+        "id": "The study links religious-based sexual stigma, internalization and religious struggle, challenging any assumption of universal spiritual protection.",
+        "ms": "The study links religious-based sexual stigma, internalization and religious struggle, challenging any assumption of universal spiritual protection."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1080/00918369.2019.1601439"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "PubMed bibliographic record and abstract inspected. The study examines enacted religious-based sexual stigma, internalized heterosexism, religious struggle and psychological outcomes; context and design limit causal inference.",
+          "limit": "Bibliographic identity and the stated inspection scope were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "atheist-minority-stress",
+      "sourceId": "s-atheist-minority-stress",
+      "originalTitle": "It's like herding cats: Atheist minority stress, group involvement, and psychological outcomes",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1037/cou0000392"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence-bridges"
+      ],
+      "sourceRecordHash": "cd0370c12a514bc317d768586682c9764cdb6dbdc57246a186d9a98b5ac80065",
+      "versions": [
+        {
+          "id": "atheist-minority-stress-record",
+          "edition": null,
+          "date": "2020",
+          "publisher": null,
+          "identifier": [
+            "10.1037/cou0000392"
+          ],
+          "source": "https://doi.org/10.1037/cou0000392"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1037/cou0000392",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-atheist-minority-stress-authors-1",
+          "name": "Melanie E. Brewster",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-atheist-minority-stress"
+        },
+        {
+          "id": "s-atheist-minority-stress-authors-2",
+          "name": "Brandon L. Velez",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-atheist-minority-stress"
+        },
+        {
+          "id": "s-atheist-minority-stress-authors-3",
+          "name": "Elizabeth F. Geiger",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-atheist-minority-stress"
+        },
+        {
+          "id": "s-atheist-minority-stress-authors-4",
+          "name": "Jacob S. Sawyer",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-atheist-minority-stress"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Ateist azınlık stresi ve psikolojik sonuçlar",
+        "en": "It's like herding cats: Atheist minority stress, group involvement, and psychological outcomes",
+        "de": "It's like herding cats: Atheist minority stress, group involvement, and psychological outcomes",
+        "zh": "It's like herding cats: Atheist minority stress, group involvement, and psychological outcomes",
+        "ru": "It's like herding cats: Atheist minority stress, group involvement, and psychological outcomes",
+        "ar": "It's like herding cats: Atheist minority stress, group involvement, and psychological outcomes",
+        "id": "It's like herding cats: Atheist minority stress, group involvement, and psychological outcomes",
+        "ms": "It's like herding cats: Atheist minority stress, group involvement, and psychological outcomes"
+      },
+      "description": {
+        "tr": "522 ateist yetişkinde ayrımcılık, stigma bilinci, içselleştirilmiş anti-ateizm ve açılma süreçlerini psikolojik sıkıntı ve benlik saygısıyla ilişkilendirir.",
+        "en": "Links discrimination, stigma consciousness, internalized anti-atheism and outness with distress and self-esteem in 522 atheist adults.",
+        "de": "Links discrimination, stigma consciousness, internalized anti-atheism and outness with distress and self-esteem in 522 atheist adults.",
+        "zh": "Links discrimination, stigma consciousness, internalized anti-atheism and outness with distress and self-esteem in 522 atheist adults.",
+        "ru": "Links discrimination, stigma consciousness, internalized anti-atheism and outness with distress and self-esteem in 522 atheist adults.",
+        "ar": "Links discrimination, stigma consciousness, internalized anti-atheism and outness with distress and self-esteem in 522 atheist adults.",
+        "id": "Links discrimination, stigma consciousness, internalized anti-atheism and outness with distress and self-esteem in 522 atheist adults.",
+        "ms": "Links discrimination, stigma consciousness, internalized anti-atheism and outness with distress and self-esteem in 522 atheist adults."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1037/cou0000392"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "PubMed record and abstract inspected. US sample of 522 atheist adults; minority-stress associations are observational and context-specific.",
+          "limit": "Bibliographic identity and abstract-level inspection were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "sexual-minority-rs-meta",
+      "sourceId": "s-sexual-minority-rs-meta",
+      "originalTitle": "The relationship between religiousness and health among sexual minorities: A meta-analysis",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1037/bul0000321"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence-bridges"
+      ],
+      "sourceRecordHash": "789eb40e46b1fa8742a7b9da99bb1e088d5f4677ee8812952f47131675bb96da",
+      "versions": [
+        {
+          "id": "sexual-minority-rs-meta-record",
+          "edition": null,
+          "date": "2021",
+          "publisher": null,
+          "identifier": [
+            "10.1037/bul0000321"
+          ],
+          "source": "https://doi.org/10.1037/bul0000321"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1037/bul0000321",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-sexual-minority-rs-meta-authors-1",
+          "name": "G. Tyler Lefevor",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sexual-minority-rs-meta"
+        },
+        {
+          "id": "s-sexual-minority-rs-meta-authors-2",
+          "name": "Edward B. Davis",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sexual-minority-rs-meta"
+        },
+        {
+          "id": "s-sexual-minority-rs-meta-authors-3",
+          "name": "Jaqueline Y. Paiz",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sexual-minority-rs-meta"
+        },
+        {
+          "id": "s-sexual-minority-rs-meta-authors-4",
+          "name": "Abigail C. P. Smack",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-sexual-minority-rs-meta"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Cinsel azınlıklarda din, maneviyat ve sağlık · meta-analiz",
+        "en": "The relationship between religiousness and health among sexual minorities: A meta-analysis",
+        "de": "The relationship between religiousness and health among sexual minorities: A meta-analysis",
+        "zh": "The relationship between religiousness and health among sexual minorities: A meta-analysis",
+        "ru": "The relationship between religiousness and health among sexual minorities: A meta-analysis",
+        "ar": "The relationship between religiousness and health among sexual minorities: A meta-analysis",
+        "id": "The relationship between religiousness and health among sexual minorities: A meta-analysis",
+        "ms": "The relationship between religiousness and health among sexual minorities: A meta-analysis"
+      },
+      "description": {
+        "tr": "73 çalışmadaki 279 etki büyüklüğü küçük ve heterojen bir genel ilişki gösterir. Düzeltme kaydı sonuçların yönünü değiştirmemiştir.",
+        "en": "Across 279 effect sizes in 73 studies, the overall association is small and heterogeneous. A published correction did not change the conclusions.",
+        "de": "Across 279 effect sizes in 73 studies, the overall association is small and heterogeneous. A published correction did not change the conclusions.",
+        "zh": "Across 279 effect sizes in 73 studies, the overall association is small and heterogeneous. A published correction did not change the conclusions.",
+        "ru": "Across 279 effect sizes in 73 studies, the overall association is small and heterogeneous. A published correction did not change the conclusions.",
+        "ar": "Across 279 effect sizes in 73 studies, the overall association is small and heterogeneous. A published correction did not change the conclusions.",
+        "id": "Across 279 effect sizes in 73 studies, the overall association is small and heterogeneous. A published correction did not change the conclusions.",
+        "ms": "Across 279 effect sizes in 73 studies, the overall association is small and heterogeneous. A published correction did not change the conclusions."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1037/bul0000321"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "PubMed record and abstract inspected. 279 effect sizes nested in 73 studies; substantial heterogeneity. A published correction changed three effect sizes from one study but did not change conclusions.",
+          "limit": "Bibliographic identity and abstract-level inspection were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "lgbq-religious-family-therapy",
+      "sourceId": "s-lgbq-religious-family-therapy",
+      "originalTitle": "Freedom and struggling openly in psychotherapy: A qualitative inquiry with LGBQ young adults from religious families",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1111/jmft.12442"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence-bridges"
+      ],
+      "sourceRecordHash": "bcf29be6e953eec79e1802dd6f30eca39eef542564a4ec5fc40605c584abe1d2",
+      "versions": [
+        {
+          "id": "lgbq-religious-family-therapy-record",
+          "edition": null,
+          "date": "2021",
+          "publisher": null,
+          "identifier": [
+            "10.1111/jmft.12442"
+          ],
+          "source": "https://doi.org/10.1111/jmft.12442"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1111/jmft.12442",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-lgbq-religious-family-therapy-authors-1",
+          "name": "Katie Heiden-Rootes",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-lgbq-religious-family-therapy"
+        },
+        {
+          "id": "s-lgbq-religious-family-therapy-authors-2",
+          "name": "Kristin Ross",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-lgbq-religious-family-therapy"
+        },
+        {
+          "id": "s-lgbq-religious-family-therapy-authors-3",
+          "name": "Rachel Moore",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-lgbq-religious-family-therapy"
+        },
+        {
+          "id": "s-lgbq-religious-family-therapy-authors-4",
+          "name": "Shah Hasan",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-lgbq-religious-family-therapy"
+        },
+        {
+          "id": "s-lgbq-religious-family-therapy-authors-5",
+          "name": "Samantha Gulotta",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-lgbq-religious-family-therapy"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Dindar ailelerden LGBQ genç yetişkinlerin psikoterapi deneyimleri",
+        "en": "Freedom and struggling openly in psychotherapy: A qualitative inquiry with LGBQ young adults from religious families",
+        "de": "Freedom and struggling openly in psychotherapy: A qualitative inquiry with LGBQ young adults from religious families",
+        "zh": "Freedom and struggling openly in psychotherapy: A qualitative inquiry with LGBQ young adults from religious families",
+        "ru": "Freedom and struggling openly in psychotherapy: A qualitative inquiry with LGBQ young adults from religious families",
+        "ar": "Freedom and struggling openly in psychotherapy: A qualitative inquiry with LGBQ young adults from religious families",
+        "id": "Freedom and struggling openly in psychotherapy: A qualitative inquiry with LGBQ young adults from religious families",
+        "ms": "Freedom and struggling openly in psychotherapy: A qualitative inquiry with LGBQ young adults from religious families"
+      },
+      "description": {
+        "tr": "Nitel çalışma terapi ilişkisi, aile, din ve görünmez dini söylemlerin deneyimdeki rolünü inceler.",
+        "en": "A qualitative inquiry examines therapy relationships, family, religion and often-invisible religious discourses in psychotherapy.",
+        "de": "A qualitative inquiry examines therapy relationships, family, religion and often-invisible religious discourses in psychotherapy.",
+        "zh": "A qualitative inquiry examines therapy relationships, family, religion and often-invisible religious discourses in psychotherapy.",
+        "ru": "A qualitative inquiry examines therapy relationships, family, religion and often-invisible religious discourses in psychotherapy.",
+        "ar": "A qualitative inquiry examines therapy relationships, family, religion and often-invisible religious discourses in psychotherapy.",
+        "id": "A qualitative inquiry examines therapy relationships, family, religion and often-invisible religious discourses in psychotherapy.",
+        "ms": "A qualitative inquiry examines therapy relationships, family, religion and often-invisible religious discourses in psychotherapy."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1111/jmft.12442"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "PubMed and publisher abstracts inspected. Web survey n=77 and interviews n=7; interpretative phenomenological inquiry, not an intervention-effect estimate.",
+          "limit": "Bibliographic identity and abstract-level inspection were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "lebanon-sexual-stigma",
+      "sourceId": "s-lebanon-sexual-stigma",
+      "originalTitle": "Internalized Sexual Orientation Stigma and Mental Health in a Religiously Diverse Sample of Gay and Bisexual Men in Lebanon",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1080/00918369.2022.2030617"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence-bridges"
+      ],
+      "sourceRecordHash": "7205fc6c4335be6e725ce0451938cd616d2b894df7853660d12a2338b2824d5f",
+      "versions": [
+        {
+          "id": "lebanon-sexual-stigma-record",
+          "edition": null,
+          "date": "2023",
+          "publisher": null,
+          "identifier": [
+            "10.1080/00918369.2022.2030617"
+          ],
+          "source": "https://doi.org/10.1080/00918369.2022.2030617"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1080/00918369.2022.2030617",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-lebanon-sexual-stigma-authors-1",
+          "name": "Ismael Maatouk",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-lebanon-sexual-stigma"
+        },
+        {
+          "id": "s-lebanon-sexual-stigma-authors-2",
+          "name": "Rusi Jaspal",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-lebanon-sexual-stigma"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Lübnan’da cinsel yönelim stigması, din ve ruh sağlığı",
+        "en": "Internalized Sexual Orientation Stigma and Mental Health in a Religiously Diverse Sample of Gay and Bisexual Men in Lebanon",
+        "de": "Internalized Sexual Orientation Stigma and Mental Health in a Religiously Diverse Sample of Gay and Bisexual Men in Lebanon",
+        "zh": "Internalized Sexual Orientation Stigma and Mental Health in a Religiously Diverse Sample of Gay and Bisexual Men in Lebanon",
+        "ru": "Internalized Sexual Orientation Stigma and Mental Health in a Religiously Diverse Sample of Gay and Bisexual Men in Lebanon",
+        "ar": "Internalized Sexual Orientation Stigma and Mental Health in a Religiously Diverse Sample of Gay and Bisexual Men in Lebanon",
+        "id": "Internalized Sexual Orientation Stigma and Mental Health in a Religiously Diverse Sample of Gay and Bisexual Men in Lebanon",
+        "ms": "Internalized Sexual Orientation Stigma and Mental Health in a Religiously Diverse Sample of Gay and Bisexual Men in Lebanon"
+      },
+      "description": {
+        "tr": "200 katılımcılı kesitsel çalışma dini bağlamın hem stigma hem başa çıkma ile ilişkili olabileceğini gösterir, nedensellik kurmaz.",
+        "en": "A cross-sectional study of 200 participants shows religion can be associated with both stigma context and coping, without establishing causality.",
+        "de": "A cross-sectional study of 200 participants shows religion can be associated with both stigma context and coping, without establishing causality.",
+        "zh": "A cross-sectional study of 200 participants shows religion can be associated with both stigma context and coping, without establishing causality.",
+        "ru": "A cross-sectional study of 200 participants shows religion can be associated with both stigma context and coping, without establishing causality.",
+        "ar": "A cross-sectional study of 200 participants shows religion can be associated with both stigma context and coping, without establishing causality.",
+        "id": "A cross-sectional study of 200 participants shows religion can be associated with both stigma context and coping, without establishing causality.",
+        "ms": "A cross-sectional study of 200 participants shows religion can be associated with both stigma context and coping, without establishing causality."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1080/00918369.2022.2030617"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "PubMed and publisher abstracts inspected. Convenience sample n=200; religion can appear as both social stress context and coping context, without causal inference.",
+          "limit": "Bibliographic identity and abstract-level inspection were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "icsg-2",
+      "sourceId": "s-icsg-2",
+      "originalTitle": "Inventory of Complicated Spiritual Grief 2.0 (ICSG 2.0): Validation of a revised measure of spiritual distress in bereavement",
+      "language": "en",
+      "kind": "measure",
+      "identifiers": [
+        "10.1080/07481187.2019.1627031"
+      ],
+      "topic": "assessment",
+      "sections": [
+        "library",
+        "measurement-observatory"
+      ],
+      "sourceRecordHash": "3abccc16fecc26d8c54c9fea099bd382f765ddbf72b362ba3297916c1d82db38",
+      "versions": [
+        {
+          "id": "icsg-2-record",
+          "edition": null,
+          "date": "2021",
+          "publisher": null,
+          "identifier": [
+            "10.1080/07481187.2019.1627031"
+          ],
+          "source": "https://doi.org/10.1080/07481187.2019.1627031"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1080/07481187.2019.1627031",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-icsg-2-authors-1",
+          "name": "Laurie A. Burke",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-icsg-2"
+        },
+        {
+          "id": "s-icsg-2-authors-2",
+          "name": "A. Elizabeth Crunk",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-icsg-2"
+        },
+        {
+          "id": "s-icsg-2-authors-3",
+          "name": "Robert A. Neimeyer",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-icsg-2"
+        },
+        {
+          "id": "s-icsg-2-authors-4",
+          "name": "Haiyan Bai",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-icsg-2"
+        }
+      ],
+      "displayTitle": {
+        "tr": "ICSG 2.0 · karmaşık manevi yas",
+        "en": "Inventory of Complicated Spiritual Grief 2.0 (ICSG 2.0): Validation of a revised measure of spiritual distress in bereavement",
+        "de": "Inventory of Complicated Spiritual Grief 2.0 (ICSG 2.0): Validation of a revised measure of spiritual distress in bereavement",
+        "zh": "Inventory of Complicated Spiritual Grief 2.0 (ICSG 2.0): Validation of a revised measure of spiritual distress in bereavement",
+        "ru": "Inventory of Complicated Spiritual Grief 2.0 (ICSG 2.0): Validation of a revised measure of spiritual distress in bereavement",
+        "ar": "Inventory of Complicated Spiritual Grief 2.0 (ICSG 2.0): Validation of a revised measure of spiritual distress in bereavement",
+        "id": "Inventory of Complicated Spiritual Grief 2.0 (ICSG 2.0): Validation of a revised measure of spiritual distress in bereavement",
+        "ms": "Inventory of Complicated Spiritual Grief 2.0 (ICSG 2.0): Validation of a revised measure of spiritual distress in bereavement"
+      },
+      "description": {
+        "tr": "440 yaslı yetişkinde geliştirilen 28 maddelik üç faktörlü revize araçtır. Madde yeniden yayım hakkı varsayılmaz.",
+        "en": "A revised 28-item, three-factor measure studied in 440 bereaved adults. Item-reproduction rights are not inferred.",
+        "de": "A revised 28-item, three-factor measure studied in 440 bereaved adults. Item-reproduction rights are not inferred.",
+        "zh": "A revised 28-item, three-factor measure studied in 440 bereaved adults. Item-reproduction rights are not inferred.",
+        "ru": "A revised 28-item, three-factor measure studied in 440 bereaved adults. Item-reproduction rights are not inferred.",
+        "ar": "A revised 28-item, three-factor measure studied in 440 bereaved adults. Item-reproduction rights are not inferred.",
+        "id": "A revised 28-item, three-factor measure studied in 440 bereaved adults. Item-reproduction rights are not inferred.",
+        "ms": "A revised 28-item, three-factor measure studied in 440 bereaved adults. Item-reproduction rights are not inferred."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1080/07481187.2019.1627031"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "PubMed and publisher abstracts inspected. 28-item three-factor revised instrument in 440 bereaved Christian adults; item-reproduction rights are not inferred.",
+          "limit": "Bibliographic identity and abstract-level inspection were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "icsg-2-fa",
+      "sourceId": "s-icsg-2-fa",
+      "originalTitle": "Assessing complicated spiritual grief: A psychometric study of the Inventory of complicated spiritual grief 2.0 in an Iranian context",
+      "language": "en",
+      "kind": "measure",
+      "identifiers": [
+        "10.1080/07481187.2025.2580244"
+      ],
+      "topic": "assessment",
+      "sections": [
+        "library",
+        "measurement-observatory"
+      ],
+      "sourceRecordHash": "1a4f67854c54141b2ea010612cff3072a3e16a74780a16e33d275e5f5e610e8a",
+      "versions": [
+        {
+          "id": "icsg-2-fa-record",
+          "edition": null,
+          "date": "2025",
+          "publisher": null,
+          "identifier": [
+            "10.1080/07481187.2025.2580244"
+          ],
+          "source": "https://doi.org/10.1080/07481187.2025.2580244"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1080/07481187.2025.2580244",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-icsg-2-fa-authors-1",
+          "name": "Ahmad Ashouri",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-icsg-2-fa"
+        },
+        {
+          "id": "s-icsg-2-fa-authors-2",
+          "name": "Shahab Yousefi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-icsg-2-fa"
+        }
+      ],
+      "displayTitle": {
+        "tr": "ICSG 2.0 · Farsça psikometrik çalışma",
+        "en": "Assessing complicated spiritual grief: A psychometric study of the Inventory of complicated spiritual grief 2.0 in an Iranian context",
+        "de": "Assessing complicated spiritual grief: A psychometric study of the Inventory of complicated spiritual grief 2.0 in an Iranian context",
+        "zh": "Assessing complicated spiritual grief: A psychometric study of the Inventory of complicated spiritual grief 2.0 in an Iranian context",
+        "ru": "Assessing complicated spiritual grief: A psychometric study of the Inventory of complicated spiritual grief 2.0 in an Iranian context",
+        "ar": "Assessing complicated spiritual grief: A psychometric study of the Inventory of complicated spiritual grief 2.0 in an Iranian context",
+        "id": "Assessing complicated spiritual grief: A psychometric study of the Inventory of complicated spiritual grief 2.0 in an Iranian context",
+        "ms": "Assessing complicated spiritual grief: A psychometric study of the Inventory of complicated spiritual grief 2.0 in an Iranian context"
+      },
+      "description": {
+        "tr": "355 İranlı yetişkinde Farsça formun psikometrik kanıtını inceler. Kültürler arası uyarlama, ölçüm değişmezliğiyle aynı şey değildir.",
+        "en": "Examines the Persian ICSG 2.0 in 355 Iranian adults. Cross-cultural adaptation is not the same as measurement invariance.",
+        "de": "Examines the Persian ICSG 2.0 in 355 Iranian adults. Cross-cultural adaptation is not the same as measurement invariance.",
+        "zh": "Examines the Persian ICSG 2.0 in 355 Iranian adults. Cross-cultural adaptation is not the same as measurement invariance.",
+        "ru": "Examines the Persian ICSG 2.0 in 355 Iranian adults. Cross-cultural adaptation is not the same as measurement invariance.",
+        "ar": "Examines the Persian ICSG 2.0 in 355 Iranian adults. Cross-cultural adaptation is not the same as measurement invariance.",
+        "id": "Examines the Persian ICSG 2.0 in 355 Iranian adults. Cross-cultural adaptation is not the same as measurement invariance.",
+        "ms": "Examines the Persian ICSG 2.0 in 355 Iranian adults. Cross-cultural adaptation is not the same as measurement invariance."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1080/07481187.2025.2580244"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "PubMed and publisher abstracts inspected. Persian ICSG 2.0 in 355 Iranian adults; cross-cultural psychometrics do not by themselves establish invariance across languages or populations.",
+          "limit": "Bibliographic identity and abstract-level inspection were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "p-sds",
+      "sourceId": "s-p-sds",
+      "originalTitle": "Cross-Cultural Adaptation and Psychometric Properties of the Persian Version of the Spiritual Distress Scale (P-SDS) Among Older Adults with Cancer in Iran",
+      "language": "en",
+      "kind": "measure",
+      "identifiers": [
+        "10.1007/s10943-025-02335-1"
+      ],
+      "topic": "assessment",
+      "sections": [
+        "library",
+        "measurement-observatory"
+      ],
+      "sourceRecordHash": "ef6cf21d8bdf42960946f7ed3f35e7b6c571ac1f4ca3dcc2ca0231998621f012",
+      "versions": [
+        {
+          "id": "p-sds-record",
+          "edition": null,
+          "date": "2025",
+          "publisher": null,
+          "identifier": [
+            "10.1007/s10943-025-02335-1"
+          ],
+          "source": "https://doi.org/10.1007/s10943-025-02335-1"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1007/s10943-025-02335-1",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-p-sds-authors-1",
+          "name": "Hadi Najafi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-p-sds"
+        },
+        {
+          "id": "s-p-sds-authors-2",
+          "name": "Shahab Papi",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-p-sds"
+        },
+        {
+          "id": "s-p-sds-authors-3",
+          "name": "Abolfazl Hosseinnataj",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-p-sds"
+        },
+        {
+          "id": "s-p-sds-authors-4",
+          "name": "Alireza Namazi Shabestari",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-p-sds"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Manevi Sıkıntı Ölçeği · Farsça uyarlama",
+        "en": "Cross-Cultural Adaptation and Psychometric Properties of the Persian Version of the Spiritual Distress Scale (P-SDS) Among Older Adults with Cancer in Iran",
+        "de": "Cross-Cultural Adaptation and Psychometric Properties of the Persian Version of the Spiritual Distress Scale (P-SDS) Among Older Adults with Cancer in Iran",
+        "zh": "Cross-Cultural Adaptation and Psychometric Properties of the Persian Version of the Spiritual Distress Scale (P-SDS) Among Older Adults with Cancer in Iran",
+        "ru": "Cross-Cultural Adaptation and Psychometric Properties of the Persian Version of the Spiritual Distress Scale (P-SDS) Among Older Adults with Cancer in Iran",
+        "ar": "Cross-Cultural Adaptation and Psychometric Properties of the Persian Version of the Spiritual Distress Scale (P-SDS) Among Older Adults with Cancer in Iran",
+        "id": "Cross-Cultural Adaptation and Psychometric Properties of the Persian Version of the Spiritual Distress Scale (P-SDS) Among Older Adults with Cancer in Iran",
+        "ms": "Cross-Cultural Adaptation and Psychometric Properties of the Persian Version of the Spiritual Distress Scale (P-SDS) Among Older Adults with Cancer in Iran"
+      },
+      "description": {
+        "tr": "Kanserli 300 ileri yaş yetişkinde P-SDS uyarlamasını inceler ve manevi sıkıntıyı düşük iyi oluştan ayrı bir ölçme problemi olarak görünür kılar.",
+        "en": "Examines P-SDS adaptation in 300 older adults with cancer and helps distinguish spiritual distress from simply low wellbeing.",
+        "de": "Examines P-SDS adaptation in 300 older adults with cancer and helps distinguish spiritual distress from simply low wellbeing.",
+        "zh": "Examines P-SDS adaptation in 300 older adults with cancer and helps distinguish spiritual distress from simply low wellbeing.",
+        "ru": "Examines P-SDS adaptation in 300 older adults with cancer and helps distinguish spiritual distress from simply low wellbeing.",
+        "ar": "Examines P-SDS adaptation in 300 older adults with cancer and helps distinguish spiritual distress from simply low wellbeing.",
+        "id": "Examines P-SDS adaptation in 300 older adults with cancer and helps distinguish spiritual distress from simply low wellbeing.",
+        "ms": "Examines P-SDS adaptation in 300 older adults with cancer and helps distinguish spiritual distress from simply low wellbeing."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1007/s10943-025-02335-1"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "PubMed abstract inspected. Methodological study with 300 Iranian adults aged 60+ with cancer; adaptation evidence is population-specific.",
+          "limit": "Bibliographic identity and abstract-level inspection were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
+    },
+    {
+      "id": "religious-minority-context",
+      "sourceId": "s-religious-minority-context",
+      "originalTitle": "Depressive Feelings in Religious Minorities: Does the Religious Context Matter?",
+      "language": "en",
+      "kind": "study",
+      "identifiers": [
+        "10.1007/s10943-020-00999-5"
+      ],
+      "topic": "evidence",
+      "sections": [
+        "library",
+        "evidence-bridges"
+      ],
+      "sourceRecordHash": "27fa5d21ebe833170c05df2bd4881991b99b32139913bbc88d83efe9dfe5a1ef",
+      "versions": [
+        {
+          "id": "religious-minority-context-record",
+          "edition": null,
+          "date": "2020",
+          "publisher": null,
+          "identifier": [
+            "10.1007/s10943-020-00999-5"
+          ],
+          "source": "https://doi.org/10.1007/s10943-020-00999-5"
+        }
+      ],
+      "accessLocations": [
+        {
+          "url": "https://doi.org/10.1007/s10943-020-00999-5",
+          "type": "external-record",
+          "host": "doi.org",
+          "checked": "2026-10-05",
+          "rights": "link-only",
+          "fullTextPermission": false
+        }
+      ],
+      "contributorMentions": [
+        {
+          "id": "s-religious-minority-context-authors-1",
+          "name": "Sarah M. Van de Velde",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-minority-context"
+        },
+        {
+          "id": "s-religious-minority-context-authors-2",
+          "name": "Veerle Buffel",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-minority-context"
+        },
+        {
+          "id": "s-religious-minority-context-authors-3",
+          "name": "Lore Van Praag",
+          "role": "authors",
+          "identityResolution": "source-scoped-mention",
+          "externalPersonId": null,
+          "sourceId": "s-religious-minority-context"
+        }
+      ],
+      "displayTitle": {
+        "tr": "Dini azınlıklar, bağlam ve depresif duygular",
+        "en": "Depressive Feelings in Religious Minorities: Does the Religious Context Matter?",
+        "de": "Depressive Feelings in Religious Minorities: Does the Religious Context Matter?",
+        "zh": "Depressive Feelings in Religious Minorities: Does the Religious Context Matter?",
+        "ru": "Depressive Feelings in Religious Minorities: Does the Religious Context Matter?",
+        "ar": "Depressive Feelings in Religious Minorities: Does the Religious Context Matter?",
+        "id": "Depressive Feelings in Religious Minorities: Does the Religious Context Matter?",
+        "ms": "Depressive Feelings in Religious Minorities: Does the Religious Context Matter?"
+      },
+      "description": {
+        "tr": "ESS 2012 ve 2014 verilerinde 28 ülkedeki 268 bölgeyi karşılaştırır. Bağlam düzeyindeki ilişkiler bireysel nedensellik olarak okunmamalıdır.",
+        "en": "Uses ESS 2012 and 2014 data across 268 regions in 28 countries. Context-level associations should not be read as individual causation.",
+        "de": "Uses ESS 2012 and 2014 data across 268 regions in 28 countries. Context-level associations should not be read as individual causation.",
+        "zh": "Uses ESS 2012 and 2014 data across 268 regions in 28 countries. Context-level associations should not be read as individual causation.",
+        "ru": "Uses ESS 2012 and 2014 data across 268 regions in 28 countries. Context-level associations should not be read as individual causation.",
+        "ar": "Uses ESS 2012 and 2014 data across 268 regions in 28 countries. Context-level associations should not be read as individual causation.",
+        "id": "Uses ESS 2012 and 2014 data across 268 regions in 28 countries. Context-level associations should not be read as individual causation.",
+        "ms": "Uses ESS 2012 and 2014 data across 268 regions in 28 countries. Context-level associations should not be read as individual causation."
+      },
+      "review": {
+        "identity": {
+          "status": "matched",
+          "sources": [
+            "https://doi.org/10.1007/s10943-020-00999-5"
+          ]
+        },
+        "inspection": {
+          "status": "abstract",
+          "level": "V1",
+          "scope": "PubMed abstract inspected. ESS rounds 6 and 7, 268 regions in 28 European countries; multilevel associations remain observational and region/wave specific.",
+          "limit": "Bibliographic identity and abstract-level inspection were checked. Inclusion is not clinical endorsement, comprehensive risk-of-bias appraisal, permission to reproduce instrument items, or human scientific approval.",
+          "checked": "2026-10-05"
+        },
+        "scientific": {
+          "status": "draft",
+          "approved": false,
+          "reviewedBy": null
+        },
+        "currency": {
+          "status": "not-comprehensive",
+          "recordInspected": "2026-10-05",
+          "retractionReviewComplete": false
+        },
+        "translation": {
+          "status": "draft",
+          "humanReviewed": false
+        },
+        "rights": {
+          "status": "link-only",
+          "fullTextHosted": false,
+          "reusePermissionGranted": false
+        },
+        "institutional": {
+          "status": "proposed",
+          "formalApprovalVerified": false
+        }
+      }
     }
   ],
   "relationships": [],
@@ -5854,7 +7968,24 @@
         "brazil-medical-students",
         "turkish-bereavement",
         "psychosis-spirituality",
-        "clergy-abuse-harm"
+        "clergy-abuse-harm",
+        "spirituality-ptsd-review",
+        "rss-ff-tr",
+        "sprs",
+        "sefc",
+        "hemodialysis-spiritual-care",
+        "muslim-coping-multinational",
+        "refugee-faith-coping",
+        "nonreligious-turkiye",
+        "religious-sexual-stigma",
+        "atheist-minority-stress",
+        "sexual-minority-rs-meta",
+        "lgbq-religious-family-therapy",
+        "lebanon-sexual-stigma",
+        "icsg-2",
+        "icsg-2-fa",
+        "p-sds",
+        "religious-minority-context"
       ]
     }
   ]

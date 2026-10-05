@@ -1188,5 +1188,479 @@
         "literal": "Daniel Fleming"
       }
     ]
+  },
+  {
+    "id": "s-spirituality-ptsd-review",
+    "type": "article-journal",
+    "title": "The Effects of Spirituality on Depression, Anxiety, and Post-Traumatic Stress Disorder: A Systematic Review",
+    "URL": "https://doi.org/10.1007/s10943-026-02671-w",
+    "note": "Okan, N., & Şahin, Y. (2026). The Effects of Spirituality on Depression, Anxiety, and Post-Traumatic Stress Disorder: A Systematic Review. Journal of Religion and Health. https://doi.org/10.1007/s10943-026-02671-w",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10943-026-02671-w",
+    "container-title": "Journal of Religion and Health",
+    "author": [
+      {
+        "literal": "Nesrullah Okan"
+      },
+      {
+        "literal": "Yahya Şahin"
+      }
+    ]
+  },
+  {
+    "id": "s-rss-ff-tr",
+    "type": "article-journal",
+    "title": "Adaptation of the Five-Factor Religious and Spiritual Struggles Scale and its Psychometric Properties in Türkiye",
+    "URL": "https://doi.org/10.1007/s10943-026-02728-w",
+    "note": "Şahin, B., & Bilge, Y. (2026). Adaptation of the Five-Factor Religious and Spiritual Struggles Scale and its Psychometric Properties in Türkiye. Journal of Religion and Health, 65(4), 3911–3931. https://doi.org/10.1007/s10943-026-02728-w",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10943-026-02728-w",
+    "container-title": "Journal of Religion and Health",
+    "author": [
+      {
+        "literal": "Betül Şahin"
+      },
+      {
+        "literal": "Yıldız Bilge"
+      }
+    ]
+  },
+  {
+    "id": "s-sprs",
+    "type": "article-journal",
+    "title": "The Spiritual Psychological Robustness Scale (SPRS): A New Measure for Assessing Spiritual and Psychological Strength in the Context of Turkish Culture",
+    "URL": "https://doi.org/10.1007/s10943-024-02175-5",
+    "note": "Okan, N., & Ekşi, F. (2025). The Spiritual Psychological Robustness Scale (SPRS): A New Measure for Assessing Spiritual and Psychological Strength in the Context of Turkish Culture. Journal of Religion and Health, 64(2), 1473–1497. https://doi.org/10.1007/s10943-024-02175-5",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10943-024-02175-5",
+    "container-title": "Journal of Religion and Health",
+    "author": [
+      {
+        "literal": "Nesrullah Okan"
+      },
+      {
+        "literal": "Füsun Ekşi"
+      }
+    ]
+  },
+  {
+    "id": "s-sefc",
+    "type": "article-journal",
+    "title": "Development and Validation of the Spiritual Empathy Fatigue Scale (SEFC): A Psychometric Study Among Faith-Based Care Providers in Turkey",
+    "URL": "https://doi.org/10.1007/s10943-025-02523-z",
+    "note": "Okan, N., Kızılgeçit, M., Şahin, H., Kurt, F., Keleş, R., & Ören, A. (2026). Development and Validation of the Spiritual Empathy Fatigue Scale (SEFC): A Psychometric Study Among Faith-Based Care Providers in Turkey. Journal of Religion and Health, 65(1), 964–986. https://doi.org/10.1007/s10943-025-02523-z",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10943-025-02523-z",
+    "container-title": "Journal of Religion and Health",
+    "author": [
+      {
+        "literal": "Nesrullah Okan"
+      },
+      {
+        "literal": "Muhammed Kızılgeçit"
+      },
+      {
+        "literal": "Hanifi Şahin"
+      },
+      {
+        "literal": "Fatih Kurt"
+      },
+      {
+        "literal": "Reyhan Keleş"
+      },
+      {
+        "literal": "Aytaç Ören"
+      }
+    ]
+  },
+  {
+    "id": "s-hemodialysis-spiritual-care",
+    "type": "article-journal",
+    "title": "The Effect of Spiritual Care on Anxiety and Depression Level in Patients Receiving Hemodialysis Treatment: a Randomized Controlled Trial",
+    "URL": "https://doi.org/10.1007/s10943-021-01386-4",
+    "note": "Durmuş, M., & Ekinci, M. (2022). The Effect of Spiritual Care on Anxiety and Depression Level in Patients Receiving Hemodialysis Treatment: a Randomized Controlled Trial. Journal of Religion and Health, 61(3), 2041–2055. https://doi.org/10.1007/s10943-021-01386-4",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10943-021-01386-4",
+    "container-title": "Journal of Religion and Health",
+    "author": [
+      {
+        "literal": "Mustafa Durmuş"
+      },
+      {
+        "literal": "Mine Ekinci"
+      }
+    ]
+  },
+  {
+    "id": "s-muslim-coping-multinational",
+    "type": "article-journal",
+    "title": "On the links between positive religious coping, satisfaction with life and depressive symptoms among a multinational sample of Muslims",
+    "URL": "https://doi.org/10.1002/ijop.12521",
+    "note": "Abu-Raiya, H., Ayten, A., Tekke, M., & Agbaria, Q. (2019). On the links between positive religious coping, satisfaction with life and depressive symptoms among a multinational sample of Muslims. International Journal of Psychology, 54(5), 678–686. https://doi.org/10.1002/ijop.12521",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.1002/ijop.12521",
+    "container-title": "International Journal of Psychology",
+    "author": [
+      {
+        "literal": "Hisham Abu-Raiya"
+      },
+      {
+        "literal": "Ali Ayten"
+      },
+      {
+        "literal": "Mustafa Tekke"
+      },
+      {
+        "literal": "Qutaiba Agbaria"
+      }
+    ]
+  },
+  {
+    "id": "s-refugee-faith-coping",
+    "type": "article-journal",
+    "title": "Faith-Based Coping Among Arabic-Speaking Refugees Seeking Mental Health Services in Berlin, Germany: An Exploratory Qualitative Study",
+    "URL": "https://doi.org/10.3389/fpsyt.2021.595979",
+    "note": "Rayes, D., Karnouk, C., Churbaji, D., Walther, L., & Bajbouj, M. (2021). Faith-Based Coping Among Arabic-Speaking Refugees Seeking Mental Health Services in Berlin, Germany: An Exploratory Qualitative Study. Frontiers in Psychiatry, 12, 595979. https://doi.org/10.3389/fpsyt.2021.595979",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.3389/fpsyt.2021.595979",
+    "container-title": "Frontiers in Psychiatry",
+    "author": [
+      {
+        "literal": "Diana Rayes"
+      },
+      {
+        "literal": "Carine Karnouk"
+      },
+      {
+        "literal": "Dana Churbaji"
+      },
+      {
+        "literal": "Lena Walther"
+      },
+      {
+        "literal": "Malek Bajbouj"
+      }
+    ]
+  },
+  {
+    "id": "s-nonreligious-turkiye",
+    "type": "article-journal",
+    "title": "Healthcare Experiences and Expectations of Atheists, Deists and Agnostics in Türkiye: A Qualitative Study of Mental Well-Being",
+    "URL": "https://doi.org/10.1111/jpm.70148",
+    "note": "Soner, G., Güven, E., & Tunç, E. (2026). Healthcare Experiences and Expectations of Atheists, Deists and Agnostics in Türkiye: A Qualitative Study of Mental Well-Being. Journal of Psychiatric and Mental Health Nursing, 33(4), 715–730. https://doi.org/10.1111/jpm.70148",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1111/jpm.70148",
+    "container-title": "Journal of Psychiatric and Mental Health Nursing",
+    "author": [
+      {
+        "literal": "Güven Soner"
+      },
+      {
+        "literal": "Emel Güven"
+      },
+      {
+        "literal": "Ercan Tunç"
+      }
+    ]
+  },
+  {
+    "id": "s-religious-sexual-stigma",
+    "type": "article-journal",
+    "title": "Religious-Based Sexual Stigma and Psychological Health: Roles of Internalization, Religious Struggle, and Religiosity",
+    "URL": "https://doi.org/10.1080/00918369.2019.1601439",
+    "note": "Szymanski, D. M., & Carretta, R. F. (2020). Religious-Based Sexual Stigma and Psychological Health: Roles of Internalization, Religious Struggle, and Religiosity. Journal of Homosexuality, 67(8), 1062–1080. https://doi.org/10.1080/00918369.2019.1601439",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "DOI": "10.1080/00918369.2019.1601439",
+    "container-title": "Journal of Homosexuality",
+    "author": [
+      {
+        "literal": "Dawn M. Szymanski"
+      },
+      {
+        "literal": "Rachel F. Carretta"
+      }
+    ]
+  },
+  {
+    "id": "s-atheist-minority-stress",
+    "type": "article-journal",
+    "title": "It's like herding cats: Atheist minority stress, group involvement, and psychological outcomes",
+    "URL": "https://doi.org/10.1037/cou0000392",
+    "note": "Brewster, M. E., Velez, B. L., Geiger, E. F., & Sawyer, J. S. (2020). It's like herding cats: Atheist minority stress, group involvement, and psychological outcomes. Journal of Counseling Psychology, 67(1), 1–13. https://doi.org/10.1037/cou0000392",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "DOI": "10.1037/cou0000392",
+    "container-title": "Journal of Counseling Psychology",
+    "author": [
+      {
+        "literal": "Melanie E. Brewster"
+      },
+      {
+        "literal": "Brandon L. Velez"
+      },
+      {
+        "literal": "Elizabeth F. Geiger"
+      },
+      {
+        "literal": "Jacob S. Sawyer"
+      }
+    ]
+  },
+  {
+    "id": "s-sexual-minority-rs-meta",
+    "type": "article-journal",
+    "title": "The relationship between religiousness and health among sexual minorities: A meta-analysis",
+    "URL": "https://doi.org/10.1037/bul0000321",
+    "note": "Lefevor, G. T., Davis, E. B., Paiz, J. Y., & Smack, A. C. P. (2021). The relationship between religiousness and health among sexual minorities: A meta-analysis. Psychological Bulletin, 147(7), 647–666. https://doi.org/10.1037/bul0000321",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1037/bul0000321",
+    "container-title": "Psychological Bulletin",
+    "author": [
+      {
+        "literal": "G. Tyler Lefevor"
+      },
+      {
+        "literal": "Edward B. Davis"
+      },
+      {
+        "literal": "Jaqueline Y. Paiz"
+      },
+      {
+        "literal": "Abigail C. P. Smack"
+      }
+    ]
+  },
+  {
+    "id": "s-lgbq-religious-family-therapy",
+    "type": "article-journal",
+    "title": "Freedom and struggling openly in psychotherapy: A qualitative inquiry with LGBQ young adults from religious families",
+    "URL": "https://doi.org/10.1111/jmft.12442",
+    "note": "Heiden-Rootes, K., Ross, K., Moore, R., Hasan, S., & Gulotta, S. (2021). Freedom and struggling openly in psychotherapy: A qualitative inquiry with LGBQ young adults from religious families. Journal of Marital and Family Therapy, 47(1), 150–165. https://doi.org/10.1111/jmft.12442",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1111/jmft.12442",
+    "container-title": "Journal of Marital and Family Therapy",
+    "author": [
+      {
+        "literal": "Katie Heiden-Rootes"
+      },
+      {
+        "literal": "Kristin Ross"
+      },
+      {
+        "literal": "Rachel Moore"
+      },
+      {
+        "literal": "Shah Hasan"
+      },
+      {
+        "literal": "Samantha Gulotta"
+      }
+    ]
+  },
+  {
+    "id": "s-lebanon-sexual-stigma",
+    "type": "article-journal",
+    "title": "Internalized Sexual Orientation Stigma and Mental Health in a Religiously Diverse Sample of Gay and Bisexual Men in Lebanon",
+    "URL": "https://doi.org/10.1080/00918369.2022.2030617",
+    "note": "Maatouk, I., & Jaspal, R. (2023). Internalized Sexual Orientation Stigma and Mental Health in a Religiously Diverse Sample of Gay and Bisexual Men in Lebanon. Journal of Homosexuality, 70(8), 1441–1460. https://doi.org/10.1080/00918369.2022.2030617",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "DOI": "10.1080/00918369.2022.2030617",
+    "container-title": "Journal of Homosexuality",
+    "author": [
+      {
+        "literal": "Ismael Maatouk"
+      },
+      {
+        "literal": "Rusi Jaspal"
+      }
+    ]
+  },
+  {
+    "id": "s-icsg-2",
+    "type": "article-journal",
+    "title": "Inventory of Complicated Spiritual Grief 2.0 (ICSG 2.0): Validation of a revised measure of spiritual distress in bereavement",
+    "URL": "https://doi.org/10.1080/07481187.2019.1627031",
+    "note": "Burke, L. A., Crunk, A. E., Neimeyer, R. A., & Bai, H. (2021). Inventory of Complicated Spiritual Grief 2.0 (ICSG 2.0): Validation of a revised measure of spiritual distress in bereavement. Death Studies, 45(4), 249–265. https://doi.org/10.1080/07481187.2019.1627031",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1080/07481187.2019.1627031",
+    "container-title": "Death Studies",
+    "author": [
+      {
+        "literal": "Laurie A. Burke"
+      },
+      {
+        "literal": "A. Elizabeth Crunk"
+      },
+      {
+        "literal": "Robert A. Neimeyer"
+      },
+      {
+        "literal": "Haiyan Bai"
+      }
+    ]
+  },
+  {
+    "id": "s-icsg-2-fa",
+    "type": "article-journal",
+    "title": "Assessing complicated spiritual grief: A psychometric study of the Inventory of complicated spiritual grief 2.0 in an Iranian context",
+    "URL": "https://doi.org/10.1080/07481187.2025.2580244",
+    "note": "Ashouri, A., & Yousefi, S. (2025). Assessing complicated spiritual grief: A psychometric study of the Inventory of complicated spiritual grief 2.0 in an Iranian context. Death Studies. Advance online publication. https://doi.org/10.1080/07481187.2025.2580244",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1080/07481187.2025.2580244",
+    "container-title": "Death Studies",
+    "author": [
+      {
+        "literal": "Ahmad Ashouri"
+      },
+      {
+        "literal": "Shahab Yousefi"
+      }
+    ]
+  },
+  {
+    "id": "s-p-sds",
+    "type": "article-journal",
+    "title": "Cross-Cultural Adaptation and Psychometric Properties of the Persian Version of the Spiritual Distress Scale (P-SDS) Among Older Adults with Cancer in Iran",
+    "URL": "https://doi.org/10.1007/s10943-025-02335-1",
+    "note": "Najafi, H., Papi, S., Hosseinnataj, A., & Namazi Shabestari, A. (2025). Cross-Cultural Adaptation and Psychometric Properties of the Persian Version of the Spiritual Distress Scale (P-SDS) Among Older Adults with Cancer in Iran. Journal of Religion and Health, 64(4), 3063–3088. https://doi.org/10.1007/s10943-025-02335-1",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10943-025-02335-1",
+    "container-title": "Journal of Religion and Health",
+    "author": [
+      {
+        "literal": "Hadi Najafi"
+      },
+      {
+        "literal": "Shahab Papi"
+      },
+      {
+        "literal": "Abolfazl Hosseinnataj"
+      },
+      {
+        "literal": "Alireza Namazi Shabestari"
+      }
+    ]
+  },
+  {
+    "id": "s-religious-minority-context",
+    "type": "article-journal",
+    "title": "Depressive Feelings in Religious Minorities: Does the Religious Context Matter?",
+    "URL": "https://doi.org/10.1007/s10943-020-00999-5",
+    "note": "Van de Velde, S. M., Buffel, V., & Van Praag, L. (2020). Depressive Feelings in Religious Minorities: Does the Religious Context Matter? Journal of Religion and Health, 59(5), 2504–2530. https://doi.org/10.1007/s10943-020-00999-5",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10943-020-00999-5",
+    "container-title": "Journal of Religion and Health",
+    "author": [
+      {
+        "literal": "Sarah M. Van de Velde"
+      },
+      {
+        "literal": "Veerle Buffel"
+      },
+      {
+        "literal": "Lore Van Praag"
+      }
+    ]
   }
 ]

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "release": "marsam-scholarly-infrastructure-0.11.0",
+  "version": "0.11.0",
+  "generatedAt": "2026-10-05T11:45:33.372Z",
+  "publicationState": "institutional-review",
+  "reviewStatus": "AI_ASSISTED_DRAFT",
+  "humanReviewed": false,
+  "scientificApproval": false,
+  "humanLanguageApproval": false,
+  "formalInstitutionalApproval": false
+}

@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
   "objectType": "catalogue-inventory-teaching-example",
-  "version": "0.10.2",
+  "version": "0.11.0",
   "sourceModule": "src/catalogue.mjs",
-  "sourceRecordHash": "19b9464f8fe2abf6d934b7d10dcb442f9e1ce82d9e26ad5f5f529211937e17b7",
+  "sourceRecordHash": "60267cea374682751f760f23875771c10f25dcc76e3e03200d15b51b8a8f68df",
   "scope": "Selected catalogue only. Not a field census, systematic evidence map or clinical dataset.",
   "dataFile": "catalogue.csv",
-  "dataSHA256": "47fdace27f310af1f75580fad100f9cbe6987f8417d906730a5eed89d7ebebd3",
+  "dataSHA256": "57bd3da79d9e32a34a1b472805e16816718554ddd78a6072bea0ebd9b227a6e2",
   "codeSHA256": "f1467e30101864b90e6186b8f811acbcf6dc7f21fd2c7e65352b9fbde8ba3e8b",
   "expectedResult": {
-    "records": 44,
+    "records": 61,
     "by_type": {
       "book": 7,
       "guide": 2,
-      "measure": 6,
+      "measure": 12,
       "method": 1,
-      "study": 24,
+      "study": 35,
       "theory": 4
     }
   },
