@@ -1,0 +1,61 @@
+name: Publish MARSAM 0.12.0 finished-centre release
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/marsam-publish-0_12_0.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: marsam-publish-0-12-0
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build exact MARSAM source
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE_SHA=36b908b491f0f75c44f0160b1b1951e343ca4832
+          git clone --quiet https://github.com/OnourImpram/MARSAM.git /tmp/MARSAM-source
+          cd /tmp/MARSAM-source
+          git checkout --quiet "$SOURCE_SHA"
+          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
+          npm test
+          node scripts/validate-schemas.mjs
+          BASE_PATH=/MARSAM/ PAGES_PREVIEW=true npm run build
+          npm run test:build
+      - name: Replace only the MARSAM hosting subtree
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE_SHA=36b908b491f0f75c44f0160b1b1951e343ca4832
+          rm -rf MARSAM
+          mkdir MARSAM
+          cp -a /tmp/MARSAM-source/dist/. MARSAM/
+          printf '%s\n' '{"version":"0.12.0","sourceCommit":"'"$SOURCE_SHA"'","release":"marsam-finished-centre-0.12.0"}' > MARSAM/release.json
+          test -f MARSAM/tr/index.html
+          test -f MARSAM/assets/og-card.png
+          test -f MARSAM/tr/measurement-observatory/index.html
+          test -f MARSAM/data/v1/integrity.json
+          grep -q 'og:image' MARSAM/tr/index.html
+          ! grep -q 'Kuruluş hazırlığı' MARSAM/tr/index.html
+          grep -q "$SOURCE_SHA" MARSAM/release.json
+      - name: Commit exact hosting tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'Onour Impram'
+          git config user.email 'onuribram@outlook.com'
+          git add -A MARSAM
+          git diff --cached --check
+          git commit -m 'deploy: publish MARSAM 0.12.0 finished-centre release'
+          git push origin HEAD:main
