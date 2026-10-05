@@ -1,0 +1,76 @@
+name: Publish MARSAM 0.11.0 research infrastructure
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/marsam-publish-0_11_0.yml
+permissions:
+  contents: write
+concurrency:
+  group: marsam-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SOURCE_SHA: 946e746db291d61228f05e26c8396989d7f3db37
+    steps:
+      - name: Check out publishing repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Capture host revision
+        run: echo "HOST_START=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Fetch exact MARSAM source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git init source
+          git -C source remote add origin https://github.com/OnourImpram/MARSAM.git
+          git -C source fetch --depth=1 origin "$SOURCE_SHA"
+          git -C source checkout --detach FETCH_HEAD
+          test "$(git -C source rev-parse HEAD)" = "$SOURCE_SHA"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify and build exact source
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd source
+          BASE_PATH=/MARSAM/ PAGES_PREVIEW=true npm run check
+          BASE_PATH=/MARSAM/ PAGES_PREVIEW=true node scripts/budget.mjs
+          BASE_PATH=/MARSAM/ PAGES_PREVIEW=true SOURCE_COMMIT="$SOURCE_SHA" node scripts/release-manifest.mjs
+          node -e "const r=require('./dist/release.json'); if(r.sourceCommit!==process.env.SOURCE_SHA||r.version!=='0.11.0') process.exit(1)"
+          test -f dist/tr/measurement-observatory/index.html
+          test -f dist/tr/evidence-bridges/index.html
+          test -f dist/tr/datasets/index.html
+          test -f dist/tr/construct-dictionary/index.html
+          test -f dist/data/v1/instruments.json
+          test -f dist/data/v1/claims.json
+      - name: Stage only MARSAM subtree
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf MARSAM
+          mkdir -p MARSAM
+          cp -a source/dist/. MARSAM/
+          test -f MARSAM/release.json
+      - name: Refuse concurrent host changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = "$HOST_START"
+      - name: Publish and remove one-shot workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/marsam-publish-0_11_0.yml
+          git config user.name "Onour Impram"
+          git config user.email "onuribram@outlook.com"
+          git add -A MARSAM .github/workflows/marsam-publish-0_11_0.yml
+          git diff --cached --quiet && { echo "No publication changes"; exit 1; }
+          git commit -m "Publish MARSAM research infrastructure 0.11.0 from tested source 946e746"
+          git push origin HEAD:main
