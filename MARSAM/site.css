@@ -13,7 +13,7 @@
 .institution-lockup .brand{min-width:0}.institution-lockup .brand-sub{max-width:450px;line-height:1.5}
 .academic-context{display:flex;flex-wrap:wrap;gap:.25rem 1rem;padding-block:0 .85rem;color:var(--text-secondary);font-size:.74rem;line-height:1.6}
 .academic-context>span+span:before{content:'·';display:inline-block;margin-inline-end:1rem;color:var(--ornament)}
-.institution-stage{font-size:.76rem;color:inherit}
+
 
 /* Restored heritage entry. Current discovery and content are retained. */
 

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "release": "marsam-scholarly-infrastructure-0.11.0",
-  "version": "0.11.0",
-  "generatedAt": "2026-10-05T12:14:58.858Z",
+  "release": "marsam-finished-centre-0.12.0",
+  "version": "0.12.0",
+  "generatedAt": "2026-10-05T14:53:40.303Z",
   "publicationState": "institutional-review",
   "reviewStatus": "AI_ASSISTED_DRAFT",
   "humanReviewed": false,
@@ -899,6 +899,825 @@
           "ms": "Kajian psikometrik. Bukti pengukuran dalam sampel bukan kuasa diagnosis atau kebenaran menggunakan instrumen."
         },
         "onlineDate": "2025-03-06"
+      }
+    },
+    {
+      "id": "s-eksi-adaptation-of-the-decision-to-forgive",
+      "title": "Adaptation of the Decision to Forgive Scale to Turkish Culture: Validity and Reliability Study",
+      "year": 2024,
+      "url": "https://doi.org/10.52380/ijpes.2024.11.4.1371",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.52380/ijpes.2024.11.4.1371",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2024-08-16",
+        "authors": [
+          "Ece Yağcı Akgündüz",
+          "Gülbin Demir Celayir",
+          "Simel Parlak",
+          "Halil Ekşi"
+        ],
+        "editors": [],
+        "journal": "International Journal of Psychology and Educational Studies",
+        "volume": "11",
+        "issue": "4",
+        "pages": "331-340",
+        "doi": "10.52380/ijpes.2024.11.4.1371",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.52380/ijpes.2024.11.4.1371",
+          "https://ijpes.com/index.php/ijpes/article/view/1371"
+        ],
+        "note": {
+          "tr": "Psikometrik çalışma. Araştırma örneklemindeki ölçme kanıtı, klinik tanı yetkisi veya kullanım izni anlamına gelmez.",
+          "en": "Psychometric study. Measurement evidence in the research sample does not establish diagnostic authority or reuse permission.",
+          "de": "Psychometrische Studie. Messbefunde in der Stichprobe begründen weder diagnostische Befugnis noch Nutzungsrechte.",
+          "zh": "心理测量研究。研究样本中的测量证据不等于临床诊断资格或使用许可。",
+          "ru": "Психометрическое исследование. Данные выборки не означают права на диагностику или разрешения использовать шкалу.",
+          "ar": "دراسة سيكومترية. أدلة القياس في العينة لا تمنح صلاحية التشخيص أو إذن استخدام المقياس.",
+          "id": "Studi psikometrik. Bukti pengukuran pada sampel bukan kewenangan diagnosis atau izin penggunaan instrumen.",
+          "ms": "Kajian psikometrik. Bukti pengukuran dalam sampel bukan kuasa diagnosis atau kebenaran menggunakan instrumen."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-the-intersection-of-faith-and-pornography",
+      "title": "The Intersection of Faith and Pornography: A Turkish Moral Disapproval of Pornography Scale",
+      "year": 2024,
+      "url": "https://doi.org/10.37898/spiritualpc.1461103",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.37898/spiritualpc.1461103",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2024-06-01",
+        "authors": [
+          "Eren Murat Dinçer",
+          "Halil Eksi"
+        ],
+        "editors": [],
+        "journal": "Spiritual Psychology and Counseling",
+        "volume": "9",
+        "issue": "2",
+        "pages": "203-214",
+        "doi": "10.37898/spiritualpc.1461103",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.37898/spiritualpc.1461103",
+          "https://dergipark.org.tr/en/pub/spiritualpc/article/1461103"
+        ],
+        "note": {
+          "tr": "Psikometrik çalışma. Araştırma örneklemindeki ölçme kanıtı, klinik tanı yetkisi veya kullanım izni anlamına gelmez.",
+          "en": "Psychometric study. Measurement evidence in the research sample does not establish diagnostic authority or reuse permission.",
+          "de": "Psychometrische Studie. Messbefunde in der Stichprobe begründen weder diagnostische Befugnis noch Nutzungsrechte.",
+          "zh": "心理测量研究。研究样本中的测量证据不等于临床诊断资格或使用许可。",
+          "ru": "Психометрическое исследование. Данные выборки не означают права на диагностику или разрешения использовать шкалу.",
+          "ar": "دراسة سيكومترية. أدلة القياس في العينة لا تمنح صلاحية التشخيص أو إذن استخدام المقياس.",
+          "id": "Studi psikometrik. Bukti pengukuran pada sampel bukan kewenangan diagnosis atau izin penggunaan instrumen.",
+          "ms": "Kajian psikometrik. Bukti pengukuran dalam sampel bukan kuasa diagnosis atau kebenaran menggunakan instrumen."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-a-spiritual-touch-on-family-resilience",
+      "title": "A Spiritual Touch on Family Resilience: A Positive Psychology Based Group Study From Burnout To Hope",
+      "year": 2023,
+      "url": "https://doi.org/10.37898/spc.2023.8.1.185",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.37898/spc.2023.8.1.185",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2023-02-15",
+        "authors": [
+          "Halil Ekşi",
+          "Deniz Erök Özkapu"
+        ],
+        "editors": [],
+        "journal": "Spiritual Psychology and Counseling",
+        "volume": "8",
+        "issue": "1",
+        "pages": "47-66",
+        "doi": "10.37898/spc.2023.8.1.185",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.37898/spc.2023.8.1.185",
+          "https://dergipark.org.tr/en/pub/spiritualpc/article/1264619"
+        ],
+        "note": {
+          "tr": "Müdahale çalışması. Sınırlı bir örneklemde elde edilen sonuçlar genellenebilir etkililik kanıtı sayılmaz.",
+          "en": "Intervention study. Results obtained in a limited sample do not constitute generalizable evidence of effectiveness.",
+          "de": "Interventionsstudie. Ergebnisse aus einer begrenzten Stichprobe gelten nicht als verallgemeinerbarer Wirksamkeitsnachweis.",
+          "zh": "干预研究。基于有限样本的结果不能视为可推广的有效性证据。",
+          "ru": "Интервенционное исследование. Результаты, полученные на ограниченной выборке, не являются обобщаемым доказательством эффективности.",
+          "ar": "دراسة تدخلية. لا تُعدّ النتائج المستخلصة من عينة محدودة دليلًا قابلًا للتعميم على الفعالية.",
+          "id": "Studi intervensi. Hasil yang diperoleh dari sampel terbatas tidak dapat dianggap sebagai bukti efektivitas yang dapat digeneralisasi.",
+          "ms": "Kajian intervensi. Dapatan daripada sampel yang terhad tidak boleh dianggap sebagai bukti keberkesanan yang boleh digeneralisasikan."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-through-the-inner-world-development-of",
+      "title": "Through the Inner World: Development of Reclusion Tendency Scale",
+      "year": 2023,
+      "url": "https://doi.org/10.37898/spc.2023.8.1.186",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.37898/spc.2023.8.1.186",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2023-02-15",
+        "authors": [
+          "Betül Kürüm Yıldırım",
+          "Halil Ekşi",
+          "Selami Kardaş",
+          "Füsun Ekşi"
+        ],
+        "editors": [],
+        "journal": "Spiritual Psychology and Counseling",
+        "volume": "8",
+        "issue": "1",
+        "pages": "67-81",
+        "doi": "10.37898/spc.2023.8.1.186",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.37898/spc.2023.8.1.186",
+          "https://dergipark.org.tr/en/pub/spiritualpc/article/1264632"
+        ],
+        "note": {
+          "tr": "Psikometrik çalışma. Araştırma örneklemindeki ölçme kanıtı, klinik tanı yetkisi veya kullanım izni anlamına gelmez.",
+          "en": "Psychometric study. Measurement evidence in the research sample does not establish diagnostic authority or reuse permission.",
+          "de": "Psychometrische Studie. Messbefunde in der Stichprobe begründen weder diagnostische Befugnis noch Nutzungsrechte.",
+          "zh": "心理测量研究。研究样本中的测量证据不等于临床诊断资格或使用许可。",
+          "ru": "Психометрическое исследование. Данные выборки не означают права на диагностику или разрешения использовать шкалу.",
+          "ar": "دراسة سيكومترية. أدلة القياس في العينة لا تمنح صلاحية التشخيص أو إذن استخدام المقياس.",
+          "id": "Studi psikometrik. Bukti pengukuran pada sampel bukan kewenangan diagnosis atau izin penggunaan instrumen.",
+          "ms": "Kajian psikometrik. Bukti pengukuran dalam sampel bukan kuasa diagnosis atau kebenaran menggunakan instrumen."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-well-being-and-spiritual-intelligence-predict",
+      "title": "Well-Being and Spiritual Intelligence Predict Attitudes of Adolescents’ Towards Violence",
+      "year": 2022,
+      "url": "https://doi.org/10.37898/spc.2022.7.3.181",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.37898/spc.2022.7.3.181",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2022-10-15",
+        "authors": [
+          "Özge ERDURAN TEKİN",
+          "Halil EKŞİ"
+        ],
+        "editors": [],
+        "journal": "Spiritual Psychology and Counseling",
+        "volume": "7",
+        "issue": "3",
+        "pages": "301-314",
+        "doi": "10.37898/spc.2022.7.3.181",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.37898/spc.2022.7.3.181",
+          "https://dergipark.org.tr/en/pub/spiritualpc/article/1208702"
+        ],
+        "note": {
+          "tr": "İlişkisel araştırma. Aracılık analizi, bu gözlemsel tasarımda nedensel mekanizma veya müdahale etkisi göstermez.",
+          "en": "Correlational research. Mediation in this observational design does not establish a causal mechanism or intervention effect.",
+          "de": "Korrelative Forschung. Die Mediation im Beobachtungsdesign belegt weder einen kausalen Mechanismus noch einen Interventionseffekt.",
+          "zh": "相关研究。此观察性设计中的中介分析不能证明因果机制或干预效果。",
+          "ru": "Корреляционное исследование. Анализ медиации не устанавливает причинный механизм или эффект вмешательства.",
+          "ar": "بحث ارتباطي. تحليل الوساطة في هذا التصميم الرصدي لا يثبت آلية سببية أو أثر تدخل.",
+          "id": "Penelitian korelasional. Mediasi pada desain observasional tidak membuktikan mekanisme sebab akibat atau efek intervensi.",
+          "ms": "Penyelidikan korelasi. Mediasi dalam reka bentuk pemerhatian tidak membuktikan mekanisme sebab akibat atau kesan intervensi."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-the-mediator-role-of-forgiveness-between",
+      "title": "The Mediator Role of Forgiveness between The Interpersonal Relationships and The Level of Cognitive Distortions in Young Adults",
+      "year": 2021,
+      "url": "https://doi.org/10.54535/rep.1025099",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.54535/rep.1025099",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2021-12-31",
+        "authors": [
+          "Hatice Vildan YILDIZ",
+          "Halil EKŞİ"
+        ],
+        "editors": [],
+        "journal": "Research on Education and Psychology",
+        "volume": "5",
+        "issue": "2",
+        "pages": "397-413",
+        "doi": "10.54535/rep.1025099",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.54535/rep.1025099",
+          "https://dergipark.org.tr/en/pub/rep/article/1025099"
+        ],
+        "note": {
+          "tr": "İlişkisel araştırma. Aracılık analizi, bu gözlemsel tasarımda nedensel mekanizma veya müdahale etkisi göstermez.",
+          "en": "Correlational research. Mediation in this observational design does not establish a causal mechanism or intervention effect.",
+          "de": "Korrelative Forschung. Die Mediation im Beobachtungsdesign belegt weder einen kausalen Mechanismus noch einen Interventionseffekt.",
+          "zh": "相关研究。此观察性设计中的中介分析不能证明因果机制或干预效果。",
+          "ru": "Корреляционное исследование. Анализ медиации не устанавливает причинный механизм или эффект вмешательства.",
+          "ar": "بحث ارتباطي. تحليل الوساطة في هذا التصميم الرصدي لا يثبت آلية سببية أو أثر تدخل.",
+          "id": "Penelitian korelasional. Mediasi pada desain observasional tidak membuktikan mekanisme sebab akibat atau efek intervensi.",
+          "ms": "Penyelidikan korelasi. Mediasi dalam reka bentuk pemerhatian tidak membuktikan mekanisme sebab akibat atau kesan intervensi."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki",
+      "title": "Gençlerde maneviyat ve şiddet eğilimi arasındaki ilişkide erken dönem uyum bozucu şemaların moderatör etkisi",
+      "year": 2021,
+      "url": "https://doi.org/10.28949/bilimname.845575",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.28949/bilimname.845575",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2021-04-30",
+        "authors": [
+          "Halil EKSİ",
+          "Nesrullah OKAN"
+        ],
+        "editors": [],
+        "journal": "Bilimname",
+        "volume": "2021",
+        "issue": "44",
+        "pages": "521-546",
+        "doi": "10.28949/bilimname.845575",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.28949/bilimname.845575",
+          "https://dergipark.org.tr/tr/pub/bilimname/article/845575"
+        ],
+        "note": {
+          "tr": "İlişkisel araştırma. Aracılık analizi, bu gözlemsel tasarımda nedensel mekanizma veya müdahale etkisi göstermez.",
+          "en": "Correlational research. Mediation in this observational design does not establish a causal mechanism or intervention effect.",
+          "de": "Korrelative Forschung. Die Mediation im Beobachtungsdesign belegt weder einen kausalen Mechanismus noch einen Interventionseffekt.",
+          "zh": "相关研究。此观察性设计中的中介分析不能证明因果机制或干预效果。",
+          "ru": "Корреляционное исследование. Анализ медиации не устанавливает причинный механизм или эффект вмешательства.",
+          "ar": "بحث ارتباطي. تحليل الوساطة في هذا التصميم الرصدي لا يثبت آلية سببية أو أثر تدخل.",
+          "id": "Penelitian korelasional. Mediasi pada desain observasional tidak membuktikan mekanisme sebab akibat atau efek intervensi.",
+          "ms": "Penyelidikan korelasi. Mediasi dalam reka bentuk pemerhatian tidak membuktikan mekanisme sebab akibat atau kesan intervensi."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-spiritually-oriented-couple-marriage-and-family",
+      "title": "Spiritually Oriented Couple, Marriage and Family Therapies",
+      "year": 2020,
+      "url": "https://doi.org/10.37898/spc.2020.5.1.096",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.37898/spc.2020.5.1.096",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2020-02-15",
+        "authors": [
+          "Şeyda Çetintaş",
+          "Halil Ekşi"
+        ],
+        "editors": [],
+        "journal": "Spiritual Psychology and Counseling",
+        "volume": "5",
+        "issue": "1",
+        "pages": "7-24",
+        "doi": "10.37898/spc.2020.5.1.096",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.37898/spc.2020.5.1.096",
+          "https://spiritualpc.net/article/spiritually-oriented-couple-marriage-and-family-therapies/"
+        ],
+        "note": {
+          "tr": "Kuramsal derleme. Uygulamaya yönelik öneriler ampirik etkililik kanıtı yerine geçmez.",
+          "en": "Theoretical review. Practice recommendations are not a substitute for empirical evidence of effectiveness.",
+          "de": "Theoretischer Übersichtsbeitrag. Praxisempfehlungen ersetzen keine empirischen Wirksamkeitsnachweise.",
+          "zh": "理论综述。文中的实践建议不能替代有效性的实证证据。",
+          "ru": "Теоретический обзор. Практические рекомендации не заменяют эмпирических доказательств эффективности.",
+          "ar": "مراجعة نظرية. لا تُغني التوصيات التطبيقية عن الأدلة التجريبية على الفعالية.",
+          "id": "Kajian teoretis. Rekomendasi praktik tidak dapat menggantikan bukti empiris tentang efektivitas.",
+          "ms": "Kajian teoretikal. Cadangan amalan tidak menggantikan bukti empirikal tentang keberkesanan."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi",
+      "title": "Manevi Şükran Ölçeği'nin Türkçe Uyarlaması Geçerlik Ve Güvenirlik Çalışması",
+      "year": 2020,
+      "url": "https://doi.org/10.37217/tebd.583207",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.37217/tebd.583207",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2020-06-26",
+        "authors": [
+          "Kübra KAPLANER",
+          "Halil EKŞİ"
+        ],
+        "editors": [],
+        "journal": "Türk Eğitim Bilimleri Dergisi",
+        "volume": "18",
+        "issue": "1",
+        "pages": "1-16",
+        "doi": "10.37217/tebd.583207",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.37217/tebd.583207",
+          "https://dergipark.org.tr/tr/pub/tebd/article/583207"
+        ],
+        "note": {
+          "tr": "Psikometrik çalışma. Araştırma örneklemindeki ölçme kanıtı, klinik tanı yetkisi veya kullanım izni anlamına gelmez.",
+          "en": "Psychometric study. Measurement evidence in the research sample does not establish diagnostic authority or reuse permission.",
+          "de": "Psychometrische Studie. Messbefunde in der Stichprobe begründen weder diagnostische Befugnis noch Nutzungsrechte.",
+          "zh": "心理测量研究。研究样本中的测量证据不等于临床诊断资格或使用许可。",
+          "ru": "Психометрическое исследование. Данные выборки не означают права на диагностику или разрешения использовать шкалу.",
+          "ar": "دراسة سيكومترية. أدلة القياس في العينة لا تمنح صلاحية التشخيص أو إذن استخدام المقياس.",
+          "id": "Studi psikometrik. Bukti pengukuran pada sampel bukan kewenangan diagnosis atau izin penggunaan instrumen.",
+          "ms": "Kajian psikometrik. Bukti pengukuran dalam sampel bukan kuasa diagnosis atau kebenaran menggunakan instrumen."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
+      "title": "Manevi Aşkınlık Ölçeği’nin Türkçeye Uyarlanması: Geçerlik ve Güvenirlik Çalışması",
+      "year": 2019,
+      "url": "https://doi.org/10.17679/inuefd.562410",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.17679/inuefd.562410",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2019-12-31",
+        "authors": [
+          "Yakup İme",
+          "Halil Ekşi",
+          "Füsun Ekşi"
+        ],
+        "editors": [],
+        "journal": "İnönü Üniversitesi Eğitim Fakültesi Dergisi",
+        "volume": "20",
+        "issue": "3",
+        "pages": "1008-1020",
+        "doi": "10.17679/inuefd.562410",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.17679/inuefd.562410",
+          "https://dergipark.org.tr/en/pub/inuefd/article/562410"
+        ],
+        "note": {
+          "tr": "Psikometrik çalışma. Araştırma örneklemindeki ölçme kanıtı, klinik tanı yetkisi veya kullanım izni anlamına gelmez.",
+          "en": "Psychometric study. Measurement evidence in the research sample does not establish diagnostic authority or reuse permission.",
+          "de": "Psychometrische Studie. Messbefunde in der Stichprobe begründen weder diagnostische Befugnis noch Nutzungsrechte.",
+          "zh": "心理测量研究。研究样本中的测量证据不等于临床诊断资格或使用许可。",
+          "ru": "Психометрическое исследование. Данные выборки не означают права на диагностику или разрешения использовать шкалу.",
+          "ar": "دراسة سيكومترية. أدلة القياس في العينة لا تمنح صلاحية التشخيص أو إذن استخدام المقياس.",
+          "id": "Studi psikometrik. Bukti pengukuran pada sampel bukan kewenangan diagnosis atau izin penggunaan instrumen.",
+          "ms": "Kajian psikometrik. Bukti pengukuran dalam sampel bukan kuasa diagnosis atau kebenaran menggunakan instrumen."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-a-psychological-counseling-study-on-fear",
+      "title": "A Psychological Counseling Study on Fear of Failure and Academic Procrastination with a Spiritually Oriented Cognitive Behavioral Group",
+      "year": 2019,
+      "url": "https://doi.org/10.37898/spc.2019.4.3.85",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.37898/spc.2019.4.3.85",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2019-10-15",
+        "authors": [
+          "Serra Dinç",
+          "Halil Ekşi"
+        ],
+        "editors": [],
+        "journal": "Spiritual Psychology and Counseling",
+        "volume": "4",
+        "issue": "3",
+        "pages": "219-235",
+        "doi": "10.37898/spc.2019.4.3.85",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.37898/spc.2019.4.3.85",
+          "https://spiritualpc.net/article/a-psychological-counseling-study-on-fear-of-failure-and-academic-procrastination-with-a-spiritually-oriented-cognitive-behavioral-group/"
+        ],
+        "note": {
+          "tr": "Müdahale çalışması. Sınırlı bir örneklemde elde edilen sonuçlar genellenebilir etkililik kanıtı sayılmaz.",
+          "en": "Intervention study. Results obtained in a limited sample do not constitute generalizable evidence of effectiveness.",
+          "de": "Interventionsstudie. Ergebnisse aus einer begrenzten Stichprobe gelten nicht als verallgemeinerbarer Wirksamkeitsnachweis.",
+          "zh": "干预研究。基于有限样本的结果不能视为可推广的有效性证据。",
+          "ru": "Интервенционное исследование. Результаты, полученные на ограниченной выборке, не являются обобщаемым доказательством эффективности.",
+          "ar": "دراسة تدخلية. لا تُعدّ النتائج المستخلصة من عينة محدودة دليلًا قابلًا للتعميم على الفعالية.",
+          "id": "Studi intervensi. Hasil yang diperoleh dari sampel terbatas tidak dapat dianggap sebagai bukti efektivitas yang dapat digeneralisasi.",
+          "ms": "Kajian intervensi. Dapatan daripada sampel yang terhad tidak boleh dianggap sebagai bukti keberkesanan yang boleh digeneralisasikan."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-multi-cultural-counseling-and-spiritual-interventions",
+      "title": "Multi-Cultural Counseling and Spiritual Interventions",
+      "year": 2019,
+      "url": "https://doi.org/10.37898/spc.2019.4.2.0066",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.37898/spc.2019.4.2.0066",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2019-06-15",
+        "authors": [
+          "Berra Keçeci",
+          "Halil Ekşi"
+        ],
+        "editors": [],
+        "journal": "Spiritual Psychology and Counseling",
+        "volume": "4",
+        "issue": "2",
+        "pages": "163-180",
+        "doi": "10.37898/spc.2019.4.2.0066",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.37898/spc.2019.4.2.0066",
+          "https://spiritualpc.net/article/multi-cultural-counseling-and-spiritual-interventions/"
+        ],
+        "note": {
+          "tr": "Kuramsal derleme. Uygulamaya yönelik öneriler ampirik etkililik kanıtı yerine geçmez.",
+          "en": "Theoretical review. Practice recommendations are not a substitute for empirical evidence of effectiveness.",
+          "de": "Theoretischer Übersichtsbeitrag. Praxisempfehlungen ersetzen keine empirischen Wirksamkeitsnachweise.",
+          "zh": "理论综述。文中的实践建议不能替代有效性的实证证据。",
+          "ru": "Теоретический обзор. Практические рекомендации не заменяют эмпирических доказательств эффективности.",
+          "ar": "مراجعة نظرية. لا تُغني التوصيات التطبيقية عن الأدلة التجريبية على الفعالية.",
+          "id": "Kajian teoretis. Rekomendasi praktik tidak dapat menggantikan bukti empiris tentang efektivitas.",
+          "ms": "Kajian teoretikal. Cadangan amalan tidak menggantikan bukti empirikal tentang keberkesanan."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-islamic-spiritual-counseling-techniques",
+      "title": "Islamic Spiritual Counseling Techniques",
+      "year": 2019,
+      "url": "https://doi.org/10.37898/spc.2019.4.3.069",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.37898/spc.2019.4.3.069",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2019-10-15",
+        "authors": [
+          "Muhammet Şerif KESKİNOĞLU",
+          "Halil EKŞİ"
+        ],
+        "editors": [],
+        "journal": "Spiritual Psychology and Counseling",
+        "volume": "4",
+        "issue": "3",
+        "pages": "333-350",
+        "doi": "10.37898/spc.2019.4.3.069",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.37898/spc.2019.4.3.069",
+          "https://spiritualpc.net/article/islamic-spiritual-counseling-techniques/"
+        ],
+        "note": {
+          "tr": "Kuramsal derleme. Uygulamaya yönelik öneriler ampirik etkililik kanıtı yerine geçmez.",
+          "en": "Theoretical review. Practice recommendations are not a substitute for empirical evidence of effectiveness.",
+          "de": "Theoretischer Übersichtsbeitrag. Praxisempfehlungen ersetzen keine empirischen Wirksamkeitsnachweise.",
+          "zh": "理论综述。文中的实践建议不能替代有效性的实证证据。",
+          "ru": "Теоретический обзор. Практические рекомендации не заменяют эмпирических доказательств эффективности.",
+          "ar": "مراجعة نظرية. لا تُغني التوصيات التطبيقية عن الأدلة التجريبية على الفعالية.",
+          "id": "Kajian teoretis. Rekomendasi praktik tidak dapat menggantikan bukti empiris tentang efektivitas.",
+          "ms": "Kajian teoretikal. Cadangan amalan tidak menggantikan bukti empirikal tentang keberkesanan."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-adapting-the-scale-for-spiritual-intelligence",
+      "title": "Adapting the Scale for Spiritual Intelligence to Turkish",
+      "year": 2019,
+      "url": "https://doi.org/10.37898/spc.2019.4.2.0062",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.37898/spc.2019.4.2.0062",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2019-06-15",
+        "authors": [
+          "Özge Erduran-Tekin",
+          "Halil Ekşi"
+        ],
+        "editors": [],
+        "journal": "Spiritual Psychology and Counseling",
+        "volume": "4",
+        "issue": "2",
+        "pages": "123-141",
+        "doi": "10.37898/spc.2019.4.2.0062",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.37898/spc.2019.4.2.0062",
+          "https://spiritualpc.net/article/adapting-the-scale-for-spiritual-intelligence-to-turkish/"
+        ],
+        "note": {
+          "tr": "Psikometrik çalışma. Araştırma örneklemindeki ölçme kanıtı, klinik tanı yetkisi veya kullanım izni anlamına gelmez.",
+          "en": "Psychometric study. Measurement evidence in the research sample does not establish diagnostic authority or reuse permission.",
+          "de": "Psychometrische Studie. Messbefunde in der Stichprobe begründen weder diagnostische Befugnis noch Nutzungsrechte.",
+          "zh": "心理测量研究。研究样本中的测量证据不等于临床诊断资格或使用许可。",
+          "ru": "Психометрическое исследование. Данные выборки не означают права на диагностику или разрешения использовать шкалу.",
+          "ar": "دراسة سيكومترية. أدلة القياس في العينة لا تمنح صلاحية التشخيص أو إذن استخدام المقياس.",
+          "id": "Studi psikometrik. Bukti pengukuran pada sampel bukan kewenangan diagnosis atau izin penggunaan instrumen.",
+          "ms": "Kajian psikometrik. Bukti pengukuran dalam sampel bukan kuasa diagnosis atau kebenaran menggunakan instrumen."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus",
+      "title": "Öğretmen Adaylarının Spiritüel İyi Oluş İle Yaşamda Anlam Değişkenlerinin Psikolojik Dayanıklılığı Yordaması: Bir Yapısal Eşitlik Modeli (YEM) Denemesi",
+      "year": 2019,
+      "url": "https://doi.org/10.24106/kefdergi.3256",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.24106/kefdergi.3256",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2019-07-15",
+        "authors": [
+          "Halil EKŞİ",
+          "Cem BOYALI",
+          "Durmuş ÜMMET"
+        ],
+        "editors": [],
+        "journal": "Kastamonu Eğitim Dergisi",
+        "volume": "27",
+        "issue": "4",
+        "pages": "1695-1704",
+        "doi": "10.24106/kefdergi.3256",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.24106/kefdergi.3256",
+          "https://dergipark.org.tr/tr/pub/kefdergi/article/585640"
+        ],
+        "note": {
+          "tr": "İlişkisel araştırma. Aracılık analizi, bu gözlemsel tasarımda nedensel mekanizma veya müdahale etkisi göstermez.",
+          "en": "Correlational research. Mediation in this observational design does not establish a causal mechanism or intervention effect.",
+          "de": "Korrelative Forschung. Die Mediation im Beobachtungsdesign belegt weder einen kausalen Mechanismus noch einen Interventionseffekt.",
+          "zh": "相关研究。此观察性设计中的中介分析不能证明因果机制或干预效果。",
+          "ru": "Корреляционное исследование. Анализ медиации не устанавливает причинный механизм или эффект вмешательства.",
+          "ar": "بحث ارتباطي. تحليل الوساطة في هذا التصميم الرصدي لا يثبت آلية سببية أو أثر تدخل.",
+          "id": "Penelitian korelasional. Mediasi pada desain observasional tidak membuktikan mekanisme sebab akibat atau efek intervensi.",
+          "ms": "Penyelidikan korelasi. Mediasi dalam reka bentuk pemerhatian tidak membuktikan mekanisme sebab akibat atau kesan intervensi."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-maternal-spiritual-coping-scale-development-and",
+      "title": "Maternal Spiritual Coping Scale: Development and Validation",
+      "year": 2018,
+      "url": "https://doi.org/10.12738/spc.2018.1.0042",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.12738/spc.2018.1.0042",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2018-02-28",
+        "authors": [
+          "A. Nilgün Canel",
+          "Halil Eksi",
+          "Hatice Sanver Gürsoy",
+          "K. Gamze Yaman"
+        ],
+        "editors": [],
+        "journal": "Spiritual Psychology and Counseling",
+        "volume": "3",
+        "issue": "1",
+        "pages": "",
+        "doi": "10.12738/spc.2018.1.0042",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.12738/spc.2018.1.0042",
+          "https://spiritualpc.net/article/maternal-spiritual-coping-scale-development-and-validation/"
+        ],
+        "note": {
+          "tr": "Psikometrik çalışma. Araştırma örneklemindeki ölçme kanıtı, klinik tanı yetkisi veya kullanım izni anlamına gelmez.",
+          "en": "Psychometric study. Measurement evidence in the research sample does not establish diagnostic authority or reuse permission.",
+          "de": "Psychometrische Studie. Messbefunde in der Stichprobe begründen weder diagnostische Befugnis noch Nutzungsrechte.",
+          "zh": "心理测量研究。研究样本中的测量证据不等于临床诊断资格或使用许可。",
+          "ru": "Психометрическое исследование. Данные выборки не означают права на диагностику или разрешения использовать шкалу.",
+          "ar": "دراسة سيكومترية. أدلة القياس في العينة لا تمنح صلاحية التشخيص أو إذن استخدام المقياس.",
+          "id": "Studi psikometrik. Bukti pengukuran pada sampel bukan kewenangan diagnosis atau izin penggunaan instrumen.",
+          "ms": "Kajian psikometrik. Bukti pengukuran dalam sampel bukan kuasa diagnosis atau kebenaran menggunakan instrumen."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-spirituality-in-logotherapy",
+      "title": "Spirituality in Logotherapy",
+      "year": 2017,
+      "url": "https://doi.org/10.12738/spc.2017.2.0028",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.12738/spc.2017.2.0028",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2017-08-15",
+        "authors": [
+          "Nesrullah Okan",
+          "Halil Eksi"
+        ],
+        "editors": [],
+        "journal": "SPIRITUAL PSYCHOLOGY AND COUNSELING",
+        "volume": "2",
+        "issue": "2",
+        "pages": "",
+        "doi": "10.12738/spc.2017.2.0028",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.12738/spc.2017.2.0028",
+          "https://spiritualpc.net/article/spirituality-in-logotherapy/"
+        ],
+        "note": {
+          "tr": "Kuramsal derleme. Uygulamaya yönelik öneriler ampirik etkililik kanıtı yerine geçmez.",
+          "en": "Theoretical review. Practice recommendations are not a substitute for empirical evidence of effectiveness.",
+          "de": "Theoretischer Übersichtsbeitrag. Praxisempfehlungen ersetzen keine empirischen Wirksamkeitsnachweise.",
+          "zh": "理论综述。文中的实践建议不能替代有效性的实证证据。",
+          "ru": "Теоретический обзор. Практические рекомендации не заменяют эмпирических доказательств эффективности.",
+          "ar": "مراجعة نظرية. لا تُغني التوصيات التطبيقية عن الأدلة التجريبية على الفعالية.",
+          "id": "Kajian teoretis. Rekomendasi praktik tidak dapat menggantikan bukti empiris tentang efektivitas.",
+          "ms": "Kajian teoretikal. Cadangan amalan tidak menggantikan bukti empirikal tentang keberkesanan."
+        },
+        "publicationState": "published"
+      }
+    },
+    {
+      "id": "s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological",
+      "title": "Spirituality in Psychotherapy Settings: A Phenomenological Inquiry into the Experiences of Turkish Health Professionals",
+      "year": 2016,
+      "url": "https://doi.org/10.12738/spc.2016.1.0005",
+      "kind": "study",
+      "inspection": "abstract",
+      "checked": "2026-10-01",
+      "doi": "10.12738/spc.2016.1.0005",
+      "pmid": null,
+      "rights": "link-only",
+      "correctionState": "not-checked",
+      "correctionDoi": null,
+      "bibliography": {
+        "type": "article",
+        "collection": "foundational-research",
+        "date": "2016-02-15",
+        "authors": [
+          "Halil Eksi",
+          "Zeynep Takmaz",
+          "Selami Kardas"
+        ],
+        "editors": [],
+        "journal": "Spiritual Psychology and Counseling",
+        "volume": "1",
+        "issue": "1",
+        "pages": "",
+        "doi": "10.12738/spc.2016.1.0005",
+        "identityVerified": true,
+        "identitySources": [
+          "https://api.crossref.org/works/10.12738/spc.2016.1.0005",
+          "https://spiritualpc.net/article/spirituality-in-psychotherapy-settings-a-phenomenological-inquiry-into-the-experiences-of-turkish-health-professionals/"
+        ],
+        "note": {
+          "tr": "Nitel araştırma. Katılımcı görüşleri bağlam içinde okunmalıdır. Bulgular bir eğitim veya müdahalenin etkililiğini sınamaz.",
+          "en": "Qualitative research. Read participants’ accounts in context. Findings do not test training or intervention efficacy.",
+          "de": "Qualitative Forschung. Aussagen sind kontextgebunden. Die Wirksamkeit einer Ausbildung oder Intervention wird nicht geprüft.",
+          "zh": "质性研究。应结合情境理解参与者陈述。研究未检验培训或干预效果。",
+          "ru": "Качественное исследование. Высказывания участников контекстуальны. Эффективность обучения или вмешательства не проверяется.",
+          "ar": "بحث نوعي. تُقرأ روايات المشاركين ضمن سياقها. النتائج لا تختبر فعالية التدريب أو التدخل.",
+          "id": "Penelitian kualitatif. Pengalaman peserta dibaca dalam konteks. Temuan tidak menguji efektivitas pelatihan atau intervensi.",
+          "ms": "Penyelidikan kualitatif. Pengalaman peserta dibaca dalam konteks. Dapatan tidak menguji keberkesanan latihan atau intervensi."
+        },
+        "publicationState": "published"
       }
     },
     {

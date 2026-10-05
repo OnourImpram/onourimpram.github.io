@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "release": "marsam-scholarly-infrastructure-0.11.0",
-  "version": "0.11.0",
-  "generatedAt": "2026-10-05T12:14:58.858Z",
+  "release": "marsam-finished-centre-0.12.0",
+  "version": "0.12.0",
+  "generatedAt": "2026-10-05T14:53:40.303Z",
   "publicationState": "institutional-review",
   "reviewStatus": "AI_ASSISTED_DRAFT",
   "humanReviewed": false,
@@ -387,6 +387,456 @@
       "identityResolution": "source-scoped-mention",
       "externalPersonId": null,
       "sourceId": "s-spiritual-struggles",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-adaptation-of-the-decision-to-forgive:author:1",
+      "displayName": "Ece Yağcı Akgündüz",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-adaptation-of-the-decision-to-forgive",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-adaptation-of-the-decision-to-forgive:author:2",
+      "displayName": "Gülbin Demir Celayir",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-adaptation-of-the-decision-to-forgive",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-adaptation-of-the-decision-to-forgive:author:3",
+      "displayName": "Simel Parlak",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-adaptation-of-the-decision-to-forgive",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-adaptation-of-the-decision-to-forgive:author:4",
+      "displayName": "Halil Ekşi",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-adaptation-of-the-decision-to-forgive",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-the-intersection-of-faith-and-pornography:author:1",
+      "displayName": "Eren Murat Dinçer",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-the-intersection-of-faith-and-pornography",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-the-intersection-of-faith-and-pornography:author:2",
+      "displayName": "Halil Eksi",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-the-intersection-of-faith-and-pornography",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-a-spiritual-touch-on-family-resilience:author:1",
+      "displayName": "Halil Ekşi",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-a-spiritual-touch-on-family-resilience",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-a-spiritual-touch-on-family-resilience:author:2",
+      "displayName": "Deniz Erök Özkapu",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-a-spiritual-touch-on-family-resilience",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-through-the-inner-world-development-of:author:1",
+      "displayName": "Betül Kürüm Yıldırım",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-through-the-inner-world-development-of",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-through-the-inner-world-development-of:author:2",
+      "displayName": "Halil Ekşi",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-through-the-inner-world-development-of",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-through-the-inner-world-development-of:author:3",
+      "displayName": "Selami Kardaş",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-through-the-inner-world-development-of",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-through-the-inner-world-development-of:author:4",
+      "displayName": "Füsun Ekşi",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-through-the-inner-world-development-of",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-well-being-and-spiritual-intelligence-predict:author:1",
+      "displayName": "Özge ERDURAN TEKİN",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-well-being-and-spiritual-intelligence-predict",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-well-being-and-spiritual-intelligence-predict:author:2",
+      "displayName": "Halil EKŞİ",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-well-being-and-spiritual-intelligence-predict",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-the-mediator-role-of-forgiveness-between:author:1",
+      "displayName": "Hatice Vildan YILDIZ",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-the-mediator-role-of-forgiveness-between",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-the-mediator-role-of-forgiveness-between:author:2",
+      "displayName": "Halil EKŞİ",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-the-mediator-role-of-forgiveness-between",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki:author:1",
+      "displayName": "Halil EKSİ",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki:author:2",
+      "displayName": "Nesrullah OKAN",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-spiritually-oriented-couple-marriage-and-family:author:1",
+      "displayName": "Şeyda Çetintaş",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-spiritually-oriented-couple-marriage-and-family",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-spiritually-oriented-couple-marriage-and-family:author:2",
+      "displayName": "Halil Ekşi",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-spiritually-oriented-couple-marriage-and-family",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi:author:1",
+      "displayName": "Kübra KAPLANER",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi:author:2",
+      "displayName": "Halil EKŞİ",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi:author:1",
+      "displayName": "Yakup İme",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi:author:2",
+      "displayName": "Halil Ekşi",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi:author:3",
+      "displayName": "Füsun Ekşi",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-a-psychological-counseling-study-on-fear:author:1",
+      "displayName": "Serra Dinç",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-a-psychological-counseling-study-on-fear",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-a-psychological-counseling-study-on-fear:author:2",
+      "displayName": "Halil Ekşi",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-a-psychological-counseling-study-on-fear",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-multi-cultural-counseling-and-spiritual-interventions:author:1",
+      "displayName": "Berra Keçeci",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-multi-cultural-counseling-and-spiritual-interventions",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-multi-cultural-counseling-and-spiritual-interventions:author:2",
+      "displayName": "Halil Ekşi",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-multi-cultural-counseling-and-spiritual-interventions",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-islamic-spiritual-counseling-techniques:author:1",
+      "displayName": "Muhammet Şerif KESKİNOĞLU",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-islamic-spiritual-counseling-techniques",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-islamic-spiritual-counseling-techniques:author:2",
+      "displayName": "Halil EKŞİ",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-islamic-spiritual-counseling-techniques",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-adapting-the-scale-for-spiritual-intelligence:author:1",
+      "displayName": "Özge Erduran-Tekin",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-adapting-the-scale-for-spiritual-intelligence",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-adapting-the-scale-for-spiritual-intelligence:author:2",
+      "displayName": "Halil Ekşi",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-adapting-the-scale-for-spiritual-intelligence",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus:author:1",
+      "displayName": "Halil EKŞİ",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus:author:2",
+      "displayName": "Cem BOYALI",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus:author:3",
+      "displayName": "Durmuş ÜMMET",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-maternal-spiritual-coping-scale-development-and:author:1",
+      "displayName": "A. Nilgün Canel",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-maternal-spiritual-coping-scale-development-and",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-maternal-spiritual-coping-scale-development-and:author:2",
+      "displayName": "Halil Eksi",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-maternal-spiritual-coping-scale-development-and",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-maternal-spiritual-coping-scale-development-and:author:3",
+      "displayName": "Hatice Sanver Gürsoy",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-maternal-spiritual-coping-scale-development-and",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-maternal-spiritual-coping-scale-development-and:author:4",
+      "displayName": "K. Gamze Yaman",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-maternal-spiritual-coping-scale-development-and",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-spirituality-in-logotherapy:author:1",
+      "displayName": "Nesrullah Okan",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-spirituality-in-logotherapy",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-spirituality-in-logotherapy:author:2",
+      "displayName": "Halil Eksi",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-spirituality-in-logotherapy",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological:author:1",
+      "displayName": "Halil Eksi",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological:author:2",
+      "displayName": "Zeynep Takmaz",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological",
+      "role": "author",
+      "orcid": null,
+      "orcidProvenance": null
+    },
+    {
+      "id": "s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological:author:3",
+      "displayName": "Selami Kardas",
+      "identityResolution": "source-scoped-mention",
+      "externalPersonId": null,
+      "sourceId": "s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological",
       "role": "author",
       "orcid": null,
       "orcidProvenance": null

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "release": "marsam-scholarly-infrastructure-0.11.0",
-  "version": "0.11.0",
-  "generatedAt": "2026-10-05T12:14:58.858Z",
+  "release": "marsam-finished-centre-0.12.0",
+  "version": "0.12.0",
+  "generatedAt": "2026-10-05T14:53:40.303Z",
   "publicationState": "institutional-review",
   "reviewStatus": "AI_ASSISTED_DRAFT",
   "humanReviewed": false,
@@ -273,6 +273,321 @@
       "id": "relation:s-spiritual-struggles:author:3",
       "personMentionId": "s-spiritual-struggles:author:3",
       "sourceId": "s-spiritual-struggles",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-adaptation-of-the-decision-to-forgive:author:1",
+      "personMentionId": "s-eksi-adaptation-of-the-decision-to-forgive:author:1",
+      "sourceId": "s-eksi-adaptation-of-the-decision-to-forgive",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-adaptation-of-the-decision-to-forgive:author:2",
+      "personMentionId": "s-eksi-adaptation-of-the-decision-to-forgive:author:2",
+      "sourceId": "s-eksi-adaptation-of-the-decision-to-forgive",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-adaptation-of-the-decision-to-forgive:author:3",
+      "personMentionId": "s-eksi-adaptation-of-the-decision-to-forgive:author:3",
+      "sourceId": "s-eksi-adaptation-of-the-decision-to-forgive",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-adaptation-of-the-decision-to-forgive:author:4",
+      "personMentionId": "s-eksi-adaptation-of-the-decision-to-forgive:author:4",
+      "sourceId": "s-eksi-adaptation-of-the-decision-to-forgive",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-the-intersection-of-faith-and-pornography:author:1",
+      "personMentionId": "s-eksi-the-intersection-of-faith-and-pornography:author:1",
+      "sourceId": "s-eksi-the-intersection-of-faith-and-pornography",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-the-intersection-of-faith-and-pornography:author:2",
+      "personMentionId": "s-eksi-the-intersection-of-faith-and-pornography:author:2",
+      "sourceId": "s-eksi-the-intersection-of-faith-and-pornography",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-a-spiritual-touch-on-family-resilience:author:1",
+      "personMentionId": "s-eksi-a-spiritual-touch-on-family-resilience:author:1",
+      "sourceId": "s-eksi-a-spiritual-touch-on-family-resilience",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-a-spiritual-touch-on-family-resilience:author:2",
+      "personMentionId": "s-eksi-a-spiritual-touch-on-family-resilience:author:2",
+      "sourceId": "s-eksi-a-spiritual-touch-on-family-resilience",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-through-the-inner-world-development-of:author:1",
+      "personMentionId": "s-eksi-through-the-inner-world-development-of:author:1",
+      "sourceId": "s-eksi-through-the-inner-world-development-of",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-through-the-inner-world-development-of:author:2",
+      "personMentionId": "s-eksi-through-the-inner-world-development-of:author:2",
+      "sourceId": "s-eksi-through-the-inner-world-development-of",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-through-the-inner-world-development-of:author:3",
+      "personMentionId": "s-eksi-through-the-inner-world-development-of:author:3",
+      "sourceId": "s-eksi-through-the-inner-world-development-of",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-through-the-inner-world-development-of:author:4",
+      "personMentionId": "s-eksi-through-the-inner-world-development-of:author:4",
+      "sourceId": "s-eksi-through-the-inner-world-development-of",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-well-being-and-spiritual-intelligence-predict:author:1",
+      "personMentionId": "s-eksi-well-being-and-spiritual-intelligence-predict:author:1",
+      "sourceId": "s-eksi-well-being-and-spiritual-intelligence-predict",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-well-being-and-spiritual-intelligence-predict:author:2",
+      "personMentionId": "s-eksi-well-being-and-spiritual-intelligence-predict:author:2",
+      "sourceId": "s-eksi-well-being-and-spiritual-intelligence-predict",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-the-mediator-role-of-forgiveness-between:author:1",
+      "personMentionId": "s-eksi-the-mediator-role-of-forgiveness-between:author:1",
+      "sourceId": "s-eksi-the-mediator-role-of-forgiveness-between",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-the-mediator-role-of-forgiveness-between:author:2",
+      "personMentionId": "s-eksi-the-mediator-role-of-forgiveness-between:author:2",
+      "sourceId": "s-eksi-the-mediator-role-of-forgiveness-between",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki:author:1",
+      "personMentionId": "s-eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki:author:1",
+      "sourceId": "s-eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki:author:2",
+      "personMentionId": "s-eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki:author:2",
+      "sourceId": "s-eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-spiritually-oriented-couple-marriage-and-family:author:1",
+      "personMentionId": "s-eksi-spiritually-oriented-couple-marriage-and-family:author:1",
+      "sourceId": "s-eksi-spiritually-oriented-couple-marriage-and-family",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-spiritually-oriented-couple-marriage-and-family:author:2",
+      "personMentionId": "s-eksi-spiritually-oriented-couple-marriage-and-family:author:2",
+      "sourceId": "s-eksi-spiritually-oriented-couple-marriage-and-family",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi:author:1",
+      "personMentionId": "s-eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi:author:1",
+      "sourceId": "s-eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi:author:2",
+      "personMentionId": "s-eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi:author:2",
+      "sourceId": "s-eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi:author:1",
+      "personMentionId": "s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi:author:1",
+      "sourceId": "s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi:author:2",
+      "personMentionId": "s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi:author:2",
+      "sourceId": "s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi:author:3",
+      "personMentionId": "s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi:author:3",
+      "sourceId": "s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-a-psychological-counseling-study-on-fear:author:1",
+      "personMentionId": "s-eksi-a-psychological-counseling-study-on-fear:author:1",
+      "sourceId": "s-eksi-a-psychological-counseling-study-on-fear",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-a-psychological-counseling-study-on-fear:author:2",
+      "personMentionId": "s-eksi-a-psychological-counseling-study-on-fear:author:2",
+      "sourceId": "s-eksi-a-psychological-counseling-study-on-fear",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-multi-cultural-counseling-and-spiritual-interventions:author:1",
+      "personMentionId": "s-eksi-multi-cultural-counseling-and-spiritual-interventions:author:1",
+      "sourceId": "s-eksi-multi-cultural-counseling-and-spiritual-interventions",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-multi-cultural-counseling-and-spiritual-interventions:author:2",
+      "personMentionId": "s-eksi-multi-cultural-counseling-and-spiritual-interventions:author:2",
+      "sourceId": "s-eksi-multi-cultural-counseling-and-spiritual-interventions",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-islamic-spiritual-counseling-techniques:author:1",
+      "personMentionId": "s-eksi-islamic-spiritual-counseling-techniques:author:1",
+      "sourceId": "s-eksi-islamic-spiritual-counseling-techniques",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-islamic-spiritual-counseling-techniques:author:2",
+      "personMentionId": "s-eksi-islamic-spiritual-counseling-techniques:author:2",
+      "sourceId": "s-eksi-islamic-spiritual-counseling-techniques",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-adapting-the-scale-for-spiritual-intelligence:author:1",
+      "personMentionId": "s-eksi-adapting-the-scale-for-spiritual-intelligence:author:1",
+      "sourceId": "s-eksi-adapting-the-scale-for-spiritual-intelligence",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-adapting-the-scale-for-spiritual-intelligence:author:2",
+      "personMentionId": "s-eksi-adapting-the-scale-for-spiritual-intelligence:author:2",
+      "sourceId": "s-eksi-adapting-the-scale-for-spiritual-intelligence",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus:author:1",
+      "personMentionId": "s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus:author:1",
+      "sourceId": "s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus:author:2",
+      "personMentionId": "s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus:author:2",
+      "sourceId": "s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus:author:3",
+      "personMentionId": "s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus:author:3",
+      "sourceId": "s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-maternal-spiritual-coping-scale-development-and:author:1",
+      "personMentionId": "s-eksi-maternal-spiritual-coping-scale-development-and:author:1",
+      "sourceId": "s-eksi-maternal-spiritual-coping-scale-development-and",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-maternal-spiritual-coping-scale-development-and:author:2",
+      "personMentionId": "s-eksi-maternal-spiritual-coping-scale-development-and:author:2",
+      "sourceId": "s-eksi-maternal-spiritual-coping-scale-development-and",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-maternal-spiritual-coping-scale-development-and:author:3",
+      "personMentionId": "s-eksi-maternal-spiritual-coping-scale-development-and:author:3",
+      "sourceId": "s-eksi-maternal-spiritual-coping-scale-development-and",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-maternal-spiritual-coping-scale-development-and:author:4",
+      "personMentionId": "s-eksi-maternal-spiritual-coping-scale-development-and:author:4",
+      "sourceId": "s-eksi-maternal-spiritual-coping-scale-development-and",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-spirituality-in-logotherapy:author:1",
+      "personMentionId": "s-eksi-spirituality-in-logotherapy:author:1",
+      "sourceId": "s-eksi-spirituality-in-logotherapy",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-spirituality-in-logotherapy:author:2",
+      "personMentionId": "s-eksi-spirituality-in-logotherapy:author:2",
+      "sourceId": "s-eksi-spirituality-in-logotherapy",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological:author:1",
+      "personMentionId": "s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological:author:1",
+      "sourceId": "s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological:author:2",
+      "personMentionId": "s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological:author:2",
+      "sourceId": "s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological",
+      "relation": "author-of",
+      "institutionalMembershipClaim": false
+    },
+    {
+      "id": "relation:s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological:author:3",
+      "personMentionId": "s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological:author:3",
+      "sourceId": "s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological",
       "relation": "author-of",
       "institutionalMembershipClaim": false
     },

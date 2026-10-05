@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "release": "marsam-scholarly-infrastructure-0.11.0",
-  "version": "0.11.0",
-  "generatedAt": "2026-10-05T12:14:58.858Z",
+  "release": "marsam-finished-centre-0.12.0",
+  "version": "0.12.0",
+  "generatedAt": "2026-10-05T14:53:40.303Z",
   "publicationState": "institutional-review",
   "reviewStatus": "AI_ASSISTED_DRAFT",
   "humanReviewed": false,
@@ -70,6 +70,150 @@
     {
       "sourceId": "s-spiritual-struggles",
       "doi": "10.29288/ilted.1564927",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-adaptation-of-the-decision-to-forgive",
+      "doi": "10.52380/ijpes.2024.11.4.1371",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-the-intersection-of-faith-and-pornography",
+      "doi": "10.37898/spiritualpc.1461103",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-a-spiritual-touch-on-family-resilience",
+      "doi": "10.37898/spc.2023.8.1.185",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-through-the-inner-world-development-of",
+      "doi": "10.37898/spc.2023.8.1.186",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-well-being-and-spiritual-intelligence-predict",
+      "doi": "10.37898/spc.2022.7.3.181",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-the-mediator-role-of-forgiveness-between",
+      "doi": "10.54535/rep.1025099",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki",
+      "doi": "10.28949/bilimname.845575",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-spiritually-oriented-couple-marriage-and-family",
+      "doi": "10.37898/spc.2020.5.1.096",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi",
+      "doi": "10.37217/tebd.583207",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
+      "doi": "10.17679/inuefd.562410",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-a-psychological-counseling-study-on-fear",
+      "doi": "10.37898/spc.2019.4.3.85",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-multi-cultural-counseling-and-spiritual-interventions",
+      "doi": "10.37898/spc.2019.4.2.0066",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-islamic-spiritual-counseling-techniques",
+      "doi": "10.37898/spc.2019.4.3.069",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-adapting-the-scale-for-spiritual-intelligence",
+      "doi": "10.37898/spc.2019.4.2.0062",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-ogretmen-adaylarinin-spirituel-i-yi-olus",
+      "doi": "10.24106/kefdergi.3256",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-maternal-spiritual-coping-scale-development-and",
+      "doi": "10.12738/spc.2018.1.0042",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-spirituality-in-logotherapy",
+      "doi": "10.12738/spc.2017.2.0028",
+      "state": "not-checked",
+      "correctionDoi": null,
+      "checked": "2026-10-01",
+      "requiresHumanReview": false
+    },
+    {
+      "sourceId": "s-eksi-spirituality-in-psychotherapy-settings-a-phenomenological",
+      "doi": "10.12738/spc.2016.1.0005",
       "state": "not-checked",
       "correctionDoi": null,
       "checked": "2026-10-01",

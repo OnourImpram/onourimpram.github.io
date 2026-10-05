@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "release": "marsam-scholarly-infrastructure-0.11.0",
-  "version": "0.11.0",
-  "generatedAt": "2026-10-05T12:14:58.858Z",
+  "release": "marsam-finished-centre-0.12.0",
+  "version": "0.12.0",
+  "generatedAt": "2026-10-05T14:53:40.303Z",
   "publicationState": "institutional-review",
   "reviewStatus": "AI_ASSISTED_DRAFT",
   "humanReviewed": false,
@@ -19,7 +19,7 @@
     {
       "id": "rs-struggle",
       "tr": "Dini ve manevi mücadele",
-      "en": "Religious and spiritual struggle",
+      "en": "Religious and spiritual struggless",
       "boundary": "Conflict or tension involving divine, interpersonal, moral, doubt or ultimate-meaning domains. Positive and negative consequences are both possible."
     },
     {
