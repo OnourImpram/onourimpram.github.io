@@ -1,0 +1,61 @@
+name: Publish MARSAM siz address
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/marsam-publish-0_12_0-siz.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: marsam-publish-0-12-0-siz
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build exact MARSAM source
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE_SHA=e077515210fd33d1fd0a4cf0f02a46f587aedf22
+          git clone --quiet https://github.com/OnourImpram/MARSAM.git /tmp/MARSAM-source
+          cd /tmp/MARSAM-source
+          git checkout --quiet "$SOURCE_SHA"
+          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
+          npm test
+          node scripts/validate-schemas.mjs
+          BASE_PATH=/MARSAM/ PAGES_PREVIEW=true npm run build
+          npm run test:build
+      - name: Replace only the MARSAM hosting subtree
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE_SHA=e077515210fd33d1fd0a4cf0f02a46f587aedf22
+          rm -rf MARSAM
+          mkdir MARSAM
+          cp -a /tmp/MARSAM-source/dist/. MARSAM/
+          printf '%s\n' '{"version":"0.12.0","sourceCommit":"'"$SOURCE_SHA"'","release":"marsam-finished-centre-0.12.0"}' > MARSAM/release.json
+          test -f MARSAM/tr/index.html
+          test -f MARSAM/assets/og-card.jpg && test "$(stat -c%s MARSAM/assets/og-card.jpg)" -lt 300000
+          test -f MARSAM/tr/measurement-observatory/index.html
+          test -f MARSAM/data/v1/integrity.json
+          grep -q 'assets/og-card.jpg' MARSAM/tr/index.html
+          ! grep -q 'Kuruluş hazırlığı' MARSAM/tr/index.html
+          grep -q "$SOURCE_SHA" MARSAM/release.json
+      - name: Commit exact hosting tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'Onour Impram'
+          git config user.email 'onour@onourimpram.com'
+          git add -A MARSAM
+          git diff --cached --check
+          git commit -m 'deploy: publish MARSAM siz address (e077515)'
+          git push origin HEAD:main
