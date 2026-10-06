@@ -51,7 +51,7 @@
         "ms": "Prinsip profesional bagi kerohanian dan agama"
       },
       "description": {
-        "tr": "ASERVIC’in 2025 mesleki rehberi. Belgenin onay bilgisi ve mesleki kapsamı kaydında ayrıca açıklanır.",
+        "tr": "ASERVIC’in 2025 tarihli mesleki rehberi. Belgenin hangi kurumlarca onaylandığı ve kapsamı, kaynak kaydında ayrıca açıklanmaktadır.",
         "en": "ASERVIC’s 2025 professional guidance. The record distinguishes the document’s approval wording and professional scope.",
         "de": "Fachliche Orientierung von ASERVIC 2025. Freigabevermerk und fachlicher Geltungsbereich werden getrennt erläutert.",
         "zh": "ASERVIC 2025 年专业指南，条目分别说明文件中的批准信息及适用范围。",
@@ -146,7 +146,7 @@
         "ms": "Kompetensi kerohanian dan keagamaan"
       },
       "description": {
-        "tr": "Değerlendirme, tedavi planlaması ve mesleki yeterliği ele alan bir çerçeve. Kayıt, tam metin incelemesine değil özete dayanır.",
+        "tr": "Değerlendirme, tedavi planlaması ve mesleki yeterliği ele alan bir çerçeve. Bu kayıt tam metne değil, yayının özetine dayanmaktadır.",
         "en": "A framework addressing assessment, treatment planning and competence. Used within the accessible abstract’s scope.",
         "de": "Ein Rahmen für Erfassung, Behandlungsplanung und Kompetenz. Nutzung im Umfang der zugänglichen Zusammenfassung.",
         "zh": "讨论评估、治疗规划与胜任力的框架，使用范围限于可访问摘要。",
@@ -244,7 +244,7 @@
         "ms": "Bukti meta-analitik bagi penyesuaian kerohanian"
       },
       "description": {
-        "tr": "Dini ve manevi açıdan uyarlanmış psikoterapileri farklı karşılaştırma koşulları ve sonuçlar üzerinden inceleyen meta-analiz.",
+        "tr": "Dini ve manevi açıdan uyarlanmış psikoterapileri, farklı karşılaştırma gruplarına ve sonuçlara göre inceleyen bir meta-analiz.",
         "en": "A meta-analysis of religiously and spiritually adapted psychotherapy across comparison conditions and outcomes.",
         "de": "Eine Metaanalyse religiös und spirituell angepasster Psychotherapie unter verschiedenen Vergleichsbedingungen und Ergebnismaßen.",
         "zh": "针对宗教与灵性适配心理治疗的元分析，考察不同对照条件与结果。",
@@ -338,7 +338,7 @@
         "ms": "Keutamaan klien bagi integrasi kerohanian"
       },
       "description": {
-        "tr": "Doğal uygulama ortamında danışan tercihlerinin karşılanmasını inceleyen gözlemsel çalışma. İlişki, tek başına nedensellik göstermez.",
+        "tr": "Danışanların manevi konuların danışmaya katılmasına ilişkin tercihlerinin olağan uygulama koşullarında ne ölçüde karşılandığını inceleyen gözlemsel bir çalışma. Bulunan ilişkiler tek başına neden-sonuç ilişkisi göstermez.",
         "en": "An observational study of preference accommodation in routine practice. Association alone does not establish causation.",
         "de": "Beobachtungsstudie zur Berücksichtigung von Präferenzen in der Praxis. Ein Zusammenhang allein belegt keine Kausalität.",
         "zh": "在实际实践中考察偏好满足的观察性研究。关联本身不能证明因果关系。",
@@ -453,7 +453,7 @@
         "ms": "Kerohanian, etika dan identiti profesional"
       },
       "description": {
-        "tr": "Sekiz uygulayıcının deneyimlerinden hareketle manevi değerler, mesleki sınırlar ve kültürel duyarlılığı inceleyen nitel araştırma.",
+        "tr": "Sekiz uygulayıcının deneyimlerinden yola çıkarak manevi değerleri, mesleki sınırları ve kültürel duyarlılığı inceleyen nitel bir araştırma.",
         "en": "Qualitative research on spiritual values, professional boundaries and cultural sensitivity through eight practitioners’ experiences.",
         "de": "Qualitative Forschung zu spirituellen Werten, beruflichen Grenzen und Kultursensibilität anhand der Erfahrungen von acht Praktizierenden.",
         "zh": "通过八位实践者的经验考察灵性价值、专业边界与文化敏感性的质性研究。",
@@ -551,7 +551,7 @@
         "ms": "Perbincangan teori tentang kepelbagaian metafizik"
       },
       "description": {
-        "tr": "Ruh sağlığı söylemindeki metafizik varsayımları tartışan kuramsal metin. Bir yaklaşımın üstün etkililiğini sınamaz.",
+        "tr": "Ruh sağlığı alanındaki metafizik varsayımları tartışan kuramsal bir metindir. Herhangi bir yaklaşımın daha etkili olduğunu sınamaz.",
         "en": "A theoretical examination of metaphysical assumptions in mental health discourse. It does not test treatment superiority.",
         "de": "Theoretische Analyse metaphysischer Annahmen im Diskurs über psychische Gesundheit. Kein Überlegenheitsnachweis einer Behandlung.",
         "zh": "讨论心理健康话语中的形而上学假设，未检验任何疗法的优越效果。",
@@ -649,7 +649,7 @@
         "ms": "Tiga gelombang daripada penyelidikan kepada amalan"
       },
       "description": {
-        "tr": "Din ve maneviyat psikolojisinde kuram, araştırma ve uygulama ilişkisini inceleyen alan değerlendirmesi.",
+        "tr": "Din ve maneviyat psikolojisinde kuram, araştırma ve uygulama arasındaki ilişkiyi değerlendiren bir çalışma.",
         "en": "A field review of the relationship between theory, research and practice in the psychology of religion and spirituality.",
         "de": "Ein Überblick zum Verhältnis von Theorie, Forschung und Praxis in der Religions- und Spiritualitätspsychologie.",
         "zh": "回顾宗教与灵性心理学中理论、研究及实践之间的关系。",
@@ -1023,7 +1023,7 @@
       ],
       "contributorMentions": [],
       "displayTitle": {
-        "tr": "TOAD · Türkçe ölçme kaynağı aramak",
+        "tr": "TOAD · Türkçe ölçme araçlarında arama",
         "en": "TOAD · Finding Turkish assessment resources",
         "de": "TOAD · Türkischsprachige Instrumente finden",
         "zh": "TOAD · 查找土耳其语测量资源",
@@ -1033,7 +1033,7 @@
         "ms": "TOAD · Mencari sumber penilaian bahasa Turki"
       },
       "description": {
-        "tr": "Türkçe ölçme kaynakları için dış dizin. MARSAM ile entegrasyon veya iş birliği varmış gibi sunulmaz.",
+        "tr": "Türkçe ölçme araçlarını arayabileceğiniz dış bir dizin. MARSAM ile bir iş birliği bulunduğu anlamına gelmez.",
         "en": "An external index for Turkish assessment resources. No MARSAM integration or partnership is implied.",
         "de": "Externes Verzeichnis türkischsprachiger Instrumente. Keine behauptete Integration oder Partnerschaft mit MARSAM.",
         "zh": "土耳其语测量资源的外部索引，不表示与 MARSAM 有系统整合或合作。",
@@ -1126,7 +1126,7 @@
         "ms": "PRISMA · Pelaporan tinjauan yang telus"
       },
       "description": {
-        "tr": "Resmî bildirgeye ve uzantılarına başlangıç noktası. Raporlama kontrol listesi, araştırma tasarımını veya kanıt kalitesini kendiliğinden doğrulamaz.",
+        "tr": "PRISMA bildirgesine ve uzantılarına ulaşmak için başlangıç noktası. Bir raporlama kontrol listesine uyulması, araştırma tasarımının ya da kanıtın kalitesini tek başına güvence altına almaz.",
         "en": "An entry point to the official statement and extensions. A reporting checklist does not itself validate design or evidence quality.",
         "de": "Zugang zur offiziellen Erklärung und ihren Erweiterungen. Eine Checkliste bestätigt nicht automatisch Design oder Evidenzqualität.",
         "zh": "官方声明与扩展指南的入口。报告清单本身不能验证研究设计或证据质量。",
@@ -1220,7 +1220,7 @@
         "ms": "AI untuk kesihatan, etika dan tadbir urus"
       },
       "description": {
-        "tr": "DSÖ’nün 2021 rehberi. Teknik performans ile klinik yarar, insan denetimi ve sorumluluk ayrı değerlendirilmelidir.",
+        "tr": "Dünya Sağlık Örgütü’nün 2021 tarihli rehberi. Bir sistemin teknik olarak iyi çalışması ile klinik yarar sağlaması, insan denetimi ve sorumluluk ayrı ayrı değerlendirilmelidir.",
         "en": "WHO’s 2021 guidance. Technical performance, clinical benefit, human oversight and responsibility require separate consideration.",
         "de": "WHO-Leitlinie von 2021. Technische Leistung, klinischer Nutzen, menschliche Aufsicht und Verantwortung sind getrennt zu beurteilen.",
         "zh": "WHO 2021 年指南。技术表现、临床获益、人工监督与责任应分别评估。",
@@ -1313,7 +1313,7 @@
         "ms": "Kaunseling Islam dan kebimbangan. Kajian literatur"
       },
       "description": {
-        "tr": "2024 tarihli, önceki yayınlara dayalı içerik analizi. Yeni bir klinik deneme değildir. Kaygıyı azaltma konusunda bağımsız nedensel kanıt olarak yorumlanmaz.",
+        "tr": "Daha önce yayımlanmış çalışmaları inceleyen 2024 tarihli bir içerik analizidir; yeni bir klinik deneme değildir. Bu nedenle kaygının azalmasına ilişkin bağımsız nedensel kanıt olarak yorumlanmamalıdır.",
         "en": "A 2024 content analysis of previous publications, not a new clinical trial. It is not treated as independent causal evidence for anxiety reduction.",
         "de": "Inhaltsanalyse früherer Publikationen von 2024, keine neue klinische Studie. Kein unabhängiger Kausalnachweis einer Angstreduktion.",
         "zh": "2024年对既有文献的内容分析，并非新的临床试验。不将其视为缓解焦虑的独立因果证据。",
@@ -2037,7 +2037,7 @@
         "ms": "Terapi Keluarga"
       },
       "description": {
-        "tr": "Aile terapisi ile maneviyat arasındaki ilişkiyi manevi yönelimli bir perspektifle ele alan derleme.",
+        "tr": "Aile terapisi ile maneviyat arasındaki ilişkiyi manevi yönelimli bir bakış açısıyla ele alan derleme.",
         "en": "An edited volume examining family therapy and spirituality from a spiritually oriented perspective.",
         "de": "Ein Sammelband über Familientherapie und Spiritualität aus spirituell orientierter Perspektive.",
         "zh": "从灵性取向视角探讨家庭治疗与灵性关系的编著。",
@@ -2446,7 +2446,7 @@
         "ms": "Mengukur kelesuan rohani"
       },
       "description": {
-        "tr": "Türkiye’de üniversite öğrencileriyle manevi kaynak tükenmesini ölçmeye yönelik ölçek geliştirme ve ilk psikometrik değerlendirme.",
+        "tr": "Türkiye’de üniversite öğrencilerinde manevi kaynakların tükenmesini ölçmek amacıyla geliştirilen ölçek ve ilk psikometrik değerlendirmesi.",
         "en": "Scale development and initial psychometric evaluation of spiritual resource depletion among university students in Türkiye.",
         "de": "Skalenentwicklung und erste psychometrische Prüfung spiritueller Erschöpfung bei Studierenden in der Türkei.",
         "zh": "在土耳其大学生中开展灵性资源耗竭量表开发与初步心理测量评价。",
@@ -2601,7 +2601,7 @@
         "ms": "SIPAS. Integrasi kerohanian dalam kaunseling"
       },
       "description": {
-        "tr": "Profesyonellerin manevi entegrasyon tutumlarını, öz yeterliklerini ve uygulamalarını değerlendiren Türkçe uyarlama çalışması.",
+        "tr": "Ruh sağlığı profesyonellerinin maneviyatı danışma sürecine katmaya ilişkin tutumlarını, öz yeterliklerini ve uygulamalarını değerlendiren ölçeğin Türkçe uyarlaması.",
         "en": "Turkish adaptation assessing professionals’ attitudes, self-efficacy and practice concerning spiritual integration.",
         "de": "Türkische Adaptation zur Erfassung professioneller Einstellungen, Selbstwirksamkeit und spiritueller Integrationspraxis.",
         "zh": "评估专业人员灵性整合态度、自我效能与实践的土耳其语适配研究。",
@@ -2716,7 +2716,7 @@
         "ms": "Kesejahteraan rohani, kesunyian dan kebimbangan"
       },
       "description": {
-        "tr": "Türkiye’de üniversite öğrencilerinin manevi iyi oluş, yalnızlık ve kaygı düzeyleri arasındaki ilişkileri inceleyen araştırma.",
+        "tr": "Türkiye’de üniversite öğrencilerinde manevi iyi oluş, yalnızlık ve kaygı arasındaki ilişkileri inceleyen araştırma.",
         "en": "A study of associations between spiritual well-being, loneliness and anxiety among university students in Türkiye.",
         "de": "Eine Studie zu Zusammenhängen zwischen spirituellem Wohlbefinden, Einsamkeit und Angst bei Studierenden in der Türkei.",
         "zh": "考察土耳其大学生灵性福祉、孤独与焦虑之间关联的研究。",
@@ -2871,7 +2871,7 @@
         "ms": "Latihan profesional untuk bekerja dengan kerohanian"
       },
       "description": {
-        "tr": "Türkiye’de ruh sağlığı profesyonellerinin manevi psikolojik danışma yeterliklerine yönelik eğitim gereksinimlerini ele alan nitel çalışma.",
+        "tr": "Türkiye’de ruh sağlığı profesyonellerinin manevi yönelimli psikolojik danışmaya ilişkin yeterliklerini geliştirmek için duydukları eğitim ihtiyacını inceleyen nitel çalışma.",
         "en": "Qualitative research on Turkish mental health professionals’ training needs for spiritual counselling competencies.",
         "de": "Qualitative Forschung zum Ausbildungsbedarf türkischer Fachkräfte für spirituelle Beratungskompetenzen.",
         "zh": "关于土耳其心理健康专业人员灵性咨询胜任力培训需求的质性研究。",
@@ -3149,7 +3149,7 @@
         "ms": "Sifat kerohanian yang multidimensi"
       },
       "description": {
-        "tr": "Maneviyatın Boyutları Envanteri için Türkçe uyarlama ve ön psikometrik değerlendirme çalışması.",
+        "tr": "Maneviyatın Boyutları Envanteri’nin Türkçeye uyarlanması ve ön psikometrik değerlendirmesi.",
         "en": "A Turkish adaptation and preliminary psychometric evaluation of the Dimensions of Spirituality Inventory.",
         "de": "Türkische Adaptation und vorläufige psychometrische Prüfung des Dimensions of Spirituality Inventory.",
         "zh": "灵性维度量表的土耳其语适配与初步心理测量评价。",
@@ -3272,7 +3272,7 @@
         "ms": "Pergelutan agama dan kerohanian"
       },
       "description": {
-        "tr": "Dini ve manevi mücadeleyi ölçen RSS-14 formunun yetişkin örnekleminde Türkçeye uyarlanması.",
+        "tr": "Dini ve manevi mücadeleyi ölçen RSS-14’ün yetişkinlerle Türkçeye uyarlanması.",
         "en": "Turkish adaptation of the RSS-14 measure of religious and spiritual struggles in an adult sample.",
         "de": "Türkische Adaptation der RSS-14 zu religiösen und spirituellen Konflikten in einer Erwachsenenstichprobe.",
         "zh": "在成人样本中开展宗教与灵性挣扎测量工具RSS-14的土耳其语适配。",
@@ -4227,7 +4227,7 @@
         "ms": "Terapi Pasangan, Perkahwinan dan Keluarga Berorientasikan Kerohanian"
       },
       "description": {
-        "tr": "Maneviyatın çift, evlilik ve aile odaklı psikolojik yardım süreçlerine entegrasyonunu, maneviyatın aile ilişkilerinde hem sorun hem de çözüm kaynağı olabilen paradoksal doğasını ve ilgili etik konuları ele alan kuramsal bir derleme.",
+        "tr": "Maneviyatın çift, evlilik ve aile odaklı psikolojik yardım süreçlerine katılmasını, aile ilişkilerinde hem sorun hem de çözüm kaynağı olabilmesini ve bu süreçteki etik konuları ele alan kuramsal derleme.",
         "en": "A theoretical review of the integration of spirituality into couple-, marriage- and family-focused psychological help, addressing its paradoxical role as both a source of problems and a resource for solutions in family relationships, as well as related ethical issues.",
         "de": "Ein theoretischer Übersichtsbeitrag zur Integration von Spiritualität in paar-, ehe- und familienbezogene psychologische Hilfe, der ihre paradoxe Rolle als Problemquelle wie auch als Lösungsressource in Familienbeziehungen sowie damit verbundene ethische Fragen behandelt.",
         "zh": "一篇理论综述，探讨将灵性整合到以伴侣、婚姻和家庭为焦点的心理援助过程中，论及灵性在家庭关系中既可能是问题来源、又可能是解决资源的矛盾性质及相关伦理问题。",
@@ -4698,7 +4698,7 @@
         "ms": "Kaunseling Pelbagai Budaya dan Intervensi Kerohanian"
       },
       "description": {
-        "tr": "Psikoloji ve psikolojik danışma literatüründe din ve maneviyatın ele alınışına ilişkin bakış açılarını özetleyen; çok kültürlülüğü ve çok kültürlü psikolojik danışma sürecini maneviyat ve geleneksel yaklaşımlar açısından inceleyen kuramsal bir derleme.",
+        "tr": "Psikoloji ve psikolojik danışma alanyazınında din ve maneviyatın nasıl ele alındığını özetleyen; çok kültürlü psikolojik danışmayı maneviyat ve geleneksel yaklaşımlar açısından inceleyen kuramsal derleme.",
         "en": "A theoretical review that summarizes perspectives on addressing religion and spirituality in the psychology and counseling literature and examines multiculturalism and multicultural counseling in terms of spirituality and traditional approaches.",
         "de": "Theoretischer Überblicksbeitrag, der Perspektiven zum Umgang mit Religion und Spiritualität in der psychologischen und beraterischen Literatur zusammenfasst und Multikulturalismus sowie multikulturelle Beratung im Hinblick auf Spiritualität und traditionelle Ansätze betrachtet.",
         "zh": "本文为一篇理论综述，概述了心理学与心理咨询文献中处理宗教与灵性问题的各种观点，并从灵性及传统取向的角度探讨多元文化主义与多元文化咨询的过程。",
@@ -4814,7 +4814,7 @@
         "ms": "Teknik Kaunseling Kerohanian Islam"
       },
       "description": {
-        "tr": "Kutsal metinlerin kullanımı, dua, ibadet, tefekkür, sabır, şükür ve ilahi dinleme gibi İslam temelli tekniklerin kültürel duyarlılık çerçevesinde manevi psikolojik danışma sürecine nasıl entegre edilebileceğini, ilgili kuramsal ve etik konularla birlikte ele alan kuramsal bir çalışma.",
+        "tr": "Kutsal metinlerin kullanımı, dua, ibadet, tefekkür, sabır, şükür ve ilahi dinleme gibi İslam temelli tekniklerin, kültürel duyarlılık gözetilerek manevi psikolojik danışma sürecinde nasıl kullanılabileceğini kuramsal ve etik boyutlarıyla ele alan çalışma.",
         "en": "A theoretical paper discussing how Islam-based techniques such as the use of sacred texts, prayer, worship, contemplation, patience, gratitude and listening to hymns can be integrated into the spiritual counseling process in a culturally sensitive way, together with related theoretical and ethical issues.",
         "de": "Theoretischer Beitrag, der erörtert, wie islamisch fundierte Techniken wie die Arbeit mit heiligen Texten, Gebet, ritueller Gottesdienst, Kontemplation, Geduld, Dankbarkeit und das Hören religiöser Hymnen kultursensibel in den spirituellen Beratungsprozess integriert werden können, einschließlich damit verbundener theoretischer und ethischer Fragen.",
         "zh": "本文为理论性论述，探讨如何在文化敏感的框架下，将运用经典文本、祈祷、礼拜、沉思、忍耐、感恩及聆听宗教颂歌等伊斯兰取向技术融入灵性咨询过程，并讨论相关的理论与伦理问题。",
@@ -5185,7 +5185,7 @@
         "ms": "Skala Daya Tindak Kerohanian Ibu: Pembangunan dan Pengesahan"
       },
       "description": {
-        "tr": "Annelerin manevi başa çıkmasını ölçmeye yönelik bir ölçeğin geliştirilmesini ve geçerlik incelemesini ele alan çalışma.",
+        "tr": "Annelerin manevi başa çıkma biçimlerini ölçmek amacıyla geliştirilen ölçeğin geliştirme ve geçerlik çalışması.",
         "en": "A scale development study on constructing and validating a measure of maternal spiritual coping.",
         "de": "Skalenentwicklungsstudie zur Konstruktion und Validierung eines Instruments zur Erfassung mütterlicher spiritueller Bewältigung.",
         "zh": "一项关于编制并验证母亲灵性应对测量工具的量表编制研究。",
@@ -5531,7 +5531,7 @@
         "ms": "Kerohanian dan kesihatan mental di wilayah berbahasa Jerman"
       },
       "description": {
-        "tr": "39 çalışmada küçük ilişki: r = 0,083. Korelasyon nedensellik göstermez. Kültür ve ölçüm önemlidir.",
+        "tr": "39 çalışmada küçük bir ilişki bulunmuştur: r = 0,083. Korelasyon nedensellik göstermez. Kültür ve ölçüm önemlidir.",
         "en": "39 studies: a small association, r = 0.083. Correlation does not establish causation. Culture and measurement matter.",
         "de": "39 Studien: kleiner Zusammenhang, r = 0,083. Korrelation belegt keine Kausalität. Kultur und Messung sind relevant.",
         "zh": "39项研究：相关较弱，r = 0.083。 相关不等于因果，文化与测量方式会影响解释。",
@@ -5653,7 +5653,7 @@
         "ms": "Agama dan kesihatan mental remaja merentas budaya"
       },
       "description": {
-        "tr": "10 çalışma, yararlı ilişkilerin yanında nötr ve olumsuz bulgular içermektedir. Bağlamlar farklıdır. Evrensel koruyuculuk çıkarılamaz.",
+        "tr": "10 çalışmada yararlı ilişkilerin yanı sıra nötr ve olumsuz bulgular da yer almaktadır. Bağlamlar farklıdır. Evrensel koruyuculuk çıkarılamaz.",
         "en": "10 studies include beneficial, neutral and adverse associations. Contexts differ. Universal protection cannot be inferred.",
         "de": "10 Studien berichten förderliche, neutrale und ungünstige Zusammenhänge. Unterschiedliche Kontexte erlauben keine universelle Schutzannahme.",
         "zh": "10项研究呈现有益、中性及不利关联。 情境不同，不能推断普遍的保护作用。",
@@ -5791,7 +5791,7 @@
         "ms": "Kemurungan dan kebimbangan golongan muda: dimensi kerohanian yang berbeza"
       },
       "description": {
-        "tr": "Manevi iyi oluş depresyonla ters ilişkiliydi. Dinin kişisel önemi için genel ilişki saptanmadı. Çalışma kalitesi ve müdahale çeşitliliği çıkarımları sınırlar.",
+        "tr": "Manevi iyi oluş ile depresyon arasında ters yönde bir ilişki bulunmuştur. Dinin kişi için taşıdığı önem açısından ise genel bir ilişki saptanmamıştır. Çalışma kalitesi ve müdahale çeşitliliği çıkarımları sınırlar.",
         "en": "Spiritual wellbeing correlated inversely with depression. Religious importance showed no overall association. Study quality and intervention heterogeneity constrain conclusions.",
         "de": "Spirituelles Wohlbefinden korrelierte negativ mit Depression. Religiöse Wichtigkeit zeigte keinen Gesamtzusammenhang. Studienqualität und heterogene Interventionen begrenzen Schlussfolgerungen.",
         "zh": "灵性福祉与抑郁负相关，宗教的重要性未显示总体关联。 研究质量与干预差异限制结论。",
@@ -5945,7 +5945,7 @@
         "ms": "Kerohanian dan kesihatan mental pada usia lanjut"
       },
       "description": {
-        "tr": "Derleme, çoğunlukla daha iyi ruh sağlığıyla ilişkiler bildirdi. Gözlemsel bulgular tedavi etkisini göstermez. Özet ve tam metin farklı çalışma sayıları verdiğinden burada toplam sayı aktarılmadı.",
+        "tr": "Derlemedeki çalışmalar çoğunlukla daha iyi ruh sağlığıyla ilişki bildirmektedir. Gözlemsel bulgular tedavi etkisini göstermez. Özet ve tam metin farklı çalışma sayıları verdiğinden burada toplam sayı aktarılmadı.",
         "en": "The review generally reported associations with better mental health. Observational findings do not establish treatment effects. Abstract and body report different study counts, so no total is reproduced here.",
         "de": "Die Übersicht berichtete überwiegend Zusammenhänge mit besserer psychischer Gesundheit. Beobachtungsbefunde belegen keine Behandlungseffekte. Abstract und Haupttext nennen unterschiedliche Studienzahlen, deshalb wird hier keine Gesamtzahl angegeben.",
         "zh": "综述总体报告与较佳心理健康的关联。 观察性发现不能确立治疗效果。摘要与正文报告的研究数不同，因此此处不列总数。",
@@ -6213,7 +6213,7 @@
         "ms": "Makna dan pergolakan kerohanian dalam sampel ateis"
       },
       "description": {
-        "tr": "Anlamla ilgili mücadele, ateist katılımcılarda da sıkıntıyla ilişkiliydi. Kesitsel örneklemler tüm inançsız insanları temsil etmez.",
+        "tr": "Anlama ilişkin mücadelenin ateist katılımcılarda da sıkıntıyla ilişkili olduğu bulunmuştur. Kesitsel örneklemler tüm inançsız insanları temsil etmez.",
         "en": "Meaning-related struggles were associated with distress among atheist participants too. Cross-sectional samples do not represent all nonreligious people.",
         "de": "Sinnbezogene Konflikte gingen auch bei atheistischen Teilnehmenden mit Belastung einher. Querschnittsstichproben repräsentieren nicht alle nichtreligiösen Menschen.",
         "zh": "意义相关的挣扎在无神论参与者中也与痛苦相关。 横断面样本不能代表所有无宗教信仰者。",
@@ -6439,7 +6439,7 @@
         "ms": "CBT berintegrasikan agama berbanding CBT konvensional"
       },
       "description": {
-        "tr": "132 kişilik pilot denemede genel grup farkı anlamlı değildi. Anlamsız fark, eşdeğerlik kanıtı değildir.",
+        "tr": "132 kişilik ön denemede gruplar arasındaki genel fark anlamlı bulunmamıştır. Anlamsız fark, eşdeğerlik kanıtı değildir.",
         "en": "The 132-person pilot trial found no significant overall group difference. A nonsignificant difference does not prove equivalence.",
         "de": "Die Pilotstudie mit 132 Personen fand keinen signifikanten Gesamtunterschied. Ein nichtsignifikanter Unterschied belegt keine Gleichwertigkeit.",
         "zh": "132人参与的试点试验未发现总体组间显著差异。 差异不显著并不证明等效。",
@@ -6553,7 +6553,7 @@
         "ms": "Keperluan sokongan rohani selepas gempa bumi"
       },
       "description": {
-        "tr": "Uzman görüşmeleri, deprem sonrası manevi destek gereksinimlerini ele almaktadır. Görüşmeler müdahale etkililiğini kanıtlamaz.",
+        "tr": "Uzmanlarla yapılan görüşmeler, deprem sonrasında ortaya çıkan manevi destek ihtiyaçlarını ele almaktadır. Görüşmeler müdahale etkililiğini kanıtlamaz.",
         "en": "Professional interviews explore spiritual support needs after earthquakes. Interviews do not establish intervention efficacy.",
         "de": "Fachinterviews untersuchen spirituellen Unterstützungsbedarf nach Erdbeben. Interviews belegen keine Wirksamkeit von Interventionen.",
         "zh": "专业人员访谈探讨地震后的灵性支持需求。 访谈不能确立干预效果。",
@@ -6675,7 +6675,7 @@
         "ms": "Brief RCOPE: dua dimensi daya tindak beragama"
       },
       "description": {
-        "tr": "14 madde, olumlu ve olumsuz dini başa çıkmayı ayırır. Dil ve kültür için geçerlik ayrıca değerlendirilmelidir.",
+        "tr": "14 maddeden oluşur; olumlu ve olumsuz dini başa çıkmayı ayrı ayrı ölçer. Dil ve kültür için geçerlik ayrıca değerlendirilmelidir.",
         "en": "14 items distinguish positive and negative religious coping. Validity needs separate assessment in each language and culture.",
         "de": "14 Items unterscheiden positive und negative religiöse Bewältigung. Validität ist je Sprache und Kultur gesondert zu prüfen.",
         "zh": "14个条目区分积极与消极宗教应对。 各语言与文化中的效度须分别检验。",
@@ -6805,7 +6805,7 @@
         "ms": "Soal Selidik Makna Hidup: kewujudan dan pencarian"
       },
       "description": {
-        "tr": "10 madde, anlamın varlığını ve anlam arayışını ayrı ölçer. Anlam, dindarlıkla veya ruhsal bozukluk tanısıyla özdeş değildir.",
+        "tr": "10 maddeden oluşur; anlamın varlığını ve anlam arayışını ayrı ayrı ölçer. Anlam, dindarlıkla veya ruhsal bozukluk tanısıyla özdeş değildir.",
         "en": "10 items measure presence of meaning and search for meaning separately. Meaning is not identical to religiosity or psychiatric diagnosis.",
         "de": "10 Items erfassen Sinnerleben und Sinnsuche getrennt. Sinn ist weder mit Religiosität noch mit psychiatrischer Diagnose gleichzusetzen.",
         "zh": "10个条目分别测量意义感与意义追寻。 意义不等同于宗教性或精神障碍诊断。",
@@ -6919,7 +6919,7 @@
         "ms": "DUREL: penglibatan agama dan religiositi intrinsik"
       },
       "description": {
-        "tr": "Beş madde, dindarlığın üç boyutunu ele alır. Maneviyatın tümünü veya klinik gereksinimi ölçmez.",
+        "tr": "Beş maddeden oluşur; dindarlığın üç boyutunu ele alır. Maneviyatın tümünü veya klinik gereksinimi ölçmez.",
         "en": "Five items address three dimensions of religiosity. It does not measure all spirituality or clinical need.",
         "de": "Fünf Items erfassen drei Dimensionen der Religiosität. Es misst weder die gesamte Spiritualität noch klinischen Bedarf.",
         "zh": "五个条目涉及宗教性的三个维度。 不能测量全部灵性或临床需求。",
@@ -7033,7 +7033,7 @@
         "ms": "Skala Kesejahteraan Kerohanian (SWBS). SWBS Ekşi dan Kardaş. Instrumen 29 item yang dibangunkan di Türkiye"
       },
       "description": {
-        "tr": "2017 çalışması, 29 madde ve beşli yanıt yapısında aşkınlık, doğayla uyum ve anomi boyutlarını bildirir. Toplam iç tutarlılık katsayısı .886 olarak sunulur. Bu araç Paloutzian ve Ellison’ın 20 maddelik SWBS’sinin Türkçe çevirisi değildir. Özette SRMR .50, Tablo 6’da .050 yazmaktadır, sayfa 84. MARSAM bu kaynak içi uyuşmazlığı çözülmüş kabul etmez. Açımlayıcı ve doğrulayıcı analizler aynı veri setindedir. Bu kayıt bağımsız doğrulamayı, gruplar arası ölçme değişmezliğini veya klinik kesme puanını doğrulamaz.",
+        "tr": "2017 tarihli çalışmada 29 maddelik ve beşli yanıt seçenekli ölçeğin aşkınlık, doğayla uyum ve anomi boyutlarından oluştuğu bildirilmiştir. Toplam iç tutarlılık katsayısı .886 olarak bildirilmiştir. Bu ölçek, Paloutzian ve Ellison’ın 20 maddelik SWBS’sinin Türkçe çevirisi değildir. Özette SRMR .50, Tablo 6’da .050 yazmaktadır, sayfa 84. MARSAM bu kaynak içi uyuşmazlığı çözülmüş kabul etmez. Açımlayıcı ve doğrulayıcı analizler aynı veri setindedir. Bu kayıt bağımsız doğrulamayı, gruplar arası ölçme değişmezliğini veya klinik kesme puanını doğrulamaz.",
         "en": "The 2017 development study reports 29 items, five response categories and three dimensions, transcendence, harmony with nature and anomie. Overall internal consistency is reported as .886. This instrument is not a Turkish translation of the 20-item Paloutzian and Ellison SWBS. The abstract reports SRMR .50, while Table 6 gives .050 on page 84. MARSAM records this unresolved source discrepancy rather than silently correcting it. Exploratory and confirmatory analyses use the same data. Independent validation, cross-group measurement invariance and clinical cut-offs are not established by this record.",
         "de": "Die Entwicklungsstudie von 2017 beschreibt 29 Items mit fünf Antwortstufen und drei Dimensionen, Transzendenz, Harmonie mit der Natur und Anomie. Für die interne Konsistenz der Gesamtskala wird .886 berichtet. Das Instrument ist keine türkische Übersetzung der 20-Item-SWBS von Paloutzian und Ellison. Im Abstract steht SRMR .50, in Tabelle 6 auf Seite 84 dagegen .050. Dieser Widerspruch bleibt ausdrücklich ungeklärt. Explorative und konfirmatorische Analysen beruhen auf demselben Datensatz. Unabhängige Validierung, Messinvarianz zwischen Gruppen und klinische Grenzwerte sind durch diesen Eintrag nicht belegt.",
         "zh": "2017年的开发研究报告29个条目、五级作答和三个维度，即超越、与自然和谐及失范。总量表内部一致性系数报告为.886。该工具并非Paloutzian与Ellison的20条目SWBS的土耳其语译本。 摘要将SRMR列为.50，第84页表6却列为.050。MARSAM保留这项尚未解决的原文差异，不擅自改正数值。探索性与验证性分析使用同一数据集。本记录未确立独立验证、跨群体测量不变性或临床界值。",
@@ -7139,7 +7139,7 @@
         "ms": "Skala Kesejahteraan Kerohanian (SWBS). SWBS Paloutzian dan Ellison. Instrumen 20 item dan borang bahasa Turki"
       },
       "description": {
-        "tr": "20 madde, altılı yanıt yapısında dini ve varoluşsal iyi oluşu ele alır. İki alt ölçek onar maddeden oluşur. Dini boyut Tanrı ile ilişkiyi içerir. Ekşi ve Kardaş’ın 29 maddelik aracıyla aynı ölçek değildir. Yazarın sayfasında 2022 tarihli Türkçe form vardır. Formun bulunması Türkçe psikometrik geçerlik veya ölçme değişmezliği kanıtı değildir, bu kayıtta böyle bir doğrulama yapılmamıştır. Ücretsiz kullanım, atıf ve telif satırını koruma koşuluna bağlıdır. MARSAM maddeleri veya puanlama formunu yeniden yayımlamaz. İki SWBS’nin puanları eşdeğer varsayılamaz.",
+        "tr": "20 maddeden ve altılı yanıt seçeneğinden oluşur; dini ve varoluşsal iyi oluşu ölçer. İki alt ölçeğin her biri on maddeden oluşur. Dini iyi oluş boyutu, kişinin Tanrı ile ilişkisini ele alır. Ekşi ve Kardaş’ın 29 maddelik ölçeğiyle aynı ölçek değildir. Yazarın sayfasında 2022 tarihli Türkçe form vardır. Formun bulunması Türkçe psikometrik geçerlik veya ölçme değişmezliği kanıtı değildir, bu kayıtta böyle bir doğrulama yapılmamıştır. Ücretsiz kullanım, atıf ve telif satırını koruma koşuluna bağlıdır. MARSAM maddeleri veya puanlama formunu yeniden yayımlamaz. İki SWBS’nin puanları eşdeğer varsayılamaz.",
         "en": "Twenty items use six response categories to assess religious and existential wellbeing. Each subscale has ten items. The religious domain includes a relationship with God. This is a different instrument from the 29-item Ekşi and Kardaş scale. The author hosts a Turkish form dated 2022. Availability of a translation does not establish Turkish psychometric validity or measurement invariance, neither of which is verified here. No-cost use requires proper citation and retention of the copyright byline. MARSAM does not republish items or the scoring form. The two SWBS scores must not be assumed equivalent.",
         "de": "20 Items mit sechs Antwortstufen erfassen religiöses und existenzielles Wohlbefinden. Beide Subskalen umfassen je zehn Items. Der religiöse Bereich schließt die Beziehung zu Gott ein. Dies ist ein anderes Instrument als die 29-Item-Skala von Ekşi und Kardaş. Der Autor stellt eine türkische Fassung von 2022 bereit. Eine verfügbare Übersetzung belegt weder psychometrische Validität auf Türkisch noch Messinvarianz. Beides wurde hier nicht bestätigt. Kostenfreie Nutzung setzt korrekte Zitation und Erhalt des Urheberrechtsvermerks voraus. MARSAM veröffentlicht keine Items oder Auswertungsformulare. Die Werte beider SWBS sind nicht als gleichwertig anzusehen.",
         "zh": "20个条目采用六级作答，分别测量宗教与存在性福祉，每个分量表含十个条目。宗教维度涉及与上帝的关系。这与Ekşi和Kardaş的29条目工具不是同一量表。 作者网站提供标注2022年的土耳其语表单。译本可获取不等于土耳其语心理测量效度或测量不变性已获得验证，本记录未确认此类证据。免费使用仍须正确引用并保留版权说明。MARSAM不转载条目或计分表，也不将两种SWBS的分数视为等值。",
@@ -7245,7 +7245,7 @@
         "ms": "Kehadiran dalam kegiatan agama dan perubahan dalam individu"
       },
       "description": {
-        "tr": "Kişi içi analizlerde katılım ile sonraki ruh sağlığı arasındaki ilişkilerin çoğu istatistiksel olarak anlamlı değildi. Az sayıdaki anlamlı ilişki iki yönde de görüldü. Gözlemsel analiz bir müdahale deneyi değildir. Anlamlı olmayan sonuçlar etkinin yokluğunu kanıtlamaz. Kişi içi değişim ile kişiler arası farklar aynı soruyu yanıtlamaz.",
+        "tr": "Aynı kişilerin zaman içindeki değişimine bakan analizlerde, dini katılım ile ilerleyen dönemdeki ruh sağlığı arasındaki ilişkilerin çoğu istatistiksel olarak anlamlı bulunmamıştır. Anlamlı bulunan az sayıdaki ilişki ise iki yönde de görülmüştür. Gözlemsel analiz bir müdahale deneyi değildir. Anlamlı olmayan sonuçlar etkinin yokluğunu kanıtlamaz. Kişi içi değişim ile kişiler arası farklar aynı soruyu yanıtlamaz.",
         "en": "Most within-person associations between attendance and subsequent mental health were nonsignificant. The few significant associations ran in both directions. This is observational analysis, not an intervention trial. Nonsignificance does not prove absence of an effect. Within-person change and between-person differences answer different questions.",
         "de": "Die meisten Zusammenhänge innerhalb einer Person zwischen Teilnahme und späterer psychischer Gesundheit waren nicht signifikant. Einzelne signifikante Befunde wiesen in beide Richtungen. Die Beobachtungsanalyse ist kein Interventionsversuch. Fehlende Signifikanz belegt keine Wirkungslosigkeit. Veränderungen innerhalb einer Person sind von Unterschieden zwischen Personen zu trennen.",
         "zh": "个体内分析中，宗教活动参与与随后心理健康的多数关联未达统计显著。少数显著关联既有正向，也有负向。 这是观察性分析，而非干预试验。不显著并不证明没有效应，个体内变化与个体间差异回答的研究问题不同。",
@@ -7376,7 +7376,7 @@
         "ms": "Perkaitan dua hala antara religiositi dan kesihatan mental"
       },
       "description": {
-        "tr": "Ön kayıtlı analizlerde dindarlık ile ilerleyen dönemdeki depresyon ve kaygı arasındaki çift yönlü ilişkilerin çoğunlukla zayıf kaldığı ya da sıfır etkiyle uyumlu olduğu görülmüştür. Cinsiyet farklılıkları kesin değildi. Gözlemsel tasarım, kalan karıştırıcıları dışlamaz. Geniş belirsizlik aralıkları ve tarihsel ebeveyn örneklemi genellemeyi sınırlar. Sonuçlar nedenselliğin varlığını ya da yokluğunu kesinleştirmez.",
+        "tr": "Önceden kayıt altına alınmış analizlerde, dindarlık ile ilerleyen dönemdeki depresyon ve kaygı arasındaki çift yönlü ilişkilerin çoğunlukla zayıf kaldığı ya da sıfıra yakın olduğu görülmüştür. Cinsiyetler arasındaki farklar kesin değildir. Gözlemsel tasarım, kalan karıştırıcıları dışlamaz. Geniş belirsizlik aralıkları ve tarihsel ebeveyn örneklemi genellemeyi sınırlar. Sonuçlar nedenselliğin varlığını ya da yokluğunu kesinleştirmez.",
         "en": "Preregistered analyses found mostly small or null-compatible bidirectional associations involving religiosity, depression and anxiety. Gender differences remained inconclusive. Residual confounding is possible in this observational design. Wide uncertainty and a historical parent cohort limit generalisation. Neither causal effects nor their absence are established.",
         "de": "Präregistrierte Analysen ergaben überwiegend kleine oder mit Null vereinbare wechselseitige Zusammenhänge von Religiosität, Depression und Angst. Geschlechtsunterschiede blieben unklar. Restkonfundierung lässt sich nicht ausschließen. Große Unsicherheit und die historische Elternkohorte begrenzen die Übertragbarkeit. Weder kausale Wirkungen noch deren Abwesenheit sind belegt.",
         "zh": "预注册分析中，宗教性、抑郁和焦虑的双向关联多数较小，或与零效应相容。性别差异仍无定论。 观察性设计不能排除残余混杂。估计的不确定性及历史父母队列限制了推广性，结果既未确立因果效应，也未证明因果效应不存在。",
@@ -7499,7 +7499,7 @@
         "ms": "Susulan dua tahun dalam kalangan pelajar perubatan Brazil"
       },
       "description": {
-        "tr": "Örgütlü dini etkinliklere katılımdaki artış, düzeltilmiş analizlerde depresif belirtilerde azalma ve fiziksel yaşam kalitesinde artışla ilişkiliydi. Dindarlık DUREL ile ölçüldü. Bu gözlemsel ilişki, katılımı artırmanın tedavi etkisi olduğunu göstermez. Öğrenci örneklemi genellemeyi sınırlar. Bir çalışmada DUREL kullanılması, ölçeğin bütün dil sürümlerini doğrulamaz.",
+        "tr": "Örgütlü dini etkinliklere katılımın artması, etkenler kontrol edildiğinde depresif belirtilerde azalma ve fiziksel yaşam kalitesinde artışla ilişkili bulunmuştur. Dindarlık DUREL ölçeğiyle ölçülmüştür. Bu gözlemsel ilişki, katılımı artırmanın tedavi etkisi olduğunu göstermez. Öğrenci örneklemi genellemeyi sınırlar. Bir çalışmada DUREL kullanılması, ölçeğin bütün dil sürümlerini doğrulamaz.",
         "en": "In adjusted analyses, increased organisational religiosity was associated with fewer depressive symptoms and better physical quality of life. Religiosity was measured with DUREL. This observational association is not a treatment effect of increasing attendance. The student sample limits generalisation. Use of DUREL does not validate all its language versions.",
         "de": "Zunehmende organisationale Religiosität war in adjustierten Analysen mit weniger depressiven Symptomen und höherer körperlicher Lebensqualität verbunden. Religiosität wurde mit DUREL erfasst. Der beobachtete Zusammenhang belegt keinen Behandlungseffekt verstärkter Teilnahme. Die Studierendenstichprobe begrenzt die Übertragbarkeit. Die Anwendung von DUREL validiert nicht sämtliche Sprachfassungen.",
         "zh": "调整后的分析发现，组织性宗教活动增加与抑郁症状减少及生理领域生活质量提高相关。宗教性采用DUREL测量。 观察到的关联不等于增加参与具有治疗效果。医学生样本限制了推广范围，使用DUREL也不意味着验证了该量表的所有语言版本。",
@@ -7614,7 +7614,7 @@
         "ms": "Kehilangan pasangan, makna hidup dan kesejahteraan rohani di Turki"
       },
       "description": {
-        "tr": "Manevi iyi oluşun, yaşamda anlamın ve dindarlığın daha düşük yalnızlıkla ve daha yüksek ruhsal iyi oluşla ilişkili olduğu bildirilmiştir. Çalışma aracılık analizleri içermektedir. İncelenen özette ölçümlerin zaman sırası açıklanmıyor. Aracılık analizi nedensel mekanizma veya müdahale etkililiği göstermiyor. Bulgular eş kaybı yaşamış ileri yaştaki örneklemle sınırlı okunmalı.",
+        "tr": "Manevi iyi oluşun, yaşamda anlamın ve dindarlığın daha düşük yalnızlık ve daha yüksek ruhsal iyi oluşla ilişkili olduğu bildirilmiştir. Çalışmada aracılık analizleri de yer almaktadır. İncelenen özette ölçümlerin zaman sırası açıklanmıyor. Aracılık analizi nedensel mekanizma veya müdahale etkililiği göstermiyor. Bulgular eş kaybı yaşamış ileri yaştaki örneklemle sınırlı okunmalı.",
         "en": "Spiritual wellbeing, meaning in life and religiosity were reported alongside lower loneliness and higher mental wellbeing. The study reports mediation analyses. The inspected abstract does not specify temporal ordering. Mediation does not establish a causal pathway or intervention efficacy. Interpret findings within this older, bereaved sample.",
         "de": "Spirituelles Wohlbefinden, Lebenssinn und Religiosität wurden mit geringerer Einsamkeit und höherem psychischem Wohlbefinden in Verbindung gebracht. Die Studie berichtet Mediationsanalysen. Der geprüfte Abstract erläutert die zeitliche Reihenfolge nicht. Mediation belegt weder einen kausalen Mechanismus noch Interventionswirksamkeit. Die Befunde beziehen sich auf diese ältere, verwitwete Stichprobe.",
         "zh": "研究报告灵性福祉、生命意义和宗教性与较低的孤独感及较高的心理福祉相关，并进行了中介分析。 已查阅的摘要未说明测量时间顺序。中介分析不能确立因果机制或干预疗效，应在这一丧偶老年样本的范围内解释结果。",
@@ -7729,7 +7729,7 @@
         "ms": "Kerohanian dan daya tindak beragama dalam penyelidikan psikosis"
       },
       "description": {
-        "tr": "Olumlu dini başa çıkma daha yüksek iyi oluş ve yaşam kalitesiyle, olumsuz dini başa çıkma ise daha olumsuz klinik sonuçlarla ilişkili olarak bildirildi. Bulgular bağlama göre değişmektedir. İlişkiler, dini başa çıkmayı değiştirmenin tedavi etkisini kanıtlamaz. Dini inanç tek başına tanısal gösterge değildir. Derlemede önerilen klinik modeller doğrulanmış tedavi protokolleri sayılmamalıdır.",
+        "tr": "Olumlu dini başa çıkmanın daha yüksek iyi oluş ve yaşam kalitesiyle, olumsuz dini başa çıkmanın ise daha olumsuz klinik sonuçlarla ilişkili olduğu bildirilmiştir. Bulgular bağlama göre değişmektedir. İlişkiler, dini başa çıkmayı değiştirmenin tedavi etkisini kanıtlamaz. Dini inanç tek başına tanısal gösterge değildir. Derlemede önerilen klinik modeller doğrulanmış tedavi protokolleri sayılmamalıdır.",
         "en": "Positive religious coping was associated with better wellbeing and quality of life, while negative coping was linked to poorer clinical outcomes. Findings varied with context. Associations do not prove that changing religious coping is therapeutic. Religious belief alone is not a diagnostic indicator. Proposed clinical models are not validated treatment protocols.",
         "de": "Positive religiöse Bewältigung war mit höherem Wohlbefinden und besserer Lebensqualität verbunden, negative Bewältigung mit ungünstigeren klinischen Ergebnissen. Die Befunde waren kontextabhängig. Zusammenhänge belegen keinen therapeutischen Effekt veränderter religiöser Bewältigung. Religiöser Glaube allein ist kein diagnostischer Hinweis. Vorgeschlagene klinische Modelle sind keine validierten Behandlungsprotokolle.",
         "zh": "积极宗教应对与较好的福祉和生活质量相关，消极宗教应对与较差的临床结局相关。具体发现因情境而异。 关联不能证明改变宗教应对具有治疗效果。宗教信仰本身不是诊断指标，综述提出的临床模型也不等于经过验证的治疗方案。",
@@ -7908,7 +7908,7 @@
         "ms": "Kemudaratan rohani selepas penderaan seksual oleh pemimpin agama"
       },
       "description": {
-        "tr": "Kapsam derlemesi, manevi zararın nasıl tanımlandığını ve ruh sağlığıyla ilişkisini ele almaktadır. Kavramın tanımları değişkendir, kanıt tabanı sınırlıdır. Bu yayınlar 12 tedavi deneyi değildir. Derlemede kalite değerlendirmesi yapılmamıştır. Katolik bağlamındaki bulgular bütün dinlere genellenemez, yeni bir klinik tanı veya tedavi etkililiği de doğrulamaz.",
+        "tr": "Bu kapsam derlemesi, manevi zararın nasıl tanımlandığını ve ruh sağlığıyla ilişkisini ele almaktadır. Kavramın tanımları çalışmadan çalışmaya değişmekte, kanıt tabanı ise sınırlı kalmaktadır. Bu yayınlar 12 tedavi deneyi değildir. Derlemede kalite değerlendirmesi yapılmamıştır. Katolik bağlamındaki bulgular bütün dinlere genellenemez, yeni bir klinik tanı veya tedavi etkililiği de doğrulamaz.",
         "en": "The scoping review examines how spiritual harm is defined and connected with health. Definitions vary and the evidence base is limited. These are not 12 treatment trials. No quality appraisal was conducted. The Catholic context cannot represent all religions, and the review validates neither a new diagnosis nor treatment efficacy.",
         "de": "Die Scoping-Übersicht untersucht Definitionen spiritueller Schädigung und Bezüge zur Gesundheit. Begriffe variieren, die Evidenzbasis ist begrenzt. Es handelt sich nicht um 12 Behandlungsstudien. Eine Qualitätsbewertung fehlt. Der katholische Kontext steht nicht für alle Religionen. Weder eine neue Diagnose noch Behandlungswirksamkeit wird validiert.",
         "zh": "范围综述考察灵性伤害的定义及其与健康的联系。相关定义并不统一，证据基础有限。 这些文献并非12项治疗试验，综述未进行质量评价。天主教情境不能代表所有宗教，也不能据此确立新诊断或治疗疗效。",
@@ -8022,7 +8022,7 @@
         "ms": "Sorotan sistematik terkini tentang kemurungan, kebimbangan dan PTSD"
       },
       "description": {
-        "tr": "17 çalışmalık anlatısal sentez, olası yararlı ilişkilerin yanı sıra manevi çatışma ve karşılanmamış manevi ihtiyaçlarla ilişkili sıkıntıyı da ayrı olarak ele alır.",
+        "tr": "17 çalışmanın anlatısal sentezi, olası yararlı ilişkilerin yanı sıra manevi çatışma ve karşılanmamış manevi ihtiyaçlarla ilişkili sıkıntıyı da ayrıca ele almaktadır.",
         "en": "A 17-study narrative synthesis separates potentially beneficial associations from distress linked to spiritual conflict and unmet spiritual needs.",
         "de": "Die narrative Synthese von 17 Studien unterscheidet neben möglichen günstigen Zusammenhängen auch Belastungen, die mit spirituellen Konflikten und unerfüllten spirituellen Bedürfnissen verbunden sind.",
         "zh": "这项涵盖17项研究的叙述性综合在可能有益的关联之外，也区分出与灵性冲突及未满足的灵性需求相关的困扰。",
@@ -8136,7 +8136,7 @@
         "ms": "Adaptasi RSS-FF di Turki · 22 item"
       },
       "description": {
-        "tr": "Beş faktörlü Türkçe form, mevcut RSS-14 kaydından ayrı bir araç sürümüdür.",
+        "tr": "Beş faktörlü Türkçe form, RSS-14’ten ayrı bir ölçek sürümüdür.",
         "en": "The five-factor Turkish form is a distinct instrument version from the existing RSS-14 record.",
         "de": "Die fünffaktorielle türkische Fassung ist eine vom bestehenden RSS-14-Eintrag getrennte Instrumentversion.",
         "zh": "五因素土耳其语版本是区别于现有RSS-14条目的独立工具版本。",
@@ -8250,7 +8250,7 @@
         "ms": "Skala Ketahanan Psikologi Rohani"
       },
       "description": {
-        "tr": "Türkiye bağlamında yürütülmüş bir ölçek geliştirme çalışmasıdır. Kültürler arası değişmezlik için ayrı kanıt gerekir.",
+        "tr": "Türkiye’de yürütülmüş bir ölçek geliştirme çalışmasıdır. Ölçeğin farklı kültürlerde karşılaştırılabilir olduğunu göstermek için ayrı kanıt gerekir.",
         "en": "A development study in the Turkish context. Cross-cultural invariance requires separate evidence.",
         "de": "Es handelt sich um eine Entwicklungsstudie im türkischen Kontext. Für kulturübergreifende Invarianz sind gesonderte Belege erforderlich.",
         "zh": "这是一项在土耳其背景下开展的开发研究。跨文化不变性需要另行提供证据。",
@@ -8396,7 +8396,7 @@
         "ms": "Skala Keletihan Empati Rohani"
       },
       "description": {
-        "tr": "İnanç temelli yardım sunan profesyoneller için geliştirilen dört boyutlu ölçme aracıdır. Bağımsız tekrar çalışmaları gerekir.",
+        "tr": "İnanç temelli yardım sunan profesyoneller için geliştirilmiş dört boyutlu bir ölçme aracıdır. Bulguların bağımsız çalışmalarla tekrarlanması gerekmektedir.",
         "en": "A four-dimensional measure developed for faith-based care providers. Independent replication remains needed.",
         "de": "Ein vierdimensionales Messinstrument, das für Fachkräfte entwickelt wurde, die glaubensbasierte Unterstützung leisten. Unabhängige Replikationsstudien sind erforderlich.",
         "zh": "这是一项为提供信仰取向帮助的专业人员开发的四维度测量工具。仍需独立的重复研究。",
@@ -8640,7 +8640,7 @@
         "ms": "Daya tindak agama positif dalam tiga konteks Muslim"
       },
       "description": {
-        "tr": "706 üniversite öğrencisinde olumlu dini başa çıkma yaşam doyumuyla ilişkiliydi, depresif belirtilerle ilişkili değildi.",
+        "tr": "706 üniversite öğrencisinde olumlu dini başa çıkma yaşam doyumuyla ilişkili bulunmuş, depresif belirtilerle ilişkili bulunmamıştır.",
         "en": "Among 706 university students in Türkiye, Malaysia and Israel/Palestine, positive religious coping related to life satisfaction but not depressive symptoms.",
         "de": "Bei 706 Studierenden war positive religiöse Bewältigung mit Lebenszufriedenheit assoziiert, nicht jedoch mit depressiven Symptomen.",
         "zh": "在706名大学生中，积极宗教应对与生活满意度相关，但与抑郁症状无关。",
@@ -8778,7 +8778,7 @@
         "ms": "Daya tindak berasaskan iman dalam kalangan pelarian berbahasa Arab di Berlin"
       },
       "description": {
-        "tr": "Ruh sağlığı hizmeti arayan 17 mülteciyle yürütülen nitel çalışma, inanç temelli başa çıkmayı göç ve hizmet erişimi bağlamında inceler.",
+        "tr": "Ruh sağlığı hizmeti arayan 17 mülteciyle yürütülen nitel çalışma, inanç temelli başa çıkmayı göç ve hizmete erişim koşulları içinde incelemektedir.",
         "en": "A qualitative study with 17 refugees seeking mental-health services examines faith-based coping in migration and service-access contexts.",
         "de": "Diese qualitative Studie mit 17 Geflüchteten, die Angebote der psychischen Gesundheitsversorgung suchen, untersucht glaubensbasierte Bewältigung im Kontext von Migration und Zugang zur Versorgung.",
         "zh": "这项定性研究以17名寻求心理健康服务的难民为对象，在移民和服务可及性的背景下考察基于信仰的应对。",
@@ -8900,7 +8900,7 @@
         "ms": "Pengalaman perkhidmatan kesihatan individu ateis, deis dan agnostik di Turki"
       },
       "description": {
-        "tr": "Samsun’da 17 katılımcıyla yürütülen çalışma, dinî olmayan kimlik, görünmezlik, yargılanma ve profesyonel tarafsızlık beklentilerini inceler.",
+        "tr": "Samsun’da 17 katılımcıyla yürütülen çalışma, dini olmayan kimliği, görünmezliği, yargılanmayı ve sağlık profesyonellerinden beklenen tarafsızlığı incelemektedir.",
         "en": "A phenomenological study with 17 participants in Samsun examines nonreligious identity, invisibility, judgement and expectations of professional neutrality.",
         "de": "Die Studie mit 17 Teilnehmenden in Samsun untersucht nichtreligiöse Identität, Unsichtbarkeit, Verurteilung sowie Erwartungen an professionelle Neutralität.",
         "zh": "该研究在萨姆松纳入17名参与者，考察无宗教身份、不可见性、被评判以及对专业中立的期待。",
@@ -9014,7 +9014,7 @@
         "ms": "Stigma seksual berasaskan agama, pergelutan agama dan kesihatan psikologi"
       },
       "description": {
-        "tr": "Dinsel stigma, içselleştirme ve dini mücadeleyi birlikte ele alarak maneviyatın her bağlamda koruyucu olduğu varsayımını sınar.",
+        "tr": "Dine dayalı damgalanmayı, bu damgalanmanın içselleştirilmesini ve dini mücadeleyi birlikte ele alarak maneviyatın her bağlamda koruyucu olduğu varsayımını sınamaktadır.",
         "en": "The study links religious-based sexual stigma, internalization and religious struggle, testing the assumption that spirituality is protective in every context.",
         "de": "Durch die gemeinsame Betrachtung von religiöser Stigmatisierung, Internalisierung und religiösem Ringen prüft die Studie die Annahme, Spiritualität sei in jedem Kontext protektiv.",
         "zh": "该研究将宗教污名、内化与宗教挣扎结合起来考察，检验灵性在任何情境下都具有保护作用这一假设。",
@@ -9144,7 +9144,7 @@
         "ms": "Tekanan minoriti dalam kalangan ateis dan hasil psikologi"
       },
       "description": {
-        "tr": "522 ateist yetişkinde ayrımcılık, stigma bilinci, içselleştirilmiş anti-ateizm ve açılma süreçlerini psikolojik sıkıntı ve benlik saygısıyla ilişkilendirir.",
+        "tr": "522 ateist yetişkinde ayrımcılık, damgalanma farkındalığı, içselleştirilmiş ateizm karşıtlığı ve kimliğini açma süreçlerinin psikolojik sıkıntı ve benlik saygısıyla ilişkisini incelemektedir.",
         "en": "Links discrimination, stigma consciousness, internalized anti-atheism and outness with distress and self-esteem in 522 atheist adults.",
         "de": "Setzt bei 522 atheistischen Erwachsenen Diskriminierung, Stigmabewusstsein, internalisierten Anti-Atheismus und Coming-out-Prozesse in Beziehung zu psychischer Belastung und Selbstwert.",
         "zh": "在522名无神论成年人中，将歧视、污名意识、内化的反无神论态度和身份公开过程与心理困扰及自尊联系起来。",
@@ -9274,7 +9274,7 @@
         "ms": "Agama, kerohanian dan kesihatan dalam kalangan minoriti seksual · meta-analisis"
       },
       "description": {
-        "tr": "73 çalışmadaki 279 etki büyüklüğü küçük ve heterojen bir genel ilişki gösterir. Yapılan düzeltme sonuçların yönünü değiştirmemiştir.",
+        "tr": "73 çalışmadan elde edilen 279 etki büyüklüğü, küçük ve çalışmalar arasında değişkenlik gösteren bir genel ilişkiye işaret etmektedir. Yapılan düzeltme sonuçların yönünü değiştirmemiştir.",
         "en": "Across 279 effect sizes in 73 studies, the overall association is small and heterogeneous. A published correction did not change the direction of the results.",
         "de": "279 Effektstärken aus 73 Studien zeigen einen kleinen und heterogenen Gesamtzusammenhang. Die Korrekturmitteilung hat die Richtung der Ergebnisse nicht verändert.",
         "zh": "73项研究中的279个效应量显示，总体关联较小且存在异质性。更正记录并未改变结果的方向。",
@@ -9412,7 +9412,7 @@
         "ms": "Pengalaman psikoterapi dewasa muda LGBQ daripada keluarga beragama"
       },
       "description": {
-        "tr": "Nitel çalışma, terapötik ilişkinin, ailenin, dinin ve görünmez dini söylemlerin deneyimdeki rolünü inceler.",
+        "tr": "Nitel çalışma, terapötik ilişkinin, ailenin, dinin ve açıkça dile getirilmeyen dini söylemlerin bu deneyimdeki rolünü incelemektedir.",
         "en": "A qualitative inquiry examines therapy relationships, family, religion and often-invisible religious discourses in psychotherapy.",
         "de": "Die qualitative Studie untersucht die Rolle der therapeutischen Beziehung, der Familie, der Religion und unsichtbarer religiöser Diskurse in diesen Erfahrungen.",
         "zh": "这项定性研究考察治疗关系、家庭、宗教以及不可见的宗教话语在这些经历中的作用。",
@@ -9526,7 +9526,7 @@
         "ms": "Stigma orientasi seksual, agama dan kesihatan mental di Lubnan"
       },
       "description": {
-        "tr": "200 katılımcılı kesitsel çalışma, dini bağlamın hem stigmayla hem başa çıkmayla ilişkili olabileceğini gösterir; nedensellik kurmaz.",
+        "tr": "200 katılımcılı kesitsel çalışma, dini bağlamın hem damgalanmayla hem de başa çıkmayla ilişkili olabileceğini göstermektedir; ancak neden-sonuç ilişkisi kurmamaktadır.",
         "en": "A cross-sectional study of 200 participants shows that religious context may be associated with both stigma and coping, without establishing causality.",
         "de": "Die Querschnittsstudie mit 200 Teilnehmenden zeigt, dass der religiöse Kontext sowohl mit Stigmatisierung als auch mit Bewältigung zusammenhängen kann, ohne Kausalität zu begründen.",
         "zh": "这项纳入200名参与者的横断面研究表明，宗教背景可能同时与污名和应对相关，但并未确立因果关系。",
@@ -9656,7 +9656,7 @@
         "ms": "ICSG 2.0 · kesedihan rohani kompleks"
       },
       "description": {
-        "tr": "Yas tutan 440 yetişkinde geliştirilen 28 maddelik, üç faktörlü gözden geçirilmiş bir ölçüm aracıdır. Ölçek maddelerini yeniden yayımlama hakkı varsayılmaz.",
+        "tr": "Yas tutan 440 yetişkinle geliştirilen 28 maddelik ve üç faktörlü gözden geçirilmiş bir ölçme aracıdır. Ölçek maddelerinin yeniden yayımlanabileceği varsayılmamalıdır.",
         "en": "A revised 28-item, three-factor measure studied in 440 bereaved adults. Item-reproduction rights are not inferred.",
         "de": "Ein überarbeitetes Instrument mit 28 Items und drei Faktoren, entwickelt an 440 trauernden Erwachsenen. Rechte zur Wiederveröffentlichung der Items werden nicht vorausgesetzt.",
         "zh": "该修订工具包含28个条目、三个因子，基于440名丧亲成年人编制。不默认拥有条目转载权。",
@@ -9770,7 +9770,7 @@
         "ms": "ICSG 2.0 · kajian psikometrik versi Parsi"
       },
       "description": {
-        "tr": "355 İranlı yetişkinde Farsça formun psikometrik kanıtını inceler. Kültürler arası uyarlama, ölçme değişmezliğiyle aynı şey değildir.",
+        "tr": "355 İranlı yetişkinle yürütülmüştür. Farsça formun psikometrik özelliklerini incelemektedir. Bir ölçeğin başka bir kültüre uyarlanması, gruplar arasında karşılaştırılabilir sonuçlar verdiği anlamına gelmez.",
         "en": "Examines the Persian ICSG 2.0 in 355 Iranian adults. Cross-cultural adaptation is not the same as measurement invariance.",
         "de": "Untersucht die psychometrische Evidenz der persischen Fassung bei 355 iranischen Erwachsenen. Kulturübergreifende Adaptation ist nicht gleichbedeutend mit Messinvarianz.",
         "zh": "在355名伊朗成年人中考察波斯语版的心理测量学证据。跨文化改编并不等同于测量不变性。",
@@ -9900,7 +9900,7 @@
         "ms": "Skala Tekanan Rohani · adaptasi bahasa Parsi"
       },
       "description": {
-        "tr": "Kanserli 300 ileri yaş yetişkinde P-SDS uyarlamasını inceler ve manevi sıkıntıyı düşük iyi oluştan ayrı bir ölçme sorunu olarak görünür kılar.",
+        "tr": "Kanser tanılı 300 ileri yaş yetişkinde P-SDS uyarlamasını inceleyen çalışma, manevi sıkıntının düşük iyi oluştan ayrı bir ölçme konusu olduğunu göstermektedir.",
         "en": "Examines P-SDS adaptation in 300 older adults with cancer and helps distinguish spiritual distress from simply low wellbeing.",
         "de": "Untersucht die Adaptation der P-SDS bei 300 älteren Erwachsenen mit Krebs und macht spirituellen Distress als ein von geringem Wohlbefinden abgrenzbares Messproblem sichtbar.",
         "zh": "在300名患癌老年人中考察P-SDS的改编，并使灵性困扰作为一个有别于低幸福感的测量问题得以显现。",
@@ -10022,7 +10022,7 @@
         "ms": "Minoriti agama, konteks dan perasaan kemurungan"
       },
       "description": {
-        "tr": "ESS 2012 ve 2014 verilerinde 28 ülkedeki 268 bölgeyi karşılaştırır. Bağlam düzeyindeki ilişkiler bireysel nedensellik olarak okunmamalıdır.",
+        "tr": "ESS’nin 2012 ve 2014 verilerinde 28 ülkedeki 268 bölgeyi karşılaştırmaktadır. Bölge düzeyinde bulunan ilişkiler, bireyler için neden-sonuç ilişkisi olarak okunmamalıdır.",
         "en": "Uses ESS 2012 and 2014 data across 268 regions in 28 countries. Context-level associations should not be read as individual causation.",
         "de": "Vergleicht anhand von ESS-Daten aus den Jahren 2012 und 2014 268 Regionen in 28 Ländern. Zusammenhänge auf Kontextebene sollten nicht als individuelle Kausalität gelesen werden.",
         "zh": "利用ESS 2012年和2014年数据，比较28个国家的268个地区。情境层面的关联不应被解读为个体层面的因果关系。",

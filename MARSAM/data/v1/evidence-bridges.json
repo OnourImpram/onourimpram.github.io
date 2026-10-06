@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "release": "marsam-finished-centre-0.12.0",
   "version": "0.12.0",
-  "generatedAt": "2026-10-06T04:40:59.579Z",
+  "generatedAt": "2026-10-06T05:31:23.122Z",
   "publicationState": "institutional-review",
   "reviewStatus": "AI_ASSISTED_DRAFT",
   "humanReviewed": false,
@@ -23,7 +23,7 @@
         "ms": "Daya tindak agama dalam konteks Muslim"
       },
       "text": {
-        "tr": "Türkiye, Malezya ve İsrail/Filistin karşılaştırması olumlu dini başa çıkmanın depresif belirtiyle otomatik olarak ilişkili olmadığını gösterir. Mülteci çalışması ise başa çıkmanın göç ve hizmet erişimi bağlamında nasıl yaşandığını nitel olarak açar.",
+        "tr": "Türkiye, Malezya ve İsrail/Filistin’i karşılaştıran çalışma, olumlu dini başa çıkmanın depresif belirtilerle her zaman ilişkili olmadığını göstermektedir. Mültecilerle yapılan nitel çalışma ise başa çıkmanın göç ve hizmete erişim koşullarında nasıl yaşandığını ortaya koymaktadır.",
         "en": "A comparison of Türkiye, Malaysia and Israel/Palestine shows that positive religious coping is not automatically associated with depressive symptoms. A refugee study qualitatively explores how coping is experienced in the context of migration and service access.",
         "de": "Ein Vergleich zwischen der Türkei, Malaysia und Israel/Palästina zeigt, dass positive religiöse Bewältigung nicht automatisch mit depressiven Symptomen zusammenhängt. Eine Studie mit Geflüchteten beleuchtet zudem qualitativ, wie Bewältigung im Kontext von Migration und Zugang zu Versorgungsangeboten erlebt wird.",
         "zh": "对土耳其、马来西亚和以色列/巴勒斯坦的比较表明，积极宗教应对并不会自动与抑郁症状相关联。一项难民研究则以质性方式揭示了在迁移和服务获取背景下应对是如何被体验的。",
@@ -40,7 +40,7 @@
     {
       "id": "turkiye-intervention",
       "title": {
-        "tr": "Türkiye’de müdahale kanıtını doğru okumak",
+        "tr": "Türkiye’deki müdahale çalışmalarını doğru değerlendirmek",
         "en": "Reading intervention evidence from Türkiye",
         "de": "Interventionsevidenz aus der Türkei richtig lesen",
         "zh": "正确解读来自土耳其的干预证据",
@@ -50,7 +50,7 @@
         "ms": "Membaca bukti intervensi dari Turki dengan tepat"
       },
       "text": {
-        "tr": "Hemodiyaliz RCT’si nedensel sorular için kesitsel çalışmalardan daha güçlü bir tasarım sunar. Yine de tek merkez, örneklem ve raporlama ayrıntıları genellenebilirliği sınırlar.",
+        "tr": "Hemodiyaliz hastalarıyla yapılan randomize kontrollü çalışma, neden-sonuç sorularını yanıtlamada kesitsel çalışmalardan daha güçlü bir tasarıma sahiptir. Yine de tek merkezde yürütülmesi, örneklemi ve raporlama ayrıntıları bulguların genellenmesini sınırlamaktadır.",
         "en": "The haemodialysis RCT offers a stronger design for causal questions than cross-sectional studies. Even so, the single-centre setting, the sample and reporting details limit generalisability.",
         "de": "Die Hämodialyse-RCT bietet für kausale Fragestellungen ein stärkeres Design als Querschnittsstudien. Dennoch schränken die monozentrische Anlage, die Stichprobe und Details der Berichterstattung die Generalisierbarkeit ein.",
         "zh": "该血液透析随机对照试验在因果问题上提供了比横断面研究更有力的设计。然而，单中心、样本及报告细节仍限制了其可推广性。",
@@ -66,7 +66,7 @@
     {
       "id": "worldview-plurality",
       "title": {
-        "tr": "Dünya görüşü çoğulluğu ve zarar",
+        "tr": "Dünya görüşlerinin çeşitliliği ve olası zararlar",
         "en": "Worldview plurality and harm",
         "de": "Weltanschauliche Pluralität und Schaden",
         "zh": "世界观多元性与伤害",
@@ -76,7 +76,7 @@
         "ms": "Kepelbagaian pandangan alam dan kemudaratan"
       },
       "text": {
-        "tr": "Din dışı dünya görüşüne sahip bireylerin sağlık hizmeti deneyimleri ile dinsel temelli cinsel stigma çalışmaları, maneviyatın her kullanıcı için koruyucu veya istenen bir çerçeve olmadığını görünür kılar.",
+        "tr": "Dini olmayan bir dünya görüşüne sahip kişilerin sağlık hizmeti deneyimleri ile dine dayalı cinsel damgalanmaya ilişkin çalışmalar, maneviyatın herkes için koruyucu ya da istenen bir çerçeve olmadığını göstermektedir.",
         "en": "Evidence on nonreligious healthcare experiences and religious-based sexual stigma makes visible that spiritual framing is not universally protective or desired.",
         "de": "Studien zu Erfahrungen nichtreligiöser Menschen im Gesundheitswesen und zu religiös begründetem sexuellem Stigma machen sichtbar, dass Spiritualität nicht für alle Nutzerinnen und Nutzer ein schützender oder gewünschter Rahmen ist.",
         "zh": "关于无宗教信仰者医疗服务体验以及基于宗教的性污名的研究揭示，灵性并非对每位服务使用者都是具有保护作用或为其所期望的框架。",
@@ -93,7 +93,7 @@
     {
       "id": "measurement-lineage",
       "title": {
-        "tr": "Ölçek soy ağacı ve kültürel geçerlik",
+        "tr": "Ölçeklerin kökeni ve kültürel geçerlik",
         "en": "Instrument lineage and cultural validity",
         "de": "Genealogie von Messinstrumenten und kulturelle Validität",
         "zh": "量表谱系与文化效度",
@@ -103,7 +103,7 @@
         "ms": "Salasilah instrumen dan kesahan budaya"
       },
       "text": {
-        "tr": "RSS-FF, RSS-14 ile aynı kayıt değildir. SPRS ve SEFC ise Türkiye’de geliştirilmiş ayrı yapılardır. Geliştirme, uyarlama, doğrulama ve değişmezlik kanıtı ayrı tutulmalıdır.",
+        "tr": "RSS-FF ile RSS-14 farklı ölçme araçlarıdır. SPRS ve SEFC ise Türkiye’de geliştirilmiş, ayrı yapıları ölçen araçlardır. Bir ölçeğin geliştirilmesi, başka bir dile uyarlanması, geçerliğinin sınanması ve gruplar arasında karşılaştırılabilirliği ayrı ayrı değerlendirilmelidir.",
         "en": "RSS-FF is not the same record as RSS-14. SPRS and SEFC are separate constructs developed in Türkiye. Development, adaptation, validation and invariance evidence must remain distinct.",
         "de": "RSS-FF ist nicht derselbe Eintrag wie RSS-14. SPRS und SEFC sind hingegen eigenständige, in der Türkei entwickelte Konstrukte. Belege zu Entwicklung, Adaptation, Validierung und Invarianz müssen getrennt betrachtet werden.",
         "zh": "RSS-FF与RSS-14并非同一条目。SPRS和SEFC则是在土耳其开发的独立构念。开发、改编、验证和不变性证据应分开看待。",
@@ -131,7 +131,7 @@
         "ms": "Tekanan minoriti, agama dan konteks"
       },
       "text": {
-        "tr": "Ateist azınlık stresi, cinsel azınlık meta-analizi ve Lübnan çalışması din veya maneviyatın tek yönlü bir koruyucu değişken olmadığını gösterir. Stigma, kimlik gelişimi ve sosyal çevre sonuçların yönünü değiştirebilir.",
+        "tr": "Ateist azınlık stresi üzerine yapılan çalışma, cinsel azınlıklarla ilgili meta-analiz ve Lübnan’da yürütülen araştırma, din ya da maneviyatın her zaman koruyucu bir etken olmadığını göstermektedir. Damgalanma, kimlik gelişimi ve sosyal çevre, sonuçların yönünü değiştirebilmektedir.",
         "en": "Atheist minority stress, the sexual-minority meta-analysis and Lebanon evidence show that religion or spirituality is not a one-direction protective variable. Stigma, identity development and social context can change the direction of associations.",
         "de": "Die Studie zu Minderheitenstress bei Atheistinnen und Atheisten, die Meta-Analyse zu sexuellen Minderheiten und die libanesische Studie zeigen, dass Religion oder Spiritualität keine einseitig schützende Variable ist. Stigma, Identitätsentwicklung und soziales Umfeld können die Richtung der Ergebnisse verändern.",
         "zh": "无神论者少数群体压力研究、性少数群体元分析以及黎巴嫩研究表明，宗教或灵性并非单向的保护性变量。污名、身份认同发展和社会环境可能改变结果的方向。",
@@ -159,7 +159,7 @@
         "ms": "Distres rohani, kedukaan dan pengukuran"
       },
       "text": {
-        "tr": "ICSG 2.0, Farsça uyarlaması ve P-SDS manevi sıkıntının düşük manevi iyi oluşla özdeş olmadığını gösteren ayrı ölçme geleneklerini temsil eder. Uyarlama ve değişmezlik kanıtı ayrı tutulur.",
+        "tr": "ICSG 2.0, onun Farsça uyarlaması ve P-SDS, manevi sıkıntının düşük manevi iyi oluşla aynı şey olmadığını gösteren farklı ölçme geleneklerini temsil etmektedir. Bir ölçeğin uyarlanması ile gruplar arasında karşılaştırılabilir olması ayrı ayrı değerlendirilir.",
         "en": "ICSG 2.0, its Persian adaptation and P-SDS represent distinct measurement traditions showing that spiritual distress is not identical to low spiritual wellbeing. Adaptation and invariance evidence remain separate.",
         "de": "ICSG 2.0, seine persische Adaptation und P-SDS stehen für unterschiedliche Messtraditionen, die zeigen, dass spirituelle Belastung nicht mit geringem spirituellem Wohlbefinden gleichzusetzen ist. Belege zu Adaptation und Invarianz werden getrennt betrachtet.",
         "zh": "ICSG 2.0、其波斯语改编版和P-SDS代表了不同的测量传统，表明灵性困扰并不等同于低灵性幸福感。改编证据与不变性证据分开看待。",
@@ -177,7 +177,7 @@
     {
       "id": "context-level-evidence",
       "title": {
-        "tr": "Bireysel puanın ötesinde dini bağlam",
+        "tr": "Kişisel puanların ötesinde dini bağlam",
         "en": "Religious context beyond individual scores",
         "de": "Religiöser Kontext jenseits individueller Messwerte",
         "zh": "超越个体得分的宗教背景",
@@ -187,7 +187,7 @@
         "ms": "Konteks agama melangkaui skor individu"
       },
       "text": {
-        "tr": "ESS temelli çok düzeyli çalışma, dini azınlık olma ile depresif duygular arasındaki ilişkiyi bölgesel bağlamla birlikte inceler. Bu, bireysel başa çıkma çalışmalarından farklı bir çıkarım düzeyidir.",
+        "tr": "Avrupa Sosyal Araştırması (ESS) verilerine dayanan çok düzeyli çalışma, dini azınlıkta olmak ile depresif duygular arasındaki ilişkiyi kişinin yaşadığı bölgenin özellikleriyle birlikte incelemektedir. Bu çalışma, bireysel başa çıkmayı inceleyen araştırmalardan farklı düzeyde bir çıkarım sunar.",
         "en": "The ESS-linked multilevel study examines religious-minority status and depressive feelings together with regional context. This is a different level of inference from individual coping studies.",
         "de": "Die ESS-basierte Mehrebenenstudie untersucht den Zusammenhang zwischen religiöser Minderheitenzugehörigkeit und depressiven Gefühlen gemeinsam mit dem regionalen Kontext. Dies ist eine andere Schlussfolgerungsebene als bei Studien zur individuellen Bewältigung.",
         "zh": "基于ESS的多层次研究结合地区背景考察宗教少数群体身份与抑郁情绪之间的关系。这与个体应对研究属于不同的推论层次。",

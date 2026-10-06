@@ -15,7 +15,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "c5700d030e041e37ec03dd793d072537fd7a7bc0922c3feaa45c7f0f76b407fb",
-      "editionHash": "feb004ffda03231f488ddaa0d87f23137a8c5fe4ebe134506255e6c06a505727",
+      "editionHash": "414f37844f0cf9b3ba1f5563a27120eeac66e00b6748fb22e43afd1805671407",
       "claimIds": [
         "german-meta:population",
         "german-meta:finding",
@@ -159,7 +159,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "c442245321ffdcd16291d08f15eeeb508208fceb2717e5bad426c498de946fdf",
-      "editionHash": "335092f254262e701bb037c6307f5ca61a54bdafbfcd0ab35dd2e49b782dcb8c",
+      "editionHash": "3910177c98df34fc362aab62c7f194a962b186570a326e456475437ff3a62026",
       "claimIds": [
         "adolescent-contexts:population",
         "adolescent-contexts:finding",
@@ -303,7 +303,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "964381c755e1732016da4dd8a04353b84f4a50fdfe9954f4e48848b46765d128",
-      "editionHash": "4c608d69aa5ad169915c2ce2e78e83611ad6a1f36c1a74d7093d3af6f4e11410",
+      "editionHash": "02702192136178f5279b7b2f0a15746237a5a39d2bd8924631312bd2dc9e8265",
       "claimIds": [
         "youth-evidence:population",
         "youth-evidence:finding",
@@ -447,7 +447,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "b4fa0905179c9ea45dc22efc6384846b3e825587cfc41bf880d71a9f4debaefe",
-      "editionHash": "8bddf8c486e9940c79a2589a24339ef1e4b6e73e18314ab37ab4a9fb8a47ba99",
+      "editionHash": "b1531294cb619d89afc8d2ac63c3162d9f2ad55426c9f32adad77215b0f62f96",
       "claimIds": [
         "older-adults:population",
         "older-adults:finding",
@@ -735,7 +735,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "537296ca446ccf77c4585a0c1777e93df8bbe25bab0e774ac113f2ae83c8b850",
-      "editionHash": "1b1521b286640cf232bfe2752a2c78ccf0a05f850d51fb898fc93fe3e7469645",
+      "editionHash": "859922a44ee1b1e6886577aef9c2af673f51f79968b850d550283122f6339955",
       "claimIds": [
         "atheist-struggles:population",
         "atheist-struggles:finding",
@@ -879,7 +879,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "c7a2c6d6690d631d9d358105450002c7d54ac93bc93b5e2967a44157f92a6e43",
-      "editionHash": "dfac206eaba25067caf78c7394b69cddae084d95585032a0cc843a85e7ae8375",
+      "editionHash": "c6daca90d8ff10ede8931fe2cc9293462ccce544077c586c3be710143036e6e5",
       "claimIds": [
         "religious-cbt:population",
         "religious-cbt:finding",
@@ -1023,7 +1023,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "8b873f6b06e341f03be5ca284c68f02ef63b2a6aa2f46cd99db4cf4d89b2251d",
-      "editionHash": "029e333578501669c9792a5baad5e45d888d58b38f513747871f0d5a58588f1c",
+      "editionHash": "144b9f72f26a06de44ba55c5847cf35a2ac8be42052de90daefa0134614c0152",
       "claimIds": [
         "disaster-needs:population",
         "disaster-needs:finding",
@@ -1167,7 +1167,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "e4452260185ce042300103d5694f438deb3eec6673c283acc4d62f5078ad83af",
-      "editionHash": "5a710731f8f63aeb5a30b88fa78ca8d683ab3cb1ba76bdaf6006e1597a4c7894",
+      "editionHash": "1b6fc5ab0208d8ae08ffe516912719286525b4052ac3f6d7d535f67805148f10",
       "claimIds": [
         "brief-rcope:population",
         "brief-rcope:finding",
@@ -1311,7 +1311,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "8d5c071a180302a1d547bd04fe02a775145efe9d1ddc8a07721c93d3fc8aa252",
-      "editionHash": "8e4fee4fa53733cab829316c87b5e3ee64c43ffc346df52343650da2ab21ff56",
+      "editionHash": "d5add3303cb881bc317056e09b23c876211be4b99ec890a32db827a8fd4b88d2",
       "claimIds": [
         "meaning-questionnaire:population",
         "meaning-questionnaire:finding",
@@ -1455,7 +1455,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "7426c2ad35cf92de50220817720506a0074849e86f205e308d9fd6ac3e998b2d",
-      "editionHash": "22a1294f0ea0db147b44f233f1d769ffb80e9ceb681ae79f3059d0e15d294099",
+      "editionHash": "56403a73c64e277b01de5b76435bbc97b842a175924e4ad2a44711a0cea5c387",
       "claimIds": [
         "durel:population",
         "durel:finding",
@@ -1599,7 +1599,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "d3554717474cb81636856aa18710f7cdf06aad707b9443da7558a7b3b9124ef8",
-      "editionHash": "a75ed2909dd48a304b50467c8353f98de0a019f7adcc285d2d4b98b3e3571850",
+      "editionHash": "5b3080c7e3732a697fddf74984099daa27fb4ccb56767e2c2f7006309b1ae979",
       "claimIds": [
         "swbs-eksi-kardas:population",
         "swbs-eksi-kardas:finding",
@@ -1743,7 +1743,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "aa9db1879205191b0131cb71c0f28ddefb477cd28c198b498917157a1453a7fe",
-      "editionHash": "2e86d89047218d44ba586bf87d38bd87ee9c053c4261ab3de03d6ed35d755717",
+      "editionHash": "7a12181a344af4f6f0a188301b74cee3a5142c2a175565ffd20af936aae5b39e",
       "claimIds": [
         "swbs-paloutzian-ellison:population",
         "swbs-paloutzian-ellison:finding",
@@ -1887,7 +1887,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "9486764c223abec7e1616f98dc3789d35c3e921d8b93819b76c008a3276b3e85",
-      "editionHash": "60a6246324ba0d5c0ab8e621dc7d4ed965883c08711ad91b39f8d09be383a4cb",
+      "editionHash": "06da84bdc260c7be46310a6e3663c39f9c8a57807ea4549dff78a51bb49d38b6",
       "claimIds": [
         "within-person-attendance:population",
         "within-person-attendance:finding",
@@ -2031,7 +2031,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "7503d55fce228455ec22db22f810d12f33f5baf5971c19b7d83813d6e5bc56ea",
-      "editionHash": "5ce5d2e13cfaef85e6a652c77afe4a79494902e7ab6d66638f6672f0dc30c1d5",
+      "editionHash": "ad8cf9e86668455bd014f733620ab4330a634c171f1550db6db22f81d375fa96",
       "claimIds": [
         "bidirectional-alspac:population",
         "bidirectional-alspac:finding",
@@ -2175,7 +2175,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "5817e2d79086a744342a8f26c130c9796687c694870528816a6ff84b2a8ee9db",
-      "editionHash": "29d393b06c11a2dc4403e59a2df59a59028634510025bd61e236c935ccd5d4e8",
+      "editionHash": "f4c061d7b8664cb363b11bea4216de89db546c2174643c5989e359924a6dbb11",
       "claimIds": [
         "brazil-medical-students:population",
         "brazil-medical-students:finding",
@@ -2319,7 +2319,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "4b893722a40a8cad8ca80b654a5eb5fe942244518aeec3fc8f6a8ef2543ab448",
-      "editionHash": "a25ba6830668d3be8cf74228a34fa38033e358c61feb41292c15c879c48b638a",
+      "editionHash": "d69eca1eda4adc834c8204aed3a69c72599c25f988d7845eaa53e3aa89c389aa",
       "claimIds": [
         "turkish-bereavement:population",
         "turkish-bereavement:finding",
@@ -2463,7 +2463,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "a67cc16a78128593687975c9bfda500f0a5d48600adc0933820da047793e1554",
-      "editionHash": "b2164808dc206aa08caddb7f08b77f9e6b6b609ac3de1a0e09d7be76fe5f0a6c",
+      "editionHash": "28f498eed6bc05f81febee666ee9ce9337b4ba85a7e045ac239207169f5bff32",
       "claimIds": [
         "psychosis-spirituality:population",
         "psychosis-spirituality:finding",
@@ -2607,7 +2607,7 @@
       "fieldsPresent": true,
       "briefMatches": true,
       "sourceHash": "058f0e969a57b14e06f08128461f7deaff99ea6309cd66f5c02ab0523d6d49ec",
-      "editionHash": "3c2a5e0d0b641e7febccd42e25a613297e49b9fb851550187131a2fae3f55fc9",
+      "editionHash": "ba8e6994b74a6e494a6bbb3ac26c12798bc8885437ee77c5552cb6729decc2bc",
       "claimIds": [
         "clergy-abuse-harm:population",
         "clergy-abuse-harm:finding",
