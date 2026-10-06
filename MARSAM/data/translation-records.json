@@ -118,8 +118,8 @@
     {
       "id": "spiritual-competence",
       "locale": "tr",
-      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
-      "targetHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
+      "sourceHash": "1c8a539ae667d3cf35a30a158422a58802d957c48356cc53e07ac11e6ae6edd0",
+      "targetHash": "1c8a539ae667d3cf35a30a158422a58802d957c48356cc53e07ac11e6ae6edd0",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -132,7 +132,7 @@
     {
       "id": "spiritual-competence",
       "locale": "en",
-      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
+      "sourceHash": "1c8a539ae667d3cf35a30a158422a58802d957c48356cc53e07ac11e6ae6edd0",
       "targetHash": "ae3e08373b0aae039f14707863414e7062d6eb937c970b1e536cb2259fb91280",
       "status": "draft",
       "humanReviewed": false,
@@ -146,7 +146,7 @@
     {
       "id": "spiritual-competence",
       "locale": "de",
-      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
+      "sourceHash": "1c8a539ae667d3cf35a30a158422a58802d957c48356cc53e07ac11e6ae6edd0",
       "targetHash": "ba6e8c4ee7e3ca94f70e5c3164c71d1293b73d41307b9e08359cf8c1033227cd",
       "status": "draft",
       "humanReviewed": false,
@@ -160,7 +160,7 @@
     {
       "id": "spiritual-competence",
       "locale": "zh",
-      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
+      "sourceHash": "1c8a539ae667d3cf35a30a158422a58802d957c48356cc53e07ac11e6ae6edd0",
       "targetHash": "9216ef272ebc264f005f66cb31ba5d44b0703a2df0be24f9a3b667f5c4bf5b04",
       "status": "draft",
       "humanReviewed": false,
@@ -174,7 +174,7 @@
     {
       "id": "spiritual-competence",
       "locale": "ru",
-      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
+      "sourceHash": "1c8a539ae667d3cf35a30a158422a58802d957c48356cc53e07ac11e6ae6edd0",
       "targetHash": "7f85e01134e8523584da7f4e4aec87a45a43f5acfcff486286ade68954124538",
       "status": "draft",
       "humanReviewed": false,
@@ -188,7 +188,7 @@
     {
       "id": "spiritual-competence",
       "locale": "ar",
-      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
+      "sourceHash": "1c8a539ae667d3cf35a30a158422a58802d957c48356cc53e07ac11e6ae6edd0",
       "targetHash": "fe10032756befd20053ee44304dc216ab1ddb800971294b34a8d374cf7455615",
       "status": "draft",
       "humanReviewed": false,
@@ -202,7 +202,7 @@
     {
       "id": "spiritual-competence",
       "locale": "id",
-      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
+      "sourceHash": "1c8a539ae667d3cf35a30a158422a58802d957c48356cc53e07ac11e6ae6edd0",
       "targetHash": "cb2ded1a97410751db6004bb7d36b5272598e3a29bc35875daf83f6d9d943146",
       "status": "draft",
       "humanReviewed": false,
@@ -216,7 +216,7 @@
     {
       "id": "spiritual-competence",
       "locale": "ms",
-      "sourceHash": "102f6eaaae2aad766ff94a12eaae7e831376a9c86fa6dca6a4743934b247d43a",
+      "sourceHash": "1c8a539ae667d3cf35a30a158422a58802d957c48356cc53e07ac11e6ae6edd0",
       "targetHash": "58f6e839701f06289a4628f86ab6a693f7a26157a8cfe3e25a0b61c1794f7ab0",
       "status": "draft",
       "humanReviewed": false,
@@ -230,8 +230,8 @@
     {
       "id": "integration-meta-analysis",
       "locale": "tr",
-      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
-      "targetHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
+      "sourceHash": "29dc6e47587e21af9cdccdb065c05402a49346c4431dd40a0098220f475c819b",
+      "targetHash": "29dc6e47587e21af9cdccdb065c05402a49346c4431dd40a0098220f475c819b",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -244,7 +244,7 @@
     {
       "id": "integration-meta-analysis",
       "locale": "en",
-      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
+      "sourceHash": "29dc6e47587e21af9cdccdb065c05402a49346c4431dd40a0098220f475c819b",
       "targetHash": "5c267d35a506343553f07ffd9f0a4311ff2bd7cc551ecd24af6a2cec8811a548",
       "status": "draft",
       "humanReviewed": false,
@@ -258,7 +258,7 @@
     {
       "id": "integration-meta-analysis",
       "locale": "de",
-      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
+      "sourceHash": "29dc6e47587e21af9cdccdb065c05402a49346c4431dd40a0098220f475c819b",
       "targetHash": "7e50b78a33e9fe9cefad2a899e2da635a3e66caeed1a67d19329f65d35db51f3",
       "status": "draft",
       "humanReviewed": false,
@@ -272,7 +272,7 @@
     {
       "id": "integration-meta-analysis",
       "locale": "zh",
-      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
+      "sourceHash": "29dc6e47587e21af9cdccdb065c05402a49346c4431dd40a0098220f475c819b",
       "targetHash": "c7ea30613ba53fb6cd4d5a310b098f28b6db82e89a0753509046ee7a514f2889",
       "status": "draft",
       "humanReviewed": false,
@@ -286,7 +286,7 @@
     {
       "id": "integration-meta-analysis",
       "locale": "ru",
-      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
+      "sourceHash": "29dc6e47587e21af9cdccdb065c05402a49346c4431dd40a0098220f475c819b",
       "targetHash": "4d1d71251211f1e75cd71dc83c4d0e209748aadcdd11e5b2d84c6a0ef355b0d6",
       "status": "draft",
       "humanReviewed": false,
@@ -300,7 +300,7 @@
     {
       "id": "integration-meta-analysis",
       "locale": "ar",
-      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
+      "sourceHash": "29dc6e47587e21af9cdccdb065c05402a49346c4431dd40a0098220f475c819b",
       "targetHash": "00a9cd1f107753ff36c9181746af98ad5256ba6c7848b7f5687f80b1d7359cea",
       "status": "draft",
       "humanReviewed": false,
@@ -314,7 +314,7 @@
     {
       "id": "integration-meta-analysis",
       "locale": "id",
-      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
+      "sourceHash": "29dc6e47587e21af9cdccdb065c05402a49346c4431dd40a0098220f475c819b",
       "targetHash": "7e9827a983a130ba4c49325eb5863947085a52540416696434b0b0cff2b1e7c3",
       "status": "draft",
       "humanReviewed": false,
@@ -328,7 +328,7 @@
     {
       "id": "integration-meta-analysis",
       "locale": "ms",
-      "sourceHash": "1a7f6db30d07d8e933f7d74a5f4ed6091f1f562dc69ae191f70127e3eb263935",
+      "sourceHash": "29dc6e47587e21af9cdccdb065c05402a49346c4431dd40a0098220f475c819b",
       "targetHash": "4fb34d7466d78614c6ec2b5c1931a897e104a11b7c9c7567e004b532187b9468",
       "status": "draft",
       "humanReviewed": false,
@@ -1014,8 +1014,8 @@
     {
       "id": "prisma-guidance",
       "locale": "tr",
-      "sourceHash": "7c2c075c645e321c963f983adc417f8fcb099b1845c30442e4f68d942e7b45c6",
-      "targetHash": "7c2c075c645e321c963f983adc417f8fcb099b1845c30442e4f68d942e7b45c6",
+      "sourceHash": "fa161fee52914ae3ece51f84c01bd2f8d492a321de9ba1d83bb2d32f1f3c1687",
+      "targetHash": "fa161fee52914ae3ece51f84c01bd2f8d492a321de9ba1d83bb2d32f1f3c1687",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -1028,7 +1028,7 @@
     {
       "id": "prisma-guidance",
       "locale": "en",
-      "sourceHash": "7c2c075c645e321c963f983adc417f8fcb099b1845c30442e4f68d942e7b45c6",
+      "sourceHash": "fa161fee52914ae3ece51f84c01bd2f8d492a321de9ba1d83bb2d32f1f3c1687",
       "targetHash": "6a47c337398f26daa2c1f9234198b4ffa55a674f060106c30a151b8579898e73",
       "status": "draft",
       "humanReviewed": false,
@@ -1042,7 +1042,7 @@
     {
       "id": "prisma-guidance",
       "locale": "de",
-      "sourceHash": "7c2c075c645e321c963f983adc417f8fcb099b1845c30442e4f68d942e7b45c6",
+      "sourceHash": "fa161fee52914ae3ece51f84c01bd2f8d492a321de9ba1d83bb2d32f1f3c1687",
       "targetHash": "82e4ccdd218fe074adadf2f0b8dbec8c724feb1cbddd1d802cb1801c0c48bd45",
       "status": "draft",
       "humanReviewed": false,
@@ -1056,7 +1056,7 @@
     {
       "id": "prisma-guidance",
       "locale": "zh",
-      "sourceHash": "7c2c075c645e321c963f983adc417f8fcb099b1845c30442e4f68d942e7b45c6",
+      "sourceHash": "fa161fee52914ae3ece51f84c01bd2f8d492a321de9ba1d83bb2d32f1f3c1687",
       "targetHash": "06ee6f013c913f49fd6cb58466a1e3d49e964e293e1b9603bc3e7106069fdd98",
       "status": "draft",
       "humanReviewed": false,
@@ -1070,7 +1070,7 @@
     {
       "id": "prisma-guidance",
       "locale": "ru",
-      "sourceHash": "7c2c075c645e321c963f983adc417f8fcb099b1845c30442e4f68d942e7b45c6",
+      "sourceHash": "fa161fee52914ae3ece51f84c01bd2f8d492a321de9ba1d83bb2d32f1f3c1687",
       "targetHash": "4f01c0a33663630f2c53c72106c2a69e1906986221cc5299c92795013aa8913f",
       "status": "draft",
       "humanReviewed": false,
@@ -1084,7 +1084,7 @@
     {
       "id": "prisma-guidance",
       "locale": "ar",
-      "sourceHash": "7c2c075c645e321c963f983adc417f8fcb099b1845c30442e4f68d942e7b45c6",
+      "sourceHash": "fa161fee52914ae3ece51f84c01bd2f8d492a321de9ba1d83bb2d32f1f3c1687",
       "targetHash": "1a85ffbc819a5ba3e96cd7d7fc7bc79e4dadaee56f5e29fe77ae29f52a18c53b",
       "status": "draft",
       "humanReviewed": false,
@@ -1098,7 +1098,7 @@
     {
       "id": "prisma-guidance",
       "locale": "id",
-      "sourceHash": "7c2c075c645e321c963f983adc417f8fcb099b1845c30442e4f68d942e7b45c6",
+      "sourceHash": "fa161fee52914ae3ece51f84c01bd2f8d492a321de9ba1d83bb2d32f1f3c1687",
       "targetHash": "6042e2b823065b88bed4d1a0a6f599ac24b16598af618ece223b16526953495c",
       "status": "draft",
       "humanReviewed": false,
@@ -1112,7 +1112,7 @@
     {
       "id": "prisma-guidance",
       "locale": "ms",
-      "sourceHash": "7c2c075c645e321c963f983adc417f8fcb099b1845c30442e4f68d942e7b45c6",
+      "sourceHash": "fa161fee52914ae3ece51f84c01bd2f8d492a321de9ba1d83bb2d32f1f3c1687",
       "targetHash": "a82c9dc2ebf2e1725e99368154d5f33cf4e2497f1d3f7a14bdea7bb5846ecb4f",
       "status": "draft",
       "humanReviewed": false,
@@ -1462,8 +1462,8 @@
     {
       "id": "spiritual-counselling-book",
       "locale": "tr",
-      "sourceHash": "14a0a32da1ca7e4676562a553cf15082f4db28ca18dc4c3f16609527d4283c96",
-      "targetHash": "14a0a32da1ca7e4676562a553cf15082f4db28ca18dc4c3f16609527d4283c96",
+      "sourceHash": "24bd0666edb9d850feb597121e04e215390c2b50f81bd819295997556f15fb1b",
+      "targetHash": "24bd0666edb9d850feb597121e04e215390c2b50f81bd819295997556f15fb1b",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -1476,7 +1476,7 @@
     {
       "id": "spiritual-counselling-book",
       "locale": "en",
-      "sourceHash": "14a0a32da1ca7e4676562a553cf15082f4db28ca18dc4c3f16609527d4283c96",
+      "sourceHash": "24bd0666edb9d850feb597121e04e215390c2b50f81bd819295997556f15fb1b",
       "targetHash": "b4a70676d8fce8d0df0ae13acadeab02e5f24549d209237ba39fab69ec2d875c",
       "status": "draft",
       "humanReviewed": false,
@@ -1490,7 +1490,7 @@
     {
       "id": "spiritual-counselling-book",
       "locale": "de",
-      "sourceHash": "14a0a32da1ca7e4676562a553cf15082f4db28ca18dc4c3f16609527d4283c96",
+      "sourceHash": "24bd0666edb9d850feb597121e04e215390c2b50f81bd819295997556f15fb1b",
       "targetHash": "7b9874491c434d25ecb6b64c3a5fcc3430ecd545aa7078fd14d2c8e55acbb3c7",
       "status": "draft",
       "humanReviewed": false,
@@ -1504,7 +1504,7 @@
     {
       "id": "spiritual-counselling-book",
       "locale": "zh",
-      "sourceHash": "14a0a32da1ca7e4676562a553cf15082f4db28ca18dc4c3f16609527d4283c96",
+      "sourceHash": "24bd0666edb9d850feb597121e04e215390c2b50f81bd819295997556f15fb1b",
       "targetHash": "39bd1ec765ade90d58f6bf61aa5c1ce57662f86b10180dbc60dcffffc310467c",
       "status": "draft",
       "humanReviewed": false,
@@ -1518,7 +1518,7 @@
     {
       "id": "spiritual-counselling-book",
       "locale": "ru",
-      "sourceHash": "14a0a32da1ca7e4676562a553cf15082f4db28ca18dc4c3f16609527d4283c96",
+      "sourceHash": "24bd0666edb9d850feb597121e04e215390c2b50f81bd819295997556f15fb1b",
       "targetHash": "230ad74e19a26ded724c60946cce46179761ffc222e5e28f484bf1088eaa684b",
       "status": "draft",
       "humanReviewed": false,
@@ -1532,7 +1532,7 @@
     {
       "id": "spiritual-counselling-book",
       "locale": "ar",
-      "sourceHash": "14a0a32da1ca7e4676562a553cf15082f4db28ca18dc4c3f16609527d4283c96",
+      "sourceHash": "24bd0666edb9d850feb597121e04e215390c2b50f81bd819295997556f15fb1b",
       "targetHash": "7ace116e252e91138aa2a6581cef5f539b234259548b0a1d9c728b9d92aba63f",
       "status": "draft",
       "humanReviewed": false,
@@ -1546,7 +1546,7 @@
     {
       "id": "spiritual-counselling-book",
       "locale": "id",
-      "sourceHash": "14a0a32da1ca7e4676562a553cf15082f4db28ca18dc4c3f16609527d4283c96",
+      "sourceHash": "24bd0666edb9d850feb597121e04e215390c2b50f81bd819295997556f15fb1b",
       "targetHash": "5566cad9776b18de315661dda09791dd4e7dc6f29f22fd0c40182fa65b20a942",
       "status": "draft",
       "humanReviewed": false,
@@ -1560,7 +1560,7 @@
     {
       "id": "spiritual-counselling-book",
       "locale": "ms",
-      "sourceHash": "14a0a32da1ca7e4676562a553cf15082f4db28ca18dc4c3f16609527d4283c96",
+      "sourceHash": "24bd0666edb9d850feb597121e04e215390c2b50f81bd819295997556f15fb1b",
       "targetHash": "0e437aeeef214e224971ad6b80ad6c6b78894ec34ac4d22b1c9e3269a4509f87",
       "status": "draft",
       "humanReviewed": false,
@@ -1686,8 +1686,8 @@
     {
       "id": "family-spiritual",
       "locale": "tr",
-      "sourceHash": "05bb01fb090937d16d59feeab13844a6827db94aa5959bddbc2d977b26d5d8fe",
-      "targetHash": "05bb01fb090937d16d59feeab13844a6827db94aa5959bddbc2d977b26d5d8fe",
+      "sourceHash": "57d2bc9fb37f8db265382b11996adb307d50d2c9b0d851e3f358d0c0ec70817f",
+      "targetHash": "57d2bc9fb37f8db265382b11996adb307d50d2c9b0d851e3f358d0c0ec70817f",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -1700,7 +1700,7 @@
     {
       "id": "family-spiritual",
       "locale": "en",
-      "sourceHash": "05bb01fb090937d16d59feeab13844a6827db94aa5959bddbc2d977b26d5d8fe",
+      "sourceHash": "57d2bc9fb37f8db265382b11996adb307d50d2c9b0d851e3f358d0c0ec70817f",
       "targetHash": "accaac1eb0019caf99c4734eb3378290d75d3853a4ea46477fb7d35450f370a9",
       "status": "draft",
       "humanReviewed": false,
@@ -1714,7 +1714,7 @@
     {
       "id": "family-spiritual",
       "locale": "de",
-      "sourceHash": "05bb01fb090937d16d59feeab13844a6827db94aa5959bddbc2d977b26d5d8fe",
+      "sourceHash": "57d2bc9fb37f8db265382b11996adb307d50d2c9b0d851e3f358d0c0ec70817f",
       "targetHash": "f21de9536c671196ae50179a9d01936cafc8d038f94bd3be5a49fbc3ecfa5966",
       "status": "draft",
       "humanReviewed": false,
@@ -1728,7 +1728,7 @@
     {
       "id": "family-spiritual",
       "locale": "zh",
-      "sourceHash": "05bb01fb090937d16d59feeab13844a6827db94aa5959bddbc2d977b26d5d8fe",
+      "sourceHash": "57d2bc9fb37f8db265382b11996adb307d50d2c9b0d851e3f358d0c0ec70817f",
       "targetHash": "3220acb6a5f3aa0e39ba66ac58534970c74285368ddb7c8176d06addd3865a52",
       "status": "draft",
       "humanReviewed": false,
@@ -1742,7 +1742,7 @@
     {
       "id": "family-spiritual",
       "locale": "ru",
-      "sourceHash": "05bb01fb090937d16d59feeab13844a6827db94aa5959bddbc2d977b26d5d8fe",
+      "sourceHash": "57d2bc9fb37f8db265382b11996adb307d50d2c9b0d851e3f358d0c0ec70817f",
       "targetHash": "6a5196572107c3a73f4930bf25850c73f39331b4163ebc0f2f5614c8f3e46cec",
       "status": "draft",
       "humanReviewed": false,
@@ -1756,7 +1756,7 @@
     {
       "id": "family-spiritual",
       "locale": "ar",
-      "sourceHash": "05bb01fb090937d16d59feeab13844a6827db94aa5959bddbc2d977b26d5d8fe",
+      "sourceHash": "57d2bc9fb37f8db265382b11996adb307d50d2c9b0d851e3f358d0c0ec70817f",
       "targetHash": "5f8612803c8654cfe5d26551592f55670d9bccea09cf19e3742396e711e11690",
       "status": "draft",
       "humanReviewed": false,
@@ -1770,7 +1770,7 @@
     {
       "id": "family-spiritual",
       "locale": "id",
-      "sourceHash": "05bb01fb090937d16d59feeab13844a6827db94aa5959bddbc2d977b26d5d8fe",
+      "sourceHash": "57d2bc9fb37f8db265382b11996adb307d50d2c9b0d851e3f358d0c0ec70817f",
       "targetHash": "b584ae6cefdf55831960e862d84afc2223763fa303a63e3c0968d89dc4f8bebe",
       "status": "draft",
       "humanReviewed": false,
@@ -1784,7 +1784,7 @@
     {
       "id": "family-spiritual",
       "locale": "ms",
-      "sourceHash": "05bb01fb090937d16d59feeab13844a6827db94aa5959bddbc2d977b26d5d8fe",
+      "sourceHash": "57d2bc9fb37f8db265382b11996adb307d50d2c9b0d851e3f358d0c0ec70817f",
       "targetHash": "a785a5d0d475ce55d39b79b3aa36387bd411f71dc71d0e3af15b8d78abba2712",
       "status": "draft",
       "humanReviewed": false,
@@ -2358,8 +2358,8 @@
     {
       "id": "professional-training",
       "locale": "tr",
-      "sourceHash": "e9d8c6efb3a6166bafdcb7c9d13dd09863dec4d1ee437b63182a61efd0437226",
-      "targetHash": "e9d8c6efb3a6166bafdcb7c9d13dd09863dec4d1ee437b63182a61efd0437226",
+      "sourceHash": "6e9427fbbc8c3c6f0c650b00e41d7a51099cc7dad409afe3c6196ea1c7e1901f",
+      "targetHash": "6e9427fbbc8c3c6f0c650b00e41d7a51099cc7dad409afe3c6196ea1c7e1901f",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -2372,7 +2372,7 @@
     {
       "id": "professional-training",
       "locale": "en",
-      "sourceHash": "e9d8c6efb3a6166bafdcb7c9d13dd09863dec4d1ee437b63182a61efd0437226",
+      "sourceHash": "6e9427fbbc8c3c6f0c650b00e41d7a51099cc7dad409afe3c6196ea1c7e1901f",
       "targetHash": "6260df7b730150f7006406df7cc084059eafa908952edb745a09d2482a132a2b",
       "status": "draft",
       "humanReviewed": false,
@@ -2386,7 +2386,7 @@
     {
       "id": "professional-training",
       "locale": "de",
-      "sourceHash": "e9d8c6efb3a6166bafdcb7c9d13dd09863dec4d1ee437b63182a61efd0437226",
+      "sourceHash": "6e9427fbbc8c3c6f0c650b00e41d7a51099cc7dad409afe3c6196ea1c7e1901f",
       "targetHash": "2c82af6ebdf6c9e7bbb84e9cb3817f63dcd5580b4d97505dab0f0dd90752a393",
       "status": "draft",
       "humanReviewed": false,
@@ -2400,7 +2400,7 @@
     {
       "id": "professional-training",
       "locale": "zh",
-      "sourceHash": "e9d8c6efb3a6166bafdcb7c9d13dd09863dec4d1ee437b63182a61efd0437226",
+      "sourceHash": "6e9427fbbc8c3c6f0c650b00e41d7a51099cc7dad409afe3c6196ea1c7e1901f",
       "targetHash": "b280f9a8c8ae9382bc03d5a1a22151f018aeebf4a769977ef07bd9026e073de6",
       "status": "draft",
       "humanReviewed": false,
@@ -2414,7 +2414,7 @@
     {
       "id": "professional-training",
       "locale": "ru",
-      "sourceHash": "e9d8c6efb3a6166bafdcb7c9d13dd09863dec4d1ee437b63182a61efd0437226",
+      "sourceHash": "6e9427fbbc8c3c6f0c650b00e41d7a51099cc7dad409afe3c6196ea1c7e1901f",
       "targetHash": "1a84242991444909ffd1232128dfe639bd839b99f430d7fb9fa560c2f3b8283f",
       "status": "draft",
       "humanReviewed": false,
@@ -2428,7 +2428,7 @@
     {
       "id": "professional-training",
       "locale": "ar",
-      "sourceHash": "e9d8c6efb3a6166bafdcb7c9d13dd09863dec4d1ee437b63182a61efd0437226",
+      "sourceHash": "6e9427fbbc8c3c6f0c650b00e41d7a51099cc7dad409afe3c6196ea1c7e1901f",
       "targetHash": "03ba5f48cfae30848bf334ec3503292ac7bc9cbf5f69fb1910c12582c6793787",
       "status": "draft",
       "humanReviewed": false,
@@ -2442,7 +2442,7 @@
     {
       "id": "professional-training",
       "locale": "id",
-      "sourceHash": "e9d8c6efb3a6166bafdcb7c9d13dd09863dec4d1ee437b63182a61efd0437226",
+      "sourceHash": "6e9427fbbc8c3c6f0c650b00e41d7a51099cc7dad409afe3c6196ea1c7e1901f",
       "targetHash": "654a76541213f2eb7f5da3832b3a95cd080eefe4ab842bbb67515bec27d9cfeb",
       "status": "draft",
       "humanReviewed": false,
@@ -2456,7 +2456,7 @@
     {
       "id": "professional-training",
       "locale": "ms",
-      "sourceHash": "e9d8c6efb3a6166bafdcb7c9d13dd09863dec4d1ee437b63182a61efd0437226",
+      "sourceHash": "6e9427fbbc8c3c6f0c650b00e41d7a51099cc7dad409afe3c6196ea1c7e1901f",
       "targetHash": "b98c5da077252d3129f289633549e0fd38292c82137a4ad36942ef340390c0eb",
       "status": "draft",
       "humanReviewed": false,
@@ -2806,8 +2806,8 @@
     {
       "id": "eksi-adaptation-of-the-decision-to-forgive",
       "locale": "tr",
-      "sourceHash": "0cbe152a0f4cb242fe7e4dfcb4e8dd6cbc5a3cfa7e5794312aa3a98c2bc283bc",
-      "targetHash": "0cbe152a0f4cb242fe7e4dfcb4e8dd6cbc5a3cfa7e5794312aa3a98c2bc283bc",
+      "sourceHash": "3ae0470a6c7419c9af8ee4b977b4d6d8b0ffa0b6e552d99275a7199229e8b7b9",
+      "targetHash": "3ae0470a6c7419c9af8ee4b977b4d6d8b0ffa0b6e552d99275a7199229e8b7b9",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -2820,7 +2820,7 @@
     {
       "id": "eksi-adaptation-of-the-decision-to-forgive",
       "locale": "en",
-      "sourceHash": "0cbe152a0f4cb242fe7e4dfcb4e8dd6cbc5a3cfa7e5794312aa3a98c2bc283bc",
+      "sourceHash": "3ae0470a6c7419c9af8ee4b977b4d6d8b0ffa0b6e552d99275a7199229e8b7b9",
       "targetHash": "02e55777786b3b7cd7f680fec21b0ee5da51693ff77d8c44dc550cbe0ae34d73",
       "status": "draft",
       "humanReviewed": false,
@@ -2834,7 +2834,7 @@
     {
       "id": "eksi-adaptation-of-the-decision-to-forgive",
       "locale": "de",
-      "sourceHash": "0cbe152a0f4cb242fe7e4dfcb4e8dd6cbc5a3cfa7e5794312aa3a98c2bc283bc",
+      "sourceHash": "3ae0470a6c7419c9af8ee4b977b4d6d8b0ffa0b6e552d99275a7199229e8b7b9",
       "targetHash": "9866e64981a2c4981216bc92eef2c14999ea3a878de019a9ec0e4eb8ffb27dfb",
       "status": "draft",
       "humanReviewed": false,
@@ -2848,7 +2848,7 @@
     {
       "id": "eksi-adaptation-of-the-decision-to-forgive",
       "locale": "zh",
-      "sourceHash": "0cbe152a0f4cb242fe7e4dfcb4e8dd6cbc5a3cfa7e5794312aa3a98c2bc283bc",
+      "sourceHash": "3ae0470a6c7419c9af8ee4b977b4d6d8b0ffa0b6e552d99275a7199229e8b7b9",
       "targetHash": "491cf2dde99048062f1270f00da575dac3c6793f7665a632c17686f4262b8d9f",
       "status": "draft",
       "humanReviewed": false,
@@ -2862,7 +2862,7 @@
     {
       "id": "eksi-adaptation-of-the-decision-to-forgive",
       "locale": "ru",
-      "sourceHash": "0cbe152a0f4cb242fe7e4dfcb4e8dd6cbc5a3cfa7e5794312aa3a98c2bc283bc",
+      "sourceHash": "3ae0470a6c7419c9af8ee4b977b4d6d8b0ffa0b6e552d99275a7199229e8b7b9",
       "targetHash": "e0bd1d8bac3f2f1b77798fb1f5135d01be37ae09d3ddf00cb73e349804907834",
       "status": "draft",
       "humanReviewed": false,
@@ -2876,7 +2876,7 @@
     {
       "id": "eksi-adaptation-of-the-decision-to-forgive",
       "locale": "ar",
-      "sourceHash": "0cbe152a0f4cb242fe7e4dfcb4e8dd6cbc5a3cfa7e5794312aa3a98c2bc283bc",
+      "sourceHash": "3ae0470a6c7419c9af8ee4b977b4d6d8b0ffa0b6e552d99275a7199229e8b7b9",
       "targetHash": "e24cb1b8bd7045f8aeeb56a8b5025df43fe555c4b3af9718c8b352ae35770c06",
       "status": "draft",
       "humanReviewed": false,
@@ -2890,7 +2890,7 @@
     {
       "id": "eksi-adaptation-of-the-decision-to-forgive",
       "locale": "id",
-      "sourceHash": "0cbe152a0f4cb242fe7e4dfcb4e8dd6cbc5a3cfa7e5794312aa3a98c2bc283bc",
+      "sourceHash": "3ae0470a6c7419c9af8ee4b977b4d6d8b0ffa0b6e552d99275a7199229e8b7b9",
       "targetHash": "f1ff34b27dcfdf417ad4f84264d815c740577ee077c9303fec824a469d8f1501",
       "status": "draft",
       "humanReviewed": false,
@@ -2904,7 +2904,7 @@
     {
       "id": "eksi-adaptation-of-the-decision-to-forgive",
       "locale": "ms",
-      "sourceHash": "0cbe152a0f4cb242fe7e4dfcb4e8dd6cbc5a3cfa7e5794312aa3a98c2bc283bc",
+      "sourceHash": "3ae0470a6c7419c9af8ee4b977b4d6d8b0ffa0b6e552d99275a7199229e8b7b9",
       "targetHash": "67f55ac1e0dcfa6506aac00fef27e6f17ec98b44f600b017f76de93a90b3f6e8",
       "status": "draft",
       "humanReviewed": false,
@@ -2918,8 +2918,8 @@
     {
       "id": "eksi-the-intersection-of-faith-and-pornography",
       "locale": "tr",
-      "sourceHash": "5536261a80ff99dbe5498823f5359f67ffa21f63c809e83a91e0d64c2c192966",
-      "targetHash": "5536261a80ff99dbe5498823f5359f67ffa21f63c809e83a91e0d64c2c192966",
+      "sourceHash": "304d47df74b5efab5c13c712013f6a2584ae07c74a745505ab08d8ab325b1d82",
+      "targetHash": "304d47df74b5efab5c13c712013f6a2584ae07c74a745505ab08d8ab325b1d82",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -2932,7 +2932,7 @@
     {
       "id": "eksi-the-intersection-of-faith-and-pornography",
       "locale": "en",
-      "sourceHash": "5536261a80ff99dbe5498823f5359f67ffa21f63c809e83a91e0d64c2c192966",
+      "sourceHash": "304d47df74b5efab5c13c712013f6a2584ae07c74a745505ab08d8ab325b1d82",
       "targetHash": "ecdf18adf7ebe3b3342ddbd19f9ff88060cc3f9294176ecdcd5e059a12912269",
       "status": "draft",
       "humanReviewed": false,
@@ -2946,7 +2946,7 @@
     {
       "id": "eksi-the-intersection-of-faith-and-pornography",
       "locale": "de",
-      "sourceHash": "5536261a80ff99dbe5498823f5359f67ffa21f63c809e83a91e0d64c2c192966",
+      "sourceHash": "304d47df74b5efab5c13c712013f6a2584ae07c74a745505ab08d8ab325b1d82",
       "targetHash": "088fd330c990cc015f4c6aab23dfe8f4dd0d5b5698fb2b6b4ab62378915448a2",
       "status": "draft",
       "humanReviewed": false,
@@ -2960,7 +2960,7 @@
     {
       "id": "eksi-the-intersection-of-faith-and-pornography",
       "locale": "zh",
-      "sourceHash": "5536261a80ff99dbe5498823f5359f67ffa21f63c809e83a91e0d64c2c192966",
+      "sourceHash": "304d47df74b5efab5c13c712013f6a2584ae07c74a745505ab08d8ab325b1d82",
       "targetHash": "a982fb70da0c1c715eb20f133ce824fc65d1f3ae73cd65603fce1c9b4979dc3f",
       "status": "draft",
       "humanReviewed": false,
@@ -2974,7 +2974,7 @@
     {
       "id": "eksi-the-intersection-of-faith-and-pornography",
       "locale": "ru",
-      "sourceHash": "5536261a80ff99dbe5498823f5359f67ffa21f63c809e83a91e0d64c2c192966",
+      "sourceHash": "304d47df74b5efab5c13c712013f6a2584ae07c74a745505ab08d8ab325b1d82",
       "targetHash": "6be92f29e9234bef3e31608912966d89616adfd38baf7461b4e2bfa69cf15145",
       "status": "draft",
       "humanReviewed": false,
@@ -2988,7 +2988,7 @@
     {
       "id": "eksi-the-intersection-of-faith-and-pornography",
       "locale": "ar",
-      "sourceHash": "5536261a80ff99dbe5498823f5359f67ffa21f63c809e83a91e0d64c2c192966",
+      "sourceHash": "304d47df74b5efab5c13c712013f6a2584ae07c74a745505ab08d8ab325b1d82",
       "targetHash": "97fe6619f472c4567aeac6f66c1f1db1dc8b028d4de41a863b90ec79700d1471",
       "status": "draft",
       "humanReviewed": false,
@@ -3002,7 +3002,7 @@
     {
       "id": "eksi-the-intersection-of-faith-and-pornography",
       "locale": "id",
-      "sourceHash": "5536261a80ff99dbe5498823f5359f67ffa21f63c809e83a91e0d64c2c192966",
+      "sourceHash": "304d47df74b5efab5c13c712013f6a2584ae07c74a745505ab08d8ab325b1d82",
       "targetHash": "713a786cdffa089608fd872ebba93165dcc21306cbaff2a7bdbcbb5031e602a8",
       "status": "draft",
       "humanReviewed": false,
@@ -3016,7 +3016,7 @@
     {
       "id": "eksi-the-intersection-of-faith-and-pornography",
       "locale": "ms",
-      "sourceHash": "5536261a80ff99dbe5498823f5359f67ffa21f63c809e83a91e0d64c2c192966",
+      "sourceHash": "304d47df74b5efab5c13c712013f6a2584ae07c74a745505ab08d8ab325b1d82",
       "targetHash": "de21448221fa14af3c1159a20a601f6f1a75b28f1d4bf66acc91d057a061096c",
       "status": "draft",
       "humanReviewed": false,
@@ -3030,8 +3030,8 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "tr",
-      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
-      "targetHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
+      "sourceHash": "01b082ec0ccd8d04d8ef9dd32c11363aeea341f056d8249ebe12f1e5caf5b8c7",
+      "targetHash": "01b082ec0ccd8d04d8ef9dd32c11363aeea341f056d8249ebe12f1e5caf5b8c7",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -3044,7 +3044,7 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "en",
-      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
+      "sourceHash": "01b082ec0ccd8d04d8ef9dd32c11363aeea341f056d8249ebe12f1e5caf5b8c7",
       "targetHash": "0f3856c0547c3a8375681a41dbb8850a36e648b3634a9d23ef7012c5ba4af75d",
       "status": "draft",
       "humanReviewed": false,
@@ -3058,7 +3058,7 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "de",
-      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
+      "sourceHash": "01b082ec0ccd8d04d8ef9dd32c11363aeea341f056d8249ebe12f1e5caf5b8c7",
       "targetHash": "0ee1ea62cfd556f721677e978558258d6a1b7cd3028f96f5fbdae2c38471a346",
       "status": "draft",
       "humanReviewed": false,
@@ -3072,7 +3072,7 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "zh",
-      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
+      "sourceHash": "01b082ec0ccd8d04d8ef9dd32c11363aeea341f056d8249ebe12f1e5caf5b8c7",
       "targetHash": "641c4690b9e31eb997b60d06c0a9d79848e99c5f3816d5793bad6f579d6dc9a8",
       "status": "draft",
       "humanReviewed": false,
@@ -3086,7 +3086,7 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "ru",
-      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
+      "sourceHash": "01b082ec0ccd8d04d8ef9dd32c11363aeea341f056d8249ebe12f1e5caf5b8c7",
       "targetHash": "8f8f66ef763d64310087c875f39176cb688ba3e90394e90b9caba177ec4e4fe7",
       "status": "draft",
       "humanReviewed": false,
@@ -3100,7 +3100,7 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "ar",
-      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
+      "sourceHash": "01b082ec0ccd8d04d8ef9dd32c11363aeea341f056d8249ebe12f1e5caf5b8c7",
       "targetHash": "982199579ffb6bcfe2e3b122f6f8c3736a863b9e79baa9e103ec67f114d46701",
       "status": "draft",
       "humanReviewed": false,
@@ -3114,7 +3114,7 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "id",
-      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
+      "sourceHash": "01b082ec0ccd8d04d8ef9dd32c11363aeea341f056d8249ebe12f1e5caf5b8c7",
       "targetHash": "92361ea08bebae24cbf654309aa7202e72b6e4cf6696aa159aeb4a3bca4de55f",
       "status": "draft",
       "humanReviewed": false,
@@ -3128,7 +3128,7 @@
     {
       "id": "eksi-a-spiritual-touch-on-family-resilience",
       "locale": "ms",
-      "sourceHash": "048172415c9bfa1126f48901203a94ff10a6e1495049a84a81849980561d1133",
+      "sourceHash": "01b082ec0ccd8d04d8ef9dd32c11363aeea341f056d8249ebe12f1e5caf5b8c7",
       "targetHash": "331c9945a7e77e05cd7d566c57f5cb567448d291f0ffa696184e3791114aaa96",
       "status": "draft",
       "humanReviewed": false,
@@ -3142,8 +3142,8 @@
     {
       "id": "eksi-through-the-inner-world-development-of",
       "locale": "tr",
-      "sourceHash": "ccd6fa1bcc87bd4679be42e0f683684f8f002f47f746a088c91106ca27e09963",
-      "targetHash": "ccd6fa1bcc87bd4679be42e0f683684f8f002f47f746a088c91106ca27e09963",
+      "sourceHash": "cf7d5af3c364bf35a796e3ef16c1eb80d4b675d7aa4ab72724c1dd1b755cb0d5",
+      "targetHash": "cf7d5af3c364bf35a796e3ef16c1eb80d4b675d7aa4ab72724c1dd1b755cb0d5",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -3156,7 +3156,7 @@
     {
       "id": "eksi-through-the-inner-world-development-of",
       "locale": "en",
-      "sourceHash": "ccd6fa1bcc87bd4679be42e0f683684f8f002f47f746a088c91106ca27e09963",
+      "sourceHash": "cf7d5af3c364bf35a796e3ef16c1eb80d4b675d7aa4ab72724c1dd1b755cb0d5",
       "targetHash": "916bc12bfc21c4e4584113f35c30851dd30676838b5716f71a09a1b89e7a0d25",
       "status": "draft",
       "humanReviewed": false,
@@ -3170,7 +3170,7 @@
     {
       "id": "eksi-through-the-inner-world-development-of",
       "locale": "de",
-      "sourceHash": "ccd6fa1bcc87bd4679be42e0f683684f8f002f47f746a088c91106ca27e09963",
+      "sourceHash": "cf7d5af3c364bf35a796e3ef16c1eb80d4b675d7aa4ab72724c1dd1b755cb0d5",
       "targetHash": "f654e62410bfd54b3016ede49f8fa1c2b99ec0cc54359c2e74201130269c175e",
       "status": "draft",
       "humanReviewed": false,
@@ -3184,7 +3184,7 @@
     {
       "id": "eksi-through-the-inner-world-development-of",
       "locale": "zh",
-      "sourceHash": "ccd6fa1bcc87bd4679be42e0f683684f8f002f47f746a088c91106ca27e09963",
+      "sourceHash": "cf7d5af3c364bf35a796e3ef16c1eb80d4b675d7aa4ab72724c1dd1b755cb0d5",
       "targetHash": "3da65a5d2d8e63e06b33a72cd0b84b1f56f7f3baa4e8cc15b5634fd7050bc9bc",
       "status": "draft",
       "humanReviewed": false,
@@ -3198,7 +3198,7 @@
     {
       "id": "eksi-through-the-inner-world-development-of",
       "locale": "ru",
-      "sourceHash": "ccd6fa1bcc87bd4679be42e0f683684f8f002f47f746a088c91106ca27e09963",
+      "sourceHash": "cf7d5af3c364bf35a796e3ef16c1eb80d4b675d7aa4ab72724c1dd1b755cb0d5",
       "targetHash": "36bb59becea9c6fcb01e540bef6c1ca98b86e44e23e85752ff1e7b90fb54b8e0",
       "status": "draft",
       "humanReviewed": false,
@@ -3212,7 +3212,7 @@
     {
       "id": "eksi-through-the-inner-world-development-of",
       "locale": "ar",
-      "sourceHash": "ccd6fa1bcc87bd4679be42e0f683684f8f002f47f746a088c91106ca27e09963",
+      "sourceHash": "cf7d5af3c364bf35a796e3ef16c1eb80d4b675d7aa4ab72724c1dd1b755cb0d5",
       "targetHash": "b7be19273b105ecc2db0c758ead8b9a2e4b38788733e58ea4710d8992793c8ca",
       "status": "draft",
       "humanReviewed": false,
@@ -3226,7 +3226,7 @@
     {
       "id": "eksi-through-the-inner-world-development-of",
       "locale": "id",
-      "sourceHash": "ccd6fa1bcc87bd4679be42e0f683684f8f002f47f746a088c91106ca27e09963",
+      "sourceHash": "cf7d5af3c364bf35a796e3ef16c1eb80d4b675d7aa4ab72724c1dd1b755cb0d5",
       "targetHash": "ce0ea87b31afbe4dc0e575237eb8818ee911bec516e034d109e02b8a6c9d386f",
       "status": "draft",
       "humanReviewed": false,
@@ -3240,7 +3240,7 @@
     {
       "id": "eksi-through-the-inner-world-development-of",
       "locale": "ms",
-      "sourceHash": "ccd6fa1bcc87bd4679be42e0f683684f8f002f47f746a088c91106ca27e09963",
+      "sourceHash": "cf7d5af3c364bf35a796e3ef16c1eb80d4b675d7aa4ab72724c1dd1b755cb0d5",
       "targetHash": "343a5de145b57b6bef3d150240beb97da3d195945b941828a65d77324120bf8f",
       "status": "draft",
       "humanReviewed": false,
@@ -3254,8 +3254,8 @@
     {
       "id": "eksi-well-being-and-spiritual-intelligence-predict",
       "locale": "tr",
-      "sourceHash": "029c08f3da95d681e5fdaa8c75bd5ea75103049e1e3c8be8578847f65c912a64",
-      "targetHash": "029c08f3da95d681e5fdaa8c75bd5ea75103049e1e3c8be8578847f65c912a64",
+      "sourceHash": "32fe9a836c108d8a5870acb9e83d350a271c71bb2ca4e56041758dd38a2e1825",
+      "targetHash": "32fe9a836c108d8a5870acb9e83d350a271c71bb2ca4e56041758dd38a2e1825",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -3268,7 +3268,7 @@
     {
       "id": "eksi-well-being-and-spiritual-intelligence-predict",
       "locale": "en",
-      "sourceHash": "029c08f3da95d681e5fdaa8c75bd5ea75103049e1e3c8be8578847f65c912a64",
+      "sourceHash": "32fe9a836c108d8a5870acb9e83d350a271c71bb2ca4e56041758dd38a2e1825",
       "targetHash": "4304d2f4f59dc8f785bbf3e79917e25c75a8ead18c7c367efd1c0f9b2e76c324",
       "status": "draft",
       "humanReviewed": false,
@@ -3282,7 +3282,7 @@
     {
       "id": "eksi-well-being-and-spiritual-intelligence-predict",
       "locale": "de",
-      "sourceHash": "029c08f3da95d681e5fdaa8c75bd5ea75103049e1e3c8be8578847f65c912a64",
+      "sourceHash": "32fe9a836c108d8a5870acb9e83d350a271c71bb2ca4e56041758dd38a2e1825",
       "targetHash": "0977a4cc0ffceac262fffec9ae0f25caa2c00609ffb95f9e47cd28511dbe5cfd",
       "status": "draft",
       "humanReviewed": false,
@@ -3296,7 +3296,7 @@
     {
       "id": "eksi-well-being-and-spiritual-intelligence-predict",
       "locale": "zh",
-      "sourceHash": "029c08f3da95d681e5fdaa8c75bd5ea75103049e1e3c8be8578847f65c912a64",
+      "sourceHash": "32fe9a836c108d8a5870acb9e83d350a271c71bb2ca4e56041758dd38a2e1825",
       "targetHash": "49a2954417d48835dcbd2707ecd0e0650041d430645238009b7b66cd040d68f0",
       "status": "draft",
       "humanReviewed": false,
@@ -3310,7 +3310,7 @@
     {
       "id": "eksi-well-being-and-spiritual-intelligence-predict",
       "locale": "ru",
-      "sourceHash": "029c08f3da95d681e5fdaa8c75bd5ea75103049e1e3c8be8578847f65c912a64",
+      "sourceHash": "32fe9a836c108d8a5870acb9e83d350a271c71bb2ca4e56041758dd38a2e1825",
       "targetHash": "bdb93531bf3e5f7e2587b2eeac6fe8271b9a95d6ac8dfc5701d31580a9c10ea2",
       "status": "draft",
       "humanReviewed": false,
@@ -3324,7 +3324,7 @@
     {
       "id": "eksi-well-being-and-spiritual-intelligence-predict",
       "locale": "ar",
-      "sourceHash": "029c08f3da95d681e5fdaa8c75bd5ea75103049e1e3c8be8578847f65c912a64",
+      "sourceHash": "32fe9a836c108d8a5870acb9e83d350a271c71bb2ca4e56041758dd38a2e1825",
       "targetHash": "5501622e388b616dfb0cce03e10e58a5d9ff0689bebdc14ab887a469f448a1c8",
       "status": "draft",
       "humanReviewed": false,
@@ -3338,7 +3338,7 @@
     {
       "id": "eksi-well-being-and-spiritual-intelligence-predict",
       "locale": "id",
-      "sourceHash": "029c08f3da95d681e5fdaa8c75bd5ea75103049e1e3c8be8578847f65c912a64",
+      "sourceHash": "32fe9a836c108d8a5870acb9e83d350a271c71bb2ca4e56041758dd38a2e1825",
       "targetHash": "d4bd42ebadcce84045c6a9cd33e4e23be5fad4161fdfe3465bb4c176ae91e625",
       "status": "draft",
       "humanReviewed": false,
@@ -3352,7 +3352,7 @@
     {
       "id": "eksi-well-being-and-spiritual-intelligence-predict",
       "locale": "ms",
-      "sourceHash": "029c08f3da95d681e5fdaa8c75bd5ea75103049e1e3c8be8578847f65c912a64",
+      "sourceHash": "32fe9a836c108d8a5870acb9e83d350a271c71bb2ca4e56041758dd38a2e1825",
       "targetHash": "d65e6ea1ca5b618564cf9aeb5b10a7821644c45e6af31dec7fab232d8e28db93",
       "status": "draft",
       "humanReviewed": false,
@@ -3366,8 +3366,8 @@
     {
       "id": "eksi-the-mediator-role-of-forgiveness-between",
       "locale": "tr",
-      "sourceHash": "b32db4cb382ed20918182a3f79ff29d8cab1c31f8991893f40e33c4ae2bd58fc",
-      "targetHash": "b32db4cb382ed20918182a3f79ff29d8cab1c31f8991893f40e33c4ae2bd58fc",
+      "sourceHash": "87a01e3bb10b6767c0ca26461c26b1df391ba6412a9fba00cbeff406411e471c",
+      "targetHash": "87a01e3bb10b6767c0ca26461c26b1df391ba6412a9fba00cbeff406411e471c",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -3380,7 +3380,7 @@
     {
       "id": "eksi-the-mediator-role-of-forgiveness-between",
       "locale": "en",
-      "sourceHash": "b32db4cb382ed20918182a3f79ff29d8cab1c31f8991893f40e33c4ae2bd58fc",
+      "sourceHash": "87a01e3bb10b6767c0ca26461c26b1df391ba6412a9fba00cbeff406411e471c",
       "targetHash": "3d9bef5f2f95f41dc95544324cd9b63aa7d471fe525176680b3d80cfe134e07b",
       "status": "draft",
       "humanReviewed": false,
@@ -3394,7 +3394,7 @@
     {
       "id": "eksi-the-mediator-role-of-forgiveness-between",
       "locale": "de",
-      "sourceHash": "b32db4cb382ed20918182a3f79ff29d8cab1c31f8991893f40e33c4ae2bd58fc",
+      "sourceHash": "87a01e3bb10b6767c0ca26461c26b1df391ba6412a9fba00cbeff406411e471c",
       "targetHash": "45e7a246c3cedd8bbf89745da7d85a3c659dd11bd686f51aaa7fd7b6fd9bb055",
       "status": "draft",
       "humanReviewed": false,
@@ -3408,7 +3408,7 @@
     {
       "id": "eksi-the-mediator-role-of-forgiveness-between",
       "locale": "zh",
-      "sourceHash": "b32db4cb382ed20918182a3f79ff29d8cab1c31f8991893f40e33c4ae2bd58fc",
+      "sourceHash": "87a01e3bb10b6767c0ca26461c26b1df391ba6412a9fba00cbeff406411e471c",
       "targetHash": "e2e7c5b318de678e7ba159d709d6c22f9a6a287fbfc25e459ce7516bb9714c56",
       "status": "draft",
       "humanReviewed": false,
@@ -3422,7 +3422,7 @@
     {
       "id": "eksi-the-mediator-role-of-forgiveness-between",
       "locale": "ru",
-      "sourceHash": "b32db4cb382ed20918182a3f79ff29d8cab1c31f8991893f40e33c4ae2bd58fc",
+      "sourceHash": "87a01e3bb10b6767c0ca26461c26b1df391ba6412a9fba00cbeff406411e471c",
       "targetHash": "432f7f859452631bddc48bf8b0e14924fa03567eecb8b2a72010d9f2a8c9cdbc",
       "status": "draft",
       "humanReviewed": false,
@@ -3436,7 +3436,7 @@
     {
       "id": "eksi-the-mediator-role-of-forgiveness-between",
       "locale": "ar",
-      "sourceHash": "b32db4cb382ed20918182a3f79ff29d8cab1c31f8991893f40e33c4ae2bd58fc",
+      "sourceHash": "87a01e3bb10b6767c0ca26461c26b1df391ba6412a9fba00cbeff406411e471c",
       "targetHash": "1feaf841abfd9ac188c926cde7f98b4c5f941211bcf7426477a0eec8da4395d0",
       "status": "draft",
       "humanReviewed": false,
@@ -3450,7 +3450,7 @@
     {
       "id": "eksi-the-mediator-role-of-forgiveness-between",
       "locale": "id",
-      "sourceHash": "b32db4cb382ed20918182a3f79ff29d8cab1c31f8991893f40e33c4ae2bd58fc",
+      "sourceHash": "87a01e3bb10b6767c0ca26461c26b1df391ba6412a9fba00cbeff406411e471c",
       "targetHash": "b4462e845900e3dce61ec8cb88a8a04c170746c7c998d79af2393bf952c164e1",
       "status": "draft",
       "humanReviewed": false,
@@ -3464,7 +3464,7 @@
     {
       "id": "eksi-the-mediator-role-of-forgiveness-between",
       "locale": "ms",
-      "sourceHash": "b32db4cb382ed20918182a3f79ff29d8cab1c31f8991893f40e33c4ae2bd58fc",
+      "sourceHash": "87a01e3bb10b6767c0ca26461c26b1df391ba6412a9fba00cbeff406411e471c",
       "targetHash": "3a4e949ae92ef35b02170f80866ca3293158232557a2b280dd94b8793c546bb8",
       "status": "draft",
       "humanReviewed": false,
@@ -3478,8 +3478,8 @@
     {
       "id": "eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki",
       "locale": "tr",
-      "sourceHash": "f410fe95ad414c0a7f249e717574d8271d2da475a6189299285f1cfeec80913c",
-      "targetHash": "f410fe95ad414c0a7f249e717574d8271d2da475a6189299285f1cfeec80913c",
+      "sourceHash": "558d13d157a0953c5bb32565f7ddfe31a78fd4fc0ebba349101a50abf95b518d",
+      "targetHash": "558d13d157a0953c5bb32565f7ddfe31a78fd4fc0ebba349101a50abf95b518d",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -3492,7 +3492,7 @@
     {
       "id": "eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki",
       "locale": "en",
-      "sourceHash": "f410fe95ad414c0a7f249e717574d8271d2da475a6189299285f1cfeec80913c",
+      "sourceHash": "558d13d157a0953c5bb32565f7ddfe31a78fd4fc0ebba349101a50abf95b518d",
       "targetHash": "53dfd81493f477671f8cac3fd8afb92a9ae135896796cef75ea145ab849903c6",
       "status": "draft",
       "humanReviewed": false,
@@ -3506,7 +3506,7 @@
     {
       "id": "eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki",
       "locale": "de",
-      "sourceHash": "f410fe95ad414c0a7f249e717574d8271d2da475a6189299285f1cfeec80913c",
+      "sourceHash": "558d13d157a0953c5bb32565f7ddfe31a78fd4fc0ebba349101a50abf95b518d",
       "targetHash": "7dd9773f23d9a13d8b0e1fc9ce52dad15049f9092a0567825eb15b3bcf5d431e",
       "status": "draft",
       "humanReviewed": false,
@@ -3520,7 +3520,7 @@
     {
       "id": "eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki",
       "locale": "zh",
-      "sourceHash": "f410fe95ad414c0a7f249e717574d8271d2da475a6189299285f1cfeec80913c",
+      "sourceHash": "558d13d157a0953c5bb32565f7ddfe31a78fd4fc0ebba349101a50abf95b518d",
       "targetHash": "771fc0d6e2be40d15976959f060f22ebf3767c4dc5580c90de95635489dc4a91",
       "status": "draft",
       "humanReviewed": false,
@@ -3534,7 +3534,7 @@
     {
       "id": "eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki",
       "locale": "ru",
-      "sourceHash": "f410fe95ad414c0a7f249e717574d8271d2da475a6189299285f1cfeec80913c",
+      "sourceHash": "558d13d157a0953c5bb32565f7ddfe31a78fd4fc0ebba349101a50abf95b518d",
       "targetHash": "4d9321bdc60af5284e59560d7324fb222ec87080545ca3fd3df1d898580cfa5f",
       "status": "draft",
       "humanReviewed": false,
@@ -3548,7 +3548,7 @@
     {
       "id": "eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki",
       "locale": "ar",
-      "sourceHash": "f410fe95ad414c0a7f249e717574d8271d2da475a6189299285f1cfeec80913c",
+      "sourceHash": "558d13d157a0953c5bb32565f7ddfe31a78fd4fc0ebba349101a50abf95b518d",
       "targetHash": "e9dcfead19fcb4b91cd22d86545f1197688a8f7e0c2c379a5f7fd9c83019ce2a",
       "status": "draft",
       "humanReviewed": false,
@@ -3562,7 +3562,7 @@
     {
       "id": "eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki",
       "locale": "id",
-      "sourceHash": "f410fe95ad414c0a7f249e717574d8271d2da475a6189299285f1cfeec80913c",
+      "sourceHash": "558d13d157a0953c5bb32565f7ddfe31a78fd4fc0ebba349101a50abf95b518d",
       "targetHash": "84c8266e2e55532b05458c246b9ba5a2fd69550d32dbf042f0706957d1139509",
       "status": "draft",
       "humanReviewed": false,
@@ -3576,7 +3576,7 @@
     {
       "id": "eksi-genclerde-maneviyat-ve-siddet-egilimi-arasindaki",
       "locale": "ms",
-      "sourceHash": "f410fe95ad414c0a7f249e717574d8271d2da475a6189299285f1cfeec80913c",
+      "sourceHash": "558d13d157a0953c5bb32565f7ddfe31a78fd4fc0ebba349101a50abf95b518d",
       "targetHash": "00c6bcdee8a98f6213671c385c7a6000ede187167c3c88fef7cf30d413c6afac",
       "status": "draft",
       "humanReviewed": false,
@@ -3590,8 +3590,8 @@
     {
       "id": "eksi-spiritually-oriented-couple-marriage-and-family",
       "locale": "tr",
-      "sourceHash": "f05638301b557e0372019a8b10d4f277eb5435ce29210a698159b8c1e6781561",
-      "targetHash": "f05638301b557e0372019a8b10d4f277eb5435ce29210a698159b8c1e6781561",
+      "sourceHash": "ffb5477209b435486d7243400d7c8f3c00de114f847f6eaa6d00853279e76a7c",
+      "targetHash": "ffb5477209b435486d7243400d7c8f3c00de114f847f6eaa6d00853279e76a7c",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -3604,7 +3604,7 @@
     {
       "id": "eksi-spiritually-oriented-couple-marriage-and-family",
       "locale": "en",
-      "sourceHash": "f05638301b557e0372019a8b10d4f277eb5435ce29210a698159b8c1e6781561",
+      "sourceHash": "ffb5477209b435486d7243400d7c8f3c00de114f847f6eaa6d00853279e76a7c",
       "targetHash": "3b1c5d0bc9dedceebb1db8e3e37d2daa8215fc581b6846eb91a3102afbc84fe0",
       "status": "draft",
       "humanReviewed": false,
@@ -3618,7 +3618,7 @@
     {
       "id": "eksi-spiritually-oriented-couple-marriage-and-family",
       "locale": "de",
-      "sourceHash": "f05638301b557e0372019a8b10d4f277eb5435ce29210a698159b8c1e6781561",
+      "sourceHash": "ffb5477209b435486d7243400d7c8f3c00de114f847f6eaa6d00853279e76a7c",
       "targetHash": "e78ced97cb2f183db7cecb1e20b367060516f91b36a287f77c31814f90892fa4",
       "status": "draft",
       "humanReviewed": false,
@@ -3632,7 +3632,7 @@
     {
       "id": "eksi-spiritually-oriented-couple-marriage-and-family",
       "locale": "zh",
-      "sourceHash": "f05638301b557e0372019a8b10d4f277eb5435ce29210a698159b8c1e6781561",
+      "sourceHash": "ffb5477209b435486d7243400d7c8f3c00de114f847f6eaa6d00853279e76a7c",
       "targetHash": "55c54be405cb688c8c6f9b71edc89ce72c5d40e5150b0d886afb2a9b6d085aca",
       "status": "draft",
       "humanReviewed": false,
@@ -3646,7 +3646,7 @@
     {
       "id": "eksi-spiritually-oriented-couple-marriage-and-family",
       "locale": "ru",
-      "sourceHash": "f05638301b557e0372019a8b10d4f277eb5435ce29210a698159b8c1e6781561",
+      "sourceHash": "ffb5477209b435486d7243400d7c8f3c00de114f847f6eaa6d00853279e76a7c",
       "targetHash": "fbd3d873e6dd88f2754934ebaa0b54257ff82a2bd8c92c87e043311492d7c802",
       "status": "draft",
       "humanReviewed": false,
@@ -3660,7 +3660,7 @@
     {
       "id": "eksi-spiritually-oriented-couple-marriage-and-family",
       "locale": "ar",
-      "sourceHash": "f05638301b557e0372019a8b10d4f277eb5435ce29210a698159b8c1e6781561",
+      "sourceHash": "ffb5477209b435486d7243400d7c8f3c00de114f847f6eaa6d00853279e76a7c",
       "targetHash": "fa5b9090d90e71b5c5590e9f919e4dd898318b53e71eaced05e82979e2d36859",
       "status": "draft",
       "humanReviewed": false,
@@ -3674,7 +3674,7 @@
     {
       "id": "eksi-spiritually-oriented-couple-marriage-and-family",
       "locale": "id",
-      "sourceHash": "f05638301b557e0372019a8b10d4f277eb5435ce29210a698159b8c1e6781561",
+      "sourceHash": "ffb5477209b435486d7243400d7c8f3c00de114f847f6eaa6d00853279e76a7c",
       "targetHash": "f556c2fb00a10284f9c94eb53640a9e9a49c7197c7298dcd1713332e07a6af30",
       "status": "draft",
       "humanReviewed": false,
@@ -3688,7 +3688,7 @@
     {
       "id": "eksi-spiritually-oriented-couple-marriage-and-family",
       "locale": "ms",
-      "sourceHash": "f05638301b557e0372019a8b10d4f277eb5435ce29210a698159b8c1e6781561",
+      "sourceHash": "ffb5477209b435486d7243400d7c8f3c00de114f847f6eaa6d00853279e76a7c",
       "targetHash": "c04c41754613c936b67c9e2c3918e000a586259133474528c1d8738b3ae26eab",
       "status": "draft",
       "humanReviewed": false,
@@ -3702,8 +3702,8 @@
     {
       "id": "eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi",
       "locale": "tr",
-      "sourceHash": "919dde41f94ef0019a577f3d3155c695c9a98caf7165b556644f15eb07cdeedd",
-      "targetHash": "919dde41f94ef0019a577f3d3155c695c9a98caf7165b556644f15eb07cdeedd",
+      "sourceHash": "eb464a2cceba58dd48835cc59074b93210daa71c37b482698f8f79b04bc1c98a",
+      "targetHash": "eb464a2cceba58dd48835cc59074b93210daa71c37b482698f8f79b04bc1c98a",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -3716,7 +3716,7 @@
     {
       "id": "eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi",
       "locale": "en",
-      "sourceHash": "919dde41f94ef0019a577f3d3155c695c9a98caf7165b556644f15eb07cdeedd",
+      "sourceHash": "eb464a2cceba58dd48835cc59074b93210daa71c37b482698f8f79b04bc1c98a",
       "targetHash": "0602291d3afb2be66d4ad12023d10d230ff918b7c6760440899235be2d7a958d",
       "status": "draft",
       "humanReviewed": false,
@@ -3730,7 +3730,7 @@
     {
       "id": "eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi",
       "locale": "de",
-      "sourceHash": "919dde41f94ef0019a577f3d3155c695c9a98caf7165b556644f15eb07cdeedd",
+      "sourceHash": "eb464a2cceba58dd48835cc59074b93210daa71c37b482698f8f79b04bc1c98a",
       "targetHash": "75cb2f8b21c8633b719281dcb846ccadf98f600456d606d3105971b2aca4485b",
       "status": "draft",
       "humanReviewed": false,
@@ -3744,7 +3744,7 @@
     {
       "id": "eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi",
       "locale": "zh",
-      "sourceHash": "919dde41f94ef0019a577f3d3155c695c9a98caf7165b556644f15eb07cdeedd",
+      "sourceHash": "eb464a2cceba58dd48835cc59074b93210daa71c37b482698f8f79b04bc1c98a",
       "targetHash": "e20e29ac2f88a8fd56ba24d19ddecfa0ed8d104207ef0126cb2c55350e67f27c",
       "status": "draft",
       "humanReviewed": false,
@@ -3758,7 +3758,7 @@
     {
       "id": "eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi",
       "locale": "ru",
-      "sourceHash": "919dde41f94ef0019a577f3d3155c695c9a98caf7165b556644f15eb07cdeedd",
+      "sourceHash": "eb464a2cceba58dd48835cc59074b93210daa71c37b482698f8f79b04bc1c98a",
       "targetHash": "e7626a4fe9325911672e3442876af7a95dd618a655d51ed809fd8a1d0456b83a",
       "status": "draft",
       "humanReviewed": false,
@@ -3772,7 +3772,7 @@
     {
       "id": "eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi",
       "locale": "ar",
-      "sourceHash": "919dde41f94ef0019a577f3d3155c695c9a98caf7165b556644f15eb07cdeedd",
+      "sourceHash": "eb464a2cceba58dd48835cc59074b93210daa71c37b482698f8f79b04bc1c98a",
       "targetHash": "00621c1556b88a1b199a32d1c95e91232a53063e57335feee4062adc73385027",
       "status": "draft",
       "humanReviewed": false,
@@ -3786,7 +3786,7 @@
     {
       "id": "eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi",
       "locale": "id",
-      "sourceHash": "919dde41f94ef0019a577f3d3155c695c9a98caf7165b556644f15eb07cdeedd",
+      "sourceHash": "eb464a2cceba58dd48835cc59074b93210daa71c37b482698f8f79b04bc1c98a",
       "targetHash": "9e397ac8b6af387d951023430b9f41d55a1252df765cf963540f7cad1181ba3e",
       "status": "draft",
       "humanReviewed": false,
@@ -3800,7 +3800,7 @@
     {
       "id": "eksi-manevi-sukran-olcegi-nin-turkce-uyarlamasi",
       "locale": "ms",
-      "sourceHash": "919dde41f94ef0019a577f3d3155c695c9a98caf7165b556644f15eb07cdeedd",
+      "sourceHash": "eb464a2cceba58dd48835cc59074b93210daa71c37b482698f8f79b04bc1c98a",
       "targetHash": "450e66769994154c82834fb47d954e4e57cee8485b1731fdfa33f9405915ce11",
       "status": "draft",
       "humanReviewed": false,
@@ -3814,8 +3814,8 @@
     {
       "id": "eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
       "locale": "tr",
-      "sourceHash": "fe06f7f6c5fab0d7d1dcfee57601083add720c267063fbb2e92d0d0a28debb87",
-      "targetHash": "fe06f7f6c5fab0d7d1dcfee57601083add720c267063fbb2e92d0d0a28debb87",
+      "sourceHash": "c9d3eb358dbe2c9e29de2f6a209e371af4369f67efa81829a1aebd3881c2c96e",
+      "targetHash": "c9d3eb358dbe2c9e29de2f6a209e371af4369f67efa81829a1aebd3881c2c96e",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -3828,7 +3828,7 @@
     {
       "id": "eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
       "locale": "en",
-      "sourceHash": "fe06f7f6c5fab0d7d1dcfee57601083add720c267063fbb2e92d0d0a28debb87",
+      "sourceHash": "c9d3eb358dbe2c9e29de2f6a209e371af4369f67efa81829a1aebd3881c2c96e",
       "targetHash": "ca593a06513a2390f74d8445abdb967e230f2f5c2936e9a434abb3cb967d4233",
       "status": "draft",
       "humanReviewed": false,
@@ -3842,7 +3842,7 @@
     {
       "id": "eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
       "locale": "de",
-      "sourceHash": "fe06f7f6c5fab0d7d1dcfee57601083add720c267063fbb2e92d0d0a28debb87",
+      "sourceHash": "c9d3eb358dbe2c9e29de2f6a209e371af4369f67efa81829a1aebd3881c2c96e",
       "targetHash": "921e09aa312acec286fe2f1863156b53a8bfd021de3706aa3e40c3cbd6fc00b7",
       "status": "draft",
       "humanReviewed": false,
@@ -3856,7 +3856,7 @@
     {
       "id": "eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
       "locale": "zh",
-      "sourceHash": "fe06f7f6c5fab0d7d1dcfee57601083add720c267063fbb2e92d0d0a28debb87",
+      "sourceHash": "c9d3eb358dbe2c9e29de2f6a209e371af4369f67efa81829a1aebd3881c2c96e",
       "targetHash": "30d37088c3ebb6943185b8ace8cfd1d9c8c745fdd05c7bc5b11c6983de8e5178",
       "status": "draft",
       "humanReviewed": false,
@@ -3870,7 +3870,7 @@
     {
       "id": "eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
       "locale": "ru",
-      "sourceHash": "fe06f7f6c5fab0d7d1dcfee57601083add720c267063fbb2e92d0d0a28debb87",
+      "sourceHash": "c9d3eb358dbe2c9e29de2f6a209e371af4369f67efa81829a1aebd3881c2c96e",
       "targetHash": "b1a8a3e24b16d592bdff13e799e7e0d6cc196dfbc3c94dbe4aa736d3335fa0a8",
       "status": "draft",
       "humanReviewed": false,
@@ -3884,7 +3884,7 @@
     {
       "id": "eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
       "locale": "ar",
-      "sourceHash": "fe06f7f6c5fab0d7d1dcfee57601083add720c267063fbb2e92d0d0a28debb87",
+      "sourceHash": "c9d3eb358dbe2c9e29de2f6a209e371af4369f67efa81829a1aebd3881c2c96e",
       "targetHash": "4fda0e265573e3b3fb66161eca8dd6706a815169c4eeab505ec5fa011d99250d",
       "status": "draft",
       "humanReviewed": false,
@@ -3898,7 +3898,7 @@
     {
       "id": "eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
       "locale": "id",
-      "sourceHash": "fe06f7f6c5fab0d7d1dcfee57601083add720c267063fbb2e92d0d0a28debb87",
+      "sourceHash": "c9d3eb358dbe2c9e29de2f6a209e371af4369f67efa81829a1aebd3881c2c96e",
       "targetHash": "725eb2381068a557ab52bb2ac58d68a963f22983c191515b17b2033610ddf848",
       "status": "draft",
       "humanReviewed": false,
@@ -3912,7 +3912,7 @@
     {
       "id": "eksi-manevi-askinlik-olcegi-nin-turkceye-uyarlanmasi",
       "locale": "ms",
-      "sourceHash": "fe06f7f6c5fab0d7d1dcfee57601083add720c267063fbb2e92d0d0a28debb87",
+      "sourceHash": "c9d3eb358dbe2c9e29de2f6a209e371af4369f67efa81829a1aebd3881c2c96e",
       "targetHash": "a1cd8e39b0453e518c422b7a53791d0298d5f68f6ebfaafce629a9ffd4c4ef98",
       "status": "draft",
       "humanReviewed": false,
@@ -3926,8 +3926,8 @@
     {
       "id": "eksi-a-psychological-counseling-study-on-fear",
       "locale": "tr",
-      "sourceHash": "5652de7c4c4e99fdb79126d2dad89ce7b39d6fcdaa7401a0d7b4a3c33dd5f8ce",
-      "targetHash": "5652de7c4c4e99fdb79126d2dad89ce7b39d6fcdaa7401a0d7b4a3c33dd5f8ce",
+      "sourceHash": "fc26f2836f1f94c84c01b18e4f1e441cf6d3a9b88022f58ea0a69fc51b881137",
+      "targetHash": "fc26f2836f1f94c84c01b18e4f1e441cf6d3a9b88022f58ea0a69fc51b881137",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -3940,7 +3940,7 @@
     {
       "id": "eksi-a-psychological-counseling-study-on-fear",
       "locale": "en",
-      "sourceHash": "5652de7c4c4e99fdb79126d2dad89ce7b39d6fcdaa7401a0d7b4a3c33dd5f8ce",
+      "sourceHash": "fc26f2836f1f94c84c01b18e4f1e441cf6d3a9b88022f58ea0a69fc51b881137",
       "targetHash": "cd60f27cb402204580e7217931e124e6e2015aa3274807467f827f76dc9febff",
       "status": "draft",
       "humanReviewed": false,
@@ -3954,7 +3954,7 @@
     {
       "id": "eksi-a-psychological-counseling-study-on-fear",
       "locale": "de",
-      "sourceHash": "5652de7c4c4e99fdb79126d2dad89ce7b39d6fcdaa7401a0d7b4a3c33dd5f8ce",
+      "sourceHash": "fc26f2836f1f94c84c01b18e4f1e441cf6d3a9b88022f58ea0a69fc51b881137",
       "targetHash": "5913cc86425397bd1981df2e1299e80a491baf57f263e0b3b86dc8095dbf74f8",
       "status": "draft",
       "humanReviewed": false,
@@ -3968,7 +3968,7 @@
     {
       "id": "eksi-a-psychological-counseling-study-on-fear",
       "locale": "zh",
-      "sourceHash": "5652de7c4c4e99fdb79126d2dad89ce7b39d6fcdaa7401a0d7b4a3c33dd5f8ce",
+      "sourceHash": "fc26f2836f1f94c84c01b18e4f1e441cf6d3a9b88022f58ea0a69fc51b881137",
       "targetHash": "fc4cf698dde4c990bbf5055cb80f21fa4ad434089771d26be712ef2d9fb781f5",
       "status": "draft",
       "humanReviewed": false,
@@ -3982,7 +3982,7 @@
     {
       "id": "eksi-a-psychological-counseling-study-on-fear",
       "locale": "ru",
-      "sourceHash": "5652de7c4c4e99fdb79126d2dad89ce7b39d6fcdaa7401a0d7b4a3c33dd5f8ce",
+      "sourceHash": "fc26f2836f1f94c84c01b18e4f1e441cf6d3a9b88022f58ea0a69fc51b881137",
       "targetHash": "6f565c84b8a1d76f3a3327d2c5d3a0746c022aeee66304775abee3ea509f8050",
       "status": "draft",
       "humanReviewed": false,
@@ -3996,7 +3996,7 @@
     {
       "id": "eksi-a-psychological-counseling-study-on-fear",
       "locale": "ar",
-      "sourceHash": "5652de7c4c4e99fdb79126d2dad89ce7b39d6fcdaa7401a0d7b4a3c33dd5f8ce",
+      "sourceHash": "fc26f2836f1f94c84c01b18e4f1e441cf6d3a9b88022f58ea0a69fc51b881137",
       "targetHash": "47c6d8f7a818b3566c22c4228c522fd21fa48fe063b6ebe710a64b3cb935d9e5",
       "status": "draft",
       "humanReviewed": false,
@@ -4010,7 +4010,7 @@
     {
       "id": "eksi-a-psychological-counseling-study-on-fear",
       "locale": "id",
-      "sourceHash": "5652de7c4c4e99fdb79126d2dad89ce7b39d6fcdaa7401a0d7b4a3c33dd5f8ce",
+      "sourceHash": "fc26f2836f1f94c84c01b18e4f1e441cf6d3a9b88022f58ea0a69fc51b881137",
       "targetHash": "43eef7ba69ba9c24d5e61dc9c27f556ae0d6dfa9c41559f510fe1899faeedbd0",
       "status": "draft",
       "humanReviewed": false,
@@ -4024,7 +4024,7 @@
     {
       "id": "eksi-a-psychological-counseling-study-on-fear",
       "locale": "ms",
-      "sourceHash": "5652de7c4c4e99fdb79126d2dad89ce7b39d6fcdaa7401a0d7b4a3c33dd5f8ce",
+      "sourceHash": "fc26f2836f1f94c84c01b18e4f1e441cf6d3a9b88022f58ea0a69fc51b881137",
       "targetHash": "50b58cc6160cf6e3b759d48e4a9be47e263d46de9866af9d2c05fdfdbbbec8a9",
       "status": "draft",
       "humanReviewed": false,
@@ -4262,8 +4262,8 @@
     {
       "id": "eksi-adapting-the-scale-for-spiritual-intelligence",
       "locale": "tr",
-      "sourceHash": "0bf8e2e75f6b67fafa4df36207198ae4fa47fe44da747f96e8e3b54925748dd0",
-      "targetHash": "0bf8e2e75f6b67fafa4df36207198ae4fa47fe44da747f96e8e3b54925748dd0",
+      "sourceHash": "4d8bcc3ef7276277e73908e639345913b0fc0526ee92bea4e67409a90044b5a5",
+      "targetHash": "4d8bcc3ef7276277e73908e639345913b0fc0526ee92bea4e67409a90044b5a5",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -4276,7 +4276,7 @@
     {
       "id": "eksi-adapting-the-scale-for-spiritual-intelligence",
       "locale": "en",
-      "sourceHash": "0bf8e2e75f6b67fafa4df36207198ae4fa47fe44da747f96e8e3b54925748dd0",
+      "sourceHash": "4d8bcc3ef7276277e73908e639345913b0fc0526ee92bea4e67409a90044b5a5",
       "targetHash": "ab8d409c627eb023d9a65a6d554000dca105853c15efdb3ba18bbf000b79036c",
       "status": "draft",
       "humanReviewed": false,
@@ -4290,7 +4290,7 @@
     {
       "id": "eksi-adapting-the-scale-for-spiritual-intelligence",
       "locale": "de",
-      "sourceHash": "0bf8e2e75f6b67fafa4df36207198ae4fa47fe44da747f96e8e3b54925748dd0",
+      "sourceHash": "4d8bcc3ef7276277e73908e639345913b0fc0526ee92bea4e67409a90044b5a5",
       "targetHash": "abd451af9f4aae18c313e0eb21b9e94ee47b269232e07576a002791a262df6cb",
       "status": "draft",
       "humanReviewed": false,
@@ -4304,7 +4304,7 @@
     {
       "id": "eksi-adapting-the-scale-for-spiritual-intelligence",
       "locale": "zh",
-      "sourceHash": "0bf8e2e75f6b67fafa4df36207198ae4fa47fe44da747f96e8e3b54925748dd0",
+      "sourceHash": "4d8bcc3ef7276277e73908e639345913b0fc0526ee92bea4e67409a90044b5a5",
       "targetHash": "19f54e502099f45fc80b73e6324394e495efbf76a0487a86d866032124dc9e82",
       "status": "draft",
       "humanReviewed": false,
@@ -4318,7 +4318,7 @@
     {
       "id": "eksi-adapting-the-scale-for-spiritual-intelligence",
       "locale": "ru",
-      "sourceHash": "0bf8e2e75f6b67fafa4df36207198ae4fa47fe44da747f96e8e3b54925748dd0",
+      "sourceHash": "4d8bcc3ef7276277e73908e639345913b0fc0526ee92bea4e67409a90044b5a5",
       "targetHash": "f7887b7db3cf9e58b063d5c0ec452c20e6afd122fb3a56ffa90d3fabab5e5d30",
       "status": "draft",
       "humanReviewed": false,
@@ -4332,7 +4332,7 @@
     {
       "id": "eksi-adapting-the-scale-for-spiritual-intelligence",
       "locale": "ar",
-      "sourceHash": "0bf8e2e75f6b67fafa4df36207198ae4fa47fe44da747f96e8e3b54925748dd0",
+      "sourceHash": "4d8bcc3ef7276277e73908e639345913b0fc0526ee92bea4e67409a90044b5a5",
       "targetHash": "f0e1764fb0e4a61838553e15176ae39804c990ffe3107cf229b7c401cfea5c41",
       "status": "draft",
       "humanReviewed": false,
@@ -4346,7 +4346,7 @@
     {
       "id": "eksi-adapting-the-scale-for-spiritual-intelligence",
       "locale": "id",
-      "sourceHash": "0bf8e2e75f6b67fafa4df36207198ae4fa47fe44da747f96e8e3b54925748dd0",
+      "sourceHash": "4d8bcc3ef7276277e73908e639345913b0fc0526ee92bea4e67409a90044b5a5",
       "targetHash": "e649be6961dfd99b9286cc39afeb15f0c35d4e5b196b7d88c0ae4cdb489bfab3",
       "status": "draft",
       "humanReviewed": false,
@@ -4360,7 +4360,7 @@
     {
       "id": "eksi-adapting-the-scale-for-spiritual-intelligence",
       "locale": "ms",
-      "sourceHash": "0bf8e2e75f6b67fafa4df36207198ae4fa47fe44da747f96e8e3b54925748dd0",
+      "sourceHash": "4d8bcc3ef7276277e73908e639345913b0fc0526ee92bea4e67409a90044b5a5",
       "targetHash": "828cdebb78e9b56063b331620e25822e92d290c46cf8d295759281f370d85d03",
       "status": "draft",
       "humanReviewed": false,
@@ -4486,8 +4486,8 @@
     {
       "id": "eksi-maternal-spiritual-coping-scale-development-and",
       "locale": "tr",
-      "sourceHash": "24a92448e9b3844b5e38738741d15054d1613eacfb729728f76ef403471a380b",
-      "targetHash": "24a92448e9b3844b5e38738741d15054d1613eacfb729728f76ef403471a380b",
+      "sourceHash": "29ce1a44a137319d0e4a950cf1903d59d64bfcf5889a5df28c643a663bcba843",
+      "targetHash": "29ce1a44a137319d0e4a950cf1903d59d64bfcf5889a5df28c643a663bcba843",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -4500,7 +4500,7 @@
     {
       "id": "eksi-maternal-spiritual-coping-scale-development-and",
       "locale": "en",
-      "sourceHash": "24a92448e9b3844b5e38738741d15054d1613eacfb729728f76ef403471a380b",
+      "sourceHash": "29ce1a44a137319d0e4a950cf1903d59d64bfcf5889a5df28c643a663bcba843",
       "targetHash": "7352f2d7b93311aaecb1b93ef5cde786ff545d71eb1f478389355b5d3a07a2cf",
       "status": "draft",
       "humanReviewed": false,
@@ -4514,7 +4514,7 @@
     {
       "id": "eksi-maternal-spiritual-coping-scale-development-and",
       "locale": "de",
-      "sourceHash": "24a92448e9b3844b5e38738741d15054d1613eacfb729728f76ef403471a380b",
+      "sourceHash": "29ce1a44a137319d0e4a950cf1903d59d64bfcf5889a5df28c643a663bcba843",
       "targetHash": "2fb6a26491b42ddf1ec4fa654b3c6fcda7a15a047b16ddfc3fc7221f3f505a9a",
       "status": "draft",
       "humanReviewed": false,
@@ -4528,7 +4528,7 @@
     {
       "id": "eksi-maternal-spiritual-coping-scale-development-and",
       "locale": "zh",
-      "sourceHash": "24a92448e9b3844b5e38738741d15054d1613eacfb729728f76ef403471a380b",
+      "sourceHash": "29ce1a44a137319d0e4a950cf1903d59d64bfcf5889a5df28c643a663bcba843",
       "targetHash": "db538b9028904c51a1dbeacf80462d24eabfb560ed347ee73d1ed8293e18d2d0",
       "status": "draft",
       "humanReviewed": false,
@@ -4542,7 +4542,7 @@
     {
       "id": "eksi-maternal-spiritual-coping-scale-development-and",
       "locale": "ru",
-      "sourceHash": "24a92448e9b3844b5e38738741d15054d1613eacfb729728f76ef403471a380b",
+      "sourceHash": "29ce1a44a137319d0e4a950cf1903d59d64bfcf5889a5df28c643a663bcba843",
       "targetHash": "bb02d47e73dafcae69a22b9ef7024a6da9f447843361f12d08728e3d555d141a",
       "status": "draft",
       "humanReviewed": false,
@@ -4556,7 +4556,7 @@
     {
       "id": "eksi-maternal-spiritual-coping-scale-development-and",
       "locale": "ar",
-      "sourceHash": "24a92448e9b3844b5e38738741d15054d1613eacfb729728f76ef403471a380b",
+      "sourceHash": "29ce1a44a137319d0e4a950cf1903d59d64bfcf5889a5df28c643a663bcba843",
       "targetHash": "e05a1c76ba5f2df4d133c465910484080170dd98fe8c0ec13b1a06f1e7b525b6",
       "status": "draft",
       "humanReviewed": false,
@@ -4570,7 +4570,7 @@
     {
       "id": "eksi-maternal-spiritual-coping-scale-development-and",
       "locale": "id",
-      "sourceHash": "24a92448e9b3844b5e38738741d15054d1613eacfb729728f76ef403471a380b",
+      "sourceHash": "29ce1a44a137319d0e4a950cf1903d59d64bfcf5889a5df28c643a663bcba843",
       "targetHash": "ecb76706b2ec4235627e8e0638798db0627f8296d9132947880bed8e7b1fdf1f",
       "status": "draft",
       "humanReviewed": false,
@@ -4584,7 +4584,7 @@
     {
       "id": "eksi-maternal-spiritual-coping-scale-development-and",
       "locale": "ms",
-      "sourceHash": "24a92448e9b3844b5e38738741d15054d1613eacfb729728f76ef403471a380b",
+      "sourceHash": "29ce1a44a137319d0e4a950cf1903d59d64bfcf5889a5df28c643a663bcba843",
       "targetHash": "8a8b4a31897ba43659f0918594bd28a8985795cc953c2fed664e1fc3eefcf3db",
       "status": "draft",
       "humanReviewed": false,
@@ -4935,7 +4935,7 @@
       "id": "adolescent-contexts",
       "locale": "tr",
       "sourceHash": "76ff9599e07b76e8f747ec4c5dee18276a4f3735105ae9bc95c911c9e67e1c76",
-      "targetHash": "b60943f0c2d87e9214ff58624c069b492d72a6e48c5da5842009d950f22d82e4",
+      "targetHash": "214963b896ebcee3cae6dd31ef6a7c3be7d1c1cbd652499ef4d0b3f50beb4464",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -5271,7 +5271,7 @@
       "id": "attendance-cohorts",
       "locale": "tr",
       "sourceHash": "fa66640007d72703ea902d0e0e77e734bd7af873e74b64d8b362674b1ed16a16",
-      "targetHash": "3c60f60f4a1a94bd9994c83d936d0f47e3e7907994973f21113e258013995ada",
+      "targetHash": "aa0236326995b594db1024ee6857e54533ca190cd2ba25bce9649d81b314d041",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -5607,7 +5607,7 @@
       "id": "disaster-needs",
       "locale": "tr",
       "sourceHash": "60a4538f6da937c287527435cd5647fa1e4f736e965f02f172918a119c9cf20b",
-      "targetHash": "4e4e671caafaf85e09560691ddabbd34c56b81502ef17c41e1e2175986b8fe30",
+      "targetHash": "ee4581535a829d4cf83493284d4b40753ed66b5d8ae3972ec90fb3782baa5efd",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -6503,7 +6503,7 @@
       "id": "brazil-medical-students",
       "locale": "tr",
       "sourceHash": "8925f323136bc259c718ca971b31b8f48ce86b5595ec3983ea31e9badc976146",
-      "targetHash": "5fe8840b49d4ad1955e6e3540cf2e165480477fdc11f471fc2efa9634e0c516a",
+      "targetHash": "8680b977a34d6ee7043d149a5fd8d550c881411be04d51395cb61551c52d5038",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -6615,7 +6615,7 @@
       "id": "turkish-bereavement",
       "locale": "tr",
       "sourceHash": "66170ff885fc293c463f742ca49dee2a928cd4410bc781fc49cded808d0fd45f",
-      "targetHash": "d8c48815b36e96d0f812487979898eca9d9dfa84e5175bb0457f94232288c620",
+      "targetHash": "b7eb6f1f00b7f8c84ce763354e5b1f8a7d095c9ac4e7dc5d715b0c293ad8ebcb",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -6727,7 +6727,7 @@
       "id": "psychosis-spirituality",
       "locale": "tr",
       "sourceHash": "b711e860cd72d54f5c6d3f5ae8b7ca16901034532e4379f9f5bcdf5b66c91921",
-      "targetHash": "7837717408f39b00ef26d3ab899337548851a2df5a5a171399b6bf63d6f62f00",
+      "targetHash": "9cb0a2018e3db13facf90c55ca6a1ca72ca66aa73187f22ef6156bcdd4feda2d",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -6839,7 +6839,7 @@
       "id": "clergy-abuse-harm",
       "locale": "tr",
       "sourceHash": "ce09a9b711cf2d59028adc0d5e45fafd780da88b81e65f67b5522e1e9330e8da",
-      "targetHash": "4226eaed013a6a8c36f3b7e6aeb62020648e2bba3257f3e2506bceb721fc2dbd",
+      "targetHash": "7322e6715985b3d647d79889ee2f0dead248cb0a5ec3b9564ccefbd7b62d9233",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -6950,8 +6950,8 @@
     {
       "id": "spirituality-ptsd-review",
       "locale": "tr",
-      "sourceHash": "90eb4316498dee0af1832d79fd16156ece5803f06a5a96ccd57082f17f689b94",
-      "targetHash": "90eb4316498dee0af1832d79fd16156ece5803f06a5a96ccd57082f17f689b94",
+      "sourceHash": "d2fddb606d3a0fae26d6082395beab717ed2ff42149e5125fb4e8a26d34876ca",
+      "targetHash": "d2fddb606d3a0fae26d6082395beab717ed2ff42149e5125fb4e8a26d34876ca",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -6964,7 +6964,7 @@
     {
       "id": "spirituality-ptsd-review",
       "locale": "en",
-      "sourceHash": "90eb4316498dee0af1832d79fd16156ece5803f06a5a96ccd57082f17f689b94",
+      "sourceHash": "d2fddb606d3a0fae26d6082395beab717ed2ff42149e5125fb4e8a26d34876ca",
       "targetHash": "76379d6eb8bdc6218b82e92cd04f40fdd628292bc5df3e250ed50ef4faa25d3b",
       "status": "draft",
       "humanReviewed": false,
@@ -6978,7 +6978,7 @@
     {
       "id": "spirituality-ptsd-review",
       "locale": "de",
-      "sourceHash": "90eb4316498dee0af1832d79fd16156ece5803f06a5a96ccd57082f17f689b94",
+      "sourceHash": "d2fddb606d3a0fae26d6082395beab717ed2ff42149e5125fb4e8a26d34876ca",
       "targetHash": "15c0ef9f9c2f2e50ae2ad94d031c104f65f82b5bc7151d03d4cda3df6c38a46f",
       "status": "draft",
       "humanReviewed": false,
@@ -6992,7 +6992,7 @@
     {
       "id": "spirituality-ptsd-review",
       "locale": "zh",
-      "sourceHash": "90eb4316498dee0af1832d79fd16156ece5803f06a5a96ccd57082f17f689b94",
+      "sourceHash": "d2fddb606d3a0fae26d6082395beab717ed2ff42149e5125fb4e8a26d34876ca",
       "targetHash": "6a47a68b86a1b825f5f07f863fd659ce0942f8fa548534aad2803a69a93b402a",
       "status": "draft",
       "humanReviewed": false,
@@ -7006,7 +7006,7 @@
     {
       "id": "spirituality-ptsd-review",
       "locale": "ru",
-      "sourceHash": "90eb4316498dee0af1832d79fd16156ece5803f06a5a96ccd57082f17f689b94",
+      "sourceHash": "d2fddb606d3a0fae26d6082395beab717ed2ff42149e5125fb4e8a26d34876ca",
       "targetHash": "9659540f6a437fb30070b56f18d92c7090174857592aa18a5f52a2fe21e999cb",
       "status": "draft",
       "humanReviewed": false,
@@ -7020,7 +7020,7 @@
     {
       "id": "spirituality-ptsd-review",
       "locale": "ar",
-      "sourceHash": "90eb4316498dee0af1832d79fd16156ece5803f06a5a96ccd57082f17f689b94",
+      "sourceHash": "d2fddb606d3a0fae26d6082395beab717ed2ff42149e5125fb4e8a26d34876ca",
       "targetHash": "8b6a1c029bc018eec7fbdb8bc828e7b40432b7cc5f39615691ad8ad522e60a0d",
       "status": "draft",
       "humanReviewed": false,
@@ -7034,7 +7034,7 @@
     {
       "id": "spirituality-ptsd-review",
       "locale": "id",
-      "sourceHash": "90eb4316498dee0af1832d79fd16156ece5803f06a5a96ccd57082f17f689b94",
+      "sourceHash": "d2fddb606d3a0fae26d6082395beab717ed2ff42149e5125fb4e8a26d34876ca",
       "targetHash": "876cc0090c138a3dbb0fe80a1b80ca6dbd08e0b94a9acd961e290b38596c4d46",
       "status": "draft",
       "humanReviewed": false,
@@ -7048,7 +7048,7 @@
     {
       "id": "spirituality-ptsd-review",
       "locale": "ms",
-      "sourceHash": "90eb4316498dee0af1832d79fd16156ece5803f06a5a96ccd57082f17f689b94",
+      "sourceHash": "d2fddb606d3a0fae26d6082395beab717ed2ff42149e5125fb4e8a26d34876ca",
       "targetHash": "157d8bd30fb492316ca4aad7e61a298c7e7a41f7f3d28063d65b14264f0bd4ed",
       "status": "draft",
       "humanReviewed": false,
@@ -7174,8 +7174,8 @@
     {
       "id": "sprs",
       "locale": "tr",
-      "sourceHash": "b4fc2924d083a120fbd5a8a927880589af0ef43c368a2d2a26b27ea2ca744080",
-      "targetHash": "b4fc2924d083a120fbd5a8a927880589af0ef43c368a2d2a26b27ea2ca744080",
+      "sourceHash": "5bf644f5c684e26c56046faba9f7aba33bd43887cd1e9d97c19b179fc45a96e1",
+      "targetHash": "5bf644f5c684e26c56046faba9f7aba33bd43887cd1e9d97c19b179fc45a96e1",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -7188,7 +7188,7 @@
     {
       "id": "sprs",
       "locale": "en",
-      "sourceHash": "b4fc2924d083a120fbd5a8a927880589af0ef43c368a2d2a26b27ea2ca744080",
+      "sourceHash": "5bf644f5c684e26c56046faba9f7aba33bd43887cd1e9d97c19b179fc45a96e1",
       "targetHash": "c90799360ac58a91d352aacbaae6c2f8cab41d9b8d45aab84fd655075f8262a4",
       "status": "draft",
       "humanReviewed": false,
@@ -7202,7 +7202,7 @@
     {
       "id": "sprs",
       "locale": "de",
-      "sourceHash": "b4fc2924d083a120fbd5a8a927880589af0ef43c368a2d2a26b27ea2ca744080",
+      "sourceHash": "5bf644f5c684e26c56046faba9f7aba33bd43887cd1e9d97c19b179fc45a96e1",
       "targetHash": "3d50cb117d3dd30b796dd3f8457478502115dc12e0d3dc0cdfdc7be47ec111ff",
       "status": "draft",
       "humanReviewed": false,
@@ -7216,7 +7216,7 @@
     {
       "id": "sprs",
       "locale": "zh",
-      "sourceHash": "b4fc2924d083a120fbd5a8a927880589af0ef43c368a2d2a26b27ea2ca744080",
+      "sourceHash": "5bf644f5c684e26c56046faba9f7aba33bd43887cd1e9d97c19b179fc45a96e1",
       "targetHash": "ce107ea11eb1e91d53d76ca531f5a59b727760b45ca118692f7ce89ec4499ebd",
       "status": "draft",
       "humanReviewed": false,
@@ -7230,7 +7230,7 @@
     {
       "id": "sprs",
       "locale": "ru",
-      "sourceHash": "b4fc2924d083a120fbd5a8a927880589af0ef43c368a2d2a26b27ea2ca744080",
+      "sourceHash": "5bf644f5c684e26c56046faba9f7aba33bd43887cd1e9d97c19b179fc45a96e1",
       "targetHash": "413fa0e04f8952409a315a0df7b2a5b23779da39800799106df268dec799c279",
       "status": "draft",
       "humanReviewed": false,
@@ -7244,7 +7244,7 @@
     {
       "id": "sprs",
       "locale": "ar",
-      "sourceHash": "b4fc2924d083a120fbd5a8a927880589af0ef43c368a2d2a26b27ea2ca744080",
+      "sourceHash": "5bf644f5c684e26c56046faba9f7aba33bd43887cd1e9d97c19b179fc45a96e1",
       "targetHash": "eb25694f7ade384197426651fa16ee391ba070cbdade62f35a1a6629d2fb3e29",
       "status": "draft",
       "humanReviewed": false,
@@ -7258,7 +7258,7 @@
     {
       "id": "sprs",
       "locale": "id",
-      "sourceHash": "b4fc2924d083a120fbd5a8a927880589af0ef43c368a2d2a26b27ea2ca744080",
+      "sourceHash": "5bf644f5c684e26c56046faba9f7aba33bd43887cd1e9d97c19b179fc45a96e1",
       "targetHash": "08ea8bd9cfaff84e4230e91b673d8633dff2b335b5e6de0ace74d1eb96edf303",
       "status": "draft",
       "humanReviewed": false,
@@ -7272,7 +7272,7 @@
     {
       "id": "sprs",
       "locale": "ms",
-      "sourceHash": "b4fc2924d083a120fbd5a8a927880589af0ef43c368a2d2a26b27ea2ca744080",
+      "sourceHash": "5bf644f5c684e26c56046faba9f7aba33bd43887cd1e9d97c19b179fc45a96e1",
       "targetHash": "e1b5292ae0711edbee9e80e29c72494deafc4f4280fddac5b1ab7bda15184851",
       "status": "draft",
       "humanReviewed": false,
@@ -7622,8 +7622,8 @@
     {
       "id": "refugee-faith-coping",
       "locale": "tr",
-      "sourceHash": "eacc11926d3c42168849ef5dad5f7526eba71cdf739f48925977da2a6ec73ff5",
-      "targetHash": "eacc11926d3c42168849ef5dad5f7526eba71cdf739f48925977da2a6ec73ff5",
+      "sourceHash": "aa7a39c1ea6b1010edbd3bb4876426e6bb992580251d757dd5020fbc1b8bd287",
+      "targetHash": "aa7a39c1ea6b1010edbd3bb4876426e6bb992580251d757dd5020fbc1b8bd287",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -7636,7 +7636,7 @@
     {
       "id": "refugee-faith-coping",
       "locale": "en",
-      "sourceHash": "eacc11926d3c42168849ef5dad5f7526eba71cdf739f48925977da2a6ec73ff5",
+      "sourceHash": "aa7a39c1ea6b1010edbd3bb4876426e6bb992580251d757dd5020fbc1b8bd287",
       "targetHash": "c75c77a4d8617724d7c1db971cfc44d04097d4ffe80baf02ccb9489135b78bb8",
       "status": "draft",
       "humanReviewed": false,
@@ -7650,7 +7650,7 @@
     {
       "id": "refugee-faith-coping",
       "locale": "de",
-      "sourceHash": "eacc11926d3c42168849ef5dad5f7526eba71cdf739f48925977da2a6ec73ff5",
+      "sourceHash": "aa7a39c1ea6b1010edbd3bb4876426e6bb992580251d757dd5020fbc1b8bd287",
       "targetHash": "3a699af43e77d1dd4f28d639dcc53410e63a63a96b6cf2987b160604f8c4d0bb",
       "status": "draft",
       "humanReviewed": false,
@@ -7664,7 +7664,7 @@
     {
       "id": "refugee-faith-coping",
       "locale": "zh",
-      "sourceHash": "eacc11926d3c42168849ef5dad5f7526eba71cdf739f48925977da2a6ec73ff5",
+      "sourceHash": "aa7a39c1ea6b1010edbd3bb4876426e6bb992580251d757dd5020fbc1b8bd287",
       "targetHash": "89e84cd7f13f01425e881a14408c70f4e2db3f6d177ea32fc43c64a996049a70",
       "status": "draft",
       "humanReviewed": false,
@@ -7678,7 +7678,7 @@
     {
       "id": "refugee-faith-coping",
       "locale": "ru",
-      "sourceHash": "eacc11926d3c42168849ef5dad5f7526eba71cdf739f48925977da2a6ec73ff5",
+      "sourceHash": "aa7a39c1ea6b1010edbd3bb4876426e6bb992580251d757dd5020fbc1b8bd287",
       "targetHash": "74123dcc662dbf5efa0d84b026e7a42ebab54495f7c3ddea69e5d11f104d2105",
       "status": "draft",
       "humanReviewed": false,
@@ -7692,7 +7692,7 @@
     {
       "id": "refugee-faith-coping",
       "locale": "ar",
-      "sourceHash": "eacc11926d3c42168849ef5dad5f7526eba71cdf739f48925977da2a6ec73ff5",
+      "sourceHash": "aa7a39c1ea6b1010edbd3bb4876426e6bb992580251d757dd5020fbc1b8bd287",
       "targetHash": "3b9c2ad20b68041ce46bcc4c3129dc5e7620f3c262d2330f5074dc4a93a8e261",
       "status": "draft",
       "humanReviewed": false,
@@ -7706,7 +7706,7 @@
     {
       "id": "refugee-faith-coping",
       "locale": "id",
-      "sourceHash": "eacc11926d3c42168849ef5dad5f7526eba71cdf739f48925977da2a6ec73ff5",
+      "sourceHash": "aa7a39c1ea6b1010edbd3bb4876426e6bb992580251d757dd5020fbc1b8bd287",
       "targetHash": "1c74218ed7eb41d23a6fd04804c1da75c8f868a680096bbbf40894baec146394",
       "status": "draft",
       "humanReviewed": false,
@@ -7720,7 +7720,7 @@
     {
       "id": "refugee-faith-coping",
       "locale": "ms",
-      "sourceHash": "eacc11926d3c42168849ef5dad5f7526eba71cdf739f48925977da2a6ec73ff5",
+      "sourceHash": "aa7a39c1ea6b1010edbd3bb4876426e6bb992580251d757dd5020fbc1b8bd287",
       "targetHash": "9b6d4ae6213158ae8c5ee1d26812f0cb0f2e517af2b20e3ac9cdd6c025e3bfcc",
       "status": "draft",
       "humanReviewed": false,
@@ -7734,8 +7734,8 @@
     {
       "id": "nonreligious-turkiye",
       "locale": "tr",
-      "sourceHash": "c5003c423e652411f34a37e0800833070ec9cbe912ca2c1068bb95d772969880",
-      "targetHash": "c5003c423e652411f34a37e0800833070ec9cbe912ca2c1068bb95d772969880",
+      "sourceHash": "b7deff7446c9efb0c9f2dc9b66966b6f918070f23b0e7eb352eaf53c51aec01b",
+      "targetHash": "b7deff7446c9efb0c9f2dc9b66966b6f918070f23b0e7eb352eaf53c51aec01b",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -7748,7 +7748,7 @@
     {
       "id": "nonreligious-turkiye",
       "locale": "en",
-      "sourceHash": "c5003c423e652411f34a37e0800833070ec9cbe912ca2c1068bb95d772969880",
+      "sourceHash": "b7deff7446c9efb0c9f2dc9b66966b6f918070f23b0e7eb352eaf53c51aec01b",
       "targetHash": "f6f7538a67ee9cea1e2ed712ff83048c7de632e9efe6acbbf93416c48849a2e2",
       "status": "draft",
       "humanReviewed": false,
@@ -7762,7 +7762,7 @@
     {
       "id": "nonreligious-turkiye",
       "locale": "de",
-      "sourceHash": "c5003c423e652411f34a37e0800833070ec9cbe912ca2c1068bb95d772969880",
+      "sourceHash": "b7deff7446c9efb0c9f2dc9b66966b6f918070f23b0e7eb352eaf53c51aec01b",
       "targetHash": "88f4d789614568083089fe5b431d624a60c66d75ccf927ea3e99f85896d4762f",
       "status": "draft",
       "humanReviewed": false,
@@ -7776,7 +7776,7 @@
     {
       "id": "nonreligious-turkiye",
       "locale": "zh",
-      "sourceHash": "c5003c423e652411f34a37e0800833070ec9cbe912ca2c1068bb95d772969880",
+      "sourceHash": "b7deff7446c9efb0c9f2dc9b66966b6f918070f23b0e7eb352eaf53c51aec01b",
       "targetHash": "6e9a3d6822ef11dd757f8178a67df34304a4d6bbda5b07f487f08f420d3d54b6",
       "status": "draft",
       "humanReviewed": false,
@@ -7790,7 +7790,7 @@
     {
       "id": "nonreligious-turkiye",
       "locale": "ru",
-      "sourceHash": "c5003c423e652411f34a37e0800833070ec9cbe912ca2c1068bb95d772969880",
+      "sourceHash": "b7deff7446c9efb0c9f2dc9b66966b6f918070f23b0e7eb352eaf53c51aec01b",
       "targetHash": "7d162cba4f81a9b6628ff4d5bd445b9edf3bf15287c6f0e1bc1c74b219fc446b",
       "status": "draft",
       "humanReviewed": false,
@@ -7804,7 +7804,7 @@
     {
       "id": "nonreligious-turkiye",
       "locale": "ar",
-      "sourceHash": "c5003c423e652411f34a37e0800833070ec9cbe912ca2c1068bb95d772969880",
+      "sourceHash": "b7deff7446c9efb0c9f2dc9b66966b6f918070f23b0e7eb352eaf53c51aec01b",
       "targetHash": "474434810ab2f341a71b2194816c3b1d2e995e849464368ff71ba72fc58d032b",
       "status": "draft",
       "humanReviewed": false,
@@ -7818,7 +7818,7 @@
     {
       "id": "nonreligious-turkiye",
       "locale": "id",
-      "sourceHash": "c5003c423e652411f34a37e0800833070ec9cbe912ca2c1068bb95d772969880",
+      "sourceHash": "b7deff7446c9efb0c9f2dc9b66966b6f918070f23b0e7eb352eaf53c51aec01b",
       "targetHash": "678093453063faca451660980a5bc61d42bcf91f8a8d568c1cebb7ff8bd5f10f",
       "status": "draft",
       "humanReviewed": false,
@@ -7832,7 +7832,7 @@
     {
       "id": "nonreligious-turkiye",
       "locale": "ms",
-      "sourceHash": "c5003c423e652411f34a37e0800833070ec9cbe912ca2c1068bb95d772969880",
+      "sourceHash": "b7deff7446c9efb0c9f2dc9b66966b6f918070f23b0e7eb352eaf53c51aec01b",
       "targetHash": "6c51a496a0aaec6abc4b520a9e42ed90d5b99b75b60d12c2241a774c0f4fd10a",
       "status": "draft",
       "humanReviewed": false,
@@ -8070,8 +8070,8 @@
     {
       "id": "sexual-minority-rs-meta",
       "locale": "tr",
-      "sourceHash": "b601cb87d56ee850ff38e1d2e2740f33d1017cf1d9eb78aed30d4559a50781d1",
-      "targetHash": "b601cb87d56ee850ff38e1d2e2740f33d1017cf1d9eb78aed30d4559a50781d1",
+      "sourceHash": "92302932a44e9310d5276b2a2075d0a073fb352fb98bd436d96c5b5ff3d0f1e9",
+      "targetHash": "92302932a44e9310d5276b2a2075d0a073fb352fb98bd436d96c5b5ff3d0f1e9",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -8084,7 +8084,7 @@
     {
       "id": "sexual-minority-rs-meta",
       "locale": "en",
-      "sourceHash": "b601cb87d56ee850ff38e1d2e2740f33d1017cf1d9eb78aed30d4559a50781d1",
+      "sourceHash": "92302932a44e9310d5276b2a2075d0a073fb352fb98bd436d96c5b5ff3d0f1e9",
       "targetHash": "cfd8c9906eadb9d7582131a9b28461a7d2ec3896a5333f620248afc8232cc614",
       "status": "draft",
       "humanReviewed": false,
@@ -8098,7 +8098,7 @@
     {
       "id": "sexual-minority-rs-meta",
       "locale": "de",
-      "sourceHash": "b601cb87d56ee850ff38e1d2e2740f33d1017cf1d9eb78aed30d4559a50781d1",
+      "sourceHash": "92302932a44e9310d5276b2a2075d0a073fb352fb98bd436d96c5b5ff3d0f1e9",
       "targetHash": "a8c69d06ad20e03157239cf9ada45be266ff96e51282d09c654b7a2a6684bc07",
       "status": "draft",
       "humanReviewed": false,
@@ -8112,7 +8112,7 @@
     {
       "id": "sexual-minority-rs-meta",
       "locale": "zh",
-      "sourceHash": "b601cb87d56ee850ff38e1d2e2740f33d1017cf1d9eb78aed30d4559a50781d1",
+      "sourceHash": "92302932a44e9310d5276b2a2075d0a073fb352fb98bd436d96c5b5ff3d0f1e9",
       "targetHash": "37fcd0149661f2c1b9f378906247525ab19b90349aa699607e91b36db0a79bed",
       "status": "draft",
       "humanReviewed": false,
@@ -8126,7 +8126,7 @@
     {
       "id": "sexual-minority-rs-meta",
       "locale": "ru",
-      "sourceHash": "b601cb87d56ee850ff38e1d2e2740f33d1017cf1d9eb78aed30d4559a50781d1",
+      "sourceHash": "92302932a44e9310d5276b2a2075d0a073fb352fb98bd436d96c5b5ff3d0f1e9",
       "targetHash": "adbbf0f4043c44f773d89db403eb963a14fc671d11ab6bf6177ec75374cd1e8d",
       "status": "draft",
       "humanReviewed": false,
@@ -8140,7 +8140,7 @@
     {
       "id": "sexual-minority-rs-meta",
       "locale": "ar",
-      "sourceHash": "b601cb87d56ee850ff38e1d2e2740f33d1017cf1d9eb78aed30d4559a50781d1",
+      "sourceHash": "92302932a44e9310d5276b2a2075d0a073fb352fb98bd436d96c5b5ff3d0f1e9",
       "targetHash": "a2d4109ac0b7ef2f4c1baae5587eec42e936fb207777ea53597800f71965cbc8",
       "status": "draft",
       "humanReviewed": false,
@@ -8154,7 +8154,7 @@
     {
       "id": "sexual-minority-rs-meta",
       "locale": "id",
-      "sourceHash": "b601cb87d56ee850ff38e1d2e2740f33d1017cf1d9eb78aed30d4559a50781d1",
+      "sourceHash": "92302932a44e9310d5276b2a2075d0a073fb352fb98bd436d96c5b5ff3d0f1e9",
       "targetHash": "93b539ded91cfe7f101422ae6c2ff6e56cf3f073b95da4e4c51b178c9983acca",
       "status": "draft",
       "humanReviewed": false,
@@ -8168,7 +8168,7 @@
     {
       "id": "sexual-minority-rs-meta",
       "locale": "ms",
-      "sourceHash": "b601cb87d56ee850ff38e1d2e2740f33d1017cf1d9eb78aed30d4559a50781d1",
+      "sourceHash": "92302932a44e9310d5276b2a2075d0a073fb352fb98bd436d96c5b5ff3d0f1e9",
       "targetHash": "c75f25d33a6677e155b96d8c2fd14a021c85175509b8680622031becb3debb57",
       "status": "draft",
       "humanReviewed": false,
@@ -8182,8 +8182,8 @@
     {
       "id": "lgbq-religious-family-therapy",
       "locale": "tr",
-      "sourceHash": "7a31030a9c6725abf1eecc8089717162a2437da08bc715f338d4c41ae511b2a9",
-      "targetHash": "7a31030a9c6725abf1eecc8089717162a2437da08bc715f338d4c41ae511b2a9",
+      "sourceHash": "19a91c01efbc55e83cffd11d51a354736e29b3fecb786ad01d0c19c73964243d",
+      "targetHash": "19a91c01efbc55e83cffd11d51a354736e29b3fecb786ad01d0c19c73964243d",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -8196,7 +8196,7 @@
     {
       "id": "lgbq-religious-family-therapy",
       "locale": "en",
-      "sourceHash": "7a31030a9c6725abf1eecc8089717162a2437da08bc715f338d4c41ae511b2a9",
+      "sourceHash": "19a91c01efbc55e83cffd11d51a354736e29b3fecb786ad01d0c19c73964243d",
       "targetHash": "76cc924f2edeb55dbfc5d7f9a6529ab30f7307ed6f16a695840a582d58748a5c",
       "status": "draft",
       "humanReviewed": false,
@@ -8210,7 +8210,7 @@
     {
       "id": "lgbq-religious-family-therapy",
       "locale": "de",
-      "sourceHash": "7a31030a9c6725abf1eecc8089717162a2437da08bc715f338d4c41ae511b2a9",
+      "sourceHash": "19a91c01efbc55e83cffd11d51a354736e29b3fecb786ad01d0c19c73964243d",
       "targetHash": "cc39059ce1ef5c02bb855b7f67c6485c25f383f03105413df2b9c0b8ed55e771",
       "status": "draft",
       "humanReviewed": false,
@@ -8224,7 +8224,7 @@
     {
       "id": "lgbq-religious-family-therapy",
       "locale": "zh",
-      "sourceHash": "7a31030a9c6725abf1eecc8089717162a2437da08bc715f338d4c41ae511b2a9",
+      "sourceHash": "19a91c01efbc55e83cffd11d51a354736e29b3fecb786ad01d0c19c73964243d",
       "targetHash": "722cf0dc8287333734873b263db21320f168ca3a0cdc6a280b6f7b2523cd7a37",
       "status": "draft",
       "humanReviewed": false,
@@ -8238,7 +8238,7 @@
     {
       "id": "lgbq-religious-family-therapy",
       "locale": "ru",
-      "sourceHash": "7a31030a9c6725abf1eecc8089717162a2437da08bc715f338d4c41ae511b2a9",
+      "sourceHash": "19a91c01efbc55e83cffd11d51a354736e29b3fecb786ad01d0c19c73964243d",
       "targetHash": "091031942163c0f2b770c9c86b0a9edcd08b50e1a7a4e7d121409eab94e00e4c",
       "status": "draft",
       "humanReviewed": false,
@@ -8252,7 +8252,7 @@
     {
       "id": "lgbq-religious-family-therapy",
       "locale": "ar",
-      "sourceHash": "7a31030a9c6725abf1eecc8089717162a2437da08bc715f338d4c41ae511b2a9",
+      "sourceHash": "19a91c01efbc55e83cffd11d51a354736e29b3fecb786ad01d0c19c73964243d",
       "targetHash": "7dfa1100bd698575cceb923eabdcc76a66d8adc7f58edd092076c042c822903b",
       "status": "draft",
       "humanReviewed": false,
@@ -8266,7 +8266,7 @@
     {
       "id": "lgbq-religious-family-therapy",
       "locale": "id",
-      "sourceHash": "7a31030a9c6725abf1eecc8089717162a2437da08bc715f338d4c41ae511b2a9",
+      "sourceHash": "19a91c01efbc55e83cffd11d51a354736e29b3fecb786ad01d0c19c73964243d",
       "targetHash": "aca5a56879a3d6fa5a64aff009bb485c85a6cf310eab02959718c324e7cf35fc",
       "status": "draft",
       "humanReviewed": false,
@@ -8280,7 +8280,7 @@
     {
       "id": "lgbq-religious-family-therapy",
       "locale": "ms",
-      "sourceHash": "7a31030a9c6725abf1eecc8089717162a2437da08bc715f338d4c41ae511b2a9",
+      "sourceHash": "19a91c01efbc55e83cffd11d51a354736e29b3fecb786ad01d0c19c73964243d",
       "targetHash": "e055423f63e2aff4628fa77b03ab6b5c03fe572731c9a8aaf9ca2aeda356e305",
       "status": "draft",
       "humanReviewed": false,
@@ -8294,8 +8294,8 @@
     {
       "id": "lebanon-sexual-stigma",
       "locale": "tr",
-      "sourceHash": "8e7a8a0b94e9ddd8129b441282c6425c5befa4f0d3e60c779d524607b0442371",
-      "targetHash": "8e7a8a0b94e9ddd8129b441282c6425c5befa4f0d3e60c779d524607b0442371",
+      "sourceHash": "f54f8ee4f765b4b977ad1a7f0bd3d5c4784bd402a09096a91434233a13e4ad48",
+      "targetHash": "f54f8ee4f765b4b977ad1a7f0bd3d5c4784bd402a09096a91434233a13e4ad48",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -8308,7 +8308,7 @@
     {
       "id": "lebanon-sexual-stigma",
       "locale": "en",
-      "sourceHash": "8e7a8a0b94e9ddd8129b441282c6425c5befa4f0d3e60c779d524607b0442371",
+      "sourceHash": "f54f8ee4f765b4b977ad1a7f0bd3d5c4784bd402a09096a91434233a13e4ad48",
       "targetHash": "25e49009e256bfd8fbe5f8aca05082ac0f8d908d88122af51db7b8d4a3263e71",
       "status": "draft",
       "humanReviewed": false,
@@ -8322,7 +8322,7 @@
     {
       "id": "lebanon-sexual-stigma",
       "locale": "de",
-      "sourceHash": "8e7a8a0b94e9ddd8129b441282c6425c5befa4f0d3e60c779d524607b0442371",
+      "sourceHash": "f54f8ee4f765b4b977ad1a7f0bd3d5c4784bd402a09096a91434233a13e4ad48",
       "targetHash": "5345b870a1c89ba3e331065d909ce4f9a0900234b86c99383f27d5c0d2a37e4f",
       "status": "draft",
       "humanReviewed": false,
@@ -8336,7 +8336,7 @@
     {
       "id": "lebanon-sexual-stigma",
       "locale": "zh",
-      "sourceHash": "8e7a8a0b94e9ddd8129b441282c6425c5befa4f0d3e60c779d524607b0442371",
+      "sourceHash": "f54f8ee4f765b4b977ad1a7f0bd3d5c4784bd402a09096a91434233a13e4ad48",
       "targetHash": "0363cd718e3e475e17ee39e0ca56467af806e90c1bc96bdb1d5b1ffe9cc142e5",
       "status": "draft",
       "humanReviewed": false,
@@ -8350,7 +8350,7 @@
     {
       "id": "lebanon-sexual-stigma",
       "locale": "ru",
-      "sourceHash": "8e7a8a0b94e9ddd8129b441282c6425c5befa4f0d3e60c779d524607b0442371",
+      "sourceHash": "f54f8ee4f765b4b977ad1a7f0bd3d5c4784bd402a09096a91434233a13e4ad48",
       "targetHash": "c429006e8ba71c237a8d6b20baa34e6752669f18162c15ad518bbd0ff99b1354",
       "status": "draft",
       "humanReviewed": false,
@@ -8364,7 +8364,7 @@
     {
       "id": "lebanon-sexual-stigma",
       "locale": "ar",
-      "sourceHash": "8e7a8a0b94e9ddd8129b441282c6425c5befa4f0d3e60c779d524607b0442371",
+      "sourceHash": "f54f8ee4f765b4b977ad1a7f0bd3d5c4784bd402a09096a91434233a13e4ad48",
       "targetHash": "c9a61480b57fc906b45c3ae4097b1ccc0aefd600561ce89c1904238bb2fcd19f",
       "status": "draft",
       "humanReviewed": false,
@@ -8378,7 +8378,7 @@
     {
       "id": "lebanon-sexual-stigma",
       "locale": "id",
-      "sourceHash": "8e7a8a0b94e9ddd8129b441282c6425c5befa4f0d3e60c779d524607b0442371",
+      "sourceHash": "f54f8ee4f765b4b977ad1a7f0bd3d5c4784bd402a09096a91434233a13e4ad48",
       "targetHash": "40a82a6cba83c235c6aef7223fc007648266b36e69ec401fc4212f6421289d30",
       "status": "draft",
       "humanReviewed": false,
@@ -8392,7 +8392,7 @@
     {
       "id": "lebanon-sexual-stigma",
       "locale": "ms",
-      "sourceHash": "8e7a8a0b94e9ddd8129b441282c6425c5befa4f0d3e60c779d524607b0442371",
+      "sourceHash": "f54f8ee4f765b4b977ad1a7f0bd3d5c4784bd402a09096a91434233a13e4ad48",
       "targetHash": "3a15176ba73af980a54d180febaa5bf416c2c62d42b19aac5c4e39b4ed8a767f",
       "status": "draft",
       "humanReviewed": false,
@@ -8406,8 +8406,8 @@
     {
       "id": "icsg-2",
       "locale": "tr",
-      "sourceHash": "71b3704a13a54376223c3e8ce8052daf4dc4406e63cbfccc4e93193c440299f3",
-      "targetHash": "71b3704a13a54376223c3e8ce8052daf4dc4406e63cbfccc4e93193c440299f3",
+      "sourceHash": "877df8a1156c9e45006bf143f985e862c66784e7eb46e85da53715454c6baa76",
+      "targetHash": "877df8a1156c9e45006bf143f985e862c66784e7eb46e85da53715454c6baa76",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -8420,7 +8420,7 @@
     {
       "id": "icsg-2",
       "locale": "en",
-      "sourceHash": "71b3704a13a54376223c3e8ce8052daf4dc4406e63cbfccc4e93193c440299f3",
+      "sourceHash": "877df8a1156c9e45006bf143f985e862c66784e7eb46e85da53715454c6baa76",
       "targetHash": "067aa4ad96f88c0143ade954bd1f5da6d82aaa19a4b9ebc0bf33f2ffcdcd6c9a",
       "status": "draft",
       "humanReviewed": false,
@@ -8434,7 +8434,7 @@
     {
       "id": "icsg-2",
       "locale": "de",
-      "sourceHash": "71b3704a13a54376223c3e8ce8052daf4dc4406e63cbfccc4e93193c440299f3",
+      "sourceHash": "877df8a1156c9e45006bf143f985e862c66784e7eb46e85da53715454c6baa76",
       "targetHash": "7e47ba798e31b40503c0e8e20df01b3162f951415f880feef7bb779dc3de5b37",
       "status": "draft",
       "humanReviewed": false,
@@ -8448,7 +8448,7 @@
     {
       "id": "icsg-2",
       "locale": "zh",
-      "sourceHash": "71b3704a13a54376223c3e8ce8052daf4dc4406e63cbfccc4e93193c440299f3",
+      "sourceHash": "877df8a1156c9e45006bf143f985e862c66784e7eb46e85da53715454c6baa76",
       "targetHash": "1c49ef786bef9b0db0dae756ed4f78b183023873d5c9da81ac930c070c936d8c",
       "status": "draft",
       "humanReviewed": false,
@@ -8462,7 +8462,7 @@
     {
       "id": "icsg-2",
       "locale": "ru",
-      "sourceHash": "71b3704a13a54376223c3e8ce8052daf4dc4406e63cbfccc4e93193c440299f3",
+      "sourceHash": "877df8a1156c9e45006bf143f985e862c66784e7eb46e85da53715454c6baa76",
       "targetHash": "f99103c33d3cc3022031b449e1d645c6cb40401bf48be9b2adb52528ee17d137",
       "status": "draft",
       "humanReviewed": false,
@@ -8476,7 +8476,7 @@
     {
       "id": "icsg-2",
       "locale": "ar",
-      "sourceHash": "71b3704a13a54376223c3e8ce8052daf4dc4406e63cbfccc4e93193c440299f3",
+      "sourceHash": "877df8a1156c9e45006bf143f985e862c66784e7eb46e85da53715454c6baa76",
       "targetHash": "f96c1eb4bcc44ce0c31c1c0c540a630ec6a0da4a8c9769ec2351c3be884d77ba",
       "status": "draft",
       "humanReviewed": false,
@@ -8490,7 +8490,7 @@
     {
       "id": "icsg-2",
       "locale": "id",
-      "sourceHash": "71b3704a13a54376223c3e8ce8052daf4dc4406e63cbfccc4e93193c440299f3",
+      "sourceHash": "877df8a1156c9e45006bf143f985e862c66784e7eb46e85da53715454c6baa76",
       "targetHash": "98b095b729c93584f41b7fcb5bc55b8b81cd502d2ec921f53e837752401c7556",
       "status": "draft",
       "humanReviewed": false,
@@ -8504,7 +8504,7 @@
     {
       "id": "icsg-2",
       "locale": "ms",
-      "sourceHash": "71b3704a13a54376223c3e8ce8052daf4dc4406e63cbfccc4e93193c440299f3",
+      "sourceHash": "877df8a1156c9e45006bf143f985e862c66784e7eb46e85da53715454c6baa76",
       "targetHash": "26f59b77bf623b5b19186138a4e2a90689ad95ef86f478980664aba4b846a143",
       "status": "draft",
       "humanReviewed": false,
@@ -8518,8 +8518,8 @@
     {
       "id": "icsg-2-fa",
       "locale": "tr",
-      "sourceHash": "82bbcaa25859b48eca99e7f1c695ae00c687ff457562d3b39f68e8e13102c234",
-      "targetHash": "82bbcaa25859b48eca99e7f1c695ae00c687ff457562d3b39f68e8e13102c234",
+      "sourceHash": "31fc329dfbfcfb94a7053674883ba1fedd2cd11179b64d21a63e072e755afe3a",
+      "targetHash": "31fc329dfbfcfb94a7053674883ba1fedd2cd11179b64d21a63e072e755afe3a",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -8532,7 +8532,7 @@
     {
       "id": "icsg-2-fa",
       "locale": "en",
-      "sourceHash": "82bbcaa25859b48eca99e7f1c695ae00c687ff457562d3b39f68e8e13102c234",
+      "sourceHash": "31fc329dfbfcfb94a7053674883ba1fedd2cd11179b64d21a63e072e755afe3a",
       "targetHash": "a030104e4f37d898be3544b30858a0b90ee8d9e790d8998cf36464a83b2a4df6",
       "status": "draft",
       "humanReviewed": false,
@@ -8546,7 +8546,7 @@
     {
       "id": "icsg-2-fa",
       "locale": "de",
-      "sourceHash": "82bbcaa25859b48eca99e7f1c695ae00c687ff457562d3b39f68e8e13102c234",
+      "sourceHash": "31fc329dfbfcfb94a7053674883ba1fedd2cd11179b64d21a63e072e755afe3a",
       "targetHash": "8f5823d2cebb1085c5bcb8452dce65c2aed595331061d0216e6cd5ac3fff4b51",
       "status": "draft",
       "humanReviewed": false,
@@ -8560,7 +8560,7 @@
     {
       "id": "icsg-2-fa",
       "locale": "zh",
-      "sourceHash": "82bbcaa25859b48eca99e7f1c695ae00c687ff457562d3b39f68e8e13102c234",
+      "sourceHash": "31fc329dfbfcfb94a7053674883ba1fedd2cd11179b64d21a63e072e755afe3a",
       "targetHash": "5e291cdcaf6215879a0c7138916af356a17c7ad9bfc59980305bdc6f674ea9be",
       "status": "draft",
       "humanReviewed": false,
@@ -8574,7 +8574,7 @@
     {
       "id": "icsg-2-fa",
       "locale": "ru",
-      "sourceHash": "82bbcaa25859b48eca99e7f1c695ae00c687ff457562d3b39f68e8e13102c234",
+      "sourceHash": "31fc329dfbfcfb94a7053674883ba1fedd2cd11179b64d21a63e072e755afe3a",
       "targetHash": "bbb113abbf35aa5a427f1112386e17bdb1705621482ebe5b2f46359387110889",
       "status": "draft",
       "humanReviewed": false,
@@ -8588,7 +8588,7 @@
     {
       "id": "icsg-2-fa",
       "locale": "ar",
-      "sourceHash": "82bbcaa25859b48eca99e7f1c695ae00c687ff457562d3b39f68e8e13102c234",
+      "sourceHash": "31fc329dfbfcfb94a7053674883ba1fedd2cd11179b64d21a63e072e755afe3a",
       "targetHash": "9d719397d676385c367819b4804bc98f704f91803d7df00add6c1cf126ee1bba",
       "status": "draft",
       "humanReviewed": false,
@@ -8602,7 +8602,7 @@
     {
       "id": "icsg-2-fa",
       "locale": "id",
-      "sourceHash": "82bbcaa25859b48eca99e7f1c695ae00c687ff457562d3b39f68e8e13102c234",
+      "sourceHash": "31fc329dfbfcfb94a7053674883ba1fedd2cd11179b64d21a63e072e755afe3a",
       "targetHash": "39bce396a584035175d07b57191e4c13a520f056ca4454d619a4cb44c951e2c4",
       "status": "draft",
       "humanReviewed": false,
@@ -8616,7 +8616,7 @@
     {
       "id": "icsg-2-fa",
       "locale": "ms",
-      "sourceHash": "82bbcaa25859b48eca99e7f1c695ae00c687ff457562d3b39f68e8e13102c234",
+      "sourceHash": "31fc329dfbfcfb94a7053674883ba1fedd2cd11179b64d21a63e072e755afe3a",
       "targetHash": "d68a347cb6c0cf27f60cf6458eaefe644131091dd057bb049371d59cc75bfe81",
       "status": "draft",
       "humanReviewed": false,
@@ -8630,8 +8630,8 @@
     {
       "id": "p-sds",
       "locale": "tr",
-      "sourceHash": "56eadf93bdbf4cf9d2db075b9dba4a9f9c14d0b31c054b06df17eae76d00afda",
-      "targetHash": "56eadf93bdbf4cf9d2db075b9dba4a9f9c14d0b31c054b06df17eae76d00afda",
+      "sourceHash": "e1842b022f100bd7aef2caf203990af27857d893bd6c872cd38982615429fcc5",
+      "targetHash": "e1842b022f100bd7aef2caf203990af27857d893bd6c872cd38982615429fcc5",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -8644,7 +8644,7 @@
     {
       "id": "p-sds",
       "locale": "en",
-      "sourceHash": "56eadf93bdbf4cf9d2db075b9dba4a9f9c14d0b31c054b06df17eae76d00afda",
+      "sourceHash": "e1842b022f100bd7aef2caf203990af27857d893bd6c872cd38982615429fcc5",
       "targetHash": "219607afb5f269be81db99d95629b5b4af74991f8b3fe2ea601ef50c18c0c6ce",
       "status": "draft",
       "humanReviewed": false,
@@ -8658,7 +8658,7 @@
     {
       "id": "p-sds",
       "locale": "de",
-      "sourceHash": "56eadf93bdbf4cf9d2db075b9dba4a9f9c14d0b31c054b06df17eae76d00afda",
+      "sourceHash": "e1842b022f100bd7aef2caf203990af27857d893bd6c872cd38982615429fcc5",
       "targetHash": "65f9167df9ab3ecfd574d54f621cae75e29a4a79cf1a62f8737ea39d7e29d183",
       "status": "draft",
       "humanReviewed": false,
@@ -8672,7 +8672,7 @@
     {
       "id": "p-sds",
       "locale": "zh",
-      "sourceHash": "56eadf93bdbf4cf9d2db075b9dba4a9f9c14d0b31c054b06df17eae76d00afda",
+      "sourceHash": "e1842b022f100bd7aef2caf203990af27857d893bd6c872cd38982615429fcc5",
       "targetHash": "0c516b4b7b8b0c6fe24b6fb1327ec2fc4fdf43b7b6375e7160d36d63e10fb14a",
       "status": "draft",
       "humanReviewed": false,
@@ -8686,7 +8686,7 @@
     {
       "id": "p-sds",
       "locale": "ru",
-      "sourceHash": "56eadf93bdbf4cf9d2db075b9dba4a9f9c14d0b31c054b06df17eae76d00afda",
+      "sourceHash": "e1842b022f100bd7aef2caf203990af27857d893bd6c872cd38982615429fcc5",
       "targetHash": "e0e029f108dcac71f31254449a3c2025205456d897136a7d976e622ff88d1b80",
       "status": "draft",
       "humanReviewed": false,
@@ -8700,7 +8700,7 @@
     {
       "id": "p-sds",
       "locale": "ar",
-      "sourceHash": "56eadf93bdbf4cf9d2db075b9dba4a9f9c14d0b31c054b06df17eae76d00afda",
+      "sourceHash": "e1842b022f100bd7aef2caf203990af27857d893bd6c872cd38982615429fcc5",
       "targetHash": "19ecf4b3b34371a4c23c1d140b339f3c2594b6441975ef26abb95929d8b7da85",
       "status": "draft",
       "humanReviewed": false,
@@ -8714,7 +8714,7 @@
     {
       "id": "p-sds",
       "locale": "id",
-      "sourceHash": "56eadf93bdbf4cf9d2db075b9dba4a9f9c14d0b31c054b06df17eae76d00afda",
+      "sourceHash": "e1842b022f100bd7aef2caf203990af27857d893bd6c872cd38982615429fcc5",
       "targetHash": "c571198a7a74cde3b65854d54793e8499ffcdabc3e8a79c654727142039527c3",
       "status": "draft",
       "humanReviewed": false,
@@ -8728,7 +8728,7 @@
     {
       "id": "p-sds",
       "locale": "ms",
-      "sourceHash": "56eadf93bdbf4cf9d2db075b9dba4a9f9c14d0b31c054b06df17eae76d00afda",
+      "sourceHash": "e1842b022f100bd7aef2caf203990af27857d893bd6c872cd38982615429fcc5",
       "targetHash": "efe9ab7994bafb4a24d01b42a1c3e83c4d2921df6a393a1b3e3d2966eb724454",
       "status": "draft",
       "humanReviewed": false,
@@ -8854,8 +8854,8 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "tr",
-      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
-      "targetHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
+      "sourceHash": "d2d685f60d06f2ea4534db11172ade5cce503415328601ef2903b60f802703be",
+      "targetHash": "d2d685f60d06f2ea4534db11172ade5cce503415328601ef2903b60f802703be",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -8868,7 +8868,7 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "en",
-      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
+      "sourceHash": "d2d685f60d06f2ea4534db11172ade5cce503415328601ef2903b60f802703be",
       "targetHash": "d2ece4286f2f2b89c902efa1869a79b80f20a05ae712a5e91d0cb4a089fd4431",
       "status": "draft",
       "humanReviewed": false,
@@ -8882,7 +8882,7 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "de",
-      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
+      "sourceHash": "d2d685f60d06f2ea4534db11172ade5cce503415328601ef2903b60f802703be",
       "targetHash": "a91186eb226fbf0e11f40f19f89f172fcab9e96a7a66d2da3306079e93080106",
       "status": "draft",
       "humanReviewed": false,
@@ -8896,7 +8896,7 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "zh",
-      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
+      "sourceHash": "d2d685f60d06f2ea4534db11172ade5cce503415328601ef2903b60f802703be",
       "targetHash": "7a6a7a28f3dc77a2e1002a1024b734af97feece2432698b9a0219959fd634adf",
       "status": "draft",
       "humanReviewed": false,
@@ -8910,7 +8910,7 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "ru",
-      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
+      "sourceHash": "d2d685f60d06f2ea4534db11172ade5cce503415328601ef2903b60f802703be",
       "targetHash": "ddf021f537c6e39da694cd0b078c2320752d7aa8359b511c3181139872f2ea59",
       "status": "draft",
       "humanReviewed": false,
@@ -8924,7 +8924,7 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "ar",
-      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
+      "sourceHash": "d2d685f60d06f2ea4534db11172ade5cce503415328601ef2903b60f802703be",
       "targetHash": "bf4477af99b39a15691d0ceec7ee0ba667fcde222adc74b06b1c956754c87a29",
       "status": "draft",
       "humanReviewed": false,
@@ -8938,7 +8938,7 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "id",
-      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
+      "sourceHash": "d2d685f60d06f2ea4534db11172ade5cce503415328601ef2903b60f802703be",
       "targetHash": "5bec36d817b0d8547b3b4cb4befef9c00a10b6b97b24f6b409c0ddf8b2f71a98",
       "status": "draft",
       "humanReviewed": false,
@@ -8952,7 +8952,7 @@
     {
       "id": "understanding-spiritual-experience",
       "locale": "ms",
-      "sourceHash": "cfd27b79b9e4c2c453af7c43928e2b566f7e5c87efa2a217e630c4e0e019c200",
+      "sourceHash": "d2d685f60d06f2ea4534db11172ade5cce503415328601ef2903b60f802703be",
       "targetHash": "95d542a08ee9749d4a2d6b793ab3e24de8c7246f73054d4d6f1a5680beb807b7",
       "status": "draft",
       "humanReviewed": false,
@@ -8966,8 +8966,8 @@
     {
       "id": "reading-evidence",
       "locale": "tr",
-      "sourceHash": "f557a31c8be4a708012094ee0eddd4f450e554ab84b02ebcf5691a32522896f1",
-      "targetHash": "f557a31c8be4a708012094ee0eddd4f450e554ab84b02ebcf5691a32522896f1",
+      "sourceHash": "ffdc5680c09bfcf4f8f72e026940df147bdc551bb758c897c200f74cd7c0413a",
+      "targetHash": "ffdc5680c09bfcf4f8f72e026940df147bdc551bb758c897c200f74cd7c0413a",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -8980,7 +8980,7 @@
     {
       "id": "reading-evidence",
       "locale": "en",
-      "sourceHash": "f557a31c8be4a708012094ee0eddd4f450e554ab84b02ebcf5691a32522896f1",
+      "sourceHash": "ffdc5680c09bfcf4f8f72e026940df147bdc551bb758c897c200f74cd7c0413a",
       "targetHash": "35b4d2441d9fd807a8bb9d9e2fb134fe4edd4ac116089df1b83b0373a31ac444",
       "status": "draft",
       "humanReviewed": false,
@@ -8994,7 +8994,7 @@
     {
       "id": "reading-evidence",
       "locale": "de",
-      "sourceHash": "f557a31c8be4a708012094ee0eddd4f450e554ab84b02ebcf5691a32522896f1",
+      "sourceHash": "ffdc5680c09bfcf4f8f72e026940df147bdc551bb758c897c200f74cd7c0413a",
       "targetHash": "e7fe652c06472d5d97f9ed51e7adbc12e10b1d7f599fe4ecbcc04e80f2121793",
       "status": "draft",
       "humanReviewed": false,
@@ -9008,7 +9008,7 @@
     {
       "id": "reading-evidence",
       "locale": "zh",
-      "sourceHash": "f557a31c8be4a708012094ee0eddd4f450e554ab84b02ebcf5691a32522896f1",
+      "sourceHash": "ffdc5680c09bfcf4f8f72e026940df147bdc551bb758c897c200f74cd7c0413a",
       "targetHash": "a83c2acf551f2d252aee0e6face03e22ae81358620b0e693a140404b00ab3c9e",
       "status": "draft",
       "humanReviewed": false,
@@ -9022,7 +9022,7 @@
     {
       "id": "reading-evidence",
       "locale": "ru",
-      "sourceHash": "f557a31c8be4a708012094ee0eddd4f450e554ab84b02ebcf5691a32522896f1",
+      "sourceHash": "ffdc5680c09bfcf4f8f72e026940df147bdc551bb758c897c200f74cd7c0413a",
       "targetHash": "72efa073c4953aaecce7f6e6c8c3ae8cfafe1d11c98b334c1a44e78e73909368",
       "status": "draft",
       "humanReviewed": false,
@@ -9036,7 +9036,7 @@
     {
       "id": "reading-evidence",
       "locale": "ar",
-      "sourceHash": "f557a31c8be4a708012094ee0eddd4f450e554ab84b02ebcf5691a32522896f1",
+      "sourceHash": "ffdc5680c09bfcf4f8f72e026940df147bdc551bb758c897c200f74cd7c0413a",
       "targetHash": "e811b9e836df0ac3dca28377ad7febec1173ec4455926cc2c29fc8bdce80881c",
       "status": "draft",
       "humanReviewed": false,
@@ -9050,7 +9050,7 @@
     {
       "id": "reading-evidence",
       "locale": "id",
-      "sourceHash": "f557a31c8be4a708012094ee0eddd4f450e554ab84b02ebcf5691a32522896f1",
+      "sourceHash": "ffdc5680c09bfcf4f8f72e026940df147bdc551bb758c897c200f74cd7c0413a",
       "targetHash": "f6ff8e76c3aa7d8f152a34bd2356d2402e0ceacf0f0aab6196a726a0f23f36ff",
       "status": "draft",
       "humanReviewed": false,
@@ -9064,7 +9064,7 @@
     {
       "id": "reading-evidence",
       "locale": "ms",
-      "sourceHash": "f557a31c8be4a708012094ee0eddd4f450e554ab84b02ebcf5691a32522896f1",
+      "sourceHash": "ffdc5680c09bfcf4f8f72e026940df147bdc551bb758c897c200f74cd7c0413a",
       "targetHash": "7f4d3ab1776cdba11365611eed53416e9af05b730116cd47c55c0d48a9b905bc",
       "status": "draft",
       "humanReviewed": false,
@@ -9078,8 +9078,8 @@
     {
       "id": "preferences-and-boundaries",
       "locale": "tr",
-      "sourceHash": "3a47a4c1f753bbe3647f58a99363ffeb54443ecc808723eccca548c6dfa86b7c",
-      "targetHash": "3a47a4c1f753bbe3647f58a99363ffeb54443ecc808723eccca548c6dfa86b7c",
+      "sourceHash": "1c371c730e9720613a4599cc9e828aa48c1e18e8fa71231cf6fa22b4bff92aad",
+      "targetHash": "1c371c730e9720613a4599cc9e828aa48c1e18e8fa71231cf6fa22b4bff92aad",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -9092,7 +9092,7 @@
     {
       "id": "preferences-and-boundaries",
       "locale": "en",
-      "sourceHash": "3a47a4c1f753bbe3647f58a99363ffeb54443ecc808723eccca548c6dfa86b7c",
+      "sourceHash": "1c371c730e9720613a4599cc9e828aa48c1e18e8fa71231cf6fa22b4bff92aad",
       "targetHash": "b17f691b5e0260036db8759765c06260378ee4752a12a2d95949163607826c7d",
       "status": "draft",
       "humanReviewed": false,
@@ -9106,7 +9106,7 @@
     {
       "id": "preferences-and-boundaries",
       "locale": "de",
-      "sourceHash": "3a47a4c1f753bbe3647f58a99363ffeb54443ecc808723eccca548c6dfa86b7c",
+      "sourceHash": "1c371c730e9720613a4599cc9e828aa48c1e18e8fa71231cf6fa22b4bff92aad",
       "targetHash": "a8de606b043f768310b7fa117b34b7e681efc5a544539dca3c5613709e56b642",
       "status": "draft",
       "humanReviewed": false,
@@ -9120,7 +9120,7 @@
     {
       "id": "preferences-and-boundaries",
       "locale": "zh",
-      "sourceHash": "3a47a4c1f753bbe3647f58a99363ffeb54443ecc808723eccca548c6dfa86b7c",
+      "sourceHash": "1c371c730e9720613a4599cc9e828aa48c1e18e8fa71231cf6fa22b4bff92aad",
       "targetHash": "12553984d3ace72b97c42cd0c2795731f297d18a6e27c2081e11fe281b176a6b",
       "status": "draft",
       "humanReviewed": false,
@@ -9134,7 +9134,7 @@
     {
       "id": "preferences-and-boundaries",
       "locale": "ru",
-      "sourceHash": "3a47a4c1f753bbe3647f58a99363ffeb54443ecc808723eccca548c6dfa86b7c",
+      "sourceHash": "1c371c730e9720613a4599cc9e828aa48c1e18e8fa71231cf6fa22b4bff92aad",
       "targetHash": "5f3a1c9a31be64b2ca7671505df1fa393acafa942106b17303e0465c60f8eeff",
       "status": "draft",
       "humanReviewed": false,
@@ -9148,7 +9148,7 @@
     {
       "id": "preferences-and-boundaries",
       "locale": "ar",
-      "sourceHash": "3a47a4c1f753bbe3647f58a99363ffeb54443ecc808723eccca548c6dfa86b7c",
+      "sourceHash": "1c371c730e9720613a4599cc9e828aa48c1e18e8fa71231cf6fa22b4bff92aad",
       "targetHash": "dba6ae6b98afd60f5df905638c19fa41247028bf6bd84ee58dcd2d9f35c0f341",
       "status": "draft",
       "humanReviewed": false,
@@ -9162,7 +9162,7 @@
     {
       "id": "preferences-and-boundaries",
       "locale": "id",
-      "sourceHash": "3a47a4c1f753bbe3647f58a99363ffeb54443ecc808723eccca548c6dfa86b7c",
+      "sourceHash": "1c371c730e9720613a4599cc9e828aa48c1e18e8fa71231cf6fa22b4bff92aad",
       "targetHash": "b82bf55447fdfb06d45c31d0abd94a9e3b9ec3551dfa3fb02e320b40c22749c8",
       "status": "draft",
       "humanReviewed": false,
@@ -9176,7 +9176,7 @@
     {
       "id": "preferences-and-boundaries",
       "locale": "ms",
-      "sourceHash": "3a47a4c1f753bbe3647f58a99363ffeb54443ecc808723eccca548c6dfa86b7c",
+      "sourceHash": "1c371c730e9720613a4599cc9e828aa48c1e18e8fa71231cf6fa22b4bff92aad",
       "targetHash": "71af6a6586f70010b84503e76435bb318aa1a7326408e2f5ee15fd41b6cf1b10",
       "status": "draft",
       "humanReviewed": false,
@@ -9190,8 +9190,8 @@
     {
       "id": "aservic-2025-practices",
       "locale": "tr",
-      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
-      "targetHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "sourceHash": "7621eb177436665ec41fdb19ab85f5096f8be225f2f664f6badb0cd2fd5ff7ed",
+      "targetHash": "7621eb177436665ec41fdb19ab85f5096f8be225f2f664f6badb0cd2fd5ff7ed",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -9204,7 +9204,7 @@
     {
       "id": "aservic-2025-practices",
       "locale": "en",
-      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "sourceHash": "7621eb177436665ec41fdb19ab85f5096f8be225f2f664f6badb0cd2fd5ff7ed",
       "targetHash": "9199e347af357415412cc1ea5e0e0d58d90abc750b5880e51922503ac919a1b7",
       "status": "draft",
       "humanReviewed": false,
@@ -9218,7 +9218,7 @@
     {
       "id": "aservic-2025-practices",
       "locale": "de",
-      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "sourceHash": "7621eb177436665ec41fdb19ab85f5096f8be225f2f664f6badb0cd2fd5ff7ed",
       "targetHash": "c06ef038db0d502f95166ad59f6fb5a2eae2266e8b82d8688964ac9f5160486b",
       "status": "draft",
       "humanReviewed": false,
@@ -9232,7 +9232,7 @@
     {
       "id": "aservic-2025-practices",
       "locale": "zh",
-      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "sourceHash": "7621eb177436665ec41fdb19ab85f5096f8be225f2f664f6badb0cd2fd5ff7ed",
       "targetHash": "841b83232eb3a6fb87a33e08f70f5c38855627e384ece83a42a70bd336ffeb66",
       "status": "draft",
       "humanReviewed": false,
@@ -9246,7 +9246,7 @@
     {
       "id": "aservic-2025-practices",
       "locale": "ru",
-      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "sourceHash": "7621eb177436665ec41fdb19ab85f5096f8be225f2f664f6badb0cd2fd5ff7ed",
       "targetHash": "96e5685252d3dff5fb825fefe6334ed0e992deba844ebcd63b73936ad116e1a4",
       "status": "draft",
       "humanReviewed": false,
@@ -9260,7 +9260,7 @@
     {
       "id": "aservic-2025-practices",
       "locale": "ar",
-      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "sourceHash": "7621eb177436665ec41fdb19ab85f5096f8be225f2f664f6badb0cd2fd5ff7ed",
       "targetHash": "7c23545a858d16213dcc4ec3f8743052b1cf4c81adf725021741305ce32171d2",
       "status": "draft",
       "humanReviewed": false,
@@ -9274,7 +9274,7 @@
     {
       "id": "aservic-2025-practices",
       "locale": "id",
-      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "sourceHash": "7621eb177436665ec41fdb19ab85f5096f8be225f2f664f6badb0cd2fd5ff7ed",
       "targetHash": "94016d1ffad41b276f2a0378049c8c1b7fc208bf3dd5439ab65962ef18c48a18",
       "status": "draft",
       "humanReviewed": false,
@@ -9288,7 +9288,7 @@
     {
       "id": "aservic-2025-practices",
       "locale": "ms",
-      "sourceHash": "3b26b407f6b74c975291d83334596e5bbb14cab0d2df33d4e5993f0896a8750f",
+      "sourceHash": "7621eb177436665ec41fdb19ab85f5096f8be225f2f664f6badb0cd2fd5ff7ed",
       "targetHash": "bc91c79540c1ffe2d78523fdb114eb2987aa4ba8efcf2e295eb99483fac91277",
       "status": "draft",
       "humanReviewed": false,
@@ -9302,8 +9302,8 @@
     {
       "id": "culture-and-worldviews",
       "locale": "tr",
-      "sourceHash": "648b5decb613c1d066c9ff86a1f100e334b57f0eb0c2adba645d242ff0410c26",
-      "targetHash": "648b5decb613c1d066c9ff86a1f100e334b57f0eb0c2adba645d242ff0410c26",
+      "sourceHash": "f8d1709b3ed7fd81025fabfd4e4eaf105b2ff70efb683a0216d27f1f0ed44276",
+      "targetHash": "f8d1709b3ed7fd81025fabfd4e4eaf105b2ff70efb683a0216d27f1f0ed44276",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -9316,7 +9316,7 @@
     {
       "id": "culture-and-worldviews",
       "locale": "en",
-      "sourceHash": "648b5decb613c1d066c9ff86a1f100e334b57f0eb0c2adba645d242ff0410c26",
+      "sourceHash": "f8d1709b3ed7fd81025fabfd4e4eaf105b2ff70efb683a0216d27f1f0ed44276",
       "targetHash": "30e08dd74407e03054b8b3d62ad3bc7287ae8e42eefc0399012b399b74d3f760",
       "status": "draft",
       "humanReviewed": false,
@@ -9330,7 +9330,7 @@
     {
       "id": "culture-and-worldviews",
       "locale": "de",
-      "sourceHash": "648b5decb613c1d066c9ff86a1f100e334b57f0eb0c2adba645d242ff0410c26",
+      "sourceHash": "f8d1709b3ed7fd81025fabfd4e4eaf105b2ff70efb683a0216d27f1f0ed44276",
       "targetHash": "0d56924be792490fb23de5f6761391d4f825c8d5ce883ab464557ef3df270dc3",
       "status": "draft",
       "humanReviewed": false,
@@ -9344,7 +9344,7 @@
     {
       "id": "culture-and-worldviews",
       "locale": "zh",
-      "sourceHash": "648b5decb613c1d066c9ff86a1f100e334b57f0eb0c2adba645d242ff0410c26",
+      "sourceHash": "f8d1709b3ed7fd81025fabfd4e4eaf105b2ff70efb683a0216d27f1f0ed44276",
       "targetHash": "4c42be1711b5f732ca9c1e8277110397334c19279ee30aca6c05cfe62e4d0c97",
       "status": "draft",
       "humanReviewed": false,
@@ -9358,7 +9358,7 @@
     {
       "id": "culture-and-worldviews",
       "locale": "ru",
-      "sourceHash": "648b5decb613c1d066c9ff86a1f100e334b57f0eb0c2adba645d242ff0410c26",
+      "sourceHash": "f8d1709b3ed7fd81025fabfd4e4eaf105b2ff70efb683a0216d27f1f0ed44276",
       "targetHash": "60c23a9a888ffff6e7e00b28e1f6f19a0c2022a1b9ce57f3a4bab90a5f7ed555",
       "status": "draft",
       "humanReviewed": false,
@@ -9372,7 +9372,7 @@
     {
       "id": "culture-and-worldviews",
       "locale": "ar",
-      "sourceHash": "648b5decb613c1d066c9ff86a1f100e334b57f0eb0c2adba645d242ff0410c26",
+      "sourceHash": "f8d1709b3ed7fd81025fabfd4e4eaf105b2ff70efb683a0216d27f1f0ed44276",
       "targetHash": "1c2350a287a534a67dd5810345a4b38d12e1239fde29627229e72442e95a814b",
       "status": "draft",
       "humanReviewed": false,
@@ -9386,7 +9386,7 @@
     {
       "id": "culture-and-worldviews",
       "locale": "id",
-      "sourceHash": "648b5decb613c1d066c9ff86a1f100e334b57f0eb0c2adba645d242ff0410c26",
+      "sourceHash": "f8d1709b3ed7fd81025fabfd4e4eaf105b2ff70efb683a0216d27f1f0ed44276",
       "targetHash": "7b71d2b87917b33934bc3424706c6e14a2b926b05512779ca2d51c6e43b6e255",
       "status": "draft",
       "humanReviewed": false,
@@ -9400,7 +9400,7 @@
     {
       "id": "culture-and-worldviews",
       "locale": "ms",
-      "sourceHash": "648b5decb613c1d066c9ff86a1f100e334b57f0eb0c2adba645d242ff0410c26",
+      "sourceHash": "f8d1709b3ed7fd81025fabfd4e4eaf105b2ff70efb683a0216d27f1f0ed44276",
       "targetHash": "c1cc47306c5e5bac014a2ff55635ba4548522faf901ae8b782615a13877a5f31",
       "status": "draft",
       "humanReviewed": false,
@@ -9414,8 +9414,8 @@
     {
       "id": "assessment-and-permission",
       "locale": "tr",
-      "sourceHash": "068b8dbcd1d2888ba161970407ba23f5acb8386b1e7757ff17461fd6120c3080",
-      "targetHash": "068b8dbcd1d2888ba161970407ba23f5acb8386b1e7757ff17461fd6120c3080",
+      "sourceHash": "1a9446f1b34432bc0e3b0cca0eab85485fcdf365507607a363e561c6db174775",
+      "targetHash": "1a9446f1b34432bc0e3b0cca0eab85485fcdf365507607a363e561c6db174775",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -9428,7 +9428,7 @@
     {
       "id": "assessment-and-permission",
       "locale": "en",
-      "sourceHash": "068b8dbcd1d2888ba161970407ba23f5acb8386b1e7757ff17461fd6120c3080",
+      "sourceHash": "1a9446f1b34432bc0e3b0cca0eab85485fcdf365507607a363e561c6db174775",
       "targetHash": "0bd4a6ee623cdfa913bb5910643abe24e459d3ac855385d3fe9fbb93538a5a00",
       "status": "draft",
       "humanReviewed": false,
@@ -9442,7 +9442,7 @@
     {
       "id": "assessment-and-permission",
       "locale": "de",
-      "sourceHash": "068b8dbcd1d2888ba161970407ba23f5acb8386b1e7757ff17461fd6120c3080",
+      "sourceHash": "1a9446f1b34432bc0e3b0cca0eab85485fcdf365507607a363e561c6db174775",
       "targetHash": "daa233303b3d21bc7e7b78de6c46352ba000c95f341cfa20da0d60a827379d52",
       "status": "draft",
       "humanReviewed": false,
@@ -9456,7 +9456,7 @@
     {
       "id": "assessment-and-permission",
       "locale": "zh",
-      "sourceHash": "068b8dbcd1d2888ba161970407ba23f5acb8386b1e7757ff17461fd6120c3080",
+      "sourceHash": "1a9446f1b34432bc0e3b0cca0eab85485fcdf365507607a363e561c6db174775",
       "targetHash": "2c042c3568bd74996dfed36aa04f6c0b01b73bb1676484807baad8fffbf120da",
       "status": "draft",
       "humanReviewed": false,
@@ -9470,7 +9470,7 @@
     {
       "id": "assessment-and-permission",
       "locale": "ru",
-      "sourceHash": "068b8dbcd1d2888ba161970407ba23f5acb8386b1e7757ff17461fd6120c3080",
+      "sourceHash": "1a9446f1b34432bc0e3b0cca0eab85485fcdf365507607a363e561c6db174775",
       "targetHash": "aed7a810606ec3b9fb55df6d5f59a07385e82248d91c5d4ddca7d89ef2c64325",
       "status": "draft",
       "humanReviewed": false,
@@ -9484,7 +9484,7 @@
     {
       "id": "assessment-and-permission",
       "locale": "ar",
-      "sourceHash": "068b8dbcd1d2888ba161970407ba23f5acb8386b1e7757ff17461fd6120c3080",
+      "sourceHash": "1a9446f1b34432bc0e3b0cca0eab85485fcdf365507607a363e561c6db174775",
       "targetHash": "97ae3efe7fcba15c588a3fd4003c8d4583ac8a0f3bd66641715905980e774068",
       "status": "draft",
       "humanReviewed": false,
@@ -9498,7 +9498,7 @@
     {
       "id": "assessment-and-permission",
       "locale": "id",
-      "sourceHash": "068b8dbcd1d2888ba161970407ba23f5acb8386b1e7757ff17461fd6120c3080",
+      "sourceHash": "1a9446f1b34432bc0e3b0cca0eab85485fcdf365507607a363e561c6db174775",
       "targetHash": "cdbecc710849b04b2364bbe95f2b6ac66777a98cd07155f2b038ac48089bd7ac",
       "status": "draft",
       "humanReviewed": false,
@@ -9512,7 +9512,7 @@
     {
       "id": "assessment-and-permission",
       "locale": "ms",
-      "sourceHash": "068b8dbcd1d2888ba161970407ba23f5acb8386b1e7757ff17461fd6120c3080",
+      "sourceHash": "1a9446f1b34432bc0e3b0cca0eab85485fcdf365507607a363e561c6db174775",
       "targetHash": "f117699e7c6da8cbb3afa1a768613d28067b7f302169868e0ad7e88b9aeef45b",
       "status": "draft",
       "humanReviewed": false,
@@ -9526,8 +9526,8 @@
     {
       "id": "question-to-design",
       "locale": "tr",
-      "sourceHash": "6642240dfd4053abb5fff272ff145c64381047d9f99473d73b8d18ae2fcb615b",
-      "targetHash": "6642240dfd4053abb5fff272ff145c64381047d9f99473d73b8d18ae2fcb615b",
+      "sourceHash": "c31deea4ce9ba0b2d44dc2af02abc4152730c2e10e4b7af58a119b14ef254749",
+      "targetHash": "c31deea4ce9ba0b2d44dc2af02abc4152730c2e10e4b7af58a119b14ef254749",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -9540,7 +9540,7 @@
     {
       "id": "question-to-design",
       "locale": "en",
-      "sourceHash": "6642240dfd4053abb5fff272ff145c64381047d9f99473d73b8d18ae2fcb615b",
+      "sourceHash": "c31deea4ce9ba0b2d44dc2af02abc4152730c2e10e4b7af58a119b14ef254749",
       "targetHash": "3214f062182df9dd113801c78ae572caf7f6e0bde0f89b04e311249f79a20d84",
       "status": "draft",
       "humanReviewed": false,
@@ -9554,7 +9554,7 @@
     {
       "id": "question-to-design",
       "locale": "de",
-      "sourceHash": "6642240dfd4053abb5fff272ff145c64381047d9f99473d73b8d18ae2fcb615b",
+      "sourceHash": "c31deea4ce9ba0b2d44dc2af02abc4152730c2e10e4b7af58a119b14ef254749",
       "targetHash": "f8b57f9624831ee29eb1061439382f45641069842e4fe84cd4f797f810f2d934",
       "status": "draft",
       "humanReviewed": false,
@@ -9568,7 +9568,7 @@
     {
       "id": "question-to-design",
       "locale": "zh",
-      "sourceHash": "6642240dfd4053abb5fff272ff145c64381047d9f99473d73b8d18ae2fcb615b",
+      "sourceHash": "c31deea4ce9ba0b2d44dc2af02abc4152730c2e10e4b7af58a119b14ef254749",
       "targetHash": "83f8abaedc998eb42ed52e941428cf35fadaa7b975ff94023bc441a727538f50",
       "status": "draft",
       "humanReviewed": false,
@@ -9582,7 +9582,7 @@
     {
       "id": "question-to-design",
       "locale": "ru",
-      "sourceHash": "6642240dfd4053abb5fff272ff145c64381047d9f99473d73b8d18ae2fcb615b",
+      "sourceHash": "c31deea4ce9ba0b2d44dc2af02abc4152730c2e10e4b7af58a119b14ef254749",
       "targetHash": "43407b559333255d46a7cd881c0498cfb0f1458e7a2a4e07449245714799a338",
       "status": "draft",
       "humanReviewed": false,
@@ -9596,7 +9596,7 @@
     {
       "id": "question-to-design",
       "locale": "ar",
-      "sourceHash": "6642240dfd4053abb5fff272ff145c64381047d9f99473d73b8d18ae2fcb615b",
+      "sourceHash": "c31deea4ce9ba0b2d44dc2af02abc4152730c2e10e4b7af58a119b14ef254749",
       "targetHash": "9343f61058b4382728697b387d89b91e1238ffb0db03dd14968a22ab80e3586d",
       "status": "draft",
       "humanReviewed": false,
@@ -9610,7 +9610,7 @@
     {
       "id": "question-to-design",
       "locale": "id",
-      "sourceHash": "6642240dfd4053abb5fff272ff145c64381047d9f99473d73b8d18ae2fcb615b",
+      "sourceHash": "c31deea4ce9ba0b2d44dc2af02abc4152730c2e10e4b7af58a119b14ef254749",
       "targetHash": "e19d27df67d2279df653bc2614d16756e7b9ccf809c63105512b1f7814da09d8",
       "status": "draft",
       "humanReviewed": false,
@@ -9624,7 +9624,7 @@
     {
       "id": "question-to-design",
       "locale": "ms",
-      "sourceHash": "6642240dfd4053abb5fff272ff145c64381047d9f99473d73b8d18ae2fcb615b",
+      "sourceHash": "c31deea4ce9ba0b2d44dc2af02abc4152730c2e10e4b7af58a119b14ef254749",
       "targetHash": "bec86164b77b7a769e9f72bac573715ca82993942095dd1b5f6dbdbf7450c267",
       "status": "draft",
       "humanReviewed": false,
@@ -9638,8 +9638,8 @@
     {
       "id": "theory-and-integration",
       "locale": "tr",
-      "sourceHash": "33c398e888899e5ec15f62fed958df1554470237e4eac7ef201ae2dd61e77974",
-      "targetHash": "33c398e888899e5ec15f62fed958df1554470237e4eac7ef201ae2dd61e77974",
+      "sourceHash": "e18827cc158559e8c62e669e987df24248f5b6917f166797b8386e9beddd4d59",
+      "targetHash": "e18827cc158559e8c62e669e987df24248f5b6917f166797b8386e9beddd4d59",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -9652,7 +9652,7 @@
     {
       "id": "theory-and-integration",
       "locale": "en",
-      "sourceHash": "33c398e888899e5ec15f62fed958df1554470237e4eac7ef201ae2dd61e77974",
+      "sourceHash": "e18827cc158559e8c62e669e987df24248f5b6917f166797b8386e9beddd4d59",
       "targetHash": "2e113d56f07a6945018baa8028d3b4153237940c45c90cea895e1aef773ca089",
       "status": "draft",
       "humanReviewed": false,
@@ -9666,7 +9666,7 @@
     {
       "id": "theory-and-integration",
       "locale": "de",
-      "sourceHash": "33c398e888899e5ec15f62fed958df1554470237e4eac7ef201ae2dd61e77974",
+      "sourceHash": "e18827cc158559e8c62e669e987df24248f5b6917f166797b8386e9beddd4d59",
       "targetHash": "c1952be234f9f9cb09c3cbd87d19983c3c026cb1b5725dad3e645538f59fcd37",
       "status": "draft",
       "humanReviewed": false,
@@ -9680,7 +9680,7 @@
     {
       "id": "theory-and-integration",
       "locale": "zh",
-      "sourceHash": "33c398e888899e5ec15f62fed958df1554470237e4eac7ef201ae2dd61e77974",
+      "sourceHash": "e18827cc158559e8c62e669e987df24248f5b6917f166797b8386e9beddd4d59",
       "targetHash": "84c82dcfdf6ef41e863b9d3ea4f86f57135923d427596201cc0bc30c2b0b17fc",
       "status": "draft",
       "humanReviewed": false,
@@ -9694,7 +9694,7 @@
     {
       "id": "theory-and-integration",
       "locale": "ru",
-      "sourceHash": "33c398e888899e5ec15f62fed958df1554470237e4eac7ef201ae2dd61e77974",
+      "sourceHash": "e18827cc158559e8c62e669e987df24248f5b6917f166797b8386e9beddd4d59",
       "targetHash": "87423e089822f641543e2d793cb5b9ef7ad1b545e883f447b39d33e949c597f8",
       "status": "draft",
       "humanReviewed": false,
@@ -9708,7 +9708,7 @@
     {
       "id": "theory-and-integration",
       "locale": "ar",
-      "sourceHash": "33c398e888899e5ec15f62fed958df1554470237e4eac7ef201ae2dd61e77974",
+      "sourceHash": "e18827cc158559e8c62e669e987df24248f5b6917f166797b8386e9beddd4d59",
       "targetHash": "1ac1be97ef0d8b2edee1e45e905373c3e626d005011ddfbeff6433b5102fa484",
       "status": "draft",
       "humanReviewed": false,
@@ -9722,7 +9722,7 @@
     {
       "id": "theory-and-integration",
       "locale": "id",
-      "sourceHash": "33c398e888899e5ec15f62fed958df1554470237e4eac7ef201ae2dd61e77974",
+      "sourceHash": "e18827cc158559e8c62e669e987df24248f5b6917f166797b8386e9beddd4d59",
       "targetHash": "1dfa34189b1c3b00c7a6a22e8f1ba5ddaefb0042c24a2878a58ed087c0d0d725",
       "status": "draft",
       "humanReviewed": false,
@@ -9736,7 +9736,7 @@
     {
       "id": "theory-and-integration",
       "locale": "ms",
-      "sourceHash": "33c398e888899e5ec15f62fed958df1554470237e4eac7ef201ae2dd61e77974",
+      "sourceHash": "e18827cc158559e8c62e669e987df24248f5b6917f166797b8386e9beddd4d59",
       "targetHash": "644718691d02a6035cf38337372c5103913cd09350f3f03defc1bb301e29727a",
       "status": "draft",
       "humanReviewed": false,
@@ -9750,8 +9750,8 @@
     {
       "id": "digital-tools-and-responsibility",
       "locale": "tr",
-      "sourceHash": "1329a8be21ed138c076e2684fb3952296f60554c6295aa3abf1226cfffafc093",
-      "targetHash": "1329a8be21ed138c076e2684fb3952296f60554c6295aa3abf1226cfffafc093",
+      "sourceHash": "09b237cad6bde723a0307dfada68a52d68e2a84cd2f7903f05b29077277e6c8b",
+      "targetHash": "09b237cad6bde723a0307dfada68a52d68e2a84cd2f7903f05b29077277e6c8b",
       "status": "draft",
       "humanReviewed": false,
       "reviewedBy": null,
@@ -9764,7 +9764,7 @@
     {
       "id": "digital-tools-and-responsibility",
       "locale": "en",
-      "sourceHash": "1329a8be21ed138c076e2684fb3952296f60554c6295aa3abf1226cfffafc093",
+      "sourceHash": "09b237cad6bde723a0307dfada68a52d68e2a84cd2f7903f05b29077277e6c8b",
       "targetHash": "0942a67ff163d6c3d1493691b22716c354fe4fca6785d920492000e00fbb74c2",
       "status": "draft",
       "humanReviewed": false,
@@ -9778,7 +9778,7 @@
     {
       "id": "digital-tools-and-responsibility",
       "locale": "de",
-      "sourceHash": "1329a8be21ed138c076e2684fb3952296f60554c6295aa3abf1226cfffafc093",
+      "sourceHash": "09b237cad6bde723a0307dfada68a52d68e2a84cd2f7903f05b29077277e6c8b",
       "targetHash": "b5c458ad9c04744449a750afe7ef3bcb559326c651482285c9ae72f7a836e1ab",
       "status": "draft",
       "humanReviewed": false,
@@ -9792,7 +9792,7 @@
     {
       "id": "digital-tools-and-responsibility",
       "locale": "zh",
-      "sourceHash": "1329a8be21ed138c076e2684fb3952296f60554c6295aa3abf1226cfffafc093",
+      "sourceHash": "09b237cad6bde723a0307dfada68a52d68e2a84cd2f7903f05b29077277e6c8b",
       "targetHash": "f59603536131e8cbb291a53ddf7396dfe2efe7f473fa7e353059183b3513c7b6",
       "status": "draft",
       "humanReviewed": false,
@@ -9806,7 +9806,7 @@
     {
       "id": "digital-tools-and-responsibility",
       "locale": "ru",
-      "sourceHash": "1329a8be21ed138c076e2684fb3952296f60554c6295aa3abf1226cfffafc093",
+      "sourceHash": "09b237cad6bde723a0307dfada68a52d68e2a84cd2f7903f05b29077277e6c8b",
       "targetHash": "dca66c68820ebce5d4e84c7ff8dcd505bd141fc5d2bc9abada9f05e42049ac7e",
       "status": "draft",
       "humanReviewed": false,
@@ -9820,7 +9820,7 @@
     {
       "id": "digital-tools-and-responsibility",
       "locale": "ar",
-      "sourceHash": "1329a8be21ed138c076e2684fb3952296f60554c6295aa3abf1226cfffafc093",
+      "sourceHash": "09b237cad6bde723a0307dfada68a52d68e2a84cd2f7903f05b29077277e6c8b",
       "targetHash": "aba8887ef9874821f96a82d27293882243cf85ec9ca02c12af04b3eff988174c",
       "status": "draft",
       "humanReviewed": false,
@@ -9834,7 +9834,7 @@
     {
       "id": "digital-tools-and-responsibility",
       "locale": "id",
-      "sourceHash": "1329a8be21ed138c076e2684fb3952296f60554c6295aa3abf1226cfffafc093",
+      "sourceHash": "09b237cad6bde723a0307dfada68a52d68e2a84cd2f7903f05b29077277e6c8b",
       "targetHash": "13e5d6fa0177437f939b24eaa0f59880c9bf40d31df7a2da3d38d455da6c52e2",
       "status": "draft",
       "humanReviewed": false,
@@ -9848,7 +9848,7 @@
     {
       "id": "digital-tools-and-responsibility",
       "locale": "ms",
-      "sourceHash": "1329a8be21ed138c076e2684fb3952296f60554c6295aa3abf1226cfffafc093",
+      "sourceHash": "09b237cad6bde723a0307dfada68a52d68e2a84cd2f7903f05b29077277e6c8b",
       "targetHash": "5672ae5bf10aa538c6025ca2f983edb98a4421074351cdcfd1bc253604a22688",
       "status": "draft",
       "humanReviewed": false,

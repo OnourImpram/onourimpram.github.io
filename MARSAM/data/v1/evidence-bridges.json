@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "release": "marsam-finished-centre-0.12.0",
   "version": "0.12.0",
-  "generatedAt": "2026-10-05T19:27:12.115Z",
+  "generatedAt": "2026-10-06T04:23:10.549Z",
   "publicationState": "institutional-review",
   "reviewStatus": "AI_ASSISTED_DRAFT",
   "humanReviewed": false,
@@ -76,7 +76,7 @@
         "ms": "Kepelbagaian pandangan alam dan kemudaratan"
       },
       "text": {
-        "tr": "Dinsiz bireylerin sağlık hizmeti deneyimleri ile dinsel temelli cinsel stigma çalışmaları, maneviyatın her kullanıcı için koruyucu veya istenen bir çerçeve olmadığını görünür kılar.",
+        "tr": "Din dışı dünya görüşüne sahip bireylerin sağlık hizmeti deneyimleri ile dinsel temelli cinsel stigma çalışmaları, maneviyatın her kullanıcı için koruyucu veya istenen bir çerçeve olmadığını görünür kılar.",
         "en": "Evidence on nonreligious healthcare experiences and religious-based sexual stigma makes visible that spiritual framing is not universally protective or desired.",
         "de": "Studien zu Erfahrungen nichtreligiöser Menschen im Gesundheitswesen und zu religiös begründetem sexuellem Stigma machen sichtbar, dass Spiritualität nicht für alle Nutzerinnen und Nutzer ein schützender oder gewünschter Rahmen ist.",
         "zh": "关于无宗教信仰者医疗服务体验以及基于宗教的性污名的研究揭示，灵性并非对每位服务使用者都是具有保护作用或为其所期望的框架。",
@@ -177,7 +177,7 @@
     {
       "id": "context-level-evidence",
       "title": {
-        "tr": "Bireysel skorun ötesinde dini bağlam",
+        "tr": "Bireysel puanın ötesinde dini bağlam",
         "en": "Religious context beyond individual scores",
         "de": "Religiöser Kontext jenseits individueller Messwerte",
         "zh": "超越个体得分的宗教背景",
@@ -187,7 +187,7 @@
         "ms": "Konteks agama melangkaui skor individu"
       },
       "text": {
-        "tr": "ESS temelli çok düzeyli çalışma dini azınlık ve depresif duygular ilişkisini bölgesel bağlamla birlikte inceler. Bu, bireysel başa çıkma çalışmalarından farklı bir çıkarım düzeyidir.",
+        "tr": "ESS temelli çok düzeyli çalışma, dini azınlık olma ile depresif duygular arasındaki ilişkiyi bölgesel bağlamla birlikte inceler. Bu, bireysel başa çıkma çalışmalarından farklı bir çıkarım düzeyidir.",
         "en": "The ESS-linked multilevel study examines religious-minority status and depressive feelings together with regional context. This is a different level of inference from individual coping studies.",
         "de": "Die ESS-basierte Mehrebenenstudie untersucht den Zusammenhang zwischen religiöser Minderheitenzugehörigkeit und depressiven Gefühlen gemeinsam mit dem regionalen Kontext. Dies ist eine andere Schlussfolgerungsebene als bei Studien zur individuellen Bewältigung.",
         "zh": "基于ESS的多层次研究结合地区背景考察宗教少数群体身份与抑郁情绪之间的关系。这与个体应对研究属于不同的推论层次。",
