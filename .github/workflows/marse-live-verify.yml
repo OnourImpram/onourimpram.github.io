@@ -1,0 +1,83 @@
+name: Verify live MARSE website
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/marse-live-verify.yml','Marse/publish-origin.json']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser client
+        run: |
+          python -m pip install playwright==1.57.0
+          if ! command -v google-chrome >/dev/null && ! command -v chromium >/dev/null; then
+            python -m playwright install --with-deps chromium
+          fi
+      - name: Verify actual public bytes, screens and functions
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json,time,shutil,urllib.request
+          from playwright.sync_api import sync_playwright,expect
+          root=Path('Marse');out=Path('marse-live-evidence');out.mkdir(exist_ok=True)
+          base='https://onourimpram.github.io/Marse/'
+          expected=json.loads((root/'release.json').read_text())
+          def get(url):
+              with urllib.request.urlopen(urllib.request.Request(url,headers={'Cache-Control':'no-cache','User-Agent':'MARSE-release-verifier'}),timeout=30) as r:
+                  assert r.status==200
+                  return r.read()
+          for attempt in range(96):
+              try:
+                  if get(base+'release.json')==(root/'release.json').read_bytes() and get(base)==(root/'index.html').read_bytes():break
+              except Exception as e:print(type(e).__name__,str(e)[:160],flush=True)
+              time.sleep(5)
+          else:raise AssertionError('Expected release is not live')
+          checked=[]
+          for name in ['index.html','assets/marse.css','assets/reading.css','assets/marse-logo.png','app.js','campus.js','data/v1/sources.json','data/search-tr.json','tr/resource/sipas/index.html','tr/measurement-observatory/index.html','tr/contents/index.html','ar/library/index.html','en/index.html']:
+              actual=get(base+name);h=hashlib.sha256(actual).hexdigest();assert h==hashlib.sha256((root/name).read_bytes()).hexdigest(),name
+              checked.append({'path':name,'sha256':h,'status':200})
+          old=get('https://onourimpram.github.io/MARSAM/tr/')
+          assert old==Path('MARSAM/tr/index.html').read_bytes(),'Old MARSAM site changed'
+          errors=[];http_errors=[];overflows=[];views=0
+          with sync_playwright() as p:
+              exe=shutil.which('google-chrome') or shutil.which('chromium')
+              browser=p.chromium.launch(**({'executable_path':exe} if exe else {}),args=['--no-sandbox'])
+              page=browser.new_page(viewport={'width':1440,'height':1000})
+              page.on('pageerror',lambda e:errors.append(str(e)))
+              page.on('response',lambda r:http_errors.append({'url':r.url,'status':r.status}) if r.status>=400 and '/Marse/' in r.url else None)
+              for width in (390,1440):
+                  page.set_viewport_size({'width':width,'height':1000})
+                  for path,name in [('', 'home'),('#kutuphane','library'),('#olcek-demo','measurement'),('tr/resource/sipas/','sipas'),('tr/measurement-observatory/','instruments'),('ar/library/','arabic')]:
+                      response=page.goto(base+path,wait_until='networkidle');views+=1
+                      if response:assert response.status==200
+                      assert not page.get_by_text('MARSAM',exact=True).count()
+                      if page.evaluate('document.documentElement.scrollWidth>innerWidth+1'):overflows.append({'url':page.url,'width':width})
+                      page.screenshot(path=str(out/f'{name}-{width}.png'))
+              page.goto(base+'#kutuphane');expect(page.locator('#library-list .resource-row')).to_have_count(81)
+              page.fill('#library-search','SIPAS');expect(page.locator('#library-list .resource-row:visible')).to_have_count(1)
+              page.goto(base+'#olcek-demo');page.locator('#demo-1').evaluate("e=>{e.value='5';e.dispatchEvent(new Event('input',{bubbles:true}))}")
+              expect(page.locator('#demo-num-1')).to_have_text('5,0')
+              with page.expect_download() as dl:page.click('#demo-download')
+              assert 'kurgusal' in Path(dl.value.path()).read_text().lower()
+              page.goto(base+'tr/search/?q=SIPAS');expect(page.locator('[data-search-results]')).to_contain_text('SIPAS')
+              page.set_viewport_size({'width':390,'height':1000});page.goto(base);page.click('#menu-toggle');expect(page.locator('#primary-nav')).to_be_visible();page.keyboard.press('Escape');expect(page.locator('#primary-nav')).not_to_be_visible()
+              browser.close()
+          report={'url':base,'verifiedAtUTC':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'release':expected,'byteChecks':checked,'browserViews':views,'jsErrors':errors,'httpErrors':http_errors,'overflow':overflows,'oldMARSAMHomepageUnchanged':True,'testedFunctions':['library search','synthetic report update and download','imported full text search','mobile menu and Escape']}
+          (out/'live-check.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False,indent=2))
+          assert not errors and not http_errors and not overflows
+          PY
+      - name: Retain public verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: marse-live-verification
+          path: marse-live-evidence
+          retention-days: 14
