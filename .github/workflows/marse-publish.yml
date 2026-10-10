@@ -1,0 +1,74 @@
+name: Publish verified MARSE subtree
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/marse-publish.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: marse-hosting-mirror
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      MARSE_COMMIT: 06e82bec2c90a60fc838964a79be23a30d57f077
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch exact verified MARSE release
+        run: |
+          set -euo pipefail
+          git clone --quiet --no-checkout https://github.com/OnourImpram/Marse.git /tmp/marse-release
+          git -C /tmp/marse-release checkout --quiet "$MARSE_COMMIT"
+          test "$(git -C /tmp/marse-release rev-parse HEAD)" = "$MARSE_COMMIT"
+          test -f /tmp/marse-release/site/index.html
+          test -f /tmp/marse-release/site/file-manifest.json
+      - name: Verify release and replace only Marse directory
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json,subprocess,shutil,os,datetime
+          sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+          tracked=subprocess.check_output(['git','ls-files','-z']).decode().split('\0')
+          before={p:sha(Path(p)) for p in tracked if p and not p.startswith('Marse/')}
+          old_tree=subprocess.check_output(['git','rev-parse','HEAD:MARSAM']).decode().strip()
+          source=Path('/tmp/marse-release/site')
+          inventory=json.loads((source/'file-manifest.json').read_text())
+          for entry in inventory:
+              path=Path(entry['path']);assert not path.is_absolute() and '..' not in path.parts
+              assert sha(source/path)==entry['sha256'],entry['path']
+          release=json.loads((source/'release.json').read_text())
+          assert release['approvedDesignSHA256']=='e4717c0f224ca1cb20b0b336b5047d86ac62614709cc048a44462b7fbef02e83'
+          assert release['sourceRecords']==79 and release['localizedSourceRoutes']==1048
+          destination=Path('Marse');assert not destination.is_symlink()
+          if destination.exists():shutil.rmtree(destination)
+          shutil.copytree(source,destination)
+          for name,digest in before.items():assert sha(Path(name))==digest,name
+          for entry in inventory:assert sha(destination/entry['path'])==entry['sha256']
+          evidence={'sourceRepository':'OnourImpram/Marse','sourceCommit':os.environ['MARSE_COMMIT'],'publishedDirectory':'Marse','sourceFileManifestSHA256':sha(source/'file-manifest.json'),'originalMARSAMTree':old_tree,'preExistingFilesVerifiedUnchanged':len(before),'copiedFiles':len(inventory)+1,'verifiedAtUTC':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+          (destination/'publish-origin.json').write_text(json.dumps(evidence,ensure_ascii=False,indent=2))
+          print(json.dumps(evidence,ensure_ascii=False,indent=2))
+          PY
+      - name: Commit only the new website directory
+        run: |
+          set -euo pipefail
+          git config user.name 'Onour Impram'
+          git config user.email 'onour@onourimpram.com'
+          git add Marse
+          python3 - <<'PY'
+          import subprocess
+          changed=subprocess.check_output(['git','diff','--cached','--name-only','-z']).decode().split('\0')
+          assert all(not p or p.startswith('Marse/') for p in changed)
+          PY
+          if ! git diff --cached --quiet; then
+            git commit -m "deploy: publish isolated MARSE release ${MARSE_COMMIT:0:7}"
+            git push origin HEAD:main
+          fi
+          echo "HOSTING_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: marse-hosting-scope-proof
+          path: Marse/publish-origin.json
+          retention-days: 14
